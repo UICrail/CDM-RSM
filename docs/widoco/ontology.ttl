@@ -181,10 +181,10 @@ xsd:double rdf:type rdfs:Datatype .
               rdf:type owl:InverseFunctionalProperty ;
               rdfs:domain :Connection ;
               rdfs:range :Port ;
-              rdfs:comment """This object property points to (at least two) ports that share a connection relationship.
+              rdfs:label "connects port"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> """This object property points to (at least two) ports that share a connection relationship.
 
-It is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."""@en ;
-              rdfs:label "connects port"@en .
+It is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."""@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#fromExitPort
@@ -199,8 +199,8 @@ It is used for building the connectedWith properties. It can be a temporal objec
 ###  https://cdm.ovh/rsm/topology/topo#hasConnection
 :hasConnection rdf:type owl:ObjectProperty ,
                         owl:FunctionalProperty ;
-               rdfs:comment "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"@en ;
-               rdfs:label "has connection"@en .
+               rdfs:label "has connection"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#leadsTo
@@ -403,14 +403,14 @@ It is used for building the connectedWith properties. It can be a temporal objec
 ###  https://cdm.ovh/rsm/topology/topo#BoundaryElement
 :BoundaryElement rdf:type owl:Class ;
                  rdfs:subClassOf :LinearElement ;
-                 rdfs:label "Boundary element"@en ;
-                 <http://www.w3.org/2004/02/skos/core#definition> "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities."@en .
+                 rdfs:comment "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities."@en ;
+                 rdfs:label "Boundary element"@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#Connection
 :Connection rdf:type owl:Class ;
-            rdfs:comment "Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as \"adjacency\", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like."@en ;
-            rdfs:label "Connection"@en .
+            rdfs:label "Connection"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as \"adjacency\", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like."@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#LinearElement
@@ -432,8 +432,8 @@ It is used for building the connectedWith properties. It can be a temporal objec
 :Navigability rdf:type owl:Class ;
               rdfs:subClassOf :NavigabilityRelation ;
               owl:disjointWith :NonNavigability ;
-              rdfs:comment "a (reified) relation between two ports of two distinct net elements."@en ;
-              rdfs:label "Navigability"@en .
+              rdfs:label "Navigability"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "a (reified) relation between two ports of two distinct net elements."@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#NavigabilityRelation

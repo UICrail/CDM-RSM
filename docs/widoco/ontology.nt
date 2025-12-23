@@ -151,8 +151,8 @@
 <https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
 <https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topo#Connection> .
 <https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/topology/topo#Port> .
-<https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#comment> "This object property points to (at least two) ports that share a connection relationship.\n\nIt is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."@en .
 <https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#label> "connects port"@en .
+<https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2004/02/skos/core#definition> "This object property points to (at least two) ports that share a connection relationship.\n\nIt is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#fromExitPort
 <https://cdm.ovh/rsm/topology/topo#fromExitPort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -165,8 +165,8 @@
 # https://cdm.ovh/rsm/topology/topo#hasConnection
 <https://cdm.ovh/rsm/topology/topo#hasConnection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cdm.ovh/rsm/topology/topo#hasConnection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://cdm.ovh/rsm/topology/topo#hasConnection> <http://www.w3.org/2000/01/rdf-schema#comment> "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"@en .
 <https://cdm.ovh/rsm/topology/topo#hasConnection> <http://www.w3.org/2000/01/rdf-schema#label> "has connection"@en .
+<https://cdm.ovh/rsm/topology/topo#hasConnection> <http://www.w3.org/2004/02/skos/core#definition> "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#leadsTo
 <https://cdm.ovh/rsm/topology/topo#leadsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -370,13 +370,13 @@ _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://cdm.ovh/rsm/topology/topo#BoundaryElement
 <https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/topology/topo#LinearElement> .
+<https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/2000/01/rdf-schema#comment> "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities."@en .
 <https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/2000/01/rdf-schema#label> "Boundary element"@en .
-<https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/2004/02/skos/core#definition> "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#Connection
 <https://cdm.ovh/rsm/topology/topo#Connection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/topology/topo#Connection> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as \"adjacency\", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like."@en .
 <https://cdm.ovh/rsm/topology/topo#Connection> <http://www.w3.org/2000/01/rdf-schema#label> "Connection"@en .
+<https://cdm.ovh/rsm/topology/topo#Connection> <http://www.w3.org/2004/02/skos/core#definition> "Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as \"adjacency\", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#LinearElement
 <https://cdm.ovh/rsm/topology/topo#LinearElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -395,8 +395,8 @@ _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> .
 <https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2002/07/owl#disjointWith> <https://cdm.ovh/rsm/topology/topo#NonNavigability> .
-<https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2000/01/rdf-schema#comment> "a (reified) relation between two ports of two distinct net elements."@en .
 <https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2000/01/rdf-schema#label> "Navigability"@en .
+<https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2004/02/skos/core#definition> "a (reified) relation between two ports of two distinct net elements."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#NavigabilityRelation
 <https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

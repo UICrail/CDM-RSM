@@ -321,27 +321,27 @@
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#BoundaryElement",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Boundary element"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#LinearElement"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities."
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#Connection",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as \"adjacency\", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like."
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Connection"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as \"adjacency\", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like."
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#LinearElement",
@@ -375,10 +375,6 @@
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#Navigability",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "a (reified) relation between two ports of two distinct net elements."
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Navigability"
@@ -388,6 +384,10 @@
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#NonNavigability"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "a (reified) relation between two ports of two distinct net elements."
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#NavigabilityRelation",
@@ -487,10 +487,6 @@
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#connectsPort",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "This object property points to (at least two) ports that share a connection relationship.\n\nIt is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#Connection"
   } ],
@@ -503,6 +499,10 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#hasConnection"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "This object property points to (at least two) ports that share a connection relationship.\n\nIt is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#fromExitPort",
@@ -523,13 +523,13 @@
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#hasConnection",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "has connection"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#leadsTo",

@@ -294,10 +294,10 @@ CORRECTED : corrected spelling errors, removed brackets in labels or comments, u
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#Connection"/>
         <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:comment xml:lang="en">This object property points to (at least two) ports that share a connection relationship.
-
-It is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version.</rdfs:comment>
         <rdfs:label xml:lang="en">connects port</rdfs:label>
+        <skos:definition xml:lang="en">This object property points to (at least two) ports that share a connection relationship.
+
+It is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version.</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -320,8 +320,8 @@ It is used for building the connectedWith properties. It can be a temporal objec
 
     <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#hasConnection">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:comment xml:lang="en">inverse property of &apos;connects port&apos;. Instrumental in building the property chain resulting in &apos;connected with&apos; (a relation between ports)</rdfs:comment>
         <rdfs:label xml:lang="en">has connection</rdfs:label>
+        <skos:definition xml:lang="en">inverse property of &apos;connects port&apos;. Instrumental in building the property chain resulting in &apos;connected with&apos; (a relation between ports)</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -644,8 +644,8 @@ It is used for building the connectedWith properties. It can be a temporal objec
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#BoundaryElement">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#LinearElement"/>
+        <rdfs:comment xml:lang="en">Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities.</rdfs:comment>
         <rdfs:label xml:lang="en">Boundary element</rdfs:label>
-        <skos:definition xml:lang="en">Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities.</skos:definition>
     </owl:Class>
     
 
@@ -654,8 +654,8 @@ It is used for building the connectedWith properties. It can be a temporal objec
 
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#Connection">
-        <rdfs:comment xml:lang="en">Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as &quot;adjacency&quot;, i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like.</rdfs:comment>
         <rdfs:label xml:lang="en">Connection</rdfs:label>
+        <skos:definition xml:lang="en">Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as &quot;adjacency&quot;, i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like.</skos:definition>
     </owl:Class>
     
 
@@ -689,8 +689,8 @@ It is used for building the connectedWith properties. It can be a temporal objec
     <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#Navigability">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation"/>
         <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/topology/topo#NonNavigability"/>
-        <rdfs:comment xml:lang="en">a (reified) relation between two ports of two distinct net elements.</rdfs:comment>
         <rdfs:label xml:lang="en">Navigability</rdfs:label>
+        <skos:definition xml:lang="en">a (reified) relation between two ports of two distinct net elements.</skos:definition>
     </owl:Class>
     
 
