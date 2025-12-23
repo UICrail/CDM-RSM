@@ -1,6 +1,4 @@
 Level	Rule Name	Subject	Property	Value
-ERROR	missing_label	https://cdm.ovh/rsm/topology/topo#toExitPort	rdfs:label	
-ERROR	missing_ontology_description	https://cdm.ovh/rsm/topology/topo	dc:description	
 WARN	missing_definition	https://cdm.ovh/rsm/topology/topo#BoundaryElement	IAO:0000115	
 WARN	missing_definition	https://cdm.ovh/rsm/topology/topo#Connection	IAO:0000115	
 WARN	missing_definition	https://cdm.ovh/rsm/topology/topo#LinearElement	IAO:0000115	

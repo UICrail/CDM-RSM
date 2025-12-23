@@ -18,19 +18,19 @@
     <owl:Ontology rdf:about="https://cdm.ovh/rsm/topology/topo">
         <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/topology/1.0rc4/topo"/>
         <owl:imports rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter"/>
-        <dc:abstract xml:lang="en">Simplified RSM topology; relations between net elements ports only available as object properties: no reification.
+        <dc:abstract xml:lang="en">Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
 
-RSM is a member of the CDM (Conceptual Data Model), under development under the ERJU MOTIONAL project.
+Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
 
-Some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
-
-Superclasses for time-dependency are yet to be chosen and introduced.</dc:abstract>
+Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.</dc:abstract>
         <dc:contributor xml:lang="en">Pierre Tane, UIC</dc:contributor>
         <dc:creator xml:lang="en">Airy Magnien, UIC</dc:creator>
-        <dc:date xml:lang="en">18 December 2025</dc:date>
-        <dc:relation xml:lang="en">MOTIONAL project: https://rail-research.europa.eu/eu-rail-projects/ 
-ONTORAIL project: https://ontorail.org/
-RSM GitHub: https://github.com/UICrail/SemanticRSM</dc:relation>
+        <dc:date xml:lang="en">23 December 2025</dc:date>
+        <dc:description xml:lang="en">Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
+
+Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
+
+Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.</dc:description>
         <dc:title xml:lang="en">RSM topology</dc:title>
         <dc:type xml:lang="en">RDF/OWL ontology (using OWL2 RL profile)</dc:type>
         <dcterms:license xml:lang="en">EUPL 1.2; see https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/eupl_v1.2_en.pdf</dcterms:license>
@@ -80,9 +80,9 @@ CORRECTED : corrected spelling errors, removed brackets in labels or comments, u
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/relation -->
+    <!-- http://purl.org/dc/elements/1.1/description -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/relation"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
     
 
 
@@ -358,6 +358,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation"/>
         <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
+        <rdfs:label xml:lang="en">to exit port</rdfs:label>
     </owl:ObjectProperty>
     
 
