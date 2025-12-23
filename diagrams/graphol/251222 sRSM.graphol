@@ -118,6 +118,7 @@
         <annotationProperty>http://purl.org/dc/elements/1.1/contributor</annotationProperty>
         <annotationProperty>http://purl.org/dc/elements/1.1/creator</annotationProperty>
         <annotationProperty>http://purl.org/dc/elements/1.1/date</annotationProperty>
+        <annotationProperty>http://purl.org/dc/elements/1.1/description</annotationProperty>
         <annotationProperty>http://purl.org/dc/elements/1.1/relation</annotationProperty>
         <annotationProperty>http://purl.org/dc/elements/1.1/title</annotationProperty>
         <annotationProperty>http://purl.org/dc/elements/1.1/type</annotationProperty>
@@ -147,6 +148,9 @@
         </iri>
         <iri>
           <value>http://purl.org/dc/elements/1.1/date</value>
+        </iri>
+        <iri>
+          <value>http://purl.org/dc/elements/1.1/description</value>
         </iri>
         <iri>
           <value>http://purl.org/dc/elements/1.1/relation</value>
@@ -423,35 +427,9 @@
             </annotation>
             <annotation>
               <subject>https://cdm.ovh/rsm/topology/topology</subject>
-              <property>http://purl.org/dc/elements/1.1/abstract</property>
-              <object>
-                <lexicalForm>Simplified RSM topology; relations between net elements ports only available as object properties: no reification.
-
-RSM is a member of the CDM (Conceptual Data Model), under development under the ERJU MOTIONAL project.
-
-Some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
-
-Superclasses for time-dependency are yet to be chosen and introduced.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/topology/topology</subject>
               <property>http://purl.org/dc/elements/1.1/date</property>
               <object>
-                <lexicalForm>18 December 2025</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/topology/topology</subject>
-              <property>http://purl.org/dc/elements/1.1/relation</property>
-              <object>
-                <lexicalForm>MOTIONAL project: https://rail-research.europa.eu/eu-rail-projects/ 
-ONTORAIL project: https://ontorail.org/
-RSM GitHub: https://github.com/UICrail/SemanticRSM</lexicalForm>
+                <lexicalForm>23 December 2025</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -492,6 +470,32 @@ CORRECTED : corrected spelling errors, removed brackets in labels or comments, u
               <property>https://vocab.org/vann/preferredNamespaceURI</property>
               <object>
                 <lexicalForm>http://cdm.ovh/rsm/topology/topo#</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/topology/topo</subject>
+              <property>http://purl.org/dc/elements/1.1/description</property>
+              <object>
+                <lexicalForm>Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
+
+Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
+
+Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/topology/topo</subject>
+              <property>http://purl.org/dc/elements/1.1/abstract</property>
+              <object>
+                <lexicalForm>Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
+
+Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
+
+Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -1111,6 +1115,17 @@ It is used for building the connectedWith properties. It can be a temporal objec
         <iri>
           <value>https://cdm.ovh/rsm/topology/topo#toExitPort</value>
           <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/topology/topo#toExitPort</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>to exit port</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
         </iri>
         <iri>
           <value>https://cdm.ovh/rsm/topology/topology</value>

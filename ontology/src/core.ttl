@@ -17,19 +17,19 @@
 <https://cdm.ovh/rsm/topology/topo> rdf:type owl:Ontology ;
                                      owl:versionIRI <https://cdm.ovh/rsm/topology/1.0rc4/topo> ;
                                      owl:imports <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter> ;
-                                     dc:abstract """Simplified RSM topology; relations between net elements ports only available as object properties: no reification.
+                                     dc:abstract """Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
 
-RSM is a member of the CDM (Conceptual Data Model), under development under the ERJU MOTIONAL project.
+Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
 
-Some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
-
-Superclasses for time-dependency are yet to be chosen and introduced."""@en ;
+Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite."""@en ;
                                      dc:contributor "Pierre Tane, UIC"@en ;
                                      dc:creator "Airy Magnien, UIC"@en ;
-                                     dc:date "18 December 2025"@en ;
-                                     dc:relation """MOTIONAL project: https://rail-research.europa.eu/eu-rail-projects/ 
-ONTORAIL project: https://ontorail.org/
-RSM GitHub: https://github.com/UICrail/SemanticRSM"""@en ;
+                                     dc:date "23 December 2025"@en ;
+                                     dc:description """Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
+
+Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
+
+Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite."""@en ;
                                      dc:title "RSM topology"@en ;
                                      dc:type "RDF/OWL ontology (using OWL2 RL profile)"@en ;
                                      dcterms:license "EUPL 1.2; see https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/eupl_v1.2_en.pdf"@en ;
@@ -61,8 +61,8 @@ dc:creator rdf:type owl:AnnotationProperty .
 dc:date rdf:type owl:AnnotationProperty .
 
 
-###  http://purl.org/dc/elements/1.1/relation
-dc:relation rdf:type owl:AnnotationProperty .
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/title
@@ -257,7 +257,8 @@ topo:port_1 rdf:type owl:ObjectProperty ;
 topo:toExitPort rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ;
                 rdfs:domain topo:NavigabilityRelation ;
-                rdfs:range topo:Port .
+                rdfs:range topo:Port ;
+                rdfs:label "to exit port"@en .
 
 
 #################################################################
