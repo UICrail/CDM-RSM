@@ -15,6 +15,10 @@
           <namespace>http://purl.org/dc/terms/</namespace>
         </prefix>
         <prefix>
+          <value>dul</value>
+          <namespace>http://www.ontologydesignpatterns.org/ont/dul/DUL#</namespace>
+        </prefix>
+        <prefix>
           <value>geo_ad</value>
           <namespace>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#</namespace>
         </prefix>
@@ -456,7 +460,7 @@ RSM GitHub: https://github.com/UICrail/SemanticRSM</lexicalForm>
               <subject>https://cdm.ovh/rsm/topology/topology</subject>
               <property>http://purl.org/dc/elements/1.1/type</property>
               <object>
-                <lexicalForm>RDF/OWL ontology</lexicalForm>
+                <lexicalForm>RDF/OWL ontology (using OWL2 RL profile)</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -465,7 +469,11 @@ RSM GitHub: https://github.com/UICrail/SemanticRSM</lexicalForm>
               <subject>https://cdm.ovh/rsm/topology/topology</subject>
               <property>http://www.w3.org/2002/07/owl#versionInfo</property>
               <object>
-                <lexicalForm>1.0rc4 - corrections on December 2025: corrected spelling errors, removed brackets in labels or comments, use disjointUnionOf where relevant. Date changed to December 18; preferred namespace prefix corrected.</lexicalForm>
+                <lexicalForm>1.0rc4 - additions and corrections on December 2025
+
+ADDED : reified port connections and navigabilities, last available in RC1, are restored (with some changed identifiers).
+
+CORRECTED : corrected spelling errors, removed brackets in labels or comments, use disjointUnionOf where relevant. Date changed to December 18; preferred namespace prefix corrected.</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -566,7 +574,7 @@ RSM GitHub: https://github.com/UICrail/SemanticRSM</lexicalForm>
               <subject>https://cdm.ovh/rsm/topology/topo#ListedPort</subject>
               <property>http://www.w3.org/2004/02/skos/core#definition</property>
               <object>
-                <lexicalForm>A port in an ordered list (with successors; no contents needed). See also OWLList ontology.</lexicalForm>
+                <lexicalForm>A port in an ordered list (with successors; no contents needed). Can be used to sort the ports of a net element. See also OWLList ontology.</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -869,6 +877,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
         </iri>
         <iri>
           <value>https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo</value>
+          <inverseFunctional/>
           <annotations>
             <annotation>
               <subject>https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo</subject>
@@ -1108,51 +1117,13 @@ It is used for building the connectedWith properties. It can be a temporal objec
           <annotations>
             <annotation>
               <subject>https://cdm.ovh/rsm/topology/topology</subject>
-              <property>http://purl.org/dc/elements/1.1/title</property>
-              <object>
-                <lexicalForm>RSM topology</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/topology/topology</subject>
-              <property>http://purl.org/dc/elements/1.1/creator</property>
-              <object>
-                <lexicalForm>Airy Magnien, UIC</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/topology/topology</subject>
-              <property>http://purl.org/dc/terms/license</property>
-              <object>
-                <lexicalForm>EUPL 1.2; see https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/eupl_v1.2_en.pdf</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/topology/topology</subject>
-              <property>http://purl.org/dc/elements/1.1/contributor</property>
-              <object>
-                <lexicalForm>Pierre Tane, UIC</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/topology/topology</subject>
               <property>http://purl.org/dc/elements/1.1/abstract</property>
               <object>
-                <lexicalForm>Simplified RSM topology; relations between net elements ports only available as object properties: no reification.
+                <lexicalForm>Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
 
-RSM is a member of the CDM (Conceptual Data Model), under development under the ERJU MOTIONAL project.
+Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
 
-Some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
-
-Superclasses for time-dependency are yet to be chosen and introduced.</lexicalForm>
+Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -1161,36 +1132,7 @@ Superclasses for time-dependency are yet to be chosen and introduced.</lexicalFo
               <subject>https://cdm.ovh/rsm/topology/topology</subject>
               <property>http://purl.org/dc/elements/1.1/date</property>
               <object>
-                <lexicalForm>18 December 2025</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/topology/topology</subject>
-              <property>http://purl.org/dc/elements/1.1/relation</property>
-              <object>
-                <lexicalForm>MOTIONAL project: https://rail-research.europa.eu/eu-rail-projects/ 
-ONTORAIL project: https://ontorail.org/
-RSM GitHub: https://github.com/UICrail/SemanticRSM</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/topology/topology</subject>
-              <property>http://purl.org/dc/elements/1.1/type</property>
-              <object>
-                <lexicalForm>RDF/OWL ontology</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/topology/topology</subject>
-              <property>http://www.w3.org/2002/07/owl#versionInfo</property>
-              <object>
-                <lexicalForm>1.0rc4 - corrections on December 2025: corrected spelling errors, removed brackets in labels or comments, use disjointUnionOf where relevant. Date changed to December 18; preferred namespace prefix corrected.</lexicalForm>
+                <lexicalForm>23 December 2025</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -1562,7 +1504,7 @@ RSM GitHub: https://github.com/UICrail/SemanticRSM</lexicalForm>
           <iri>https://cdm.ovh/rsm/topology/topo#Port</iri>
           <label y="-70" width="277" x="-208" customSize="1" height="28" size="16"/>
         </node>
-        <node id="n5" type="role" color="#86f42e">
+        <node id="n5" type="role" color="#fcfcfc">
           <geometry y="-70" width="70" x="110" height="50"/>
           <iri>https://cdm.ovh/rsm/topology/topo#port</iri>
           <label y="-100" width="29" x="110" customSize="0" height="23" size="12"/>
@@ -1622,9 +1564,9 @@ RSM GitHub: https://github.com/UICrail/SemanticRSM</lexicalForm>
           <label y="-100" width="101" x="570" customSize="0" height="23" size="12"/>
         </node>
         <node id="n82" type="concept" color="#c2b078">
-          <geometry y="-345" width="110" x="110" height="50"/>
+          <geometry y="-300" width="110" x="110" height="50"/>
           <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature</iri>
-          <label y="-345" width="110" x="110" customSize="0" height="23" size="12"/>
+          <label y="-300" width="110" x="110" customSize="0" height="23" size="12"/>
         </node>
         <node id="n83" type="role" color="#86f42e">
           <geometry y="130" width="70" x="-210" height="50"/>
@@ -1645,7 +1587,7 @@ RSM GitHub: https://github.com/UICrail/SemanticRSM</lexicalForm>
           <label y="28" width="39" x="-280" customSize="0" height="23" size="12">exists</label>
         </node>
         <node id="n88" type="disjoint-union" color="#000000">
-          <geometry y="-244" width="50" x="112" height="30"/>
+          <geometry y="-160" width="50" x="110" height="30"/>
         </node>
         <edge id="e0" type="inclusion" source="n3" target="n0">
           <point y="60" x="370"/>
@@ -1760,17 +1702,17 @@ RSM GitHub: https://github.com/UICrail/SemanticRSM</lexicalForm>
           <point y="-70" x="570"/>
           <point y="-40" x="490"/>
         </edge>
-        <edge id="e184" type="inclusion" source="n88" target="n82">
-          <point y="-244" x="112"/>
-          <point y="-345" x="110"/>
-        </edge>
         <edge id="e185" type="input" source="n4" target="n88">
           <point y="-70" x="-208"/>
-          <point y="-244" x="112"/>
+          <point y="-160" x="110"/>
         </edge>
         <edge id="e186" type="input" source="n0" target="n88">
           <point y="-70" x="370"/>
-          <point y="-244" x="112"/>
+          <point y="-160" x="110"/>
+        </edge>
+        <edge id="e189" type="inclusion" source="n88" target="n82">
+          <point y="-160" x="110"/>
+          <point y="-300" x="110"/>
         </edge>
         <edge id="e2" type="input" source="n2" target="n3">
           <point y="135" x="427"/>
