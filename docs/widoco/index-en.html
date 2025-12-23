@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cdm.ovh/rsm/topology/topo","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cdm.ovh/rsm/topology/topo","name":"RSM topology", "headline":"Simplified RSM topology; relations between net elements ports only available as object properties: no reification.RSM is a member of the CDM (Conceptual Data Model), under development under the ERJU MOTIONAL project.Some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.Superclasses for time-dependency are yet to be chosen and introduced.", "dateReleased":"Tue Dec 23 10:50:14 UTC 2025", "version":"1.0rc4 - additions and corrections on December 2025
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cdm.ovh/rsm/topology/topo","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cdm.ovh/rsm/topology/topo","name":"RSM topology", "headline":"Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.", "dateReleased":"Tue Dec 23 11:11:30 UTC 2025", "version":"1.0rc4 - additions and corrections on December 2025
 
 ADDED : reified port connections and navigabilities, last available in RC1, are restored (with some changed identifiers).
 
@@ -107,13 +107,11 @@ CORRECTED : corrected spelling errors, removed brackets in labels or comments, u
 <span>Ontology Specification Draft</span>
 </div>
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
-Simplified RSM topology; relations between net elements ports only available as object properties: no reification.
+Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
 
-RSM is a member of the CDM (Conceptual Data Model), under development under the ERJU MOTIONAL project.
+Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
 
-Some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
-
-Superclasses for time-dependency are yet to be chosen and introduced.</span>
+Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.</span>
 </div>
 <div id="toc"></div>  
 
@@ -272,9 +270,7 @@ This ontology has the following classes and properties.</span>
       <a href="#port_1" title="https://cdm.ovh/rsm/topology/topo#port_1">port 1</a>
    </li>
    <li>
-      <a href="#toExitPort" title="https://cdm.ovh/rsm/topology/topo#toExitPort">
-         <span>to Exit Port</span>
-      </a>
+      <a href="#toExitPort" title="https://cdm.ovh/rsm/topology/topo#toExitPort">to exit port</a>
    </li>
 </ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -322,6 +318,11 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description">
+         <span>description</span>
+      </a>
+   </li>
+   <li>
       <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
          <span>license</span>
       </a>
@@ -339,11 +340,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#https://vocab.org/vann/preferredNamespaceURI" title="https://vocab.org/vann/preferredNamespaceURI">
          <span>preferred Namespace U R I</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://purl.org/dc/elements/1.1/relation" title="http://purl.org/dc/elements/1.1/relation">
-         <span>relation</span>
       </a>
    </li>
    <li>
@@ -373,6 +369,16 @@ This ontology has the following classes and properties.</span>
    </li>
 </ul><iframe src="webvowl/index.html"></iframe> 
 </div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">RSM topology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
+
+Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
+
+Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.</span></div>
    
 
 <!--CROSSREF SECTION-->
@@ -595,7 +601,7 @@ This section provides details for each class and property defined by RSM topolog
     is in domain of
    </dt>
    <dd>
-    <a href="#fromExitPort" title="https://cdm.ovh/rsm/topology/topo#fromExitPort">from exit port</a> <sup class="type-op" title="object property">op</sup>, <a href="#toExitPort" title="https://cdm.ovh/rsm/topology/topo#toExitPort">to Exit Port</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#fromExitPort" title="https://cdm.ovh/rsm/topology/topo#fromExitPort">from exit port</a> <sup class="type-op" title="object property">op</sup>, <a href="#toExitPort" title="https://cdm.ovh/rsm/topology/topo#toExitPort">to exit port</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -706,7 +712,7 @@ This section provides details for each class and property defined by RSM topolog
     is in range of
    </dt>
    <dd>
-    <a href="#connectedWithTransitive" title="https://cdm.ovh/rsm/topology/topo#connectedWithTransitive">connected with transitive</a> <sup class="type-op" title="object property">op</sup>, <a href="#connectsPort" title="https://cdm.ovh/rsm/topology/topo#connectsPort">connects port</a> <sup class="type-op" title="object property">op</sup>, <a href="#fromExitPort" title="https://cdm.ovh/rsm/topology/topo#fromExitPort">from exit port</a> <sup class="type-op" title="object property">op</sup>, <a href="#navigableToTransitive" title="https://cdm.ovh/rsm/topology/topo#navigableToTransitive">navigable to transitive</a> <sup class="type-op" title="object property">op</sup>, <a href="#nonNavigableTo" title="https://cdm.ovh/rsm/topology/topo#nonNavigableTo">non navigable to</a> <sup class="type-op" title="object property">op</sup>, <a href="#port" title="https://cdm.ovh/rsm/topology/topo#port">port</a> <sup class="type-op" title="object property">op</sup>, <a href="#toExitPort" title="https://cdm.ovh/rsm/topology/topo#toExitPort">to Exit Port</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#connectedWithTransitive" title="https://cdm.ovh/rsm/topology/topo#connectedWithTransitive">connected with transitive</a> <sup class="type-op" title="object property">op</sup>, <a href="#connectsPort" title="https://cdm.ovh/rsm/topology/topo#connectsPort">connects port</a> <sup class="type-op" title="object property">op</sup>, <a href="#fromExitPort" title="https://cdm.ovh/rsm/topology/topo#fromExitPort">from exit port</a> <sup class="type-op" title="object property">op</sup>, <a href="#navigableToTransitive" title="https://cdm.ovh/rsm/topology/topo#navigableToTransitive">navigable to transitive</a> <sup class="type-op" title="object property">op</sup>, <a href="#nonNavigableTo" title="https://cdm.ovh/rsm/topology/topo#nonNavigableTo">non navigable to</a> <sup class="type-op" title="object property">op</sup>, <a href="#port" title="https://cdm.ovh/rsm/topology/topo#port">port</a> <sup class="type-op" title="object property">op</sup>, <a href="#toExitPort" title="https://cdm.ovh/rsm/topology/topo#toExitPort">to exit port</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is disjoint with
@@ -744,7 +750,7 @@ This section provides details for each class and property defined by RSM topolog
   <li><a href="#port" title="https://cdm.ovh/rsm/topology/topo#port">port</a></li>
   <li><a href="#port_0" title="https://cdm.ovh/rsm/topology/topo#port_0">port 0</a></li>
   <li><a href="#port_1" title="https://cdm.ovh/rsm/topology/topo#port_1">port 1</a></li>
-  <li><a href="#toExitPort" title="https://cdm.ovh/rsm/topology/topo#toExitPort"> <span>to Exit Port</span> </a></li>
+  <li><a href="#toExitPort" title="https://cdm.ovh/rsm/topology/topo#toExitPort">to exit port</a></li>
  </ul>
  <div class="entity" id="connectedWith">
   <h3>connected with<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
@@ -1085,7 +1091,7 @@ This section provides details for each class and property defined by RSM topolog
      is inverse of
     </dt>
     <dd>
-     <a href="#toExitPort" title="https://cdm.ovh/rsm/topology/topo#toExitPort">to Exit Port</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#toExitPort" title="https://cdm.ovh/rsm/topology/topo#toExitPort">to exit port</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -1334,7 +1340,7 @@ This section provides details for each class and property defined by RSM topolog
   </div>
  </div>
  <div class="entity" id="toExitPort">
-  <h3>to Exit Port<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>to exit port<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#toExitPort</p>
   <div class="description">
    <p><strong>has characteristics: </strong> functional</p>
@@ -1465,11 +1471,11 @@ This section provides details for each class and property defined by RSM topolog
   <li><a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator"> <span>creator</span> </a></li>
   <li><a href="#http://purl.org/dc/elements/1.1/date" title="http://purl.org/dc/elements/1.1/date"> <span>date</span> </a></li>
   <li><a href="#http://www.w3.org/2004/02/skos/core#definition" title="http://www.w3.org/2004/02/skos/core#definition"> <span>definition</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description"> <span>description</span> </a></li>
   <li><a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license"> <span>license</span> </a></li>
   <li><a href="#http://www.w3.org/2004/02/skos/core#prefLabel" title="http://www.w3.org/2004/02/skos/core#prefLabel"> <span>pref Label</span> </a></li>
   <li><a href="#https://vocab.org/vann/preferredNamespacePrefix" title="https://vocab.org/vann/preferredNamespacePrefix"> <span>preferred Namespace Prefix</span> </a></li>
   <li><a href="#https://vocab.org/vann/preferredNamespaceURI" title="https://vocab.org/vann/preferredNamespaceURI"> <span>preferred Namespace U R I</span> </a></li>
-  <li><a href="#http://purl.org/dc/elements/1.1/relation" title="http://purl.org/dc/elements/1.1/relation"> <span>relation</span> </a></li>
   <li><a href="#http://purl.org/dc/elements/1.1/relations" title="http://purl.org/dc/elements/1.1/relations"> <span>relations</span> </a></li>
   <li><a href="#http://purl.org/dc/elements/1.1/source" title="http://purl.org/dc/elements/1.1/source"> <span>source</span> </a></li>
   <li><a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title"> <span>title</span> </a></li>
@@ -1496,6 +1502,10 @@ This section provides details for each class and property defined by RSM topolog
   <h3>definition<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#definition</p>
  </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/description">
+  <h3>description<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/description</p>
+ </div>
  <div class="entity" id="http://purl.org/dc/terms/license">
   <h3>license<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://purl.org/dc/terms/license</p>
@@ -1511,10 +1521,6 @@ This section provides details for each class and property defined by RSM topolog
  <div class="entity" id="https://vocab.org/vann/preferredNamespaceURI">
   <h3>preferred Namespace U R I<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://vocab.org/vann/preferredNamespaceURI</p>
- </div>
- <div class="entity" id="http://purl.org/dc/elements/1.1/relation">
-  <h3>relation<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/relation</p>
  </div>
  <div class="entity" id="http://purl.org/dc/elements/1.1/relations">
   <h3>relations<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>

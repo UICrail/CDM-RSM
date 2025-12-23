@@ -49,7 +49,7 @@
   "@id" : "http://purl.org/dc/elements/1.1/date",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://purl.org/dc/elements/1.1/relation",
+  "@id" : "http://purl.org/dc/elements/1.1/description",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/elements/1.1/relations",
@@ -271,7 +271,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/elements/1.1/abstract" : [ {
     "@language" : "en",
-    "@value" : "Simplified RSM topology; relations between net elements ports only available as object properties: no reification.\n\nRSM is a member of the CDM (Conceptual Data Model), under development under the ERJU MOTIONAL project.\n\nSome properties that are most likely to be used are chained properties, equivalent to derived associations in UML.\n\nSuperclasses for time-dependency are yet to be chosen and introduced."
+    "@value" : "Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).\n\nSyntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.\n\nTemporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite."
   } ],
   "http://purl.org/dc/elements/1.1/contributor" : [ {
     "@language" : "en",
@@ -283,11 +283,11 @@
   } ],
   "http://purl.org/dc/elements/1.1/date" : [ {
     "@language" : "en",
-    "@value" : "18 December 2025"
+    "@value" : "23 December 2025"
   } ],
-  "http://purl.org/dc/elements/1.1/relation" : [ {
+  "http://purl.org/dc/elements/1.1/description" : [ {
     "@language" : "en",
-    "@value" : "MOTIONAL project: https://rail-research.europa.eu/eu-rail-projects/ \nONTORAIL project: https://ontorail.org/\nRSM GitHub: https://github.com/UICrail/SemanticRSM"
+    "@value" : "Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).\n\nSyntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.\n\nTemporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite."
   } ],
   "http://purl.org/dc/elements/1.1/title" : [ {
     "@language" : "en",
@@ -748,6 +748,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#NavigabilityRelation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "to exit port"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#Port"

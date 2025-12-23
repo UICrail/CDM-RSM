@@ -1,11 +1,11 @@
 <https://cdm.ovh/rsm/topology/topo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <https://cdm.ovh/rsm/topology/topo> <http://www.w3.org/2002/07/owl#versionIRI> <https://cdm.ovh/rsm/topology/1.0rc4/topo> .
 <https://cdm.ovh/rsm/topology/topo> <http://www.w3.org/2002/07/owl#imports> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter> .
-<https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/abstract> "Simplified RSM topology; relations between net elements ports only available as object properties: no reification.\n\nRSM is a member of the CDM (Conceptual Data Model), under development under the ERJU MOTIONAL project.\n\nSome properties that are most likely to be used are chained properties, equivalent to derived associations in UML.\n\nSuperclasses for time-dependency are yet to be chosen and introduced."@en .
+<https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/abstract> "Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).\n\nSyntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.\n\nTemporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite."@en .
 <https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/contributor> "Pierre Tane, UIC"@en .
 <https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/creator> "Airy Magnien, UIC"@en .
-<https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/date> "18 December 2025"@en .
-<https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/relation> "MOTIONAL project: https://rail-research.europa.eu/eu-rail-projects/ \nONTORAIL project: https://ontorail.org/\nRSM GitHub: https://github.com/UICrail/SemanticRSM"@en .
+<https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/date> "23 December 2025"@en .
+<https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/description> "Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).\n\nSyntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.\n\nTemporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite."@en .
 <https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/title> "RSM topology"@en .
 <https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/type> "RDF/OWL ontology (using OWL2 RL profile)"@en .
 <https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/terms/license> "EUPL 1.2; see https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/eupl_v1.2_en.pdf"@en .
@@ -33,8 +33,8 @@
 # http://purl.org/dc/elements/1.1/date
 <http://purl.org/dc/elements/1.1/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://purl.org/dc/elements/1.1/relation
-<http://purl.org/dc/elements/1.1/relation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/dc/elements/1.1/relations
 <http://purl.org/dc/elements/1.1/relations> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -286,6 +286,7 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 <https://cdm.ovh/rsm/topology/topo#toExitPort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <https://cdm.ovh/rsm/topology/topo#toExitPort> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> .
 <https://cdm.ovh/rsm/topology/topo#toExitPort> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/topology/topo#Port> .
+<https://cdm.ovh/rsm/topology/topo#toExitPort> <http://www.w3.org/2000/01/rdf-schema#label> "to exit port"@en .
 # 
 # 
 # 
