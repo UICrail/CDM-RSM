@@ -116,10 +116,10 @@ topo:connectsPort rdf:type owl:ObjectProperty ;
                   rdf:type owl:InverseFunctionalProperty ;
                   rdfs:domain topo:Connection ;
                   rdfs:range topo:Port ;
-                  rdfs:comment """This object property points to (at least two) ports that share a connection relationship.
+                  rdfs:label "connects port"@en ;
+                  skos:definition """This object property points to (at least two) ports that share a connection relationship.
 
-It is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."""@en ;
-                  rdfs:label "connects port"@en .
+It is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."""@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#fromExitPort
@@ -134,8 +134,8 @@ topo:fromExitPort rdf:type owl:ObjectProperty ;
 ###  https://cdm.ovh/rsm/topology/topo#hasConnection
 topo:hasConnection rdf:type owl:ObjectProperty ,
                             owl:FunctionalProperty ;
-                   rdfs:comment "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"@en ;
-                   rdfs:label "has connection"@en .
+                   rdfs:label "has connection"@en ;
+                   skos:definition "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#leadsTo
@@ -272,14 +272,14 @@ geo_ad:Feature rdf:type owl:Class .
 ###  https://cdm.ovh/rsm/topology/topo#BoundaryElement
 topo:BoundaryElement rdf:type owl:Class ;
                      rdfs:subClassOf topo:LinearElement ;
-                     rdfs:label "Boundary element"@en ;
-                     skos:definition "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities."@en .
+                     rdfs:comment "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities."@en ;
+                     rdfs:label "Boundary element"@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#Connection
 topo:Connection rdf:type owl:Class ;
-                rdfs:comment "Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as \"adjacency\", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like."@en ;
-                rdfs:label "Connection"@en .
+                rdfs:label "Connection"@en ;
+                skos:definition "Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as \"adjacency\", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like."@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#LinearElement
@@ -301,8 +301,8 @@ topo:ListedPort rdf:type owl:Class ;
 topo:Navigability rdf:type owl:Class ;
                   rdfs:subClassOf topo:NavigabilityRelation ;
                   owl:disjointWith topo:NonNavigability ;
-                  rdfs:comment "a (reified) relation between two ports of two distinct net elements."@en ;
-                  rdfs:label "Navigability"@en .
+                  rdfs:label "Navigability"@en ;
+                  skos:definition "a (reified) relation between two ports of two distinct net elements."@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#NavigabilityRelation
