@@ -43,16 +43,16 @@
         "value" : "topo",
         "type" : "label"
       } ],
-      "abstract" : [ {
-        "identifier" : "abstract",
-        "language" : "en",
-        "value" : "Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).\n\nSyntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.\n\nTemporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.",
-        "type" : "label"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "en",
         "value" : "1.0rc4 - additions and corrections on December 2025\n\nADDED : reified port connections and navigabilities, last available in RC1, are restored (with some changed identifiers).\n\nCORRECTED : corrected spelling errors, removed brackets in labels or comments, use disjointUnionOf where relevant. Date changed to December 18; preferred namespace prefix corrected.",
+        "type" : "label"
+      } ],
+      "abstract" : [ {
+        "identifier" : "abstract",
+        "language" : "en",
+        "value" : "Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).\n\nSyntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.\n\nTemporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.",
         "type" : "label"
       } ],
       "preferredNamespaceURI" : [ {
@@ -61,16 +61,16 @@
         "value" : "http://cdm.ovh/rsm/topology/topo#",
         "type" : "label"
       } ],
-      "type" : [ {
-        "identifier" : "type",
-        "language" : "en",
-        "value" : "RDF/OWL ontology (using OWL2 RL profile)",
-        "type" : "label"
-      } ],
       "title" : [ {
         "identifier" : "title",
         "language" : "en",
         "value" : "RSM topology",
+        "type" : "label"
+      } ],
+      "type" : [ {
+        "identifier" : "type",
+        "language" : "en",
+        "value" : "RDF/OWL ontology (using OWL2 RL profile)",
         "type" : "label"
       } ]
     }
@@ -333,7 +333,7 @@
   }, {
     "instances" : 0,
     "union" : [ "2", "12" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "47"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#double",
@@ -1012,7 +1012,7 @@
       "en" : "has metric length"
     },
     "domain" : "12",
-    "attributes" : [ "someValues", "datatype", "external" ],
+    "attributes" : [ "datatype", "someValues", "external" ],
     "id" : "60"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#toExitPort",
@@ -1073,7 +1073,7 @@
       "en" : "has metric length"
     },
     "domain" : "2",
-    "attributes" : [ "someValues", "datatype", "external" ],
+    "attributes" : [ "datatype", "someValues", "external" ],
     "id" : "64"
   }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf",
@@ -1280,7 +1280,7 @@
     },
     "domain" : "3",
     "subproperty" : [ "68" ],
-    "attributes" : [ "object", "transitive" ],
+    "attributes" : [ "transitive", "object" ],
     "id" : "69"
   } ]
 }
