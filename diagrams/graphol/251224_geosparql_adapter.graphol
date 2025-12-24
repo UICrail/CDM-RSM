@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <graphol version="3">
-  <project name="geosparql_adapter" version="https://cdm.ovh/rsm/adapters/geosparql_adapter/0.6/geosparql_adapter">
-    <ontology lang="en" addLabelFromUserInput="0" iri="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter" addLabelFromSimpleName="0">
+  <project name="geosparql_adapter" version="https://cdm.ovh/rsm/adapters/geosparql_adapter/0.6/geo_ad">
+    <ontology lang="en" addLabelFromUserInput="0" iri="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" addLabelFromSimpleName="0">
       <imports/>
       <prefixes>
         <prefix>
@@ -10,7 +10,7 @@
         </prefix>
         <prefix>
           <value>geo_ad</value>
-          <namespace>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#</namespace>
+          <namespace>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#</namespace>
         </prefix>
         <prefix>
           <value>loca</value>
@@ -360,6 +360,293 @@
           <value>https://cdm.ovh/rsm/adapters/geosparql_adapter</value>
         </iri>
         <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <property>http://purl.org/dc/elements/1.1/creator</property>
+              <object>
+                <lexicalForm>Airy Magnien, UIC</lexicalForm>
+                <datatype/>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <property>http://purl.org/dc/elements/1.1/abstract</property>
+              <object>
+                <lexicalForm>Adapter vocabulary for connecting various parts of RSM with GeoSPARQL 1.1.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>GeoSPARQL adapter for CDM/RSM</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <property>http://purl.org/dc/terms/license</property>
+              <object>
+                <lexicalForm>EUPL 1.2</lexicalForm>
+                <datatype/>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <property>http://www.w3.org/2002/07/owl#versionInfo</property>
+              <object>
+                <lexicalForm>Edited annotation properties that caused profile violations</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <property>https://vocab.org/vann/preferredNamespacePrefix</property>
+              <object>
+                <lexicalForm>geo_ad</lexicalForm>
+                <datatype/>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <property>https://vocab.org/vann/preferredNamespaceURI</property>
+              <object>
+                <lexicalForm>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad</lexicalForm>
+                <datatype/>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Feature</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature</subject>
+              <property>http://www.w3.org/2004/02/skos/core#definition</property>
+              <object>
+                <lexicalForm>A discrete spatial phenomenon in the CDM universe of discourse.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Geometry</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</subject>
+              <property>http://www.w3.org/2004/02/skos/core#definition</property>
+              <object>
+                <lexicalForm>A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS).</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</subject>
+              <property>http://purl.org/dc/elements/1.1/source</property>
+              <object>
+                <lexicalForm>OGC 18-010r11</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>The reference system can be geographic, geodetic, cartesian (e.g. engineering coordinate system), and its definition may be part of the WKT or GML string. See OGC documentation.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</subject>
+              <property>http://www.w3.org/2004/02/skos/core#prefLabel</property>
+              <object>
+                <lexicalForm>Geometry</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>geometry of</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf</subject>
+              <property>http://www.w3.org/2004/02/skos/core#definition</property>
+              <object>
+                <lexicalForm>inverse of hasGeometry</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>GeoSPARQL does not define this inverse property.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry</value>
+          <inverseFunctional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has geometry</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry</subject>
+              <property>http://www.w3.org/2004/02/skos/core#definition</property>
+              <object>
+                <lexicalForm>A spatial representation for a given Feature. As in GeoSPARQL, a feature can be associated with more than one geometry (valid at different times, or provided by different surveys...).</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has metric length</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength</subject>
+              <property>http://www.w3.org/2004/02/skos/core#definition</property>
+              <object>
+                <lexicalForm>Length (in meter) of a Linear Element.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry</value>
+          <functional/>
+          <inverseFunctional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has nominal geometry</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry</subject>
+              <property>http://www.w3.org/2004/02/skos/core#definition</property>
+              <object>
+                <lexicalForm>The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry. Takes into account SOSA/SSN viewpoint, i.e. there can be more than one default geometry (e.g. valid at different times).</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has nominal metric length</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength</subject>
+              <property>http://www.w3.org/2004/02/skos/core#definition</property>
+              <object>
+                <lexicalForm>This length is assumed to be derived from the chosen Nominal Geometry.
+
+The Nominal Metric Length is supposed to be used for conversions between linear referencing methods "absolute" (distance along, e.g. used in CCS/TMS data model) and "interpolation" (intrinsic coordinates, with values 0 to 1, used in RSM and others).</lexicalForm>
+                <datatype/>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf</value>
+          <functional/>
+          <inverseFunctional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>nominal geometry of</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
           <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter</value>
           <annotations>
             <annotation>
@@ -420,228 +707,9 @@
               <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
               <property>https://vocab.org/vann/preferredNamespaceURI</property>
               <object>
-                <lexicalForm>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter</lexicalForm>
+                <lexicalForm>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad</lexicalForm>
                 <datatype/>
                 <language/>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Feature</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>A discrete spatial phenomenon in the CDM universe of discourse.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Geometry</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS).</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry</subject>
-              <property>http://purl.org/dc/elements/1.1/source</property>
-              <object>
-                <lexicalForm>OGC 18-010r11</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>The reference system can be geographic, geodetic, cartesian (e.g. engineering coordinate system), and its definition may be part of the WKT or GML string. See OGC documentation.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry</subject>
-              <property>http://www.w3.org/2004/02/skos/core#prefLabel</property>
-              <object>
-                <lexicalForm>Geometry</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf</value>
-          <functional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>geometry of</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>inverse of hasGeometry</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>GeoSPARQL does not define this inverse property.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry</value>
-          <inverseFunctional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>has geometry</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>A spatial representation for a given Feature. As in GeoSPARQL, a feature can be associated with more than one geometry (valid at different times, or provided by different surveys...).</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>has metric length</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>Length (in meter) of a Linear Element.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry</value>
-          <functional/>
-          <inverseFunctional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>has nominal geometry</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry. Takes into account SOSA/SSN viewpoint, i.e. there can be more than one default geometry (e.g. valid at different times).</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>has nominal metric length</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>This length is assumed to be derived from the chosen Nominal Geometry.
-
-The Nominal Metric Length is supposed to be used for conversions between linear referencing methods "absolute" (distance along, e.g. used in CCS/TMS data model) and "interpolation" (intrinsic coordinates, with values 0 to 1, used in RSM and others).</lexicalForm>
-                <datatype/>
-                <language/>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf</value>
-          <functional/>
-          <inverseFunctional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>nominal geometry of</lexicalForm>
-                <datatype/>
-                <language>en</language>
               </object>
             </annotation>
           </annotations>
@@ -658,13 +726,16 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
         <iri>
           <value>https://vocab.org/vann/preferredNamespaceURI</value>
         </iri>
+        <iri>
+          <value>urn:x-graphol:origin</value>
+        </iri>
       </iris>
     </ontology>
     <diagrams>
       <diagram name="geosparql_adapter" width="6000" height="6000">
         <node id="n0" type="concept" color="#fcfcfc">
           <geometry y="-50" width="110" x="270" height="50"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry</iri>
+          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</iri>
           <label y="-50" width="110" x="270" customSize="0" height="23" size="12"/>
         </node>
         <node id="n1" type="concept" color="#c2b078">
@@ -674,7 +745,7 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
         </node>
         <node id="n10" type="role" color="#fcfcfc">
           <geometry y="-50" width="70" x="-10" height="50"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry</iri>
+          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry</iri>
           <label y="-80" width="79" x="-10" customSize="0" height="23" size="12"/>
         </node>
         <node id="n11" type="domain-restriction" color="#fcfcfc">
@@ -695,12 +766,12 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
         </node>
         <node id="n17" type="attribute" color="#fcfcfc">
           <geometry y="270" width="20" x="120" height="20"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength</iri>
+          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength</iri>
           <label y="248" width="97" x="120" customSize="0" height="23" size="12"/>
         </node>
         <node id="n18" type="attribute" color="#fcfcfc">
           <geometry y="350" width="20" x="120" height="20"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength</iri>
+          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength</iri>
           <label y="328" width="142" x="120" customSize="0" height="23" size="12"/>
         </node>
         <node id="n19" type="attribute" color="#c2b078">
@@ -763,7 +834,7 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
         </node>
         <node id="n6" type="concept" color="#fcfcfc">
           <geometry y="-50" width="110" x="-230" height="50"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature</iri>
+          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature</iri>
           <label y="-50" width="110" x="-230" customSize="0" height="23" size="12"/>
         </node>
         <node id="n7" type="role" color="#c2b078">
@@ -778,7 +849,7 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
         </node>
         <node id="n9" type="role" color="#fcfcfc">
           <geometry y="20" width="70" x="90" height="50"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry</iri>
+          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry</iri>
           <label y="-10" width="124" x="90" customSize="0" height="23" size="12"/>
         </node>
         <edge id="e0" type="inclusion" source="n0" target="n1">
@@ -909,12 +980,12 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
       <diagram name="inverse properties" width="5000" height="5000">
         <node id="n0" type="role" color="#fcfcfc">
           <geometry y="20" width="70" x="50" height="50"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry</iri>
+          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry</iri>
           <label y="-10" width="79" x="50" customSize="0" height="23" size="12"/>
         </node>
         <node id="n2" type="role" color="#fcfcfc">
           <geometry y="20" width="70" x="280" height="50"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf</iri>
+          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf</iri>
           <label y="-10" width="70" x="280" customSize="0" height="23" size="12"/>
         </node>
         <node id="n3" type="role-inverse" color="#fcfcfc">
@@ -923,12 +994,12 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
         </node>
         <node id="n4" type="role" color="#fcfcfc">
           <geometry y="120" width="70" x="50" height="50"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry</iri>
+          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry</iri>
           <label y="90" width="124" x="50" customSize="0" height="23" size="12"/>
         </node>
         <node id="n5" type="role" color="#fcfcfc">
           <geometry y="120" width="70" x="280" height="50"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf</iri>
+          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf</iri>
           <label y="90" width="115" x="280" customSize="0" height="23" size="12"/>
         </node>
         <node id="n6" type="role-inverse" color="#fcfcfc">
