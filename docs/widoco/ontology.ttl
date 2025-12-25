@@ -8,7 +8,7 @@
 
 <https://cdm.ovh/rsm/topology/topo> rdf:type owl:Ontology ;
                                      owl:versionIRI <https://cdm.ovh/rsm/topology/1.0rc4/topo> ;
-                                     owl:imports <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter> ;
+                                     owl:imports <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad> ;
                                      <http://purl.org/dc/elements/1.1/abstract> """Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
 
 Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
@@ -57,10 +57,6 @@ CORRECTED : corrected spelling errors, removed brackets in labels or comments, u
 <http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
 
 
-###  http://purl.org/dc/elements/1.1/relations
-<http://purl.org/dc/elements/1.1/relations> rdf:type owl:AnnotationProperty .
-
-
 ###  http://purl.org/dc/elements/1.1/source
 <http://purl.org/dc/elements/1.1/source> rdf:type owl:AnnotationProperty .
 
@@ -75,10 +71,6 @@ CORRECTED : corrected spelling errors, removed brackets in labels or comments, u
 
 ###  http://purl.org/dc/terms/license
 <http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2002/07/owl#versionIRI
-owl:versionIRI rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#definition
@@ -121,41 +113,41 @@ xsd:double rdf:type rdfs:Datatype .
                                                    rdfs:label "hasGeometry"@en .
 
 
-###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf> rdf:type owl:ObjectProperty ;
-                                                                              owl:inverseOf <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry> ;
-                                                                              rdf:type owl:FunctionalProperty ;
-                                                                              rdfs:comment "GeoSPARQL does not define this inverse property."@en ;
-                                                                              rdfs:label "geometry of"@en ;
-                                                                              <http://www.w3.org/2004/02/skos/core#definition> "inverse of hasGeometry"@en .
+###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf> rdf:type owl:ObjectProperty ;
+                                                                   owl:inverseOf <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> ;
+                                                                   rdf:type owl:FunctionalProperty ;
+                                                                   rdfs:comment "GeoSPARQL does not define this inverse property."@en ;
+                                                                   rdfs:label "geometry of"@en ;
+                                                                   <http://www.w3.org/2004/02/skos/core#definition> "inverse of hasGeometry"@en .
 
 
-###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry> rdf:type owl:ObjectProperty ;
-                                                                               rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasGeometry> ;
-                                                                               rdf:type owl:InverseFunctionalProperty ;
-                                                                               rdfs:domain <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> ;
-                                                                               rdfs:range <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry> ;
-                                                                               rdfs:label "has geometry"@en ;
-                                                                               <http://www.w3.org/2004/02/skos/core#definition> "A spatial representation for a given Feature. As in GeoSPARQL, a feature can be associated with more than one geometry (valid at different times, or provided by different surveys...)."@en .
+###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> rdf:type owl:ObjectProperty ;
+                                                                    rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+                                                                    rdf:type owl:InverseFunctionalProperty ;
+                                                                    rdfs:domain <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> ;
+                                                                    rdfs:range <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> ;
+                                                                    rdfs:label "has geometry"@en ;
+                                                                    <http://www.w3.org/2004/02/skos/core#definition> "A spatial representation for a given Feature. As in GeoSPARQL, a feature can be associated with more than one geometry (valid at different times, or provided by different surveys...)."@en .
 
 
-###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry> rdf:type owl:ObjectProperty ;
-                                                                                      rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasDefaultGeometry> ,
-                                                                                                         <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry> ;
-                                                                                      owl:inverseOf <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf> ;
-                                                                                      rdf:type owl:FunctionalProperty ,
-                                                                                               owl:InverseFunctionalProperty ;
-                                                                                      rdfs:label "has nominal geometry"@en ;
-                                                                                      <http://www.w3.org/2004/02/skos/core#definition> "The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry. Takes into account SOSA/SSN viewpoint, i.e. there can be more than one default geometry (e.g. valid at different times)."@en .
+###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> rdf:type owl:ObjectProperty ;
+                                                                           rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasDefaultGeometry> ,
+                                                                                              <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> ;
+                                                                           owl:inverseOf <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf> ;
+                                                                           rdf:type owl:FunctionalProperty ,
+                                                                                    owl:InverseFunctionalProperty ;
+                                                                           rdfs:label "has nominal geometry"@en ;
+                                                                           <http://www.w3.org/2004/02/skos/core#definition> "The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry. Takes into account SOSA/SSN viewpoint, i.e. there can be more than one default geometry (e.g. valid at different times)."@en .
 
 
-###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf> rdf:type owl:ObjectProperty ,
-                                                                                              owl:FunctionalProperty ,
-                                                                                              owl:InverseFunctionalProperty ;
-                                                                                     rdfs:label "nominal geometry of"@en .
+###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf> rdf:type owl:ObjectProperty ,
+                                                                                   owl:FunctionalProperty ,
+                                                                                   owl:InverseFunctionalProperty ;
+                                                                          rdfs:label "nominal geometry of"@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#connectedWith
@@ -181,10 +173,10 @@ xsd:double rdf:type rdfs:Datatype .
               rdf:type owl:InverseFunctionalProperty ;
               rdfs:domain :Connection ;
               rdfs:range :Port ;
-              rdfs:label "connects port"@en ;
-              <http://www.w3.org/2004/02/skos/core#definition> """This object property points to (at least two) ports that share a connection relationship.
+              rdfs:comment """This object property points to (at least two) ports that share a connection relationship.
 
-It is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."""@en .
+It is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."""@en ;
+              rdfs:label "connects port"@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#fromExitPort
@@ -199,8 +191,8 @@ It is used for building the connectedWith properties. It can be a temporal objec
 ###  https://cdm.ovh/rsm/topology/topo#hasConnection
 :hasConnection rdf:type owl:ObjectProperty ,
                         owl:FunctionalProperty ;
-               rdfs:label "has connection"@en ;
-               <http://www.w3.org/2004/02/skos/core#definition> "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"@en .
+               rdfs:comment "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"@en ;
+               rdfs:label "has connection"@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#leadsTo
@@ -336,26 +328,28 @@ It is used for building the connectedWith properties. It can be a temporal objec
                                                        rdfs:range xsd:double .
 
 
-###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength> rdf:type owl:DatatypeProperty ;
-                                                                                   rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasMetricLength> ;
-                                                                                   rdfs:domain [ rdf:type owl:Class ;
-                                                                                                 owl:unionOf ( <https://cdm.ovh/rsm/localisation/localisation#LinearLocation>
-                                                                                                               <https://cdm.ovh/rsm/topology/topology#LinearElement>
-                                                                                                             )
-                                                                                               ] ;
-                                                                                   rdfs:range xsd:double ;
-                                                                                   rdfs:label "has metric length"@en ;
-                                                                                   <http://www.w3.org/2004/02/skos/core#definition> "Length (in meter) of a Linear Element."@en .
+###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> rdf:type owl:DatatypeProperty ;
+                                                                        rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasMetricLength> ;
+                                                                        rdfs:domain [ rdf:type owl:Class ;
+                                                                                      owl:unionOf ( <https://cdm.ovh/rsm/localisation/localisation#LinearLocation>
+                                                                                                    <https://cdm.ovh/rsm/topology/topology#LinearElement>
+                                                                                                  )
+                                                                                    ] ;
+                                                                        rdfs:range xsd:double ;
+                                                                        rdfs:label "has metric length"@en ;
+                                                                        <http://www.w3.org/2004/02/skos/core#definition> "Length (in meter) of a Linear Element."@en .
 
 
-###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength> rdf:type owl:DatatypeProperty ;
-                                                                                          rdfs:subPropertyOf <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength> ;
-                                                                                          rdfs:domain <https://cdm.ovh/rsm/topology/topology#LinearElement> ;
-                                                                                          rdfs:range xsd:double ;
-                                                                                          rdfs:label "has nominal metric length"@en ;
-                                                                                          <http://www.w3.org/2004/02/skos/core#definition> "This length is assumed to be derived from the chosen Nominal Geometry.The Nominal Metric Length is supposed to be used for conversions between linear referencing methods \"absolute\" (distance along, e.g. used in CCS/TMS data model) and \"interpolation\" (intrinsic coordinates, with values 0 to 1, used in RSM and others)." .
+###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> rdf:type owl:DatatypeProperty ;
+                                                                               rdfs:subPropertyOf <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> ;
+                                                                               rdfs:domain <https://cdm.ovh/rsm/topology/topology#LinearElement> ;
+                                                                               rdfs:range xsd:double ;
+                                                                               rdfs:label "has nominal metric length"@en ;
+                                                                               <http://www.w3.org/2004/02/skos/core#definition> """This length is assumed to be derived from the chosen Nominal Geometry.
+
+The Nominal Metric Length is supposed to be used for conversions between linear referencing methods \"absolute\" (distance along, e.g. used in CCS/TMS data model) and \"interpolation\" (intrinsic coordinates, with values 0 to 1, used in RSM and others).""" .
 
 
 #################################################################
@@ -374,43 +368,44 @@ It is used for building the connectedWith properties. It can be a temporal objec
 <http://www.opengis.net/ont/geosparql#SpatialObject> rdf:type owl:Class .
 
 
+###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ;
+                                                                rdfs:label "Feature"@en ;
+                                                                <http://www.w3.org/2004/02/skos/core#definition> "A discrete spatial phenomenon in the CDM universe of discourse."@en .
+
+
+###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Geometry> ;
+                                                                 <http://purl.org/dc/elements/1.1/source> "OGC 18-010r11"@en ;
+                                                                 rdfs:comment "The reference system can be geographic, geodetic, cartesian (e.g. engineering coordinate system), and its definition may be part of the WKT or GML string. See OGC documentation."@en ;
+                                                                 rdfs:label "Geometry"@en ;
+                                                                 <http://www.w3.org/2004/02/skos/core#definition> "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."@en ;
+                                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Geometry"@en .
+
+
 ###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> rdf:type owl:Class ;
-                                                                           rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ;
-                                                                           rdfs:label "Feature"@en ;
-                                                                           <http://www.w3.org/2004/02/skos/core#definition> "A discrete spatial phenomenon in the CDM universe of discourse."@en .
-
-
-###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry> rdf:type owl:Class ;
-                                                                            rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Geometry> ;
-                                                                            <http://purl.org/dc/elements/1.1/source> "OGC 18-010r11"@en ;
-                                                                            rdfs:comment "The reference system can be geographic, geodetic, cartesian (e.g. engineering coordinate system), and its definition may be part of the WKT or GML string. See OGC documentation."@en ;
-                                                                            rdfs:label "Geometry"@en ;
-                                                                            <http://www.w3.org/2004/02/skos/core#definition> "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."@en ;
-                                                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Geometry"@en .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> rdf:type owl:Class .
 
 
 ###  https://cdm.ovh/rsm/localisation/localisation#LinearLocation
 <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> rdf:type owl:Class ;
-                                                               rdfs:subClassOf <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> ,
-                                                                               [ rdf:type owl:Restriction ;
-                                                                                 owl:onProperty <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength> ;
-                                                                                 owl:someValuesFrom rdfs:Literal
-                                                                               ] .
+                                                               rdfs:subClassOf <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> ;
+                                                               owl:disjointWith <https://cdm.ovh/rsm/topology/topology#LinearElement> .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#BoundaryElement
 :BoundaryElement rdf:type owl:Class ;
                  rdfs:subClassOf :LinearElement ;
-                 rdfs:comment "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities."@en ;
-                 rdfs:label "Boundary element"@en .
+                 rdfs:label "Boundary element"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities."@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#Connection
 :Connection rdf:type owl:Class ;
-            rdfs:label "Connection"@en ;
-            <http://www.w3.org/2004/02/skos/core#definition> "Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as \"adjacency\", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like."@en .
+            rdfs:comment "Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as \"adjacency\", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like."@en ;
+            rdfs:label "Connection"@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#LinearElement
@@ -432,8 +427,8 @@ It is used for building the connectedWith properties. It can be a temporal objec
 :Navigability rdf:type owl:Class ;
               rdfs:subClassOf :NavigabilityRelation ;
               owl:disjointWith :NonNavigability ;
-              rdfs:label "Navigability"@en ;
-              <http://www.w3.org/2004/02/skos/core#definition> "a (reified) relation between two ports of two distinct net elements."@en .
+              rdfs:comment "a (reified) relation between two ports of two distinct net elements."@en ;
+              rdfs:label "Navigability"@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#NavigabilityRelation
@@ -475,11 +470,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
 
 
 ###  https://cdm.ovh/rsm/topology/topology#LinearElement
-<https://cdm.ovh/rsm/topology/topology#LinearElement> rdf:type owl:Class ;
-                                                      rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                        owl:onProperty <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength> ;
-                                                                        owl:someValuesFrom rdfs:Literal
-                                                                      ] .
+<https://cdm.ovh/rsm/topology/topology#LinearElement> rdf:type owl:Class .
 
 
 ###  https://w3id.org/list#OWLList

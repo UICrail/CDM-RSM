@@ -1,6 +1,6 @@
 <https://cdm.ovh/rsm/topology/topo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <https://cdm.ovh/rsm/topology/topo> <http://www.w3.org/2002/07/owl#versionIRI> <https://cdm.ovh/rsm/topology/1.0rc4/topo> .
-<https://cdm.ovh/rsm/topology/topo> <http://www.w3.org/2002/07/owl#imports> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter> .
+<https://cdm.ovh/rsm/topology/topo> <http://www.w3.org/2002/07/owl#imports> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad> .
 <https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/abstract> "Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).\n\nSyntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.\n\nTemporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite."@en .
 <https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/contributor> "Pierre Tane, UIC"@en .
 <https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/creator> "Airy Magnien, UIC"@en .
@@ -36,9 +36,6 @@
 # http://purl.org/dc/elements/1.1/description
 <http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://purl.org/dc/elements/1.1/relations
-<http://purl.org/dc/elements/1.1/relations> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
 # http://purl.org/dc/elements/1.1/source
 <http://purl.org/dc/elements/1.1/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
@@ -50,9 +47,6 @@
 # 
 # http://purl.org/dc/terms/license
 <http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2002/07/owl#versionIRI
-<http://www.w3.org/2002/07/owl#versionIRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://www.w3.org/2004/02/skos/core#definition
 <http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -97,38 +91,38 @@
 <http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.opengis.net/ont/geosparql#Geometry> .
 <http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "hasGeometry"@en .
 # 
-# https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf> <http://www.w3.org/2000/01/rdf-schema#comment> "GeoSPARQL does not define this inverse property."@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf> <http://www.w3.org/2000/01/rdf-schema#label> "geometry of"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf> <http://www.w3.org/2004/02/skos/core#definition> "inverse of hasGeometry"@en .
+# https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf> <http://www.w3.org/2000/01/rdf-schema#comment> "GeoSPARQL does not define this inverse property."@en .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf> <http://www.w3.org/2000/01/rdf-schema#label> "geometry of"@en .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf> <http://www.w3.org/2004/02/skos/core#definition> "inverse of hasGeometry"@en .
 # 
-# https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#hasGeometry> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "has geometry"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry> <http://www.w3.org/2004/02/skos/core#definition> "A spatial representation for a given Feature. As in GeoSPARQL, a feature can be associated with more than one geometry (valid at different times, or provided by different surveys...)."@en .
+# https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "has geometry"@en .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> <http://www.w3.org/2004/02/skos/core#definition> "A spatial representation for a given Feature. As in GeoSPARQL, a feature can be associated with more than one geometry (valid at different times, or provided by different surveys...)."@en .
 # 
-# https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#hasDefaultGeometry> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry> <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "has nominal geometry"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry> <http://www.w3.org/2004/02/skos/core#definition> "The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry. Takes into account SOSA/SSN viewpoint, i.e. there can be more than one default geometry (e.g. valid at different times)."@en .
+# https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#hasDefaultGeometry> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "has nominal geometry"@en .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/2004/02/skos/core#definition> "The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry. Takes into account SOSA/SSN viewpoint, i.e. there can be more than one default geometry (e.g. valid at different times)."@en .
 # 
-# https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf> <http://www.w3.org/2000/01/rdf-schema#label> "nominal geometry of"@en .
+# https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf> <http://www.w3.org/2000/01/rdf-schema#label> "nominal geometry of"@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#connectedWith
 <https://cdm.ovh/rsm/topology/topo#connectedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -151,8 +145,8 @@
 <https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
 <https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topo#Connection> .
 <https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/topology/topo#Port> .
+<https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#comment> "This object property points to (at least two) ports that share a connection relationship.\n\nIt is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."@en .
 <https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#label> "connects port"@en .
-<https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2004/02/skos/core#definition> "This object property points to (at least two) ports that share a connection relationship.\n\nIt is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#fromExitPort
 <https://cdm.ovh/rsm/topology/topo#fromExitPort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -165,8 +159,8 @@
 # https://cdm.ovh/rsm/topology/topo#hasConnection
 <https://cdm.ovh/rsm/topology/topo#hasConnection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cdm.ovh/rsm/topology/topo#hasConnection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://cdm.ovh/rsm/topology/topo#hasConnection> <http://www.w3.org/2000/01/rdf-schema#comment> "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"@en .
 <https://cdm.ovh/rsm/topology/topo#hasConnection> <http://www.w3.org/2000/01/rdf-schema#label> "has connection"@en .
-<https://cdm.ovh/rsm/topology/topo#hasConnection> <http://www.w3.org/2004/02/skos/core#definition> "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#leadsTo
 <https://cdm.ovh/rsm/topology/topo#leadsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -302,10 +296,10 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 <http://www.opengis.net/ont/geosparql#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.opengis.net/ont/geosparql#SpatialObject> .
 <http://www.opengis.net/ont/geosparql#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
 # 
-# https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#hasMetricLength> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid7 .
+# https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#hasMetricLength> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid7 .
 _:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid9 .
 _:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
 _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
@@ -314,17 +308,17 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 _:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> .
 _:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#label> "has metric length"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength> <http://www.w3.org/2004/02/skos/core#definition> "Length (in meter) of a Linear Element."@en .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#label> "has metric length"@en .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> <http://www.w3.org/2004/02/skos/core#definition> "Length (in meter) of a Linear Element."@en .
 # 
-# https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topology#LinearElement> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#label> "has nominal metric length"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength> <http://www.w3.org/2004/02/skos/core#definition> "This length is assumed to be derived from the chosen Nominal Geometry.The Nominal Metric Length is supposed to be used for conversions between linear referencing methods \"absolute\" (distance along, e.g. used in CCS/TMS data model) and \"interpolation\" (intrinsic coordinates, with values 0 to 1, used in RSM and others)." .
+# https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topology#LinearElement> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#label> "has nominal metric length"@en .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/2004/02/skos/core#definition> "This length is assumed to be derived from the chosen Nominal Geometry.\r\n\r\nThe Nominal Metric Length is supposed to be used for conversions between linear referencing methods \"absolute\" (distance along, e.g. used in CCS/TMS data model) and \"interpolation\" (intrinsic coordinates, with values 0 to 1, used in RSM and others)." .
 # 
 # 
 # 
@@ -344,39 +338,39 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://www.opengis.net/ont/geosparql#SpatialObject
 <http://www.opengis.net/ont/geosparql#SpatialObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
+# https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> <http://www.w3.org/2000/01/rdf-schema#label> "Feature"@en .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> <http://www.w3.org/2004/02/skos/core#definition> "A discrete spatial phenomenon in the CDM universe of discourse."@en .
+# 
+# https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Geometry> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> <http://purl.org/dc/elements/1.1/source> "OGC 18-010r11"@en .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference system can be geographic, geodetic, cartesian (e.g. engineering coordinate system), and its definition may be part of the WKT or GML string. See OGC documentation."@en .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> <http://www.w3.org/2000/01/rdf-schema#label> "Geometry"@en .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> <http://www.w3.org/2004/02/skos/core#definition> "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."@en .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> <http://www.w3.org/2004/02/skos/core#prefLabel> "Geometry"@en .
+# 
 # https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature
 <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> <http://www.w3.org/2000/01/rdf-schema#label> "Feature"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> <http://www.w3.org/2004/02/skos/core#definition> "A discrete spatial phenomenon in the CDM universe of discourse."@en .
-# 
-# https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Geometry> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry> <http://purl.org/dc/elements/1.1/source> "OGC 18-010r11"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference system can be geographic, geodetic, cartesian (e.g. engineering coordinate system), and its definition may be part of the WKT or GML string. See OGC documentation."@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry> <http://www.w3.org/2000/01/rdf-schema#label> "Geometry"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry> <http://www.w3.org/2004/02/skos/core#definition> "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry> <http://www.w3.org/2004/02/skos/core#prefLabel> "Geometry"@en .
 # 
 # https://cdm.ovh/rsm/localisation/localisation#LinearLocation
 <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> .
-<https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
-_:genid10 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> .
+<https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2002/07/owl#disjointWith> <https://cdm.ovh/rsm/topology/topology#LinearElement> .
 # 
 # https://cdm.ovh/rsm/topology/topo#BoundaryElement
 <https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/topology/topo#LinearElement> .
-<https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/2000/01/rdf-schema#comment> "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities."@en .
 <https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/2000/01/rdf-schema#label> "Boundary element"@en .
+<https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/2004/02/skos/core#definition> "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#Connection
 <https://cdm.ovh/rsm/topology/topo#Connection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/topology/topo#Connection> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as \"adjacency\", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like."@en .
 <https://cdm.ovh/rsm/topology/topo#Connection> <http://www.w3.org/2000/01/rdf-schema#label> "Connection"@en .
-<https://cdm.ovh/rsm/topology/topo#Connection> <http://www.w3.org/2004/02/skos/core#definition> "Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as \"adjacency\", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#LinearElement
 <https://cdm.ovh/rsm/topology/topo#LinearElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -395,20 +389,20 @@ _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> .
 <https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2002/07/owl#disjointWith> <https://cdm.ovh/rsm/topology/topo#NonNavigability> .
+<https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2000/01/rdf-schema#comment> "a (reified) relation between two ports of two distinct net elements."@en .
 <https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2000/01/rdf-schema#label> "Navigability"@en .
-<https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2004/02/skos/core#definition> "a (reified) relation between two ports of two distinct net elements."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#NavigabilityRelation
 <https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
-_:genid11 <http://www.w3.org/2002/07/owl#unionOf> _:genid13 .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/topology/topo#NonNavigability> .
+<https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/topology/topo#NonNavigability> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/topology/topo#Navigability> .
 _:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/topology/topo#Navigability> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> <http://www.w3.org/2000/01/rdf-schema#label> "Navigability relation"@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#NetElement
@@ -437,10 +431,6 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://cdm.ovh/rsm/topology/topology#LinearElement
 <https://cdm.ovh/rsm/topology/topology#LinearElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/topology/topology#LinearElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
-_:genid14 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 # 
 # https://w3id.org/list#OWLList
 <https://w3id.org/list#OWLList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

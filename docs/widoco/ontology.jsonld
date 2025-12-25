@@ -1,14 +1,5 @@
 [ {
   "@id" : "_:genid10",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
-  } ]
-}, {
-  "@id" : "_:genid11",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -16,15 +7,6 @@
     }, {
       "@id" : "https://cdm.ovh/rsm/topology/topo#NonNavigability"
     } ]
-  } ]
-}, {
-  "@id" : "_:genid14",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
   } ]
 }, {
   "@id" : "_:genid7",
@@ -50,9 +32,6 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/elements/1.1/description",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/elements/1.1/relations",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/elements/1.1/source",
@@ -107,16 +86,13 @@
   "@id" : "http://www.w3.org/2001/XMLSchema#double",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
 }, {
-  "@id" : "http://www.w3.org/2002/07/owl#versionIRI",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
   "@id" : "http://www.w3.org/2004/02/skos/core#definition",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature",
+  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -130,7 +106,7 @@
     "@value" : "A discrete spatial phenomenon in the CDM universe of discourse."
   } ]
 }, {
-  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry",
+  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/elements/1.1/source" : [ {
     "@language" : "en",
@@ -156,7 +132,7 @@
     "@value" : "Geometry"
   } ]
 }, {
-  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf",
+  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -167,24 +143,24 @@
     "@value" : "geometry of"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry"
+    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "inverse of hasGeometry"
   } ]
 }, {
-  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry",
+  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"
+    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "has geometry"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry"
+    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.opengis.net/ont/geosparql#hasGeometry"
@@ -194,7 +170,7 @@
     "@value" : "A spatial representation for a given Feature. As in GeoSPARQL, a feature can be associated with more than one geometry (valid at different times, or provided by different surveys...)."
   } ]
 }, {
-  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength",
+  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid7"
@@ -214,7 +190,7 @@
     "@value" : "Length (in meter) of a Linear Element."
   } ]
 }, {
-  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry",
+  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -223,17 +199,17 @@
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.opengis.net/ont/geosparql#hasDefaultGeometry"
   }, {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry"
+    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf"
+    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry. Takes into account SOSA/SSN viewpoint, i.e. there can be more than one default geometry (e.g. valid at different times)."
   } ]
 }, {
-  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength",
+  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topology#LinearElement"
@@ -246,25 +222,29 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#double"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength"
+    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@value" : "This length is assumed to be derived from the chosen Nominal Geometry.The Nominal Metric Length is supposed to be used for conversions between linear referencing methods \"absolute\" (distance along, e.g. used in CCS/TMS data model) and \"interpolation\" (intrinsic coordinates, with values 0 to 1, used in RSM and others)."
+    "@value" : "This length is assumed to be derived from the chosen Nominal Geometry.\r\n\r\nThe Nominal Metric Length is supposed to be used for conversions between linear referencing methods \"absolute\" (distance along, e.g. used in CCS/TMS data model) and \"interpolation\" (intrinsic coordinates, with values 0 to 1, used in RSM and others)."
   } ]
 }, {
-  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf",
+  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "nominal geometry of"
   } ]
 }, {
+  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
   "@id" : "https://cdm.ovh/rsm/localisation/localisation#LinearLocation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"
-  }, {
-    "@id" : "_:genid10"
+    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://cdm.ovh/rsm/topology/topology#LinearElement"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo",
@@ -302,7 +282,7 @@
     "@value" : "EUPL 1.2; see https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/eupl_v1.2_en.pdf"
   } ],
   "http://www.w3.org/2002/07/owl#imports" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter"
+    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/1.0rc4/topo"
@@ -321,27 +301,27 @@
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#BoundaryElement",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities."
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Boundary element"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#LinearElement"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities."
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#Connection",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as \"adjacency\", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Connection"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as \"adjacency\", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like."
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#LinearElement",
@@ -375,6 +355,10 @@
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#Navigability",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "a (reified) relation between two ports of two distinct net elements."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Navigability"
@@ -384,10 +368,6 @@
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#NonNavigability"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "a (reified) relation between two ports of two distinct net elements."
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#NavigabilityRelation",
@@ -397,7 +377,7 @@
     "@value" : "Navigability relation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid11"
+    "@id" : "_:genid10"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#NetElement",
@@ -487,6 +467,10 @@
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#connectsPort",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "This object property points to (at least two) ports that share a connection relationship.\n\nIt is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#Connection"
   } ],
@@ -499,10 +483,6 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#hasConnection"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "This object property points to (at least two) ports that share a connection relationship.\n\nIt is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#fromExitPort",
@@ -523,13 +503,13 @@
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#hasConnection",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "has connection"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#leadsTo",
@@ -758,10 +738,7 @@
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topology#LinearElement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid14"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "https://vocab.org/vann/preferredNamespacePrefix",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]

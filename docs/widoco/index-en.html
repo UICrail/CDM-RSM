@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cdm.ovh/rsm/topology/topo","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cdm.ovh/rsm/topology/topo","name":"RSM topology", "headline":"Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.", "dateReleased":"Wed Dec 24 14:09:56 UTC 2025", "version":"1.0rc4 - additions and corrections on December 2025
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cdm.ovh/rsm/topology/topo","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cdm.ovh/rsm/topology/topo","name":"RSM topology", "headline":"Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.", "dateReleased":"Thu Dec 25 11:56:32 UTC 2025", "version":"1.0rc4 - additions and corrections on December 2025
 
 ADDED : reified port connections and navigabilities, last available in RC1, are restored (with some changed identifiers).
 
@@ -88,7 +88,7 @@ CORRECTED : corrected spelling errors, removed brackets in labels or comments, u
 <dd>Pierre Tane, UIC</dd>
 
 <dt>Imported Ontologies:</dt>
-<dd><a href="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter">geosparql_adapter</a></dd>
+<dd><a href="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad">geo_ad</a></dd>
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.example.org" target="_blank"><img src="https://img.shields.io/badge/License-EUPL%201.2;%20see%20https://interoperable_europe.ec.europa.eu/sites/default/files/custom_page/attachment/eupl_v1.2_en.pdf-blue.svg" alt="http://insertlicenseURIhere.example.org" /></a>
 </dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
@@ -131,21 +131,15 @@ This ontology has the following classes and properties.</span>
       <a href="#Connection" title="https://cdm.ovh/rsm/topology/topo#Connection">Connection</a>
    </li>
    <li>
-      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"
-         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature">Feature</a>
+      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"
+         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature">Feature</a>
    </li>
    <li>
-      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry"
-         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry">Geometry</a>
+      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry"
+         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry">Geometry</a>
    </li>
    <li>
       <a href="#LinearElement" title="https://cdm.ovh/rsm/topology/topo#LinearElement">Linear element</a>
-   </li>
-   <li>
-      <a href="#logy#LinearElement"
-         title="https://cdm.ovh/rsm/topology/topology#LinearElement">
-         <span>Linear Element</span>
-      </a>
    </li>
    <li>
       <a href="#https://cdm.ovh/rsm/localisation/localisation#LinearLocation"
@@ -194,8 +188,8 @@ This ontology has the following classes and properties.</span>
       <a href="#fromExitPort" title="https://cdm.ovh/rsm/topology/topo#fromExitPort">from exit port</a>
    </li>
    <li>
-      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf"
-         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf">geometry of</a>
+      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf"
+         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf">geometry of</a>
    </li>
    <li>
       <a href="#hasConnection" title="https://cdm.ovh/rsm/topology/topo#hasConnection">has connection</a>
@@ -207,12 +201,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry"
-         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry">has geometry</a>
+      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry"
+         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry">has geometry</a>
    </li>
    <li>
-      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry"
-         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry">has nominal geometry</a>
+      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry"
+         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry">has nominal geometry</a>
    </li>
    <li>
       <a href="#http://www.opengis.net/ont/geosparql#hasGeometry" title="http://www.opengis.net/ont/geosparql#hasGeometry">hasGeometry</a>
@@ -247,8 +241,8 @@ This ontology has the following classes and properties.</span>
          title="https://cdm.ovh/rsm/topology/topo#navigableToTransitive">navigable to transitive</a>
    </li>
    <li>
-      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf"
-         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf">nominal geometry of</a>
+      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf"
+         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf">nominal geometry of</a>
    </li>
    <li>
       <a href="#nonNavigableFrom"
@@ -282,12 +276,12 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength"
-         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength">has metric length</a>
+      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength"
+         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength">has metric length</a>
    </li>
    <li>
-      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength"
-         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength">has nominal metric length</a>
+      <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength"
+         title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength">has nominal metric length</a>
    </li>
 </ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -343,11 +337,6 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#http://purl.org/dc/elements/1.1/relations" title="http://purl.org/dc/elements/1.1/relations">
-         <span>relations</span>
-      </a>
-   </li>
-   <li>
       <a href="#http://purl.org/dc/elements/1.1/source" title="http://purl.org/dc/elements/1.1/source">
          <span>source</span>
       </a>
@@ -360,11 +349,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#http://purl.org/dc/elements/1.1/type" title="http://purl.org/dc/elements/1.1/type">
          <span>type</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://www.w3.org/2002/07/owl#versionIRI" title="http://www.w3.org/2002/07/owl#versionIRI">
-         <span>version I R I</span>
       </a>
    </li>
 </ul><iframe src="webvowl/index.html"></iframe> 
@@ -389,10 +373,9 @@ This section provides details for each class and property defined by RSM topolog
  <ul class="hlist">
   <li><a href="#BoundaryElement" title="https://cdm.ovh/rsm/topology/topo#BoundaryElement">Boundary element</a></li>
   <li><a href="#Connection" title="https://cdm.ovh/rsm/topology/topo#Connection">Connection</a></li>
-  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature">Feature</a></li>
-  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry">Geometry</a></li>
+  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature">Feature</a></li>
+  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry">Geometry</a></li>
   <li><a href="#LinearElement" title="https://cdm.ovh/rsm/topology/topo#LinearElement">Linear element</a></li>
-  <li><a href="#logy#LinearElement" title="https://cdm.ovh/rsm/topology/topology#LinearElement"> <span>Linear Element</span> </a></li>
   <li><a href="#https://cdm.ovh/rsm/localisation/localisation#LinearLocation" title="https://cdm.ovh/rsm/localisation/localisation#LinearLocation"> <span>Linear Location</span> </a></li>
   <li><a href="#ListedPort" title="https://cdm.ovh/rsm/topology/topo#ListedPort">Listed port</a></li>
   <li><a href="#Navigability" title="https://cdm.ovh/rsm/topology/topo#Navigability">Navigability</a></li>
@@ -432,9 +415,9 @@ This section provides details for each class and property defined by RSM topolog
    </dd>
   </dl>
  </div>
- <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature">
+ <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature">
   <h3>Feature<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature</p>
   <div class="comment">
    <span class="markdown">A discrete spatial phenomenon in the CDM universe of discourse.</span>
   </div>
@@ -449,19 +432,19 @@ This section provides details for each class and property defined by RSM topolog
     has sub-classes
    </dt>
    <dd>
-    <a href="#https://cdm.ovh/rsm/localisation/localisation#LinearLocation" title="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">Linear Location</a> <sup class="type-c" title="class">c</sup>, <a href="#NetElement" title="https://cdm.ovh/rsm/topology/topo#NetElement">Net element</a> <sup class="type-c" title="class">c</sup>, <a href="#Port" title="https://cdm.ovh/rsm/topology/topo#Port">Port</a> <sup class="type-c" title="class">c</sup>
+    <a href="#https://cdm.ovh/rsm/localisation/localisation#LinearLocation" title="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">Linear Location</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry">has geometry</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry">has geometry</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
- <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry">
+ <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry">
   <h3>Geometry<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</p>
   <div class="comment">
    <span class="markdown">The reference system can be geographic, geodetic, cartesian (e.g. engineering coordinate system), and its definition may be part of the WKT or GML string. See OGC documentation.</span>
   </div>
@@ -479,7 +462,7 @@ This section provides details for each class and property defined by RSM topolog
     is in range of
    </dt>
    <dd>
-    <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry">has geometry</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry">has geometry</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -513,22 +496,6 @@ This section provides details for each class and property defined by RSM topolog
    </dd>
   </dl>
  </div>
- <div class="entity" id="logy#LinearElement">
-  <h3>Linear Element<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topology#LinearElement</p>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd></dd>
-   <dt>
-    is in domain of
-   </dt>
-   <dd>
-    <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength">has metric length</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength">has nominal metric length</a> <sup class="type-dp" title="data property">dp</sup>
-   </dd>
-  </dl>
- </div>
  <div class="entity" id="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">
   <h3>Linear Location<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#LinearLocation</p>
@@ -537,13 +504,19 @@ This section provides details for each class and property defined by RSM topolog
     has super-classes
    </dt>
    <dd>
-    <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature">Feature</a> <sup class="type-c" title="class">c</sup>
+    <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature">Feature</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength">has metric length</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength">has metric length</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="https://cdm.ovh/rsm/topology/topology#LinearElement" target="_blank" title="https://cdm.ovh/rsm/topology/topology#LinearElement">Linear Element</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -616,7 +589,7 @@ This section provides details for each class and property defined by RSM topolog
     has super-classes
    </dt>
    <dd>
-    <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature">Feature</a> <sup class="type-c" title="class">c</sup>
+    <a href="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature" target="_blank" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature">Feature</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has sub-classes
@@ -694,7 +667,7 @@ This section provides details for each class and property defined by RSM topolog
     has super-classes
    </dt>
    <dd>
-    <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature">Feature</a> <sup class="type-c" title="class">c</sup>
+    <a href="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature" target="_blank" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature">Feature</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has sub-classes
@@ -729,11 +702,11 @@ This section provides details for each class and property defined by RSM topolog
   <li><a href="#connectedWithTransitive" title="https://cdm.ovh/rsm/topology/topo#connectedWithTransitive">connected with transitive</a></li>
   <li><a href="#connectsPort" title="https://cdm.ovh/rsm/topology/topo#connectsPort">connects port</a></li>
   <li><a href="#fromExitPort" title="https://cdm.ovh/rsm/topology/topo#fromExitPort">from exit port</a></li>
-  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf">geometry of</a></li>
+  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf">geometry of</a></li>
   <li><a href="#hasConnection" title="https://cdm.ovh/rsm/topology/topo#hasConnection">has connection</a></li>
   <li><a href="#http://www.opengis.net/ont/geosparql#hasDefaultGeometry" title="http://www.opengis.net/ont/geosparql#hasDefaultGeometry"> <span>has Default Geometry</span> </a></li>
-  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry">has geometry</a></li>
-  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry">has nominal geometry</a></li>
+  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry">has geometry</a></li>
+  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry">has nominal geometry</a></li>
   <li><a href="#http://www.opengis.net/ont/geosparql#hasGeometry" title="http://www.opengis.net/ont/geosparql#hasGeometry">hasGeometry</a></li>
   <li><a href="#leadsTo" title="https://cdm.ovh/rsm/topology/topo#leadsTo">leads to</a></li>
   <li><a href="#leadsToTransitive" title="https://cdm.ovh/rsm/topology/topo#leadsToTransitive">leads to transitive</a></li>
@@ -743,7 +716,7 @@ This section provides details for each class and property defined by RSM topolog
   <li><a href="#navigableFromTransitive" title="https://cdm.ovh/rsm/topology/topo#navigableFromTransitive">navigable from transitive</a></li>
   <li><a href="#navigableTo" title="https://cdm.ovh/rsm/topology/topo#navigableTo">navigable to</a></li>
   <li><a href="#navigableToTransitive" title="https://cdm.ovh/rsm/topology/topo#navigableToTransitive">navigable to transitive</a></li>
-  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf">nominal geometry of</a></li>
+  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf">nominal geometry of</a></li>
   <li><a href="#nonNavigableFrom" title="https://cdm.ovh/rsm/topology/topo#nonNavigableFrom">non navigable from</a></li>
   <li><a href="#nonNavigableTo" title="https://cdm.ovh/rsm/topology/topo#nonNavigableTo">non navigable to</a></li>
   <li><a href="#onElement" title="https://cdm.ovh/rsm/topology/topo#onElement">on element</a></li>
@@ -857,9 +830,9 @@ This section provides details for each class and property defined by RSM topolog
    </dl>
   </div>
  </div>
- <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf">
+ <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf">
   <h3>geometry of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf</p>
   <div class="comment">
    <span class="markdown">GeoSPARQL does not define this inverse property.</span>
   </div>
@@ -873,7 +846,7 @@ This section provides details for each class and property defined by RSM topolog
      is inverse of
     </dt>
     <dd>
-     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry">has geometry</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry">has geometry</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -911,14 +884,14 @@ This section provides details for each class and property defined by RSM topolog
      has sub-properties
     </dt>
     <dd>
-     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry">has nominal geometry</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry">has nominal geometry</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry">
+ <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry">
   <h3>has geometry<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry</p>
   <div class="comment">
    <span class="markdown">A spatial representation for a given Feature. As in GeoSPARQL, a feature can be associated with more than one geometry (valid at different times, or provided by different surveys...).</span>
   </div>
@@ -935,32 +908,32 @@ This section provides details for each class and property defined by RSM topolog
      has sub-properties
     </dt>
     <dd>
-     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry">has nominal geometry</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry">has nominal geometry</a> <sup class="type-op" title="object property">op</sup>
     </dd>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature">Feature</a> <sup class="type-c" title="class">c</sup>
+     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature">Feature</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>
+     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry">Geometry</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      is inverse of
     </dt>
     <dd>
-     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#geometryOf">geometry of</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf">geometry of</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry">
+ <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry">
   <h3>has nominal geometry<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry</p>
   <div class="comment">
    <span class="markdown">The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry. Takes into account SOSA/SSN viewpoint, i.e. there can be more than one default geometry (e.g. valid at different times).</span>
   </div>
@@ -971,13 +944,13 @@ This section provides details for each class and property defined by RSM topolog
      has super-properties
     </dt>
     <dd>
-     <a href="#http://www.opengis.net/ont/geosparql#hasDefaultGeometry" title="http://www.opengis.net/ont/geosparql#hasDefaultGeometry">has Default Geometry</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry">has geometry</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#http://www.opengis.net/ont/geosparql#hasDefaultGeometry" title="http://www.opengis.net/ont/geosparql#hasDefaultGeometry">has Default Geometry</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry">has geometry</a> <sup class="type-op" title="object property">op</sup>
     </dd>
     <dt>
      is inverse of
     </dt>
     <dd>
-     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf">nominal geometry of</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf">nominal geometry of</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -991,7 +964,7 @@ This section provides details for each class and property defined by RSM topolog
      has sub-properties
     </dt>
     <dd>
-     <a href="#http://www.opengis.net/ont/geosparql#hasDefaultGeometry" title="http://www.opengis.net/ont/geosparql#hasDefaultGeometry">has Default Geometry</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasGeometry">has geometry</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#http://www.opengis.net/ont/geosparql#hasDefaultGeometry" title="http://www.opengis.net/ont/geosparql#hasDefaultGeometry">has Default Geometry</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry">has geometry</a> <sup class="type-op" title="object property">op</sup>
     </dd>
     <dt>
      has domain
@@ -1182,9 +1155,9 @@ This section provides details for each class and property defined by RSM topolog
    </dl>
   </div>
  </div>
- <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf">
+ <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf">
   <h3>nominal geometry of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#nominalGeometryOf</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf</p>
   <div class="description">
    <p><strong>has characteristics: </strong> functional, inverse functional</p>
    <dl>
@@ -1192,7 +1165,7 @@ This section provides details for each class and property defined by RSM topolog
      is inverse of
     </dt>
     <dd>
-     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalGeometry">has nominal geometry</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry">has nominal geometry</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -1370,8 +1343,8 @@ This section provides details for each class and property defined by RSM topolog
  <h3 id="dataproperties-headline" class="list">Data Properties</h3>
  <ul class="hlist">
   <li><a href="#http://www.opengis.net/ont/geosparql#hasMetricLength" title="http://www.opengis.net/ont/geosparql#hasMetricLength"> <span>has Metric Length</span> </a></li>
-  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength">has metric length</a></li>
-  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength">has nominal metric length</a></li>
+  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength">has metric length</a></li>
+  <li><a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength">has nominal metric length</a></li>
  </ul>
  <div class="entity" id="http://www.opengis.net/ont/geosparql#hasMetricLength">
   <h3>has Metric Length<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
@@ -1382,7 +1355,7 @@ This section provides details for each class and property defined by RSM topolog
      has sub-properties
     </dt>
     <dd>
-     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength">has metric length</a> <sup class="type-dp" title="data property">dp</sup>
+     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength">has metric length</a> <sup class="type-dp" title="data property">dp</sup>
     </dd>
     <dt>
      has domain
@@ -1399,9 +1372,9 @@ This section provides details for each class and property defined by RSM topolog
    </dl>
   </div>
  </div>
- <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength">
+ <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength">
   <h3>has metric length<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength</p>
   <div class="comment">
    <span class="markdown">Length (in meter) of a Linear Element.</span>
   </div>
@@ -1417,13 +1390,13 @@ This section provides details for each class and property defined by RSM topolog
      has sub-properties
     </dt>
     <dd>
-     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength">has nominal metric length</a> <sup class="type-dp" title="data property">dp</sup>
+     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength">has nominal metric length</a> <sup class="type-dp" title="data property">dp</sup>
     </dd>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#https://cdm.ovh/rsm/localisation/localisation#LinearLocation" title="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">Linear Location</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#logy#LinearElement" title="https://cdm.ovh/rsm/topology/topology#LinearElement">Linear Element</a> <sup class="type-c" title="class">c</sup>
+     <a href="#https://cdm.ovh/rsm/localisation/localisation#LinearLocation" title="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">Linear Location</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="https://cdm.ovh/rsm/topology/topology#LinearElement" target="_blank" title="https://cdm.ovh/rsm/topology/topology#LinearElement">Linear Element</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -1434,11 +1407,11 @@ This section provides details for each class and property defined by RSM topolog
    </dl>
   </div>
  </div>
- <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength">
+ <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength">
   <h3>has nominal metric length<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasNominalMetricLength</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength</p>
   <div class="comment">
-   <span class="markdown">This length is assumed to be derived from the chosen Nominal Geometry.The Nominal Metric Length is supposed to be used for conversions between linear referencing methods "absolute" (distance along, e.g. used in CCS/TMS data model) and "interpolation" (intrinsic coordinates, with values 0 to 1, used in RSM and others).</span>
+   <span class="markdown">This length is assumed to be derived from the chosen Nominal Geometry. The Nominal Metric Length is supposed to be used for conversions between linear referencing methods "absolute" (distance along, e.g. used in CCS/TMS data model) and "interpolation" (intrinsic coordinates, with values 0 to 1, used in RSM and others).</span>
   </div>
   <div class="description">
    <dl>
@@ -1446,13 +1419,13 @@ This section provides details for each class and property defined by RSM topolog
      has super-properties
     </dt>
     <dd>
-     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#hasMetricLength">has metric length</a> <sup class="type-dp" title="data property">dp</sup>
+     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength">has metric length</a> <sup class="type-dp" title="data property">dp</sup>
     </dd>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#logy#LinearElement" title="https://cdm.ovh/rsm/topology/topology#LinearElement">Linear Element</a> <sup class="type-c" title="class">c</sup>
+     <a href="https://cdm.ovh/rsm/topology/topology#LinearElement" target="_blank" title="https://cdm.ovh/rsm/topology/topology#LinearElement">Linear Element</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -1476,11 +1449,9 @@ This section provides details for each class and property defined by RSM topolog
   <li><a href="#http://www.w3.org/2004/02/skos/core#prefLabel" title="http://www.w3.org/2004/02/skos/core#prefLabel"> <span>pref Label</span> </a></li>
   <li><a href="#https://vocab.org/vann/preferredNamespacePrefix" title="https://vocab.org/vann/preferredNamespacePrefix"> <span>preferred Namespace Prefix</span> </a></li>
   <li><a href="#https://vocab.org/vann/preferredNamespaceURI" title="https://vocab.org/vann/preferredNamespaceURI"> <span>preferred Namespace U R I</span> </a></li>
-  <li><a href="#http://purl.org/dc/elements/1.1/relations" title="http://purl.org/dc/elements/1.1/relations"> <span>relations</span> </a></li>
   <li><a href="#http://purl.org/dc/elements/1.1/source" title="http://purl.org/dc/elements/1.1/source"> <span>source</span> </a></li>
   <li><a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title"> <span>title</span> </a></li>
   <li><a href="#http://purl.org/dc/elements/1.1/type" title="http://purl.org/dc/elements/1.1/type"> <span>type</span> </a></li>
-  <li><a href="#http://www.w3.org/2002/07/owl#versionIRI" title="http://www.w3.org/2002/07/owl#versionIRI"> <span>version I R I</span> </a></li>
  </ul>
  <div class="entity" id="http://purl.org/dc/elements/1.1/abstract">
   <h3>abstract<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
@@ -1522,10 +1493,6 @@ This section provides details for each class and property defined by RSM topolog
   <h3>preferred Namespace U R I<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://vocab.org/vann/preferredNamespaceURI</p>
  </div>
- <div class="entity" id="http://purl.org/dc/elements/1.1/relations">
-  <h3>relations<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/relations</p>
- </div>
  <div class="entity" id="http://purl.org/dc/elements/1.1/source">
   <h3>source<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/source</p>
@@ -1537,10 +1504,6 @@ This section provides details for each class and property defined by RSM topolog
  <div class="entity" id="http://purl.org/dc/elements/1.1/type">
   <h3>type<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/type</p>
- </div>
- <div class="entity" id="http://www.w3.org/2002/07/owl#versionIRI">
-  <h3>version I R I<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> http://www.w3.org/2002/07/owl#versionIRI</p>
  </div>
 </div><div id="legend">
 <h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
