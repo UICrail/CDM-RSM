@@ -348,15 +348,6 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 # 
 # https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings
 <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
-_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid9 .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/topology/topology#LinearElement> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> <http://www.w3.org/2000/01/rdf-schema#comment> "\" Abstract\"  class, introduced solely for the purpose of defining the domain of hasMetricLength in an OWL2-RL compatible way."@en .
 <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> <http://www.w3.org/2000/01/rdf-schema#label> "Linear things"@en .
 # 
@@ -367,7 +358,6 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> .
 <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> .
-<https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2002/07/owl#disjointWith> <https://cdm.ovh/rsm/topology/topology#LinearElement> .
 # 
 # https://cdm.ovh/rsm/topology/topo#BoundaryElement
 <https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -402,15 +392,15 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://cdm.ovh/rsm/topology/topo#NavigabilityRelation
 <https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
-_:genid10 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/topology/topo#NonNavigability> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/topology/topo#Navigability> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/topology/topo#NonNavigability> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/topology/topo#Navigability> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> <http://www.w3.org/2000/01/rdf-schema#label> "Navigability relation"@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#NetElement
