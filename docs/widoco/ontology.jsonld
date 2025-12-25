@@ -132,6 +132,20 @@
     "@value" : "Geometry"
   } ]
 }, {
+  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "\" Abstract\"  class, introduced solely for the purpose of defining the domain of hasMetricLength in an OWL2-RL compatible way."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Linear things"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid7"
+  } ]
+}, {
   "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -173,7 +187,7 @@
   "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid7"
+    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -242,6 +256,8 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"
+  }, {
+    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topology#LinearElement"
@@ -738,7 +754,10 @@
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topology#LinearElement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"
+  } ]
 }, {
   "@id" : "https://vocab.org/vann/preferredNamespacePrefix",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
