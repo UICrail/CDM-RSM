@@ -315,6 +315,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength
 <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> .
+<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topology#LinearElement> .
 <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
 <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#label> "has nominal metric length"@en .
