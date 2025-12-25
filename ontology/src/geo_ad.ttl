@@ -184,11 +184,6 @@ geo_ad:Geometry rdf:type owl:Class ;
 
 ###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings
 geo_ad:LinearThings rdf:type owl:Class ;
-                    rdfs:subClassOf [ rdf:type owl:Class ;
-                                      owl:unionOf ( loca:LinearLocation
-                                                    topo:LinearElement
-                                                  )
-                                    ] ;
                     rdfs:comment "\" Abstract\"  class, introduced solely for the purpose of defining the domain of hasMetricLength in an OWL2-RL compatible way."@en ;
                     rdfs:label "Linear things"@en .
 
@@ -196,8 +191,7 @@ geo_ad:LinearThings rdf:type owl:Class ;
 ###  https://cdm.ovh/rsm/localisation/localisation#LinearLocation
 loca:LinearLocation rdf:type owl:Class ;
                     rdfs:subClassOf geo_ad:Feature ,
-                                    geo_ad:LinearThings ;
-                    owl:disjointWith topo:LinearElement .
+                                    geo_ad:LinearThings .
 
 
 ###  https://cdm.ovh/rsm/topology/topology#LinearElement

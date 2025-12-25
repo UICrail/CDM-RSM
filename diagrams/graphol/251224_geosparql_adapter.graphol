@@ -857,9 +857,6 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
           <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings</iri>
           <label y="270" width="110" x="-150" customSize="0" height="23" size="12"/>
         </node>
-        <node id="n39" type="disjoint-union" color="#000000">
-          <geometry y="270" width="50" x="-270" height="30"/>
-        </node>
         <node id="n6" type="concept" color="#fcfcfc">
           <geometry y="-50" width="110" x="-370" height="50"/>
           <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature</iri>
@@ -992,21 +989,17 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
           <point y="270" x="-40"/>
           <point y="270" x="-150"/>
         </edge>
-        <edge id="e61" type="equivalence" source="n38" target="n39">
-          <point y="270" x="-150"/>
-          <point y="270" x="-270"/>
-        </edge>
-        <edge id="e62" type="input" source="n29" target="n39">
-          <point y="200" x="-370"/>
-          <point y="270" x="-270"/>
-        </edge>
-        <edge id="e63" type="input" source="n32" target="n39">
-          <point y="350" x="-360"/>
-          <point y="270" x="-270"/>
-        </edge>
         <edge id="e64" type="inclusion" source="n29" target="n6">
           <point y="200" x="-370"/>
           <point y="-50" x="-370"/>
+        </edge>
+        <edge id="e65" type="inclusion" source="n29" target="n38">
+          <point y="200" x="-370"/>
+          <point y="270" x="-150"/>
+        </edge>
+        <edge id="e66" type="inclusion" source="n32" target="n38">
+          <point y="350" x="-360"/>
+          <point y="270" x="-150"/>
         </edge>
       </diagram>
       <diagram name="inverse properties" width="5000" height="5000">
