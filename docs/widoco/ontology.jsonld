@@ -1,21 +1,11 @@
 [ {
-  "@id" : "_:genid10",
+  "@id" : "_:genid7",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
       "@id" : "https://cdm.ovh/rsm/topology/topo#Navigability"
     }, {
       "@id" : "https://cdm.ovh/rsm/topology/topo#NonNavigability"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid7",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#LinearLocation"
-    }, {
-      "@id" : "https://cdm.ovh/rsm/topology/topology#LinearElement"
     } ]
   } ]
 }, {
@@ -141,9 +131,6 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Linear things"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid7"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf",
@@ -258,9 +245,6 @@
     "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"
   }, {
     "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"
-  } ],
-  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
-    "@id" : "https://cdm.ovh/rsm/topology/topology#LinearElement"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo",
@@ -393,7 +377,7 @@
     "@value" : "Navigability relation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid10"
+    "@id" : "_:genid7"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#NetElement",

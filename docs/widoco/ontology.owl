@@ -610,14 +610,6 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
 
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings">
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#LinearLocation"/>
-                    <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">&quot; Abstract&quot;  class, introduced solely for the purpose of defining the domain of hasMetricLength in an OWL2-RL compatible way.</rdfs:comment>
         <rdfs:label xml:lang="en">Linear things</rdfs:label>
     </owl:Class>
@@ -637,7 +629,6 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
     <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"/>
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"/>
-        <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
     </owl:Class>
     
 

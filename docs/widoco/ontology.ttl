@@ -384,11 +384,6 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
 
 ###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings
 <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> rdf:type owl:Class ;
-                                                                     rdfs:subClassOf [ rdf:type owl:Class ;
-                                                                                       owl:unionOf ( <https://cdm.ovh/rsm/localisation/localisation#LinearLocation>
-                                                                                                     <https://cdm.ovh/rsm/topology/topology#LinearElement>
-                                                                                                   )
-                                                                                     ] ;
                                                                      rdfs:comment "\" Abstract\"  class, introduced solely for the purpose of defining the domain of hasMetricLength in an OWL2-RL compatible way."@en ;
                                                                      rdfs:label "Linear things"@en .
 
@@ -400,8 +395,7 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
 ###  https://cdm.ovh/rsm/localisation/localisation#LinearLocation
 <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> rdf:type owl:Class ;
                                                                rdfs:subClassOf <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> ,
-                                                                               <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> ;
-                                                               owl:disjointWith <https://cdm.ovh/rsm/topology/topology#LinearElement> .
+                                                                               <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#BoundaryElement

@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cdm.ovh/rsm/topology/topo","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cdm.ovh/rsm/topology/topo","name":"RSM topology", "headline":"Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.", "dateReleased":"Thu Dec 25 14:36:37 UTC 2025", "version":"1.0rc4 - additions and corrections on December 2025
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cdm.ovh/rsm/topology/topo","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cdm.ovh/rsm/topology/topo","name":"RSM topology", "headline":"Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.", "dateReleased":"Thu Dec 25 15:55:27 UTC 2025", "version":"1.0rc4 - additions and corrections on December 2025
 
 ADDED : reified port connections and navigabilities, last available in RC1, are restored (with some changed identifiers).
 
@@ -524,12 +524,6 @@ This section provides details for each class and property defined by RSM topolog
    <dd>
     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength">has nominal metric length</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
-   <dt>
-    is disjoint with
-   </dt>
-   <dd>
-    <a href="#https://cdm.ovh/rsm/localisation/localisation#LinearLocation" title="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">Linear Location</a> <sup class="type-c" title="class">c</sup>
-   </dd>
   </dl>
  </div>
  <div class="entity" id="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">
@@ -542,12 +536,6 @@ This section provides details for each class and property defined by RSM topolog
    <dd>
     <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature">Feature</a> <sup class="type-c" title="class">c</sup>, <a href="#https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings">Linear things</a> <sup class="type-c" title="class">c</sup>
    </dd>
-   <dt>
-    is disjoint with
-   </dt>
-   <dd>
-    <a href="#logy#LinearElement" title="https://cdm.ovh/rsm/topology/topology#LinearElement">Linear Element</a> <sup class="type-c" title="class">c</sup>
-   </dd>
   </dl>
  </div>
  <div class="entity" id="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings">
@@ -557,10 +545,6 @@ This section provides details for each class and property defined by RSM topolog
    <span class="markdown">" Abstract" class, introduced solely for the purpose of defining the domain of hasMetricLength in an OWL2-RL compatible way.</span>
   </div>
   <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd></dd>
    <dt>
     has sub-classes
    </dt>
