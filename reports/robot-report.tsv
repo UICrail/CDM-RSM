@@ -30,3 +30,4 @@ WARN	missing_definition	https://cdm.ovh/rsm/topology/topo#port_0	IAO:0000115
 WARN	missing_definition	https://cdm.ovh/rsm/topology/topo#port_1	IAO:0000115	
 WARN	missing_definition	https://cdm.ovh/rsm/topology/topo#toExitPort	IAO:0000115	
 INFO	missing_superclass	https://cdm.ovh/rsm/topology/topo#Connection	rdfs:subClassOf	
+INFO	missing_superclass	https://cdm.ovh/rsm/topology/topo#NavigabilityRelation	rdfs:subClassOf	
