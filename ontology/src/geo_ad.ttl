@@ -144,6 +144,7 @@ geo_ad:hasMetricLength rdf:type owl:DatatypeProperty ;
 ###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength
 geo_ad:hasNominalMetricLength rdf:type owl:DatatypeProperty ;
                               rdfs:subPropertyOf geo_ad:hasMetricLength ;
+                              rdf:type owl:FunctionalProperty ;
                               rdfs:domain topo:LinearElement ;
                               rdfs:range xsd:double ;
                               rdfs:label "has nominal metric length"@en ;
