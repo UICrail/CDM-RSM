@@ -400,6 +400,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
 
     <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"/>
     </rdf:Description>
     
 
@@ -508,6 +509,14 @@ It is used for building the connectedWith properties. It can be a temporal objec
         <rdfs:label>Port</rdfs:label>
         <skos:definition xml:lang="en">Any place, at the boundary of a net element, that can be an entry and/or exit point for rolling stock. In the case of linear elements, there are exactly two ports. These may coincide (loop case) or be distinct (general case).</skos:definition>
     </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/topology/topology#LinearElement -->
+
+    <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topology#LinearElement">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"/>
+    </rdf:Description>
     
 
 
