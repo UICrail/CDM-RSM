@@ -1,14 +1,4 @@
 [ {
-  "@id" : "_:genid7",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://cdm.ovh/rsm/topology/topo#Navigability"
-    }, {
-      "@id" : "https://cdm.ovh/rsm/topology/topo#NonNavigability"
-    } ]
-  } ]
-}, {
   "@id" : "http://purl.org/dc/elements/1.1/abstract",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -375,9 +365,6 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Navigability relation"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid7"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#NetElement",
