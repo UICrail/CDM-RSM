@@ -434,14 +434,6 @@ It is used for building the connectedWith properties. It can be a temporal objec
     <!-- https://cdm.ovh/rsm/topology/topo#NavigabilityRelation -->
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation">
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#Navigability"/>
-                    <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#NonNavigability"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Navigability relation</rdfs:label>
     </owl:Class>
     

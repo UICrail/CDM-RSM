@@ -1365,9 +1365,9 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
           <label y="278" width="39" x="160" customSize="0" height="23" size="12">exists</label>
         </node>
         <node id="n10" type="concept" color="#fcfcfc">
-          <geometry y="450" width="110" x="100" height="50"/>
+          <geometry y="450" width="110" x="120" height="50"/>
           <iri>https://cdm.ovh/rsm/topology/topo#NonNavigability</iri>
-          <label y="450" width="110" x="100" customSize="0" height="23" size="12"/>
+          <label y="450" width="110" x="120" customSize="0" height="23" size="12"/>
         </node>
         <node id="n11" type="role-inverse" color="#fcfcfc">
           <geometry y="70" width="50" x="250" height="30"/>
@@ -1387,14 +1387,18 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
           <geometry y="370" width="50" x="250" height="30"/>
           <label y="370" width="23" x="250" customSize="0" height="23" size="12"/>
         </node>
+        <node id="n16" type="complement" color="#fcfcfc">
+          <geometry y="450" width="50" x="-10" height="30"/>
+          <label y="450" width="25" x="-10" customSize="0" height="23" size="12"/>
+        </node>
         <node id="n2" type="domain-restriction" color="#fcfcfc">
           <geometry y="150" width="20" x="160" height="20"/>
           <label y="128" width="39" x="160" customSize="0" height="23" size="12">exists</label>
         </node>
         <node id="n3" type="concept" color="#fcfcfc">
-          <geometry y="450" width="110" x="-30" height="50"/>
+          <geometry y="450" width="110" x="-130" height="50"/>
           <iri>https://cdm.ovh/rsm/topology/topo#Navigability</iri>
-          <label y="450" width="110" x="-30" customSize="0" height="23" size="12"/>
+          <label y="450" width="110" x="-130" customSize="0" height="23" size="12"/>
         </node>
         <node id="n4" type="range-restriction" color="#000000">
           <geometry y="300" width="20" x="340" height="20"/>
@@ -1415,12 +1419,9 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
           <label y="128" width="39" x="340" customSize="0" height="23" size="12">exists</label>
         </node>
         <node id="n8" type="concept" color="#fcfcfc">
-          <geometry y="220" width="135" x="40" height="50"/>
+          <geometry y="220" width="135" x="10" height="50"/>
           <iri>https://cdm.ovh/rsm/topology/topo#NavigabilityRelation</iri>
-          <label y="220" width="135" x="40" customSize="0" height="23" size="12"/>
-        </node>
-        <node id="n9" type="disjoint-union" color="#000000">
-          <geometry y="360" width="50" x="40" height="30"/>
+          <label y="220" width="135" x="10" customSize="0" height="23" size="12"/>
         </node>
         <edge id="e0" type="input" source="n0" target="n7">
           <point y="150" x="250"/>
@@ -1429,18 +1430,6 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
         <edge id="e1" type="input" source="n0" target="n2">
           <point y="150" x="250"/>
           <point y="150" x="160"/>
-        </edge>
-        <edge id="e10" type="equivalence" source="n8" target="n9">
-          <point y="220" x="40"/>
-          <point y="360" x="40"/>
-        </edge>
-        <edge id="e12" type="input" source="n3" target="n9">
-          <point y="450" x="-30"/>
-          <point y="360" x="40"/>
-        </edge>
-        <edge id="e13" type="input" source="n10" target="n9">
-          <point y="450" x="100"/>
-          <point y="360" x="40"/>
         </edge>
         <edge id="e14" type="equivalence" source="n12" target="n11">
           <point y="-10" x="250"/>
@@ -1458,9 +1447,25 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
           <point y="450" x="250"/>
           <point y="370" x="250"/>
         </edge>
+        <edge id="e18" type="inclusion" source="n3" target="n8">
+          <point y="450" x="-130"/>
+          <point y="220" x="10"/>
+        </edge>
+        <edge id="e19" type="inclusion" source="n10" target="n8">
+          <point y="450" x="120"/>
+          <point y="220" x="10"/>
+        </edge>
         <edge id="e2" type="input" source="n6" target="n1">
           <point y="300" x="250"/>
           <point y="300" x="160"/>
+        </edge>
+        <edge id="e20" type="inclusion" source="n3" target="n16">
+          <point y="450" x="-130"/>
+          <point y="450" x="-10"/>
+        </edge>
+        <edge id="e21" type="input" source="n10" target="n16">
+          <point y="450" x="120"/>
+          <point y="450" x="-10"/>
         </edge>
         <edge id="e5" type="inclusion" source="n4" target="n5">
           <point y="300" x="340"/>
@@ -1476,11 +1481,11 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
         </edge>
         <edge id="e8" type="inclusion" source="n2" target="n8">
           <point y="150" x="160"/>
-          <point y="220" x="40"/>
+          <point y="220" x="10"/>
         </edge>
         <edge id="e9" type="inclusion" source="n1" target="n8">
           <point y="300" x="160"/>
-          <point y="220" x="40"/>
+          <point y="220" x="10"/>
         </edge>
       </diagram>
       <diagram name="topology" width="5000" height="5000">

@@ -307,11 +307,6 @@ topo:Navigability rdf:type owl:Class ;
 
 ###  https://cdm.ovh/rsm/topology/topo#NavigabilityRelation
 topo:NavigabilityRelation rdf:type owl:Class ;
-                          rdfs:subClassOf [ rdf:type owl:Class ;
-                                            owl:unionOf ( topo:Navigability
-                                                          topo:NonNavigability
-                                                        )
-                                          ] ;
                           rdfs:label "Navigability relation"@en .
 
 
