@@ -828,9 +828,8 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
           <iri>https://cdm.ovh/rsm/topology/topology#LinearElement</iri>
           <label y="350" width="140" x="-160" customSize="0" height="23" size="12"/>
         </node>
-        <node id="n33" type="union" color="#fcfcfc">
-          <geometry y="270" width="50" x="-40" height="30"/>
-          <label y="270" width="18" x="-40" customSize="0" height="23" size="12"/>
+        <node id="n35" type="disjoint-union" color="#000000">
+          <geometry y="270" width="50" x="-30" height="30"/>
         </node>
         <node id="n6" type="concept" color="#fcfcfc">
           <geometry y="-50" width="110" x="-230" height="50"/>
@@ -952,18 +951,6 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
           <point y="195" x="-230"/>
           <point y="-50" x="-230"/>
         </edge>
-        <edge id="e46" type="input" source="n29" target="n33">
-          <point y="220" x="-187"/>
-          <point y="270" x="-40"/>
-        </edge>
-        <edge id="e47" type="input" source="n32" target="n33">
-          <point y="350" x="-160"/>
-          <point y="270" x="-40"/>
-        </edge>
-        <edge id="e48" type="equivalence" source="n20" target="n33">
-          <point y="270" x="30"/>
-          <point y="270" x="-40"/>
-        </edge>
         <edge id="e49" type="inclusion" source="n27" target="n32">
           <point y="350" x="20"/>
           <point y="350" x="-160"/>
@@ -971,6 +958,18 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
         <edge id="e5" type="inclusion" source="n10" target="n7">
           <point y="-50" x="-10"/>
           <point y="-290" x="-10"/>
+        </edge>
+        <edge id="e50" type="inclusion" source="n20" target="n35">
+          <point y="270" x="30"/>
+          <point y="270" x="-30"/>
+        </edge>
+        <edge id="e51" type="input" source="n29" target="n35">
+          <point y="220" x="-187"/>
+          <point y="270" x="-30"/>
+        </edge>
+        <edge id="e52" type="input" source="n32" target="n35">
+          <point y="350" x="-160"/>
+          <point y="270" x="-30"/>
         </edge>
         <edge id="e6" type="inclusion" source="n9" target="n10">
           <point y="20" x="90"/>

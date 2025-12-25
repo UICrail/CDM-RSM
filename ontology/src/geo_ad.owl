@@ -290,26 +290,14 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
     </owl:Class>
     
 
 
     <!-- https://cdm.ovh/rsm/topology/topology#LinearElement -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topology#LinearElement">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
+    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
 </rdf:RDF>
 
 

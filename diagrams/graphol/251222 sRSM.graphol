@@ -3,7 +3,7 @@
   <project name="sRSM" version="https://cdm.ovh/rsm/topology/1.0rc4/topo">
     <ontology lang="en" addLabelFromUserInput="0" iri="https://cdm.ovh/rsm/topology/topo" addLabelFromSimpleName="0">
       <imports>
-        <import location="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter.owl" iri="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter" version="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter" isLocal="0"/>
+        <import location="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" iri="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" version="https://cdm.ovh/rsm/adapters/geosparql_adapter/0.6/geo_ad" isLocal="0"/>
       </imports>
       <prefixes>
         <prefix>
@@ -360,6 +360,30 @@
           <value>http://www.w3.org/2004/02/skos/core#definition</value>
         </iri>
         <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf</value>
+        </iri>
+        <iri>
           <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature</value>
         </iri>
         <iri>
@@ -533,7 +557,7 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Connection</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -593,7 +617,7 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Navigability</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -616,7 +640,7 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Navigability relation</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -653,7 +677,7 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Non navigability</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -762,7 +786,7 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>connects port</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -788,7 +812,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>from exit port</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -803,7 +827,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>has connection</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -873,7 +897,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Navigability relation from</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -888,7 +912,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>navigability relation to</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
