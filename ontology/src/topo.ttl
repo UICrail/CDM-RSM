@@ -150,7 +150,8 @@ topo:leadsTo rdf:type owl:ObjectProperty ;
 
 
 ###  https://cdm.ovh/rsm/topology/topo#leadsToTransitive
-topo:leadsToTransitive rdf:type owl:ObjectProperty ;
+topo:leadsToTransitive rdf:type owl:ObjectProperty ,
+                                owl:TransitiveProperty ;
                        rdfs:domain topo:NetElement ;
                        rdfs:range topo:NetElement ;
                        owl:propertyChainAxiom ( topo:port
@@ -195,7 +196,8 @@ topo:navigableTo rdf:type owl:ObjectProperty ;
 
 
 ###  https://cdm.ovh/rsm/topology/topo#navigableToTransitive
-topo:navigableToTransitive rdf:type owl:ObjectProperty ;
+topo:navigableToTransitive rdf:type owl:ObjectProperty ,
+                                    owl:TransitiveProperty ;
                            rdfs:domain topo:Port ;
                            rdfs:range topo:Port ;
                            rdfs:label "navigable to transitive"@en .
