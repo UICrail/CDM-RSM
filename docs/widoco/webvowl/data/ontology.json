@@ -658,7 +658,7 @@
     "comment" : {
       "en" : "GeoSPARQL does not define this inverse property."
     },
-    "attributes" : [ "external", "functional", "object" ],
+    "attributes" : [ "object", "external", "functional" ],
     "id" : "0"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom",
@@ -669,7 +669,7 @@
       "en" : "Navigability relation from"
     },
     "domain" : "14",
-    "attributes" : [ "inverse functional", "object" ],
+    "attributes" : [ "object", "inverse functional" ],
     "id" : "13"
   }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry",
@@ -695,7 +695,7 @@
     },
     "superproperty" : [ "3", "17" ],
     "domain" : "14",
-    "attributes" : [ "external", "functional", "inverse functional", "object" ],
+    "attributes" : [ "object", "external", "functional", "inverse functional" ],
     "id" : "15"
   }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf",
@@ -706,7 +706,7 @@
       "en" : "nominal geometry of"
     },
     "domain" : "14",
-    "attributes" : [ "external", "functional", "inverse functional", "object" ],
+    "attributes" : [ "object", "external", "functional", "inverse functional" ],
     "id" : "16"
   }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry",
@@ -732,7 +732,7 @@
     "superproperty" : [ "18" ],
     "domain" : "2",
     "subproperty" : [ "15" ],
-    "attributes" : [ "external", "inverse functional", "object" ],
+    "attributes" : [ "object", "external", "inverse functional" ],
     "id" : "3"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#port",
@@ -752,7 +752,7 @@
     },
     "domain" : "6",
     "subproperty" : [ "21", "22" ],
-    "attributes" : [ "inverse functional", "object" ],
+    "attributes" : [ "object", "inverse functional" ],
     "id" : "20"
   }, {
     "range" : "2",
@@ -816,7 +816,7 @@
     "comment" : {
       "en" : "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"
     },
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "32"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#navigableTo",
@@ -840,7 +840,7 @@
     },
     "domain" : "34",
     "subproperty" : [ "3", "17" ],
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "18"
   }, {
     "range" : "6",
@@ -865,7 +865,7 @@
     "comment" : {
       "en" : "This object property points to (at least two) ports that share a connection relationship.\n\nIt is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."
     },
-    "attributes" : [ "inverse functional", "object" ],
+    "attributes" : [ "object", "inverse functional" ],
     "id" : "40"
   }, {
     "range" : "6",
@@ -915,7 +915,7 @@
     },
     "domain" : "6",
     "subproperty" : [ "29" ],
-    "attributes" : [ "transitive", "object" ],
+    "attributes" : [ "object", "transitive" ],
     "id" : "30"
   }, {
     "range" : "11",
@@ -937,7 +937,7 @@
     "superproperty" : [ "18" ],
     "domain" : "14",
     "subproperty" : [ "15" ],
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "17"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#fromExitPort",
@@ -949,7 +949,7 @@
       "en" : "from exit port"
     },
     "domain" : "7",
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "50"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#onElement",
@@ -969,7 +969,7 @@
       "en" : "on element"
     },
     "domain" : "5",
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "51"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo",
@@ -981,7 +981,7 @@
       "en" : "navigability relation to"
     },
     "domain" : "5",
-    "attributes" : [ "inverse functional", "object" ],
+    "attributes" : [ "object", "inverse functional" ],
     "id" : "52"
   }, {
     "range" : "5",
@@ -1016,7 +1016,7 @@
       "en" : "to exit port"
     },
     "domain" : "7",
-    "attributes" : [ "functional", "object" ],
+    "attributes" : [ "object", "functional" ],
     "id" : "53"
   }, {
     "range" : "4",
@@ -1136,7 +1136,7 @@
     },
     "domain" : "5",
     "subproperty" : [ "33" ],
-    "attributes" : [ "transitive", "object" ],
+    "attributes" : [ "object", "transitive" ],
     "id" : "25"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#port_1",
@@ -1156,7 +1156,7 @@
     },
     "superproperty" : [ "20" ],
     "domain" : "28",
-    "attributes" : [ "functional", "inverse functional", "object" ],
+    "attributes" : [ "object", "functional", "inverse functional" ],
     "id" : "21"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#port_0",
@@ -1176,7 +1176,7 @@
     },
     "superproperty" : [ "20" ],
     "domain" : "14",
-    "attributes" : [ "functional", "inverse functional", "object" ],
+    "attributes" : [ "object", "functional", "inverse functional" ],
     "id" : "22"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#navigableFrom",
@@ -1226,7 +1226,7 @@
     },
     "domain" : "5",
     "subproperty" : [ "67" ],
-    "attributes" : [ "transitive", "object" ],
+    "attributes" : [ "object", "transitive" ],
     "id" : "68"
   } ]
 }
