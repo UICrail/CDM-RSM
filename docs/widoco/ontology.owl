@@ -332,6 +332,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
 
 
     <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#leadsToTransitive">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#NetElement"/>
         <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#NetElement"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -402,6 +403,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
 
 
     <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#navigableToTransitive">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
         <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
         <rdfs:label xml:lang="en">navigable to transitive</rdfs:label>

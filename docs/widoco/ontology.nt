@@ -180,6 +180,7 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 # 
 # https://cdm.ovh/rsm/topology/topo#leadsToTransitive
 <https://cdm.ovh/rsm/topology/topo#leadsToTransitive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/topology/topo#leadsToTransitive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
 <https://cdm.ovh/rsm/topology/topo#leadsToTransitive> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topo#NetElement> .
 <https://cdm.ovh/rsm/topology/topo#leadsToTransitive> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/topology/topo#NetElement> .
 <https://cdm.ovh/rsm/topology/topo#leadsToTransitive> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid6 .
@@ -225,6 +226,7 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 # 
 # https://cdm.ovh/rsm/topology/topo#navigableToTransitive
 <https://cdm.ovh/rsm/topology/topo#navigableToTransitive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/topology/topo#navigableToTransitive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
 <https://cdm.ovh/rsm/topology/topo#navigableToTransitive> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topo#Port> .
 <https://cdm.ovh/rsm/topology/topo#navigableToTransitive> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/topology/topo#Port> .
 <https://cdm.ovh/rsm/topology/topo#navigableToTransitive> <http://www.w3.org/2000/01/rdf-schema#label> "navigable to transitive"@en .

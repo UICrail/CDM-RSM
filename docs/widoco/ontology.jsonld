@@ -523,7 +523,7 @@
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#leadsToTransitive",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#NetElement"
   } ],
@@ -604,7 +604,7 @@
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#navigableToTransitive",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#Port"
   } ],

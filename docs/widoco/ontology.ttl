@@ -207,7 +207,8 @@ It is used for building the connectedWith properties. It can be a temporal objec
 
 
 ###  https://cdm.ovh/rsm/topology/topo#leadsToTransitive
-:leadsToTransitive rdf:type owl:ObjectProperty ;
+:leadsToTransitive rdf:type owl:ObjectProperty ,
+                            owl:TransitiveProperty ;
                    rdfs:domain :NetElement ;
                    rdfs:range :NetElement ;
                    owl:propertyChainAxiom ( :port
@@ -252,7 +253,8 @@ It is used for building the connectedWith properties. It can be a temporal objec
 
 
 ###  https://cdm.ovh/rsm/topology/topo#navigableToTransitive
-:navigableToTransitive rdf:type owl:ObjectProperty ;
+:navigableToTransitive rdf:type owl:ObjectProperty ,
+                                owl:TransitiveProperty ;
                        rdfs:domain :Port ;
                        rdfs:range :Port ;
                        rdfs:label "navigable to transitive"@en .
