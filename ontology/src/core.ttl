@@ -165,7 +165,7 @@ topo:leadsToTransitive rdf:type owl:ObjectProperty ,
 ###  https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom
 topo:navigabilityRelationFrom rdf:type owl:ObjectProperty ,
                                        owl:InverseFunctionalProperty ;
-                              rdfs:label "Navigability relation from"@en .
+                              rdfs:label "navigability relation from"@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo
@@ -177,6 +177,7 @@ topo:navigabilityRelationTo rdf:type owl:ObjectProperty ;
 
 ###  https://cdm.ovh/rsm/topology/topo#navigableFrom
 topo:navigableFrom rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf topo:navigableFromTransitive ;
                    owl:inverseOf topo:navigableTo ;
                    rdfs:label "navigable from"@en ;
                    skos:definition "inverse of navigable to"@en .
