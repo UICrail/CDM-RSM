@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cdm.ovh/rsm/topology/topo","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cdm.ovh/rsm/topology/topo","name":"RSM topology", "headline":"Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.", "dateReleased":"Wed Dec 31 16:19:42 UTC 2025", "version":"1.0rc4 - additions and corrections on December 2025
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cdm.ovh/rsm/topology/topo","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cdm.ovh/rsm/topology/topo","name":"RSM topology", "headline":"Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.", "dateReleased":"Tue Jan 06 09:13:04 UTC 2026", "version":"1.0rc4 - additions and corrections on December 2025
 
 ADDED : reified port connections and navigabilities, last available in RC1, are restored (with some changed identifiers).
 
@@ -230,7 +230,7 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#navigabilityRelationFrom"
-         title="https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom">Navigability relation from</a>
+         title="https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom">navigability relation from</a>
    </li>
    <li>
       <a href="#navigabilityRelationTo"
@@ -745,7 +745,7 @@ This section provides details for each class and property defined by RSM topolog
   <li><a href="#http://www.opengis.net/ont/geosparql#hasGeometry" title="http://www.opengis.net/ont/geosparql#hasGeometry">hasGeometry</a></li>
   <li><a href="#leadsTo" title="https://cdm.ovh/rsm/topology/topo#leadsTo">leads to</a></li>
   <li><a href="#leadsToTransitive" title="https://cdm.ovh/rsm/topology/topo#leadsToTransitive">leads to transitive</a></li>
-  <li><a href="#navigabilityRelationFrom" title="https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom">Navigability relation from</a></li>
+  <li><a href="#navigabilityRelationFrom" title="https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom">navigability relation from</a></li>
   <li><a href="#navigabilityRelationTo" title="https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo">navigability relation to</a></li>
   <li><a href="#navigableFrom" title="https://cdm.ovh/rsm/topology/topo#navigableFrom">navigable from</a></li>
   <li><a href="#navigableFromTransitive" title="https://cdm.ovh/rsm/topology/topo#navigableFromTransitive">navigable from transitive</a></li>
@@ -860,7 +860,7 @@ This section provides details for each class and property defined by RSM topolog
      is inverse of
     </dt>
     <dd>
-     <a href="#navigabilityRelationFrom" title="https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom">Navigability relation from</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#navigabilityRelationFrom" title="https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom">navigability relation from</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -1076,7 +1076,7 @@ This section provides details for each class and property defined by RSM topolog
   </div>
  </div>
  <div class="entity" id="navigabilityRelationFrom">
-  <h3>Navigability relation from<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <h3>navigability relation from<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom</p>
   <div class="description">
    <p><strong>has characteristics: </strong> inverse functional</p>
@@ -1114,6 +1114,12 @@ This section provides details for each class and property defined by RSM topolog
   <div class="description">
    <dl>
     <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#navigableFromTransitive" title="https://cdm.ovh/rsm/topology/topo#navigableFromTransitive">navigable from transitive</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
      is inverse of
     </dt>
     <dd>
@@ -1130,6 +1136,12 @@ This section provides details for each class and property defined by RSM topolog
   </div>
   <div class="description">
    <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#navigableFrom" title="https://cdm.ovh/rsm/topology/topo#navigableFrom">navigable from</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
     <dt>
      is inverse of
     </dt>

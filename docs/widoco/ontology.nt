@@ -199,7 +199,7 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 # https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom
 <https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-<https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom> <http://www.w3.org/2000/01/rdf-schema#label> "Navigability relation from"@en .
+<https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom> <http://www.w3.org/2000/01/rdf-schema#label> "navigability relation from"@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo
 <https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -209,6 +209,7 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 # 
 # https://cdm.ovh/rsm/topology/topo#navigableFrom
 <https://cdm.ovh/rsm/topology/topo#navigableFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/topology/topo#navigableFrom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/topology/topo#navigableFromTransitive> .
 <https://cdm.ovh/rsm/topology/topo#navigableFrom> <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/topology/topo#navigableTo> .
 <https://cdm.ovh/rsm/topology/topo#navigableFrom> <http://www.w3.org/2000/01/rdf-schema#label> "navigable from"@en .
 <https://cdm.ovh/rsm/topology/topo#navigableFrom> <http://www.w3.org/2004/02/skos/core#definition> "inverse of navigable to"@en .

@@ -552,7 +552,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Navigability relation from"
+    "@value" : "navigability relation from"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo",
@@ -570,6 +570,9 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "navigable from"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/topology/topo#navigableFromTransitive"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#navigableTo"
