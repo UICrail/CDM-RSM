@@ -22,9 +22,11 @@
                                                          <https://vocab.org/vann/preferredNamespaceURI> "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" .
 
 #################################################################
-#    Annotation properties
+#    Annotation properties
+
 #################################################################
-
+
+
 ###  http://purl.org/dc/elements/1.1/abstract
 <http://purl.org/dc/elements/1.1/abstract> rdf:type owl:AnnotationProperty .
 
@@ -58,17 +60,21 @@
 
 
 #################################################################
-#    Datatypes
+#    Datatypes
+
 #################################################################
-
+
+
 ###  http://www.w3.org/2001/XMLSchema#double
 xsd:double rdf:type rdfs:Datatype .
 
 
 #################################################################
-#    Object Properties
+#    Object Properties
+
 #################################################################
-
+
+
 ###  http://www.opengis.net/ont/geosparql#hasDefaultGeometry
 geo:hasDefaultGeometry rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf geo:hasGeometry .
@@ -119,9 +125,11 @@ geo_ad:nominalGeometryOf rdf:type owl:ObjectProperty ,
 
 
 #################################################################
-#    Data properties
+#    Data properties
+
 #################################################################
-
+
+
 ###  http://www.opengis.net/ont/geosparql#hasMetricLength
 geo:hasMetricLength rdf:type owl:DatatypeProperty ;
                     rdfs:domain geo:SpatialObject ;
@@ -150,9 +158,11 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
 
 
 #################################################################
-#    Classes
+#    Classes
+
 #################################################################
-
+
+
 ###  http://www.opengis.net/ont/geosparql#Feature
 geo:Feature rdf:type owl:Class .
 
