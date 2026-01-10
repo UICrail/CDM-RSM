@@ -42,9 +42,11 @@ CORRECTED : corrected spelling errors, removed brackets in labels or comments, u
                                      <https://vocab.org/vann/preferredNamespaceURI> "http://cdm.ovh/rsm/topology/topo#"@en .
 
 #################################################################
-#    Annotation properties
+#    Annotation properties
+
 #################################################################
-
+
+
 ###  http://purl.org/dc/elements/1.1/abstract
 dc:abstract rdf:type owl:AnnotationProperty .
 
@@ -90,9 +92,11 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 #################################################################
-#    Object Properties
+#    Object Properties
+
 #################################################################
-
+
+
 ###  https://cdm.ovh/rsm/topology/topo#connectedWith
 topo:connectedWith rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf topo:connectedWithTransitive ;
@@ -265,9 +269,11 @@ topo:toExitPort rdf:type owl:ObjectProperty ,
 
 
 #################################################################
-#    Classes
+#    Classes
+
 #################################################################
-
+
+
 ###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature
 geo_ad:Feature rdf:type owl:Class .
 
