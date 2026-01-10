@@ -98,7 +98,7 @@
     "id" : "11",
     "type" : "owl:Class"
   }, {
-    "id" : "33",
+    "id" : "32",
     "type" : "owl:Class"
   }, {
     "id" : "37",
@@ -244,7 +244,7 @@
       "IRI-based" : "NonlinearElement",
       "en" : "Nonlinear element"
     },
-    "id" : "33",
+    "id" : "32",
     "superClasses" : [ "6" ]
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#Connection",
@@ -425,7 +425,7 @@
       "IRI-based" : "NetElement",
       "en" : "Net element"
     },
-    "subClasses" : [ "33", "29" ],
+    "subClasses" : [ "32", "29" ],
     "id" : "6",
     "superClasses" : [ "4" ]
   }, {
@@ -524,7 +524,7 @@
     "id" : "30",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "32",
+    "id" : "33",
     "type" : "owl:objectProperty"
   }, {
     "id" : "34",
@@ -806,18 +806,6 @@
     "attributes" : [ "object" ],
     "id" : "30"
   }, {
-    "iri" : "https://cdm.ovh/rsm/topology/topo#navigableTo",
-    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "14",
-    "label" : {
-      "IRI-based" : "navigableTo",
-      "en" : "navigable to"
-    },
-    "superproperty" : [ "25" ],
-    "domain" : "14",
-    "attributes" : [ "object" ],
-    "id" : "32"
-  }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#hasConnection",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
     "range" : "14",
@@ -830,6 +818,18 @@
       "en" : "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"
     },
     "attributes" : [ "functional", "object" ],
+    "id" : "33"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/topology/topo#navigableTo",
+    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "navigableTo",
+      "en" : "navigable to"
+    },
+    "superproperty" : [ "25" ],
+    "domain" : "14",
+    "attributes" : [ "object" ],
     "id" : "34"
   }, {
     "iri" : "http://www.opengis.net/ont/geosparql#hasGeometry",
@@ -845,7 +845,7 @@
     "id" : "18"
   }, {
     "range" : "6",
-    "domain" : "33",
+    "domain" : "32",
     "attributes" : [ "anonymous", "object" ],
     "id" : "38"
   }, {
@@ -855,7 +855,7 @@
     "id" : "39"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#connectsPort",
-    "inverse" : "34",
+    "inverse" : "33",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
     "range" : "5",
     "label" : {
@@ -941,6 +941,18 @@
     "attributes" : [ "object", "external" ],
     "id" : "17"
   }, {
+    "iri" : "https://cdm.ovh/rsm/topology/topo#fromExitPort",
+    "inverse" : "13",
+    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "fromExitPort",
+      "en" : "from exit port"
+    },
+    "domain" : "7",
+    "attributes" : [ "functional", "object" ],
+    "id" : "51"
+  }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#onElement",
     "inverse" : "20",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
@@ -958,18 +970,6 @@
       "en" : "on element"
     },
     "domain" : "5",
-    "attributes" : [ "functional", "object" ],
-    "id" : "51"
-  }, {
-    "iri" : "https://cdm.ovh/rsm/topology/topo#fromExitPort",
-    "inverse" : "13",
-    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "5",
-    "label" : {
-      "IRI-based" : "fromExitPort",
-      "en" : "from exit port"
-    },
-    "domain" : "7",
     "attributes" : [ "functional", "object" ],
     "id" : "52"
   }, {
@@ -1051,10 +1051,10 @@
       "en" : "has nominal metric length"
     },
     "domain" : "19",
-    "attributes" : [ "functional", "datatype", "external" ],
+    "attributes" : [ "functional", "external", "datatype" ],
     "id" : "63"
   }, {
-    "range" : "33",
+    "range" : "32",
     "domain" : "29",
     "attributes" : [ "anonymous", "object" ],
     "id" : "64"
@@ -1105,7 +1105,7 @@
       "en" : "has metric length"
     },
     "domain" : "11",
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "67"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#connectedWith",
@@ -1136,7 +1136,7 @@
       "en" : "navigable to transitive"
     },
     "domain" : "5",
-    "subproperty" : [ "32" ],
+    "subproperty" : [ "34" ],
     "attributes" : [ "transitive", "object" ],
     "id" : "25"
   }, {
@@ -1181,7 +1181,7 @@
     "id" : "22"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#navigableFrom",
-    "inverse" : "32",
+    "inverse" : "34",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
     "range" : "14",
     "annotations" : {
@@ -1208,7 +1208,7 @@
       "IRI-based" : "hasMetricLength"
     },
     "domain" : "12",
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "70"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#connectedWithTransitive",
