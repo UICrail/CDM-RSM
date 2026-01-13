@@ -1,46 +1,45 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://cdm.ovh/rsm/topology/topo#"
-     xml:base="https://cdm.ovh/rsm/topology/topo"
+<rdf:RDF xmlns="https://cdm.ovh/rsm/localisation/loca#"
+     xml:base="https://cdm.ovh/rsm/localisation/loca"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:dul="http://www.ontologydesignpatterns.org/ont/dul/DUL#"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:ifc="https://cdm.ovh/ifc/IfcOWL43ADD2#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:list="https://w3id.org/list#"
+     xmlns:loca="https://cdm.ovh/rsm/localisation/localisation#"
+     xmlns:qudt="http://qudt.org/schema/qudt/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:topo="https://cdm.ovh/rsm/topology/topo#"
+     xmlns:topo="https://cdm.ovh/rsm/topology/topology#"
      xmlns:vann="https://vocab.org/vann/"
-     xmlns:geo_ad="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#"
+     xmlns:vann1="http://purl.org/vocab/vann/"
      xmlns:dcterms="http://purl.org/dc/terms/"
-     xmlns:geosparql="http://www.opengis.net/ont/geosparql#">
-    <owl:Ontology rdf:about="https://cdm.ovh/rsm/topology/topo">
-        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/topology/1.0rc4/topo"/>
-        <owl:imports rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad"/>
-        <dc:abstract xml:lang="en">Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
+     xmlns:geo_adap="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
+     xmlns:quantitykind="https://qudt.org/vocab/quantitykind/">
+    <owl:Ontology rdf:about="https://cdm.ovh/rsm/localisation/loca">
+        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/localisation/1.0rc1/loca"/>
+        <owl:imports rdf:resource="https://cdm.ovh/rsm/topology/topo"/>
+        <owl:imports rdf:resource="https://w3id.org/list"/>
+        <dc:abstract xml:lang="en">This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.
 
-Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
+For ordering things, this ontology uses the List ontology published by Pieter Pauwels and Walter Terkaj. The List ontology also underpins the ifcOWL ontology by the same authors.
 
-Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.</dc:abstract>
-        <dc:contributor xml:lang="en">Pierre Tane, UIC</dc:contributor>
-        <dc:creator xml:lang="en">Airy Magnien, UIC</dc:creator>
-        <dc:date xml:lang="en">23 December 2025</dc:date>
-        <dc:description xml:lang="en">Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
-
-Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
-
-Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.</dc:description>
-        <dc:title xml:lang="en">RSM topology</dc:title>
-        <dc:type xml:lang="en">RDF/OWL ontology (using OWL2 RL profile)</dc:type>
-        <dcterms:license xml:lang="en">EUPL 1.2; see https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/eupl_v1.2_en.pdf</dcterms:license>
-        <owl:versionInfo xml:lang="en">1.0rc4 - additions and corrections on December 2025
-
-ADDED : reified port connections and navigabilities, last available in RC1, are restored (with some changed identifiers).
-
-CORRECTED : corrected spelling errors, removed brackets in labels or comments, use disjointUnionOf where relevant. Date changed to December 18; preferred namespace prefix corrected.</owl:versionInfo>
-        <vann:preferredNamespacePrefix>topo</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceURI xml:lang="en">http://cdm.ovh/rsm/topology/topo#</vann:preferredNamespaceURI>
+For spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical.</dc:abstract>
+        <dc:creator>Airy Magnien</dc:creator>
+        <dc:date xml:lang="en">13 January 2026</dc:date>
+        <dc:title xml:lang="en">Localisation</dc:title>
+        <dcterms:license xml:lang="en">EUPL 1.2</dcterms:license>
+        <rdfs:comment xml:lang="en">Left for future work:
+1 - using intrinsic coordinates in a more explicit way (formal references to GeoSPARQL and to ISO 19148, possibly via IFC or DATEX classes). This would entail the replacement of data properties (atIntrinsicCoordinate, startAt, endAt) by object properties. Whether this is worthwhile is a matter for debate.
+2 - offsets were lateral in earlier versions (up to RSM 1.2), and are now generalized to tangential and vertical, effectively defining a 3-axis local coordinate system. Explicitly defining a local cartesian coordinate system would be a conceptual simplification and could make use of IFC classes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Localisation</rdfs:label>
+        <owl:versionInfo>1.0rc1</owl:versionInfo>
+        <vann:preferredNamespacePrefix>loca</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceURI>https://cdm.ovh/rsm/localisation/loca</vann:preferredNamespaceURI>
     </owl:Ontology>
     
 
@@ -62,12 +61,6 @@ CORRECTED : corrected spelling errors, removed brackets in labels or comments, u
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/contributor -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
-    
-
-
     <!-- http://purl.org/dc/elements/1.1/creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
@@ -80,21 +73,9 @@ CORRECTED : corrected spelling errors, removed brackets in labels or comments, u
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/description -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
-    
-
-
     <!-- http://purl.org/dc/elements/1.1/title -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/type -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/type"/>
     
 
 
@@ -125,6 +106,23 @@ CORRECTED : corrected spelling errors, removed brackets in labels or comments, u
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#float -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#float"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -133,236 +131,178 @@ CORRECTED : corrected spelling errors, removed brackets in labels or comments, u
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#connectedWith -->
+    <!-- http://qudt.org/schema/qudt/hasQuantityValue -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#connectedWith">
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/topology/topo#connectedWithTransitive"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdfs:label xml:lang="en">connected with</rdfs:label>
-        <skos:definition xml:lang="en">Relation between a port on a net element and the asjacent port on another net element. Geographic locations of related ports may not coincide, either because of uncertainties or rounding errors, or by construction (e.g. case of tracks joined via a turntable).</skos:definition>
+    <owl:ObjectProperty rdf:about="http://qudt.org/schema/qudt/hasQuantityValue"/>
+    
+
+
+    <!-- http://qudt.org/schema/qudt/quantityKind -->
+
+    <owl:ObjectProperty rdf:about="http://qudt.org/schema/qudt/quantityKind"/>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#applicationDirection -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#applicationDirection">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
+        <rdfs:label xml:lang="en">application direction</rdfs:label>
+        <skos:definition xml:lang="en">Allows to express the direction of travel for which the localized entity is relevant. Example: a signal generally applies to one travel direction; track occupancy detection systems may be oriented, etc.
+Direction of travel is expressed relative to the orientation of the linear element, from port 0 to port 1, or intrinsic coordinate 0 to 1. It is NOT expressed with respect to &quot;normal travel direction in operations&quot;.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#connectedWithTransitive -->
+    <!-- https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#connectedWithTransitive">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:label xml:lang="en">connected with transitive</rdfs:label>
-        <skos:definition xml:lang="en">transitive closure of connectedWith.</skos:definition>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/localisation#LinearLocation"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement"/>
+        <rdfs:label xml:lang="en">associated linear element</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#connectsPort -->
+    <!-- https://cdm.ovh/rsm/localisation/localisation#associatedNetElement -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#connectsPort">
-        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#hasConnection"/>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#associatedNetElement">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/localisation#AreaLocation"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#ListedNetElement"/>
+        <rdfs:label xml:lang="en">net element list</rdfs:label>
+        <skos:definition xml:lang="en">Property pointing to all net elements (or parts thereof) that describe the area location.
+Note: the user may target ListedNetElement individuals (a subclass of BoundedNetElement) and define an order, for whatever purpose.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#elementLocation -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#elementLocation">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#Connection"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:comment xml:lang="en">This object property points to (at least two) ports that share a connection relationship.
-
-It is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version.</rdfs:comment>
-        <rdfs:label xml:lang="en">connects port</rdfs:label>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BaseLocation"/>
+        <rdfs:comment xml:lang="en">Provides the location(s) of a located net element. Locations may be representation- and time-dependent, so the property is not a functional property (in the sense of RDF/OWL).</rdfs:comment>
+        <rdfs:label xml:lang="en">element Location</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#fromExitPort -->
+    <!-- https://cdm.ovh/rsm/localisation/localisation#lateralOffset -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#fromExitPort">
-        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:label xml:lang="en">from exit port</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#hasConnection -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#hasConnection">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:comment xml:lang="en">inverse property of &apos;connects port&apos;. Instrumental in building the property chain resulting in &apos;connected with&apos; (a relation between ports)</rdfs:comment>
-        <rdfs:label xml:lang="en">has connection</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#leadsTo -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#leadsTo">
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/topology/topo#leadsToTransitive"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#port"/>
-            <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#navigableTo"/>
-            <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#onElement"/>
-        </owl:propertyChainAxiom>
-        <rdfs:label xml:lang="en">leads to</rdfs:label>
-        <skos:definition xml:lang="en">relation between two adjacent net elements (i.e. having connected ports), where rolling stock can start moving from the first and arrive on the second without reversing travel direction. This property is not symmetric.</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#leadsToTransitive -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#leadsToTransitive">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#NetElement"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#NetElement"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#port"/>
-            <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#navigableToTransitive"/>
-            <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#onElement"/>
-        </owl:propertyChainAxiom>
-        <rdfs:label xml:lang="en">leads to transitive</rdfs:label>
-        <skos:definition xml:lang="en">relation between net elements (adjacent or not), where rolling stock may leave the first and reach the second without reversing travel direction.</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#lateralOffset">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#offset"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:label xml:lang="en">navigability relation from</rdfs:label>
+        <rdfs:label xml:lang="en">lateral offset</rdfs:label>
+        <skos:definition xml:lang="en">offset of location (usually: spot location) with respect to a perpendicular to the linear element, in the horizontal plane (not: track plane). Is positive when on the left and negative on the right (in order to respect the conventional orientation of cartesian reference systems, where X is the longitudinal axis, Y the transversal, and Z the vertical).</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo -->
+    <!-- https://cdm.ovh/rsm/localisation/localisation#offset -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo">
-        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#toExitPort"/>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#offset">
+        <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/hasQuantityValue"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:label xml:lang="en">navigability relation to</rdfs:label>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#OffsetValue"/>
+        <rdfs:comment xml:lang="en">definitely not functional, to cope with the fact that values may be multiple (specified, observed...).
+definitely inverse functional, because values characterize a location relative to exactly one linear element. &quot;Exactly&quot; however is left for SHACL shapes (not in RL profile).</rdfs:comment>
+        <rdfs:label xml:lang="en">offset</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#navigableFrom -->
+    <!-- https://cdm.ovh/rsm/localisation/localisation#onLinearElement -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#navigableFrom">
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/topology/topo#navigableFromTransitive"/>
-        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#navigableTo"/>
-        <rdfs:label xml:lang="en">navigable from</rdfs:label>
-        <skos:definition xml:lang="en">inverse of navigable to</skos:definition>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#onLinearElement">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SpotLocation"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement"/>
+        <rdfs:comment xml:lang="en">provides the linear element(s) that define a spot location. There can be several linear elements involved: think of a signal adderessing two adjacent tracks.</rdfs:comment>
+        <rdfs:label>on linear element</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#navigableFromTransitive -->
+    <!-- https://cdm.ovh/rsm/localisation/localisation#side -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#navigableFromTransitive">
-        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#navigableToTransitive"/>
-        <rdfs:label xml:lang="en">navigable from transitive</rdfs:label>
-        <skos:definition xml:lang="en">inverse of navigable to transitive</skos:definition>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#side">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
+        <rdfs:comment xml:lang="en">consistency with lateral offset sign to be verified by SHACL shapes.</rdfs:comment>
+        <rdfs:label xml:lang="en">side</rdfs:label>
+        <skos:definition xml:lang="en">side of the linear element on which the location (usually a spot location) is situated.
+The orientation of the linear element is its own intrinsic orientation, from port 0 to port 1 (or intrinsic coordinate 0 to intrinsic coordinate 1).</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#navigableTo -->
+    <!-- https://cdm.ovh/rsm/localisation/localisation#tangentialOffset -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#navigableTo">
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/topology/topo#navigableToTransitive"/>
-        <rdfs:label xml:lang="en">navigable to</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#navigableToTransitive -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#navigableToTransitive">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:label xml:lang="en">navigable to transitive</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#nonNavigableFrom -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#nonNavigableFrom">
-        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#nonNavigableTo"/>
-        <rdfs:label xml:lang="en">non navigable from</rdfs:label>
-        <skos:definition xml:lang="en">inverse of non navigable to</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#nonNavigableTo -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#nonNavigableTo">
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:label xml:lang="en">non navigable to</rdfs:label>
-        <skos:definition xml:lang="en">Expresses that there is no navigability link between the related ports. Given the OWA (open world assumption), a navigability not expressed does not mean &quot;non navigability&quot;. Consequently, non-navigability should be explicitly stated, as it is important knowledge.</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#onElement -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#onElement">
-        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#port"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:label xml:lang="en">on element</rdfs:label>
-        <skos:definition xml:lang="en">inverse of port, port0, port1</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#port -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#port">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#tangentialOffset">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#offset"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#NetElement"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:label xml:lang="en">port</rdfs:label>
-        <skos:definition xml:lang="en">Associated ports with net elements. This is an inverse functional property, meaning that a port can belong to at most one net element (if a port is found to belong to two net elements, the inference is that those two elements are the same).</skos:definition>
+        <rdfs:label xml:lang="en">tangential offset</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#port_0 -->
+    <!-- https://cdm.ovh/rsm/localisation/localisation#verticalOffset -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#port_0">
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/topology/topo#port"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#verticalOffset">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#offset"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <owl:propertyDisjointWith rdf:resource="https://cdm.ovh/rsm/topology/topo#port_1"/>
-        <rdfs:label xml:lang="en">port 0</rdfs:label>
-        <skos:definition xml:lang="en">First (or start) port of some net element. Allows to orient linear elements. Can also be used on others, with undefined semantics.</skos:definition>
+        <rdfs:label xml:lang="en">vertical offset</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#port_1 -->
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#port_1">
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/topology/topo#port"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#LinearElement"/>
-        <rdfs:label>port 1</rdfs:label>
-        <skos:definition xml:lang="en">second (or end) port on a linear element.</skos:definition>
-    </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#toExitPort -->
+    <!-- https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#toExitPort">
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:label xml:lang="en">to exit port</rdfs:label>
-    </owl:ObjectProperty>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">at intrinsic coordinate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#endAt -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#endAt">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment xml:lang="en">cardinality &quot;exactly one value&quot; to be enforced via SHACL shape</rdfs:comment>
+        <rdfs:label xml:lang="en">end at</rdfs:label>
+        <skos:definition xml:lang="en">Property defining the end point of a linear location on the linear element that is referred to.
+See definition of startsAt for more explanations.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#startAt -->
+
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#startAt">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment xml:lang="en">cardinality &quot;exactly one value&quot; to be enforced via SHACL shape</rdfs:comment>
+        <rdfs:label xml:lang="en">start at</rdfs:label>
+        <skos:definition xml:lang="en">Property defining the start position of a linear location on the linear element that is referred to.
+The value is an intrinsic coordinate (float; permissible range = [0,1]). The intrinsic coordinate is defined by the default geometry of the associated linear element (see GeoSPARQL adapter), using linear referencing method &quot;interpolation&quot; according to ISO 19148.</skos:definition>
+    </owl:DatatypeProperty>
     
 
 
@@ -374,6 +314,12 @@ It is used for building the connectedWith properties. It can be a temporal objec
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://qudt.org/schema/qudt/QuantityValue -->
+
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/QuantityValue"/>
     
 
 
@@ -399,125 +345,325 @@ It is used for building the connectedWith properties. It can be a temporal objec
     
 
 
+    <!-- https://cdm.ovh/rsm/localisation/localisation#AreaLocation -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#AreaLocation">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BaseLocation"/>
+        <rdfs:label xml:lang="en">Area location</rdfs:label>
+        <skos:definition xml:lang="en">The class of all locations that are neither spot, nor linear. Concrete examples: the location of a GSM coverage area (i.e. the parts of topology elements that are in this area); a set of discontinuous or branching linear locations. An area location refers to a set of topology elements, or element parts: no order, no repetition.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#BaseLocation -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#BaseLocation">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#AreaLocation"/>
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#LinearLocation"/>
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#SpotLocation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Base location</rdfs:label>
+        <skos:definition xml:lang="en">Class of all locations relative to a topology. Disjoint union of its three subclasses (spot-, linear-, area location).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
+        <rdfs:comment xml:lang="en">Linear element associated with positions along the element (property atIntrinsicCoordinate) or start and end boundaries (properties startAt and endAt).</rdfs:comment>
+        <rdfs:label xml:lang="en">Bounded linear element</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://cdm.ovh/rsm/localisation/localisation#LinearLocation -->
 
-    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"/>
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"/>
-    </rdf:Description>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BaseLocation"/>
+        <rdfs:label xml:lang="en">Linear location</rdfs:label>
+        <skos:definition xml:lang="en">Location extending over consecutive linear elements or parts thereof. The involved linear elements are in a sequence (ordered list, with repetitions allowed). Each linear element in the sequence is oriented from start to end. Start and end may coincide with extremities or some point in between.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/list#OWLList"/>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#ListedNetElement -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#ListedNetElement">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topology#NetElement"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/list#OWLList"/>
+        <rdfs:label xml:lang="en">Listed Net Element</rdfs:label>
+        <skos:definition xml:lang="en">Linked list of all net elements (or parts of linear elements) constituting a location. A subclass of OWL List: this is a class from a vocabulary also used by IfcOwl.
+In the present case, the order of elements in the list is user-defined and has no universal semantics.
+Repetition is allowed, but should be avoided as it has no meaning in the case of non-linear locations.
+Linear elements are referred to as a whole. If only part of a linear element is included in the location, use a LinearElementList individual.
+Orientation of each linear element (or part thereof) is described by startsAt and endsAt properties.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topology#NetElement"/>
+        <rdfs:label xml:lang="en">Located net element</rdfs:label>
+        <skos:definition xml:lang="en">Net element defined by its location on other net elements. Used for compositing, in lieu of the composite pattern in versions of topology before 1.0rc2.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#OffsetValue -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#OffsetValue">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://qudt.org/schema/qudt/quantityKind"/>
+                <owl:allValuesFrom rdf:resource="https://qudt.org/vocab/quantitykind/Length"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Offset value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#Side -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#Side">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Behind"/>
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Front"/>
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Left"/>
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Over"/>
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Right"/>
+                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Under"/>
+                </owl:oneOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Front, Rear, Left, and Right orientation are relative to the orientation of the linear element (from node 0 to node 1).
+Over and Under are relative to the geometric or geographic vertical.</rdfs:comment>
+        <rdfs:label xml:lang="en">Side</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#SpotLocation -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#SpotLocation">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BaseLocation"/>
+        <rdfs:label xml:lang="en">Spot location</rdfs:label>
+        <skos:definition xml:lang="en">Class of all spot locations, i.e. locations that can be represented as a point on a map or schema. The spot location can relate to one or more net elements (concrete example: the location of a signal that addresses two converging tracks).</skos:definition>
+    </owl:Class>
     
 
 
     <!-- https://cdm.ovh/rsm/topology/topo#BoundaryElement -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#BoundaryElement">
+    <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#BoundaryElement">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#LinearElement"/>
-        <rdfs:label xml:lang="en">Boundary element</rdfs:label>
-        <skos:definition xml:lang="en">Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#Connection -->
-
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#Connection">
-        <rdfs:comment xml:lang="en">Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as &quot;adjacency&quot;, i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like.</rdfs:comment>
-        <rdfs:label xml:lang="en">Connection</rdfs:label>
-    </owl:Class>
+    </rdf:Description>
     
 
 
     <!-- https://cdm.ovh/rsm/topology/topo#LinearElement -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#LinearElement">
+    <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#LinearElement">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#NetElement"/>
-        <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/topology/topo#NonlinearElement"/>
-        <rdfs:label xml:lang="en">Linear element</rdfs:label>
-    </owl:Class>
+    </rdf:Description>
     
 
 
     <!-- https://cdm.ovh/rsm/topology/topo#ListedPort -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#ListedPort">
+    <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#ListedPort">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/list#OWLList"/>
-        <rdfs:label xml:lang="en">Listed port</rdfs:label>
-        <skos:definition xml:lang="en">A port in an ordered list (with successors; no contents needed). Can be used to sort the ports of a net element. See also OWLList ontology.</skos:definition>
-    </owl:Class>
+    </rdf:Description>
     
 
 
     <!-- https://cdm.ovh/rsm/topology/topo#Navigability -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#Navigability">
+    <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#Navigability">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation"/>
-        <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/topology/topo#NonNavigability"/>
-        <rdfs:comment xml:lang="en">a (reified) relation between two ports of two distinct net elements.</rdfs:comment>
-        <rdfs:label xml:lang="en">Navigability</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#NavigabilityRelation -->
-
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation">
-        <rdfs:label xml:lang="en">Navigability relation</rdfs:label>
-    </owl:Class>
+    </rdf:Description>
     
 
 
     <!-- https://cdm.ovh/rsm/topology/topo#NetElement -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#NetElement">
+    <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#NetElement">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"/>
-        <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:label xml:lang="en">Net element</rdfs:label>
-        <skos:definition xml:lang="en">Superclass for net elements (network elements)</skos:definition>
-    </owl:Class>
+    </rdf:Description>
     
 
 
     <!-- https://cdm.ovh/rsm/topology/topo#NonNavigability -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#NonNavigability">
+    <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#NonNavigability">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation"/>
-        <rdfs:label xml:lang="en">Non navigability</rdfs:label>
-    </owl:Class>
+    </rdf:Description>
     
 
 
     <!-- https://cdm.ovh/rsm/topology/topo#NonlinearElement -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#NonlinearElement">
+    <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#NonlinearElement">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#NetElement"/>
-        <rdfs:label xml:lang="en">Nonlinear element</rdfs:label>
-        <skos:definition xml:lang="en">Net element with any number of ports except two. Used for expressing connexities and navigabilities outside a complex network area (e.g. a yard or a station).</skos:definition>
-    </owl:Class>
+    </rdf:Description>
     
 
 
     <!-- https://cdm.ovh/rsm/topology/topo#Port -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#Port">
+    <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#Port">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"/>
-        <rdfs:label>Port</rdfs:label>
-        <skos:definition xml:lang="en">Any place, at the boundary of a net element, that can be an entry and/or exit point for rolling stock. In the case of linear elements, there are exactly two ports. These may coincide (loop case) or be distinct (general case).</skos:definition>
-    </owl:Class>
+    </rdf:Description>
     
 
 
     <!-- https://cdm.ovh/rsm/topology/topology#LinearElement -->
 
-    <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topology#LinearElement">
+    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topology#LinearElement">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"/>
+    </owl:Class>
+    
+
+
+    <!-- https://cdm.ovh/rsm/topology/topology#NetElement -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topology#NetElement"/>
+    
+
+
+    <!-- https://qudt.org/vocab/quantitykind/Length -->
+
+    <owl:Class rdf:about="https://qudt.org/vocab/quantitykind/Length"/>
+    
+
+
+    <!-- https://w3id.org/list#EmptyList -->
+
+    <rdf:Description rdf:about="https://w3id.org/list#EmptyList">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/list#OWLList"/>
     </rdf:Description>
     
 
 
     <!-- https://w3id.org/list#OWLList -->
 
-    <owl:Class rdf:about="https://w3id.org/list#OWLList"/>
+    <owl:Class rdf:about="https://w3id.org/list#OWLList">
+        <rdfs:comment xml:lang="en">OWLList is used to represent linked lists. Instances of OWLList are list elements; they have at most one direct successor (the value of property hasNext).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#Behind -->
+
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Behind">
+        <rdfs:label xml:lang="en">Behind</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#Front -->
+
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Front">
+        <rdfs:label xml:lang="en">Front</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#Left -->
+
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Left">
+        <rdfs:label xml:lang="en">Left</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#Over -->
+
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Over">
+        <rdfs:label xml:lang="en">Over</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#Right -->
+
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Right">
+        <rdfs:label xml:lang="en">Right</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#Under -->
+
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Under">
+        <rdfs:label xml:lang="en">Under</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Behind"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Front"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Left"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Over"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Right"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Under"/>
+        </owl:oneOf>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
+    </owl:Class>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#AreaLocation"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#LinearLocation"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#SpotLocation"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
