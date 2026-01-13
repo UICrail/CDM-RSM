@@ -2,11 +2,9 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
-<https://cdm.ovh/rsm/topology/1.0rc4/topo> a prov:Entity;
-	 dc:title "RSM topology";
+<https://cdm.ovh/rsm/localisation/1.0rc1/loca> a prov:Entity;
+	 dc:title "Localisation";
 	 prov:wasAttributedTo :agent0;
-	 prov:wasAttributedTo :agent1;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
 .
-:agent0 a prov:Agent; foaf:name "Airy Magnien, UIC".
-:agent1 a prov:Agent; foaf:name "Pierre Tane, UIC".
+:agent0 a prov:Agent; foaf:name "Airy Magnien".

@@ -1,17 +1,17 @@
-<https://cdm.ovh/rsm/topology/topo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://cdm.ovh/rsm/topology/topo> <http://www.w3.org/2002/07/owl#versionIRI> <https://cdm.ovh/rsm/topology/1.0rc4/topo> .
-<https://cdm.ovh/rsm/topology/topo> <http://www.w3.org/2002/07/owl#imports> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad> .
-<https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/abstract> "Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).\n\nSyntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.\n\nTemporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite."@en .
-<https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/contributor> "Pierre Tane, UIC"@en .
-<https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/creator> "Airy Magnien, UIC"@en .
-<https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/date> "23 December 2025"@en .
-<https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/description> "Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).\n\nSyntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.\n\nTemporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite."@en .
-<https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/title> "RSM topology"@en .
-<https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/elements/1.1/type> "RDF/OWL ontology (using OWL2 RL profile)"@en .
-<https://cdm.ovh/rsm/topology/topo> <http://purl.org/dc/terms/license> "EUPL 1.2; see https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/eupl_v1.2_en.pdf"@en .
-<https://cdm.ovh/rsm/topology/topo> <http://www.w3.org/2002/07/owl#versionInfo> "1.0rc4 - additions and corrections on December 2025\n\nADDED : reified port connections and navigabilities, last available in RC1, are restored (with some changed identifiers).\n\nCORRECTED : corrected spelling errors, removed brackets in labels or comments, use disjointUnionOf where relevant. Date changed to December 18; preferred namespace prefix corrected."@en .
-<https://cdm.ovh/rsm/topology/topo> <https://vocab.org/vann/preferredNamespacePrefix> "topo" .
-<https://cdm.ovh/rsm/topology/topo> <https://vocab.org/vann/preferredNamespaceURI> "http://cdm.ovh/rsm/topology/topo#"@en .
+<https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2002/07/owl#versionIRI> <https://cdm.ovh/rsm/localisation/1.0rc1/loca> .
+<https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2002/07/owl#imports> <https://cdm.ovh/rsm/topology/topo> .
+<https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/list> .
+<https://cdm.ovh/rsm/localisation/loca> <http://purl.org/dc/elements/1.1/abstract> "This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.\n\nFor ordering things, this ontology uses the List ontology published by Pieter Pauwels and Walter Terkaj. The List ontology also underpins the ifcOWL ontology by the same authors.\n\nFor spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical."@en .
+<https://cdm.ovh/rsm/localisation/loca> <http://purl.org/dc/elements/1.1/creator> "Airy Magnien" .
+<https://cdm.ovh/rsm/localisation/loca> <http://purl.org/dc/elements/1.1/date> "13 January 2026"@en .
+<https://cdm.ovh/rsm/localisation/loca> <http://purl.org/dc/elements/1.1/title> "Localisation"@en .
+<https://cdm.ovh/rsm/localisation/loca> <http://purl.org/dc/terms/license> "EUPL 1.2"@en .
+<https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2000/01/rdf-schema#comment> "Left for future work:\n1 - using intrinsic coordinates in a more explicit way (formal references to GeoSPARQL and to ISO 19148, possibly via IFC or DATEX classes). This would entail the replacement of data properties (atIntrinsicCoordinate, startAt, endAt) by object properties. Whether this is worthwhile is a matter for debate.\n2 - offsets were lateral in earlier versions (up to RSM 1.2), and are now generalized to tangential and vertical, effectively defining a 3-axis local coordinate system. Explicitly defining a local cartesian coordinate system would be a conceptual simplification and could make use of IFC classes."@en .
+<https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2000/01/rdf-schema#label> "Localisation"@en .
+<https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2002/07/owl#versionInfo> "1.0rc1" .
+<https://cdm.ovh/rsm/localisation/loca> <https://vocab.org/vann/preferredNamespacePrefix> "loca" .
+<https://cdm.ovh/rsm/localisation/loca> <https://vocab.org/vann/preferredNamespaceURI> "https://cdm.ovh/rsm/localisation/loca" .
 # 
 # 
 # #################################################################
@@ -36,9 +36,6 @@
 # http://purl.org/dc/elements/1.1/description
 <http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://purl.org/dc/elements/1.1/source
-<http://purl.org/dc/elements/1.1/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
 # http://purl.org/dc/elements/1.1/title
 <http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
@@ -50,9 +47,6 @@
 # 
 # http://www.w3.org/2004/02/skos/core#definition
 <http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2004/02/skos/core#prefLabel
-<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # https://vocab.org/vann/preferredNamespacePrefix
 <https://vocab.org/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -69,8 +63,8 @@
 # #################################################################
 # 
 # 
-# http://www.w3.org/2001/XMLSchema#double
-<http://www.w3.org/2001/XMLSchema#double> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# http://www.w3.org/2001/XMLSchema#float
+<http://www.w3.org/2001/XMLSchema#float> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
 # 
 # 
 # 
@@ -81,48 +75,82 @@
 # #################################################################
 # 
 # 
-# http://www.opengis.net/ont/geosparql#hasDefaultGeometry
-<http://www.opengis.net/ont/geosparql#hasDefaultGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.opengis.net/ont/geosparql#hasDefaultGeometry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+# http://qudt.org/schema/qudt/hasQuantityValue
+<http://qudt.org/schema/qudt/hasQuantityValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 # 
-# http://www.opengis.net/ont/geosparql#hasGeometry
-<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.opengis.net/ont/geosparql#Feature> .
-<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.opengis.net/ont/geosparql#Geometry> .
-<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "hasGeometry"@en .
+# http://qudt.org/schema/qudt/quantityKind
+<http://qudt.org/schema/qudt/quantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 # 
-# https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf> <http://www.w3.org/2000/01/rdf-schema#comment> "GeoSPARQL does not define this inverse property."@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf> <http://www.w3.org/2000/01/rdf-schema#label> "geometry of"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf> <http://www.w3.org/2004/02/skos/core#definition> "inverse of hasGeometry"@en .
+# https://cdm.ovh/rsm/localisation/localisation#applicationDirection
+<https://cdm.ovh/rsm/localisation/localisation#applicationDirection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#applicationDirection> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topology#LinearElement> .
+<https://cdm.ovh/rsm/localisation/localisation#applicationDirection> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/localisation/localisation#Side> .
+<https://cdm.ovh/rsm/localisation/localisation#applicationDirection> <http://www.w3.org/2000/01/rdf-schema#label> "application direction"@en .
+<https://cdm.ovh/rsm/localisation/localisation#applicationDirection> <http://www.w3.org/2004/02/skos/core#definition> "Allows to express the direction of travel for which the localized entity is relevant. Example: a signal generally applies to one travel direction; track occupancy detection systems may be oriented, etc.\nDirection of travel is expressed relative to the orientation of the linear element, from port 0 to port 1, or intrinsic coordinate 0 to 1. It is NOT expressed with respect to \"normal travel direction in operations\"."@en .
 # 
-# https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#hasGeometry> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "has geometry"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> <http://www.w3.org/2004/02/skos/core#definition> "A spatial representation for a given Feature. As in GeoSPARQL, a feature can be associated with more than one geometry (valid at different times, or provided by different surveys...)."@en .
+# https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement
+<https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> .
+<https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement> .
+<https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement> <http://www.w3.org/2000/01/rdf-schema#label> "associated linear element"@en .
 # 
-# https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#hasDefaultGeometry> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "has nominal geometry"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry> <http://www.w3.org/2004/02/skos/core#definition> "The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry. Takes into account SOSA/SSN viewpoint, i.e. there can be more than one default geometry (e.g. valid at different times)."@en .
+# https://cdm.ovh/rsm/localisation/localisation#associatedNetElement
+<https://cdm.ovh/rsm/localisation/localisation#associatedNetElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#associatedNetElement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/localisation/localisation#AreaLocation> .
+<https://cdm.ovh/rsm/localisation/localisation#associatedNetElement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/localisation/localisation#ListedNetElement> .
+<https://cdm.ovh/rsm/localisation/localisation#associatedNetElement> <http://www.w3.org/2000/01/rdf-schema#label> "net element list"@en .
+<https://cdm.ovh/rsm/localisation/localisation#associatedNetElement> <http://www.w3.org/2004/02/skos/core#definition> "Property pointing to all net elements (or parts thereof) that describe the area location.\nNote: the user may target ListedNetElement individuals (a subclass of BoundedNetElement) and define an order, for whatever purpose."@en .
 # 
-# https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf> <http://www.w3.org/2000/01/rdf-schema#label> "nominal geometry of"@en .
+# https://cdm.ovh/rsm/localisation/localisation#elementLocation
+<https://cdm.ovh/rsm/localisation/localisation#elementLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#elementLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#elementLocation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement> .
+<https://cdm.ovh/rsm/localisation/localisation#elementLocation> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/localisation/localisation#BaseLocation> .
+<https://cdm.ovh/rsm/localisation/localisation#elementLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides the location(s) of a located net element. Locations may be representation- and time-dependent, so the property is not a functional property (in the sense of RDF/OWL)."@en .
+<https://cdm.ovh/rsm/localisation/localisation#elementLocation> <http://www.w3.org/2000/01/rdf-schema#label> "element Location"@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#lateralOffset
+<https://cdm.ovh/rsm/localisation/localisation#lateralOffset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#lateralOffset> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/localisation/localisation#offset> .
+<https://cdm.ovh/rsm/localisation/localisation#lateralOffset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#lateralOffset> <http://www.w3.org/2000/01/rdf-schema#label> "lateral offset"@en .
+<https://cdm.ovh/rsm/localisation/localisation#lateralOffset> <http://www.w3.org/2004/02/skos/core#definition> "offset of location (usually: spot location) with respect to a perpendicular to the linear element, in the horizontal plane (not: track plane). Is positive when on the left and negative on the right (in order to respect the conventional orientation of cartesian reference systems, where X is the longitudinal axis, Y the transversal, and Z the vertical)."@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#offset
+<https://cdm.ovh/rsm/localisation/localisation#offset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#offset> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://qudt.org/schema/qudt/hasQuantityValue> .
+<https://cdm.ovh/rsm/localisation/localisation#offset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#offset> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topology#LinearElement> .
+<https://cdm.ovh/rsm/localisation/localisation#offset> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/localisation/localisation#OffsetValue> .
+<https://cdm.ovh/rsm/localisation/localisation#offset> <http://www.w3.org/2000/01/rdf-schema#comment> "definitely not functional, to cope with the fact that values may be multiple (specified, observed...).\ndefinitely inverse functional, because values characterize a location relative to exactly one linear element. \"Exactly\" however is left for SHACL shapes (not in RL profile)."@en .
+<https://cdm.ovh/rsm/localisation/localisation#offset> <http://www.w3.org/2000/01/rdf-schema#label> "offset"@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#onLinearElement
+<https://cdm.ovh/rsm/localisation/localisation#onLinearElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#onLinearElement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/localisation/localisation#SpotLocation> .
+<https://cdm.ovh/rsm/localisation/localisation#onLinearElement> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement> .
+<https://cdm.ovh/rsm/localisation/localisation#onLinearElement> <http://www.w3.org/2000/01/rdf-schema#comment> "provides the linear element(s) that define a spot location. There can be several linear elements involved: think of a signal adderessing two adjacent tracks."@en .
+<https://cdm.ovh/rsm/localisation/localisation#onLinearElement> <http://www.w3.org/2000/01/rdf-schema#label> "on linear element" .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#side
+<https://cdm.ovh/rsm/localisation/localisation#side> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#side> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topology#LinearElement> .
+<https://cdm.ovh/rsm/localisation/localisation#side> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/localisation/localisation#Side> .
+<https://cdm.ovh/rsm/localisation/localisation#side> <http://www.w3.org/2000/01/rdf-schema#comment> "consistency with lateral offset sign to be verified by SHACL shapes."@en .
+<https://cdm.ovh/rsm/localisation/localisation#side> <http://www.w3.org/2000/01/rdf-schema#label> "side"@en .
+<https://cdm.ovh/rsm/localisation/localisation#side> <http://www.w3.org/2004/02/skos/core#definition> "side of the linear element on which the location (usually a spot location) is situated.\nThe orientation of the linear element is its own intrinsic orientation, from port 0 to port 1 (or intrinsic coordinate 0 to intrinsic coordinate 1)."@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#tangentialOffset
+<https://cdm.ovh/rsm/localisation/localisation#tangentialOffset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#tangentialOffset> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/localisation/localisation#offset> .
+<https://cdm.ovh/rsm/localisation/localisation#tangentialOffset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#tangentialOffset> <http://www.w3.org/2000/01/rdf-schema#label> "tangential offset"@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#verticalOffset
+<https://cdm.ovh/rsm/localisation/localisation#verticalOffset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#verticalOffset> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/localisation/localisation#offset> .
+<https://cdm.ovh/rsm/localisation/localisation#verticalOffset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#verticalOffset> <http://www.w3.org/2000/01/rdf-schema#label> "vertical offset"@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#connectedWith
 <https://cdm.ovh/rsm/topology/topo#connectedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -145,7 +173,7 @@
 <https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
 <https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topo#Connection> .
 <https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/topology/topo#Port> .
-<https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#comment> "This object property points to (at least two) ports that share a connection relationship.\n\nIt is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."@en .
+<https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#comment> "This object property points to (at least two) ports that share a connection relationship.\r\n\r\nIt is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."@en .
 <https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#label> "connects port"@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#fromExitPort
@@ -285,6 +313,26 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 <https://cdm.ovh/rsm/topology/topo#toExitPort> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/topology/topo#Port> .
 <https://cdm.ovh/rsm/topology/topo#toExitPort> <http://www.w3.org/2000/01/rdf-schema#label> "to exit port"@en .
 # 
+# https://w3id.org/list#hasContents
+<https://w3id.org/list#hasContents> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/list#hasContents> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/list#hasListProperty> .
+<https://w3id.org/list#hasContents> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+# 
+# https://w3id.org/list#hasListProperty
+<https://w3id.org/list#hasListProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/list#hasListProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/list#OWLList> .
+# 
+# https://w3id.org/list#hasNext
+<https://w3id.org/list#hasNext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/list#hasNext> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/list#isFollowedBy> .
+<https://w3id.org/list#hasNext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+# 
+# https://w3id.org/list#isFollowedBy
+<https://w3id.org/list#isFollowedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/list#isFollowedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/list#hasListProperty> .
+<https://w3id.org/list#isFollowedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<https://w3id.org/list#isFollowedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/list#OWLList> .
+# 
 # 
 # 
 # #################################################################
@@ -294,27 +342,28 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 # #################################################################
 # 
 # 
-# http://www.opengis.net/ont/geosparql#hasMetricLength
-<http://www.opengis.net/ont/geosparql#hasMetricLength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.opengis.net/ont/geosparql#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.opengis.net/ont/geosparql#SpatialObject> .
-<http://www.opengis.net/ont/geosparql#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+# https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate
+<https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement> .
+<https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate> <http://www.w3.org/2000/01/rdf-schema#label> "at intrinsic coordinate"@en .
 # 
-# https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#hasMetricLength> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> <http://www.w3.org/2000/01/rdf-schema#label> "has metric length"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> <http://www.w3.org/2004/02/skos/core#definition> "Length (in meter) of a Linear Element."@en .
+# https://cdm.ovh/rsm/localisation/localisation#endAt
+<https://cdm.ovh/rsm/localisation/localisation#endAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#endAt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate> .
+<https://cdm.ovh/rsm/localisation/localisation#endAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#endAt> <http://www.w3.org/2000/01/rdf-schema#comment> "cardinality \"exactly one value\" to be enforced via SHACL shape"@en .
+<https://cdm.ovh/rsm/localisation/localisation#endAt> <http://www.w3.org/2000/01/rdf-schema#label> "end at"@en .
+<https://cdm.ovh/rsm/localisation/localisation#endAt> <http://www.w3.org/2004/02/skos/core#definition> "Property defining the end point of a linear location on the linear element that is referred to.\nSee definition of startsAt for more explanations."@en .
 # 
-# https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topology#LinearElement> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/2000/01/rdf-schema#label> "has nominal metric length"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength> <http://www.w3.org/2004/02/skos/core#definition> "This length is assumed to be derived from the chosen Nominal Geometry.\r\n\r\nThe Nominal Metric Length is supposed to be used for conversions between linear referencing methods \"absolute\" (distance along, e.g. used in CCS/TMS data model) and \"interpolation\" (intrinsic coordinates, with values 0 to 1, used in RSM and others)." .
+# https://cdm.ovh/rsm/localisation/localisation#startAt
+<https://cdm.ovh/rsm/localisation/localisation#startAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#startAt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate> .
+<https://cdm.ovh/rsm/localisation/localisation#startAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://cdm.ovh/rsm/localisation/localisation#startAt> <http://www.w3.org/2000/01/rdf-schema#comment> "cardinality \"exactly one value\" to be enforced via SHACL shape"@en .
+<https://cdm.ovh/rsm/localisation/localisation#startAt> <http://www.w3.org/2000/01/rdf-schema#label> "start at"@en .
+<https://cdm.ovh/rsm/localisation/localisation#startAt> <http://www.w3.org/2004/02/skos/core#definition> "Property defining the start position of a linear location on the linear element that is referred to.\nThe value is an intrinsic coordinate (float; permissible range = [0,1]). The intrinsic coordinate is defined by the default geometry of the associated linear element (see GeoSPARQL adapter), using linear referencing method \"interpolation\" according to ISO 19148."@en .
 # 
 # 
 # 
@@ -325,42 +374,114 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 # #################################################################
 # 
 # 
-# http://www.opengis.net/ont/geosparql#Feature
-<http://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.opengis.net/ont/geosparql#Geometry
-<http://www.opengis.net/ont/geosparql#Geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.opengis.net/ont/geosparql#SpatialObject
-<http://www.opengis.net/ont/geosparql#SpatialObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# http://qudt.org/schema/qudt/QuantityValue
+<http://qudt.org/schema/qudt/QuantityValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> <http://www.w3.org/2000/01/rdf-schema#label> "Feature"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> <http://www.w3.org/2004/02/skos/core#definition> "A discrete spatial phenomenon in the CDM universe of discourse."@en .
 # 
 # https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Geometry> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> <http://purl.org/dc/elements/1.1/source> "OGC 18-010r11"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference system can be geographic, geodetic, cartesian (e.g. engineering coordinate system), and its definition may be part of the WKT or GML string. See OGC documentation."@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> <http://www.w3.org/2000/01/rdf-schema#label> "Geometry"@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> <http://www.w3.org/2004/02/skos/core#definition> "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry> <http://www.w3.org/2004/02/skos/core#prefLabel> "Geometry"@en .
-# 
-# https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> <http://www.w3.org/2000/01/rdf-schema#comment> "\" Abstract\"  class, introduced solely for the purpose of defining the domain of hasMetricLength in an OWL2-RL compatible way."@en .
-<https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> <http://www.w3.org/2000/01/rdf-schema#label> "Linear things"@en .
 # 
 # https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature
 <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#AreaLocation
+<https://cdm.ovh/rsm/localisation/localisation#AreaLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/localisation/localisation#AreaLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/localisation/localisation#BaseLocation> .
+<https://cdm.ovh/rsm/localisation/localisation#AreaLocation> <http://www.w3.org/2000/01/rdf-schema#label> "Area location"@en .
+<https://cdm.ovh/rsm/localisation/localisation#AreaLocation> <http://www.w3.org/2004/02/skos/core#definition> "The class of all locations that are neither spot, nor linear. Concrete examples: the location of a GSM coverage area (i.e. the parts of topology elements that are in this area); a set of discontinuous or branching linear locations. An area location refers to a set of topology elements, or element parts: no order, no repetition."@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#BaseLocation
+<https://cdm.ovh/rsm/localisation/localisation#BaseLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/localisation/localisation#BaseLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> .
+<https://cdm.ovh/rsm/localisation/localisation#BaseLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#SpotLocation> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#AreaLocation> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/localisation/localisation#BaseLocation> <http://www.w3.org/2000/01/rdf-schema#label> "Base location"@en .
+<https://cdm.ovh/rsm/localisation/localisation#BaseLocation> <http://www.w3.org/2004/02/skos/core#definition> "Class of all locations relative to a topology. Disjoint union of its three subclasses (spot-, linear-, area location)."@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement
+<https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/topology/topology#LinearElement> .
+<https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement> <http://www.w3.org/2000/01/rdf-schema#comment> "Linear element associated with positions along the element (property atIntrinsicCoordinate) or start and end boundaries (properties startAt and endAt)."@en .
+<https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement> <http://www.w3.org/2000/01/rdf-schema#label> "Bounded linear element"@en .
 # 
 # https://cdm.ovh/rsm/localisation/localisation#LinearLocation
 <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> .
 <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> .
+<https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/localisation/localisation#BaseLocation> .
+<https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2000/01/rdf-schema#label> "Linear location"@en .
+<https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2004/02/skos/core#definition> "Location extending over consecutive linear elements or parts thereof. The involved linear elements are in a sequence (ordered list, with repetitions allowed). Each linear element in the sequence is oriented from start to end. Start and end may coincide with extremities or some point in between."@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement
+<https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement> .
+<https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/list#OWLList> .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#ListedNetElement
+<https://cdm.ovh/rsm/localisation/localisation#ListedNetElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/localisation/localisation#ListedNetElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/topology/topology#NetElement> .
+<https://cdm.ovh/rsm/localisation/localisation#ListedNetElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/list#OWLList> .
+<https://cdm.ovh/rsm/localisation/localisation#ListedNetElement> <http://www.w3.org/2000/01/rdf-schema#label> "Listed Net Element"@en .
+<https://cdm.ovh/rsm/localisation/localisation#ListedNetElement> <http://www.w3.org/2004/02/skos/core#definition> "Linked list of all net elements (or parts of linear elements) constituting a location. A subclass of OWL List: this is a class from a vocabulary also used by IfcOwl.\nIn the present case, the order of elements in the list is user-defined and has no universal semantics.\nRepetition is allowed, but should be avoided as it has no meaning in the case of non-linear locations.\nLinear elements are referred to as a whole. If only part of a linear element is included in the location, use a LinearElementList individual.\nOrientation of each linear element (or part thereof) is described by startsAt and endsAt properties."@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement
+<https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/topology/topology#NetElement> .
+<https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement> <http://www.w3.org/2000/01/rdf-schema#label> "Located net element"@en .
+<https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement> <http://www.w3.org/2004/02/skos/core#definition> "Net element defined by its location on other net elements. Used for compositing, in lieu of the composite pattern in versions of topology before 1.0rc2."@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#OffsetValue
+<https://cdm.ovh/rsm/localisation/localisation#OffsetValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/localisation/localisation#OffsetValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://qudt.org/schema/qudt/QuantityValue> .
+<https://cdm.ovh/rsm/localisation/localisation#OffsetValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://qudt.org/vocab/quantitykind/Length> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/schema/qudt/quantityKind> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://cdm.ovh/rsm/localisation/localisation#OffsetValue> <http://www.w3.org/2000/01/rdf-schema#label> "Offset value"@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#Side
+<https://cdm.ovh/rsm/localisation/localisation#Side> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/localisation/localisation#Side> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#oneOf> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#Under> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#Right> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#Over> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#Left> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#Front> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#Behind> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/localisation/localisation#Side> <http://www.w3.org/2000/01/rdf-schema#comment> "Front, Rear, Left, and Right orientation are relative to the orientation of the linear element (from node 0 to node 1).\nOver and Under are relative to the geometric or geographic vertical."@en .
+<https://cdm.ovh/rsm/localisation/localisation#Side> <http://www.w3.org/2000/01/rdf-schema#label> "Side"@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#SpotLocation
+<https://cdm.ovh/rsm/localisation/localisation#SpotLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/localisation/localisation#SpotLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/localisation/localisation#BaseLocation> .
+<https://cdm.ovh/rsm/localisation/localisation#SpotLocation> <http://www.w3.org/2000/01/rdf-schema#label> "Spot location"@en .
+<https://cdm.ovh/rsm/localisation/localisation#SpotLocation> <http://www.w3.org/2004/02/skos/core#definition> "Class of all spot locations, i.e. locations that can be represented as a point on a map or schema. The spot location can relate to one or more net elements (concrete example: the location of a signal that addresses two converging tracks)."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#BoundaryElement
 <https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -425,7 +546,127 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 <https://cdm.ovh/rsm/topology/topology#LinearElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/topology/topology#LinearElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> .
 # 
+# https://cdm.ovh/rsm/topology/topology#NetElement
+<https://cdm.ovh/rsm/topology/topology#NetElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://qudt.org/vocab/quantitykind/Length
+<https://qudt.org/vocab/quantitykind/Length> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/list#EmptyList
+<https://w3id.org/list#EmptyList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/list#EmptyList> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid19 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#complementOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/list#hasContents> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/list#OWLList> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/list#EmptyList> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid24 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid26 .
+_:genid26 <http://www.w3.org/2002/07/owl#complementOf> _:genid27 .
+_:genid27 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
+_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/list#isFollowedBy> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/list#OWLList> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/list#EmptyList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/list#OWLList> .
+# 
 # https://w3id.org/list#OWLList
 <https://w3id.org/list#OWLList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/list#OWLList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/list#OWLList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid29 .
+_:genid29 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/list#OWLList> .
+_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/list#isFollowedBy> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/list#OWLList> <http://www.w3.org/2000/01/rdf-schema#comment> "OWLList is used to represent linked lists. Instances of OWLList are list elements; they have at most one direct successor (the value of property hasNext)."@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://cdm.ovh/rsm/localisation/localisation#Behind
+<https://cdm.ovh/rsm/localisation/localisation#Behind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://cdm.ovh/rsm/localisation/localisation#Behind> <http://www.w3.org/2000/01/rdf-schema#label> "Behind"@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#Front
+<https://cdm.ovh/rsm/localisation/localisation#Front> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://cdm.ovh/rsm/localisation/localisation#Front> <http://www.w3.org/2000/01/rdf-schema#label> "Front"@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#Left
+<https://cdm.ovh/rsm/localisation/localisation#Left> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://cdm.ovh/rsm/localisation/localisation#Left> <http://www.w3.org/2000/01/rdf-schema#label> "Left"@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#Over
+<https://cdm.ovh/rsm/localisation/localisation#Over> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://cdm.ovh/rsm/localisation/localisation#Over> <http://www.w3.org/2000/01/rdf-schema#label> "Over"@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#Right
+<https://cdm.ovh/rsm/localisation/localisation#Right> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://cdm.ovh/rsm/localisation/localisation#Right> <http://www.w3.org/2000/01/rdf-schema#label> "Right"@en .
+# 
+# https://cdm.ovh/rsm/localisation/localisation#Under
+<https://cdm.ovh/rsm/localisation/localisation#Under> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://cdm.ovh/rsm/localisation/localisation#Under> <http://www.w3.org/2000/01/rdf-schema#label> "Under"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid30 <http://www.w3.org/2002/07/owl#oneOf> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#Under> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#Right> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#Over> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#Left> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#Front> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#Behind> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid30 <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/localisation/localisation#Side> .
+# 
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid37 <http://www.w3.org/2002/07/owl#members> _:genid40 .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid38 .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#SpotLocation> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#AreaLocation> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
