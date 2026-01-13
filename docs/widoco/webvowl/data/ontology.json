@@ -941,18 +941,6 @@
     "attributes" : [ "external", "object" ],
     "id" : "17"
   }, {
-    "iri" : "https://cdm.ovh/rsm/topology/topo#fromExitPort",
-    "inverse" : "13",
-    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "5",
-    "label" : {
-      "IRI-based" : "fromExitPort",
-      "en" : "from exit port"
-    },
-    "domain" : "7",
-    "attributes" : [ "functional", "object" ],
-    "id" : "51"
-  }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#onElement",
     "inverse" : "20",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
@@ -970,6 +958,18 @@
       "en" : "on element"
     },
     "domain" : "5",
+    "attributes" : [ "functional", "object" ],
+    "id" : "51"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/topology/topo#fromExitPort",
+    "inverse" : "13",
+    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "fromExitPort",
+      "en" : "from exit port"
+    },
+    "domain" : "7",
     "attributes" : [ "functional", "object" ],
     "id" : "52"
   }, {
