@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://cdm.ovh/rsm/list_copy#"
+     xml:base="https://cdm.ovh/rsm/list_copy"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:list="https://w3id.org/list#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:topo="https://cdm.ovh/rsm/topology/topology#"
+     xmlns:vann="https://vocab.org/vann/"
+     xmlns:dcterms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://cdm.ovh/rsm/list_copy">
+        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/list_copy/0.1/list_copy"/>
+        <dc:abstract xml:lang="en">This is an attempted representation, using GRAPHOL, of the List ontology published by Pieter Pauwels and Walter Terkaj under https://w3id.org/list
+
+It is provided for explanatory purpose only.
+
+In its present state, an exact reproduction of the original TTL file is not guaranteed.</dc:abstract>
+        <dc:creator>Airy Magnien</dc:creator>
+        <dc:date xml:lang="en">20 February 2025</dc:date>
+        <dc:title xml:lang="en">List ontology (copy for explanatory purpose)</dc:title>
+        <dcterms:license xml:lang="en">http://creativecommons.org/licenses/by/3.0/</dcterms:license>
+        <rdfs:label xml:lang="en">List (copy for explanatory purpose)</rdfs:label>
+        <owl:versionInfo>0.1</owl:versionInfo>
+        <vann:preferredNamespaceURI>https://w3id.org/list#</vann:preferredNamespaceURI>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/abstract -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/abstract"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- https://vocab.org/vann/preferredNamespaceURI -->
+
+    <owl:AnnotationProperty rdf:about="https://vocab.org/vann/preferredNamespaceURI"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/list#hasContents -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/list#hasContents">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/list#hasListProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/list#hasListProperty -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/list#hasListProperty">
+        <rdfs:domain rdf:resource="https://w3id.org/list#OWLList"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/list#hasNext -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/list#hasNext">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/list#isFollowedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/list#isFollowedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/list#isFollowedBy">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/list#hasListProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/list#OWLList"/>
+        <rdfs:range rdf:resource="https://w3id.org/list#OWLList"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/list#EmptyList -->
+
+    <owl:Class rdf:about="https://w3id.org/list#EmptyList">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/list#OWLList"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/list#hasContents"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/list#hasNext"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/list#isFollowedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Instances of EmptyList explicitly finish the list. They have no successor item, so all corresponding properties take owl:Nothing as value.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/list#OWLList -->
+
+    <owl:Class rdf:about="https://w3id.org/list#OWLList">
+        <rdfs:comment xml:lang="en">OWLList is used to represent linked lists. Instances of OWLList are list elements; they have at most one direct successor (the value of property hasNext).</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi -->
+
