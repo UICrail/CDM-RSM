@@ -233,13 +233,7 @@ loca:AreaLocation rdf:type owl:Class ;
 
 ###  https://cdm.ovh/rsm/localisation/localisation#BaseLocation
 loca:BaseLocation rdf:type owl:Class ;
-                  rdfs:subClassOf geo_adap:Feature ,
-                                  [ rdf:type owl:Class ;
-                                    owl:unionOf ( loca:AreaLocation
-                                                  loca:LinearLocation
-                                                  loca:SpotLocation
-                                                )
-                                  ] ;
+                  rdfs:subClassOf geo_adap:Feature ;
                   rdfs:label "Base location"@en ;
                   skos:definition "Class of all locations relative to a topology. Disjoint union of its three subclasses (spot-, linear-, area location)."@en .
 
@@ -295,15 +289,6 @@ loca:OffsetValue rdf:type owl:Class ;
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Side
 loca:Side rdf:type owl:Class ;
-          rdfs:subClassOf [ rdf:type owl:Class ;
-                            owl:oneOf ( loca:Behind
-                                        loca:Front
-                                        loca:Left
-                                        loca:Over
-                                        loca:Right
-                                        loca:Under
-                                      )
-                          ] ;
           rdfs:comment """Front, Rear, Left, and Right orientation are relative to the orientation of the linear element (from node 0 to node 1).
 Over and Under are relative to the geometric or geographic vertical."""@en ;
           rdfs:label "Side"@en .
@@ -338,32 +323,38 @@ list:OWLList rdf:type owl:Class ;
 #################################################################
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Behind
-loca:Behind rdf:type owl:NamedIndividual ;
+loca:Behind rdf:type owl:NamedIndividual ,
+                     loca:Side ;
             rdfs:label "Behind"@en .
 
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Front
-loca:Front rdf:type owl:NamedIndividual ;
+loca:Front rdf:type owl:NamedIndividual ,
+                    loca:Side ;
            rdfs:label "Front"@en .
 
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Left
-loca:Left rdf:type owl:NamedIndividual ;
+loca:Left rdf:type owl:NamedIndividual ,
+                   loca:Side ;
           rdfs:label "Left"@en .
 
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Over
-loca:Over rdf:type owl:NamedIndividual ;
+loca:Over rdf:type owl:NamedIndividual ,
+                   loca:Side ;
           rdfs:label "Over"@en .
 
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Right
-loca:Right rdf:type owl:NamedIndividual ;
+loca:Right rdf:type owl:NamedIndividual ,
+                    loca:Side ;
            rdfs:label "Right"@en .
 
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Under
-loca:Under rdf:type owl:NamedIndividual ;
+loca:Under rdf:type owl:NamedIndividual ,
+                    loca:Side ;
            rdfs:label "Under"@en .
 
 
@@ -371,18 +362,6 @@ loca:Under rdf:type owl:NamedIndividual ;
 #    General axioms
 #################################################################
 
-[ rdf:type owl:Class ;
-  owl:oneOf ( loca:Behind
-              loca:Front
-              loca:Left
-              loca:Over
-              loca:Right
-              loca:Under
-            ) ;
-  rdfs:subClassOf loca:Side
-] .
-
-
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( loca:AreaLocation
                 loca:LinearLocation

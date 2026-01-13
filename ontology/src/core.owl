@@ -341,15 +341,6 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#BaseLocation">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#AreaLocation"/>
-                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#LinearLocation"/>
-                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#SpotLocation"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Base location</rdfs:label>
         <skos:definition xml:lang="en">Class of all locations relative to a topology. Disjoint union of its three subclasses (spot-, linear-, area location).</skos:definition>
     </owl:Class>
@@ -428,18 +419,6 @@ Orientation of each linear element (or part thereof) is described by startsAt an
     <!-- https://cdm.ovh/rsm/localisation/localisation#Side -->
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#Side">
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Behind"/>
-                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Front"/>
-                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Left"/>
-                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Over"/>
-                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Right"/>
-                    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Under"/>
-                </owl:oneOf>
-            </owl:Class>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Front, Rear, Left, and Right orientation are relative to the orientation of the linear element (from node 0 to node 1).
 Over and Under are relative to the geometric or geographic vertical.</rdfs:comment>
         <rdfs:label xml:lang="en">Side</rdfs:label>
@@ -497,6 +476,7 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     <!-- https://cdm.ovh/rsm/localisation/localisation#Behind -->
 
     <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Behind">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
         <rdfs:label xml:lang="en">Behind</rdfs:label>
     </owl:NamedIndividual>
     
@@ -505,6 +485,7 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     <!-- https://cdm.ovh/rsm/localisation/localisation#Front -->
 
     <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Front">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
         <rdfs:label xml:lang="en">Front</rdfs:label>
     </owl:NamedIndividual>
     
@@ -513,6 +494,7 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     <!-- https://cdm.ovh/rsm/localisation/localisation#Left -->
 
     <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Left">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
         <rdfs:label xml:lang="en">Left</rdfs:label>
     </owl:NamedIndividual>
     
@@ -521,6 +503,7 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     <!-- https://cdm.ovh/rsm/localisation/localisation#Over -->
 
     <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Over">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
         <rdfs:label xml:lang="en">Over</rdfs:label>
     </owl:NamedIndividual>
     
@@ -529,6 +512,7 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     <!-- https://cdm.ovh/rsm/localisation/localisation#Right -->
 
     <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Right">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
         <rdfs:label xml:lang="en">Right</rdfs:label>
     </owl:NamedIndividual>
     
@@ -537,6 +521,7 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     <!-- https://cdm.ovh/rsm/localisation/localisation#Under -->
 
     <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Under">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
         <rdfs:label xml:lang="en">Under</rdfs:label>
     </owl:NamedIndividual>
     
@@ -550,17 +535,6 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <owl:Class>
-        <owl:oneOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Behind"/>
-            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Front"/>
-            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Left"/>
-            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Over"/>
-            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Right"/>
-            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#Under"/>
-        </owl:oneOf>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
-    </owl:Class>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
