@@ -26,4 +26,5 @@ WARN	missing_definition	https://cdm.ovh/rsm/localisation/localisation#startAt	IA
 WARN	missing_definition	https://cdm.ovh/rsm/localisation/localisation#tangentialOffset	IAO:0000115	
 WARN	missing_definition	https://cdm.ovh/rsm/localisation/localisation#verticalOffset	IAO:0000115	
 WARN	missing_definition	https://w3id.org/list#OWLList	IAO:0000115	
+INFO	missing_superclass	https://cdm.ovh/rsm/localisation/localisation#Side	rdfs:subClassOf	
 INFO	missing_superclass	https://w3id.org/list#OWLList	rdfs:subClassOf	

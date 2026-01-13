@@ -1,7 +1,7 @@
 # OWL Profile Validation Report
 
 **Ontology**: ontology/src/core.ttl
-**Date**: 2026-01-13 16:07:49 UTC
+**Date**: 2026-01-13 16:18:23 UTC
 
 ---
 
@@ -28,8 +28,6 @@ Use of undeclared annotation property: <http://purl.org/vocab/vann/preferredName
 
 ```
 OWL 2 RL Profile Report: Ontology and imports closure NOT in profile. The following violations are present:
-Use of non-superclass expression in position that requires a superclass expression: ObjectOneOf(<https://cdm.ovh/rsm/localisation/localisation#Behind> <https://cdm.ovh/rsm/localisation/localisation#Front> <https://cdm.ovh/rsm/localisation/localisation#Left> <https://cdm.ovh/rsm/localisation/localisation#Over> <https://cdm.ovh/rsm/localisation/localisation#Right> <https://cdm.ovh/rsm/localisation/localisation#Under>) [SubClassOf(<https://cdm.ovh/rsm/localisation/localisation#Side> ObjectOneOf(<https://cdm.ovh/rsm/localisation/localisation#Behind> <https://cdm.ovh/rsm/localisation/localisation#Front> <https://cdm.ovh/rsm/localisation/localisation#Left> <https://cdm.ovh/rsm/localisation/localisation#Over> <https://cdm.ovh/rsm/localisation/localisation#Right> <https://cdm.ovh/rsm/localisation/localisation#Under>)) in OntologyID(OntologyIRI(<https://cdm.ovh/rsm/localisation/loca>) VersionIRI(<https://cdm.ovh/rsm/localisation/1.0rc1/loca>))]
-Use of non-superclass expression in position that requires a superclass expression: ObjectUnionOf(<https://cdm.ovh/rsm/localisation/localisation#AreaLocation> <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <https://cdm.ovh/rsm/localisation/localisation#SpotLocation>) [SubClassOf(<https://cdm.ovh/rsm/localisation/localisation#BaseLocation> ObjectUnionOf(<https://cdm.ovh/rsm/localisation/localisation#AreaLocation> <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <https://cdm.ovh/rsm/localisation/localisation#SpotLocation>)) in OntologyID(OntologyIRI(<https://cdm.ovh/rsm/localisation/loca>) VersionIRI(<https://cdm.ovh/rsm/localisation/1.0rc1/loca>))]
 Use of undeclared annotation property: <http://creativecommons.org/ns#license> in annotation [Annotation(<http://creativecommons.org/ns#license> "http://creativecommons.org/licenses/by/3.0/") in null]
 Use of undeclared annotation property: <http://purl.org/dc/elements/1.1/creator> in annotation [Annotation(<http://purl.org/dc/elements/1.1/creator> "Pieter Pauwels (pipauwel.pauwels@ugent.be)") in null]
 Use of undeclared annotation property: <http://purl.org/dc/elements/1.1/creator> in annotation [Annotation(<http://purl.org/dc/elements/1.1/creator> "Walter Terkaj (walter.terkaj@itia.cnr.it)") in null]
