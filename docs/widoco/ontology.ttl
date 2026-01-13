@@ -436,13 +436,7 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
 
 ###  https://cdm.ovh/rsm/localisation/localisation#BaseLocation
 <https://cdm.ovh/rsm/localisation/localisation#BaseLocation> rdf:type owl:Class ;
-                                                             rdfs:subClassOf <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> ,
-                                                                             [ rdf:type owl:Class ;
-                                                                               owl:unionOf ( <https://cdm.ovh/rsm/localisation/localisation#AreaLocation>
-                                                                                             <https://cdm.ovh/rsm/localisation/localisation#LinearLocation>
-                                                                                             <https://cdm.ovh/rsm/localisation/localisation#SpotLocation>
-                                                                                           )
-                                                                             ] ;
+                                                             rdfs:subClassOf <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> ;
                                                              rdfs:label "Base location"@en ;
                                                              <http://www.w3.org/2004/02/skos/core#definition> "Class of all locations relative to a topology. Disjoint union of its three subclasses (spot-, linear-, area location)."@en .
 
@@ -500,15 +494,6 @@ Orientation of each linear element (or part thereof) is described by startsAt an
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Side
 <https://cdm.ovh/rsm/localisation/localisation#Side> rdf:type owl:Class ;
-                                                     rdfs:subClassOf [ rdf:type owl:Class ;
-                                                                       owl:oneOf ( <https://cdm.ovh/rsm/localisation/localisation#Behind>
-                                                                                   <https://cdm.ovh/rsm/localisation/localisation#Front>
-                                                                                   <https://cdm.ovh/rsm/localisation/localisation#Left>
-                                                                                   <https://cdm.ovh/rsm/localisation/localisation#Over>
-                                                                                   <https://cdm.ovh/rsm/localisation/localisation#Right>
-                                                                                   <https://cdm.ovh/rsm/localisation/localisation#Under>
-                                                                                 )
-                                                                     ] ;
                                                      rdfs:comment """Front, Rear, Left, and Right orientation are relative to the orientation of the linear element (from node 0 to node 1).
 Over and Under are relative to the geometric or geographic vertical."""@en ;
                                                      rdfs:label "Side"@en .
@@ -643,50 +628,44 @@ Over and Under are relative to the geometric or geographic vertical."""@en ;
 #################################################################
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Behind
-<https://cdm.ovh/rsm/localisation/localisation#Behind> rdf:type owl:NamedIndividual ;
+<https://cdm.ovh/rsm/localisation/localisation#Behind> rdf:type owl:NamedIndividual ,
+                                                                <https://cdm.ovh/rsm/localisation/localisation#Side> ;
                                                        rdfs:label "Behind"@en .
 
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Front
-<https://cdm.ovh/rsm/localisation/localisation#Front> rdf:type owl:NamedIndividual ;
+<https://cdm.ovh/rsm/localisation/localisation#Front> rdf:type owl:NamedIndividual ,
+                                                               <https://cdm.ovh/rsm/localisation/localisation#Side> ;
                                                       rdfs:label "Front"@en .
 
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Left
-<https://cdm.ovh/rsm/localisation/localisation#Left> rdf:type owl:NamedIndividual ;
+<https://cdm.ovh/rsm/localisation/localisation#Left> rdf:type owl:NamedIndividual ,
+                                                              <https://cdm.ovh/rsm/localisation/localisation#Side> ;
                                                      rdfs:label "Left"@en .
 
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Over
-<https://cdm.ovh/rsm/localisation/localisation#Over> rdf:type owl:NamedIndividual ;
+<https://cdm.ovh/rsm/localisation/localisation#Over> rdf:type owl:NamedIndividual ,
+                                                              <https://cdm.ovh/rsm/localisation/localisation#Side> ;
                                                      rdfs:label "Over"@en .
 
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Right
-<https://cdm.ovh/rsm/localisation/localisation#Right> rdf:type owl:NamedIndividual ;
+<https://cdm.ovh/rsm/localisation/localisation#Right> rdf:type owl:NamedIndividual ,
+                                                               <https://cdm.ovh/rsm/localisation/localisation#Side> ;
                                                       rdfs:label "Right"@en .
 
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Under
-<https://cdm.ovh/rsm/localisation/localisation#Under> rdf:type owl:NamedIndividual ;
+<https://cdm.ovh/rsm/localisation/localisation#Under> rdf:type owl:NamedIndividual ,
+                                                               <https://cdm.ovh/rsm/localisation/localisation#Side> ;
                                                       rdfs:label "Under"@en .
 
 
 #################################################################
 #    General axioms
 #################################################################
-
-[ rdf:type owl:Class ;
-  owl:oneOf ( <https://cdm.ovh/rsm/localisation/localisation#Behind>
-              <https://cdm.ovh/rsm/localisation/localisation#Front>
-              <https://cdm.ovh/rsm/localisation/localisation#Left>
-              <https://cdm.ovh/rsm/localisation/localisation#Over>
-              <https://cdm.ovh/rsm/localisation/localisation#Right>
-              <https://cdm.ovh/rsm/localisation/localisation#Under>
-            ) ;
-  rdfs:subClassOf <https://cdm.ovh/rsm/localisation/localisation#Side>
-] .
-
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( <https://cdm.ovh/rsm/localisation/localisation#AreaLocation>

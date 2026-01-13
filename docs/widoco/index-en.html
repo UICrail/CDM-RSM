@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cdm.ovh/rsm/localisation/loca","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cdm.ovh/rsm/localisation/loca","name":"Localisation", "headline":"This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.For ordering things, this ontology uses the List ontology published by Pieter Pauwels and Walter Terkaj. The List ontology also underpins the ifcOWL ontology by the same authors.For spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical.", "dateReleased":"Tue Jan 13 15:45:08 UTC 2026", "version":"1.0rc1", "author":[{"@type":"Person","name":"Airy Magnien"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cdm.ovh/rsm/localisation/loca","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cdm.ovh/rsm/localisation/loca","name":"Localisation", "headline":"This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.For ordering things, this ontology uses the List ontology published by Pieter Pauwels and Walter Terkaj. The List ontology also underpins the ifcOWL ontology by the same authors.For spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical.", "dateReleased":"Tue Jan 13 16:19:23 UTC 2026", "version":"1.0rc1", "author":[{"@type":"Person","name":"Airy Magnien"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -981,14 +981,16 @@ This section provides details for each class and property defined by Localisatio
   </div>
   <dl class="description">
    <dt>
-    has super-classes
-   </dt>
-   <dd></dd>
-   <dt>
     is in range of
    </dt>
    <dd>
     <a href="#lisation#applicationDirection" title="https://cdm.ovh/rsm/localisation/localisation#applicationDirection">application direction</a> <sup class="type-op" title="object property">op</sup>, <a href="#lisation#side" title="https://cdm.ovh/rsm/localisation/localisation#side">side</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#lisation#Behind" title="https://cdm.ovh/rsm/localisation/localisation#Behind">Behind</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#lisation#Front" title="https://cdm.ovh/rsm/localisation/localisation#Front">Front</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#lisation#Left" title="https://cdm.ovh/rsm/localisation/localisation#Left">Left</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#lisation#Over" title="https://cdm.ovh/rsm/localisation/localisation#Over">Over</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#lisation#Right" title="https://cdm.ovh/rsm/localisation/localisation#Right">Right</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#lisation#Under" title="https://cdm.ovh/rsm/localisation/localisation#Under">Under</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
@@ -1985,26 +1987,74 @@ This section provides details for each class and property defined by Localisatio
  <div class="entity" id="lisation#Behind">
   <h3>Behind<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#Behind</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#lisation#Side" title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
  </div>
  <div class="entity" id="lisation#Front">
   <h3>Front<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#Front</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#lisation#Side" title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
  </div>
  <div class="entity" id="lisation#Left">
   <h3>Left<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#Left</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#lisation#Side" title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
  </div>
  <div class="entity" id="lisation#Over">
   <h3>Over<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#Over</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#lisation#Side" title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
  </div>
  <div class="entity" id="lisation#Right">
   <h3>Right<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#Right</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#lisation#Side" title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
  </div>
  <div class="entity" id="lisation#Under">
   <h3>Under<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#Under</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#lisation#Side" title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
  </div>
 </div><div id="legend">
 <h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>

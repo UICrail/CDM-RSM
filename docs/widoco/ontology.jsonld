@@ -1,48 +1,11 @@
 [ {
-  "@id" : "_:genid11",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "https://qudt.org/vocab/quantitykind/Length"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://qudt.org/schema/qudt/quantityKind"
-  } ]
-}, {
-  "@id" : "_:genid12",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#oneOf" : [ {
-    "@list" : [ {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#Behind"
-    }, {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#Front"
-    }, {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#Left"
-    }, {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#Over"
-    }, {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#Right"
-    }, {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#Under"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid19",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/list#OWLList"
-    }, {
-      "@id" : "_:genid21"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid21",
+  "@id" : "_:genid10",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#complementOf" : [ {
-    "@id" : "_:genid22"
+    "@id" : "_:genid11"
   } ]
 }, {
-  "@id" : "_:genid22",
+  "@id" : "_:genid11",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/list#hasContents"
@@ -51,23 +14,23 @@
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ]
 }, {
-  "@id" : "_:genid24",
+  "@id" : "_:genid13",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://w3id.org/list#OWLList"
     }, {
-      "@id" : "_:genid26"
+      "@id" : "_:genid15"
     } ]
   } ]
 }, {
-  "@id" : "_:genid26",
+  "@id" : "_:genid15",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#complementOf" : [ {
-    "@id" : "_:genid27"
+    "@id" : "_:genid16"
   } ]
 }, {
-  "@id" : "_:genid27",
+  "@id" : "_:genid16",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/list#isFollowedBy"
@@ -76,7 +39,7 @@
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
   } ]
 }, {
-  "@id" : "_:genid29",
+  "@id" : "_:genid18",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
     "@id" : "https://w3id.org/list#OWLList"
@@ -85,28 +48,7 @@
     "@id" : "https://w3id.org/list#isFollowedBy"
   } ]
 }, {
-  "@id" : "_:genid30",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cdm.ovh/rsm/localisation/localisation#Side"
-  } ],
-  "http://www.w3.org/2002/07/owl#oneOf" : [ {
-    "@list" : [ {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#Behind"
-    }, {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#Front"
-    }, {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#Left"
-    }, {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#Over"
-    }, {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#Right"
-    }, {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#Under"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid37",
+  "@id" : "_:genid19",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -119,14 +61,21 @@
   } ]
 }, {
   "@id" : "_:genid7",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://qudt.org/vocab/quantitykind/Length"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://qudt.org/schema/qudt/quantityKind"
+  } ]
+}, {
+  "@id" : "_:genid8",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#AreaLocation"
+      "@id" : "https://w3id.org/list#OWLList"
     }, {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#LinearLocation"
-    }, {
-      "@id" : "https://cdm.ovh/rsm/localisation/localisation#SpotLocation"
+      "@id" : "_:genid10"
     } ]
   } ]
 }, {
@@ -251,8 +200,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"
-  }, {
-    "@id" : "_:genid7"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -261,6 +208,9 @@
 }, {
   "@id" : "https://cdm.ovh/rsm/localisation/localisation#Behind",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/localisation#Side"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Behind"
@@ -282,6 +232,9 @@
 }, {
   "@id" : "https://cdm.ovh/rsm/localisation/localisation#Front",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/localisation#Side"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Front"
@@ -289,6 +242,9 @@
 }, {
   "@id" : "https://cdm.ovh/rsm/localisation/localisation#Left",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/localisation#Side"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Left"
@@ -359,11 +315,14 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   }, {
-    "@id" : "_:genid11"
+    "@id" : "_:genid7"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/localisation/localisation#Over",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/localisation#Side"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Over"
@@ -371,6 +330,9 @@
 }, {
   "@id" : "https://cdm.ovh/rsm/localisation/localisation#Right",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/localisation#Side"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Right"
@@ -385,9 +347,6 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Side"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid12"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/localisation/localisation#SpotLocation",
@@ -406,6 +365,9 @@
 }, {
   "@id" : "https://cdm.ovh/rsm/localisation/localisation#Under",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/localisation#Side"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Under"
@@ -1077,9 +1039,9 @@
     "@id" : "https://w3id.org/list#OWLList"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid19"
+    "@id" : "_:genid8"
   }, {
-    "@id" : "_:genid24"
+    "@id" : "_:genid13"
   } ]
 }, {
   "@id" : "https://w3id.org/list#OWLList",
@@ -1091,7 +1053,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
   }, {
-    "@id" : "_:genid29"
+    "@id" : "_:genid18"
   } ]
 }, {
   "@id" : "https://w3id.org/list#hasContents",
