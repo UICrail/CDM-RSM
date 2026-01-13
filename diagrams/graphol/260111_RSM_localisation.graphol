@@ -15818,10 +15818,6 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
           <point x="-400" y="-180"/>
           <point x="-400" y="-270"/>
         </edge>
-        <edge source="n9" target="n5" id="e126" type="equivalence">
-          <point x="-400" y="-110"/>
-          <point x="-400" y="-180"/>
-        </edge>
         <edge source="n7" target="n9" id="e152" type="input">
           <point x="-400" y="-40"/>
           <point x="-400" y="-110"/>
@@ -15865,6 +15861,10 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
         <edge source="n16" target="n84" id="e163" type="inclusion">
           <point x="-90" y="-40"/>
           <point x="30" y="-40"/>
+        </edge>
+        <edge source="n9" target="n5" id="e164" type="inclusion">
+          <point x="-400" y="-110"/>
+          <point x="-400" y="-180"/>
         </edge>
         <edge source="n14" target="n15" id="e20" type="input">
           <point x="-180" y="-40"/>
@@ -15991,10 +15991,6 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
           <geometry height="20" x="-10" y="60" width="20"/>
           <label size="12" height="23" customSize="0" x="-10" y="38" width="39">exists</label>
         </node>
-        <node color="#fcfcfc" id="n5" type="enumeration">
-          <geometry height="30" x="200" y="150" width="50"/>
-          <label size="12" height="23" customSize="0" x="200" y="150" width="40"/>
-        </node>
         <node color="#fcfcfc" id="n6" type="individual">
           <geometry height="60" x="20" y="240" width="60"/>
           <iri>https://cdm.ovh/rsm/localisation/localisation#Left</iri>
@@ -16084,34 +16080,6 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
           <point x="100" y="-140"/>
           <point x="200" y="-140"/>
         </edge>
-        <edge source="n6" target="n5" id="e57" type="input">
-          <point x="20" y="240"/>
-          <point x="200" y="150"/>
-        </edge>
-        <edge source="n7" target="n5" id="e58" type="input">
-          <point x="90" y="240"/>
-          <point x="200" y="150"/>
-        </edge>
-        <edge source="n8" target="n5" id="e59" type="input">
-          <point x="160" y="240"/>
-          <point x="200" y="150"/>
-        </edge>
-        <edge source="n9" target="n5" id="e60" type="input">
-          <point x="240" y="240"/>
-          <point x="200" y="150"/>
-        </edge>
-        <edge source="n10" target="n5" id="e61" type="input">
-          <point x="310" y="240"/>
-          <point x="200" y="150"/>
-        </edge>
-        <edge source="n11" target="n5" id="e62" type="input">
-          <point x="380" y="240"/>
-          <point x="200" y="150"/>
-        </edge>
-        <edge source="n5" target="n1" id="e67" type="equivalence">
-          <point x="200" y="150"/>
-          <point x="200" y="60"/>
-        </edge>
         <edge source="n3" target="n36" id="e68" type="inclusion">
           <point x="-230" y="60"/>
           <point x="-400" y="60"/>
@@ -16125,6 +16093,30 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
           <point x="-230" y="150"/>
           <point x="-350" y="150"/>
           <point x="-400" y="60"/>
+        </edge>
+        <edge source="n6" target="n1" id="e72" type="membership">
+          <point x="20" y="240"/>
+          <point x="200" y="60"/>
+        </edge>
+        <edge source="n7" target="n1" id="e73" type="membership">
+          <point x="90" y="240"/>
+          <point x="200" y="60"/>
+        </edge>
+        <edge source="n8" target="n1" id="e74" type="membership">
+          <point x="160" y="240"/>
+          <point x="200" y="60"/>
+        </edge>
+        <edge source="n9" target="n1" id="e75" type="membership">
+          <point x="240" y="240"/>
+          <point x="200" y="60"/>
+        </edge>
+        <edge source="n10" target="n1" id="e76" type="membership">
+          <point x="310" y="240"/>
+          <point x="200" y="60"/>
+        </edge>
+        <edge source="n11" target="n1" id="e77" type="membership">
+          <point x="380" y="240"/>
+          <point x="200" y="60"/>
         </edge>
       </diagram>
       <diagram height="5000" name="Located net element" width="5000">
