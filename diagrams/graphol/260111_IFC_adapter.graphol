@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <graphol version="3">
-  <project version="https://cdm.ovh/rsm/localisation/0.4/localisation" name="sRSM">
-    <ontology iri="https://cdm.ovh/rsm/localisation/localisation" addLabelFromUserInput="1" addLabelFromSimpleName="0" lang="en">
-      <imports>
-        <import iri="https://w3id.org/ifc/IFC4X3_ADD2#" version="https://w3id.org/ifc/IFC4X3_ADD2#" location="https://cdm.ovh/ifc/IfcOWL43ADD2#" isLocal="0"/>
-      </imports>
+  <project version="https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/0.1/rsm_ifc_adap" name="RSM IFC adapter">
+    <ontology iri="https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap" addLabelFromUserInput="1" addLabelFromSimpleName="0" lang="en">
+      <imports/>
       <prefixes>
         <prefix>
           <value>dc</value>
@@ -15,36 +13,16 @@
           <namespace>http://purl.org/dc/terms/</namespace>
         </prefix>
         <prefix>
-          <value>geo_adap</value>
-          <namespace>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#</namespace>
-        </prefix>
-        <prefix>
-          <value>geosparql</value>
-          <namespace>http://www.opengis.net/ont/geosparql#</namespace>
-        </prefix>
-        <prefix>
           <value>ifc</value>
           <namespace>https://cdm.ovh/ifc/IfcOWL43ADD2#</namespace>
         </prefix>
         <prefix>
-          <value>list</value>
-          <namespace>https://w3id.org/list#</namespace>
-        </prefix>
-        <prefix>
           <value>loca</value>
-          <namespace>https://cdm.ovh/rsm/localisation/localisation#</namespace>
+          <namespace>https://cdm.ovh/rsm/localisation/loca#</namespace>
         </prefix>
         <prefix>
           <value>owl</value>
           <namespace>http://www.w3.org/2002/07/owl#</namespace>
-        </prefix>
-        <prefix>
-          <value>quantitykind</value>
-          <namespace>https://qudt.org/vocab/quantitykind/</namespace>
-        </prefix>
-        <prefix>
-          <value>qudt</value>
-          <namespace>http://qudt.org/schema/qudt/</namespace>
         </prefix>
         <prefix>
           <value>rdf</value>
@@ -55,12 +33,16 @@
           <namespace>http://www.w3.org/2000/01/rdf-schema#</namespace>
         </prefix>
         <prefix>
+          <value>rsm_ifc_adap</value>
+          <namespace>https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#</namespace>
+        </prefix>
+        <prefix>
           <value>skos</value>
           <namespace>http://www.w3.org/2004/02/skos/core#</namespace>
         </prefix>
         <prefix>
           <value>topo</value>
-          <namespace>https://cdm.ovh/rsm/topology/topology#</namespace>
+          <namespace>https://cdm.ovh/rsm/topology/topo#</namespace>
         </prefix>
         <prefix>
           <value>vann</value>
@@ -178,15 +160,6 @@
         </iri>
         <iri>
           <value>http://purl.org/dc/terms/license</value>
-        </iri>
-        <iri>
-          <value>http://qudt.org/schema/qudt/QuantityValue</value>
-        </iri>
-        <iri>
-          <value>http://qudt.org/schema/qudt/hasQuantityValue</value>
-        </iri>
-        <iri>
-          <value>http://qudt.org/schema/qudt/quantityKind</value>
         </iri>
         <iri>
           <value>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</value>
@@ -324,9 +297,6 @@
           <value>http://www.w3.org/2001/XMLSchema#unsignedShort</value>
         </iri>
         <iri>
-          <value>http://www.w3.org/2002/07/owl#Nothing</value>
-        </iri>
-        <iri>
           <value>http://www.w3.org/2002/07/owl#Thing</value>
         </iri>
         <iri>
@@ -366,46 +336,24 @@
           <value>http://www.w3.org/2004/02/skos/core#definition</value>
         </iri>
         <iri>
+          <value>https://cdm.ovh/ifc/IfcOWL43ADD2#IfcAlignment</value>
+        </iri>
+        <iri>
           <value>https://cdm.ovh/ifc/IfcOWL43ADD2#IfcLinearPositioningElement</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/ifc/IfcOWL43ADD2#IfcLinearPositioningElement</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>IfcLinearPositioningElement</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
         </iri>
         <iri>
           <value>https://cdm.ovh/ifc/IfcOWL43ADD2#IfcReferent</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/ifc/IfcOWL43ADD2#IfcReferent</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>IfcReferent</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature</value>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation</value>
+          <value>https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap</value>
           <annotations>
             <annotation>
               <subject>http://cdm.ovh/rsm/localisation/localisation</subject>
               <property>https://vocab.org/vann/preferredNamespacePrefix</property>
               <object>
-                <lexicalForm>loca</lexicalForm>
+                <lexicalForm>rsm_ifc_adap</lexicalForm>
                 <datatype/>
-                <language/>
+                <language>en</language>
               </object>
             </annotation>
             <annotation>
@@ -421,9 +369,7 @@
               <subject>https://cdm.ovh/rsm/localisation/localisation</subject>
               <property>http://purl.org/dc/elements/1.1/abstract</property>
               <object>
-                <lexicalForm>This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.
-
-For spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical.</lexicalForm>
+                <lexicalForm>Associates RSM linear elements, spot- and linear locations with corresponding IFC classes</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -432,7 +378,7 @@ For spot locations (and, by extension, for linear locations) on linear elements,
               <subject>https://cdm.ovh/rsm/localisation/localisation</subject>
               <property>http://purl.org/dc/elements/1.1/date</property>
               <object>
-                <lexicalForm>20 February 2025</lexicalForm>
+                <lexicalForm>14 january 2026</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -441,7 +387,7 @@ For spot locations (and, by extension, for linear locations) on linear elements,
               <subject>https://cdm.ovh/rsm/localisation/localisation</subject>
               <property>http://purl.org/dc/elements/1.1/title</property>
               <object>
-                <lexicalForm>Localisation</lexicalForm>
+                <lexicalForm>RSM topology amd localisation - IFC adapter</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -459,7 +405,7 @@ For spot locations (and, by extension, for linear locations) on linear elements,
               <subject>https://cdm.ovh/rsm/localisation/localisation</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
-                <lexicalForm>Localisation</lexicalForm>
+                <lexicalForm>RSM topology and localisation adapter to IFC</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -468,7 +414,7 @@ For spot locations (and, by extension, for linear locations) on linear elements,
               <subject>https://cdm.ovh/rsm/localisation/localisation</subject>
               <property>http://www.w3.org/2002/07/owl#versionInfo</property>
               <object>
-                <lexicalForm>0.4</lexicalForm>
+                <lexicalForm>0.1</lexicalForm>
                 <datatype/>
                 <language/>
               </object>
@@ -477,9 +423,137 @@ For spot locations (and, by extension, for linear locations) on linear elements,
               <subject>https://cdm.ovh/rsm/localisation/localisation</subject>
               <property>https://vocab.org/vann/preferredNamespaceURI</property>
               <object>
-                <lexicalForm>https://cdm.ovh/rsm/localisation/localisation</lexicalForm>
+                <lexicalForm>https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#hasIfcAlignment</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#hasIfcAlignment</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has IfcAlignment</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#linearPositioning</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#linearPositioning</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>linear positioning</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#referent</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#referent</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>referent</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/localisation</value>
+          <annotations>
+            <annotation>
+              <subject>http://cdm.ovh/rsm/localisation/localisation</subject>
+              <property>https://vocab.org/vann/preferredNamespacePrefix</property>
+              <object>
+                <lexicalForm>rsm_ifc_adap</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/localisation</subject>
+              <property>http://purl.org/dc/elements/1.1/creator</property>
+              <object>
+                <lexicalForm>Airy Magnien</lexicalForm>
                 <datatype/>
                 <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/localisation</subject>
+              <property>http://purl.org/dc/elements/1.1/abstract</property>
+              <object>
+                <lexicalForm>Associates RSM linear elements, spot- and linear locations with corresponding IFC classes</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/localisation</subject>
+              <property>http://purl.org/dc/elements/1.1/date</property>
+              <object>
+                <lexicalForm>14 january 2026</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/localisation</subject>
+              <property>http://purl.org/dc/elements/1.1/title</property>
+              <object>
+                <lexicalForm>RSM topology amd localisation - IFC adapter</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/localisation</subject>
+              <property>http://purl.org/dc/terms/license</property>
+              <object>
+                <lexicalForm>EUPL 1.2</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/localisation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>RSM topology and localisation adapter to IFC</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/localisation</subject>
+              <property>http://www.w3.org/2002/07/owl#versionInfo</property>
+              <object>
+                <lexicalForm>0.1</lexicalForm>
+                <datatype/>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/localisation</subject>
+              <property>https://vocab.org/vann/preferredNamespaceURI</property>
+              <object>
+                <lexicalForm>https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap</lexicalForm>
+                <datatype/>
+                <language>en</language>
               </object>
             </annotation>
             <annotation>
@@ -500,672 +574,13 @@ For spot locations (and, by extension, for linear locations) on linear elements,
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#AreaLocation</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#AreaLocation</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Area location</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#AreaLocation</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>The class of all locations that are neither spot, nor linear. Concrete examples: the location of a GSM coverage area (i.e. the parts of topology elements that are in this area); a set of discontinuous or branching linear locations. An area location refers to a set of topology elements, or element parts: no order, no repetition.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#BaseLocation</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#BaseLocation</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Base location</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#BaseLocation</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>Class of all locations relative to a topology. Disjoint union of its three subclasses (spot, linear, area location).</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#Behind</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#Behind</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Behind</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#ElementList</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#ElementList</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Element list</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#ElementList</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>Linked list of all net elements (or parts of linear elements) constituting a location. A subclass of OWL List: this is a class from a vocabulary also used by IfcOwl.
-In the present case, the order of elements in the list is user-defined and has no CDM semantics.
-Repetition is allowed, but should be avoided as it has no meaning in the case of non-linear locations.
-Linear elements are referred to as a whole. If only part of a linear element is included in the location, use a LinearElementList individual.
-Orientation of each linear element (or part thereof) is described by startsAt and endsAt properties, but has no meaning in the case of non-linear locations.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#Front</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#Front</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Front</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#Left</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#Left</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Left</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#LinearElementList</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#LinearElementList</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Linear element list</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#LinearElementList</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>Linked list of all linear elements (or parts thereof) constituting a linear location. A subclass of OWL List: this is a class from a vocabulary also used by IfcOwl.
-Individual orientation of each linear element (or part thereof) is described by startsAt and endsAt properties.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#LinearElementList</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>When used to describe a spot location with relation to a linear element, startsAt and endsAt property values are identical, and endsAt can be omitted.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
           <value>https://cdm.ovh/rsm/localisation/localisation#LinearLocation</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#LinearLocation</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Linear location</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#LinearLocation</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>Location extending over consecutive linear elements or parts thereof. The involved linear elements are in a sequence (ordered list, with repetitions allowed). Each linear element in the sequence is oriented from start to end. Start and end may coincide with extremities or some point in between.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Located net element</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>Net element defined by its location on other net elements. Used for compositing, in lieu of the composite pattern in versions of topology before 1.0rc2.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#NonLinearLocation</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#NonLinearLocation</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Nonlinear location</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#NonLinearLocation</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>Class for all non-linear locations. Disjoint union of its subclasses.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#OffsetValue</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#OffsetValue</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Offset value</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#Over</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#Over</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Over</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#Right</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#Right</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Right</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#Side</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#Side</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Side</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#Side</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>Front, Rear, Left, and Right orientation are relative to the orientation of the linear element (from node 0 to node 1).
-Over and Under are relative to the geometric or geographic vertical.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
         </iri>
         <iri>
           <value>https://cdm.ovh/rsm/localisation/localisation#SpotLocation</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#SpotLocation</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Spot location</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#SpotLocation</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>Class of all spot locations, i.e. locations that can be represented as a point on a map or schema. The spot location can relate to one or more net elements (concrete example: the location of a signal that addresses two converging tracks).</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#Under</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#Under</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Under</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#applicationDirection</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#applicationDirection</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>application direction</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#applicationDirection</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>Allows to express the direction of travel for which the localized entity is relevant. Example: a signal generally applies to one travel direction; track occupancy detection systems may be oriented, etc.
-Direction of travel is expressed relative to the orientation of the linear element, from port 0 to port 1, or intrinsic coordinate 0 to 1. It is NOT expressed with respect to "normal travel direction in operations".</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#elementList</value>
-          <functional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#elementList</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>element list</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#elementList</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>Property pointing at the first element in the list of net elements that describe the non-linear location.
-Note: in the present case, the order in the list has no CDM semantics (actually, it is a bag or a set), and it is up to the user to choose which is the "first" element.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#elementLocation</value>
-          <functional/>
-          <inverseFunctional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#elementLocation</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>element Location</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#endsAt</value>
-          <functional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#endsAt</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>ends at</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#endsAt</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>Property defining the end point of a linear location on the linear element that is referred to.
-See definition of startsAt for more explanations.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#endsAt</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>cardinality "exactly one value" to be enforced via SHACL shape</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#lateralOffset</value>
-          <inverseFunctional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#lateralOffset</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>lateral offset</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#lateralOffset</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>offset of location (usually: spot location) with respect to a perpendicular to the linear element, in the horizontal plane (not: track plane). Is positive when on the left and negative on the right (in order to respect the conventional orientation of cartesian reference systems, where X is the longitudinal axis, Y the transversal, and Z the vertical).</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#linearElement</value>
-          <functional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#linearElement</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>linear element</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#linearElementList</value>
-          <functional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#linearElementList</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>linear element list</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#linearElementList</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm> Property pointing to the first element in the linked list of linear elements (or parts thereof) describing the linear location.
-Note: in the present case, the list is actually a sequence (ordered list with repetitions allowed).</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#linearPositioning</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#linearPositioning</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>linear positioning</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#netElement</value>
-          <functional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#netElement</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>net element</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#netElement</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>Functional property referring to a net element being part of the non-linear location description.
-Note: if this net element is a linear element, it is included as a whole. If only a part of it is relevant, use sub-property linareElement.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#offset</value>
-          <inverseFunctional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#offset</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>offset</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#offset</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>definitely not functional, to cope with the fact that values may be multiple (specified, observed...).
-definitely inverse functional, because values characterize a location relative to exactly one linear element. "Exactly" however is left for SHACL shapes (not in RL profile).</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#referent</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#referent</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>referent</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#side</value>
-          <functional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#side</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>side</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#side</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>side of the linear element on which the location (usually a spot location) is situated.
-The orientation of the linear element is its own intrinsic orientation, from port 0 to port 1 (or intrinsic coordinate 0 to intrinsic coordinate 1).</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#side</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>consistency with lateral offset sign to be verified by SHACL shapes.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#startsAt</value>
-          <functional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#startsAt</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>starts at</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#startsAt</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>Property defining the start point of a linear location on the linear element that is referred to.
-The value is an intrinsic coordinate (float; permissible range = [0,1]). The intrinsic coordinate is defined by the default geometry of the associated linear element (see GeoSPARQL adapter), using linear referencing method "interpolation" according to ISO 19148.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#startsAt</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>cardinality "exactly one value" to be enforced via SHACL shape</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#tangentialOffset</value>
-          <inverseFunctional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#tangentialOffset</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>tangential offset</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#verticalOffset</value>
-          <inverseFunctional/>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/localisation#verticalOffset</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>vertical offset</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/topology/topology#LinearElement</value>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/topology/topology#NetElement</value>
-        </iri>
-        <iri>
-          <value>https://qudt.org/vocab/quantitykind/Length</value>
+          <value>https://cdm.ovh/rsm/topology/topo#LinearElement</value>
         </iri>
         <iri>
           <value>https://vocab.org/vann/preferredNamespacePrefix</value>
@@ -15596,9 +15011,6 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
           <functional/>
         </iri>
         <iri>
-          <value>https://w3id.org/list#hasListProperty</value>
-        </iri>
-        <iri>
           <value>https://w3id.org/list#hasNext</value>
           <functional/>
         </iri>
@@ -15623,8 +15035,31 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
           <label size="12" height="23" customSize="0" x="370" y="-52" width="39">exists</label>
         </node>
         <node color="#fcfcfc" id="n11" type="domain-restriction">
-          <geometry height="20" x="370" y="80" width="20"/>
-          <label size="12" height="23" customSize="0" x="370" y="58" width="39">exists</label>
+          <geometry height="20" x="370" y="70" width="20"/>
+          <label size="12" height="23" customSize="0" x="370" y="48" width="39">exists</label>
+        </node>
+        <node color="#fcfcfc" id="n12" type="concept">
+          <geometry height="50" x="240" y="-130" width="110"/>
+          <iri>https://cdm.ovh/rsm/topology/topo#LinearElement</iri>
+          <label size="12" height="23" customSize="0" x="240" y="-130" width="110"/>
+        </node>
+        <node color="#fcfcfc" id="n14" type="role">
+          <geometry height="50" x="450" y="-130" width="70"/>
+          <iri>https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#hasIfcAlignment</iri>
+          <label size="12" height="23" customSize="0" x="450" y="-160" width="95"/>
+        </node>
+        <node color="#c2b078" id="n15" type="concept">
+          <geometry height="50" x="680" y="-130" width="175"/>
+          <iri>https://cdm.ovh/ifc/IfcOWL43ADD2#IfcAlignment</iri>
+          <label size="12" height="23" customSize="0" x="680" y="-130" width="175"/>
+        </node>
+        <node color="#fcfcfc" id="n16" type="domain-restriction">
+          <geometry height="20" x="370" y="-130" width="20"/>
+          <label size="12" height="23" customSize="0" x="370" y="-152" width="39">exists</label>
+        </node>
+        <node color="#000000" id="n17" type="range-restriction">
+          <geometry height="20" x="530" y="-130" width="20"/>
+          <label size="12" height="23" customSize="0" x="530" y="-152" width="39">exists</label>
         </node>
         <node color="#c2b078" id="n3" type="concept">
           <geometry height="50" x="680" y="-30" width="175"/>
@@ -15632,40 +15067,48 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
           <label size="12" height="23" customSize="0" x="680" y="-30" width="175"/>
         </node>
         <node color="#fcfcfc" id="n4" type="concept">
-          <geometry height="50" x="240" y="80" width="110"/>
+          <geometry height="50" x="240" y="70" width="110"/>
           <iri>https://cdm.ovh/rsm/localisation/localisation#SpotLocation</iri>
-          <label size="12" height="23" customSize="0" x="240" y="80" width="110"/>
+          <label size="12" height="23" customSize="0" x="240" y="70" width="110"/>
         </node>
         <node color="#c2b078" id="n5" type="concept">
-          <geometry height="50" x="680" y="80" width="175"/>
+          <geometry height="50" x="680" y="70" width="175"/>
           <iri>https://cdm.ovh/ifc/IfcOWL43ADD2#IfcReferent</iri>
-          <label size="12" height="23" customSize="0" x="680" y="80" width="175"/>
+          <label size="12" height="23" customSize="0" x="680" y="70" width="175"/>
         </node>
         <node color="#fcfcfc" id="n6" type="role">
-          <geometry height="50" x="460" y="-30" width="70"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#linearPositioning</iri>
-          <label size="12" height="23" customSize="0" x="460" y="-60" width="97"/>
+          <geometry height="50" x="450" y="-30" width="70"/>
+          <iri>https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#linearPositioning</iri>
+          <label size="12" height="23" customSize="0" x="450" y="-60" width="97"/>
         </node>
         <node color="#fcfcfc" id="n7" type="role">
-          <geometry height="50" x="460" y="80" width="70"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#referent</iri>
-          <label size="12" height="23" customSize="0" x="460" y="50" width="49"/>
+          <geometry height="50" x="450" y="70" width="70"/>
+          <iri>https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#referent</iri>
+          <label size="12" height="23" customSize="0" x="450" y="40" width="49"/>
         </node>
         <node color="#000000" id="n8" type="range-restriction">
           <geometry height="20" x="540" y="-30" width="20"/>
           <label size="12" height="23" customSize="0" x="540" y="-52" width="39">exists</label>
         </node>
         <node color="#000000" id="n9" type="range-restriction">
-          <geometry height="20" x="540" y="80" width="20"/>
-          <label size="12" height="23" customSize="0" x="540" y="58" width="39">exists</label>
+          <geometry height="20" x="540" y="70" width="20"/>
+          <label size="12" height="23" customSize="0" x="540" y="48" width="39">exists</label>
         </node>
         <edge source="n11" target="n4" id="e0" type="inclusion">
-          <point x="370" y="80"/>
-          <point x="240" y="80"/>
+          <point x="370" y="70"/>
+          <point x="240" y="70"/>
         </edge>
         <edge source="n9" target="n5" id="e1" type="inclusion">
-          <point x="540" y="80"/>
-          <point x="680" y="80"/>
+          <point x="540" y="70"/>
+          <point x="680" y="70"/>
+        </edge>
+        <edge source="n14" target="n17" id="e10" type="input">
+          <point x="450" y="-130"/>
+          <point x="530" y="-130"/>
+        </edge>
+        <edge source="n14" target="n16" id="e11" type="input">
+          <point x="450" y="-130"/>
+          <point x="370" y="-130"/>
         </edge>
         <edge source="n10" target="n0" id="e2" type="inclusion">
           <point x="370" y="-30"/>
@@ -15676,743 +15119,28 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
           <point x="680" y="-30"/>
         </edge>
         <edge source="n6" target="n10" id="e4" type="input">
-          <point x="460" y="-30"/>
+          <point x="450" y="-30"/>
           <point x="370" y="-30"/>
         </edge>
         <edge source="n6" target="n8" id="e5" type="input">
-          <point x="460" y="-30"/>
+          <point x="450" y="-30"/>
           <point x="540" y="-30"/>
         </edge>
         <edge source="n7" target="n11" id="e6" type="input">
-          <point x="460" y="80"/>
-          <point x="370" y="80"/>
+          <point x="450" y="70"/>
+          <point x="370" y="70"/>
         </edge>
         <edge source="n7" target="n9" id="e7" type="input">
-          <point x="460" y="80"/>
-          <point x="540" y="80"/>
-        </edge>
-      </diagram>
-      <diagram height="5000" name="List" width="5000">
-        <node color="#c2b078" id="n1" type="role">
-          <geometry height="50" x="100" y="-70" width="70"/>
-          <iri>https://w3id.org/list#isFollowedBy</iri>
-          <label size="12" height="23" customSize="0" x="100" y="-100" width="78"/>
-        </node>
-        <node color="#c2b078" id="n18" type="concept">
-          <geometry height="50" x="-190" y="50" width="110"/>
-          <iri>https://w3id.org/list#EmptyList</iri>
-          <label size="12" height="23" customSize="0" x="-190" y="50" width="110"/>
-        </node>
-        <node color="#c2b078" id="n2" type="role">
-          <geometry height="50" x="210" y="230" width="70"/>
-          <iri>https://w3id.org/list#hasContents</iri>
-          <label size="12" height="23" customSize="0" x="210" y="200" width="75"/>
-        </node>
-        <node color="#fcfcfc" id="n27" type="domain-restriction">
-          <geometry height="20" x="-70" y="120" width="20"/>
-          <label size="12" height="23" customSize="0" x="-70" y="98" width="39">forall</label>
-        </node>
-        <node color="#c2b078" id="n29" type="concept">
-          <geometry height="50" x="10" y="50" width="110"/>
-          <iri>http://www.w3.org/2002/07/owl#Nothing</iri>
-          <label size="12" height="23" customSize="0" x="10" y="50" width="110"/>
-        </node>
-        <node color="#c2b078" id="n3" type="role">
-          <geometry height="50" x="100" y="-240" width="70"/>
-          <iri>https://w3id.org/list#hasListProperty</iri>
-          <label size="12" height="23" customSize="0" x="100" y="-270" width="92"/>
-        </node>
-        <node color="#fcfcfc" id="n30" type="domain-restriction">
-          <geometry height="20" x="-70" y="-20" width="20"/>
-          <label size="12" height="23" customSize="0" x="-70" y="-42" width="39">forall</label>
-        </node>
-        <node color="#fcfcfc" id="n31" type="domain-restriction">
-          <geometry height="20" x="-70" y="190" width="20"/>
-          <label size="12" height="23" customSize="0" x="-70" y="168" width="39">forall</label>
-        </node>
-        <node color="#c2b078" id="n4" type="concept">
-          <geometry height="50" x="-190" y="-160" width="110"/>
-          <iri>https://w3id.org/list#OWLList</iri>
-          <label size="12" height="23" customSize="0" x="-190" y="-160" width="110"/>
-        </node>
-        <node color="#c2b078" id="n6" type="role">
-          <geometry height="50" x="100" y="140" width="70"/>
-          <iri>https://w3id.org/list#hasNext</iri>
-          <label size="12" height="23" customSize="0" x="100" y="110" width="52"/>
-        </node>
-        <node color="#fcfcfc" id="n7" type="domain-restriction">
-          <geometry height="20" x="0" y="-240" width="20"/>
-          <label size="12" height="23" customSize="0" x="0" y="-262" width="39">exists</label>
-        </node>
-        <node color="#000000" id="n8" type="range-restriction">
-          <geometry height="20" x="0" y="-70" width="20"/>
-          <label size="12" height="23" customSize="0" x="0" y="-92" width="39">exists</label>
-        </node>
-        <edge source="n6" target="n1" id="e1" type="inclusion">
-          <point x="100" y="140"/>
-          <point x="100" y="-70"/>
-        </edge>
-        <edge source="n2" target="n3" id="e10" type="inclusion">
-          <point x="210" y="230"/>
-          <point x="210" y="-170"/>
-          <point x="100" y="-240"/>
-        </edge>
-        <edge source="n1" target="n3" id="e2" type="inclusion">
-          <point x="100" y="-70"/>
-          <point x="100" y="-240"/>
-        </edge>
-        <edge source="n18" target="n4" id="e31" type="inclusion">
-          <point x="-190" y="50"/>
-          <point x="-190" y="-160"/>
-        </edge>
-        <edge source="n3" target="n7" id="e4" type="input">
-          <point x="100" y="-240"/>
-          <point x="0" y="-240"/>
-        </edge>
-        <edge source="n7" target="n4" id="e5" type="inclusion">
-          <point x="0" y="-240"/>
-          <point x="-190" y="-160"/>
-        </edge>
-        <edge source="n1" target="n8" id="e6" type="input">
-          <point x="100" y="-70"/>
-          <point x="0" y="-70"/>
-        </edge>
-        <edge source="n18" target="n27" id="e60" type="inclusion">
-          <point x="-190" y="50"/>
-          <point x="-70" y="120"/>
-        </edge>
-        <edge source="n6" target="n27" id="e64" type="input">
-          <point x="100" y="140"/>
-          <point x="-30" y="140"/>
-          <point x="-70" y="120"/>
-        </edge>
-        <edge source="n29" target="n27" id="e65" type="input">
-          <point x="10" y="50"/>
-          <point x="-70" y="120"/>
-        </edge>
-        <edge source="n18" target="n30" id="e66" type="inclusion">
-          <point x="-190" y="50"/>
-          <point x="-70" y="-20"/>
-        </edge>
-        <edge source="n8" target="n4" id="e7" type="inclusion">
-          <point x="0" y="-70"/>
-          <point x="-190" y="-160"/>
-        </edge>
-        <edge source="n1" target="n30" id="e72" type="input">
-          <point x="100" y="-70"/>
-          <point x="50" y="-20"/>
-          <point x="-70" y="-20"/>
-        </edge>
-        <edge source="n29" target="n30" id="e73" type="input">
-          <point x="10" y="50"/>
-          <point x="-70" y="-20"/>
-        </edge>
-        <edge source="n2" target="n31" id="e74" type="input">
-          <point x="210" y="230"/>
-          <point x="-20" y="230"/>
-          <point x="-70" y="190"/>
-        </edge>
-        <edge source="n18" target="n31" id="e75" type="inclusion">
-          <point x="-190" y="50"/>
-          <point x="-70" y="190"/>
-        </edge>
-        <edge source="n29" target="n31" id="e76" type="input">
-          <point x="10" y="50"/>
-          <point x="-70" y="190"/>
-        </edge>
-      </diagram>
-      <diagram height="5000" name="Localisation" width="5000">
-        <node color="#fcfcfc" id="n12" type="concept">
-          <geometry height="50" x="40" y="-40" width="117"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#ElementList</iri>
-          <label size="12" height="23" customSize="0" x="40" y="-40" width="117"/>
-        </node>
-        <node color="#fcfcfc" id="n13" type="concept">
-          <geometry height="50" x="40" y="160" width="150"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#LinearElementList</iri>
-          <label size="12" height="23" customSize="0" x="40" y="160" width="150"/>
-        </node>
-        <node color="#fcfcfc" id="n14" type="role">
-          <geometry height="50" x="-140" y="-40" width="70"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#elementList</iri>
-          <label size="12" height="23" customSize="0" x="-140" y="-69" width="70"/>
-        </node>
-        <node color="#fcfcfc" id="n15" type="domain-restriction">
-          <geometry height="20" x="-210" y="-40" width="20"/>
-          <label size="12" height="23" customSize="0" x="-210" y="-61" width="39">exists</label>
-        </node>
-        <node color="#000000" id="n16" type="range-restriction">
-          <geometry height="20" x="-70" y="-40" width="20"/>
-          <label size="12" height="23" customSize="0" x="-70" y="-61" width="39">exists</label>
-        </node>
-        <node color="#fcfcfc" id="n18" type="role">
-          <geometry height="50" x="230" y="-40" width="70"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#netElement</iri>
-          <label size="12" height="23" customSize="0" x="230" y="-70" width="68"/>
-        </node>
-        <node color="#fcfcfc" id="n19" type="domain-restriction">
-          <geometry height="20" x="150" y="-40" width="20"/>
-          <label size="12" height="23" customSize="0" x="150" y="-62" width="39">exists</label>
-        </node>
-        <node color="#000000" id="n20" type="range-restriction">
-          <geometry height="20" x="310" y="-40" width="20"/>
-          <label size="12" height="23" customSize="0" x="310" y="-62" width="39">exists</label>
-        </node>
-        <node color="#fcfcfc" id="n22" type="domain-restriction">
-          <geometry height="20" x="150" y="-130" width="20"/>
-          <label size="12" height="23" customSize="0" x="150" y="-152" width="39">exists</label>
-        </node>
-        <node color="#fcfcfc" id="n23" type="role">
-          <geometry height="50" x="230" y="160" width="70"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#linearElement</iri>
-          <label size="12" height="23" customSize="0" x="230" y="130" width="80"/>
-        </node>
-        <node color="#fcfcfc" id="n24" type="domain-restriction">
-          <geometry height="20" x="160" y="160" width="20"/>
-          <label size="12" height="23" customSize="0" x="160" y="138" width="39">exists</label>
-        </node>
-        <node color="#000000" id="n25" type="range-restriction">
-          <geometry height="20" x="300" y="160" width="20"/>
-          <label size="12" height="23" customSize="0" x="300" y="138" width="39">exists</label>
-        </node>
-        <node color="#fcfcfc" id="n31" type="role">
-          <geometry height="50" x="-140" y="160" width="70"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#linearElementList</iri>
-          <label size="12" height="23" customSize="0" x="-140" y="130" width="100"/>
-        </node>
-        <node color="#000000" id="n32" type="range-restriction">
-          <geometry height="20" x="-70" y="160" width="20"/>
-          <label size="12" height="23" customSize="0" x="-70" y="138" width="39">exists</label>
-        </node>
-        <node color="#fcfcfc" id="n33" type="domain-restriction">
-          <geometry height="20" x="-210" y="160" width="20"/>
-          <label size="12" height="23" customSize="0" x="-210" y="138" width="39">exists</label>
-        </node>
-        <node color="#fcfcfc" id="n39" type="attribute">
-          <geometry height="20" x="80" y="230" width="20"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#startsAt</iri>
-          <label size="12" height="23" customSize="0" x="80" y="208" width="50"/>
-        </node>
-        <node color="#fcfcfc" id="n41" type="domain-restriction">
-          <geometry height="20" x="20" y="230" width="20"/>
-          <label size="12" height="23" customSize="0" x="20" y="208" width="39">exists</label>
-        </node>
-        <node color="#000000" id="n43" type="range-restriction">
-          <geometry height="20" x="150" y="230" width="20"/>
-          <label size="12" height="23" customSize="0" x="150" y="208" width="39">exists</label>
-        </node>
-        <node color="#fcfcfc" id="n45" type="value-domain">
-          <geometry height="40" x="230" y="250" width="90"/>
-          <iri>http://www.w3.org/2001/XMLSchema#float</iri>
-          <label size="12" height="23" customSize="0" x="230" y="250" width="90"/>
-        </node>
-        <node color="#c2b078" id="n47" type="concept">
-          <geometry height="50" x="416" y="160" width="127"/>
-          <iri>https://cdm.ovh/rsm/topology/topology#LinearElement</iri>
-          <label size="12" height="23" customSize="0" x="416" y="160" width="127"/>
-        </node>
-        <node color="#c2b078" id="n49" type="concept">
-          <geometry height="50" x="40" y="-130" width="110"/>
-          <iri>https://w3id.org/list#OWLList</iri>
-          <label size="12" height="23" customSize="0" x="40" y="-130" width="110"/>
-        </node>
-        <node color="#fcfcfc" id="n5" type="concept">
-          <geometry height="50" x="-390" y="-180" width="110"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#BaseLocation</iri>
-          <label size="12" height="23" customSize="0" x="-390" y="-180" width="110"/>
-        </node>
-        <node color="#c2b078" id="n50" type="role">
-          <geometry height="50" x="230" y="-130" width="70"/>
-          <iri>https://w3id.org/list#hasContents</iri>
-          <label size="12" height="23" customSize="0" x="230" y="-160" width="75"/>
-        </node>
-        <node color="#fcfcfc" id="n6" type="concept">
-          <geometry height="50" x="-420" y="160" width="122"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#LinearLocation</iri>
-          <label size="12" height="23" customSize="0" x="-420" y="160" width="122"/>
-        </node>
-        <node color="#fcfcfc" id="n64" type="concept">
-          <geometry height="50" x="-310" y="-40" width="110"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#NonLinearLocation</iri>
-          <label size="12" height="23" customSize="0" x="-310" y="-40" width="110"/>
-        </node>
-        <node color="#000000" id="n65" type="disjoint-union">
-          <geometry height="30" x="-310" y="30" width="50"/>
-        </node>
-        <node color="#fcfcfc" id="n66" type="attribute">
-          <geometry height="20" x="80" y="280" width="20"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#endsAt</iri>
-          <label size="12" height="23" customSize="0" x="80" y="258" width="45"/>
-        </node>
-        <node color="#000000" id="n67" type="range-restriction">
-          <geometry height="20" x="150" y="280" width="20"/>
-          <label size="12" height="23" customSize="0" x="150" y="258" width="39">exists</label>
-        </node>
-        <node color="#fcfcfc" id="n7" type="concept">
-          <geometry height="50" x="-250" y="90" width="110"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#AreaLocation</iri>
-          <label size="12" height="23" customSize="0" x="-250" y="90" width="110"/>
-        </node>
-        <node color="#c2b078" id="n70" type="concept">
-          <geometry height="50" x="-390" y="-270" width="110"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature</iri>
-          <label size="12" height="23" customSize="0" x="-390" y="-270" width="110"/>
-        </node>
-        <node color="#fcfcfc" id="n73" type="domain-restriction">
-          <geometry height="20" x="0" y="280" width="20"/>
-          <label size="12" height="23" customSize="0" x="0" y="258" width="39">exists</label>
-        </node>
-        <node color="#c2b078" id="n78" type="concept">
-          <geometry height="50" x="430" y="-40" width="110"/>
-          <iri>https://cdm.ovh/rsm/topology/topology#NetElement</iri>
-          <label size="12" height="23" customSize="0" x="430" y="-40" width="110"/>
-        </node>
-        <node color="#fcfcfc" id="n8" type="concept">
-          <geometry height="50" x="-370" y="90" width="110"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#SpotLocation</iri>
-          <label size="12" height="23" customSize="0" x="-370" y="90" width="110"/>
-        </node>
-        <node color="#000000" id="n9" type="disjoint-union">
-          <geometry height="30" x="-390" y="-110" width="50"/>
-        </node>
-        <edge source="n7" target="n65" id="e105" type="input">
-          <point x="-250" y="90"/>
-          <point x="-310" y="30"/>
-        </edge>
-        <edge source="n8" target="n65" id="e106" type="input">
-          <point x="-370" y="90"/>
-          <point x="-310" y="30"/>
-        </edge>
-        <edge source="n64" target="n9" id="e109" type="input">
-          <point x="-310" y="-40"/>
-          <point x="-390" y="-110"/>
-        </edge>
-        <edge source="n67" target="n45" id="e114" type="inclusion">
-          <point x="150" y="280"/>
-          <point x="230" y="250"/>
-        </edge>
-        <edge source="n5" target="n70" id="e116" type="inclusion">
-          <point x="-390" y="-180"/>
-          <point x="-390" y="-270"/>
-        </edge>
-        <edge source="n13" target="n12" id="e12" type="inclusion">
-          <point x="40" y="160"/>
-          <point x="40" y="-40"/>
-        </edge>
-        <edge source="n41" target="n13" id="e123" type="inclusion">
-          <point x="20" y="230"/>
-          <point x="20" y="184"/>
-        </edge>
-        <edge source="n9" target="n5" id="e126" type="equivalence">
-          <point x="-390" y="-110"/>
-          <point x="-390" y="-180"/>
-        </edge>
-        <edge source="n65" target="n64" id="e127" type="equivalence">
-          <point x="-310" y="30"/>
-          <point x="-310" y="-40"/>
-        </edge>
-        <edge source="n66" target="n73" id="e131" type="input">
-          <point x="80" y="280"/>
-          <point x="0" y="280"/>
-        </edge>
-        <edge source="n73" target="n13" id="e132" type="inclusion">
-          <point x="0" y="280"/>
-          <point x="0" y="184"/>
-        </edge>
-        <edge source="n66" target="n67" id="e137" type="input">
-          <point x="80" y="280"/>
-          <point x="150" y="280"/>
-        </edge>
-        <edge source="n20" target="n78" id="e139" type="inclusion">
-          <point x="310" y="-40"/>
-          <point x="430" y="-40"/>
-        </edge>
-        <edge source="n15" target="n64" id="e146" type="inclusion">
-          <point x="-210" y="-40"/>
-          <point x="-310" y="-40"/>
-        </edge>
-        <edge source="n14" target="n15" id="e20" type="input">
-          <point x="-140" y="-40"/>
-          <point x="-210" y="-40"/>
-        </edge>
-        <edge source="n14" target="n16" id="e21" type="input">
-          <point x="-140" y="-40"/>
-          <point x="-70" y="-40"/>
-        </edge>
-        <edge source="n16" target="n12" id="e23" type="inclusion">
-          <point x="-70" y="-40"/>
-          <point x="40" y="-40"/>
-        </edge>
-        <edge source="n19" target="n12" id="e25" type="inclusion">
-          <point x="150" y="-40"/>
-          <point x="40" y="-40"/>
-        </edge>
-        <edge source="n18" target="n20" id="e27" type="input">
-          <point x="230" y="-40"/>
-          <point x="310" y="-40"/>
-        </edge>
-        <edge source="n18" target="n19" id="e28" type="input">
-          <point x="230" y="-40"/>
-          <point x="150" y="-40"/>
-        </edge>
-        <edge source="n24" target="n13" id="e32" type="inclusion">
-          <point x="160" y="160"/>
-          <point x="40" y="160"/>
-        </edge>
-        <edge source="n23" target="n25" id="e34" type="input">
-          <point x="230" y="160"/>
-          <point x="300" y="160"/>
-        </edge>
-        <edge source="n23" target="n24" id="e35" type="input">
-          <point x="230" y="160"/>
-          <point x="160" y="160"/>
-        </edge>
-        <edge source="n23" target="n18" id="e36" type="inclusion">
-          <point x="230" y="160"/>
-          <point x="230" y="-40"/>
-        </edge>
-        <edge source="n33" target="n6" id="e43" type="inclusion">
-          <point x="-210" y="160"/>
-          <point x="-420" y="160"/>
-        </edge>
-        <edge source="n32" target="n13" id="e44" type="inclusion">
-          <point x="-70" y="160"/>
-          <point x="40" y="160"/>
-        </edge>
-        <edge source="n31" target="n32" id="e47" type="input">
-          <point x="-140" y="160"/>
-          <point x="-70" y="160"/>
-        </edge>
-        <edge source="n31" target="n33" id="e48" type="input">
-          <point x="-140" y="160"/>
-          <point x="-210" y="160"/>
-        </edge>
-        <edge source="n39" target="n41" id="e63" type="input">
-          <point x="80" y="230"/>
-          <point x="20" y="229"/>
-        </edge>
-        <edge source="n39" target="n43" id="e65" type="input">
-          <point x="80" y="230"/>
-          <point x="150" y="229"/>
-        </edge>
-        <edge source="n43" target="n45" id="e67" type="inclusion">
-          <point x="150" y="230"/>
-          <point x="230" y="250"/>
-        </edge>
-        <edge source="n25" target="n47" id="e70" type="inclusion">
-          <point x="300" y="160"/>
-          <point x="416" y="160"/>
-        </edge>
-        <edge source="n12" target="n49" id="e71" type="inclusion">
-          <point x="40" y="-40"/>
-          <point x="40" y="-130"/>
-        </edge>
-        <edge source="n22" target="n49" id="e72" type="inclusion">
-          <point x="150" y="-130"/>
-          <point x="40" y="-130"/>
-        </edge>
-        <edge source="n18" target="n50" id="e73" type="inclusion">
-          <point x="230" y="-40"/>
-          <point x="230" y="-130"/>
-        </edge>
-        <edge source="n50" target="n22" id="e74" type="input">
-          <point x="230" y="-130"/>
-          <point x="150" y="-130"/>
-        </edge>
-        <edge source="n6" target="n9" id="e9" type="input">
-          <point x="-450" y="135"/>
-          <point x="-450" y="-60"/>
-          <point x="-390" y="-110"/>
-        </edge>
-      </diagram>
-      <diagram height="5000" name="Localisation_details" width="5000">
-        <node color="#fcfcfc" id="n0" type="concept">
-          <geometry height="50" x="-350" y="60" width="110"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#LinearElementList</iri>
-          <label size="12" height="23" customSize="0" x="-350" y="60" width="110"/>
-        </node>
-        <node color="#fcfcfc" id="n1" type="concept">
-          <geometry height="50" x="200" y="60" width="110"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#Side</iri>
-          <label size="12" height="23" customSize="0" x="200" y="60" width="110"/>
-        </node>
-        <node color="#fcfcfc" id="n10" type="individual">
-          <geometry height="60" x="310" y="240" width="60"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#Front</iri>
-          <label size="12" height="23" customSize="0" x="310" y="240" width="60"/>
-        </node>
-        <node color="#fcfcfc" id="n11" type="individual">
-          <geometry height="60" x="380" y="240" width="60"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#Behind</iri>
-          <label size="12" height="23" customSize="0" x="380" y="240" width="60"/>
-        </node>
-        <node color="#fcfcfc" id="n12" type="role">
-          <geometry height="50" x="-120" y="-140" width="70"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#offset</iri>
-          <label size="12" height="23" customSize="0" x="-120" y="-170" width="39"/>
-        </node>
-        <node color="#fcfcfc" id="n13" type="concept">
-          <geometry height="50" x="100" y="-140" width="110"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#OffsetValue</iri>
-          <label size="12" height="23" customSize="0" x="100" y="-140" width="110"/>
-        </node>
-        <node color="#fcfcfc" id="n14" type="domain-restriction">
-          <geometry height="20" x="-230" y="-140" width="20"/>
-          <label size="12" height="23" customSize="0" x="-230" y="-162" width="39">exists</label>
-        </node>
-        <node color="#000000" id="n15" type="range-restriction">
-          <geometry height="20" x="-10" y="-140" width="20"/>
-          <label size="12" height="23" customSize="0" x="-10" y="-162" width="39">exists</label>
-        </node>
-        <node color="#fcfcfc" id="n16" type="role">
-          <geometry height="50" x="-120" y="150" width="70"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#applicationDirection</iri>
-          <label size="12" height="23" customSize="0" x="-120" y="120" width="114"/>
-        </node>
-        <node color="#fcfcfc" id="n17" type="domain-restriction">
-          <geometry height="20" x="-230" y="150" width="20"/>
-          <label size="12" height="23" customSize="0" x="-230" y="128" width="39">exists</label>
-        </node>
-        <node color="#000000" id="n18" type="range-restriction">
-          <geometry height="20" x="-10" y="150" width="20"/>
-          <label size="12" height="23" customSize="0" x="-10" y="128" width="39">exists</label>
-        </node>
-        <node color="#fcfcfc" id="n2" type="role">
-          <geometry height="50" x="-120" y="60" width="70"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#side</iri>
-          <label size="12" height="23" customSize="0" x="-120" y="30" width="30"/>
-        </node>
-        <node color="#c2b078" id="n25" type="role">
-          <geometry height="50" x="-120" y="-240" width="70"/>
-          <iri>http://qudt.org/schema/qudt/hasQuantityValue</iri>
-          <label size="12" height="23" customSize="0" x="-120" y="-270" width="101"/>
-        </node>
-        <node color="#c2b078" id="n26" type="concept">
-          <geometry height="50" x="100" y="-240" width="110"/>
-          <iri>http://qudt.org/schema/qudt/QuantityValue</iri>
-          <label size="12" height="23" customSize="0" x="100" y="-240" width="110"/>
-        </node>
-        <node color="#fcfcfc" id="n27" type="role">
-          <geometry height="50" x="-210" y="-30" width="70"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#lateralOffset</iri>
-          <label size="12" height="23" customSize="0" x="-210" y="-60" width="73"/>
-        </node>
-        <node color="#fcfcfc" id="n29" type="role">
-          <geometry height="50" x="-120" y="-30" width="70"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#verticalOffset</iri>
-          <label size="12" height="23" customSize="0" x="-120" y="-60" width="79"/>
-        </node>
-        <node color="#fcfcfc" id="n3" type="domain-restriction">
-          <geometry height="20" x="-230" y="60" width="20"/>
-          <label size="12" height="23" customSize="0" x="-230" y="38" width="39">exists</label>
-        </node>
-        <node color="#fcfcfc" id="n30" type="role">
-          <geometry height="50" x="-30" y="-30" width="70"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#tangentialOffset</iri>
-          <label size="12" height="23" customSize="0" x="-30" y="-60" width="93"/>
-        </node>
-        <node color="#c2b078" id="n31" type="role">
-          <geometry height="50" x="310" y="-180" width="70"/>
-          <iri>http://qudt.org/schema/qudt/quantityKind</iri>
-          <label size="12" height="23" customSize="0" x="310" y="-210" width="74"/>
-        </node>
-        <node color="#c2b078" id="n32" type="concept">
-          <geometry height="50" x="310" y="-110" width="125"/>
-          <iri>https://qudt.org/vocab/quantitykind/Length</iri>
-          <label size="12" height="23" customSize="0" x="310" y="-110" width="125"/>
-        </node>
-        <node color="#fcfcfc" id="n35" type="domain-restriction">
-          <geometry height="20" x="200" y="-140" width="20"/>
-          <label size="12" height="23" customSize="0" x="200" y="-162" width="39">forall</label>
-        </node>
-        <node color="#000000" id="n4" type="range-restriction">
-          <geometry height="20" x="-10" y="60" width="20"/>
-          <label size="12" height="23" customSize="0" x="-10" y="38" width="39">exists</label>
-        </node>
-        <node color="#fcfcfc" id="n5" type="enumeration">
-          <geometry height="30" x="200" y="150" width="50"/>
-          <label size="12" height="23" customSize="0" x="200" y="150" width="40"/>
-        </node>
-        <node color="#fcfcfc" id="n6" type="individual">
-          <geometry height="60" x="20" y="240" width="60"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#Left</iri>
-          <label size="12" height="23" customSize="0" x="20" y="240" width="60"/>
-        </node>
-        <node color="#fcfcfc" id="n7" type="individual">
-          <geometry height="60" x="90" y="240" width="60"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#Right</iri>
-          <label size="12" height="23" customSize="0" x="90" y="240" width="60"/>
-        </node>
-        <node color="#fcfcfc" id="n8" type="individual">
-          <geometry height="60" x="160" y="240" width="60"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#Over</iri>
-          <label size="12" height="23" customSize="0" x="160" y="240" width="60"/>
-        </node>
-        <node color="#fcfcfc" id="n9" type="individual">
-          <geometry height="60" x="240" y="240" width="60"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#Under</iri>
-          <label size="12" height="23" customSize="0" x="240" y="240" width="60"/>
-        </node>
-        <edge source="n3" target="n0" id="e0" type="inclusion">
-          <point x="-230" y="60"/>
-          <point x="-350" y="60"/>
-        </edge>
-        <edge source="n4" target="n1" id="e1" type="inclusion">
-          <point x="-10" y="60"/>
-          <point x="200" y="60"/>
-        </edge>
-        <edge source="n15" target="n13" id="e11" type="inclusion">
-          <point x="-10" y="-140"/>
-          <point x="100" y="-140"/>
-        </edge>
-        <edge source="n14" target="n0" id="e12" type="inclusion">
-          <point x="-230" y="-140"/>
-          <point x="-350" y="-140"/>
-          <point x="-350" y="60"/>
-        </edge>
-        <edge source="n12" target="n15" id="e13" type="input">
-          <point x="-120" y="-140"/>
-          <point x="-10" y="-140"/>
-        </edge>
-        <edge source="n12" target="n14" id="e14" type="input">
-          <point x="-120" y="-140"/>
-          <point x="-230" y="-140"/>
-        </edge>
-        <edge source="n17" target="n0" id="e15" type="inclusion">
-          <point x="-230" y="150"/>
-          <point x="-350" y="150"/>
-          <point x="-350" y="60"/>
-        </edge>
-        <edge source="n18" target="n1" id="e16" type="inclusion">
-          <point x="-10" y="150"/>
-          <point x="90" y="150"/>
-          <point x="145" y="70"/>
-        </edge>
-        <edge source="n16" target="n18" id="e17" type="input">
-          <point x="-120" y="150"/>
-          <point x="-10" y="150"/>
-        </edge>
-        <edge source="n16" target="n17" id="e18" type="input">
-          <point x="-120" y="150"/>
-          <point x="-230" y="150"/>
-        </edge>
-        <edge source="n2" target="n3" id="e2" type="input">
-          <point x="-120" y="60"/>
-          <point x="-230" y="60"/>
-        </edge>
-        <edge source="n13" target="n26" id="e24" type="inclusion">
-          <point x="100" y="-140"/>
-          <point x="100" y="-240"/>
-        </edge>
-        <edge source="n12" target="n25" id="e25" type="inclusion">
-          <point x="-120" y="-140"/>
-          <point x="-120" y="-240"/>
-        </edge>
-        <edge source="n2" target="n4" id="e3" type="input">
-          <point x="-120" y="60"/>
-          <point x="-10" y="60"/>
-        </edge>
-        <edge source="n27" target="n12" id="e31" type="inclusion">
-          <point x="-210" y="-30"/>
-          <point x="-120" y="-140"/>
-        </edge>
-        <edge source="n29" target="n12" id="e32" type="inclusion">
-          <point x="-120" y="-30"/>
-          <point x="-120" y="-140"/>
-        </edge>
-        <edge source="n30" target="n12" id="e33" type="inclusion">
-          <point x="-30" y="-30"/>
-          <point x="-120" y="-140"/>
-        </edge>
-        <edge source="n31" target="n35" id="e39" type="input">
-          <point x="310" y="-180"/>
-          <point x="200" y="-140"/>
-        </edge>
-        <edge source="n32" target="n35" id="e40" type="input">
-          <point x="310" y="-110"/>
-          <point x="200" y="-140"/>
-        </edge>
-        <edge source="n13" target="n35" id="e41" type="inclusion">
-          <point x="100" y="-140"/>
-          <point x="200" y="-140"/>
-        </edge>
-        <edge source="n6" target="n5" id="e57" type="input">
-          <point x="20" y="240"/>
-          <point x="200" y="150"/>
-        </edge>
-        <edge source="n7" target="n5" id="e58" type="input">
-          <point x="90" y="240"/>
-          <point x="200" y="150"/>
-        </edge>
-        <edge source="n8" target="n5" id="e59" type="input">
-          <point x="160" y="240"/>
-          <point x="200" y="150"/>
-        </edge>
-        <edge source="n9" target="n5" id="e60" type="input">
-          <point x="240" y="240"/>
-          <point x="200" y="150"/>
-        </edge>
-        <edge source="n10" target="n5" id="e61" type="input">
-          <point x="310" y="240"/>
-          <point x="200" y="150"/>
-        </edge>
-        <edge source="n11" target="n5" id="e62" type="input">
-          <point x="380" y="240"/>
-          <point x="200" y="150"/>
-        </edge>
-        <edge source="n5" target="n1" id="e67" type="equivalence">
-          <point x="200" y="150"/>
-          <point x="200" y="60"/>
-        </edge>
-      </diagram>
-      <diagram height="5000" name="Located net element" width="5000">
-        <node color="#fcfcfc" id="n2" type="role">
-          <geometry height="50" x="0" y="50" width="70"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#elementLocation</iri>
-          <label size="12" height="23" customSize="0" x="0" y="20" width="97"/>
-        </node>
-        <node color="#000000" id="n3" type="range-restriction">
-          <geometry height="20" x="90" y="50" width="20"/>
-          <label size="12" height="23" customSize="0" x="90" y="28" width="39">exists</label>
-        </node>
-        <node color="#fcfcfc" id="n4" type="domain-restriction">
-          <geometry height="20" x="-90" y="50" width="20"/>
-          <label size="12" height="23" customSize="0" x="-90" y="28" width="39">exists</label>
-        </node>
-        <node color="#fcfcfc" id="n5" type="concept">
-          <geometry height="50" x="-190" y="50" width="110"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement</iri>
-          <label size="12" height="38" customSize="0" x="-190" y="50" width="110"/>
-        </node>
-        <node color="#c2b078" id="n8" type="concept">
-          <geometry height="50" x="-190" y="-50" width="110"/>
-          <iri>https://cdm.ovh/rsm/topology/topology#NetElement</iri>
-          <label size="12" height="23" customSize="0" x="-190" y="-50" width="110"/>
-        </node>
-        <node color="#fcfcfc" id="n9" type="concept">
-          <geometry height="50" x="190" y="50" width="110"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#BaseLocation</iri>
-          <label size="12" height="23" customSize="0" x="190" y="50" width="110"/>
-        </node>
-        <edge source="n2" target="n4" id="e2" type="input">
-          <point x="0" y="50"/>
-          <point x="-90" y="50"/>
-        </edge>
-        <edge source="n2" target="n3" id="e3" type="input">
-          <point x="0" y="50"/>
-          <point x="90" y="50"/>
-        </edge>
-        <edge source="n4" target="n5" id="e5" type="inclusion">
-          <point x="-90" y="50"/>
-          <point x="-190" y="50"/>
-        </edge>
-        <edge source="n5" target="n8" id="e6" type="inclusion">
-          <point x="-190" y="50"/>
-          <point x="-190" y="-50"/>
-        </edge>
-        <edge source="n3" target="n9" id="e7" type="inclusion">
-          <point x="90" y="50"/>
-          <point x="190" y="50"/>
+          <point x="450" y="70"/>
+          <point x="540" y="70"/>
+        </edge>
+        <edge source="n17" target="n15" id="e8" type="inclusion">
+          <point x="530" y="-130"/>
+          <point x="680" y="-130"/>
+        </edge>
+        <edge source="n16" target="n12" id="e9" type="inclusion">
+          <point x="370" y="-130"/>
+          <point x="240" y="-130"/>
         </edge>
       </diagram>
     </diagrams>
