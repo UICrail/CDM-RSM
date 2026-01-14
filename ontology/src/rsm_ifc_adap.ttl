@@ -1,0 +1,114 @@
+@prefix : <https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ifc: <https://cdm.ovh/ifc/IfcOWL43ADD2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix loca: <https://cdm.ovh/rsm/localisation/loca#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix topo: <https://cdm.ovh/rsm/topology/topo#> .
+@prefix vann: <https://vocab.org/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rsm_ifc_adap: <https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#> .
+@base <https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap> .
+
+<https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap> rdf:type owl:Ontology ;
+                                                             owl:versionIRI <https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/0.1/rsm_ifc_adap> ;
+                                                             dc:abstract "Associates RSM linear elements, spot- and linear locations with corresponding IFC classes"@en ;
+                                                             dc:creator "Airy Magnien" ;
+                                                             dc:date "14 january 2026"@en ;
+                                                             dc:title "RSM topology amd localisation - IFC adapter"@en ;
+                                                             dcterms:license "EUPL 1.2"@en ;
+                                                             rdfs:label "RSM topology and localisation adapter to IFC"@en ;
+                                                             owl:versionInfo "0.1" ;
+                                                             vann:preferredNamespacePrefix "rsm_ifc_adap"@en ;
+                                                             vann:preferredNamespaceURI "https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/abstract
+dc:abstract rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  https://vocab.org/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  https://vocab.org/vann/preferredNamespaceURI
+vann:preferredNamespaceURI rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#hasIfcAlignment
+rsm_ifc_adap:hasIfcAlignment rdf:type owl:ObjectProperty ;
+                             rdfs:domain topo:LinearElement ;
+                             rdfs:range ifc:IfcAlignment ;
+                             rdfs:label "has IfcAlignment" .
+
+
+###  https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#linearPositioning
+rsm_ifc_adap:linearPositioning rdf:type owl:ObjectProperty ;
+                               rdfs:domain <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> ;
+                               rdfs:range ifc:IfcLinearPositioningElement ;
+                               rdfs:label "linear positioning"@en .
+
+
+###  https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#referent
+rsm_ifc_adap:referent rdf:type owl:ObjectProperty ;
+                      rdfs:domain <https://cdm.ovh/rsm/localisation/localisation#SpotLocation> ;
+                      rdfs:range ifc:IfcReferent ;
+                      rdfs:label "referent"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://cdm.ovh/ifc/IfcOWL43ADD2#IfcAlignment
+ifc:IfcAlignment rdf:type owl:Class .
+
+
+###  https://cdm.ovh/ifc/IfcOWL43ADD2#IfcLinearPositioningElement
+ifc:IfcLinearPositioningElement rdf:type owl:Class .
+
+
+###  https://cdm.ovh/ifc/IfcOWL43ADD2#IfcReferent
+ifc:IfcReferent rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/localisation/localisation#LinearLocation
+<https://cdm.ovh/rsm/localisation/localisation#LinearLocation> rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/localisation/localisation#SpotLocation
+<https://cdm.ovh/rsm/localisation/localisation#SpotLocation> rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/topology/topo#LinearElement
+topo:LinearElement rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi

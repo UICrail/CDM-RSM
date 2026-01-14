@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#"
+     xml:base="https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ifc="https://cdm.ovh/ifc/IfcOWL43ADD2#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:loca="https://cdm.ovh/rsm/localisation/loca#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:topo="https://cdm.ovh/rsm/topology/topo#"
+     xmlns:vann="https://vocab.org/vann/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rsm_ifc_adap="https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#">
+    <owl:Ontology rdf:about="https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap">
+        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/0.1/rsm_ifc_adap"/>
+        <dc:abstract xml:lang="en">Associates RSM linear elements, spot- and linear locations with corresponding IFC classes</dc:abstract>
+        <dc:creator>Airy Magnien</dc:creator>
+        <dc:date xml:lang="en">14 january 2026</dc:date>
+        <dc:title xml:lang="en">RSM topology amd localisation - IFC adapter</dc:title>
+        <dcterms:license xml:lang="en">EUPL 1.2</dcterms:license>
+        <rdfs:label xml:lang="en">RSM topology and localisation adapter to IFC</rdfs:label>
+        <owl:versionInfo>0.1</owl:versionInfo>
+        <vann:preferredNamespacePrefix xml:lang="en">rsm_ifc_adap</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceURI xml:lang="en">https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap</vann:preferredNamespaceURI>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/abstract -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/abstract"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- https://vocab.org/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="https://vocab.org/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- https://vocab.org/vann/preferredNamespaceURI -->
+
+    <owl:AnnotationProperty rdf:about="https://vocab.org/vann/preferredNamespaceURI"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#hasIfcAlignment -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#hasIfcAlignment">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#LinearElement"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/ifc/IfcOWL43ADD2#IfcAlignment"/>
+        <rdfs:label>has IfcAlignment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#linearPositioning -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#linearPositioning">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/localisation#LinearLocation"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/ifc/IfcOWL43ADD2#IfcLinearPositioningElement"/>
+        <rdfs:label xml:lang="en">linear positioning</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#referent -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap#referent">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SpotLocation"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/ifc/IfcOWL43ADD2#IfcReferent"/>
+        <rdfs:label xml:lang="en">referent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://cdm.ovh/ifc/IfcOWL43ADD2#IfcAlignment -->
+
+    <owl:Class rdf:about="https://cdm.ovh/ifc/IfcOWL43ADD2#IfcAlignment"/>
+    
+
+
+    <!-- https://cdm.ovh/ifc/IfcOWL43ADD2#IfcLinearPositioningElement -->
+
+    <owl:Class rdf:about="https://cdm.ovh/ifc/IfcOWL43ADD2#IfcLinearPositioningElement"/>
+    
+
+
+    <!-- https://cdm.ovh/ifc/IfcOWL43ADD2#IfcReferent -->
+
+    <owl:Class rdf:about="https://cdm.ovh/ifc/IfcOWL43ADD2#IfcReferent"/>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#LinearLocation -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#LinearLocation"/>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/localisation#SpotLocation -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#SpotLocation"/>
+    
+
+
+    <!-- https://cdm.ovh/rsm/topology/topo#LinearElement -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#LinearElement"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi -->
+
