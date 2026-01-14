@@ -289,12 +289,6 @@
           <value>http://www.w3.org/2001/XMLSchema#unsignedShort</value>
         </iri>
         <iri>
-          <value>http://www.w3.org/2002/07/owl#Nothing</value>
-        </iri>
-        <iri>
-          <value>http://www.w3.org/2002/07/owl#Thing</value>
-        </iri>
-        <iri>
           <value>http://www.w3.org/2002/07/owl#backwardCompatibleWith</value>
         </iri>
         <iri>
@@ -14973,144 +14967,96 @@ In its present state, an exact reproduction of the original TTL file is not guar
     </ontology>
     <diagrams>
       <diagram height="5000" name="List" width="5000">
-        <node color="#c2b078" id="n1" type="role">
-          <geometry height="50" x="100" y="-70" width="70"/>
+        <node color="#fcfcfc" id="n1" type="role">
+          <geometry height="50" x="40" y="-70" width="70"/>
           <iri>https://w3id.org/list#isFollowedBy</iri>
-          <label size="12" height="23" customSize="0" x="100" y="-100" width="78"/>
+          <label size="12" height="23" customSize="0" x="40" y="-100" width="78"/>
         </node>
-        <node color="#c2b078" id="n18" type="concept">
-          <geometry height="50" x="-190" y="50" width="110"/>
+        <node color="#fcfcfc" id="n18" type="concept">
+          <geometry height="50" x="-190" y="200" width="110"/>
           <iri>https://w3id.org/list#EmptyList</iri>
-          <label size="12" height="23" customSize="0" x="-190" y="50" width="110"/>
+          <label size="12" height="23" customSize="0" x="-190" y="200" width="110"/>
         </node>
-        <node color="#c2b078" id="n2" type="role">
-          <geometry height="50" x="210" y="230" width="70"/>
+        <node color="#fcfcfc" id="n2" type="role">
+          <geometry height="50" x="150" y="200" width="70"/>
           <iri>https://w3id.org/list#hasContents</iri>
-          <label size="12" height="23" customSize="0" x="210" y="200" width="75"/>
+          <label size="12" height="23" customSize="0" x="150" y="170" width="75"/>
         </node>
-        <node color="#fcfcfc" id="n27" type="domain-restriction">
-          <geometry height="20" x="-70" y="120" width="20"/>
-          <label size="12" height="23" customSize="0" x="-70" y="98" width="39">forall</label>
-        </node>
-        <node color="#c2b078" id="n29" type="concept">
-          <geometry height="50" x="10" y="50" width="110"/>
-          <iri>http://www.w3.org/2002/07/owl#Nothing</iri>
-          <label size="12" height="23" customSize="0" x="10" y="50" width="110"/>
-        </node>
-        <node color="#c2b078" id="n3" type="role">
-          <geometry height="50" x="100" y="-240" width="70"/>
+        <node color="#fcfcfc" id="n3" type="role">
+          <geometry height="50" x="40" y="-240" width="70"/>
           <iri>https://w3id.org/list#hasListProperty</iri>
-          <label size="12" height="23" customSize="0" x="100" y="-270" width="92"/>
+          <label size="12" height="23" customSize="0" x="40" y="-270" width="92"/>
         </node>
-        <node color="#fcfcfc" id="n30" type="domain-restriction">
-          <geometry height="20" x="-70" y="-20" width="20"/>
-          <label size="12" height="23" customSize="0" x="-70" y="-42" width="39">forall</label>
+        <node color="#fcfcfc" id="n35" type="complement">
+          <geometry height="30" x="-60" y="200" width="50"/>
+          <label size="12" height="23" customSize="0" x="-60" y="200" width="25"/>
         </node>
-        <node color="#fcfcfc" id="n31" type="domain-restriction">
-          <geometry height="20" x="-70" y="190" width="20"/>
-          <label size="12" height="23" customSize="0" x="-70" y="168" width="39">forall</label>
+        <node color="#000000" id="n36" type="range-restriction">
+          <geometry height="20" x="30" y="200" width="20"/>
+          <label size="12" height="23" customSize="0" x="30" y="178" width="39">exists</label>
         </node>
-        <node color="#fcfcfc" id="n32" type="domain-restriction">
-          <geometry height="20" x="0" y="-130" width="20"/>
-          <label size="12" height="23" customSize="0" x="0" y="-152" width="39">exists</label>
-        </node>
-        <node color="#c2b078" id="n4" type="concept">
+        <node color="#fcfcfc" id="n4" type="concept">
           <geometry height="50" x="-190" y="-160" width="110"/>
           <iri>https://w3id.org/list#OWLList</iri>
           <label size="12" height="23" customSize="0" x="-190" y="-160" width="110"/>
         </node>
-        <node color="#c2b078" id="n6" type="role">
-          <geometry height="50" x="100" y="140" width="70"/>
+        <node color="#fcfcfc" id="n6" type="role">
+          <geometry height="50" x="40" y="50" width="70"/>
           <iri>https://w3id.org/list#hasNext</iri>
-          <label size="12" height="23" customSize="0" x="100" y="110" width="52"/>
+          <label size="12" height="23" customSize="0" x="40" y="20" width="52"/>
         </node>
         <node color="#fcfcfc" id="n7" type="domain-restriction">
-          <geometry height="20" x="0" y="-240" width="20"/>
-          <label size="12" height="23" customSize="0" x="0" y="-262" width="39">exists</label>
+          <geometry height="20" x="-60" y="-240" width="20"/>
+          <label size="12" height="23" customSize="0" x="-60" y="-262" width="39">exists</label>
         </node>
         <node color="#000000" id="n8" type="range-restriction">
-          <geometry height="20" x="0" y="-70" width="20"/>
-          <label size="12" height="23" customSize="0" x="0" y="-92" width="39">exists</label>
+          <geometry height="20" x="-60" y="-70" width="20"/>
+          <label size="12" height="23" customSize="0" x="-60" y="-92" width="39">forall</label>
         </node>
         <edge source="n6" target="n1" id="e1" type="inclusion">
-          <point x="100" y="140"/>
-          <point x="100" y="-70"/>
+          <point x="40" y="50"/>
+          <point x="40" y="-70"/>
         </edge>
         <edge source="n2" target="n3" id="e10" type="inclusion">
-          <point x="210" y="230"/>
-          <point x="210" y="-170"/>
-          <point x="100" y="-240"/>
+          <point x="150" y="200"/>
+          <point x="150" y="-170"/>
+          <point x="40" y="-240"/>
         </edge>
         <edge source="n1" target="n3" id="e2" type="inclusion">
-          <point x="100" y="-70"/>
-          <point x="100" y="-240"/>
+          <point x="40" y="-70"/>
+          <point x="40" y="-240"/>
         </edge>
         <edge source="n18" target="n4" id="e31" type="inclusion">
-          <point x="-190" y="50"/>
+          <point x="-190" y="200"/>
           <point x="-190" y="-160"/>
         </edge>
         <edge source="n3" target="n7" id="e4" type="input">
-          <point x="100" y="-240"/>
-          <point x="0" y="-240"/>
+          <point x="40" y="-240"/>
+          <point x="-60" y="-240"/>
         </edge>
         <edge source="n7" target="n4" id="e5" type="inclusion">
-          <point x="0" y="-240"/>
+          <point x="-60" y="-240"/>
           <point x="-190" y="-160"/>
         </edge>
         <edge source="n1" target="n8" id="e6" type="input">
-          <point x="100" y="-70"/>
-          <point x="0" y="-70"/>
+          <point x="40" y="-70"/>
+          <point x="-60" y="-70"/>
         </edge>
-        <edge source="n18" target="n27" id="e60" type="inclusion">
-          <point x="-190" y="50"/>
-          <point x="-70" y="120"/>
+        <edge source="n18" target="n35" id="e85" type="inclusion">
+          <point x="-190" y="200"/>
+          <point x="-60" y="200"/>
         </edge>
-        <edge source="n6" target="n27" id="e64" type="input">
-          <point x="100" y="140"/>
-          <point x="-30" y="140"/>
-          <point x="-70" y="120"/>
+        <edge source="n2" target="n36" id="e88" type="input">
+          <point x="150" y="200"/>
+          <point x="30" y="200"/>
         </edge>
-        <edge source="n29" target="n27" id="e65" type="input">
-          <point x="10" y="50"/>
-          <point x="-70" y="120"/>
+        <edge source="n36" target="n35" id="e89" type="input">
+          <point x="30" y="200"/>
+          <point x="-60" y="200"/>
         </edge>
-        <edge source="n18" target="n30" id="e66" type="inclusion">
-          <point x="-190" y="50"/>
-          <point x="-70" y="-20"/>
-        </edge>
-        <edge source="n8" target="n4" id="e7" type="inclusion">
-          <point x="0" y="-70"/>
+        <edge source="n4" target="n8" id="e90" type="inclusion">
           <point x="-190" y="-160"/>
-        </edge>
-        <edge source="n1" target="n30" id="e72" type="input">
-          <point x="100" y="-70"/>
-          <point x="50" y="-20"/>
-          <point x="-70" y="-20"/>
-        </edge>
-        <edge source="n29" target="n30" id="e73" type="input">
-          <point x="10" y="50"/>
-          <point x="-70" y="-20"/>
-        </edge>
-        <edge source="n2" target="n31" id="e74" type="input">
-          <point x="210" y="230"/>
-          <point x="-20" y="230"/>
-          <point x="-70" y="190"/>
-        </edge>
-        <edge source="n18" target="n31" id="e75" type="inclusion">
-          <point x="-190" y="50"/>
-          <point x="-70" y="190"/>
-        </edge>
-        <edge source="n29" target="n31" id="e76" type="input">
-          <point x="10" y="50"/>
-          <point x="-70" y="190"/>
-        </edge>
-        <edge source="n1" target="n32" id="e77" type="input">
-          <point x="100" y="-70"/>
-          <point x="0" y="-130"/>
-        </edge>
-        <edge source="n32" target="n4" id="e78" type="inclusion">
-          <point x="0" y="-130"/>
-          <point x="-190" y="-160"/>
+          <point x="-60" y="-70"/>
         </edge>
       </diagram>
     </diagrams>

@@ -79,9 +79,7 @@ list:hasNext rdf:type owl:ObjectProperty ;
 ###  https://w3id.org/list#isFollowedBy
 list:isFollowedBy rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf list:hasListProperty ;
-                  rdf:type owl:TransitiveProperty ;
-                  rdfs:domain list:OWLList ;
-                  rdfs:range list:OWLList .
+                  rdf:type owl:TransitiveProperty .
 
 
 #################################################################
@@ -90,24 +88,22 @@ list:isFollowedBy rdf:type owl:ObjectProperty ;
 
 ###  https://w3id.org/list#EmptyList
 list:EmptyList rdf:type owl:Class ;
-               rdfs:subClassOf list:OWLList ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty list:hasContents ;
-                                 owl:allValuesFrom owl:Nothing
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty list:hasNext ;
-                                 owl:allValuesFrom owl:Nothing
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty list:isFollowedBy ;
-                                 owl:allValuesFrom owl:Nothing
-                               ] ;
+               rdfs:subClassOf list:OWLList ;
+               owl:disjointWith [ rdf:type owl:Restriction ;
+                                  owl:onProperty [ owl:inverseOf list:hasContents
+                                                 ] ;
+                                  owl:someValuesFrom owl:Thing
+                                ] ;
                rdfs:comment "Instances of EmptyList explicitly finish the list. They have no successor item, so all corresponding properties take owl:Nothing as value."@en .
 
 
 ###  https://w3id.org/list#OWLList
 list:OWLList rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty [ owl:inverseOf list:isFollowedBy
+                                              ] ;
+                               owl:allValuesFrom owl:Thing
+                             ] ;
              rdfs:comment "OWLList is used to represent linked lists. Instances of OWLList are list elements; they have at most one direct successor (the value of property hasNext)."@en .
 
 

@@ -119,7 +119,6 @@ In its present state, an exact reproduction of the original TTL file is not guar
     <owl:ObjectProperty rdf:about="https://w3id.org/list#isFollowedBy">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/list#hasListProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/list#OWLList"/>
         <rdfs:range rdf:resource="https://w3id.org/list#OWLList"/>
     </owl:ObjectProperty>
     
@@ -166,6 +165,17 @@ In its present state, an exact reproduction of the original TTL file is not guar
     <!-- https://w3id.org/list#OWLList -->
 
     <owl:Class rdf:about="https://w3id.org/list#OWLList">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://w3id.org/list#isFollowedBy"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">OWLList is used to represent linked lists. Instances of OWLList are list elements; they have at most one direct successor (the value of property hasNext).</rdfs:comment>
     </owl:Class>
 </rdf:RDF>
