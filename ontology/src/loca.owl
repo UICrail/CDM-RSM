@@ -19,7 +19,7 @@
      xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
      xmlns:quantitykind="https://qudt.org/vocab/quantitykind/">
     <owl:Ontology rdf:about="https://cdm.ovh/rsm/localisation/loca">
-        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/localisation/1.0rc1/loca"/>
+        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/localisation/1.0rc2/loca"/>
         <owl:imports rdf:resource="https://cdm.ovh/rsm/topology/topo"/>
         <owl:imports rdf:resource="https://w3id.org/list"/>
         <dc:abstract xml:lang="en">This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.
@@ -28,14 +28,14 @@ For ordering things, this ontology uses the List ontology published by Pieter Pa
 
 For spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical.</dc:abstract>
         <dc:creator>Airy Magnien</dc:creator>
-        <dc:date xml:lang="en">13 January 2026</dc:date>
+        <dc:date xml:lang="en">3 February 2026</dc:date>
         <dc:title xml:lang="en">Localisation</dc:title>
         <dcterms:license xml:lang="en">EUPL 1.2</dcterms:license>
         <rdfs:comment xml:lang="en">Left for future work:
 1 - using intrinsic coordinates in a more explicit way (formal references to GeoSPARQL and to ISO 19148, possibly via IFC or DATEX classes). This would entail the replacement of data properties (atIntrinsicCoordinate, startAt, endAt) by object properties. Whether this is worthwhile is a matter for debate.
 2 - offsets were lateral in earlier versions (up to RSM 1.2), and are now generalized to tangential and vertical, effectively defining a 3-axis local coordinate system. Explicitly defining a local cartesian coordinate system would be a conceptual simplification and could make use of IFC classes.</rdfs:comment>
         <rdfs:label xml:lang="en">Localisation</rdfs:label>
-        <owl:versionInfo>1.0rc1</owl:versionInfo>
+        <owl:versionInfo>1.0rc2</owl:versionInfo>
         <vann:preferredNamespacePrefix>loca</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceURI>https://cdm.ovh/rsm/localisation/loca</vann:preferredNamespaceURI>
     </owl:Ontology>
@@ -145,7 +145,7 @@ For spot locations (and, by extension, for linear locations) on linear elements,
 
     <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#applicationDirection">
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
         <rdfs:label xml:lang="en">application direction</rdfs:label>
         <skos:definition xml:lang="en">Allows to express the direction of travel for which the localized entity is relevant. Example: a signal generally applies to one travel direction; track occupancy detection systems may be oriented, etc.
 Direction of travel is expressed relative to the orientation of the linear element, from port 0 to port 1, or intrinsic coordinate 0 to 1. It is NOT expressed with respect to &quot;normal travel direction in operations&quot;.</skos:definition>
@@ -227,7 +227,7 @@ definitely inverse functional, because values characterize a location relative t
 
     <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#side">
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
         <rdfs:comment xml:lang="en">consistency with lateral offset sign to be verified by SHACL shapes.</rdfs:comment>
         <rdfs:label xml:lang="en">side</rdfs:label>
         <skos:definition xml:lang="en">side of the linear element on which the location (usually a spot location) is situated.
@@ -416,9 +416,9 @@ Orientation of each linear element (or part thereof) is described by startsAt an
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#Side -->
+    <!-- https://cdm.ovh/rsm/localisation/localisation#SideEnum -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#Side">
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#SideEnum">
         <rdfs:comment xml:lang="en">Front, Rear, Left, and Right orientation are relative to the orientation of the linear element (from node 0 to node 1).
 Over and Under are relative to the geometric or geographic vertical.</rdfs:comment>
         <rdfs:label xml:lang="en">Side</rdfs:label>
@@ -473,11 +473,11 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#Behind -->
+    <!-- https://cdm.ovh/rsm/localisation/localisation#Bottom -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Behind">
-        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
-        <rdfs:label xml:lang="en">Behind</rdfs:label>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Bottom">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
+        <rdfs:label xml:lang="en">Under</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -485,7 +485,7 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     <!-- https://cdm.ovh/rsm/localisation/localisation#Front -->
 
     <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Front">
-        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
         <rdfs:label xml:lang="en">Front</rdfs:label>
     </owl:NamedIndividual>
     
@@ -494,17 +494,17 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     <!-- https://cdm.ovh/rsm/localisation/localisation#Left -->
 
     <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Left">
-        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
         <rdfs:label xml:lang="en">Left</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#Over -->
+    <!-- https://cdm.ovh/rsm/localisation/localisation#Rear -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Over">
-        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
-        <rdfs:label xml:lang="en">Over</rdfs:label>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Rear">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
+        <rdfs:label xml:lang="en">Behind</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -512,17 +512,17 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     <!-- https://cdm.ovh/rsm/localisation/localisation#Right -->
 
     <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Right">
-        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
         <rdfs:label xml:lang="en">Right</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#Under -->
+    <!-- https://cdm.ovh/rsm/localisation/localisation#Top -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Under">
-        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#Side"/>
-        <rdfs:label xml:lang="en">Under</rdfs:label>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Top">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
+        <rdfs:label xml:lang="en">Over</rdfs:label>
     </owl:NamedIndividual>
     
 

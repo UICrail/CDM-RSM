@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <graphol version="3">
-  <project name="geosparql_adapter" version="https://cdm.ovh/rsm/adapters/geosparql_adapter/0.6/geo_ad">
-    <ontology lang="en" addLabelFromUserInput="0" iri="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" addLabelFromSimpleName="0">
+  <project name="geosparql_adapter" version="https://cdm.ovh/rsm/adapters/geosparql_adapter/0.7/geo_ad">
+    <ontology addLabelFromUserInput="0" lang="en" addLabelFromSimpleName="0" iri="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad">
       <imports/>
       <prefixes>
         <prefix>
@@ -508,7 +508,7 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Linear things</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -739,6 +739,9 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
           </annotations>
         </iri>
         <iri>
+          <value>https://cdm.ovh/rsm/localisation/localisation#BaseLocation</value>
+        </iri>
+        <iri>
           <value>https://cdm.ovh/rsm/localisation/localisation#LinearLocation</value>
         </iri>
         <iri>
@@ -756,294 +759,303 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
       </iris>
     </ontology>
     <diagrams>
-      <diagram name="geosparql_adapter" width="6000" height="6000">
-        <node id="n0" type="concept" color="#fcfcfc">
-          <geometry y="-50" width="110" x="190" height="50"/>
+      <diagram height="6000" name="geosparql_adapter" width="6000">
+        <node color="#fcfcfc" id="n0" type="concept">
+          <geometry height="50" y="-50" width="110" x="190"/>
           <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</iri>
-          <label y="-50" width="110" x="190" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="-50" size="12" width="110" x="190"/>
         </node>
-        <node id="n1" type="concept" color="#c2b078">
-          <geometry y="-290" width="110" x="190" height="50"/>
+        <node color="#c2b078" id="n1" type="concept">
+          <geometry height="50" y="-290" width="110" x="190"/>
           <iri>http://www.opengis.net/ont/geosparql#Geometry</iri>
-          <label y="-290" width="110" x="190" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="-290" size="12" width="110" x="190"/>
         </node>
-        <node id="n10" type="role" color="#fcfcfc">
-          <geometry y="-50" width="70" x="-90" height="50"/>
+        <node color="#fcfcfc" id="n10" type="role">
+          <geometry height="50" y="-50" width="70" x="-90"/>
           <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry</iri>
-          <label y="-80" width="79" x="-90" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="-80" size="12" width="79" x="-90"/>
         </node>
-        <node id="n11" type="domain-restriction" color="#fcfcfc">
-          <geometry y="-290" width="20" x="-180" height="20"/>
-          <label y="-312" width="39" x="-180" customSize="0" height="23" size="12">exists</label>
+        <node color="#fcfcfc" id="n11" type="domain-restriction">
+          <geometry height="20" y="-290" width="20" x="-180"/>
+          <label customSize="0" height="23" y="-312" size="12" width="39" x="-180">exists</label>
         </node>
-        <node id="n12" type="range-restriction" color="#000000">
-          <geometry y="-290" width="20" x="80" height="20"/>
-          <label y="-312" width="39" x="80" customSize="0" height="23" size="12">exists</label>
+        <node color="#000000" id="n12" type="range-restriction">
+          <geometry height="20" y="-290" width="20" x="80"/>
+          <label customSize="0" height="23" y="-312" size="12" width="39" x="80">exists</label>
         </node>
-        <node id="n13" type="domain-restriction" color="#fcfcfc">
-          <geometry y="-50" width="20" x="-190" height="20"/>
-          <label y="-72" width="39" x="-190" customSize="0" height="23" size="12">exists</label>
+        <node color="#fcfcfc" id="n13" type="domain-restriction">
+          <geometry height="20" y="-50" width="20" x="-190"/>
+          <label customSize="0" height="23" y="-72" size="12" width="39" x="-190">exists</label>
         </node>
-        <node id="n14" type="range-restriction" color="#000000">
-          <geometry y="-50" width="20" x="80" height="20"/>
-          <label y="-72" width="39" x="80" customSize="0" height="23" size="12">exists</label>
+        <node color="#000000" id="n14" type="range-restriction">
+          <geometry height="20" y="-50" width="20" x="80"/>
+          <label customSize="0" height="23" y="-72" size="12" width="39" x="80">exists</label>
         </node>
-        <node id="n17" type="attribute" color="#fcfcfc">
-          <geometry y="270" width="20" x="50" height="20"/>
+        <node color="#fcfcfc" id="n17" type="attribute">
+          <geometry height="20" y="270" width="20" x="50"/>
           <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength</iri>
-          <label y="248" width="97" x="50" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="248" size="12" width="97" x="50"/>
         </node>
-        <node id="n18" type="attribute" color="#fcfcfc">
-          <geometry y="350" width="20" x="50" height="20"/>
+        <node color="#fcfcfc" id="n18" type="attribute">
+          <geometry height="20" y="350" width="20" x="50"/>
           <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength</iri>
-          <label y="328" width="142" x="50" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="328" size="12" width="142" x="50"/>
         </node>
-        <node id="n19" type="attribute" color="#c2b078">
-          <geometry y="140" width="20" x="50" height="20"/>
+        <node color="#c2b078" id="n19" type="attribute">
+          <geometry height="20" y="140" width="20" x="50"/>
           <iri>http://www.opengis.net/ont/geosparql#hasMetricLength</iri>
-          <label y="118" width="97" x="50" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="118" size="12" width="97" x="50"/>
         </node>
-        <node id="n20" type="domain-restriction" color="#fcfcfc">
-          <geometry y="270" width="20" x="-40" height="20"/>
-          <label y="248" width="39" x="-40" customSize="0" height="23" size="12">exists</label>
+        <node color="#fcfcfc" id="n20" type="domain-restriction">
+          <geometry height="20" y="270" width="20" x="-40"/>
+          <label customSize="0" height="23" y="248" size="12" width="39" x="-40">exists</label>
         </node>
-        <node id="n21" type="range-restriction" color="#000000">
-          <geometry y="270" width="20" x="160" height="20"/>
-          <label y="248" width="39" x="160" customSize="0" height="23" size="12">exists</label>
+        <node color="#000000" id="n21" type="range-restriction">
+          <geometry height="20" y="270" width="20" x="160"/>
+          <label customSize="0" height="23" y="248" size="12" width="39" x="160">exists</label>
         </node>
-        <node id="n23" type="value-domain" color="#fcfcfc">
-          <geometry y="270" width="90" x="260" height="40"/>
+        <node color="#fcfcfc" id="n23" type="value-domain">
+          <geometry height="40" y="270" width="90" x="260"/>
           <iri>http://www.w3.org/2001/XMLSchema#double</iri>
-          <label y="270" width="90" x="260" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="270" size="12" width="90" x="260"/>
         </node>
-        <node id="n24" type="range-restriction" color="#000000">
-          <geometry y="140" width="20" x="160" height="20"/>
-          <label y="118" width="39" x="160" customSize="0" height="23" size="12">exists</label>
+        <node color="#000000" id="n24" type="range-restriction">
+          <geometry height="20" y="140" width="20" x="160"/>
+          <label customSize="0" height="23" y="118" size="12" width="39" x="160">exists</label>
         </node>
-        <node id="n25" type="concept" color="#c2b078">
-          <geometry y="140" width="110" x="-150" height="50"/>
+        <node color="#c2b078" id="n25" type="concept">
+          <geometry height="50" y="140" width="110" x="-150"/>
           <iri>http://www.opengis.net/ont/geosparql#SpatialObject</iri>
-          <label y="140" width="110" x="-150" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="140" size="12" width="110" x="-150"/>
         </node>
-        <node id="n26" type="domain-restriction" color="#fcfcfc">
-          <geometry y="140" width="20" x="-50" height="20"/>
-          <label y="118" width="39" x="-50" customSize="0" height="23" size="12">exists</label>
+        <node color="#fcfcfc" id="n26" type="domain-restriction">
+          <geometry height="20" y="140" width="20" x="-50"/>
+          <label customSize="0" height="23" y="118" size="12" width="39" x="-50">exists</label>
         </node>
-        <node id="n27" type="domain-restriction" color="#fcfcfc">
-          <geometry y="350" width="20" x="-50" height="20"/>
-          <label y="328" width="39" x="-50" customSize="0" height="23" size="12">exists</label>
+        <node color="#fcfcfc" id="n27" type="domain-restriction">
+          <geometry height="20" y="350" width="20" x="-50"/>
+          <label customSize="0" height="23" y="328" size="12" width="39" x="-50">exists</label>
         </node>
-        <node id="n28" type="range-restriction" color="#000000">
-          <geometry y="350" width="20" x="160" height="20"/>
-          <label y="328" width="39" x="160" customSize="0" height="23" size="12">exists</label>
+        <node color="#000000" id="n28" type="range-restriction">
+          <geometry height="20" y="350" width="20" x="160"/>
+          <label customSize="0" height="23" y="328" size="12" width="39" x="160">exists</label>
         </node>
-        <node id="n29" type="concept" color="#c2b078">
-          <geometry y="200" width="140" x="-370" height="50"/>
+        <node color="#c2b078" id="n29" type="concept">
+          <geometry height="50" y="200" width="140" x="-370"/>
           <iri>https://cdm.ovh/rsm/localisation/localisation#LinearLocation</iri>
-          <label y="200" width="140" x="-370" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="200" size="12" width="140" x="-370"/>
         </node>
-        <node id="n3" type="concept" color="#c2b078">
-          <geometry y="-290" width="110" x="-370" height="50"/>
+        <node color="#c2b078" id="n3" type="concept">
+          <geometry height="50" y="-290" width="110" x="-370"/>
           <iri>http://www.opengis.net/ont/geosparql#Feature</iri>
-          <label y="-290" width="110" x="-370" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="-290" size="12" width="110" x="-370"/>
         </node>
-        <node id="n32" type="concept" color="#c2b078">
-          <geometry y="350" width="140" x="-360" height="50"/>
+        <node color="#c2b078" id="n32" type="concept">
+          <geometry height="50" y="350" width="140" x="-370"/>
           <iri>https://cdm.ovh/rsm/topology/topology#LinearElement</iri>
-          <label y="350" width="140" x="-360" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="350" size="12" width="140" x="-370"/>
         </node>
-        <node id="n38" type="concept" color="#fcfcfc">
-          <geometry y="270" width="110" x="-150" height="50"/>
+        <node color="#fcfcfc" id="n38" type="concept">
+          <geometry height="50" y="270" width="110" x="-150"/>
           <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings</iri>
-          <label y="270" width="110" x="-150" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="270" size="12" width="110" x="-150"/>
         </node>
-        <node id="n6" type="concept" color="#fcfcfc">
-          <geometry y="-50" width="110" x="-370" height="50"/>
+        <node color="#c2b078" id="n39" type="concept">
+          <geometry height="50" y="80" width="110" x="-370"/>
+          <iri>https://cdm.ovh/rsm/localisation/localisation#BaseLocation</iri>
+          <label customSize="0" height="23" y="80" size="12" width="110" x="-370"/>
+        </node>
+        <node color="#fcfcfc" id="n6" type="concept">
+          <geometry height="50" y="-50" width="110" x="-370"/>
           <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature</iri>
-          <label y="-50" width="110" x="-370" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="-50" size="12" width="110" x="-370"/>
         </node>
-        <node id="n7" type="role" color="#c2b078">
-          <geometry y="-290" width="70" x="-90" height="50"/>
+        <node color="#c2b078" id="n7" type="role">
+          <geometry height="50" y="-290" width="70" x="-90"/>
           <iri>http://www.opengis.net/ont/geosparql#hasGeometry</iri>
-          <label y="-320" width="79" x="-90" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="-320" size="12" width="79" x="-90"/>
         </node>
-        <node id="n8" type="role" color="#c2b078">
-          <geometry y="-220" width="70" x="10" height="50"/>
+        <node color="#c2b078" id="n8" type="role">
+          <geometry height="50" y="-220" width="70" x="10"/>
           <iri>http://www.opengis.net/ont/geosparql#hasDefaultGeometry</iri>
-          <label y="-250" width="117" x="10" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="-250" size="12" width="117" x="10"/>
         </node>
-        <node id="n9" type="role" color="#fcfcfc">
-          <geometry y="20" width="70" x="10" height="50"/>
+        <node color="#fcfcfc" id="n9" type="role">
+          <geometry height="50" y="20" width="70" x="10"/>
           <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry</iri>
-          <label y="-10" width="124" x="10" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="-10" size="12" width="124" x="10"/>
         </node>
-        <edge id="e0" type="inclusion" source="n0" target="n1">
+        <edge source="n0" id="e0" type="inclusion" target="n1">
           <point y="-50" x="190"/>
           <point y="-290" x="190"/>
         </edge>
-        <edge id="e10" type="input" source="n7" target="n11">
+        <edge source="n7" id="e10" type="input" target="n11">
           <point y="-290" x="-90"/>
           <point y="-290" x="-180"/>
         </edge>
-        <edge id="e11" type="input" source="n7" target="n12">
+        <edge source="n7" id="e11" type="input" target="n12">
           <point y="-290" x="-90"/>
           <point y="-290" x="80"/>
         </edge>
-        <edge id="e14" type="input" source="n10" target="n13">
+        <edge source="n10" id="e14" type="input" target="n13">
           <point y="-50" x="-90"/>
           <point y="-50" x="-190"/>
         </edge>
-        <edge id="e15" type="input" source="n10" target="n14">
+        <edge source="n10" id="e15" type="input" target="n14">
           <point y="-50" x="-90"/>
           <point y="-50" x="80"/>
         </edge>
-        <edge id="e2" type="inclusion" source="n6" target="n3">
+        <edge source="n6" id="e2" type="inclusion" target="n3">
           <point y="-50" x="-370"/>
           <point y="-290" x="-370"/>
         </edge>
-        <edge id="e24" type="inclusion" source="n18" target="n17">
+        <edge source="n18" id="e24" type="inclusion" target="n17">
           <point y="350" x="50"/>
           <point y="270" x="50"/>
         </edge>
-        <edge id="e25" type="inclusion" source="n17" target="n19">
+        <edge source="n17" id="e25" type="inclusion" target="n19">
           <point y="270" x="50"/>
           <point y="140" x="50"/>
         </edge>
-        <edge id="e27" type="input" source="n17" target="n21">
+        <edge source="n17" id="e27" type="input" target="n21">
           <point y="270" x="50"/>
           <point y="270" x="160"/>
         </edge>
-        <edge id="e28" type="inclusion" source="n21" target="n23">
+        <edge source="n21" id="e28" type="inclusion" target="n23">
           <point y="270" x="160"/>
           <point y="270" x="260"/>
         </edge>
-        <edge id="e29" type="inclusion" source="n24" target="n23">
+        <edge source="n24" id="e29" type="inclusion" target="n23">
           <point y="140" x="160"/>
           <point y="270" x="260"/>
         </edge>
-        <edge id="e3" type="inclusion" source="n8" target="n7">
+        <edge source="n8" id="e3" type="inclusion" target="n7">
           <point y="-220" x="10"/>
           <point y="-290" x="-90"/>
         </edge>
-        <edge id="e30" type="input" source="n19" target="n24">
+        <edge source="n19" id="e30" type="input" target="n24">
           <point y="140" x="50"/>
           <point y="140" x="160"/>
         </edge>
-        <edge id="e31" type="inclusion" source="n11" target="n3">
+        <edge source="n11" id="e31" type="inclusion" target="n3">
           <point y="-290" x="-180"/>
           <point y="-290" x="-370"/>
         </edge>
-        <edge id="e32" type="inclusion" source="n13" target="n6">
+        <edge source="n13" id="e32" type="inclusion" target="n6">
           <point y="-50" x="-190"/>
           <point y="-50" x="-370"/>
         </edge>
-        <edge id="e33" type="inclusion" source="n12" target="n1">
+        <edge source="n12" id="e33" type="inclusion" target="n1">
           <point y="-290" x="80"/>
           <point y="-290" x="190"/>
         </edge>
-        <edge id="e34" type="inclusion" source="n14" target="n0">
+        <edge source="n14" id="e34" type="inclusion" target="n0">
           <point y="-50" x="80"/>
           <point y="-50" x="190"/>
         </edge>
-        <edge id="e36" type="inclusion" source="n26" target="n25">
+        <edge source="n26" id="e36" type="inclusion" target="n25">
           <point y="140" x="-50"/>
           <point y="140" x="-150"/>
         </edge>
-        <edge id="e37" type="input" source="n19" target="n26">
+        <edge source="n19" id="e37" type="input" target="n26">
           <point y="140" x="50"/>
           <point y="140" x="-50"/>
         </edge>
-        <edge id="e38" type="input" source="n17" target="n20">
+        <edge source="n17" id="e38" type="input" target="n20">
           <point y="270" x="50"/>
           <point y="270" x="-40"/>
         </edge>
-        <edge id="e39" type="inclusion" source="n28" target="n23">
+        <edge source="n28" id="e39" type="inclusion" target="n23">
           <point y="350" x="160"/>
           <point y="270" x="260"/>
         </edge>
-        <edge id="e4" type="inclusion" source="n9" target="n8">
+        <edge source="n9" id="e4" type="inclusion" target="n8">
           <point y="20" x="10"/>
           <point y="-220" x="10"/>
         </edge>
-        <edge id="e40" type="input" source="n18" target="n28">
+        <edge source="n18" id="e40" type="input" target="n28">
           <point y="350" x="50"/>
           <point y="350" x="160"/>
         </edge>
-        <edge id="e41" type="input" source="n18" target="n27">
+        <edge source="n18" id="e41" type="input" target="n27">
           <point y="350" x="50"/>
           <point y="350" x="-50"/>
         </edge>
-        <edge id="e49" type="inclusion" source="n27" target="n32">
+        <edge source="n27" id="e49" type="inclusion" target="n32">
           <point y="350" x="-50"/>
-          <point y="350" x="-360"/>
+          <point y="350" x="-370"/>
         </edge>
-        <edge id="e5" type="inclusion" source="n10" target="n7">
+        <edge source="n10" id="e5" type="inclusion" target="n7">
           <point y="-50" x="-90"/>
           <point y="-290" x="-90"/>
         </edge>
-        <edge id="e6" type="inclusion" source="n9" target="n10">
+        <edge source="n9" id="e6" type="inclusion" target="n10">
           <point y="20" x="10"/>
           <point y="-50" x="-90"/>
         </edge>
-        <edge id="e60" type="inclusion" source="n20" target="n38">
+        <edge source="n20" id="e60" type="inclusion" target="n38">
           <point y="270" x="-40"/>
           <point y="270" x="-150"/>
         </edge>
-        <edge id="e64" type="inclusion" source="n29" target="n6">
+        <edge source="n29" id="e65" type="inclusion" target="n38">
           <point y="200" x="-370"/>
+          <point y="270" x="-150"/>
+        </edge>
+        <edge source="n32" id="e66" type="inclusion" target="n38">
+          <point y="350" x="-370"/>
+          <point y="270" x="-150"/>
+        </edge>
+        <edge source="n29" id="e67" type="inclusion" target="n39">
+          <point y="200" x="-370"/>
+          <point y="80" x="-370"/>
+        </edge>
+        <edge source="n39" id="e68" type="inclusion" target="n6">
+          <point y="80" x="-370"/>
           <point y="-50" x="-370"/>
         </edge>
-        <edge id="e65" type="inclusion" source="n29" target="n38">
-          <point y="200" x="-370"/>
-          <point y="270" x="-150"/>
-        </edge>
-        <edge id="e66" type="inclusion" source="n32" target="n38">
-          <point y="350" x="-360"/>
-          <point y="270" x="-150"/>
-        </edge>
       </diagram>
-      <diagram name="inverse properties" width="5000" height="5000">
-        <node id="n0" type="role" color="#fcfcfc">
-          <geometry y="20" width="70" x="50" height="50"/>
+      <diagram height="5000" name="inverse properties" width="5000">
+        <node color="#fcfcfc" id="n0" type="role">
+          <geometry height="50" y="20" width="70" x="50"/>
           <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry</iri>
-          <label y="-10" width="79" x="50" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="-10" size="12" width="79" x="50"/>
         </node>
-        <node id="n2" type="role" color="#fcfcfc">
-          <geometry y="20" width="70" x="280" height="50"/>
+        <node color="#fcfcfc" id="n2" type="role">
+          <geometry height="50" y="20" width="70" x="280"/>
           <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf</iri>
-          <label y="-10" width="70" x="280" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="-10" size="12" width="70" x="280"/>
         </node>
-        <node id="n3" type="role-inverse" color="#fcfcfc">
-          <geometry y="20" width="50" x="160" height="30"/>
-          <label y="20" width="23" x="160" customSize="0" height="23" size="12"/>
+        <node color="#fcfcfc" id="n3" type="role-inverse">
+          <geometry height="30" y="20" width="50" x="160"/>
+          <label customSize="0" height="23" y="20" size="12" width="23" x="160"/>
         </node>
-        <node id="n4" type="role" color="#fcfcfc">
-          <geometry y="120" width="70" x="50" height="50"/>
+        <node color="#fcfcfc" id="n4" type="role">
+          <geometry height="50" y="120" width="70" x="50"/>
           <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry</iri>
-          <label y="90" width="124" x="50" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="90" size="12" width="124" x="50"/>
         </node>
-        <node id="n5" type="role" color="#fcfcfc">
-          <geometry y="120" width="70" x="280" height="50"/>
+        <node color="#fcfcfc" id="n5" type="role">
+          <geometry height="50" y="120" width="70" x="280"/>
           <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf</iri>
-          <label y="90" width="115" x="280" customSize="0" height="23" size="12"/>
+          <label customSize="0" height="23" y="90" size="12" width="115" x="280"/>
         </node>
-        <node id="n6" type="role-inverse" color="#fcfcfc">
-          <geometry y="120" width="50" x="160" height="30"/>
-          <label y="120" width="23" x="160" customSize="0" height="23" size="12"/>
+        <node color="#fcfcfc" id="n6" type="role-inverse">
+          <geometry height="30" y="120" width="50" x="160"/>
+          <label customSize="0" height="23" y="120" size="12" width="23" x="160"/>
         </node>
-        <edge id="e0" type="input" source="n0" target="n3">
+        <edge source="n0" id="e0" type="input" target="n3">
           <point y="20" x="50"/>
           <point y="20" x="160"/>
         </edge>
-        <edge id="e1" type="equivalence" source="n3" target="n2">
+        <edge source="n3" id="e1" type="equivalence" target="n2">
           <point y="20" x="160"/>
           <point y="20" x="280"/>
         </edge>
-        <edge id="e2" type="equivalence" source="n6" target="n5">
+        <edge source="n6" id="e2" type="equivalence" target="n5">
           <point y="120" x="160"/>
           <point y="120" x="280"/>
         </edge>
-        <edge id="e3" type="input" source="n4" target="n6">
+        <edge source="n4" id="e3" type="input" target="n6">
           <point y="120" x="50"/>
           <point y="120" x="160"/>
         </edge>

@@ -19,7 +19,7 @@
 @base <https://cdm.ovh/rsm/localisation/loca> .
 
 <https://cdm.ovh/rsm/localisation/loca> rdf:type owl:Ontology ;
-                                         owl:versionIRI <https://cdm.ovh/rsm/localisation/1.0rc1/loca> ;
+                                         owl:versionIRI <https://cdm.ovh/rsm/localisation/1.0rc2/loca> ;
                                          owl:imports <https://cdm.ovh/rsm/topology/topo> ,
                                                      <https://w3id.org/list> ;
                                          dc:abstract """This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.
@@ -28,14 +28,14 @@ For ordering things, this ontology uses the List ontology published by Pieter Pa
 
 For spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical."""@en ;
                                          dc:creator "Airy Magnien" ;
-                                         dc:date "13 January 2026"@en ;
+                                         dc:date "3 February 2026"@en ;
                                          dc:title "Localisation"@en ;
                                          dcterms:license "EUPL 1.2"@en ;
                                          rdfs:comment """Left for future work:
 1 - using intrinsic coordinates in a more explicit way (formal references to GeoSPARQL and to ISO 19148, possibly via IFC or DATEX classes). This would entail the replacement of data properties (atIntrinsicCoordinate, startAt, endAt) by object properties. Whether this is worthwhile is a matter for debate.
 2 - offsets were lateral in earlier versions (up to RSM 1.2), and are now generalized to tangential and vertical, effectively defining a 3-axis local coordinate system. Explicitly defining a local cartesian coordinate system would be a conceptual simplification and could make use of IFC classes."""@en ;
                                          rdfs:label "Localisation"@en ;
-                                         owl:versionInfo "1.0rc1" ;
+                                         owl:versionInfo "1.0rc2" ;
                                          vann:preferredNamespacePrefix "loca" ;
                                          vann:preferredNamespaceURI "https://cdm.ovh/rsm/localisation/loca" .
 
@@ -98,7 +98,7 @@ qudt:quantityKind rdf:type owl:ObjectProperty .
 ###  https://cdm.ovh/rsm/localisation/localisation#applicationDirection
 loca:applicationDirection rdf:type owl:ObjectProperty ;
                           rdfs:domain topo:LinearElement ;
-                          rdfs:range loca:Side ;
+                          rdfs:range loca:SideEnum ;
                           rdfs:label "application direction"@en ;
                           skos:definition """Allows to express the direction of travel for which the localized entity is relevant. Example: a signal generally applies to one travel direction; track occupancy detection systems may be oriented, etc.
 Direction of travel is expressed relative to the orientation of the linear element, from port 0 to port 1, or intrinsic coordinate 0 to 1. It is NOT expressed with respect to \"normal travel direction in operations\"."""@en .
@@ -159,7 +159,7 @@ loca:onLinearElement rdf:type owl:ObjectProperty ;
 ###  https://cdm.ovh/rsm/localisation/localisation#side
 loca:side rdf:type owl:ObjectProperty ;
           rdfs:domain topo:LinearElement ;
-          rdfs:range loca:Side ;
+          rdfs:range loca:SideEnum ;
           rdfs:comment "consistency with lateral offset sign to be verified by SHACL shapes."@en ;
           rdfs:label "side"@en ;
           skos:definition """side of the linear element on which the location (usually a spot location) is situated.
@@ -287,11 +287,11 @@ loca:OffsetValue rdf:type owl:Class ;
                  rdfs:label "Offset value"@en .
 
 
-###  https://cdm.ovh/rsm/localisation/localisation#Side
-loca:Side rdf:type owl:Class ;
-          rdfs:comment """Front, Rear, Left, and Right orientation are relative to the orientation of the linear element (from node 0 to node 1).
+###  https://cdm.ovh/rsm/localisation/localisation#SideEnum
+loca:SideEnum rdf:type owl:Class ;
+              rdfs:comment """Front, Rear, Left, and Right orientation are relative to the orientation of the linear element (from node 0 to node 1).
 Over and Under are relative to the geometric or geographic vertical."""@en ;
-          rdfs:label "Side"@en .
+              rdfs:label "Side"@en .
 
 
 ###  https://cdm.ovh/rsm/localisation/localisation#SpotLocation
@@ -322,40 +322,40 @@ list:OWLList rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  https://cdm.ovh/rsm/localisation/localisation#Behind
-loca:Behind rdf:type owl:NamedIndividual ,
-                     loca:Side ;
-            rdfs:label "Behind"@en .
+###  https://cdm.ovh/rsm/localisation/localisation#Bottom
+loca:Bottom rdf:type owl:NamedIndividual ,
+                     loca:SideEnum ;
+            rdfs:label "Under"@en .
 
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Front
 loca:Front rdf:type owl:NamedIndividual ,
-                    loca:Side ;
+                    loca:SideEnum ;
            rdfs:label "Front"@en .
 
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Left
 loca:Left rdf:type owl:NamedIndividual ,
-                   loca:Side ;
+                   loca:SideEnum ;
           rdfs:label "Left"@en .
 
 
-###  https://cdm.ovh/rsm/localisation/localisation#Over
-loca:Over rdf:type owl:NamedIndividual ,
-                   loca:Side ;
-          rdfs:label "Over"@en .
+###  https://cdm.ovh/rsm/localisation/localisation#Rear
+loca:Rear rdf:type owl:NamedIndividual ,
+                   loca:SideEnum ;
+          rdfs:label "Behind"@en .
 
 
 ###  https://cdm.ovh/rsm/localisation/localisation#Right
 loca:Right rdf:type owl:NamedIndividual ,
-                    loca:Side ;
+                    loca:SideEnum ;
            rdfs:label "Right"@en .
 
 
-###  https://cdm.ovh/rsm/localisation/localisation#Under
-loca:Under rdf:type owl:NamedIndividual ,
-                    loca:Side ;
-           rdfs:label "Under"@en .
+###  https://cdm.ovh/rsm/localisation/localisation#Top
+loca:Top rdf:type owl:NamedIndividual ,
+                  loca:SideEnum ;
+         rdfs:label "Over"@en .
 
 
 #################################################################

@@ -15,7 +15,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:geo_ad="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#">
     <owl:Ontology rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad">
-        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/0.6/geo_ad"/>
+        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/0.7/geo_ad"/>
         <dc:abstract xml:lang="en">Adapter vocabulary for connecting various parts of RSM with GeoSPARQL 1.1.</dc:abstract>
         <dc:creator>Airy Magnien, UIC</dc:creator>
         <terms:license>EUPL 1.2</terms:license>
@@ -289,11 +289,19 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
     
 
 
+    <!-- https://cdm.ovh/rsm/localisation/localisation#BaseLocation -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#BaseLocation">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"/>
+    </owl:Class>
+    
+
+
     <!-- https://cdm.ovh/rsm/localisation/localisation#LinearLocation -->
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"/>
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BaseLocation"/>
     </owl:Class>
     
 
