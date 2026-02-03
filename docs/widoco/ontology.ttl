@@ -436,7 +436,8 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
 
 ###  https://cdm.ovh/rsm/localisation/localisation#BaseLocation
 <https://cdm.ovh/rsm/localisation/localisation#BaseLocation> rdf:type owl:Class ;
-                                                             rdfs:subClassOf <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> ;
+                                                             rdfs:subClassOf <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> ,
+                                                                             <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> ;
                                                              rdfs:label "Base location"@en ;
                                                              <http://www.w3.org/2004/02/skos/core#definition> "Class of all locations relative to a topology. Disjoint union of its three subclasses (spot-, linear-, area location)."@en .
 
@@ -450,8 +451,7 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
 
 ###  https://cdm.ovh/rsm/localisation/localisation#LinearLocation
 <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> rdf:type owl:Class ;
-                                                               rdfs:subClassOf <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> ,
-                                                                               <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> ,
+                                                               rdfs:subClassOf <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> ,
                                                                                <https://cdm.ovh/rsm/localisation/localisation#BaseLocation> ;
                                                                rdfs:label "Linear location"@en ;
                                                                <http://www.w3.org/2004/02/skos/core#definition> "Location extending over consecutive linear elements or parts thereof. The involved linear elements are in a sequence (ordered list, with repetitions allowed). Each linear element in the sequence is oriented from start to end. Start and end may coincide with extremities or some point in between."@en .

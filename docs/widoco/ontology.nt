@@ -394,6 +394,7 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 # 
 # https://cdm.ovh/rsm/localisation/localisation#BaseLocation
 <https://cdm.ovh/rsm/localisation/localisation#BaseLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/localisation/localisation#BaseLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> .
 <https://cdm.ovh/rsm/localisation/localisation#BaseLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> .
 <https://cdm.ovh/rsm/localisation/localisation#BaseLocation> <http://www.w3.org/2000/01/rdf-schema#label> "Base location"@en .
 <https://cdm.ovh/rsm/localisation/localisation#BaseLocation> <http://www.w3.org/2004/02/skos/core#definition> "Class of all locations relative to a topology. Disjoint union of its three subclasses (spot-, linear-, area location)."@en .
@@ -406,7 +407,6 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 # 
 # https://cdm.ovh/rsm/localisation/localisation#LinearLocation
 <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature> .
 <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings> .
 <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/localisation/localisation#BaseLocation> .
 <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> <http://www.w3.org/2000/01/rdf-schema#label> "Linear location"@en .

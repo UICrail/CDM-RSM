@@ -199,6 +199,8 @@
     "@value" : "Base location"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"
+  }, {
     "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
@@ -257,8 +259,6 @@
     "@value" : "Linear location"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"
-  }, {
     "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"
   }, {
     "@id" : "https://cdm.ovh/rsm/localisation/localisation#BaseLocation"
