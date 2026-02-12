@@ -8,18 +8,18 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:list="https://w3id.org/list#"
-     xmlns:loca="https://cdm.ovh/rsm/localisation/localisation#"
+     xmlns:loca="https://cdm.ovh/rsm/localisation/loca#"
      xmlns:qudt="http://qudt.org/schema/qudt/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:topo="https://cdm.ovh/rsm/topology/topology#"
      xmlns:vann="https://vocab.org/vann/"
      xmlns:dcterms="http://purl.org/dc/terms/"
-     xmlns:geo_adap="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#"
+     xmlns:geo_adap="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#"
      xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
      xmlns:quantitykind="https://qudt.org/vocab/quantitykind/">
     <owl:Ontology rdf:about="https://cdm.ovh/rsm/localisation/loca">
-        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/localisation/1.0rc2/loca"/>
+        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/localisation/1.0rc3/loca"/>
         <owl:imports rdf:resource="https://cdm.ovh/rsm/topology/topo"/>
         <owl:imports rdf:resource="https://w3id.org/list"/>
         <dc:abstract xml:lang="en">This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.
@@ -28,14 +28,15 @@ For ordering things, this ontology uses the List ontology published by Pieter Pa
 
 For spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical.</dc:abstract>
         <dc:creator>Airy Magnien</dc:creator>
-        <dc:date xml:lang="en">3 February 2026</dc:date>
+        <dc:date xml:lang="en">12 February 2026</dc:date>
         <dc:title xml:lang="en">Localisation</dc:title>
         <dcterms:license xml:lang="en">EUPL 1.2</dcterms:license>
+        <rdfs:comment xml:lang="en">Added generic &quot;location&quot;  property. Corrected prefixes.</rdfs:comment>
         <rdfs:comment xml:lang="en">Left for future work:
 1 - using intrinsic coordinates in a more explicit way (formal references to GeoSPARQL and to ISO 19148, possibly via IFC or DATEX classes). This would entail the replacement of data properties (atIntrinsicCoordinate, startAt, endAt) by object properties. Whether this is worthwhile is a matter for debate.
 2 - offsets were lateral in earlier versions (up to RSM 1.2), and are now generalized to tangential and vertical, effectively defining a 3-axis local coordinate system. Explicitly defining a local cartesian coordinate system would be a conceptual simplification and could make use of IFC classes.</rdfs:comment>
         <rdfs:label xml:lang="en">Localisation</rdfs:label>
-        <owl:versionInfo>1.0rc2</owl:versionInfo>
+        <owl:versionInfo>1.0rc3</owl:versionInfo>
         <vann:preferredNamespacePrefix>loca</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceURI>https://cdm.ovh/rsm/localisation/loca</vann:preferredNamespaceURI>
     </owl:Ontology>
@@ -141,11 +142,11 @@ For spot locations (and, by extension, for linear locations) on linear elements,
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#applicationDirection -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#applicationDirection -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#applicationDirection">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#applicationDirection">
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/loca#SideEnum"/>
         <rdfs:label xml:lang="en">application direction</rdfs:label>
         <skos:definition xml:lang="en">Allows to express the direction of travel for which the localized entity is relevant. Example: a signal generally applies to one travel direction; track occupancy detection systems may be oriented, etc.
 Direction of travel is expressed relative to the orientation of the linear element, from port 0 to port 1, or intrinsic coordinate 0 to 1. It is NOT expressed with respect to &quot;normal travel direction in operations&quot;.</skos:definition>
@@ -153,21 +154,21 @@ Direction of travel is expressed relative to the orientation of the linear eleme
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#associatedLinearElement -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement">
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/localisation#LinearLocation"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement"/>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#associatedLinearElement">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/loca#LinearLocation"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/loca#ListedLinearElement"/>
         <rdfs:label xml:lang="en">associated linear element</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#associatedNetElement -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#associatedNetElement -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#associatedNetElement">
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/localisation#AreaLocation"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#ListedNetElement"/>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#associatedNetElement">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/loca#AreaLocation"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/loca#ListedNetElement"/>
         <rdfs:label xml:lang="en">net element list</rdfs:label>
         <skos:definition xml:lang="en">Property pointing to all net elements (or parts thereof) that describe the area location.
 Note: the user may target ListedNetElement individuals (a subclass of BoundedNetElement) and define an order, for whatever purpose.</skos:definition>
@@ -175,22 +176,22 @@ Note: the user may target ListedNetElement individuals (a subclass of BoundedNet
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#elementLocation -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#elementLocation -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#elementLocation">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#elementLocation">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BaseLocation"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/loca#LocatedNetElement"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/loca#BaseLocation"/>
         <rdfs:comment xml:lang="en">Provides the location(s) of a located net element. Locations may be representation- and time-dependent, so the property is not a functional property (in the sense of RDF/OWL).</rdfs:comment>
         <rdfs:label xml:lang="en">element Location</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#lateralOffset -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#lateralOffset -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#lateralOffset">
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#offset"/>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#lateralOffset">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/loca#offset"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:label xml:lang="en">lateral offset</rdfs:label>
         <skos:definition xml:lang="en">offset of location (usually: spot location) with respect to a perpendicular to the linear element, in the horizontal plane (not: track plane). Is positive when on the left and negative on the right (in order to respect the conventional orientation of cartesian reference systems, where X is the longitudinal axis, Y the transversal, and Z the vertical).</skos:definition>
@@ -198,13 +199,24 @@ Note: the user may target ListedNetElement individuals (a subclass of BoundedNet
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#offset -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#location -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#offset">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#location">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/loca#BaseLocation"/>
+        <rdfs:comment xml:lang="en">Generic property assigning some location to a Thing.</rdfs:comment>
+        <rdfs:label xml:lang="en">location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/loca#offset -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#offset">
         <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/hasQuantityValue"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#OffsetValue"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/loca#OffsetValue"/>
         <rdfs:comment xml:lang="en">definitely not functional, to cope with the fact that values may be multiple (specified, observed...).
 definitely inverse functional, because values characterize a location relative to exactly one linear element. &quot;Exactly&quot; however is left for SHACL shapes (not in RL profile).</rdfs:comment>
         <rdfs:label xml:lang="en">offset</rdfs:label>
@@ -212,22 +224,22 @@ definitely inverse functional, because values characterize a location relative t
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#onLinearElement -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#onLinearElement -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#onLinearElement">
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SpotLocation"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement"/>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#onLinearElement">
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/loca#SpotLocation"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement"/>
         <rdfs:comment xml:lang="en">provides the linear element(s) that define a spot location. There can be several linear elements involved: think of a signal adderessing two adjacent tracks.</rdfs:comment>
         <rdfs:label>on linear element</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#side -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#side -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#side">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#side">
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/loca#SideEnum"/>
         <rdfs:comment xml:lang="en">consistency with lateral offset sign to be verified by SHACL shapes.</rdfs:comment>
         <rdfs:label xml:lang="en">side</rdfs:label>
         <skos:definition xml:lang="en">side of the linear element on which the location (usually a spot location) is situated.
@@ -236,20 +248,20 @@ The orientation of the linear element is its own intrinsic orientation, from por
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#tangentialOffset -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#tangentialOffset -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#tangentialOffset">
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#offset"/>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#tangentialOffset">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/loca#offset"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:label xml:lang="en">tangential offset</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#verticalOffset -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#verticalOffset -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#verticalOffset">
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#offset"/>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#verticalOffset">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/loca#offset"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:label xml:lang="en">vertical offset</rdfs:label>
     </owl:ObjectProperty>
@@ -267,21 +279,21 @@ The orientation of the linear element is its own intrinsic orientation, from por
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate -->
 
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate">
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:label xml:lang="en">at intrinsic coordinate</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#endAt -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#endAt -->
 
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#endAt">
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate"/>
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#endAt">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:comment xml:lang="en">cardinality &quot;exactly one value&quot; to be enforced via SHACL shape</rdfs:comment>
         <rdfs:label xml:lang="en">end at</rdfs:label>
@@ -291,10 +303,10 @@ See definition of startsAt for more explanations.</skos:definition>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#startAt -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#startAt -->
 
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/localisation/localisation#startAt">
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate"/>
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#startAt">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:comment xml:lang="en">cardinality &quot;exactly one value&quot; to be enforced via SHACL shape</rdfs:comment>
         <rdfs:label xml:lang="en">start at</rdfs:label>
@@ -327,19 +339,19 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#AreaLocation -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#AreaLocation -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#AreaLocation">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BaseLocation"/>
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/loca#AreaLocation">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/loca#BaseLocation"/>
         <rdfs:label xml:lang="en">Area location</rdfs:label>
         <skos:definition xml:lang="en">The class of all locations that are neither spot, nor linear. Concrete examples: the location of a GSM coverage area (i.e. the parts of topology elements that are in this area); a set of discontinuous or branching linear locations. An area location refers to a set of topology elements, or element parts: no order, no repetition.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#BaseLocation -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#BaseLocation -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#BaseLocation">
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/loca#BaseLocation">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"/>
         <rdfs:label xml:lang="en">Base location</rdfs:label>
         <skos:definition xml:lang="en">Class of all locations relative to a topology. Disjoint union of its three subclasses (spot-, linear-, area location).</skos:definition>
@@ -347,9 +359,9 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement">
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
         <rdfs:comment xml:lang="en">Linear element associated with positions along the element (property atIntrinsicCoordinate) or start and end boundaries (properties startAt and endAt).</rdfs:comment>
         <rdfs:label xml:lang="en">Bounded linear element</rdfs:label>
@@ -357,28 +369,28 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#LinearLocation -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#LinearLocation -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BaseLocation"/>
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/loca#LinearLocation">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/loca#BaseLocation"/>
         <rdfs:label xml:lang="en">Linear location</rdfs:label>
         <skos:definition xml:lang="en">Location extending over consecutive linear elements or parts thereof. The involved linear elements are in a sequence (ordered list, with repetitions allowed). Each linear element in the sequence is oriented from start to end. Start and end may coincide with extremities or some point in between.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#ListedLinearElement -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement"/>
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/loca#ListedLinearElement">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/list#OWLList"/>
     </owl:Class>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#ListedNetElement -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#ListedNetElement -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#ListedNetElement">
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/loca#ListedNetElement">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topology#NetElement"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/list#OWLList"/>
         <rdfs:label xml:lang="en">Listed Net Element</rdfs:label>
@@ -391,9 +403,9 @@ Orientation of each linear element (or part thereof) is described by startsAt an
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#LocatedNetElement -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement">
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/loca#LocatedNetElement">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topology#NetElement"/>
         <rdfs:label xml:lang="en">Located net element</rdfs:label>
         <skos:definition xml:lang="en">Net element defined by its location on other net elements. Used for compositing, in lieu of the composite pattern in versions of topology before 1.0rc2.</skos:definition>
@@ -401,9 +413,9 @@ Orientation of each linear element (or part thereof) is described by startsAt an
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#OffsetValue -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#OffsetValue -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#OffsetValue">
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/loca#OffsetValue">
         <rdfs:subClassOf rdf:resource="http://qudt.org/schema/qudt/QuantityValue"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -416,9 +428,9 @@ Orientation of each linear element (or part thereof) is described by startsAt an
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#SideEnum -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#SideEnum -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#SideEnum">
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/loca#SideEnum">
         <rdfs:comment xml:lang="en">Front, Rear, Left, and Right orientation are relative to the orientation of the linear element (from node 0 to node 1).
 Over and Under are relative to the geometric or geographic vertical.</rdfs:comment>
         <rdfs:label xml:lang="en">Side</rdfs:label>
@@ -426,10 +438,10 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#SpotLocation -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#SpotLocation -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#SpotLocation">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BaseLocation"/>
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/loca#SpotLocation">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/loca#BaseLocation"/>
         <rdfs:label xml:lang="en">Spot location</rdfs:label>
         <skos:definition xml:lang="en">Class of all spot locations, i.e. locations that can be represented as a point on a map or schema. The spot location can relate to one or more net elements (concrete example: the location of a signal that addresses two converging tracks).</skos:definition>
     </owl:Class>
@@ -473,55 +485,55 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#Bottom -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#Bottom -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Bottom">
-        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/loca#Bottom">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/loca#SideEnum"/>
         <rdfs:label xml:lang="en">Under</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#Front -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#Front -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Front">
-        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/loca#Front">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/loca#SideEnum"/>
         <rdfs:label xml:lang="en">Front</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#Left -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#Left -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Left">
-        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/loca#Left">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/loca#SideEnum"/>
         <rdfs:label xml:lang="en">Left</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#Rear -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#Rear -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Rear">
-        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/loca#Rear">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/loca#SideEnum"/>
         <rdfs:label xml:lang="en">Behind</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#Right -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#Right -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Right">
-        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/loca#Right">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/loca#SideEnum"/>
         <rdfs:label xml:lang="en">Right</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#Top -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#Top -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/localisation#Top">
-        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/localisation#SideEnum"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/localisation/loca#Top">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/localisation/loca#SideEnum"/>
         <rdfs:label xml:lang="en">Over</rdfs:label>
     </owl:NamedIndividual>
     
@@ -538,9 +550,9 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#AreaLocation"/>
-            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#LinearLocation"/>
-            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#SpotLocation"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/loca#AreaLocation"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/loca#LinearLocation"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/loca#SpotLocation"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
