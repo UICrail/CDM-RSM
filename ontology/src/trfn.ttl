@@ -1,0 +1,256 @@
+@prefix : <https://cdm.ovh/rsm/track/trfn#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix loca: <https://cdm.ovh/rsm/localisation/loca#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix topo: <https://cdm.ovh/rsm/topology/topo#> .
+@prefix trfn: <https://cdm.ovh/rsm/track/trfn#> .
+@prefix geo_ad: <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#> .
+@base <https://cdm.ovh/rsm/track/trfn> .
+
+<https://cdm.ovh/rsm/track/trfn> rdf:type owl:Ontology ;
+                                  owl:versionIRI <https://cdm.ovh/rsm/track/trfn/0.1/trfn> ;
+                                  owl:imports <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad> ,
+                                              <https://cdm.ovh/rsm/localisation/loca> ,
+                                              <https://cdm.ovh/rsm/topology/topo> ;
+                                  owl:versionInfo "0.1" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://cdm.ovh/rsm/localisation/loca#location
+loca:location rdf:type owl:ObjectProperty .
+
+
+###  https://cdm.ovh/rsm/track/trfn#crossingCenter
+trfn:crossingCenter rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf loca:location ;
+                    rdf:type owl:FunctionalProperty ,
+                             owl:InverseFunctionalProperty ;
+                    rdfs:domain trfn:Crossing ;
+                    rdfs:range loca:SpotLocation ;
+                    rdfs:label "crossing center"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#deviatedLock
+trfn:deviatedLock rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf trfn:handlesNavigability ;
+                  rdf:type owl:InverseFunctionalProperty ;
+                  rdfs:domain <SlipCrossing> ;
+                  owl:propertyDisjointWith trfn:throughLock ;
+                  rdfs:label "deviated lock"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#establishesConnection
+trfn:establishesConnection rdf:type owl:ObjectProperty ,
+                                    owl:InverseFunctionalProperty ;
+                           rdfs:domain trfn:JunctionEntity ;
+                           rdfs:range topo:Connection ;
+                           rdfs:label "establishes connection" .
+
+
+###  https://cdm.ovh/rsm/track/trfn#handlesNavigability
+trfn:handlesNavigability rdf:type owl:ObjectProperty ,
+                                  owl:InverseFunctionalProperty ;
+                         rdfs:domain trfn:JunctionEntity ;
+                         rdfs:range topo:NavigabilityRelation ;
+                         rdfs:label "handles navigability" .
+
+
+###  https://cdm.ovh/rsm/track/trfn#leftLock
+trfn:leftLock rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf trfn:handlesNavigability ;
+              rdf:type owl:InverseFunctionalProperty ;
+              rdfs:domain trfn:Turnout ;
+              owl:propertyDisjointWith trfn:rightLock ;
+              rdfs:comment "Navigabilities involved by the turnout being locked on the left position are a subset of all navigabilities handled by the turnout. It is disjoint from the navigabilities involved by a lock on the right position."@en ,
+                           "indicates which navigabilities are available when the turnout is locked in its leftmost position"@en ;
+              rdfs:label "left lock"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#rightLock
+trfn:rightLock rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf trfn:handlesNavigability ;
+               rdf:type owl:InverseFunctionalProperty ;
+               rdfs:domain trfn:Turnout ;
+               rdfs:comment "indicates which navigabilities are available when the turnout is locked in its rightmost position"@en ;
+               rdfs:label "right lock"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#throughLock
+trfn:throughLock rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf trfn:handlesNavigability ;
+                 rdf:type owl:InverseFunctionalProperty ;
+                 rdfs:domain <SlipCrossing> ;
+                 rdfs:label "through lock"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#trackEntityLocation
+trfn:trackEntityLocation rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf loca:location ;
+                         rdf:type owl:InverseFunctionalProperty ;
+                         rdfs:domain loca:BaseLocation ,
+                                     trfn:LocatedTrackEntity ;
+                         rdfs:label "track entity location"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#turnoutOrientation
+trfn:turnoutOrientation rdf:type owl:ObjectProperty ,
+                                 owl:FunctionalProperty ,
+                                 owl:InverseFunctionalProperty ;
+                        rdfs:domain trfn:Turnout ;
+                        rdfs:range trfn:TurnoutOrientation ;
+                        rdfs:label "turnout orientation"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#turnoutOrigin
+trfn:turnoutOrigin rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf loca:location ;
+                   rdf:type owl:FunctionalProperty ,
+                            owl:InverseFunctionalProperty ;
+                   rdfs:domain trfn:Turnout ;
+                   rdfs:range loca:SpotLocation ;
+                   rdfs:comment """The location where the \"throught\" and \"diverted\" tracks diverge. Conventionally set at the tangential or secant point of track centerlines, which may differ from the location of blade tips.
+Note: blade tips are not in the scope of the (functional) turnout object."""@en ;
+                   rdfs:label "turnout origin"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  SlipCrossing
+<SlipCrossing> rdf:type owl:Class ;
+               rdfs:subClassOf trfn:Crossing ;
+               owl:disjointWith trfn:DiamondCrossing ;
+               rdfs:label "Slip crossing"@en .
+
+
+###  https://cdm.ovh/rsm/localisation/loca#BaseLocation
+loca:BaseLocation rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/localisation/loca#SpotLocation
+loca:SpotLocation rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/topology/topo#Connection
+topo:Connection rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/topology/topo#NavigabilityRelation
+topo:NavigabilityRelation rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/track/trfn#Crossing
+trfn:Crossing rdf:type owl:Class ;
+              rdfs:subClassOf trfn:JunctionEntity ;
+              owl:disjointWith trfn:Turnout ;
+              rdfs:label "Crossing"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#DiamondCrossing
+trfn:DiamondCrossing rdf:type owl:Class ;
+                     rdfs:subClassOf trfn:Crossing ;
+                     rdfs:label "Diamond crossing"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#DilatationPanel
+trfn:DilatationPanel rdf:type owl:Class ;
+                     rdfs:subClassOf trfn:LocatedTrackEntity ;
+                     rdfs:label "Dilatation panel"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#DoubleSlipCrossing
+trfn:DoubleSlipCrossing rdf:type owl:Class ;
+                        rdfs:subClassOf <SlipCrossing> ;
+                        owl:disjointWith trfn:SingleSlipCrossing ;
+                        rdfs:label "Double slip crossing"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#JunctionEntity
+trfn:JunctionEntity rdf:type owl:Class ;
+                    rdfs:subClassOf trfn:LocatedTrackEntity ;
+                    rdfs:label "Junction entity"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#LocatedTrackEntity
+trfn:LocatedTrackEntity rdf:type owl:Class ;
+                        rdfs:subClassOf trfn:TrackEntity ;
+                        rdfs:label "Located net entity"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#SingleSlipCrossing
+trfn:SingleSlipCrossing rdf:type owl:Class ;
+                        rdfs:subClassOf <SlipCrossing> ;
+                        rdfs:label "Single slip crossing"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#TrackEntity
+trfn:TrackEntity rdf:type owl:Class ;
+                 rdfs:label "Net entity"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#TrackPanel
+trfn:TrackPanel rdf:type owl:Class ;
+                rdfs:subClassOf trfn:LocatedTrackEntity ;
+                rdfs:label "Track panel"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#Turnout
+trfn:Turnout rdf:type owl:Class ;
+             rdfs:subClassOf trfn:JunctionEntity ;
+             rdfs:label "Turnout"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#TurnoutOrientation
+trfn:TurnoutOrientation rdf:type owl:Class ;
+                        rdfs:comment "Defines the geometric layout of a turnout: value Left  means that the diverted track curves to the left, while the through track is straight ahead. A symmetric (rather: Y-shaped) turnout curves to both sides. In the rare cases where turnouts are on a curve, the diverted track is the one with a radius of curvature that is different from the incoming track."@en ;
+                        rdfs:label "Turnout orientation"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#VehicleStop
+trfn:VehicleStop rdf:type owl:Class ;
+                 rdfs:subClassOf trfn:LocatedTrackEntity ;
+                 rdfs:label "Vehicle stop"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://cdm.ovh/rsm/track/trfn#Left
+trfn:Left rdf:type owl:NamedIndividual ,
+                   trfn:TurnoutOrientation ;
+          rdfs:label "Left"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#Right
+trfn:Right rdf:type owl:NamedIndividual ,
+                    trfn:TurnoutOrientation ;
+           rdfs:label "Right"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#Symmetric
+trfn:Symmetric rdf:type owl:NamedIndividual ,
+                        trfn:TurnoutOrientation ;
+               rdfs:label "Symmetric"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( trfn:DilatationPanel
+                trfn:JunctionEntity
+                trfn:TrackPanel
+                trfn:VehicleStop
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi
