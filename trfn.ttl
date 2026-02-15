@@ -1,0 +1,155 @@
+@prefix : <https://cdm.ovh/rsm/track/trfn#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix loca: <https://cdm.ovh/rsm/localisation/loca#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix topo: <https://cdm.ovh/rsm/topology/topo#> .
+@prefix trfn: <https://cdm.ovh/rsm/track/trfn#> .
+@prefix geo_ad: <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#> .
+@base <https://cdm.ovh/rsm/track/trfn> .
+
+<https://cdm.ovh/rsm/track/trfn> rdf:type owl:Ontology ;
+                                  owl:versionIRI <urn:absolute:0.1> ;
+                                  owl:imports <https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad> ,
+                                              <https://cdm.ovh/rsm/localisation/loca> ,
+                                              <https://cdm.ovh/rsm/topology/topo> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://cdm.ovh/rsm/localisation/loca#location
+loca:location rdf:type owl:ObjectProperty .
+
+
+###  https://cdm.ovh/rsm/track/trfn#crossingCenter
+trfn:crossingCenter rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf loca:location ;
+                    rdf:type owl:FunctionalProperty ,
+                             owl:InverseFunctionalProperty ;
+                    rdfs:domain trfn:Crossing ;
+                    rdfs:range loca:SpotLocation ;
+                    rdfs:label "crossing center"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#establishesConnection
+trfn:establishesConnection rdf:type owl:ObjectProperty ,
+                                    owl:InverseFunctionalProperty ;
+                           rdfs:domain trfn:JunctionEntity ;
+                           rdfs:range topo:Connection ;
+                           rdfs:label "establishes connection" .
+
+
+###  https://cdm.ovh/rsm/track/trfn#handlesNavigability
+trfn:handlesNavigability rdf:type owl:ObjectProperty ,
+                                  owl:InverseFunctionalProperty ;
+                         rdfs:domain trfn:JunctionEntity ;
+                         rdfs:range topo:NavigabilityRelation ;
+                         rdfs:label "handles navigability" .
+
+
+###  https://cdm.ovh/rsm/track/trfn#trackEntityLocation
+trfn:trackEntityLocation rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf loca:location ;
+                         rdf:type owl:InverseFunctionalProperty ;
+                         rdfs:domain loca:BaseLocation ,
+                                     trfn:LocatedTrackEntity ;
+                         rdfs:label "track entity location"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#turnoutOrigin
+trfn:turnoutOrigin rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf loca:location ;
+                   rdf:type owl:FunctionalProperty ,
+                            owl:InverseFunctionalProperty ;
+                   rdfs:domain trfn:Turnout ;
+                   rdfs:range loca:SpotLocation ;
+                   rdfs:comment """The location where the \"throught\" and \"diverted\" tracks diverge. Conventionally set at the tangential or secant point of track centerlines, which may differ from the location of blade tips.
+Note: blade tips are not in the scope of the (functional) turnout object."""@en ;
+                   rdfs:label "turnout origin"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://cdm.ovh/rsm/localisation/loca#BaseLocation
+loca:BaseLocation rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/localisation/loca#SpotLocation
+loca:SpotLocation rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/topology/topo#Connection
+topo:Connection rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/topology/topo#NavigabilityRelation
+topo:NavigabilityRelation rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/track/trfn#Crossing
+trfn:Crossing rdf:type owl:Class ;
+              rdfs:subClassOf trfn:JunctionEntity ;
+              owl:disjointWith trfn:Turnout ;
+              rdfs:label "Crossing"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#DilatationPanel
+trfn:DilatationPanel rdf:type owl:Class ;
+                     rdfs:subClassOf trfn:LocatedTrackEntity ;
+                     rdfs:label "Dilatation panel"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#JunctionEntity
+trfn:JunctionEntity rdf:type owl:Class ;
+                    rdfs:subClassOf trfn:LocatedTrackEntity ;
+                    rdfs:label "Junction entity"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#LocatedTrackEntity
+trfn:LocatedTrackEntity rdf:type owl:Class ;
+                        rdfs:subClassOf trfn:TrackEntity ;
+                        rdfs:label "Located net entity"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#TrackEntity
+trfn:TrackEntity rdf:type owl:Class ;
+                 rdfs:label "Net entity"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#TrackPanel
+trfn:TrackPanel rdf:type owl:Class ;
+                rdfs:subClassOf trfn:LocatedTrackEntity ;
+                rdfs:label "Track panel"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#Turnout
+trfn:Turnout rdf:type owl:Class ;
+             rdfs:subClassOf trfn:JunctionEntity ;
+             rdfs:label "Turnout"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#VehicleStop
+trfn:VehicleStop rdf:type owl:Class ;
+                 rdfs:subClassOf trfn:LocatedTrackEntity ;
+                 rdfs:label "Vehicle stop"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( trfn:DilatationPanel
+                trfn:JunctionEntity
+                trfn:TrackPanel
+                trfn:VehicleStop
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi

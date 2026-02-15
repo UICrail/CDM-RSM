@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <graphol version="3">
-  <project name="260112_RSM_Track_Functional" version="0.1">
-    <ontology addLabelFromUserInput="0" lang="en" iri="https://cdm.ovh/rsm/track/trfn" addLabelFromSimpleName="0">
+  <project version="https://cdm.ovh/rsm/track/trfn/0.1/trfn" name="260112_RSM_Track_Functional">
+    <ontology lang="en" addLabelFromUserInput="0" iri="https://cdm.ovh/rsm/track/trfn" addLabelFromSimpleName="0">
       <imports>
-        <import isLocal="0" iri="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" location="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" version="https://cdm.ovh/rsm/adapters/geosparql_adapter/0.7/geo_ad"/>
-        <import isLocal="0" iri="https://cdm.ovh/rsm/localisation/loca" location="https://cdm.ovh/rsm/localisation/loca" version="https://cdm.ovh/rsm/localisation/1.0rc1/loca"/>
-        <import isLocal="0" iri="https://cdm.ovh/rsm/topology/topo" location="https://cdm.ovh/rsm/topology/topo" version="https://cdm.ovh/rsm/topology/1.0rc4/topo"/>
+        <import version="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" isLocal="0" iri="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" location="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad"/>
+        <import version="https://cdm.ovh/rsm/localisation/loca" isLocal="0" iri="https://cdm.ovh/rsm/localisation/loca" location="https://cdm.ovh/rsm/localisation/loca"/>
+        <import version="https://cdm.ovh/rsm/topology/topo" isLocal="0" iri="https://cdm.ovh/rsm/topology/topo" location="https://cdm.ovh/rsm/topology/topo"/>
       </imports>
       <prefixes>
         <prefix>
@@ -112,6 +112,20 @@
         <annotationProperty>http://www.w3.org/2002/07/owl#versionInfo</annotationProperty>
       </annotationProperties>
       <iris>
+        <iri>
+          <value>SlipCrossing</value>
+          <annotations>
+            <annotation>
+              <subject>SlipCrossing</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Slip crossing</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
         <iri>
           <value>http://qudt.org/schema/qudt/QuantityValue</value>
         </iri>
@@ -347,6 +361,96 @@
           <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature</value>
         </iri>
         <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#AreaLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#BaseLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#Bottom</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#Front</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#Left</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#LinearLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#ListedLinearElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#ListedNetElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#LocatedNetElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#OffsetValue</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#Rear</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#Right</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#SideEnum</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#SpotLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#Top</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#applicationDirection</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#associatedLinearElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#associatedNetElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#elementLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#endAt</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#lateralOffset</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#location</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#offset</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#onLinearElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#side</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#startAt</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#tangentialOffset</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#verticalOffset</value>
+        </iri>
+        <iri>
           <value>https://cdm.ovh/rsm/localisation/localisation#AreaLocation</value>
         </iri>
         <iri>
@@ -531,6 +635,101 @@
         </iri>
         <iri>
           <value>https://cdm.ovh/rsm/track/trfn</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn</subject>
+              <property>http://www.w3.org/2002/07/owl#versionInfo</property>
+              <object>
+                <lexicalForm>0.1</lexicalForm>
+                <datatype/>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#Crossing</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#Crossing</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Crossing</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#DiamondCrossing</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#DiamondCrossing</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Diamond crossing</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#DilatationPanel</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#DilatationPanel</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Dilatation panel</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#DoubleSlipCrossing</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#DoubleSlipCrossing</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Double slip crossing</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#JunctionEntity</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#JunctionEntity</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Junction entity</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#Left</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#Left</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Left</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
         </iri>
         <iri>
           <value>https://cdm.ovh/rsm/track/trfn#LocatedTrackEntity</value>
@@ -540,6 +739,48 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Located net entity</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#Right</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#Right</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Right</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#SingleSlipCrossing</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#SingleSlipCrossing</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Single slip crossing</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#Symmetric</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#Symmetric</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Symmetric</lexicalForm>
                 <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
                 <language>en</language>
               </object>
@@ -554,7 +795,262 @@
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Net entity</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#TrackPanel</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#TrackPanel</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Track panel</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#Turnout</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#Turnout</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Turnout</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#TurnoutOrientation</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#TurnoutOrientation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Turnout orientation</lexicalForm>
                 <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#TurnoutOrientation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Defines the geometric layout of a turnout: value Left  means that the diverted track curves to the left, while the through track is straight ahead. A symmetric (rather: Y-shaped) turnout curves to both sides. In the rare cases where turnouts are on a curve, the diverted track is the one with a radius of curvature that is different from the incoming track.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#VehicleStop</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#VehicleStop</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Vehicle stop</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#crossingCenter</value>
+          <functional/>
+          <inverseFunctional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#crossingCenter</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>crossing center</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#deviatedLock</value>
+          <inverseFunctional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#deviatedLock</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>deviated lock</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#establishesConnection</value>
+          <inverseFunctional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#establishesConnection</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>establishes connection</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#handlesNavigability</value>
+          <inverseFunctional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#handlesNavigability</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>handles navigability</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#leftLock</value>
+          <inverseFunctional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#leftLock</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>left lock</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#leftLock</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>indicates which navigabilities are available when the turnout is locked in its leftmost position</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#leftLock</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Navigabilities involved by the turnout being locked on the left position are a subset of all navigabilities handled by the turnout. It is disjoint from the navigabilities involved by a lock on the right position.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#rightLock</value>
+          <inverseFunctional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#rightLock</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>right lock</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#rightLock</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>indicates which navigabilities are available when the turnout is locked in its rightmost position</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#throughLock</value>
+          <inverseFunctional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#throughLock</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>through lock</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#trackEntityLocation</value>
+          <inverseFunctional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#trackEntityLocation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>track entity location</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#turnoutOrientation</value>
+          <functional/>
+          <inverseFunctional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#turnoutOrientation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>turnout orientation</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#turnoutOrigin</value>
+          <functional/>
+          <inverseFunctional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#turnoutOrigin</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>turnout origin</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#turnoutOrigin</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>The location where the "throught" and "diverted" tracks diverge. Conventionally set at the tangential or secant point of track centerlines, which may differ from the location of blade tips.
+Note: blade tips are not in the scope of the (functional) turnout object.</lexicalForm>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -569,28 +1065,552 @@
         <iri>
           <value>https://w3id.org/list#OWLList</value>
         </iri>
+        <iri>
+          <value>urn:x-graphol:origin</value>
+        </iri>
       </iris>
     </ontology>
     <diagrams>
-      <diagram height="5000" name="track_functional" width="5000">
-        <node color="#fcfcfc" type="concept" id="n0">
-          <geometry height="50" x="-30" width="110" y="-70"/>
+      <diagram name="crossings" width="5000" height="5000">
+        <node color="#fcfcfc" id="n0" type="concept">
+          <geometry y="-100" x="-30" height="50" width="110"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#Crossing</iri>
+          <label y="-100" x="-30" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#000000" id="n1" type="disjoint-union">
+          <geometry y="0" x="-30" height="30" width="50"/>
+        </node>
+        <node color="#fcfcfc" id="n2" type="concept">
+          <geometry y="100" x="-110" height="50" width="110"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#DiamondCrossing</iri>
+          <label y="100" x="-110" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n3" type="concept">
+          <geometry y="100" x="60" height="50" width="110"/>
+          <iri>SlipCrossing</iri>
+          <label y="100" x="60" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#000000" id="n4" type="disjoint-union">
+          <geometry y="190" x="60" height="30" width="50"/>
+        </node>
+        <node color="#fcfcfc" id="n5" type="concept">
+          <geometry y="280" x="-10" height="50" width="110"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#SingleSlipCrossing</iri>
+          <label y="280" x="-10" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n6" type="concept">
+          <geometry y="280" x="140" height="50" width="125"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#DoubleSlipCrossing</iri>
+          <label y="280" x="140" height="23" width="125" size="12" customSize="0"/>
+        </node>
+        <edge source="n1" target="n0" id="e0" type="inclusion">
+          <point y="0" x="-30"/>
+          <point y="-100" x="-30"/>
+        </edge>
+        <edge source="n2" target="n1" id="e2" type="input">
+          <point y="100" x="-110"/>
+          <point y="0" x="-30"/>
+        </edge>
+        <edge source="n3" target="n1" id="e3" type="input">
+          <point y="100" x="60"/>
+          <point y="0" x="-30"/>
+        </edge>
+        <edge source="n4" target="n3" id="e4" type="inclusion">
+          <point y="190" x="60"/>
+          <point y="100" x="60"/>
+        </edge>
+        <edge source="n5" target="n4" id="e5" type="input">
+          <point y="280" x="-10"/>
+          <point y="190" x="60"/>
+        </edge>
+        <edge source="n6" target="n4" id="e6" type="input">
+          <point y="280" x="140"/>
+          <point y="190" x="60"/>
+        </edge>
+      </diagram>
+      <diagram name="subproperties" width="5000" height="5000">
+        <node color="#c2b078" id="n0" type="role">
+          <geometry y="-110" x="-30" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/localisation/loca#location</iri>
+          <label y="-140" x="-30" height="23" width="50" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n1" type="role">
+          <geometry y="30" x="80" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#crossingCenter</iri>
+          <label y="0" x="80" height="23" width="88" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n10" type="domain-restriction">
+          <geometry y="330" x="-150" height="20" width="20"/>
+          <label y="308" x="-150" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#fcfcfc" id="n11" type="domain-restriction">
+          <geometry y="330" x="80" height="20" width="20"/>
+          <label y="308" x="80" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#fcfcfc" id="n12" type="role">
+          <geometry y="160" x="390" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#handlesNavigability</iri>
+          <label y="130" x="390" height="23" width="111" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n13" type="concept">
+          <geometry y="320" x="390" height="50" width="110"/>
+          <iri>SlipCrossing</iri>
+          <label y="320" x="390" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n14" type="role">
+          <geometry y="230" x="290" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#throughLock</iri>
+          <label y="200" x="290" height="23" width="74" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n15" type="role">
+          <geometry y="230" x="480" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#deviatedLock</iri>
+          <label y="200" x="480" height="23" width="78" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n16" type="complement">
+          <geometry y="230" x="390" height="30" width="50"/>
+          <label y="230" x="390" height="23" width="25" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n17" type="domain-restriction">
+          <geometry y="320" x="290" height="20" width="20"/>
+          <label y="298" x="290" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#fcfcfc" id="n18" type="domain-restriction">
+          <geometry y="320" x="480" height="20" width="20"/>
+          <label y="298" x="480" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#fcfcfc" id="n2" type="role">
+          <geometry y="30" x="-30" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#turnoutOrigin</iri>
+          <label y="0" x="-30" height="23" width="77" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n3" type="role">
+          <geometry y="30" x="-140" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#trackEntityLocation</iri>
+          <label y="0" x="-140" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n4" type="role">
+          <geometry y="160" x="-40" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#handlesNavigability</iri>
+          <label y="130" x="-40" height="23" width="111" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n5" type="role">
+          <geometry y="240" x="-150" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#leftLock</iri>
+          <label y="210" x="-150" height="23" width="50" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n6" type="role">
+          <geometry y="240" x="80" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#rightLock</iri>
+          <label y="210" x="80" height="23" width="57" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n8" type="complement">
+          <geometry y="240" x="-40" height="30" width="50"/>
+          <label y="240" x="-40" height="23" width="25" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n9" type="concept">
+          <geometry y="330" x="-30" height="50" width="110"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#Turnout</iri>
+          <label y="330" x="-30" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <edge source="n3" target="n0" id="e0" type="inclusion">
+          <point y="30" x="-140"/>
+          <point y="-110" x="-30"/>
+        </edge>
+        <edge source="n2" target="n0" id="e1" type="inclusion">
+          <point y="30" x="-30"/>
+          <point y="-110" x="-30"/>
+        </edge>
+        <edge source="n5" target="n10" id="e10" type="input">
+          <point y="240" x="-150"/>
+          <point y="330" x="-150"/>
+        </edge>
+        <edge source="n6" target="n11" id="e11" type="input">
+          <point y="240" x="80"/>
+          <point y="330" x="80"/>
+        </edge>
+        <edge source="n15" target="n16" id="e12" type="input">
+          <point y="230" x="480"/>
+          <point y="230" x="390"/>
+        </edge>
+        <edge source="n14" target="n16" id="e13" type="inclusion">
+          <point y="230" x="290"/>
+          <point y="230" x="390"/>
+        </edge>
+        <edge source="n14" target="n12" id="e14" type="inclusion">
+          <point y="230" x="290"/>
+          <point y="160" x="390"/>
+        </edge>
+        <edge source="n15" target="n12" id="e15" type="inclusion">
+          <point y="230" x="480"/>
+          <point y="160" x="390"/>
+        </edge>
+        <edge source="n17" target="n13" id="e16" type="inclusion">
+          <point y="320" x="290"/>
+          <point y="320" x="390"/>
+        </edge>
+        <edge source="n18" target="n13" id="e17" type="inclusion">
+          <point y="320" x="480"/>
+          <point y="320" x="390"/>
+        </edge>
+        <edge source="n14" target="n17" id="e18" type="input">
+          <point y="230" x="290"/>
+          <point y="320" x="290"/>
+        </edge>
+        <edge source="n15" target="n18" id="e19" type="input">
+          <point y="230" x="480"/>
+          <point y="320" x="480"/>
+        </edge>
+        <edge source="n1" target="n0" id="e2" type="inclusion">
+          <point y="30" x="80"/>
+          <point y="-110" x="-30"/>
+        </edge>
+        <edge source="n5" target="n8" id="e4" type="inclusion">
+          <point y="240" x="-150"/>
+          <point y="240" x="-40"/>
+        </edge>
+        <edge source="n6" target="n8" id="e5" type="input">
+          <point y="240" x="80"/>
+          <point y="240" x="-40"/>
+        </edge>
+        <edge source="n5" target="n4" id="e6" type="inclusion">
+          <point y="240" x="-150"/>
+          <point y="160" x="-40"/>
+        </edge>
+        <edge source="n6" target="n4" id="e7" type="inclusion">
+          <point y="240" x="80"/>
+          <point y="160" x="-40"/>
+        </edge>
+        <edge source="n10" target="n9" id="e8" type="inclusion">
+          <point y="330" x="-150"/>
+          <point y="330" x="-30"/>
+        </edge>
+        <edge source="n11" target="n9" id="e9" type="inclusion">
+          <point y="330" x="80"/>
+          <point y="330" x="-30"/>
+        </edge>
+      </diagram>
+      <diagram name="track_functional" width="5000" height="5000">
+        <node color="#fcfcfc" id="n0" type="concept">
+          <geometry y="-100" x="-150" height="50" width="110"/>
           <iri>https://cdm.ovh/rsm/track/trfn#TrackEntity</iri>
-          <label height="23" customSize="0" x="-30" width="110" size="12" y="-70"/>
+          <label y="-100" x="-150" height="23" width="110" size="12" customSize="0"/>
         </node>
-        <node color="#fcfcfc" type="concept" id="n1">
-          <geometry height="50" x="-30" width="135" y="30"/>
+        <node color="#fcfcfc" id="n1" type="concept">
+          <geometry y="0" x="-150" height="50" width="135"/>
           <iri>https://cdm.ovh/rsm/track/trfn#LocatedTrackEntity</iri>
-          <label height="23" customSize="0" x="-30" width="135" size="12" y="22"/>
+          <label y="-7" x="-150" height="23" width="135" size="12" customSize="0"/>
         </node>
-        <node color="#c2b078" type="concept" id="n2">
-          <geometry height="50" x="440" width="110" y="20"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#BaseLocation</iri>
-          <label height="23" customSize="0" x="440" width="110" size="12" y="20"/>
+        <node color="#fcfcfc" id="n10" type="concept">
+          <geometry y="140" x="0" height="50" width="110"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#VehicleStop</iri>
+          <label y="140" x="0" height="23" width="110" size="12" customSize="0"/>
         </node>
-        <edge source="n1" target="n0" type="inclusion" id="e0">
-          <point x="-30" y="30"/>
-          <point x="-30" y="-70"/>
+        <node color="#000000" id="n11" type="disjoint-union">
+          <geometry y="60" x="-150" height="30" width="50"/>
+        </node>
+        <node color="#fcfcfc" id="n12" type="concept">
+          <geometry y="330" x="270" height="50" width="110"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#Turnout</iri>
+          <label y="330" x="270" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n13" type="concept">
+          <geometry y="260" x="270" height="50" width="110"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#Crossing</iri>
+          <label y="260" x="270" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#000000" id="n14" type="disjoint-union">
+          <geometry y="260" x="150" height="30" width="50"/>
+        </node>
+        <node color="#fcfcfc" id="n15" type="role">
+          <geometry y="180" x="340" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#handlesNavigability</iri>
+          <label y="150" x="340" height="23" width="111" size="12" customSize="0"/>
+        </node>
+        <node color="#c2b078" id="n16" type="concept">
+          <geometry y="180" x="560" height="50" width="145"/>
+          <iri>https://cdm.ovh/rsm/topology/topo#NavigabilityRelation</iri>
+          <label y="180" x="560" height="23" width="145" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n17" type="role">
+          <geometry y="110" x="340" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#establishesConnection</iri>
+          <label y="80" x="340" height="23" width="129" size="12" customSize="0"/>
+        </node>
+        <node color="#c2b078" id="n18" type="concept">
+          <geometry y="110" x="557" height="50" width="145"/>
+          <iri>https://cdm.ovh/rsm/topology/topo#Connection</iri>
+          <label y="110" x="557" height="23" width="145" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n19" type="domain-restriction">
+          <geometry y="110" x="250" height="20" width="20"/>
+          <label y="88" x="250" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#fcfcfc" id="n20" type="domain-restriction">
+          <geometry y="180" x="250" height="20" width="20"/>
+          <label y="158" x="250" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#000000" id="n21" type="range-restriction">
+          <geometry y="110" x="430" height="20" width="20"/>
+          <label y="88" x="430" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#000000" id="n22" type="range-restriction">
+          <geometry y="180" x="430" height="20" width="20"/>
+          <label y="158" x="430" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#fcfcfc" id="n23" type="role">
+          <geometry y="330" x="450" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#turnoutOrigin</iri>
+          <label y="300" x="450" height="23" width="77" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n24" type="domain-restriction">
+          <geometry y="330" x="370" height="20" width="20"/>
+          <label y="308" x="370" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#000000" id="n25" type="range-restriction">
+          <geometry y="330" x="540" height="20" width="20"/>
+          <label y="308" x="540" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#c2b078" id="n26" type="concept">
+          <geometry y="330" x="640" height="50" width="110"/>
+          <iri>https://cdm.ovh/rsm/localisation/loca#SpotLocation</iri>
+          <label y="330" x="640" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n27" type="role">
+          <geometry y="260" x="450" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#crossingCenter</iri>
+          <label y="230" x="450" height="23" width="88" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n28" type="domain-restriction">
+          <geometry y="260" x="370" height="20" width="20"/>
+          <label y="238" x="370" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#000000" id="n29" type="range-restriction">
+          <geometry y="260" x="540" height="20" width="20"/>
+          <label y="238" x="540" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#c2b078" id="n30" type="concept">
+          <geometry y="260" x="640" height="50" width="110"/>
+          <iri>https://cdm.ovh/rsm/localisation/loca#SpotLocation</iri>
+          <label y="260" x="640" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n31" type="role">
+          <geometry y="0" x="70" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#trackEntityLocation</iri>
+          <label y="-30" x="70" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n32" type="domain-restriction">
+          <geometry y="0" x="-20" height="20" width="20"/>
+          <label y="-22" x="-20" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#fcfcfc" id="n33" type="domain-restriction">
+          <geometry y="0" x="160" height="20" width="20"/>
+          <label y="-22" x="160" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#c2b078" id="n34" type="concept">
+          <geometry y="0" x="270" height="50" width="110"/>
+          <iri>https://cdm.ovh/rsm/localisation/loca#BaseLocation</iri>
+          <label y="0" x="270" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n7" type="concept">
+          <geometry y="140" x="-240" height="50" width="110"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#TrackPanel</iri>
+          <label y="140" x="-240" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n8" type="concept">
+          <geometry y="140" x="-120" height="50" width="110"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#DilatationPanel</iri>
+          <label y="140" x="-120" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n9" type="concept">
+          <geometry y="140" x="150" height="50" width="110"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#JunctionEntity</iri>
+          <label y="140" x="150" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <edge source="n1" target="n0" id="e0" type="inclusion">
+          <point y="0" x="-150"/>
+          <point y="-100" x="-150"/>
+        </edge>
+        <edge source="n11" target="n1" id="e10" type="inclusion">
+          <point y="60" x="-150"/>
+          <point y="0" x="-150"/>
+        </edge>
+        <edge source="n7" target="n11" id="e11" type="input">
+          <point y="140" x="-240"/>
+          <point y="60" x="-150"/>
+        </edge>
+        <edge source="n8" target="n11" id="e12" type="input">
+          <point y="140" x="-120"/>
+          <point y="60" x="-150"/>
+        </edge>
+        <edge source="n10" target="n11" id="e13" type="input">
+          <point y="140" x="0"/>
+          <point y="60" x="-150"/>
+        </edge>
+        <edge source="n9" target="n11" id="e14" type="input">
+          <point y="140" x="150"/>
+          <point y="60" x="-150"/>
+        </edge>
+        <edge source="n14" target="n9" id="e17" type="inclusion">
+          <point y="260" x="150"/>
+          <point y="140" x="150"/>
+        </edge>
+        <edge source="n12" target="n14" id="e18" type="input">
+          <point y="330" x="270"/>
+          <point y="330" x="150"/>
+          <point y="260" x="150"/>
+        </edge>
+        <edge source="n13" target="n14" id="e19" type="input">
+          <point y="260" x="270"/>
+          <point y="260" x="150"/>
+        </edge>
+        <edge source="n19" target="n9" id="e20" type="inclusion">
+          <point y="110" x="250"/>
+          <point y="140" x="150"/>
+        </edge>
+        <edge source="n20" target="n9" id="e21" type="inclusion">
+          <point y="180" x="250"/>
+          <point y="140" x="150"/>
+        </edge>
+        <edge source="n21" target="n18" id="e22" type="inclusion">
+          <point y="110" x="430"/>
+          <point y="110" x="557"/>
+        </edge>
+        <edge source="n22" target="n16" id="e23" type="inclusion">
+          <point y="180" x="430"/>
+          <point y="180" x="560"/>
+        </edge>
+        <edge source="n17" target="n21" id="e24" type="input">
+          <point y="110" x="340"/>
+          <point y="110" x="430"/>
+        </edge>
+        <edge source="n17" target="n19" id="e25" type="input">
+          <point y="110" x="340"/>
+          <point y="110" x="250"/>
+        </edge>
+        <edge source="n15" target="n22" id="e26" type="input">
+          <point y="180" x="340"/>
+          <point y="180" x="430"/>
+        </edge>
+        <edge source="n15" target="n20" id="e27" type="input">
+          <point y="180" x="340"/>
+          <point y="180" x="250"/>
+        </edge>
+        <edge source="n24" target="n12" id="e28" type="inclusion">
+          <point y="330" x="370"/>
+          <point y="330" x="270"/>
+        </edge>
+        <edge source="n25" target="n26" id="e29" type="inclusion">
+          <point y="330" x="540"/>
+          <point y="330" x="640"/>
+        </edge>
+        <edge source="n23" target="n24" id="e30" type="input">
+          <point y="330" x="450"/>
+          <point y="330" x="370"/>
+        </edge>
+        <edge source="n23" target="n25" id="e31" type="input">
+          <point y="330" x="450"/>
+          <point y="330" x="540"/>
+        </edge>
+        <edge source="n28" target="n13" id="e33" type="inclusion">
+          <point y="260" x="370"/>
+          <point y="260" x="270"/>
+        </edge>
+        <edge source="n27" target="n29" id="e34" type="input">
+          <point y="260" x="450"/>
+          <point y="260" x="540"/>
+        </edge>
+        <edge source="n27" target="n28" id="e36" type="input">
+          <point y="260" x="450"/>
+          <point y="260" x="370"/>
+        </edge>
+        <edge source="n29" target="n30" id="e37" type="inclusion">
+          <point y="260" x="540"/>
+          <point y="260" x="640"/>
+        </edge>
+        <edge source="n33" target="n34" id="e38" type="inclusion">
+          <point y="0" x="160"/>
+          <point y="0" x="270"/>
+        </edge>
+        <edge source="n32" target="n1" id="e39" type="inclusion">
+          <point y="0" x="-20"/>
+          <point y="0" x="-150"/>
+        </edge>
+        <edge source="n31" target="n33" id="e40" type="input">
+          <point y="0" x="70"/>
+          <point y="0" x="160"/>
+        </edge>
+        <edge source="n31" target="n32" id="e41" type="input">
+          <point y="0" x="70"/>
+          <point y="0" x="-20"/>
+        </edge>
+      </diagram>
+      <diagram name="turnouts" width="5000" height="5000">
+        <node color="#fcfcfc" id="n0" type="concept">
+          <geometry y="90" x="-10" height="50" width="110"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#Turnout</iri>
+          <label y="90" x="-10" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n1" type="role">
+          <geometry y="90" x="180" height="50" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#turnoutOrientation</iri>
+          <label y="60" x="180" height="23" width="105" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n2" type="domain-restriction">
+          <geometry y="90" x="90" height="20" width="20"/>
+          <label y="68" x="90" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#000000" id="n3" type="range-restriction">
+          <geometry y="90" x="260" height="20" width="20"/>
+          <label y="68" x="260" height="23" width="39" size="12" customSize="0">exists</label>
+        </node>
+        <node color="#fcfcfc" id="n4" type="concept">
+          <geometry y="90" x="400" height="50" width="110"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#TurnoutOrientation</iri>
+          <label y="90" x="400" height="23" width="110" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n5" type="individual">
+          <geometry y="180" x="330" height="60" width="60"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#Left</iri>
+          <label y="180" x="330" height="23" width="60" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n6" type="individual">
+          <geometry y="180" x="400" height="60" width="60"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#Right</iri>
+          <label y="180" x="400" height="23" width="60" size="12" customSize="0"/>
+        </node>
+        <node color="#fcfcfc" id="n7" type="individual">
+          <geometry y="180" x="475" height="60" width="70"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#Symmetric</iri>
+          <label y="180" x="475" height="23" width="70" size="12" customSize="0"/>
+        </node>
+        <edge source="n2" target="n0" id="e0" type="inclusion">
+          <point y="90" x="90"/>
+          <point y="90" x="-10"/>
+        </edge>
+        <edge source="n1" target="n2" id="e1" type="input">
+          <point y="90" x="180"/>
+          <point y="90" x="90"/>
+        </edge>
+        <edge source="n3" target="n4" id="e2" type="inclusion">
+          <point y="90" x="260"/>
+          <point y="90" x="400"/>
+        </edge>
+        <edge source="n1" target="n3" id="e3" type="input">
+          <point y="90" x="180"/>
+          <point y="90" x="260"/>
+        </edge>
+        <edge source="n5" target="n4" id="e4" type="membership">
+          <point y="180" x="330"/>
+          <point y="90" x="400"/>
+        </edge>
+        <edge source="n6" target="n4" id="e5" type="membership">
+          <point y="180" x="400"/>
+          <point y="90" x="400"/>
+        </edge>
+        <edge source="n7" target="n4" id="e6" type="membership">
+          <point y="180" x="475"/>
+          <point y="90" x="400"/>
         </edge>
       </diagram>
     </diagrams>
