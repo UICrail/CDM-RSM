@@ -16,7 +16,7 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:geosparql="http://www.opengis.net/ont/geosparql#">
     <owl:Ontology rdf:about="https://cdm.ovh/rsm/topology/topo">
-        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/topology/1.0rc4/topo"/>
+        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/topology/1.0rc5/topo"/>
         <owl:imports rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad"/>
         <dc:abstract xml:lang="en">Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
 
@@ -25,7 +25,7 @@ Syntactic sugar: some properties that are most likely to be used are chained pro
 Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.</dc:abstract>
         <dc:contributor xml:lang="en">Pierre Tane, UIC</dc:contributor>
         <dc:creator xml:lang="en">Airy Magnien, UIC</dc:creator>
-        <dc:date xml:lang="en">23 December 2025</dc:date>
+        <dc:date xml:lang="en">27 February 2026</dc:date>
         <dc:description xml:lang="en">Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
 
 Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
@@ -34,11 +34,9 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
         <dc:title xml:lang="en">RSM topology</dc:title>
         <dc:type xml:lang="en">RDF/OWL ontology (using OWL2 RL profile)</dc:type>
         <dcterms:license xml:lang="en">EUPL 1.2; see https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/eupl_v1.2_en.pdf</dcterms:license>
-        <owl:versionInfo xml:lang="en">1.0rc4 - additions and corrections on December 2025
+        <owl:versionInfo xml:lang="en">1.0rc5 - additions and corrections on February 2026
 
-ADDED : reified port connections and navigabilities, last available in RC1, are restored (with some changed identifiers).
-
-CORRECTED : corrected spelling errors, removed brackets in labels or comments, use disjointUnionOf where relevant. Date changed to December 18; preferred namespace prefix corrected.</owl:versionInfo>
+Added: disjointness of navigableTo / nonNavigableTo, navigableFrom / nonNavigableFrom</owl:versionInfo>
         <vann:preferredNamespacePrefix>topo</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceURI xml:lang="en">http://cdm.ovh/rsm/topology/topo#</vann:preferredNamespaceURI>
     </owl:Ontology>
@@ -249,6 +247,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
     <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#navigableFrom">
         <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/topology/topo#navigableFromTransitive"/>
         <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#navigableTo"/>
+        <owl:propertyDisjointWith rdf:resource="https://cdm.ovh/rsm/topology/topo#nonNavigableFrom"/>
         <rdfs:label xml:lang="en">navigable from</rdfs:label>
         <skos:definition xml:lang="en">inverse of navigable to</skos:definition>
     </owl:ObjectProperty>
@@ -269,6 +268,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
 
     <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#navigableTo">
         <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/topology/topo#navigableToTransitive"/>
+        <owl:propertyDisjointWith rdf:resource="https://cdm.ovh/rsm/topology/topo#nonNavigableTo"/>
         <rdfs:label xml:lang="en">navigable to</rdfs:label>
     </owl:ObjectProperty>
     

@@ -18,9 +18,9 @@
                                   owl:versionInfo "0.1" .
 
 #################################################################
-#    Object Properties
+#    Object Properties
 #################################################################
-
+
 ###  https://cdm.ovh/rsm/localisation/loca#location
 loca:location rdf:type owl:ObjectProperty .
 
@@ -92,8 +92,8 @@ trfn:throughLock rdf:type owl:ObjectProperty ;
 trfn:trackEntityLocation rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf loca:location ;
                          rdf:type owl:InverseFunctionalProperty ;
-                         rdfs:domain loca:BaseLocation ,
-                                     trfn:LocatedTrackEntity ;
+                         rdfs:domain trfn:LocatedTrackEntity ;
+                         rdfs:range loca:BaseLocation ;
                          rdfs:label "track entity location"@en .
 
 
@@ -119,9 +119,9 @@ Note: blade tips are not in the scope of the (functional) turnout object."""@en 
 
 
 #################################################################
-#    Classes
+#    Classes
 #################################################################
-
+
 ###  SlipCrossing
 <SlipCrossing> rdf:type owl:Class ;
                rdfs:subClassOf trfn:Crossing ;
@@ -180,7 +180,7 @@ trfn:JunctionEntity rdf:type owl:Class ;
 ###  https://cdm.ovh/rsm/track/trfn#LocatedTrackEntity
 trfn:LocatedTrackEntity rdf:type owl:Class ;
                         rdfs:subClassOf trfn:TrackEntity ;
-                        rdfs:label "Located net entity"@en .
+                        rdfs:label "Located track entity"@en .
 
 
 ###  https://cdm.ovh/rsm/track/trfn#SingleSlipCrossing
@@ -191,7 +191,7 @@ trfn:SingleSlipCrossing rdf:type owl:Class ;
 
 ###  https://cdm.ovh/rsm/track/trfn#TrackEntity
 trfn:TrackEntity rdf:type owl:Class ;
-                 rdfs:label "Net entity"@en .
+                 rdfs:label "Track entity"@en .
 
 
 ###  https://cdm.ovh/rsm/track/trfn#TrackPanel
@@ -219,9 +219,9 @@ trfn:VehicleStop rdf:type owl:Class ;
 
 
 #################################################################
-#    Individuals
+#    Individuals
 #################################################################
-
+
 ###  https://cdm.ovh/rsm/track/trfn#Left
 trfn:Left rdf:type owl:NamedIndividual ,
                    trfn:TurnoutOrientation ;
@@ -241,9 +241,9 @@ trfn:Symmetric rdf:type owl:NamedIndividual ,
 
 
 #################################################################
-#    General axioms
+#    General axioms
 #################################################################
-
+
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( trfn:DilatationPanel
                 trfn:JunctionEntity

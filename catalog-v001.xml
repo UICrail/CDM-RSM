@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1770985742700" name="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" uri="ontology/src/geo_ad.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1770985742700" name="https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap" uri="ontology/src/rsm_ifc_adap.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1770985742700" name="https://cdm.ovh/rsm/localisation/loca" uri="docs/widoco/ontology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1770985742700" name="https://cdm.ovh/rsm/topology/topo" uri="ontology/src/topo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1770985742700" name="shadowed:https://cdm.ovh/rsm/localisation/loca" uri="ontology/src/loca.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1770985742700" name="shadowed:https://cdm.ovh/rsm/localisation/loca" uri="ontology/src/core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1770985742700" name="shadowed:https://cdm.ovh/rsm/localisation/loca" uri="reports/reasoned.owl"/>
+    </group>
+</catalog>
