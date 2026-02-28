@@ -40,10 +40,10 @@
         "value" : "loca",
         "type" : "label"
       } ],
-      "abstract" : [ {
-        "identifier" : "abstract",
-        "language" : "en",
-        "value" : "This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.\n\nFor ordering things, this ontology uses the List ontology published by Pieter Pauwels and Walter Terkaj. The List ontology also underpins the ifcOWL ontology by the same authors.\n\nFor spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical.",
+      "preferredNamespaceURI" : [ {
+        "identifier" : "preferredNamespaceURI",
+        "language" : "undefined",
+        "value" : "https://cdm.ovh/rsm/localisation/loca",
         "type" : "label"
       } ],
       "versionInfo" : [ {
@@ -52,10 +52,10 @@
         "value" : "1.0rc1",
         "type" : "label"
       } ],
-      "preferredNamespaceURI" : [ {
-        "identifier" : "preferredNamespaceURI",
-        "language" : "undefined",
-        "value" : "https://cdm.ovh/rsm/localisation/loca",
+      "abstract" : [ {
+        "identifier" : "abstract",
+        "language" : "en",
+        "value" : "This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.\n\nFor ordering things, this ontology uses the List ontology published by Pieter Pauwels and Walter Terkaj. The List ontology also underpins the ifcOWL ontology by the same authors.\n\nFor spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical.",
         "type" : "label"
       } ],
       "title" : [ {
@@ -1096,7 +1096,7 @@
       "en" : "nominal geometry of"
     },
     "domain" : "11",
-    "attributes" : [ "inverse functional", "external", "object", "functional" ],
+    "attributes" : [ "functional", "inverse functional", "external", "object" ],
     "id" : "10"
   }, {
     "range" : "14",
@@ -1236,7 +1236,7 @@
     "comment" : {
       "en" : "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"
     },
-    "attributes" : [ "external", "object", "functional" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "42"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#navigableTo",
@@ -1300,7 +1300,7 @@
       "en" : "on element"
     },
     "domain" : "4",
-    "attributes" : [ "external", "object", "functional" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "58"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#nonNavigableTo",
@@ -1335,7 +1335,7 @@
       "en" : "to exit port"
     },
     "domain" : "0",
-    "attributes" : [ "external", "object", "functional" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "60"
   }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength",
@@ -1354,7 +1354,7 @@
       "en" : "has nominal metric length"
     },
     "domain" : "8",
-    "attributes" : [ "datatype", "external", "functional" ],
+    "attributes" : [ "functional", "datatype", "external" ],
     "id" : "61"
   }, {
     "iri" : "http://qudt.org/schema/qudt/hasQuantityValue",
@@ -1599,7 +1599,7 @@
     "comment" : {
       "en" : "GeoSPARQL does not define this inverse property."
     },
-    "attributes" : [ "external", "object", "functional" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "97"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom",
@@ -1631,7 +1631,7 @@
     },
     "superproperty" : [ "98", "55" ],
     "domain" : "11",
-    "attributes" : [ "inverse functional", "external", "object", "functional" ],
+    "attributes" : [ "functional", "inverse functional", "external", "object" ],
     "id" : "57"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/localisation#lateralOffset",
@@ -1737,7 +1737,7 @@
       "en" : "at intrinsic coordinate"
     },
     "domain" : "44",
-    "attributes" : [ "datatype", "external", "functional" ],
+    "attributes" : [ "functional", "datatype", "external" ],
     "id" : "104"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#connectsPort",
@@ -1763,7 +1763,7 @@
     },
     "superproperty" : [ "79" ],
     "domain" : "11",
-    "attributes" : [ "external", "object", "functional" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "81"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#leadsToTransitive",
@@ -1800,7 +1800,7 @@
       "en" : "from exit port"
     },
     "domain" : "0",
-    "attributes" : [ "external", "object", "functional" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "107"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo",
@@ -1827,7 +1827,7 @@
       "IRI-based" : "quantityKind"
     },
     "domain" : "68",
-    "attributes" : [ "external", "object", "allValues" ],
+    "attributes" : [ "allValues", "external", "object" ],
     "id" : "110"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/localisation#startAt",
@@ -1849,7 +1849,7 @@
     "comment" : {
       "en" : "cardinality \"exactly one value\" to be enforced via SHACL shape"
     },
-    "attributes" : [ "datatype", "external", "functional" ],
+    "attributes" : [ "functional", "datatype", "external" ],
     "id" : "111"
   }, {
     "range" : "83",
@@ -1876,7 +1876,7 @@
     "superproperty" : [ "80" ],
     "domain" : "18",
     "subproperty" : [ "81" ],
-    "attributes" : [ "transitive", "external", "object", "allValues" ],
+    "attributes" : [ "transitive", "allValues", "external", "object" ],
     "id" : "115"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement",
@@ -1922,7 +1922,7 @@
     },
     "superproperty" : [ "80" ],
     "domain" : "11",
-    "attributes" : [ "external", "object", "functional" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "120"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/localisation#verticalOffset",
@@ -1956,7 +1956,7 @@
     "comment" : {
       "en" : "cardinality \"exactly one value\" to be enforced via SHACL shape"
     },
-    "attributes" : [ "datatype", "external", "functional" ],
+    "attributes" : [ "functional", "datatype", "external" ],
     "id" : "121"
   }, {
     "iri" : "https://w3id.org/list#hasListProperty",
@@ -2017,7 +2017,7 @@
     },
     "superproperty" : [ "23" ],
     "domain" : "72",
-    "attributes" : [ "inverse functional", "external", "object", "functional" ],
+    "attributes" : [ "functional", "inverse functional", "external", "object" ],
     "id" : "25"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#port_0",
@@ -2042,7 +2042,7 @@
     },
     "superproperty" : [ "23" ],
     "domain" : "11",
-    "attributes" : [ "inverse functional", "external", "object", "functional" ],
+    "attributes" : [ "functional", "inverse functional", "external", "object" ],
     "id" : "26"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/localisation#associatedNetElement",
