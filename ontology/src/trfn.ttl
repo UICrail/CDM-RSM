@@ -18,9 +18,9 @@
                                   owl:versionInfo "0.1" .
 
 #################################################################
-#    Object Properties
+#    Object Properties
 #################################################################
-
+
 ###  https://cdm.ovh/rsm/localisation/loca#location
 loca:location rdf:type owl:ObjectProperty .
 
@@ -39,7 +39,7 @@ trfn:crossingCenter rdf:type owl:ObjectProperty ;
 trfn:deviatedLock rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf trfn:handlesNavigability ;
                   rdf:type owl:InverseFunctionalProperty ;
-                  rdfs:domain <SlipCrossing> ;
+                  rdfs:domain trfn:SlipCrossing ;
                   owl:propertyDisjointWith trfn:throughLock ;
                   rdfs:label "deviated lock"@en .
 
@@ -84,7 +84,7 @@ trfn:rightLock rdf:type owl:ObjectProperty ;
 trfn:throughLock rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf trfn:handlesNavigability ;
                  rdf:type owl:InverseFunctionalProperty ;
-                 rdfs:domain <SlipCrossing> ;
+                 rdfs:domain trfn:SlipCrossing ;
                  rdfs:label "through lock"@en .
 
 
@@ -119,16 +119,9 @@ Note: blade tips are not in the scope of the (functional) turnout object."""@en 
 
 
 #################################################################
-#    Classes
+#    Classes
 #################################################################
-
-###  SlipCrossing
-<SlipCrossing> rdf:type owl:Class ;
-               rdfs:subClassOf trfn:Crossing ;
-               owl:disjointWith trfn:DiamondCrossing ;
-               rdfs:label "Slip crossing"@en .
-
-
+
 ###  https://cdm.ovh/rsm/localisation/loca#BaseLocation
 loca:BaseLocation rdf:type owl:Class .
 
@@ -155,6 +148,7 @@ trfn:Crossing rdf:type owl:Class ;
 ###  https://cdm.ovh/rsm/track/trfn#DiamondCrossing
 trfn:DiamondCrossing rdf:type owl:Class ;
                      rdfs:subClassOf trfn:Crossing ;
+                     owl:disjointWith trfn:SlipCrossing ;
                      rdfs:label "Diamond crossing"@en .
 
 
@@ -166,7 +160,7 @@ trfn:DilatationPanel rdf:type owl:Class ;
 
 ###  https://cdm.ovh/rsm/track/trfn#DoubleSlipCrossing
 trfn:DoubleSlipCrossing rdf:type owl:Class ;
-                        rdfs:subClassOf <SlipCrossing> ;
+                        rdfs:subClassOf trfn:SlipCrossing ;
                         owl:disjointWith trfn:SingleSlipCrossing ;
                         rdfs:label "Double slip crossing"@en .
 
@@ -185,8 +179,15 @@ trfn:LocatedTrackEntity rdf:type owl:Class ;
 
 ###  https://cdm.ovh/rsm/track/trfn#SingleSlipCrossing
 trfn:SingleSlipCrossing rdf:type owl:Class ;
-                        rdfs:subClassOf <SlipCrossing> ;
+                        rdfs:subClassOf trfn:SlipCrossing ;
                         rdfs:label "Single slip crossing"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#SlipCrossing
+trfn:SlipCrossing rdf:type owl:Class ;
+                  rdfs:subClassOf trfn:Crossing ;
+                  rdfs:comment "Supertype for all crossings having a \"switch\"  capability, such as single slip or double slip crossings."@en ;
+                  rdfs:label "Slip crossing"@en .
 
 
 ###  https://cdm.ovh/rsm/track/trfn#TrackEntity
@@ -219,9 +220,9 @@ trfn:VehicleStop rdf:type owl:Class ;
 
 
 #################################################################
-#    Individuals
+#    Individuals
 #################################################################
-
+
 ###  https://cdm.ovh/rsm/track/trfn#Left
 trfn:Left rdf:type owl:NamedIndividual ,
                    trfn:TurnoutOrientation ;
@@ -241,9 +242,9 @@ trfn:Symmetric rdf:type owl:NamedIndividual ,
 
 
 #################################################################
-#    General axioms
+#    General axioms
 #################################################################
-
+
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( trfn:DilatationPanel
                 trfn:JunctionEntity
