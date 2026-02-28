@@ -1801,6 +1801,52 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
           <point x="-208" y="-70"/>
         </edge>
       </diagram>
+      <diagram height="5000" name="topology disjoint properties" width="5000">
+        <node id="n0" color="#fcfcfc" type="complement">
+          <geometry height="30" x="140" width="50" y="110"/>
+          <label height="23" x="140" size="12" width="25" customSize="0" y="110"/>
+        </node>
+        <node id="n1" color="#fcfcfc" type="complement">
+          <geometry height="30" x="140" width="50" y="-10"/>
+          <label height="23" x="140" size="12" width="25" customSize="0" y="-10"/>
+        </node>
+        <node id="n2" color="#fcfcfc" type="role">
+          <geometry height="50" x="20" width="70" y="-10"/>
+          <iri>https://cdm.ovh/rsm/topology/topo#navigableTo</iri>
+          <label height="23" x="20" size="12" width="72" customSize="0" y="-40"/>
+        </node>
+        <node id="n3" color="#fcfcfc" type="role">
+          <geometry height="50" x="250" width="70" y="-10"/>
+          <iri>https://cdm.ovh/rsm/topology/topo#nonNavigableTo</iri>
+          <label height="23" x="250" size="12" width="94" customSize="0" y="-40"/>
+        </node>
+        <node id="n4" color="#fcfcfc" type="role">
+          <geometry height="50" x="250" width="70" y="110"/>
+          <iri>https://cdm.ovh/rsm/topology/topo#nonNavigableFrom</iri>
+          <label height="23" x="250" size="12" width="108" customSize="0" y="80"/>
+        </node>
+        <node id="n5" color="#fcfcfc" type="role">
+          <geometry height="50" x="20" width="70" y="110"/>
+          <iri>https://cdm.ovh/rsm/topology/topo#navigableFrom</iri>
+          <label height="23" x="20" size="12" width="86" customSize="0" y="80"/>
+        </node>
+        <edge target="n0" id="e0" source="n4" type="inclusion">
+          <point x="250" y="110"/>
+          <point x="140" y="110"/>
+        </edge>
+        <edge target="n0" id="e1" source="n5" type="input">
+          <point x="20" y="110"/>
+          <point x="140" y="110"/>
+        </edge>
+        <edge target="n1" id="e2" source="n3" type="inclusion">
+          <point x="250" y="-10"/>
+          <point x="140" y="-10"/>
+        </edge>
+        <edge target="n1" id="e3" source="n2" type="input">
+          <point x="20" y="-10"/>
+          <point x="140" y="-10"/>
+        </edge>
+      </diagram>
       <diagram height="5000" name="topology inverse relations" width="5000">
         <node id="n0" color="#fcfcfc" type="role">
           <geometry height="50" x="-110" width="70" y="-140"/>
@@ -1858,34 +1904,6 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
           <iri>https://cdm.ovh/rsm/topology/topo#navigableToTransitive</iri>
           <label height="23" x="-110" size="12" width="124" customSize="0" y="-90"/>
         </node>
-        <node id="n25" color="#fcfcfc" type="role">
-          <geometry height="50" x="420" width="70" y="-140"/>
-          <iri>https://cdm.ovh/rsm/topology/topo#navigableTo</iri>
-          <label height="23" x="420" size="12" width="72" customSize="0" y="-170"/>
-        </node>
-        <node id="n26" color="#fcfcfc" type="role">
-          <geometry height="50" x="650" width="70" y="-140"/>
-          <iri>https://cdm.ovh/rsm/topology/topo#nonNavigableTo</iri>
-          <label height="23" x="650" size="12" width="94" customSize="0" y="-170"/>
-        </node>
-        <node id="n27" color="#fcfcfc" type="role">
-          <geometry height="50" x="650" width="70" y="-20"/>
-          <iri>https://cdm.ovh/rsm/topology/topo#nonNavigableFrom</iri>
-          <label height="23" x="650" size="12" width="108" customSize="0" y="-50"/>
-        </node>
-        <node id="n28" color="#fcfcfc" type="role">
-          <geometry height="50" x="420" width="70" y="-20"/>
-          <iri>https://cdm.ovh/rsm/topology/topo#navigableFrom</iri>
-          <label height="23" x="420" size="12" width="86" customSize="0" y="-50"/>
-        </node>
-        <node id="n29" color="#fcfcfc" type="complement">
-          <geometry height="30" x="540" width="50" y="-140"/>
-          <label height="23" x="540" size="12" width="25" customSize="0" y="-140"/>
-        </node>
-        <node id="n30" color="#fcfcfc" type="complement">
-          <geometry height="30" x="540" width="50" y="-20"/>
-          <label height="23" x="540" size="12" width="25" customSize="0" y="-20"/>
-        </node>
         <edge target="n2" id="e0" source="n0" type="equivalence">
           <point x="-110" y="-140"/>
           <point x="0" y="-140"/>
@@ -1917,22 +1935,6 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
         <edge target="n18" id="e17" source="n16" type="inclusion">
           <point x="100" y="30"/>
           <point x="100" y="-60"/>
-        </edge>
-        <edge target="n29" id="e19" source="n26" type="inclusion">
-          <point x="650" y="-140"/>
-          <point x="540" y="-140"/>
-        </edge>
-        <edge target="n30" id="e20" source="n27" type="inclusion">
-          <point x="650" y="-20"/>
-          <point x="540" y="-20"/>
-        </edge>
-        <edge target="n29" id="e21" source="n25" type="input">
-          <point x="420" y="-140"/>
-          <point x="540" y="-140"/>
-        </edge>
-        <edge target="n30" id="e22" source="n28" type="input">
-          <point x="420" y="-20"/>
-          <point x="540" y="-20"/>
         </edge>
         <edge target="n15" id="e9" source="n13" type="equivalence">
           <point x="-110" y="130"/>
