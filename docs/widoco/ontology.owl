@@ -421,6 +421,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
     <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#navigableFrom">
         <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/topology/topo#navigableFromTransitive"/>
         <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#navigableTo"/>
+        <owl:propertyDisjointWith rdf:resource="https://cdm.ovh/rsm/topology/topo#nonNavigableFrom"/>
         <rdfs:label xml:lang="en">navigable from</rdfs:label>
         <skos:definition xml:lang="en">inverse of navigable to</skos:definition>
     </owl:ObjectProperty>
@@ -443,6 +444,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
 
     <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#navigableTo">
         <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/topology/topo#navigableToTransitive"/>
+        <owl:propertyDisjointWith rdf:resource="https://cdm.ovh/rsm/topology/topo#nonNavigableTo"/>
         <rdfs:label xml:lang="en">navigable to</rdfs:label>
     </owl:ObjectProperty>
     

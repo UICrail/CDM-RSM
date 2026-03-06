@@ -865,6 +865,9 @@
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#navigableTo"
   } ],
+  "http://www.w3.org/2002/07/owl#propertyDisjointWith" : [ {
+    "@id" : "https://cdm.ovh/rsm/topology/topo#nonNavigableFrom"
+  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "inverse of navigable to"
@@ -892,6 +895,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#navigableToTransitive"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyDisjointWith" : [ {
+    "@id" : "https://cdm.ovh/rsm/topology/topo#nonNavigableTo"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#navigableToTransitive",
