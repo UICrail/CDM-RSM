@@ -1,34 +1,165 @@
-# RSM roots and design principles
+# RSM — Semantic Rail System Model
 
-RSM (in full: semantic rail system model) is the successor of RTM (rail topo model) released by UIC under IRS30100 in 2016. RTM itself is derived from early versions (before 2014) of the unreleased SNCF Infrastructure model ARIANE.
+The **Semantic Rail System Model (RSM)** provides the foundational ontology layer for describing the railway system, in particular its infrastructure.
 
-As the name does not suggest, RSM provides fundaments for the description of the railway network and its components. Details are expected to be provided by other, federated models. RSM is definitely a step away from an illusioned "God model" describing all possible aspects of rail for all possible usages. On the other hand, some RSM fundaments such as the topology model were widely adopted since 2016
+RSM focuses on the **structural representation of the railway system** (topology, geometry, and spatial relationships). More specialized aspects of the railway domain are described by additional, federated ontologies.
 
-RSM, like its predecessors, is construed as a conceptual and implementable model: conceptual in the sense that it expresses concepts relevant to the railway domain, and implementable in the sense that the path from model to real data exchange is kept as short and simple as possible.
+RSM is compatible with the broader **Conceptual Data Model (CDM)** architecture.
 
-# RSM at a glance
+---
 
-RSM presents a loose, modular structure: it is composed of several ontologies, following the "high coherence, low dependencies" principle shared by many software design areas. RSM also makes use of other ontologies to express common concepts, such as quantities, units, or geographic notions.
+# Origins
 
-The present CDM-RSM repository contains only those RSM ontologies that are related to infrastructure topology, geometry, location in space, and location respective to the network topology. Other RSM modules shall be found under:
+RSM is the successor of the **RailTopoModel (RTM)** released by UIC under **IRS30100** in 2016.
 
-* CDM-RST : rolling stock-related ontologies
-* CDM-OPE : train operations ontologies (including telematics)
-* ...
+RTM itself evolved from earlier versions of the SNCF infrastructure model **ARIANE** developed before 2014.
 
-In addition to the above "domain ontologies", specialized ontologies called "adapter ontologies" or "adapters" will also be added. Adapters have the sole purpose of coupling ontologies (RSM or "foreign") while ensuring semantic alignment and avoiding version propagation and mitigate the risk of snowballing.
+While the technologies and modeling approach have evolved significantly, RSM inherits key domain concepts from these earlier models—most notably the **railway topology model**, which has been widely adopted across the industry.
 
-# RSM technical fundaments
+---
 
-RSM, following the switch to semantic technologies (RDF/OWL, replacing UML class diagrams), has been entirely rewritten to make full use of the expressiveness of said technologies, and does not try to mimic the pecularities of the earlier, UML-based models when these peculiarities are _not_ rooted in railway domain concepts.
+# Purpose and scope
 
-In particular, RSM takes advantage of RDF/OWL properties (i.e. binary relations) being first-class objects to avoid property reification ("association classes" in UML) whenever practical, resulting in simpler knowledge graphs kept closer to Domain notions. The latest version of the RDF standard, RDF* (RDF Star), is not used here because it is not universally supported; ultimately, adopting of RDF* will result in further simplifications.
+Despite its name, RSM is **not intended to model every aspect of the railway system**.
 
-Constraints (esp. cardinalities) are included in the RSM ontologies insomuch as they play a semantic role (e.g. a pair makes sense if two elements are provided, otherwise it is not a pair). Cardinalities that only express constraints that may be time-, engineering-,  or project-dependent (e.g. the constraints on the number of balises in a balise group) shall be expressed as SHACL shapes, with clear references to the time or context of validity. These SHACL shapes may be provided as samples, but are not part of the works.
+Instead, it provides **core semantic foundations** for describing the railway network and its components. More detailed domain models are expected to be built on top of these foundations.
 
-RSM (as well as other CDM components) uses the DL profile of OWL2 in order to ensure the decidability of any query. In addition, RSM generally sticks to the slightly more restrictive RL profile in order to improve tractability: queries are guaranteed to be answered in polynomial, rather than exponential time.
+This approach intentionally moves away from the idea of a single monolithic “God model” describing all railway data. Instead, RSM supports a **federated ecosystem of interoperable ontologies**.
 
-Main consequence of this design choice is, cardinalities (multiplicities) can be expressed in terms of 0, 1, or * (undetermined) inside the ontologies; all other values shall be expressed as data constraints in SHACL shapes even if semantically relevant. Such cases are however rare.
+---
 
+# Architectural principles
 
+## Modular ontology design
 
+RSM follows a **loosely coupled modular architecture**.
+
+It is composed of several ontologies designed according to the principle:
+
+> **high internal coherence, low external dependencies**
+
+This design approach is widely used in software architecture and helps ensure maintainability and extensibility.
+
+## Reuse of existing ontologies
+
+Whenever possible, RSM reuses established ontologies for common concepts such as:
+
+- quantities and units
+- geographic and spatial concepts
+- general semantic modeling constructs
+
+This avoids reinventing widely accepted vocabulary and improves interoperability.
+
+---
+
+# Repository structure
+
+The present **CDM-RSM repository** contains only the ontologies related to:
+
+- infrastructure topology
+- infrastructure geometry
+- spatial location
+- positioning relative to the network topology
+
+Other railway domains are modeled in separate repositories:
+
+- **CDM-RST** — rolling stock ontologies  
+- **CDM-OPE** — train operations ontologies (including telematics)
+
+This separation supports the federated architecture of the CDM ecosystem.
+
+---
+
+# Adapter ontologies
+
+In addition to domain ontologies, the CDM architecture includes **adapter ontologies**.
+
+Adapters serve a single purpose: **aligning and connecting ontologies while preserving modularity**.
+
+They allow different ontologies—whether internal RSM modules or external models—to be coupled without introducing tight dependencies.
+
+This approach provides several benefits:
+
+- semantic alignment between models
+- controlled integration between ontology versions
+- reduced risk of cascading dependency changes
+- preservation of modular architecture
+
+---
+
+# Technical design principles
+
+## Transition to semantic technologies
+
+Earlier railway models were primarily expressed using **UML class diagrams**.
+
+RSM has been fully rewritten using **Semantic Web technologies**, specifically:
+
+- **RDF**
+- **OWL**
+
+The model therefore takes advantage of the expressiveness of these technologies rather than reproducing the structural constraints of UML where they do not reflect domain concepts.
+
+## Property-based modeling
+
+In RDF/OWL, properties (binary relations) are **first-class objects**.
+
+RSM therefore avoids UML-style **association classes** (property reification) whenever possible. This leads to simpler knowledge graphs that remain closer to the underlying domain semantics.
+
+The newer RDF standard **RDF*** is not used in the current version because support across tools and platforms is still incomplete. Future adoption of RDF* may allow further simplification.
+
+---
+
+# Constraints and validation
+
+RSM distinguishes between two types of constraints.
+
+## Semantic constraints
+
+Constraints that express **intrinsic domain meaning** may be included directly in the ontology.
+
+Example:
+
+A *pair* logically requires two elements.
+
+## Contextual or engineering constraints
+
+Constraints that depend on:
+
+- time
+- engineering practice
+- operational context
+- project requirements
+
+are expressed using **SHACL shapes** rather than embedded in the ontology.
+
+Examples include constraints such as the number of balises in a balise group.
+
+These SHACL shapes may be provided as examples but are not part of the core ontology.
+
+---
+
+# Reasoning profiles
+
+RSM ontologies use the **OWL 2 DL profile** in order to guarantee **decidable reasoning**.
+
+In practice, the model generally follows the more restrictive **OWL 2 RL profile**, which improves computational tractability.
+
+Under the RL profile:
+
+- queries can be answered in **polynomial time**
+- reasoning remains scalable for large knowledge graphs
+
+---
+
+# Cardinality rules
+
+Because of the chosen OWL profiles, ontology-level cardinalities are limited to:
+
+- **0**
+- **1**
+- **\*** (unbounded)
+
+Other cardinality constraints are expressed through **SHACL validation rules**, even when they have semantic relevance.
+
+In practice, such cases remain relatively rare.
