@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <graphol version="3">
   <project name="260112_RSM_Track_Functional" version="https://cdm.ovh/rsm/track/trfn/0.1/trfn">
-    <ontology iri="https://cdm.ovh/rsm/track/trfn" addLabelFromSimpleName="0" addLabelFromUserInput="0" lang="en">
+    <ontology iri="https://cdm.ovh/rsm/track/trfn" addLabelFromUserInput="0" addLabelFromSimpleName="0" lang="en">
       <imports>
-        <import iri="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" version="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" location="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" isLocal="0"/>
-        <import iri="https://cdm.ovh/rsm/localisation/loca" version="https://cdm.ovh/rsm/localisation/loca" location="https://cdm.ovh/rsm/localisation/loca" isLocal="0"/>
-        <import iri="https://cdm.ovh/rsm/topology/topo" version="https://cdm.ovh/rsm/topology/topo" location="https://cdm.ovh/rsm/topology/topo" isLocal="0"/>
+        <import iri="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" isLocal="0" location="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" version="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad"/>
+        <import iri="https://cdm.ovh/rsm/localisation/loca" isLocal="0" location="https://cdm.ovh/rsm/localisation/loca" version="https://cdm.ovh/rsm/localisation/loca"/>
+        <import iri="https://cdm.ovh/rsm/topology/topo" isLocal="0" location="https://cdm.ovh/rsm/topology/topo" version="https://cdm.ovh/rsm/topology/topo"/>
       </imports>
       <prefixes>
         <prefix>
@@ -648,6 +648,20 @@
           </annotations>
         </iri>
         <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#CrossingType</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#CrossingType</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Crossing type</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
           <value>https://cdm.ovh/rsm/track/trfn#DiamondCrossing</value>
           <annotations>
             <annotation>
@@ -892,6 +906,21 @@
           </annotations>
         </iri>
         <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#crossingType</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#crossingType</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>crossing type</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
           <value>https://cdm.ovh/rsm/track/trfn#deviatedLock</value>
           <inverseFunctional/>
           <annotations>
@@ -932,6 +961,30 @@
                 <lexicalForm>handles navigability</lexicalForm>
                 <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
                 <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/track/trfn#isSet</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#isSet</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>is set</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/track/trfn#isSet</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Tells whether a Navigability relation is set, reflecting the setting of a crossing or a switch (turnout). Time-dependency is expressed e.g. using the Operations ontology or upper ontologies such as DUL (DOLCE+DnS Ultralite), as a generic way to add time dimension. Hardware state details (locking...), if needed, would be in the scope of hardware-related ontologies and signalling ontologies.</lexicalForm>
+                <datatype/>
+                <language>en</language>
               </object>
             </annotation>
           </annotations>
@@ -1080,544 +1133,596 @@ Note: blade tips are not in the scope of the (functional) turnout object.</lexic
       </iris>
     </ontology>
     <diagrams>
-      <diagram height="5000" name="crossings" width="5000">
-        <node id="n0" color="#fcfcfc" type="concept">
-          <geometry height="50" x="-30" width="110" y="-100"/>
+      <diagram name="crossings" width="5000" height="5000">
+        <node color="#fcfcfc" type="concept" id="n0">
+          <geometry x="40" width="110" y="-100" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#Crossing</iri>
-          <label height="23" x="-30" size="12" width="110" customSize="0" y="-100"/>
+          <label x="40" customSize="0" size="12" width="110" y="-100" height="23"/>
         </node>
-        <node id="n1" color="#000000" type="disjoint-union">
-          <geometry height="30" x="-30" width="50" y="0"/>
+        <node color="#fcfcfc" type="concept" id="n10">
+          <geometry x="420" width="110" y="-100" height="50"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#CrossingType</iri>
+          <label x="420" customSize="0" size="12" width="110" y="-100" height="23"/>
         </node>
-        <node id="n2" color="#fcfcfc" type="concept">
-          <geometry height="50" x="-110" width="110" y="100"/>
+        <node color="#fcfcfc" type="individual" id="n11">
+          <geometry x="310" width="60" y="10" height="60"/>
           <iri>https://cdm.ovh/rsm/track/trfn#DiamondCrossing</iri>
-          <label height="23" x="-110" size="12" width="110" customSize="0" y="100"/>
+          <label x="310" customSize="0" size="12" width="60" y="10" height="38"/>
         </node>
-        <node id="n3" color="#fcfcfc" type="concept">
-          <geometry height="50" x="60" width="110" y="100"/>
-          <iri>https://cdm.ovh/rsm/track/trfn#SlipCrossing</iri>
-          <label height="23" x="60" size="12" width="110" customSize="0" y="100"/>
-        </node>
-        <node id="n4" color="#000000" type="disjoint-union">
-          <geometry height="30" x="60" width="50" y="190"/>
-        </node>
-        <node id="n5" color="#fcfcfc" type="concept">
-          <geometry height="50" x="-10" width="110" y="280"/>
+        <node color="#fcfcfc" type="individual" id="n12">
+          <geometry x="420" width="110" y="10" height="60"/>
           <iri>https://cdm.ovh/rsm/track/trfn#SingleSlipCrossing</iri>
-          <label height="23" x="-10" size="12" width="110" customSize="0" y="280"/>
+          <label x="420" customSize="0" size="12" width="110" y="10" height="23"/>
         </node>
-        <node id="n6" color="#fcfcfc" type="concept">
-          <geometry height="50" x="140" width="125" y="280"/>
+        <node color="#fcfcfc" type="individual" id="n13">
+          <geometry x="530" width="70" y="10" height="60"/>
           <iri>https://cdm.ovh/rsm/track/trfn#DoubleSlipCrossing</iri>
-          <label height="23" x="140" size="12" width="125" customSize="0" y="280"/>
+          <label x="530" customSize="0" size="12" width="70" y="10" height="38"/>
         </node>
-        <edge target="n0" id="e0" source="n1" type="inclusion">
-          <point x="-30" y="0"/>
-          <point x="-30" y="-100"/>
+        <node color="#fcfcfc" type="domain-restriction" id="n7">
+          <geometry x="140" width="20" y="-100" height="20"/>
+          <label x="140" customSize="0" size="12" width="39" y="-122" height="23">exists</label>
+        </node>
+        <node color="#000000" type="range-restriction" id="n8">
+          <geometry x="320" width="20" y="-100" height="20"/>
+          <label x="320" customSize="0" size="12" width="39" y="-122" height="23">exists</label>
+        </node>
+        <node color="#fcfcfc" type="role" id="n9">
+          <geometry x="230" width="70" y="-100" height="50"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#crossingType</iri>
+          <label x="230" customSize="0" size="12" width="79" y="-130" height="23"/>
+        </node>
+        <edge source="n9" type="input" target="n7" id="e10">
+          <point x="230" y="-100"/>
+          <point x="140" y="-100"/>
         </edge>
-        <edge target="n1" id="e2" source="n2" type="input">
-          <point x="-110" y="100"/>
-          <point x="-30" y="0"/>
+        <edge source="n11" type="membership" target="n10" id="e12">
+          <point x="310" y="10"/>
+          <point x="420" y="-100"/>
         </edge>
-        <edge target="n1" id="e3" source="n3" type="input">
-          <point x="60" y="100"/>
-          <point x="-30" y="0"/>
+        <edge source="n12" type="membership" target="n10" id="e13">
+          <point x="420" y="10"/>
+          <point x="420" y="-100"/>
         </edge>
-        <edge target="n3" id="e4" source="n4" type="inclusion">
-          <point x="60" y="190"/>
-          <point x="60" y="100"/>
+        <edge source="n13" type="membership" target="n10" id="e15">
+          <point x="530" y="10"/>
+          <point x="420" y="-100"/>
         </edge>
-        <edge target="n4" id="e5" source="n5" type="input">
-          <point x="-10" y="280"/>
-          <point x="60" y="190"/>
+        <edge source="n7" type="inclusion" target="n0" id="e7">
+          <point x="140" y="-100"/>
+          <point x="40" y="-100"/>
         </edge>
-        <edge target="n4" id="e6" source="n6" type="input">
-          <point x="140" y="280"/>
-          <point x="60" y="190"/>
+        <edge source="n8" type="inclusion" target="n10" id="e8">
+          <point x="320" y="-100"/>
+          <point x="420" y="-100"/>
+        </edge>
+        <edge source="n9" type="input" target="n8" id="e9">
+          <point x="230" y="-100"/>
+          <point x="320" y="-100"/>
         </edge>
       </diagram>
-      <diagram height="5000" name="subproperties" width="5000">
-        <node id="n0" color="#c2b078" type="role">
-          <geometry height="50" x="-30" width="70" y="-110"/>
+      <diagram name="subproperties" width="5000" height="5000">
+        <node color="#c2b078" type="role" id="n0">
+          <geometry x="-30" width="70" y="-110" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#location</iri>
-          <label height="23" x="-30" size="12" width="50" customSize="0" y="-140"/>
+          <label x="-30" customSize="0" size="12" width="50" y="-140" height="23"/>
         </node>
-        <node id="n1" color="#fcfcfc" type="role">
-          <geometry height="50" x="80" width="70" y="30"/>
+        <node color="#fcfcfc" type="role" id="n1">
+          <geometry x="80" width="70" y="30" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#crossingCenter</iri>
-          <label height="23" x="80" size="12" width="88" customSize="0" y="0"/>
+          <label x="80" customSize="0" size="12" width="88" y="0" height="23"/>
         </node>
-        <node id="n10" color="#fcfcfc" type="domain-restriction">
-          <geometry height="20" x="-150" width="20" y="330"/>
-          <label height="23" x="-150" size="12" width="39" customSize="0" y="308">exists</label>
+        <node color="#fcfcfc" type="domain-restriction" id="n10">
+          <geometry x="-150" width="20" y="330" height="20"/>
+          <label x="-150" customSize="0" size="12" width="39" y="308" height="23">exists</label>
         </node>
-        <node id="n11" color="#fcfcfc" type="domain-restriction">
-          <geometry height="20" x="80" width="20" y="330"/>
-          <label height="23" x="80" size="12" width="39" customSize="0" y="308">exists</label>
+        <node color="#fcfcfc" type="domain-restriction" id="n11">
+          <geometry x="80" width="20" y="330" height="20"/>
+          <label x="80" customSize="0" size="12" width="39" y="308" height="23">exists</label>
         </node>
-        <node id="n12" color="#fcfcfc" type="role">
-          <geometry height="50" x="390" width="70" y="160"/>
+        <node color="#fcfcfc" type="role" id="n12">
+          <geometry x="390" width="70" y="160" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#handlesNavigability</iri>
-          <label height="23" x="390" size="12" width="111" customSize="0" y="130"/>
+          <label x="390" customSize="0" size="12" width="111" y="130" height="23"/>
         </node>
-        <node id="n13" color="#fcfcfc" type="concept">
-          <geometry height="50" x="390" width="110" y="320"/>
+        <node color="#fcfcfc" type="concept" id="n13">
+          <geometry x="390" width="110" y="320" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#SlipCrossing</iri>
-          <label height="23" x="390" size="12" width="110" customSize="0" y="320"/>
+          <label x="390" customSize="0" size="12" width="110" y="320" height="23"/>
         </node>
-        <node id="n14" color="#fcfcfc" type="role">
-          <geometry height="50" x="290" width="70" y="230"/>
+        <node color="#fcfcfc" type="role" id="n14">
+          <geometry x="290" width="70" y="230" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#throughLock</iri>
-          <label height="23" x="290" size="12" width="74" customSize="0" y="200"/>
+          <label x="290" customSize="0" size="12" width="74" y="200" height="23"/>
         </node>
-        <node id="n15" color="#fcfcfc" type="role">
-          <geometry height="50" x="480" width="70" y="230"/>
+        <node color="#fcfcfc" type="role" id="n15">
+          <geometry x="480" width="70" y="230" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#deviatedLock</iri>
-          <label height="23" x="480" size="12" width="78" customSize="0" y="200"/>
+          <label x="480" customSize="0" size="12" width="78" y="200" height="23"/>
         </node>
-        <node id="n16" color="#fcfcfc" type="complement">
-          <geometry height="30" x="390" width="50" y="230"/>
-          <label height="23" x="390" size="12" width="25" customSize="0" y="230"/>
+        <node color="#fcfcfc" type="complement" id="n16">
+          <geometry x="390" width="50" y="230" height="30"/>
+          <label x="390" customSize="0" size="12" width="25" y="230" height="23"/>
         </node>
-        <node id="n17" color="#fcfcfc" type="domain-restriction">
-          <geometry height="20" x="290" width="20" y="320"/>
-          <label height="23" x="290" size="12" width="39" customSize="0" y="298">exists</label>
+        <node color="#fcfcfc" type="domain-restriction" id="n17">
+          <geometry x="290" width="20" y="320" height="20"/>
+          <label x="290" customSize="0" size="12" width="39" y="298" height="23">exists</label>
         </node>
-        <node id="n18" color="#fcfcfc" type="domain-restriction">
-          <geometry height="20" x="480" width="20" y="320"/>
-          <label height="23" x="480" size="12" width="39" customSize="0" y="298">exists</label>
+        <node color="#fcfcfc" type="domain-restriction" id="n18">
+          <geometry x="480" width="20" y="320" height="20"/>
+          <label x="480" customSize="0" size="12" width="39" y="298" height="23">exists</label>
         </node>
-        <node id="n2" color="#fcfcfc" type="role">
-          <geometry height="50" x="-30" width="70" y="30"/>
+        <node color="#fcfcfc" type="role" id="n2">
+          <geometry x="-30" width="70" y="30" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#turnoutOrigin</iri>
-          <label height="23" x="-30" size="12" width="77" customSize="0" y="0"/>
+          <label x="-30" customSize="0" size="12" width="77" y="0" height="23"/>
         </node>
-        <node id="n3" color="#fcfcfc" type="role">
-          <geometry height="50" x="-140" width="70" y="30"/>
+        <node color="#fcfcfc" type="role" id="n3">
+          <geometry x="-140" width="70" y="30" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#trackEntityLocation</iri>
-          <label height="23" x="-140" size="12" width="110" customSize="0" y="0"/>
+          <label x="-140" customSize="0" size="12" width="110" y="0" height="23"/>
         </node>
-        <node id="n4" color="#fcfcfc" type="role">
-          <geometry height="50" x="-40" width="70" y="160"/>
+        <node color="#fcfcfc" type="role" id="n4">
+          <geometry x="-40" width="70" y="160" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#handlesNavigability</iri>
-          <label height="23" x="-40" size="12" width="111" customSize="0" y="130"/>
+          <label x="-40" customSize="0" size="12" width="111" y="130" height="23"/>
         </node>
-        <node id="n5" color="#fcfcfc" type="role">
-          <geometry height="50" x="-150" width="70" y="240"/>
+        <node color="#fcfcfc" type="role" id="n5">
+          <geometry x="-150" width="70" y="240" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#leftLock</iri>
-          <label height="23" x="-150" size="12" width="50" customSize="0" y="210"/>
+          <label x="-150" customSize="0" size="12" width="50" y="210" height="23"/>
         </node>
-        <node id="n6" color="#fcfcfc" type="role">
-          <geometry height="50" x="80" width="70" y="240"/>
+        <node color="#fcfcfc" type="role" id="n6">
+          <geometry x="80" width="70" y="240" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#rightLock</iri>
-          <label height="23" x="80" size="12" width="57" customSize="0" y="210"/>
+          <label x="80" customSize="0" size="12" width="57" y="210" height="23"/>
         </node>
-        <node id="n8" color="#fcfcfc" type="complement">
-          <geometry height="30" x="-40" width="50" y="240"/>
-          <label height="23" x="-40" size="12" width="25" customSize="0" y="240"/>
+        <node color="#fcfcfc" type="complement" id="n8">
+          <geometry x="-40" width="50" y="240" height="30"/>
+          <label x="-40" customSize="0" size="12" width="25" y="240" height="23"/>
         </node>
-        <node id="n9" color="#fcfcfc" type="concept">
-          <geometry height="50" x="-30" width="110" y="330"/>
+        <node color="#fcfcfc" type="concept" id="n9">
+          <geometry x="-30" width="110" y="330" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#Turnout</iri>
-          <label height="23" x="-30" size="12" width="110" customSize="0" y="330"/>
+          <label x="-30" customSize="0" size="12" width="110" y="330" height="23"/>
         </node>
-        <edge target="n0" id="e0" source="n3" type="inclusion">
+        <edge source="n3" type="inclusion" target="n0" id="e0">
           <point x="-140" y="30"/>
           <point x="-30" y="-110"/>
         </edge>
-        <edge target="n0" id="e1" source="n2" type="inclusion">
+        <edge source="n2" type="inclusion" target="n0" id="e1">
           <point x="-30" y="30"/>
           <point x="-30" y="-110"/>
         </edge>
-        <edge target="n10" id="e10" source="n5" type="input">
+        <edge source="n5" type="input" target="n10" id="e10">
           <point x="-150" y="240"/>
           <point x="-150" y="330"/>
         </edge>
-        <edge target="n11" id="e11" source="n6" type="input">
+        <edge source="n6" type="input" target="n11" id="e11">
           <point x="80" y="240"/>
           <point x="80" y="330"/>
         </edge>
-        <edge target="n16" id="e12" source="n15" type="input">
+        <edge source="n15" type="input" target="n16" id="e12">
           <point x="480" y="230"/>
           <point x="390" y="230"/>
         </edge>
-        <edge target="n16" id="e13" source="n14" type="inclusion">
+        <edge source="n14" type="inclusion" target="n16" id="e13">
           <point x="290" y="230"/>
           <point x="390" y="230"/>
         </edge>
-        <edge target="n12" id="e14" source="n14" type="inclusion">
+        <edge source="n14" type="inclusion" target="n12" id="e14">
           <point x="290" y="230"/>
           <point x="390" y="160"/>
         </edge>
-        <edge target="n12" id="e15" source="n15" type="inclusion">
+        <edge source="n15" type="inclusion" target="n12" id="e15">
           <point x="480" y="230"/>
           <point x="390" y="160"/>
         </edge>
-        <edge target="n13" id="e16" source="n17" type="inclusion">
+        <edge source="n17" type="inclusion" target="n13" id="e16">
           <point x="290" y="320"/>
           <point x="390" y="320"/>
         </edge>
-        <edge target="n13" id="e17" source="n18" type="inclusion">
+        <edge source="n18" type="inclusion" target="n13" id="e17">
           <point x="480" y="320"/>
           <point x="390" y="320"/>
         </edge>
-        <edge target="n17" id="e18" source="n14" type="input">
+        <edge source="n14" type="input" target="n17" id="e18">
           <point x="290" y="230"/>
           <point x="290" y="320"/>
         </edge>
-        <edge target="n18" id="e19" source="n15" type="input">
+        <edge source="n15" type="input" target="n18" id="e19">
           <point x="480" y="230"/>
           <point x="480" y="320"/>
         </edge>
-        <edge target="n0" id="e2" source="n1" type="inclusion">
+        <edge source="n1" type="inclusion" target="n0" id="e2">
           <point x="80" y="30"/>
           <point x="-30" y="-110"/>
         </edge>
-        <edge target="n8" id="e4" source="n5" type="inclusion">
+        <edge source="n5" type="inclusion" target="n8" id="e4">
           <point x="-150" y="240"/>
           <point x="-40" y="240"/>
         </edge>
-        <edge target="n8" id="e5" source="n6" type="input">
+        <edge source="n6" type="input" target="n8" id="e5">
           <point x="80" y="240"/>
           <point x="-40" y="240"/>
         </edge>
-        <edge target="n4" id="e6" source="n5" type="inclusion">
+        <edge source="n5" type="inclusion" target="n4" id="e6">
           <point x="-150" y="240"/>
           <point x="-40" y="160"/>
         </edge>
-        <edge target="n4" id="e7" source="n6" type="inclusion">
+        <edge source="n6" type="inclusion" target="n4" id="e7">
           <point x="80" y="240"/>
           <point x="-40" y="160"/>
         </edge>
-        <edge target="n9" id="e8" source="n10" type="inclusion">
+        <edge source="n10" type="inclusion" target="n9" id="e8">
           <point x="-150" y="330"/>
           <point x="-30" y="330"/>
         </edge>
-        <edge target="n9" id="e9" source="n11" type="inclusion">
+        <edge source="n11" type="inclusion" target="n9" id="e9">
           <point x="80" y="330"/>
           <point x="-30" y="330"/>
         </edge>
       </diagram>
-      <diagram height="5000" name="track_functional" width="5000">
-        <node id="n0" color="#fcfcfc" type="concept">
-          <geometry height="50" x="-150" width="110" y="-100"/>
-          <iri>https://cdm.ovh/rsm/track/trfn#TrackEntity</iri>
-          <label height="23" x="-150" size="12" width="110" customSize="0" y="-100"/>
-        </node>
-        <node id="n1" color="#fcfcfc" type="concept">
-          <geometry height="50" x="-150" width="135" y="0"/>
-          <iri>https://cdm.ovh/rsm/track/trfn#LocatedTrackEntity</iri>
-          <label height="23" x="-150" size="12" width="135" customSize="0" y="-7"/>
-        </node>
-        <node id="n10" color="#fcfcfc" type="concept">
-          <geometry height="50" x="0" width="110" y="140"/>
-          <iri>https://cdm.ovh/rsm/track/trfn#VehicleStop</iri>
-          <label height="23" x="0" size="12" width="110" customSize="0" y="140"/>
-        </node>
-        <node id="n11" color="#000000" type="disjoint-union">
-          <geometry height="30" x="-150" width="50" y="60"/>
-        </node>
-        <node id="n12" color="#fcfcfc" type="concept">
-          <geometry height="50" x="270" width="110" y="330"/>
-          <iri>https://cdm.ovh/rsm/track/trfn#Turnout</iri>
-          <label height="23" x="270" size="12" width="110" customSize="0" y="330"/>
-        </node>
-        <node id="n13" color="#fcfcfc" type="concept">
-          <geometry height="50" x="270" width="110" y="260"/>
-          <iri>https://cdm.ovh/rsm/track/trfn#Crossing</iri>
-          <label height="23" x="270" size="12" width="110" customSize="0" y="260"/>
-        </node>
-        <node id="n14" color="#000000" type="disjoint-union">
-          <geometry height="30" x="150" width="50" y="260"/>
-        </node>
-        <node id="n15" color="#fcfcfc" type="role">
-          <geometry height="50" x="340" width="70" y="180"/>
-          <iri>https://cdm.ovh/rsm/track/trfn#handlesNavigability</iri>
-          <label height="23" x="340" size="12" width="111" customSize="0" y="150"/>
-        </node>
-        <node id="n16" color="#c2b078" type="concept">
-          <geometry height="50" x="560" width="145" y="180"/>
+      <diagram name="track_functional" width="5000" height="5000">
+        <node color="#c2b078" type="concept" id="n0">
+          <geometry x="200" width="205" y="70" height="50"/>
           <iri>https://cdm.ovh/rsm/topology/topo#NavigabilityRelation</iri>
-          <label height="23" x="560" size="12" width="145" customSize="0" y="180"/>
+          <label x="200" customSize="0" size="12" width="205" y="70" height="23"/>
         </node>
-        <node id="n17" color="#fcfcfc" type="role">
-          <geometry height="50" x="340" width="70" y="110"/>
+        <node color="#fcfcfc" type="attribute" id="n1">
+          <geometry x="410" width="20" y="70" height="20"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#isSet</iri>
+          <label x="410" customSize="0" size="12" width="34" y="48" height="23"/>
+        </node>
+        <node color="#fcfcfc" type="value-domain" id="n2">
+          <geometry x="560" width="90" y="70" height="40"/>
+          <iri>http://www.w3.org/2001/XMLSchema#boolean</iri>
+          <label x="560" customSize="0" size="12" width="90" y="70" height="23"/>
+        </node>
+        <node color="#fcfcfc" type="domain-restriction" id="n3">
+          <geometry x="350" width="20" y="70" height="20"/>
+          <label x="350" customSize="0" size="12" width="39" y="48" height="23">exists</label>
+        </node>
+        <node color="#000000" type="range-restriction" id="n4">
+          <geometry x="470" width="20" y="70" height="20"/>
+          <label x="470" customSize="0" size="12" width="39" y="48" height="23">exists</label>
+        </node>
+        <edge source="n4" type="inclusion" target="n2" id="e1">
+          <point x="470" y="70"/>
+          <point x="560" y="70"/>
+        </edge>
+        <edge source="n3" type="inclusion" target="n0" id="e2">
+          <point x="350" y="70"/>
+          <point x="200" y="70"/>
+        </edge>
+        <edge source="n1" type="input" target="n4" id="e3">
+          <point x="410" y="70"/>
+          <point x="470" y="70"/>
+        </edge>
+        <edge source="n1" type="input" target="n3" id="e4">
+          <point x="410" y="70"/>
+          <point x="350" y="70"/>
+        </edge>
+      </diagram>
+      <diagram name="track_overview" width="5000" height="5000">
+        <node color="#fcfcfc" type="concept" id="n0">
+          <geometry x="-150" width="110" y="-100" height="50"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#TrackEntity</iri>
+          <label x="-150" customSize="0" size="12" width="110" y="-100" height="23"/>
+        </node>
+        <node color="#fcfcfc" type="concept" id="n1">
+          <geometry x="-150" width="135" y="0" height="50"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#LocatedTrackEntity</iri>
+          <label x="-150" customSize="0" size="12" width="135" y="-7" height="23"/>
+        </node>
+        <node color="#fcfcfc" type="concept" id="n10">
+          <geometry x="0" width="110" y="140" height="50"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#VehicleStop</iri>
+          <label x="0" customSize="0" size="12" width="110" y="140" height="23"/>
+        </node>
+        <node color="#000000" type="disjoint-union" id="n11">
+          <geometry x="-150" width="50" y="60" height="30"/>
+        </node>
+        <node color="#fcfcfc" type="concept" id="n12">
+          <geometry x="270" width="110" y="330" height="50"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#Turnout</iri>
+          <label x="270" customSize="0" size="12" width="110" y="330" height="23"/>
+        </node>
+        <node color="#fcfcfc" type="concept" id="n13">
+          <geometry x="270" width="110" y="260" height="50"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#Crossing</iri>
+          <label x="270" customSize="0" size="12" width="110" y="260" height="23"/>
+        </node>
+        <node color="#000000" type="disjoint-union" id="n14">
+          <geometry x="150" width="50" y="260" height="30"/>
+        </node>
+        <node color="#fcfcfc" type="role" id="n15">
+          <geometry x="340" width="70" y="180" height="50"/>
+          <iri>https://cdm.ovh/rsm/track/trfn#handlesNavigability</iri>
+          <label x="340" customSize="0" size="12" width="111" y="150" height="23"/>
+        </node>
+        <node color="#c2b078" type="concept" id="n16">
+          <geometry x="560" width="145" y="180" height="50"/>
+          <iri>https://cdm.ovh/rsm/topology/topo#NavigabilityRelation</iri>
+          <label x="560" customSize="0" size="12" width="145" y="180" height="23"/>
+        </node>
+        <node color="#fcfcfc" type="role" id="n17">
+          <geometry x="340" width="70" y="110" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#establishesConnection</iri>
-          <label height="23" x="340" size="12" width="129" customSize="0" y="80"/>
+          <label x="340" customSize="0" size="12" width="129" y="80" height="23"/>
         </node>
-        <node id="n18" color="#c2b078" type="concept">
-          <geometry height="50" x="557" width="145" y="110"/>
+        <node color="#c2b078" type="concept" id="n18">
+          <geometry x="557" width="145" y="110" height="50"/>
           <iri>https://cdm.ovh/rsm/topology/topo#Connection</iri>
-          <label height="23" x="557" size="12" width="145" customSize="0" y="110"/>
+          <label x="557" customSize="0" size="12" width="145" y="110" height="23"/>
         </node>
-        <node id="n19" color="#fcfcfc" type="domain-restriction">
-          <geometry height="20" x="250" width="20" y="110"/>
-          <label height="23" x="250" size="12" width="39" customSize="0" y="88">exists</label>
+        <node color="#fcfcfc" type="domain-restriction" id="n19">
+          <geometry x="250" width="20" y="110" height="20"/>
+          <label x="250" customSize="0" size="12" width="39" y="88" height="23">exists</label>
         </node>
-        <node id="n20" color="#fcfcfc" type="domain-restriction">
-          <geometry height="20" x="250" width="20" y="180"/>
-          <label height="23" x="250" size="12" width="39" customSize="0" y="158">exists</label>
+        <node color="#fcfcfc" type="domain-restriction" id="n20">
+          <geometry x="250" width="20" y="180" height="20"/>
+          <label x="250" customSize="0" size="12" width="39" y="158" height="23">exists</label>
         </node>
-        <node id="n21" color="#000000" type="range-restriction">
-          <geometry height="20" x="430" width="20" y="110"/>
-          <label height="23" x="430" size="12" width="39" customSize="0" y="88">exists</label>
+        <node color="#000000" type="range-restriction" id="n21">
+          <geometry x="430" width="20" y="110" height="20"/>
+          <label x="430" customSize="0" size="12" width="39" y="88" height="23">exists</label>
         </node>
-        <node id="n22" color="#000000" type="range-restriction">
-          <geometry height="20" x="430" width="20" y="180"/>
-          <label height="23" x="430" size="12" width="39" customSize="0" y="158">exists</label>
+        <node color="#000000" type="range-restriction" id="n22">
+          <geometry x="430" width="20" y="180" height="20"/>
+          <label x="430" customSize="0" size="12" width="39" y="158" height="23">exists</label>
         </node>
-        <node id="n23" color="#fcfcfc" type="role">
-          <geometry height="50" x="450" width="70" y="330"/>
+        <node color="#fcfcfc" type="role" id="n23">
+          <geometry x="450" width="70" y="330" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#turnoutOrigin</iri>
-          <label height="23" x="450" size="12" width="77" customSize="0" y="300"/>
+          <label x="450" customSize="0" size="12" width="77" y="300" height="23"/>
         </node>
-        <node id="n24" color="#fcfcfc" type="domain-restriction">
-          <geometry height="20" x="370" width="20" y="330"/>
-          <label height="23" x="370" size="12" width="39" customSize="0" y="308">exists</label>
+        <node color="#fcfcfc" type="domain-restriction" id="n24">
+          <geometry x="370" width="20" y="330" height="20"/>
+          <label x="370" customSize="0" size="12" width="39" y="308" height="23">exists</label>
         </node>
-        <node id="n25" color="#000000" type="range-restriction">
-          <geometry height="20" x="540" width="20" y="330"/>
-          <label height="23" x="540" size="12" width="39" customSize="0" y="308">exists</label>
+        <node color="#000000" type="range-restriction" id="n25">
+          <geometry x="540" width="20" y="330" height="20"/>
+          <label x="540" customSize="0" size="12" width="39" y="308" height="23">exists</label>
         </node>
-        <node id="n26" color="#c2b078" type="concept">
-          <geometry height="50" x="640" width="110" y="330"/>
+        <node color="#c2b078" type="concept" id="n26">
+          <geometry x="640" width="110" y="330" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#SpotLocation</iri>
-          <label height="23" x="640" size="12" width="110" customSize="0" y="330"/>
+          <label x="640" customSize="0" size="12" width="110" y="330" height="23"/>
         </node>
-        <node id="n27" color="#fcfcfc" type="role">
-          <geometry height="50" x="450" width="70" y="260"/>
+        <node color="#fcfcfc" type="role" id="n27">
+          <geometry x="450" width="70" y="260" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#crossingCenter</iri>
-          <label height="23" x="450" size="12" width="88" customSize="0" y="230"/>
+          <label x="450" customSize="0" size="12" width="88" y="230" height="23"/>
         </node>
-        <node id="n28" color="#fcfcfc" type="domain-restriction">
-          <geometry height="20" x="370" width="20" y="260"/>
-          <label height="23" x="370" size="12" width="39" customSize="0" y="238">exists</label>
+        <node color="#fcfcfc" type="domain-restriction" id="n28">
+          <geometry x="370" width="20" y="260" height="20"/>
+          <label x="370" customSize="0" size="12" width="39" y="238" height="23">exists</label>
         </node>
-        <node id="n29" color="#000000" type="range-restriction">
-          <geometry height="20" x="540" width="20" y="260"/>
-          <label height="23" x="540" size="12" width="39" customSize="0" y="238">exists</label>
+        <node color="#000000" type="range-restriction" id="n29">
+          <geometry x="540" width="20" y="260" height="20"/>
+          <label x="540" customSize="0" size="12" width="39" y="238" height="23">exists</label>
         </node>
-        <node id="n30" color="#c2b078" type="concept">
-          <geometry height="50" x="640" width="110" y="260"/>
+        <node color="#c2b078" type="concept" id="n30">
+          <geometry x="640" width="110" y="260" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#SpotLocation</iri>
-          <label height="23" x="640" size="12" width="110" customSize="0" y="260"/>
+          <label x="640" customSize="0" size="12" width="110" y="260" height="23"/>
         </node>
-        <node id="n31" color="#fcfcfc" type="role">
-          <geometry height="50" x="70" width="70" y="0"/>
+        <node color="#fcfcfc" type="role" id="n31">
+          <geometry x="70" width="70" y="0" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#trackEntityLocation</iri>
-          <label height="23" x="70" size="12" width="110" customSize="0" y="-30"/>
+          <label x="70" customSize="0" size="12" width="110" y="-30" height="23"/>
         </node>
-        <node id="n32" color="#fcfcfc" type="domain-restriction">
-          <geometry height="20" x="-20" width="20" y="0"/>
-          <label height="23" x="-20" size="12" width="39" customSize="0" y="-22">exists</label>
+        <node color="#fcfcfc" type="domain-restriction" id="n32">
+          <geometry x="-20" width="20" y="0" height="20"/>
+          <label x="-20" customSize="0" size="12" width="39" y="-22" height="23">exists</label>
         </node>
-        <node id="n34" color="#c2b078" type="concept">
-          <geometry height="50" x="270" width="110" y="0"/>
+        <node color="#c2b078" type="concept" id="n34">
+          <geometry x="270" width="110" y="0" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#BaseLocation</iri>
-          <label height="23" x="270" size="12" width="110" customSize="0" y="0"/>
+          <label x="270" customSize="0" size="12" width="110" y="0" height="23"/>
         </node>
-        <node id="n35" color="#000000" type="range-restriction">
-          <geometry height="20" x="160" width="20" y="0"/>
-          <label height="23" x="160" size="12" width="39" customSize="0" y="-22">exists</label>
+        <node color="#000000" type="range-restriction" id="n35">
+          <geometry x="160" width="20" y="0" height="20"/>
+          <label x="160" customSize="0" size="12" width="39" y="-22" height="23">exists</label>
         </node>
-        <node id="n7" color="#fcfcfc" type="concept">
-          <geometry height="50" x="-240" width="110" y="140"/>
+        <node color="#fcfcfc" type="concept" id="n7">
+          <geometry x="-240" width="110" y="140" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#TrackPanel</iri>
-          <label height="23" x="-240" size="12" width="110" customSize="0" y="140"/>
+          <label x="-240" customSize="0" size="12" width="110" y="140" height="23"/>
         </node>
-        <node id="n8" color="#fcfcfc" type="concept">
-          <geometry height="50" x="-120" width="110" y="140"/>
+        <node color="#fcfcfc" type="concept" id="n8">
+          <geometry x="-120" width="110" y="140" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#DilatationPanel</iri>
-          <label height="23" x="-120" size="12" width="110" customSize="0" y="140"/>
+          <label x="-120" customSize="0" size="12" width="110" y="140" height="23"/>
         </node>
-        <node id="n9" color="#fcfcfc" type="concept">
-          <geometry height="50" x="150" width="110" y="140"/>
+        <node color="#fcfcfc" type="concept" id="n9">
+          <geometry x="150" width="110" y="140" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#JunctionEntity</iri>
-          <label height="23" x="150" size="12" width="110" customSize="0" y="140"/>
+          <label x="150" customSize="0" size="12" width="110" y="140" height="23"/>
         </node>
-        <edge target="n0" id="e0" source="n1" type="inclusion">
+        <edge source="n1" type="inclusion" target="n0" id="e0">
           <point x="-150" y="0"/>
           <point x="-150" y="-100"/>
         </edge>
-        <edge target="n1" id="e10" source="n11" type="inclusion">
+        <edge source="n11" type="inclusion" target="n1" id="e10">
           <point x="-150" y="60"/>
           <point x="-150" y="0"/>
         </edge>
-        <edge target="n11" id="e11" source="n7" type="input">
+        <edge source="n7" type="input" target="n11" id="e11">
           <point x="-240" y="140"/>
           <point x="-150" y="60"/>
         </edge>
-        <edge target="n11" id="e12" source="n8" type="input">
+        <edge source="n8" type="input" target="n11" id="e12">
           <point x="-120" y="140"/>
           <point x="-150" y="60"/>
         </edge>
-        <edge target="n11" id="e13" source="n10" type="input">
+        <edge source="n10" type="input" target="n11" id="e13">
           <point x="0" y="140"/>
           <point x="-150" y="60"/>
         </edge>
-        <edge target="n11" id="e14" source="n9" type="input">
+        <edge source="n9" type="input" target="n11" id="e14">
           <point x="150" y="140"/>
           <point x="-150" y="60"/>
         </edge>
-        <edge target="n9" id="e17" source="n14" type="inclusion">
+        <edge source="n14" type="inclusion" target="n9" id="e17">
           <point x="150" y="260"/>
           <point x="150" y="140"/>
         </edge>
-        <edge target="n14" id="e18" source="n12" type="input">
+        <edge source="n12" type="input" target="n14" id="e18">
           <point x="270" y="330"/>
           <point x="150" y="330"/>
           <point x="150" y="260"/>
         </edge>
-        <edge target="n14" id="e19" source="n13" type="input">
+        <edge source="n13" type="input" target="n14" id="e19">
           <point x="270" y="260"/>
           <point x="150" y="260"/>
         </edge>
-        <edge target="n9" id="e20" source="n19" type="inclusion">
+        <edge source="n19" type="inclusion" target="n9" id="e20">
           <point x="250" y="110"/>
           <point x="150" y="140"/>
         </edge>
-        <edge target="n9" id="e21" source="n20" type="inclusion">
+        <edge source="n20" type="inclusion" target="n9" id="e21">
           <point x="250" y="180"/>
           <point x="150" y="140"/>
         </edge>
-        <edge target="n18" id="e22" source="n21" type="inclusion">
+        <edge source="n21" type="inclusion" target="n18" id="e22">
           <point x="430" y="110"/>
           <point x="557" y="110"/>
         </edge>
-        <edge target="n16" id="e23" source="n22" type="inclusion">
+        <edge source="n22" type="inclusion" target="n16" id="e23">
           <point x="430" y="180"/>
           <point x="560" y="180"/>
         </edge>
-        <edge target="n21" id="e24" source="n17" type="input">
+        <edge source="n17" type="input" target="n21" id="e24">
           <point x="340" y="110"/>
           <point x="430" y="110"/>
         </edge>
-        <edge target="n19" id="e25" source="n17" type="input">
+        <edge source="n17" type="input" target="n19" id="e25">
           <point x="340" y="110"/>
           <point x="250" y="110"/>
         </edge>
-        <edge target="n22" id="e26" source="n15" type="input">
+        <edge source="n15" type="input" target="n22" id="e26">
           <point x="340" y="180"/>
           <point x="430" y="180"/>
         </edge>
-        <edge target="n20" id="e27" source="n15" type="input">
+        <edge source="n15" type="input" target="n20" id="e27">
           <point x="340" y="180"/>
           <point x="250" y="180"/>
         </edge>
-        <edge target="n12" id="e28" source="n24" type="inclusion">
+        <edge source="n24" type="inclusion" target="n12" id="e28">
           <point x="370" y="330"/>
           <point x="270" y="330"/>
         </edge>
-        <edge target="n26" id="e29" source="n25" type="inclusion">
+        <edge source="n25" type="inclusion" target="n26" id="e29">
           <point x="540" y="330"/>
           <point x="640" y="330"/>
         </edge>
-        <edge target="n24" id="e30" source="n23" type="input">
+        <edge source="n23" type="input" target="n24" id="e30">
           <point x="450" y="330"/>
           <point x="370" y="330"/>
         </edge>
-        <edge target="n25" id="e31" source="n23" type="input">
+        <edge source="n23" type="input" target="n25" id="e31">
           <point x="450" y="330"/>
           <point x="540" y="330"/>
         </edge>
-        <edge target="n13" id="e33" source="n28" type="inclusion">
+        <edge source="n28" type="inclusion" target="n13" id="e33">
           <point x="370" y="260"/>
           <point x="270" y="260"/>
         </edge>
-        <edge target="n29" id="e34" source="n27" type="input">
+        <edge source="n27" type="input" target="n29" id="e34">
           <point x="450" y="260"/>
           <point x="540" y="260"/>
         </edge>
-        <edge target="n28" id="e36" source="n27" type="input">
+        <edge source="n27" type="input" target="n28" id="e36">
           <point x="450" y="260"/>
           <point x="370" y="260"/>
         </edge>
-        <edge target="n30" id="e37" source="n29" type="inclusion">
+        <edge source="n29" type="inclusion" target="n30" id="e37">
           <point x="540" y="260"/>
           <point x="640" y="260"/>
         </edge>
-        <edge target="n1" id="e39" source="n32" type="inclusion">
+        <edge source="n32" type="inclusion" target="n1" id="e39">
           <point x="-20" y="0"/>
           <point x="-150" y="0"/>
         </edge>
-        <edge target="n32" id="e41" source="n31" type="input">
+        <edge source="n31" type="input" target="n32" id="e41">
           <point x="70" y="0"/>
           <point x="-20" y="0"/>
         </edge>
-        <edge target="n34" id="e42" source="n35" type="inclusion">
+        <edge source="n35" type="inclusion" target="n34" id="e42">
           <point x="160" y="0"/>
           <point x="270" y="0"/>
         </edge>
-        <edge target="n35" id="e43" source="n31" type="input">
+        <edge source="n31" type="input" target="n35" id="e43">
           <point x="70" y="0"/>
           <point x="160" y="0"/>
         </edge>
       </diagram>
-      <diagram height="5000" name="turnouts" width="5000">
-        <node id="n0" color="#fcfcfc" type="concept">
-          <geometry height="50" x="-10" width="110" y="90"/>
+      <diagram name="turnouts" width="5000" height="5000">
+        <node color="#fcfcfc" type="concept" id="n0">
+          <geometry x="-10" width="110" y="90" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#Turnout</iri>
-          <label height="23" x="-10" size="12" width="110" customSize="0" y="90"/>
+          <label x="-10" customSize="0" size="12" width="110" y="90" height="23"/>
         </node>
-        <node id="n1" color="#fcfcfc" type="role">
-          <geometry height="50" x="180" width="70" y="90"/>
+        <node color="#fcfcfc" type="role" id="n1">
+          <geometry x="180" width="70" y="90" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#turnoutOrientation</iri>
-          <label height="23" x="180" size="12" width="105" customSize="0" y="60"/>
+          <label x="180" customSize="0" size="12" width="105" y="60" height="23"/>
         </node>
-        <node id="n2" color="#fcfcfc" type="domain-restriction">
-          <geometry height="20" x="90" width="20" y="90"/>
-          <label height="23" x="90" size="12" width="39" customSize="0" y="68">exists</label>
+        <node color="#fcfcfc" type="domain-restriction" id="n2">
+          <geometry x="90" width="20" y="90" height="20"/>
+          <label x="90" customSize="0" size="12" width="39" y="68" height="23">exists</label>
         </node>
-        <node id="n3" color="#000000" type="range-restriction">
-          <geometry height="20" x="260" width="20" y="90"/>
-          <label height="23" x="260" size="12" width="39" customSize="0" y="68">exists</label>
+        <node color="#000000" type="range-restriction" id="n3">
+          <geometry x="260" width="20" y="90" height="20"/>
+          <label x="260" customSize="0" size="12" width="39" y="68" height="23">exists</label>
         </node>
-        <node id="n4" color="#fcfcfc" type="concept">
-          <geometry height="50" x="400" width="110" y="90"/>
+        <node color="#fcfcfc" type="concept" id="n4">
+          <geometry x="400" width="110" y="90" height="50"/>
           <iri>https://cdm.ovh/rsm/track/trfn#TurnoutOrientation</iri>
-          <label height="23" x="400" size="12" width="110" customSize="0" y="90"/>
+          <label x="400" customSize="0" size="12" width="110" y="90" height="23"/>
         </node>
-        <node id="n5" color="#fcfcfc" type="individual">
-          <geometry height="60" x="330" width="60" y="180"/>
+        <node color="#fcfcfc" type="individual" id="n5">
+          <geometry x="330" width="60" y="180" height="60"/>
           <iri>https://cdm.ovh/rsm/track/trfn#Left</iri>
-          <label height="23" x="330" size="12" width="60" customSize="0" y="180"/>
+          <label x="330" customSize="0" size="12" width="60" y="180" height="23"/>
         </node>
-        <node id="n6" color="#fcfcfc" type="individual">
-          <geometry height="60" x="400" width="60" y="180"/>
+        <node color="#fcfcfc" type="individual" id="n6">
+          <geometry x="400" width="60" y="180" height="60"/>
           <iri>https://cdm.ovh/rsm/track/trfn#Right</iri>
-          <label height="23" x="400" size="12" width="60" customSize="0" y="180"/>
+          <label x="400" customSize="0" size="12" width="60" y="180" height="23"/>
         </node>
-        <node id="n7" color="#fcfcfc" type="individual">
-          <geometry height="60" x="475" width="70" y="180"/>
+        <node color="#fcfcfc" type="individual" id="n7">
+          <geometry x="475" width="70" y="180" height="60"/>
           <iri>https://cdm.ovh/rsm/track/trfn#Symmetric</iri>
-          <label height="23" x="475" size="12" width="70" customSize="0" y="180"/>
+          <label x="475" customSize="0" size="12" width="70" y="180" height="23"/>
         </node>
-        <edge target="n0" id="e0" source="n2" type="inclusion">
+        <edge source="n2" type="inclusion" target="n0" id="e0">
           <point x="90" y="90"/>
           <point x="-10" y="90"/>
         </edge>
-        <edge target="n2" id="e1" source="n1" type="input">
+        <edge source="n1" type="input" target="n2" id="e1">
           <point x="180" y="90"/>
           <point x="90" y="90"/>
         </edge>
-        <edge target="n4" id="e2" source="n3" type="inclusion">
+        <edge source="n3" type="inclusion" target="n4" id="e2">
           <point x="260" y="90"/>
           <point x="400" y="90"/>
         </edge>
-        <edge target="n3" id="e3" source="n1" type="input">
+        <edge source="n1" type="input" target="n3" id="e3">
           <point x="180" y="90"/>
           <point x="260" y="90"/>
         </edge>
-        <edge target="n4" id="e4" source="n5" type="membership">
+        <edge source="n5" type="membership" target="n4" id="e4">
           <point x="330" y="180"/>
           <point x="400" y="90"/>
         </edge>
-        <edge target="n4" id="e5" source="n6" type="membership">
+        <edge source="n6" type="membership" target="n4" id="e5">
           <point x="400" y="180"/>
           <point x="400" y="90"/>
         </edge>
-        <edge target="n4" id="e6" source="n7" type="membership">
+        <edge source="n7" type="membership" target="n4" id="e6">
           <point x="475" y="180"/>
           <point x="400" y="90"/>
         </edge>

@@ -18,9 +18,17 @@
                                   owl:versionInfo "0.1" .
 
 #################################################################
-#    Object Properties
+#    Datatypes
 #################################################################
-
+
+###  http://www.w3.org/2001/XMLSchema#boolean
+xsd:boolean rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
 ###  https://cdm.ovh/rsm/localisation/loca#location
 loca:location rdf:type owl:ObjectProperty .
 
@@ -33,6 +41,14 @@ trfn:crossingCenter rdf:type owl:ObjectProperty ;
                     rdfs:domain trfn:Crossing ;
                     rdfs:range loca:SpotLocation ;
                     rdfs:label "crossing center"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#crossingType
+trfn:crossingType rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain trfn:Crossing ;
+                  rdfs:range trfn:CrossingType ;
+                  rdfs:label "crossing type"@en .
 
 
 ###  https://cdm.ovh/rsm/track/trfn#deviatedLock
@@ -119,9 +135,22 @@ Note: blade tips are not in the scope of the (functional) turnout object."""@en 
 
 
 #################################################################
-#    Classes
+#    Data properties
 #################################################################
-
+
+###  https://cdm.ovh/rsm/track/trfn#isSet
+trfn:isSet rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain topo:NavigabilityRelation ;
+           rdfs:range xsd:boolean ;
+           rdfs:comment "Tells whether a Navigability relation is set, reflecting the setting of a crossing or a switch (turnout). Time-dependency is expressed e.g. using the Operations ontology or upper ontologies such as DUL (DOLCE+DnS Ultralite), as a generic way to add time dimension. Hardware state details (locking...), if needed, would be in the scope of hardware-related ontologies and signalling ontologies."@en ;
+           rdfs:label "is set"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
 ###  https://cdm.ovh/rsm/localisation/loca#BaseLocation
 loca:BaseLocation rdf:type owl:Class .
 
@@ -145,24 +174,15 @@ trfn:Crossing rdf:type owl:Class ;
               rdfs:label "Crossing"@en .
 
 
-###  https://cdm.ovh/rsm/track/trfn#DiamondCrossing
-trfn:DiamondCrossing rdf:type owl:Class ;
-                     rdfs:subClassOf trfn:Crossing ;
-                     owl:disjointWith trfn:SlipCrossing ;
-                     rdfs:label "Diamond crossing"@en .
+###  https://cdm.ovh/rsm/track/trfn#CrossingType
+trfn:CrossingType rdf:type owl:Class ;
+                  rdfs:label "Crossing type"@en .
 
 
 ###  https://cdm.ovh/rsm/track/trfn#DilatationPanel
 trfn:DilatationPanel rdf:type owl:Class ;
                      rdfs:subClassOf trfn:LocatedTrackEntity ;
                      rdfs:label "Dilatation panel"@en .
-
-
-###  https://cdm.ovh/rsm/track/trfn#DoubleSlipCrossing
-trfn:DoubleSlipCrossing rdf:type owl:Class ;
-                        rdfs:subClassOf trfn:SlipCrossing ;
-                        owl:disjointWith trfn:SingleSlipCrossing ;
-                        rdfs:label "Double slip crossing"@en .
 
 
 ###  https://cdm.ovh/rsm/track/trfn#JunctionEntity
@@ -177,15 +197,8 @@ trfn:LocatedTrackEntity rdf:type owl:Class ;
                         rdfs:label "Located track entity"@en .
 
 
-###  https://cdm.ovh/rsm/track/trfn#SingleSlipCrossing
-trfn:SingleSlipCrossing rdf:type owl:Class ;
-                        rdfs:subClassOf trfn:SlipCrossing ;
-                        rdfs:label "Single slip crossing"@en .
-
-
 ###  https://cdm.ovh/rsm/track/trfn#SlipCrossing
 trfn:SlipCrossing rdf:type owl:Class ;
-                  rdfs:subClassOf trfn:Crossing ;
                   rdfs:comment "Supertype for all crossings having a \"switch\"  capability, such as single slip or double slip crossings."@en ;
                   rdfs:label "Slip crossing"@en .
 
@@ -220,9 +233,21 @@ trfn:VehicleStop rdf:type owl:Class ;
 
 
 #################################################################
-#    Individuals
+#    Individuals
 #################################################################
-
+
+###  https://cdm.ovh/rsm/track/trfn#DiamondCrossing
+trfn:DiamondCrossing rdf:type owl:NamedIndividual ,
+                              trfn:CrossingType ;
+                     rdfs:label "Diamond crossing"@en .
+
+
+###  https://cdm.ovh/rsm/track/trfn#DoubleSlipCrossing
+trfn:DoubleSlipCrossing rdf:type owl:NamedIndividual ,
+                                 trfn:CrossingType ;
+                        rdfs:label "Double slip crossing"@en .
+
+
 ###  https://cdm.ovh/rsm/track/trfn#Left
 trfn:Left rdf:type owl:NamedIndividual ,
                    trfn:TurnoutOrientation ;
@@ -235,6 +260,12 @@ trfn:Right rdf:type owl:NamedIndividual ,
            rdfs:label "Right"@en .
 
 
+###  https://cdm.ovh/rsm/track/trfn#SingleSlipCrossing
+trfn:SingleSlipCrossing rdf:type owl:NamedIndividual ,
+                                 trfn:CrossingType ;
+                        rdfs:label "Single slip crossing"@en .
+
+
 ###  https://cdm.ovh/rsm/track/trfn#Symmetric
 trfn:Symmetric rdf:type owl:NamedIndividual ,
                         trfn:TurnoutOrientation ;
@@ -242,9 +273,9 @@ trfn:Symmetric rdf:type owl:NamedIndividual ,
 
 
 #################################################################
-#    General axioms
+#    General axioms
 #################################################################
-
+
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( trfn:DilatationPanel
                 trfn:JunctionEntity

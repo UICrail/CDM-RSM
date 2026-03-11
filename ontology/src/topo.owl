@@ -16,27 +16,21 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:geosparql="http://www.opengis.net/ont/geosparql#">
     <owl:Ontology rdf:about="https://cdm.ovh/rsm/topology/topo">
-        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/topology/1.0rc5/topo"/>
+        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/topology/1.0rc7/topo"/>
         <owl:imports rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad"/>
-        <dc:abstract xml:lang="en">Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
-
-Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
-
-Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.</dc:abstract>
+        <dc:abstract xml:lang="en">RSM topology provides fundamental railway network description, focused on connections and navigabilities between net elements. Net elements can be linear (embodied by lines or tracks) or non linear (embodied by stations, yards, or wider network areas). Geometry aspects are delegated to GeoSPARQL and are not essential to topology. Functional aspects (such as &quot;current switch setting&quot;) also are not part of the topology.</dc:abstract>
         <dc:contributor xml:lang="en">Pierre Tane, UIC</dc:contributor>
         <dc:creator xml:lang="en">Airy Magnien, UIC</dc:creator>
-        <dc:date xml:lang="en">27 February 2026</dc:date>
-        <dc:description xml:lang="en">Full RSM topology; relations between ports are only available as classes (possibly temporal objects) as well as object properties (possibly with temporal annotations, using RDF+).
+        <dc:date xml:lang="en">11 March 2026</dc:date>
+        <dc:description xml:lang="en">Full RSM topology. Connexities and Navigabilities as object properties only. Temporal aspects to be covered by annotations and/or named graphs and/or dul:Situations, or similar.
 
 Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
 
-Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite.</dc:description>
+Temporality to be expressed using an upper ontology, such as DOLCE+DnS Ultralite that is used by other RSM ontologies.</dc:description>
         <dc:title xml:lang="en">RSM topology</dc:title>
         <dc:type xml:lang="en">RDF/OWL ontology (using OWL2 RL profile)</dc:type>
-        <dcterms:license xml:lang="en">EUPL 1.2; see https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/eupl_v1.2_en.pdf</dcterms:license>
-        <owl:versionInfo xml:lang="en">1.0rc5 - additions and corrections on February 2026
-
-Added: disjointness of navigableTo / nonNavigableTo, navigableFrom / nonNavigableFrom</owl:versionInfo>
+        <dcterms:license xml:lang="en">CC BY-SA 4.0</dcterms:license>
+        <owl:versionInfo xml:lang="en">removed reified Connectivity and Navigability relations. Added property oppositePort as a property chain, and related properties.</owl:versionInfo>
         <vann:preferredNamespacePrefix>topo</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceURI xml:lang="en">http://cdm.ovh/rsm/topology/topo#</vann:preferredNamespaceURI>
     </owl:Ontology>
@@ -137,7 +131,7 @@ Added: disjointness of navigableTo / nonNavigableTo, navigableFrom / nonNavigabl
         <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/topology/topo#connectedWithTransitive"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:label xml:lang="en">connected with</rdfs:label>
-        <skos:definition xml:lang="en">Relation between a port on a net element and the asjacent port on another net element. Geographic locations of related ports may not coincide, either because of uncertainties or rounding errors, or by construction (e.g. case of tracks joined via a turntable).</skos:definition>
+        <skos:definition xml:lang="en">Relation between a port on a net element and the adjacent port on another net element. This is a symmetric relation. Geographic locations of related ports may not coincide, either because of constructive tolerances (abutted tracks...), or uncertainties, or rounding errors, or by construction (e.g. case of tracks joined via a turntable).</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -154,43 +148,6 @@ Added: disjointness of navigableTo / nonNavigableTo, navigableFrom / nonNavigabl
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#connectsPort -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#connectsPort">
-        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#hasConnection"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#Connection"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:comment xml:lang="en">This object property points to (at least two) ports that share a connection relationship.
-
-It is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version.</rdfs:comment>
-        <rdfs:label xml:lang="en">connects port</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#fromExitPort -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#fromExitPort">
-        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:label xml:lang="en">from exit port</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#hasConnection -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#hasConnection">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:comment xml:lang="en">inverse property of &apos;connects port&apos;. Instrumental in building the property chain resulting in &apos;connected with&apos; (a relation between ports)</rdfs:comment>
-        <rdfs:label xml:lang="en">has connection</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://cdm.ovh/rsm/topology/topo#leadsTo -->
 
     <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#leadsTo">
@@ -201,7 +158,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
             <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#onElement"/>
         </owl:propertyChainAxiom>
         <rdfs:label xml:lang="en">leads to</rdfs:label>
-        <skos:definition xml:lang="en">relation between two adjacent net elements (i.e. having connected ports), where rolling stock can start moving from the first and arrive on the second without reversing travel direction. This property is not symmetric.</skos:definition>
+        <skos:definition xml:lang="en">relation between two adjacent net elements (i.e. having connected ports), where rolling stock can start moving from the first and arrive on the second without reversing travel direction. This property is not symmetric (think of sprung switches). A shortcut property for reasoning directly on net elements.</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -217,27 +174,9 @@ It is used for building the connectedWith properties. It can be a temporal objec
             <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#navigableToTransitive"/>
             <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#onElement"/>
         </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">technical note: this may look like, but is *not* the transitive closure of leadsTo. The transitive closure of leadsTo would include train movements with reversal of travel direction, which is not desirable.</rdfs:comment>
         <rdfs:label xml:lang="en">leads to transitive</rdfs:label>
-        <skos:definition xml:lang="en">relation between net elements (adjacent or not), where rolling stock may leave the first and reach the second without reversing travel direction.</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:label xml:lang="en">navigability relation from</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo -->
-
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo">
-        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#toExitPort"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:label xml:lang="en">navigability relation to</rdfs:label>
+        <skos:definition xml:lang="en">relation between net elements (adjacent or not), where rolling stock may leave the first (subject) and reach the second (object) without reversing travel direction.</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -269,6 +208,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
     <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#navigableTo">
         <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/topology/topo#navigableToTransitive"/>
         <owl:propertyDisjointWith rdf:resource="https://cdm.ovh/rsm/topology/topo#nonNavigableTo"/>
+        <rdfs:comment xml:lang="en">Expresses the possibility, for a train movement, to leave a net element via an exit port and to navigate to another net element until another exit port. Navigation excludes reversal of travel direction, even if the reversal is allowed by operational rules (e.g. shunting mode, ...).</rdfs:comment>
         <rdfs:label xml:lang="en">navigable to</rdfs:label>
     </owl:ObjectProperty>
     
@@ -301,7 +241,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
         <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
         <rdfs:label xml:lang="en">non navigable to</rdfs:label>
-        <skos:definition xml:lang="en">Expresses that there is no navigability link between the related ports. Given the OWA (open world assumption), a navigability not expressed does not mean &quot;non navigability&quot;. Consequently, non-navigability should be explicitly stated, as it is important knowledge.</skos:definition>
+        <skos:definition xml:lang="en">Expresses that there is no navigability link between the related ports. Given the OWA (open world assumption), a navigability not expressed does not mean &quot;non navigability&quot;. Consequently, non-navigability should be explicitly stated, as it is fundamental knowledge about the network layout.</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -309,7 +249,6 @@ It is used for building the connectedWith properties. It can be a temporal objec
     <!-- https://cdm.ovh/rsm/topology/topo#onElement -->
 
     <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#onElement">
-        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#port"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:label xml:lang="en">on element</rdfs:label>
         <skos:definition xml:lang="en">inverse of port, port0, port1</skos:definition>
@@ -317,9 +256,28 @@ It is used for building the connectedWith properties. It can be a temporal objec
     
 
 
+    <!-- https://cdm.ovh/rsm/topology/topo#oppositePort -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#oppositePort">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#port0onElement"/>
+            <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#port1"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Opposite port on a linear element; a symmetric property. Not meaningful if element is non-linear.</rdfs:comment>
+        <rdfs:label xml:lang="en">opposite port</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://cdm.ovh/rsm/topology/topo#port -->
 
     <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#port">
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#onElement"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#NetElement"/>
         <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
@@ -329,39 +287,58 @@ It is used for building the connectedWith properties. It can be a temporal objec
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#port_0 -->
+    <!-- https://cdm.ovh/rsm/topology/topo#port0 -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#port_0">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#port0">
         <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/topology/topo#port"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#port0onElement"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <owl:propertyDisjointWith rdf:resource="https://cdm.ovh/rsm/topology/topo#port_1"/>
+        <owl:propertyDisjointWith rdf:resource="https://cdm.ovh/rsm/topology/topo#port1"/>
         <rdfs:label xml:lang="en">port 0</rdfs:label>
-        <skos:definition xml:lang="en">First (or start) port of some net element. Allows to orient linear elements. Can also be used on others, with undefined semantics.</skos:definition>
+        <skos:definition xml:lang="en">First port of some net element that has, by definition, two ports. Allows to orient linear elements in space, even though linear elements may be completely symmetrical from a functional point of view. Orientation is conventional. Can also be used on non-linear elements, with undefined semantics.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#port_1 -->
+    <!-- https://cdm.ovh/rsm/topology/topo#port0onElement -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#port_1">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#port0onElement">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:label xml:lang="en">port0on element</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/topology/topo#port1 -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#port1">
         <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/topology/topo#port"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/topology/topo#port1onElement"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#LinearElement"/>
         <rdfs:label>port 1</rdfs:label>
-        <skos:definition xml:lang="en">second (or end) port on a linear element.</skos:definition>
+        <skos:definition xml:lang="en">the other port on a linear element.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#toExitPort -->
+    <!-- https://cdm.ovh/rsm/topology/topo#port1onElement -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#toExitPort">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/topology/topo#port1onElement">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:label xml:lang="en">to exit port</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:label xml:lang="en">port1on element</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -388,16 +365,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
     <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#BoundaryElement">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#LinearElement"/>
         <rdfs:label xml:lang="en">Boundary element</rdfs:label>
-        <skos:definition xml:lang="en">Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#Connection -->
-
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#Connection">
-        <rdfs:comment xml:lang="en">Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as &quot;adjacency&quot;, i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like.</rdfs:comment>
-        <rdfs:label xml:lang="en">Connection</rdfs:label>
+        <skos:definition xml:lang="en">Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability (without losing directional information or the possibility to restrict navigation to a single direction). To be used at the borders of networks managed by different entities.</skos:definition>
     </owl:Class>
     
 
@@ -407,6 +375,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
     <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#LinearElement">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#NetElement"/>
         <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/topology/topo#NonlinearElement"/>
+        <rdfs:comment xml:lang="en">Any topology element that has exactly two extremities or &quot; ports&quot;.</rdfs:comment>
         <rdfs:label xml:lang="en">Linear element</rdfs:label>
     </owl:Class>
     
@@ -418,26 +387,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/list#OWLList"/>
         <rdfs:label xml:lang="en">Listed port</rdfs:label>
-        <skos:definition xml:lang="en">A port in an ordered list (with successors; no contents needed). Can be used to sort the ports of a net element. See also OWLList ontology.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#Navigability -->
-
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#Navigability">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation"/>
-        <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/topology/topo#NonNavigability"/>
-        <rdfs:comment xml:lang="en">a (reified) relation between two ports of two distinct net elements.</rdfs:comment>
-        <rdfs:label xml:lang="en">Navigability</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#NavigabilityRelation -->
-
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation">
-        <rdfs:label xml:lang="en">Navigability relation</rdfs:label>
+        <skos:definition xml:lang="en">A port in an ordered list (with successors; no contents needed). Can be used to sort the ports of a non-linear net element (e.g. clockwise from northmost). See also OWLList ontology.</skos:definition>
     </owl:Class>
     
 
@@ -453,21 +403,12 @@ It is used for building the connectedWith properties. It can be a temporal objec
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#NonNavigability -->
-
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#NonNavigability">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation"/>
-        <rdfs:label xml:lang="en">Non navigability</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://cdm.ovh/rsm/topology/topo#NonlinearElement -->
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#NonlinearElement">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#NetElement"/>
         <rdfs:label xml:lang="en">Nonlinear element</rdfs:label>
-        <skos:definition xml:lang="en">Net element with any number of ports except two. Used for expressing connexities and navigabilities outside a complex network area (e.g. a yard or a station).</skos:definition>
+        <skos:definition xml:lang="en">Net element with any number of ports except two. Used for expressing connexities and navigabilities from or to a complex network area (e.g. a yard or a station).</skos:definition>
     </owl:Class>
     
 
@@ -477,7 +418,7 @@ It is used for building the connectedWith properties. It can be a temporal objec
     <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#Port">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"/>
         <rdfs:label>Port</rdfs:label>
-        <skos:definition xml:lang="en">Any place, at the boundary of a net element, that can be an entry and/or exit point for rolling stock. In the case of linear elements, there are exactly two ports. These may coincide (loop case) or be distinct (general case).</skos:definition>
+        <skos:definition xml:lang="en">Any place, at the boundary of a net element, that can be an entry and/or exit point for rolling stock. In the case of linear elements, there are exactly two ports. In the case of a loop, the two ports of the loop ports coincide geographically (but for some tolerances) but remain distinct individuals, allowing to orient the loop if need be.</skos:definition>
     </owl:Class>
     
 
