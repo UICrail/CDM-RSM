@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cdm.ovh/rsm/localisation/loca","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cdm.ovh/rsm/localisation/loca","name":"Localisation", "headline":"This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.For ordering things, this ontology uses the List ontology published by Pieter Pauwels and Walter Terkaj. The List ontology also underpins the ifcOWL ontology by the same authors.For spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical.", "dateReleased":"Thu Mar 12 12:56:14 UTC 2026", "version":"1.0rc1", "author":[{"@type":"Person","name":"Airy Magnien"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cdm.ovh/rsm/localisation/loca","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cdm.ovh/rsm/localisation/loca","name":"Localisation", "headline":"This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.For ordering things, this ontology uses the List ontology published by Pieter Pauwels and Walter Terkaj. The List ontology also underpins the ifcOWL ontology by the same authors.For spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical.", "dateReleased":"Thu Mar 12 13:01:35 UTC 2026", "version":"1.0rc3", "author":[{"@type":"Person","name":"Airy Magnien"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -70,9 +70,9 @@ $(function(){
 
 <dl>
 <dt>This version:</dt>
-<dd><a href="https://cdm.ovh/rsm/localisation/1.0rc1/loca">https://cdm.ovh/rsm/localisation/1.0rc1/loca</a></dd>
+<dd><a href="https://cdm.ovh/rsm/localisation/1.0rc3/loca">https://cdm.ovh/rsm/localisation/1.0rc3/loca</a></dd>
 <dt>Revision:</dt>
-<dd>1.0rc1</dd>
+<dd>1.0rc3</dd>
 <dt>Authors:</dt>
 <dd>Airy Magnien</dd>
 
@@ -82,7 +82,7 @@ $(function(){
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.example.org" target="_blank"><img src="https://img.shields.io/badge/License-EUPL%201.2-blue.svg" alt="http://insertlicenseURIhere.example.org" /></a>
 </dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Airy Magnien. Localisation. Revision: 1.0rc1. Retrieved from: https://cdm.ovh/rsm/localisation/1.0rc1/loca</dd>
+<dd>Airy Magnien. Localisation. Revision: 1.0rc3. Retrieved from: https://cdm.ovh/rsm/localisation/1.0rc3/loca</dd>
 </dl>
 
 <a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
@@ -109,20 +109,20 @@ This ontology has the following classes and properties.</span>
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#lisation#AreaLocation"
-         title="https://cdm.ovh/rsm/localisation/localisation#AreaLocation">Area location</a>
+      <a href="#AreaLocation"
+         title="https://cdm.ovh/rsm/localisation/loca#AreaLocation">Area location</a>
    </li>
    <li>
-      <a href="#lisation#BaseLocation"
-         title="https://cdm.ovh/rsm/localisation/localisation#BaseLocation">Base location</a>
+      <a href="#BaseLocation"
+         title="https://cdm.ovh/rsm/localisation/loca#BaseLocation">Base location</a>
    </li>
    <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#BoundaryElement"
          title="https://cdm.ovh/rsm/topology/topo#BoundaryElement">Boundary element</a>
    </li>
    <li>
-      <a href="#lisation#BoundedLinearElement"
-         title="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement">Bounded linear element</a>
+      <a href="#BoundedLinearElement"
+         title="https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement">Bounded linear element</a>
    </li>
    <li>
       <a href="#https://w3id.org/list#EmptyList" title="https://w3id.org/list#EmptyList">
@@ -139,25 +139,25 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#lisation#LinearLocation"
-         title="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">Linear location</a>
+      <a href="#LinearLocation"
+         title="https://cdm.ovh/rsm/localisation/loca#LinearLocation">Linear location</a>
    </li>
    <li>
-      <a href="#lisation#ListedLinearElement"
-         title="https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement">
+      <a href="#ListedLinearElement"
+         title="https://cdm.ovh/rsm/localisation/loca#ListedLinearElement">
          <span>Listed Linear Element</span>
       </a>
    </li>
    <li>
-      <a href="#lisation#ListedNetElement"
-         title="https://cdm.ovh/rsm/localisation/localisation#ListedNetElement">Listed Net Element</a>
+      <a href="#ListedNetElement"
+         title="https://cdm.ovh/rsm/localisation/loca#ListedNetElement">Listed Net Element</a>
    </li>
    <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#ListedPort" title="https://cdm.ovh/rsm/topology/topo#ListedPort">Listed port</a>
    </li>
    <li>
-      <a href="#lisation#LocatedNetElement"
-         title="https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement">Located net element</a>
+      <a href="#LocatedNetElement"
+         title="https://cdm.ovh/rsm/localisation/loca#LocatedNetElement">Located net element</a>
    </li>
    <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#NetElement" title="https://cdm.ovh/rsm/topology/topo#NetElement">Net element</a>
@@ -172,30 +172,29 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#lisation#OffsetValue"
-         title="https://cdm.ovh/rsm/localisation/localisation#OffsetValue">Offset value</a>
+      <a href="#OffsetValue"
+         title="https://cdm.ovh/rsm/localisation/loca#OffsetValue">Offset value</a>
    </li>
    <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#Port" title="https://cdm.ovh/rsm/topology/topo#Port">Port</a>
    </li>
    <li>
-      <a href="#lisation#Side"
-         title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a>
+      <a href="#SideEnum" title="https://cdm.ovh/rsm/localisation/loca#SideEnum">Side</a>
    </li>
    <li>
-      <a href="#lisation#SpotLocation"
-         title="https://cdm.ovh/rsm/localisation/localisation#SpotLocation">Spot location</a>
+      <a href="#SpotLocation"
+         title="https://cdm.ovh/rsm/localisation/loca#SpotLocation">Spot location</a>
    </li>
 </ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#lisation#applicationDirection"
-         title="https://cdm.ovh/rsm/localisation/localisation#applicationDirection">application direction</a>
+      <a href="#applicationDirection"
+         title="https://cdm.ovh/rsm/localisation/loca#applicationDirection">application direction</a>
    </li>
    <li>
-      <a href="#lisation#associatedLinearElement"
-         title="https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement">associated linear element</a>
+      <a href="#associatedLinearElement"
+         title="https://cdm.ovh/rsm/localisation/loca#associatedLinearElement">associated linear element</a>
    </li>
    <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#connectedWith" title="https://cdm.ovh/rsm/topology/topo#connectedWith">connected with</a>
@@ -205,8 +204,8 @@ This ontology has the following classes and properties.</span>
          title="https://cdm.ovh/rsm/topology/topo#connectedWithTransitive">connected with transitive</a>
    </li>
    <li>
-      <a href="#lisation#elementLocation"
-         title="https://cdm.ovh/rsm/localisation/localisation#elementLocation">element Location</a>
+      <a href="#elementLocation"
+         title="https://cdm.ovh/rsm/localisation/loca#elementLocation">element Location</a>
    </li>
    <li>
       <a href="#https://w3id.org/list#hasContents" title="https://w3id.org/list#hasContents">
@@ -229,8 +228,8 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#lisation#lateralOffset"
-         title="https://cdm.ovh/rsm/localisation/localisation#lateralOffset">lateral offset</a>
+      <a href="#lateralOffset"
+         title="https://cdm.ovh/rsm/localisation/loca#lateralOffset">lateral offset</a>
    </li>
    <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#leadsTo" title="https://cdm.ovh/rsm/topology/topo#leadsTo">leads to</a>
@@ -238,6 +237,9 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#leadsToTransitive"
          title="https://cdm.ovh/rsm/topology/topo#leadsToTransitive">leads to transitive</a>
+   </li>
+   <li>
+      <a href="#location" title="https://cdm.ovh/rsm/localisation/loca#location">location</a>
    </li>
    <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#navigableFrom" title="https://cdm.ovh/rsm/topology/topo#navigableFrom">navigable from</a>
@@ -254,8 +256,8 @@ This ontology has the following classes and properties.</span>
          title="https://cdm.ovh/rsm/topology/topo#navigableToTransitive">navigable to transitive</a>
    </li>
    <li>
-      <a href="#lisation#associatedNetElement"
-         title="https://cdm.ovh/rsm/localisation/localisation#associatedNetElement">net element list</a>
+      <a href="#associatedNetElement"
+         title="https://cdm.ovh/rsm/localisation/loca#associatedNetElement">net element list</a>
    </li>
    <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#nonNavigableFrom"
@@ -265,15 +267,14 @@ This ontology has the following classes and properties.</span>
       <a href="#https://cdm.ovh/rsm/topology/topo#nonNavigableTo" title="https://cdm.ovh/rsm/topology/topo#nonNavigableTo">non navigable to</a>
    </li>
    <li>
-      <a href="#lisation#offset"
-         title="https://cdm.ovh/rsm/localisation/localisation#offset">offset</a>
+      <a href="#offset" title="https://cdm.ovh/rsm/localisation/loca#offset">offset</a>
    </li>
    <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#onElement" title="https://cdm.ovh/rsm/topology/topo#onElement">on element</a>
    </li>
    <li>
-      <a href="#lisation#onLinearElement"
-         title="https://cdm.ovh/rsm/localisation/localisation#onLinearElement">on linear element</a>
+      <a href="#onLinearElement"
+         title="https://cdm.ovh/rsm/localisation/loca#onLinearElement">on linear element</a>
    </li>
    <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#oppositePort" title="https://cdm.ovh/rsm/topology/topo#oppositePort">opposite port</a>
@@ -294,31 +295,28 @@ This ontology has the following classes and properties.</span>
       <a href="#https://cdm.ovh/rsm/topology/topo#port1onElement" title="https://cdm.ovh/rsm/topology/topo#port1onElement">port1on element</a>
    </li>
    <li>
-      <a href="#lisation#side"
-         title="https://cdm.ovh/rsm/localisation/localisation#side">side</a>
+      <a href="#side" title="https://cdm.ovh/rsm/localisation/loca#side">side</a>
    </li>
    <li>
-      <a href="#lisation#tangentialOffset"
-         title="https://cdm.ovh/rsm/localisation/localisation#tangentialOffset">tangential offset</a>
+      <a href="#tangentialOffset"
+         title="https://cdm.ovh/rsm/localisation/loca#tangentialOffset">tangential offset</a>
    </li>
    <li>
-      <a href="#lisation#verticalOffset"
-         title="https://cdm.ovh/rsm/localisation/localisation#verticalOffset">vertical offset</a>
+      <a href="#verticalOffset"
+         title="https://cdm.ovh/rsm/localisation/loca#verticalOffset">vertical offset</a>
    </li>
 </ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#lisation#atIntrinsicCoordinate"
-         title="https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate">at intrinsic coordinate</a>
+      <a href="#atIntrinsicCoordinate"
+         title="https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate">at intrinsic coordinate</a>
    </li>
    <li>
-      <a href="#lisation#endAt"
-         title="https://cdm.ovh/rsm/localisation/localisation#endAt">end at</a>
+      <a href="#endAt" title="https://cdm.ovh/rsm/localisation/loca#endAt">end at</a>
    </li>
    <li>
-      <a href="#lisation#startAt"
-         title="https://cdm.ovh/rsm/localisation/localisation#startAt">start at</a>
+      <a href="#startAt" title="https://cdm.ovh/rsm/localisation/loca#startAt">start at</a>
    </li>
 </ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -382,28 +380,22 @@ This ontology has the following classes and properties.</span>
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#lisation#Behind"
-         title="https://cdm.ovh/rsm/localisation/localisation#Behind">Behind</a>
+      <a href="#Rear" title="https://cdm.ovh/rsm/localisation/loca#Rear">Behind</a>
    </li>
    <li>
-      <a href="#lisation#Front"
-         title="https://cdm.ovh/rsm/localisation/localisation#Front">Front</a>
+      <a href="#Front" title="https://cdm.ovh/rsm/localisation/loca#Front">Front</a>
    </li>
    <li>
-      <a href="#lisation#Left"
-         title="https://cdm.ovh/rsm/localisation/localisation#Left">Left</a>
+      <a href="#Left" title="https://cdm.ovh/rsm/localisation/loca#Left">Left</a>
    </li>
    <li>
-      <a href="#lisation#Over"
-         title="https://cdm.ovh/rsm/localisation/localisation#Over">Over</a>
+      <a href="#Top" title="https://cdm.ovh/rsm/localisation/loca#Top">Over</a>
    </li>
    <li>
-      <a href="#lisation#Right"
-         title="https://cdm.ovh/rsm/localisation/localisation#Right">Right</a>
+      <a href="#Right" title="https://cdm.ovh/rsm/localisation/loca#Right">Right</a>
    </li>
    <li>
-      <a href="#lisation#Under"
-         title="https://cdm.ovh/rsm/localisation/localisation#Under">Under</a>
+      <a href="#Bottom" title="https://cdm.ovh/rsm/localisation/loca#Bottom">Under</a>
    </li>
 </ul><iframe src="webvowl/index.html"></iframe> 
 </div>
@@ -423,29 +415,29 @@ This section provides details for each class and property defined by Localisatio
 <div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
  <h3 id="classes-headline" class="list">Classes</h3>
  <ul class="hlist">
-  <li><a href="#lisation#AreaLocation" title="https://cdm.ovh/rsm/localisation/localisation#AreaLocation">Area location</a></li>
-  <li><a href="#lisation#BaseLocation" title="https://cdm.ovh/rsm/localisation/localisation#BaseLocation">Base location</a></li>
+  <li><a href="#AreaLocation" title="https://cdm.ovh/rsm/localisation/loca#AreaLocation">Area location</a></li>
+  <li><a href="#BaseLocation" title="https://cdm.ovh/rsm/localisation/loca#BaseLocation">Base location</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#BoundaryElement" title="https://cdm.ovh/rsm/topology/topo#BoundaryElement">Boundary element</a></li>
-  <li><a href="#lisation#BoundedLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement">Bounded linear element</a></li>
+  <li><a href="#BoundedLinearElement" title="https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement">Bounded linear element</a></li>
   <li><a href="#https://w3id.org/list#EmptyList" title="https://w3id.org/list#EmptyList"> <span>Empty List</span> </a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#LinearElement" title="https://cdm.ovh/rsm/topology/topo#LinearElement">Linear element</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topology#LinearElement" title="https://cdm.ovh/rsm/topology/topology#LinearElement"> <span>Linear Element</span> </a></li>
-  <li><a href="#lisation#LinearLocation" title="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">Linear location</a></li>
-  <li><a href="#lisation#ListedLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement"> <span>Listed Linear Element</span> </a></li>
-  <li><a href="#lisation#ListedNetElement" title="https://cdm.ovh/rsm/localisation/localisation#ListedNetElement">Listed Net Element</a></li>
+  <li><a href="#LinearLocation" title="https://cdm.ovh/rsm/localisation/loca#LinearLocation">Linear location</a></li>
+  <li><a href="#ListedLinearElement" title="https://cdm.ovh/rsm/localisation/loca#ListedLinearElement"> <span>Listed Linear Element</span> </a></li>
+  <li><a href="#ListedNetElement" title="https://cdm.ovh/rsm/localisation/loca#ListedNetElement">Listed Net Element</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#ListedPort" title="https://cdm.ovh/rsm/topology/topo#ListedPort">Listed port</a></li>
-  <li><a href="#lisation#LocatedNetElement" title="https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement">Located net element</a></li>
+  <li><a href="#LocatedNetElement" title="https://cdm.ovh/rsm/localisation/loca#LocatedNetElement">Located net element</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#NetElement" title="https://cdm.ovh/rsm/topology/topo#NetElement">Net element</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#NonlinearElement" title="https://cdm.ovh/rsm/topology/topo#NonlinearElement">Nonlinear element</a></li>
   <li><a href="#https://w3id.org/list#OWLList" title="https://w3id.org/list#OWLList"> <span>O W L List</span> </a></li>
-  <li><a href="#lisation#OffsetValue" title="https://cdm.ovh/rsm/localisation/localisation#OffsetValue">Offset value</a></li>
+  <li><a href="#OffsetValue" title="https://cdm.ovh/rsm/localisation/loca#OffsetValue">Offset value</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#Port" title="https://cdm.ovh/rsm/topology/topo#Port">Port</a></li>
-  <li><a href="#lisation#Side" title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a></li>
-  <li><a href="#lisation#SpotLocation" title="https://cdm.ovh/rsm/localisation/localisation#SpotLocation">Spot location</a></li>
+  <li><a href="#SideEnum" title="https://cdm.ovh/rsm/localisation/loca#SideEnum">Side</a></li>
+  <li><a href="#SpotLocation" title="https://cdm.ovh/rsm/localisation/loca#SpotLocation">Spot location</a></li>
  </ul>
- <div class="entity" id="lisation#AreaLocation">
+ <div class="entity" id="AreaLocation">
   <h3>Area location<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#AreaLocation</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#AreaLocation</p>
   <div class="comment">
    <span class="markdown">The class of all locations that are neither spot, nor linear. Concrete examples: the location of a GSM coverage area (i.e. the parts of topology elements that are in this area); a set of discontinuous or branching linear locations. An area location refers to a set of topology elements, or element parts: no order, no repetition.</span>
   </div>
@@ -454,25 +446,25 @@ This section provides details for each class and property defined by Localisatio
     has super-classes
    </dt>
    <dd>
-    <a href="#lisation#BaseLocation" title="https://cdm.ovh/rsm/localisation/localisation#BaseLocation">Base location</a> <sup class="type-c" title="class">c</sup>
+    <a href="#BaseLocation" title="https://cdm.ovh/rsm/localisation/loca#BaseLocation">Base location</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#lisation#associatedNetElement" title="https://cdm.ovh/rsm/localisation/localisation#associatedNetElement">net element list</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#associatedNetElement" title="https://cdm.ovh/rsm/localisation/loca#associatedNetElement">net element list</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is disjoint with
    </dt>
    <dd>
-    <a href="#lisation#LinearLocation" title="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">Linear location</a> <sup class="type-c" title="class">c</sup>, <a href="#lisation#SpotLocation" title="https://cdm.ovh/rsm/localisation/localisation#SpotLocation">Spot location</a> <sup class="type-c" title="class">c</sup>
+    <a href="#LinearLocation" title="https://cdm.ovh/rsm/localisation/loca#LinearLocation">Linear location</a> <sup class="type-c" title="class">c</sup>, <a href="#SpotLocation" title="https://cdm.ovh/rsm/localisation/loca#SpotLocation">Spot location</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
- <div class="entity" id="lisation#BaseLocation">
+ <div class="entity" id="BaseLocation">
   <h3>Base location<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#BaseLocation</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#BaseLocation</p>
   <div class="comment">
    <span class="markdown">Class of all locations relative to a topology. Disjoint union of its three subclasses (spot-, linear-, area location).</span>
   </div>
@@ -481,19 +473,19 @@ This section provides details for each class and property defined by Localisatio
     has super-classes
    </dt>
    <dd>
-    <a href="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature" target="_blank" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature">Feature</a> <sup class="type-c" title="class">c</sup>, <a href="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature" target="_blank" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature">Feature</a> <sup class="type-c" title="class">c</sup>
+    <a href="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature" target="_blank" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature">Feature</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     has sub-classes
    </dt>
    <dd>
-    <a href="#lisation#AreaLocation" title="https://cdm.ovh/rsm/localisation/localisation#AreaLocation">Area location</a> <sup class="type-c" title="class">c</sup>, <a href="#lisation#LinearLocation" title="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">Linear location</a> <sup class="type-c" title="class">c</sup>, <a href="#lisation#SpotLocation" title="https://cdm.ovh/rsm/localisation/localisation#SpotLocation">Spot location</a> <sup class="type-c" title="class">c</sup>
+    <a href="#AreaLocation" title="https://cdm.ovh/rsm/localisation/loca#AreaLocation">Area location</a> <sup class="type-c" title="class">c</sup>, <a href="#LinearLocation" title="https://cdm.ovh/rsm/localisation/loca#LinearLocation">Linear location</a> <sup class="type-c" title="class">c</sup>, <a href="#SpotLocation" title="https://cdm.ovh/rsm/localisation/loca#SpotLocation">Spot location</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#lisation#elementLocation" title="https://cdm.ovh/rsm/localisation/localisation#elementLocation">element Location</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#elementLocation" title="https://cdm.ovh/rsm/localisation/loca#elementLocation">element Location</a> <sup class="type-op" title="object property">op</sup>, <a href="#location" title="https://cdm.ovh/rsm/localisation/loca#location">location</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -512,9 +504,9 @@ This section provides details for each class and property defined by Localisatio
    </dd>
   </dl>
  </div>
- <div class="entity" id="lisation#BoundedLinearElement">
+ <div class="entity" id="BoundedLinearElement">
   <h3>Bounded linear element<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement</p>
   <div class="comment">
    <span class="markdown">Linear element associated with positions along the element (property atIntrinsicCoordinate) or start and end boundaries (properties startAt and endAt).</span>
   </div>
@@ -529,19 +521,19 @@ This section provides details for each class and property defined by Localisatio
     has sub-classes
    </dt>
    <dd>
-    <a href="#lisation#ListedLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement">Listed Linear Element</a> <sup class="type-c" title="class">c</sup>
+    <a href="#ListedLinearElement" title="https://cdm.ovh/rsm/localisation/loca#ListedLinearElement">Listed Linear Element</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#lisation#atIntrinsicCoordinate" title="https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate">at intrinsic coordinate</a> <sup class="type-dp" title="data property">dp</sup>
+    <a href="#atIntrinsicCoordinate" title="https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate">at intrinsic coordinate</a> <sup class="type-dp" title="data property">dp</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#lisation#onLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#onLinearElement">on linear element</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#onLinearElement" title="https://cdm.ovh/rsm/localisation/loca#onLinearElement">on linear element</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -613,19 +605,19 @@ This section provides details for each class and property defined by Localisatio
     has sub-classes
    </dt>
    <dd>
-    <a href="#lisation#BoundedLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement">Bounded linear element</a> <sup class="type-c" title="class">c</sup>
+    <a href="#BoundedLinearElement" title="https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement">Bounded linear element</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#lisation#applicationDirection" title="https://cdm.ovh/rsm/localisation/localisation#applicationDirection">application direction</a> <sup class="type-op" title="object property">op</sup>, <a href="#lisation#offset" title="https://cdm.ovh/rsm/localisation/localisation#offset">offset</a> <sup class="type-op" title="object property">op</sup>, <a href="#lisation#side" title="https://cdm.ovh/rsm/localisation/localisation#side">side</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#applicationDirection" title="https://cdm.ovh/rsm/localisation/loca#applicationDirection">application direction</a> <sup class="type-op" title="object property">op</sup>, <a href="#offset" title="https://cdm.ovh/rsm/localisation/loca#offset">offset</a> <sup class="type-op" title="object property">op</sup>, <a href="#side" title="https://cdm.ovh/rsm/localisation/loca#side">side</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
- <div class="entity" id="lisation#LinearLocation">
+ <div class="entity" id="LinearLocation">
   <h3>Linear location<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#LinearLocation</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#LinearLocation</p>
   <div class="comment">
    <span class="markdown">Location extending over consecutive linear elements or parts thereof. The involved linear elements are in a sequence (ordered list, with repetitions allowed). Each linear element in the sequence is oriented from start to end. Start and end may coincide with extremities or some point in between.</span>
   </div>
@@ -634,43 +626,43 @@ This section provides details for each class and property defined by Localisatio
     has super-classes
    </dt>
    <dd>
-    <a href="#lisation#BaseLocation" title="https://cdm.ovh/rsm/localisation/localisation#BaseLocation">Base location</a> <sup class="type-c" title="class">c</sup>, <a href="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings" target="_blank" title="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings">Linear things</a> <sup class="type-c" title="class">c</sup>
+    <a href="#BaseLocation" title="https://cdm.ovh/rsm/localisation/loca#BaseLocation">Base location</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#lisation#associatedLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement">associated linear element</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#associatedLinearElement" title="https://cdm.ovh/rsm/localisation/loca#associatedLinearElement">associated linear element</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is disjoint with
    </dt>
    <dd>
-    <a href="#lisation#AreaLocation" title="https://cdm.ovh/rsm/localisation/localisation#AreaLocation">Area location</a> <sup class="type-c" title="class">c</sup>, <a href="#lisation#SpotLocation" title="https://cdm.ovh/rsm/localisation/localisation#SpotLocation">Spot location</a> <sup class="type-c" title="class">c</sup>
+    <a href="#AreaLocation" title="https://cdm.ovh/rsm/localisation/loca#AreaLocation">Area location</a> <sup class="type-c" title="class">c</sup>, <a href="#SpotLocation" title="https://cdm.ovh/rsm/localisation/loca#SpotLocation">Spot location</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
- <div class="entity" id="lisation#ListedLinearElement">
+ <div class="entity" id="ListedLinearElement">
   <h3>Listed Linear Element<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#ListedLinearElement</p>
   <dl class="description">
    <dt>
     has super-classes
    </dt>
    <dd>
-    <a href="#lisation#BoundedLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement">Bounded linear element</a> <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/list#OWLList" title="https://w3id.org/list#OWLList">O W L List</a> <sup class="type-c" title="class">c</sup>
+    <a href="#BoundedLinearElement" title="https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement">Bounded linear element</a> <sup class="type-c" title="class">c</sup>, <a href="#https://w3id.org/list#OWLList" title="https://w3id.org/list#OWLList">O W L List</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in range of
    </dt>
    <dd>
-    <a href="#lisation#associatedLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement">associated linear element</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#associatedLinearElement" title="https://cdm.ovh/rsm/localisation/loca#associatedLinearElement">associated linear element</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
- <div class="entity" id="lisation#ListedNetElement">
+ <div class="entity" id="ListedNetElement">
   <h3>Listed Net Element<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#ListedNetElement</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#ListedNetElement</p>
   <div class="comment">
    <span class="markdown">Linked list of all net elements (or parts of linear elements) constituting a location. A subclass of OWL List: this is a class from a vocabulary also used by IfcOwl. In the present case, the order of elements in the list is user-defined and has no universal semantics. Repetition is allowed, but should be avoided as it has no meaning in the case of non-linear locations. Linear elements are referred to as a whole. If only part of a linear element is included in the location, use a LinearElementList individual. Orientation of each linear element (or part thereof) is described by startsAt and endsAt properties.</span>
   </div>
@@ -685,7 +677,7 @@ This section provides details for each class and property defined by Localisatio
     is in range of
    </dt>
    <dd>
-    <a href="#lisation#associatedNetElement" title="https://cdm.ovh/rsm/localisation/localisation#associatedNetElement">net element list</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#associatedNetElement" title="https://cdm.ovh/rsm/localisation/loca#associatedNetElement">net element list</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -704,9 +696,9 @@ This section provides details for each class and property defined by Localisatio
    </dd>
   </dl>
  </div>
- <div class="entity" id="lisation#LocatedNetElement">
+ <div class="entity" id="LocatedNetElement">
   <h3>Located net element<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#LocatedNetElement</p>
   <div class="comment">
    <span class="markdown">Net element defined by its location on other net elements. Used for compositing, in lieu of the composite pattern in versions of topology before 1.0rc2.</span>
   </div>
@@ -721,7 +713,7 @@ This section provides details for each class and property defined by Localisatio
     is in domain of
    </dt>
    <dd>
-    <a href="#lisation#elementLocation" title="https://cdm.ovh/rsm/localisation/localisation#elementLocation">element Location</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#elementLocation" title="https://cdm.ovh/rsm/localisation/loca#elementLocation">element Location</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -802,7 +794,7 @@ This section provides details for each class and property defined by Localisatio
     has sub-classes
    </dt>
    <dd>
-    <a href="#https://w3id.org/list#EmptyList" title="https://w3id.org/list#EmptyList">Empty List</a> <sup class="type-c" title="class">c</sup>, <a href="#lisation#ListedLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement">Listed Linear Element</a> <sup class="type-c" title="class">c</sup>, <a href="#lisation#ListedNetElement" title="https://cdm.ovh/rsm/localisation/localisation#ListedNetElement">Listed Net Element</a> <sup class="type-c" title="class">c</sup>, <a href="#https://cdm.ovh/rsm/topology/topo#ListedPort" title="https://cdm.ovh/rsm/topology/topo#ListedPort">Listed port</a> <sup class="type-c" title="class">c</sup>
+    <a href="#https://w3id.org/list#EmptyList" title="https://w3id.org/list#EmptyList">Empty List</a> <sup class="type-c" title="class">c</sup>, <a href="#ListedLinearElement" title="https://cdm.ovh/rsm/localisation/loca#ListedLinearElement">Listed Linear Element</a> <sup class="type-c" title="class">c</sup>, <a href="#ListedNetElement" title="https://cdm.ovh/rsm/localisation/loca#ListedNetElement">Listed Net Element</a> <sup class="type-c" title="class">c</sup>, <a href="#https://cdm.ovh/rsm/topology/topo#ListedPort" title="https://cdm.ovh/rsm/topology/topo#ListedPort">Listed port</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
@@ -818,9 +810,9 @@ This section provides details for each class and property defined by Localisatio
    </dd>
   </dl>
  </div>
- <div class="entity" id="lisation#OffsetValue">
+ <div class="entity" id="OffsetValue">
   <h3>Offset value<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#OffsetValue</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#OffsetValue</p>
   <dl class="description">
    <dt>
     has super-classes
@@ -832,7 +824,7 @@ This section provides details for each class and property defined by Localisatio
     is in range of
    </dt>
    <dd>
-    <a href="#lisation#offset" title="https://cdm.ovh/rsm/localisation/localisation#offset">offset</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#offset" title="https://cdm.ovh/rsm/localisation/loca#offset">offset</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -875,9 +867,9 @@ This section provides details for each class and property defined by Localisatio
    </dd>
   </dl>
  </div>
- <div class="entity" id="lisation#Side">
+ <div class="entity" id="SideEnum">
   <h3>Side<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#Side</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#SideEnum</p>
   <div class="comment">
    <span class="markdown">Front, Rear, Left, and Right orientation are relative to the orientation of the linear element (from node 0 to node 1). Over and Under are relative to the geometric or geographic vertical.</span>
   </div>
@@ -886,19 +878,19 @@ This section provides details for each class and property defined by Localisatio
     is in range of
    </dt>
    <dd>
-    <a href="#lisation#applicationDirection" title="https://cdm.ovh/rsm/localisation/localisation#applicationDirection">application direction</a> <sup class="type-op" title="object property">op</sup>, <a href="#lisation#side" title="https://cdm.ovh/rsm/localisation/localisation#side">side</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#applicationDirection" title="https://cdm.ovh/rsm/localisation/loca#applicationDirection">application direction</a> <sup class="type-op" title="object property">op</sup>, <a href="#side" title="https://cdm.ovh/rsm/localisation/loca#side">side</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     has members
    </dt>
    <dd>
-    <a href="#lisation#Behind" title="https://cdm.ovh/rsm/localisation/localisation#Behind">Behind</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#lisation#Front" title="https://cdm.ovh/rsm/localisation/localisation#Front">Front</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#lisation#Left" title="https://cdm.ovh/rsm/localisation/localisation#Left">Left</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#lisation#Over" title="https://cdm.ovh/rsm/localisation/localisation#Over">Over</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#lisation#Right" title="https://cdm.ovh/rsm/localisation/localisation#Right">Right</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#lisation#Under" title="https://cdm.ovh/rsm/localisation/localisation#Under">Under</a> <sup class="type-ni" title="named individual">ni</sup>
+    <a href="#Rear" title="https://cdm.ovh/rsm/localisation/loca#Rear">Behind</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Front" title="https://cdm.ovh/rsm/localisation/loca#Front">Front</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Left" title="https://cdm.ovh/rsm/localisation/loca#Left">Left</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Top" title="https://cdm.ovh/rsm/localisation/loca#Top">Over</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Right" title="https://cdm.ovh/rsm/localisation/loca#Right">Right</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#Bottom" title="https://cdm.ovh/rsm/localisation/loca#Bottom">Under</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
   </dl>
  </div>
- <div class="entity" id="lisation#SpotLocation">
+ <div class="entity" id="SpotLocation">
   <h3>Spot location<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#SpotLocation</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#SpotLocation</p>
   <div class="comment">
    <span class="markdown">Class of all spot locations, i.e. locations that can be represented as a point on a map or schema. The spot location can relate to one or more net elements (concrete example: the location of a signal that addresses two converging tracks).</span>
   </div>
@@ -907,60 +899,61 @@ This section provides details for each class and property defined by Localisatio
     has super-classes
    </dt>
    <dd>
-    <a href="#lisation#BaseLocation" title="https://cdm.ovh/rsm/localisation/localisation#BaseLocation">Base location</a> <sup class="type-c" title="class">c</sup>
+    <a href="#BaseLocation" title="https://cdm.ovh/rsm/localisation/loca#BaseLocation">Base location</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>
     is in domain of
    </dt>
    <dd>
-    <a href="#lisation#onLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#onLinearElement">on linear element</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#onLinearElement" title="https://cdm.ovh/rsm/localisation/loca#onLinearElement">on linear element</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is disjoint with
    </dt>
    <dd>
-    <a href="#lisation#AreaLocation" title="https://cdm.ovh/rsm/localisation/localisation#AreaLocation">Area location</a> <sup class="type-c" title="class">c</sup>, <a href="#lisation#LinearLocation" title="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">Linear location</a> <sup class="type-c" title="class">c</sup>
+    <a href="#AreaLocation" title="https://cdm.ovh/rsm/localisation/loca#AreaLocation">Area location</a> <sup class="type-c" title="class">c</sup>, <a href="#LinearLocation" title="https://cdm.ovh/rsm/localisation/loca#LinearLocation">Linear location</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
  <h3 id="properties" class="list">Object Properties</h3>
  <ul class="hlist">
-  <li><a href="#lisation#applicationDirection" title="https://cdm.ovh/rsm/localisation/localisation#applicationDirection">application direction</a></li>
-  <li><a href="#lisation#associatedLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement">associated linear element</a></li>
+  <li><a href="#applicationDirection" title="https://cdm.ovh/rsm/localisation/loca#applicationDirection">application direction</a></li>
+  <li><a href="#associatedLinearElement" title="https://cdm.ovh/rsm/localisation/loca#associatedLinearElement">associated linear element</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#connectedWith" title="https://cdm.ovh/rsm/topology/topo#connectedWith">connected with</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#connectedWithTransitive" title="https://cdm.ovh/rsm/topology/topo#connectedWithTransitive">connected with transitive</a></li>
-  <li><a href="#lisation#elementLocation" title="https://cdm.ovh/rsm/localisation/localisation#elementLocation">element Location</a></li>
+  <li><a href="#elementLocation" title="https://cdm.ovh/rsm/localisation/loca#elementLocation">element Location</a></li>
   <li><a href="#https://w3id.org/list#hasContents" title="https://w3id.org/list#hasContents"> <span>has Contents</span> </a></li>
   <li><a href="#https://w3id.org/list#hasListProperty" title="https://w3id.org/list#hasListProperty"> <span>has List Property</span> </a></li>
   <li><a href="#https://w3id.org/list#hasNext" title="https://w3id.org/list#hasNext"> <span>has Next</span> </a></li>
   <li><a href="#https://w3id.org/list#isFollowedBy" title="https://w3id.org/list#isFollowedBy"> <span>is Followed By</span> </a></li>
-  <li><a href="#lisation#lateralOffset" title="https://cdm.ovh/rsm/localisation/localisation#lateralOffset">lateral offset</a></li>
+  <li><a href="#lateralOffset" title="https://cdm.ovh/rsm/localisation/loca#lateralOffset">lateral offset</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#leadsTo" title="https://cdm.ovh/rsm/topology/topo#leadsTo">leads to</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#leadsToTransitive" title="https://cdm.ovh/rsm/topology/topo#leadsToTransitive">leads to transitive</a></li>
+  <li><a href="#location" title="https://cdm.ovh/rsm/localisation/loca#location">location</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#navigableFrom" title="https://cdm.ovh/rsm/topology/topo#navigableFrom">navigable from</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#navigableFromTransitive" title="https://cdm.ovh/rsm/topology/topo#navigableFromTransitive">navigable from transitive</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#navigableTo" title="https://cdm.ovh/rsm/topology/topo#navigableTo">navigable to</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#navigableToTransitive" title="https://cdm.ovh/rsm/topology/topo#navigableToTransitive">navigable to transitive</a></li>
-  <li><a href="#lisation#associatedNetElement" title="https://cdm.ovh/rsm/localisation/localisation#associatedNetElement">net element list</a></li>
+  <li><a href="#associatedNetElement" title="https://cdm.ovh/rsm/localisation/loca#associatedNetElement">net element list</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#nonNavigableFrom" title="https://cdm.ovh/rsm/topology/topo#nonNavigableFrom">non navigable from</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#nonNavigableTo" title="https://cdm.ovh/rsm/topology/topo#nonNavigableTo">non navigable to</a></li>
-  <li><a href="#lisation#offset" title="https://cdm.ovh/rsm/localisation/localisation#offset">offset</a></li>
+  <li><a href="#offset" title="https://cdm.ovh/rsm/localisation/loca#offset">offset</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#onElement" title="https://cdm.ovh/rsm/topology/topo#onElement">on element</a></li>
-  <li><a href="#lisation#onLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#onLinearElement">on linear element</a></li>
+  <li><a href="#onLinearElement" title="https://cdm.ovh/rsm/localisation/loca#onLinearElement">on linear element</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#oppositePort" title="https://cdm.ovh/rsm/topology/topo#oppositePort">opposite port</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#port" title="https://cdm.ovh/rsm/topology/topo#port">port</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#port0" title="https://cdm.ovh/rsm/topology/topo#port0">port 0</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#port1" title="https://cdm.ovh/rsm/topology/topo#port1">port 1</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#port0onElement" title="https://cdm.ovh/rsm/topology/topo#port0onElement">port0on element</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#port1onElement" title="https://cdm.ovh/rsm/topology/topo#port1onElement">port1on element</a></li>
-  <li><a href="#lisation#side" title="https://cdm.ovh/rsm/localisation/localisation#side">side</a></li>
-  <li><a href="#lisation#tangentialOffset" title="https://cdm.ovh/rsm/localisation/localisation#tangentialOffset">tangential offset</a></li>
-  <li><a href="#lisation#verticalOffset" title="https://cdm.ovh/rsm/localisation/localisation#verticalOffset">vertical offset</a></li>
+  <li><a href="#side" title="https://cdm.ovh/rsm/localisation/loca#side">side</a></li>
+  <li><a href="#tangentialOffset" title="https://cdm.ovh/rsm/localisation/loca#tangentialOffset">tangential offset</a></li>
+  <li><a href="#verticalOffset" title="https://cdm.ovh/rsm/localisation/loca#verticalOffset">vertical offset</a></li>
  </ul>
- <div class="entity" id="lisation#applicationDirection">
+ <div class="entity" id="applicationDirection">
   <h3>application direction<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#applicationDirection</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#applicationDirection</p>
   <div class="comment">
    <span class="markdown">Allows to express the direction of travel for which the localized entity is relevant. Example: a signal generally applies to one travel direction; track occupancy detection systems may be oriented, etc. Direction of travel is expressed relative to the orientation of the linear element, from port 0 to port 1, or intrinsic coordinate 0 to 1. It is NOT expressed with respect to "normal travel direction in operations".</span>
   </div>
@@ -976,27 +969,27 @@ This section provides details for each class and property defined by Localisatio
      has range
     </dt>
     <dd>
-     <a href="#lisation#Side" title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a> <sup class="type-c" title="class">c</sup>
+     <a href="#SideEnum" title="https://cdm.ovh/rsm/localisation/loca#SideEnum">Side</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="lisation#associatedLinearElement">
+ <div class="entity" id="associatedLinearElement">
   <h3>associated linear element<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#associatedLinearElement</p>
   <div class="description">
    <dl>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#lisation#LinearLocation" title="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">Linear location</a> <sup class="type-c" title="class">c</sup>
+     <a href="#LinearLocation" title="https://cdm.ovh/rsm/localisation/loca#LinearLocation">Linear location</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#lisation#ListedLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#ListedLinearElement">Listed Linear Element</a> <sup class="type-c" title="class">c</sup>
+     <a href="#ListedLinearElement" title="https://cdm.ovh/rsm/localisation/loca#ListedLinearElement">Listed Linear Element</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -1049,9 +1042,9 @@ This section provides details for each class and property defined by Localisatio
    </dl>
   </div>
  </div>
- <div class="entity" id="lisation#elementLocation">
+ <div class="entity" id="elementLocation">
   <h3>element Location<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#elementLocation</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#elementLocation</p>
   <div class="comment">
    <span class="markdown">Provides the location(s) of a located net element. Locations may be representation- and time-dependent, so the property is not a functional property (in the sense of RDF/OWL).</span>
   </div>
@@ -1062,13 +1055,13 @@ This section provides details for each class and property defined by Localisatio
      has domain
     </dt>
     <dd>
-     <a href="#lisation#LocatedNetElement" title="https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement">Located net element</a> <sup class="type-c" title="class">c</sup>
+     <a href="#LocatedNetElement" title="https://cdm.ovh/rsm/localisation/loca#LocatedNetElement">Located net element</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#lisation#BaseLocation" title="https://cdm.ovh/rsm/localisation/localisation#BaseLocation">Base location</a> <sup class="type-c" title="class">c</sup>
+     <a href="#BaseLocation" title="https://cdm.ovh/rsm/localisation/loca#BaseLocation">Base location</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -1150,9 +1143,9 @@ This section provides details for each class and property defined by Localisatio
    </dl>
   </div>
  </div>
- <div class="entity" id="lisation#lateralOffset">
+ <div class="entity" id="lateralOffset">
   <h3>lateral offset<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#lateralOffset</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#lateralOffset</p>
   <div class="comment">
    <span class="markdown">offset of location (usually: spot location) with respect to a perpendicular to the linear element, in the horizontal plane (not: track plane). Is positive when on the left and negative on the right (in order to respect the conventional orientation of cartesian reference systems, where X is the longitudinal axis, Y the transversal, and Z the vertical).</span>
   </div>
@@ -1163,7 +1156,7 @@ This section provides details for each class and property defined by Localisatio
      has super-properties
     </dt>
     <dd>
-     <a href="#lisation#offset" title="https://cdm.ovh/rsm/localisation/localisation#offset">offset</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#offset" title="https://cdm.ovh/rsm/localisation/loca#offset">offset</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -1226,6 +1219,24 @@ This section provides details for each class and property defined by Localisatio
     </dt>
     <dd>
      <a href="#https://cdm.ovh/rsm/topology/topo#port" title="https://cdm.ovh/rsm/topology/topo#port">port</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#https://cdm.ovh/rsm/topology/topo#navigableToTransitive" title="https://cdm.ovh/rsm/topology/topo#navigableToTransitive">navigable to transitive</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#https://cdm.ovh/rsm/topology/topo#onElement" title="https://cdm.ovh/rsm/topology/topo#onElement">on element</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="location">
+  <h3>location<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#location</p>
+  <div class="comment">
+   <span class="markdown">Generic property assigning some location to a Thing.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> inverse functional</p>
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#BaseLocation" title="https://cdm.ovh/rsm/localisation/loca#BaseLocation">Base location</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -1332,9 +1343,9 @@ This section provides details for each class and property defined by Localisatio
    </dl>
   </div>
  </div>
- <div class="entity" id="lisation#associatedNetElement">
+ <div class="entity" id="associatedNetElement">
   <h3>net element list<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#associatedNetElement</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#associatedNetElement</p>
   <div class="comment">
    <span class="markdown">Property pointing to all net elements (or parts thereof) that describe the area location. Note: the user may target ListedNetElement individuals (a subclass of BoundedNetElement) and define an order, for whatever purpose.</span>
   </div>
@@ -1344,13 +1355,13 @@ This section provides details for each class and property defined by Localisatio
      has domain
     </dt>
     <dd>
-     <a href="#lisation#AreaLocation" title="https://cdm.ovh/rsm/localisation/localisation#AreaLocation">Area location</a> <sup class="type-c" title="class">c</sup>
+     <a href="#AreaLocation" title="https://cdm.ovh/rsm/localisation/loca#AreaLocation">Area location</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#lisation#ListedNetElement" title="https://cdm.ovh/rsm/localisation/localisation#ListedNetElement">Listed Net Element</a> <sup class="type-c" title="class">c</sup>
+     <a href="#ListedNetElement" title="https://cdm.ovh/rsm/localisation/loca#ListedNetElement">Listed Net Element</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -1401,9 +1412,9 @@ This section provides details for each class and property defined by Localisatio
    </dl>
   </div>
  </div>
- <div class="entity" id="lisation#offset">
+ <div class="entity" id="offset">
   <h3>offset<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#offset</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#offset</p>
   <div class="comment">
    <span class="markdown">definitely not functional, to cope with the fact that values may be multiple (specified, observed...). definitely inverse functional, because values characterize a location relative to exactly one linear element. "Exactly" however is left for SHACL shapes (not in RL profile).</span>
   </div>
@@ -1420,7 +1431,7 @@ This section provides details for each class and property defined by Localisatio
      has sub-properties
     </dt>
     <dd>
-     <a href="#lisation#lateralOffset" title="https://cdm.ovh/rsm/localisation/localisation#lateralOffset">lateral offset</a> <sup class="type-op" title="object property">op</sup>, <a href="#lisation#tangentialOffset" title="https://cdm.ovh/rsm/localisation/localisation#tangentialOffset">tangential offset</a> <sup class="type-op" title="object property">op</sup>, <a href="#lisation#verticalOffset" title="https://cdm.ovh/rsm/localisation/localisation#verticalOffset">vertical offset</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#lateralOffset" title="https://cdm.ovh/rsm/localisation/loca#lateralOffset">lateral offset</a> <sup class="type-op" title="object property">op</sup>, <a href="#tangentialOffset" title="https://cdm.ovh/rsm/localisation/loca#tangentialOffset">tangential offset</a> <sup class="type-op" title="object property">op</sup>, <a href="#verticalOffset" title="https://cdm.ovh/rsm/localisation/loca#verticalOffset">vertical offset</a> <sup class="type-op" title="object property">op</sup>
     </dd>
     <dt>
      has domain
@@ -1432,7 +1443,7 @@ This section provides details for each class and property defined by Localisatio
      has range
     </dt>
     <dd>
-     <a href="#lisation#OffsetValue" title="https://cdm.ovh/rsm/localisation/localisation#OffsetValue">Offset value</a> <sup class="type-c" title="class">c</sup>
+     <a href="#OffsetValue" title="https://cdm.ovh/rsm/localisation/loca#OffsetValue">Offset value</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -1444,9 +1455,9 @@ This section provides details for each class and property defined by Localisatio
    <span class="markdown">inverse of port, port0, port1</span>
   </div>
  </div>
- <div class="entity" id="lisation#onLinearElement">
+ <div class="entity" id="onLinearElement">
   <h3>on linear element<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#onLinearElement</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#onLinearElement</p>
   <div class="comment">
    <span class="markdown">provides the linear element(s) that define a spot location. There can be several linear elements involved: think of a signal adderessing two adjacent tracks.</span>
   </div>
@@ -1456,13 +1467,13 @@ This section provides details for each class and property defined by Localisatio
      has domain
     </dt>
     <dd>
-     <a href="#lisation#SpotLocation" title="https://cdm.ovh/rsm/localisation/localisation#SpotLocation">Spot location</a> <sup class="type-c" title="class">c</sup>
+     <a href="#SpotLocation" title="https://cdm.ovh/rsm/localisation/loca#SpotLocation">Spot location</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
     </dt>
     <dd>
-     <a href="#lisation#BoundedLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement">Bounded linear element</a> <sup class="type-c" title="class">c</sup>
+     <a href="#BoundedLinearElement" title="https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement">Bounded linear element</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
@@ -1569,9 +1580,9 @@ This section provides details for each class and property defined by Localisatio
   <h3>port1on element<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#port1onElement</p>
  </div>
- <div class="entity" id="lisation#side">
+ <div class="entity" id="side">
   <h3>side<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#side</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#side</p>
   <div class="comment">
    <span class="markdown">consistency with lateral offset sign to be verified by SHACL shapes.</span>
   </div>
@@ -1590,14 +1601,14 @@ This section provides details for each class and property defined by Localisatio
      has range
     </dt>
     <dd>
-     <a href="#lisation#Side" title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a> <sup class="type-c" title="class">c</sup>
+     <a href="#SideEnum" title="https://cdm.ovh/rsm/localisation/loca#SideEnum">Side</a> <sup class="type-c" title="class">c</sup>
     </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="lisation#tangentialOffset">
+ <div class="entity" id="tangentialOffset">
   <h3>tangential offset<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#tangentialOffset</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#tangentialOffset</p>
   <div class="description">
    <p><strong>has characteristics: </strong> inverse functional</p>
    <dl>
@@ -1605,14 +1616,14 @@ This section provides details for each class and property defined by Localisatio
      has super-properties
     </dt>
     <dd>
-     <a href="#lisation#offset" title="https://cdm.ovh/rsm/localisation/localisation#offset">offset</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#offset" title="https://cdm.ovh/rsm/localisation/loca#offset">offset</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="lisation#verticalOffset">
+ <div class="entity" id="verticalOffset">
   <h3>vertical offset<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#verticalOffset</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#verticalOffset</p>
   <div class="description">
    <p><strong>has characteristics: </strong> inverse functional</p>
    <dl>
@@ -1620,7 +1631,7 @@ This section provides details for each class and property defined by Localisatio
      has super-properties
     </dt>
     <dd>
-     <a href="#lisation#offset" title="https://cdm.ovh/rsm/localisation/localisation#offset">offset</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#offset" title="https://cdm.ovh/rsm/localisation/loca#offset">offset</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -1628,13 +1639,13 @@ This section provides details for each class and property defined by Localisatio
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
  <h3 id="dataproperties-headline" class="list">Data Properties</h3>
  <ul class="hlist">
-  <li><a href="#lisation#atIntrinsicCoordinate" title="https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate">at intrinsic coordinate</a></li>
-  <li><a href="#lisation#endAt" title="https://cdm.ovh/rsm/localisation/localisation#endAt">end at</a></li>
-  <li><a href="#lisation#startAt" title="https://cdm.ovh/rsm/localisation/localisation#startAt">start at</a></li>
+  <li><a href="#atIntrinsicCoordinate" title="https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate">at intrinsic coordinate</a></li>
+  <li><a href="#endAt" title="https://cdm.ovh/rsm/localisation/loca#endAt">end at</a></li>
+  <li><a href="#startAt" title="https://cdm.ovh/rsm/localisation/loca#startAt">start at</a></li>
  </ul>
- <div class="entity" id="lisation#atIntrinsicCoordinate">
+ <div class="entity" id="atIntrinsicCoordinate">
   <h3>at intrinsic coordinate<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate</p>
   <div class="description">
    <p><strong>has characteristics: </strong> functional</p>
    <dl>
@@ -1642,13 +1653,13 @@ This section provides details for each class and property defined by Localisatio
      has sub-properties
     </dt>
     <dd>
-     <a href="#lisation#endAt" title="https://cdm.ovh/rsm/localisation/localisation#endAt">end at</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#lisation#startAt" title="https://cdm.ovh/rsm/localisation/localisation#startAt">start at</a> <sup class="type-dp" title="data property">dp</sup>
+     <a href="#endAt" title="https://cdm.ovh/rsm/localisation/loca#endAt">end at</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#startAt" title="https://cdm.ovh/rsm/localisation/loca#startAt">start at</a> <sup class="type-dp" title="data property">dp</sup>
     </dd>
     <dt>
      has domain
     </dt>
     <dd>
-     <a href="#lisation#BoundedLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement">Bounded linear element</a> <sup class="type-c" title="class">c</sup>
+     <a href="#BoundedLinearElement" title="https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement">Bounded linear element</a> <sup class="type-c" title="class">c</sup>
     </dd>
     <dt>
      has range
@@ -1659,9 +1670,9 @@ This section provides details for each class and property defined by Localisatio
    </dl>
   </div>
  </div>
- <div class="entity" id="lisation#endAt">
+ <div class="entity" id="endAt">
   <h3>end at<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#endAt</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#endAt</p>
   <div class="comment">
    <span class="markdown">cardinality "exactly one value" to be enforced via SHACL shape</span>
   </div>
@@ -1675,14 +1686,14 @@ This section provides details for each class and property defined by Localisatio
      has super-properties
     </dt>
     <dd>
-     <a href="#lisation#atIntrinsicCoordinate" title="https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate">at intrinsic coordinate</a> <sup class="type-dp" title="data property">dp</sup>
+     <a href="#atIntrinsicCoordinate" title="https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate">at intrinsic coordinate</a> <sup class="type-dp" title="data property">dp</sup>
     </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="lisation#startAt">
+ <div class="entity" id="startAt">
   <h3>start at<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#startAt</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#startAt</p>
   <div class="comment">
    <span class="markdown">cardinality "exactly one value" to be enforced via SHACL shape</span>
   </div>
@@ -1696,7 +1707,7 @@ This section provides details for each class and property defined by Localisatio
      has super-properties
     </dt>
     <dd>
-     <a href="#lisation#atIntrinsicCoordinate" title="https://cdm.ovh/rsm/localisation/localisation#atIntrinsicCoordinate">at intrinsic coordinate</a> <sup class="type-dp" title="data property">dp</sup>
+     <a href="#atIntrinsicCoordinate" title="https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate">at intrinsic coordinate</a> <sup class="type-dp" title="data property">dp</sup>
     </dd>
    </dl>
   </div>
@@ -1763,82 +1774,82 @@ This section provides details for each class and property defined by Localisatio
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
  <h3 id="namedindividuals" class="list">Named Individuals</h3>
  <ul class="hlist">
-  <li><a href="#lisation#Behind" title="https://cdm.ovh/rsm/localisation/localisation#Behind">Behind</a></li>
-  <li><a href="#lisation#Front" title="https://cdm.ovh/rsm/localisation/localisation#Front">Front</a></li>
-  <li><a href="#lisation#Left" title="https://cdm.ovh/rsm/localisation/localisation#Left">Left</a></li>
-  <li><a href="#lisation#Over" title="https://cdm.ovh/rsm/localisation/localisation#Over">Over</a></li>
-  <li><a href="#lisation#Right" title="https://cdm.ovh/rsm/localisation/localisation#Right">Right</a></li>
-  <li><a href="#lisation#Under" title="https://cdm.ovh/rsm/localisation/localisation#Under">Under</a></li>
+  <li><a href="#Rear" title="https://cdm.ovh/rsm/localisation/loca#Rear">Behind</a></li>
+  <li><a href="#Front" title="https://cdm.ovh/rsm/localisation/loca#Front">Front</a></li>
+  <li><a href="#Left" title="https://cdm.ovh/rsm/localisation/loca#Left">Left</a></li>
+  <li><a href="#Top" title="https://cdm.ovh/rsm/localisation/loca#Top">Over</a></li>
+  <li><a href="#Right" title="https://cdm.ovh/rsm/localisation/loca#Right">Right</a></li>
+  <li><a href="#Bottom" title="https://cdm.ovh/rsm/localisation/loca#Bottom">Under</a></li>
  </ul>
- <div class="entity" id="lisation#Behind">
+ <div class="entity" id="Rear">
   <h3>Behind<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#Behind</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#Rear</p>
   <dl class="description">
    <dt>
     belongs to
    </dt>
    <dd>
-    <a href="#lisation#Side" title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a> <sup class="type-c" title="class">c</sup>
+    <a href="#SideEnum" title="https://cdm.ovh/rsm/localisation/loca#SideEnum">Side</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
- <div class="entity" id="lisation#Front">
+ <div class="entity" id="Front">
   <h3>Front<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#Front</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#Front</p>
   <dl class="description">
    <dt>
     belongs to
    </dt>
    <dd>
-    <a href="#lisation#Side" title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a> <sup class="type-c" title="class">c</sup>
+    <a href="#SideEnum" title="https://cdm.ovh/rsm/localisation/loca#SideEnum">Side</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
- <div class="entity" id="lisation#Left">
+ <div class="entity" id="Left">
   <h3>Left<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#Left</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#Left</p>
   <dl class="description">
    <dt>
     belongs to
    </dt>
    <dd>
-    <a href="#lisation#Side" title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a> <sup class="type-c" title="class">c</sup>
+    <a href="#SideEnum" title="https://cdm.ovh/rsm/localisation/loca#SideEnum">Side</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
- <div class="entity" id="lisation#Over">
+ <div class="entity" id="Top">
   <h3>Over<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#Over</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#Top</p>
   <dl class="description">
    <dt>
     belongs to
    </dt>
    <dd>
-    <a href="#lisation#Side" title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a> <sup class="type-c" title="class">c</sup>
+    <a href="#SideEnum" title="https://cdm.ovh/rsm/localisation/loca#SideEnum">Side</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
- <div class="entity" id="lisation#Right">
+ <div class="entity" id="Right">
   <h3>Right<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#Right</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#Right</p>
   <dl class="description">
    <dt>
     belongs to
    </dt>
    <dd>
-    <a href="#lisation#Side" title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a> <sup class="type-c" title="class">c</sup>
+    <a href="#SideEnum" title="https://cdm.ovh/rsm/localisation/loca#SideEnum">Side</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
- <div class="entity" id="lisation#Under">
+ <div class="entity" id="Bottom">
   <h3>Under<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#Under</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/loca#Bottom</p>
   <dl class="description">
    <dt>
     belongs to
    </dt>
    <dd>
-    <a href="#lisation#Side" title="https://cdm.ovh/rsm/localisation/localisation#Side">Side</a> <sup class="type-c" title="class">c</sup>
+    <a href="#SideEnum" title="https://cdm.ovh/rsm/localisation/loca#SideEnum">Side</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>

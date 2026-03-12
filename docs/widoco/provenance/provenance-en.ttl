@@ -2,7 +2,7 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
-<https://cdm.ovh/rsm/localisation/1.0rc1/loca> a prov:Entity;
+<https://cdm.ovh/rsm/localisation/1.0rc3/loca> a prov:Entity;
 	 dc:title "Localisation";
 	 prov:wasAttributedTo :agent0;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
