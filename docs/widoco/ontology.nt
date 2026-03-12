@@ -415,14 +415,6 @@ _:genid15 <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/topolog
 # 
 # https://cdm.ovh/rsm/topology/topo#Navigability
 <https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
-_:genid16 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
-_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://cdm.ovh/rsm/topology/topo#fromPort> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
-_:genid17 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
-_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <https://cdm.ovh/rsm/topology/topo#toPort> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2000/01/rdf-schema#comment> "Note: non-navigability and connexity reification are not proposed here, assuming that:\n1. the authority lies with the properties (navigableTo, nonNavigableTo, connectedWith), and\n2. navigabilities as individuals are useful for further modelling (switches...), while non-navigabilities and connexities as individuals do not appear to be equally useful."@en .
 <https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2000/01/rdf-schema#comment> "Reified navigability relation. It is oriented (from port - to port); see navigableTo property for details."@en .
 <https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2000/01/rdf-schema#label> "Navigability"@en .
