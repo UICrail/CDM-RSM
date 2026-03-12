@@ -20,8 +20,8 @@
                                      dc:abstract "RSM topology provides fundamental railway network description, focused on connections and navigabilities between net elements. Net elements can be linear (embodied by lines or tracks) or non linear (embodied by stations, yards, or wider network areas). Geometry aspects are delegated to GeoSPARQL and are not essential to topology. Functional aspects (such as \"current switch setting\") also are not part of the topology."@en ;
                                      dc:contributor "Pierre Tane, UIC"@en ;
                                      dc:creator "Airy Magnien, UIC"@en ;
-                                     dc:date "11 March 2026"@en ;
-                                     dc:description """Full RSM topology. Connexities and Navigabilities as object properties only. Temporal aspects to be covered by annotations and/or named graphs and/or dul:Situations, or similar.
+                                     dc:date "12 March 2026"@en ;
+                                     dc:description """Full RSM topology. Connexities and Navigabilities as object properties . Additionally, navigability reification is included. Temporal aspects to be covered by annotations and/or named graphs and/or dul:Situations, or similar.
 
 Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
 
@@ -29,7 +29,7 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DnS Ultralite
                                      dc:title "RSM topology"@en ;
                                      dc:type "RDF/OWL ontology (using OWL2 RL profile)"@en ;
                                      dcterms:license "CC BY-SA 4.0"@en ;
-                                     owl:versionInfo "removed reified Connectivity and Navigability relations. Added property oppositePort as a property chain, and related properties."@en ;
+                                     owl:versionInfo "Reification limited to navigableTo property. Added property oppositePort as a property chain, and related properties."@en ;
                                      <https://vocab.org/vann/preferredNamespacePrefix> "topo" ;
                                      <https://vocab.org/vann/preferredNamespaceURI> "http://cdm.ovh/rsm/topology/topo#"@en .
 
@@ -102,6 +102,23 @@ topo:connectedWithTransitive rdf:type owl:ObjectProperty ,
                              skos:definition "transitive closure of connectedWith."@en .
 
 
+###  https://cdm.ovh/rsm/topology/topo#destinationOfNavigability
+topo:destinationOfNavigability rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf [ owl:inverseOf topo:toPort
+                                                  ] ;
+                               rdf:type owl:InverseFunctionalProperty ;
+                               rdfs:comment "destination of navigability"@en .
+
+
+###  https://cdm.ovh/rsm/topology/topo#fromPort
+topo:fromPort rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain topo:Navigability ;
+              rdfs:range topo:Port ;
+              rdfs:comment "Port from which the navigability relation starts: conventionally, the \"exit port\" from which a running train leaves a net element."@en ;
+              rdfs:label "from port"@en .
+
+
 ###  https://cdm.ovh/rsm/topology/topo#leadsTo
 topo:leadsTo rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf topo:leadsToTransitive ;
@@ -131,7 +148,6 @@ topo:leadsToTransitive rdf:type owl:ObjectProperty ,
 topo:navigableFrom rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf topo:navigableFromTransitive ;
                    owl:inverseOf topo:navigableTo ;
-                   owl:propertyDisjointWith topo:nonNavigableFrom ;
                    rdfs:label "navigable from"@en ;
                    skos:definition "inverse of navigable to"@en .
 
@@ -146,7 +162,9 @@ topo:navigableFromTransitive rdf:type owl:ObjectProperty ;
 ###  https://cdm.ovh/rsm/topology/topo#navigableTo
 topo:navigableTo rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf topo:navigableToTransitive ;
-                 owl:propertyDisjointWith topo:nonNavigableTo ;
+                 owl:propertyChainAxiom ( topo:originOfNavigability
+                                          topo:toPort
+                                        ) ;
                  rdfs:comment "Expresses the possibility, for a train movement, to leave a net element via an exit port and to navigate to another net element until another exit port. Navigation excludes reversal of travel direction, even if the reversal is allowed by operational rules (e.g. shunting mode, ...)."@en ;
                  rdfs:label "navigable to"@en .
 
@@ -191,6 +209,14 @@ topo:oppositePort rdf:type owl:ObjectProperty ,
                   rdfs:label "opposite port"@en .
 
 
+###  https://cdm.ovh/rsm/topology/topo#originOfNavigability
+topo:originOfNavigability rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf [ owl:inverseOf topo:fromPort
+                                             ] ;
+                          rdf:type owl:InverseFunctionalProperty ;
+                          rdfs:label "origin of navigability"@en .
+
+
 ###  https://cdm.ovh/rsm/topology/topo#port
 topo:port rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf [ owl:inverseOf topo:onElement
@@ -209,7 +235,6 @@ topo:port0 rdf:type owl:ObjectProperty ;
                               ] ;
            rdf:type owl:FunctionalProperty ,
                     owl:InverseFunctionalProperty ;
-           owl:propertyDisjointWith topo:port1 ;
            rdfs:label "port 0"@en ;
            skos:definition "First port of some net element that has, by definition, two ports. Allows to orient linear elements in space, even though linear elements may be completely symmetrical from a functional point of view. Orientation is conventional. Can also be used on non-linear elements, with undefined semantics."@en .
 
@@ -238,6 +263,15 @@ topo:port1onElement rdf:type owl:ObjectProperty ,
                              owl:FunctionalProperty ,
                              owl:InverseFunctionalProperty ;
                     rdfs:label "port1on element"@en .
+
+
+###  https://cdm.ovh/rsm/topology/topo#toPort
+topo:toPort rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain topo:Navigability ;
+            rdfs:range topo:Port ;
+            rdfs:comment "Designates the exit port a running train can reach on a net element. Note: the entry port on that element is provided by a connectedTo property."@en ;
+            rdfs:label "to port"@en .
 
 
 #################################################################
@@ -269,6 +303,23 @@ topo:ListedPort rdf:type owl:Class ;
                                 list:OWLList ;
                 rdfs:label "Listed port"@en ;
                 skos:definition "A port in an ordered list (with successors; no contents needed). Can be used to sort the ports of a non-linear net element (e.g. clockwise from northmost). See also OWLList ontology."@en .
+
+
+###  https://cdm.ovh/rsm/topology/topo#Navigability
+topo:Navigability rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty topo:fromPort ;
+                                    owl:someValuesFrom owl:Thing
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty topo:toPort ;
+                                    owl:someValuesFrom owl:Thing
+                                  ] ;
+                  rdfs:comment """Note: non-navigability and connexity reification are not proposed here, assuming that:
+1. the authority lies with the properties (navigableTo, nonNavigableTo, connectedWith), and
+2. navigabilities as individuals are useful for further modelling (switches...), while non-navigabilities and connexities as individuals do not appear to be equally useful."""@en ,
+                               "Reified navigability relation. It is oriented (from port - to port); see navigableTo property for details."@en ;
+                  rdfs:label "Navigability"@en .
 
 
 ###  https://cdm.ovh/rsm/topology/topo#NetElement
