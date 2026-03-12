@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://cdm.ovh/rsm/list2#"
-     xml:base="https://cdm.ovh/rsm/list2"
+<rdf:RDF xmlns="https://cdm.ovh/rsm/list/list#"
+     xml:base="https://cdm.ovh/rsm/list/list"
      xmlns:cc="http://creativecommons.org/ns#"
      xmlns:dce="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -11,8 +11,8 @@
      xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/">
-    <owl:Ontology rdf:about="https://cdm.ovh/rsm/list2">
-        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/list2/0.1/"/>
+    <owl:Ontology rdf:about="https://cdm.ovh/rsm/list/list">
+        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/list/0.1/"/>
         <cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
         <dce:creator>this version: Airy Magnien (amagnien@hotmail.fr)</dce:creator>
         <dce:date>12 March 2026</dce:date>
@@ -20,7 +20,7 @@
         <dce:language>en</dce:language>
         <dce:title xml:lang="en">List (modified)</dce:title>
         <vann:preferredNamespacePrefix>list</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri>https://cdm.ovh/rsm/list2</vann:preferredNamespaceUri>
+        <vann:preferredNamespaceUri>https://cdm.ovh/rsm/list/list</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This ontology is derived from the ontology developed by Pauwels &amp; Terkaj,  originally published by Drummond et al., with namespace http://www.co-ode.org/ontologies/lists/2008/09/11/list.owl# and available at web location http://owl.cs.manchester.ac.uk/wp-content/uploads/2015/07/list.owl_.txt on 11 December 2015.
 
 The main changes are OWL2 RL compliance and the changed handling of EmptyList, for which an individual is also provided.
@@ -109,40 +109,40 @@ The original terminology was kept.</rdfs:comment>
     
 
 
-    <!-- https://cdm.ovh/rsm/list2#hasContents -->
+    <!-- https://cdm.ovh/rsm/list/list#hasContents -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/list2#hasContents">
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/list2#hasListProperty"/>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/list/list#hasContents">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/list/list#hasListProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/list2#OWLList"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/list/list#OWLList"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/list2#hasListProperty -->
+    <!-- https://cdm.ovh/rsm/list/list#hasListProperty -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/list2#hasListProperty"/>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/list/list#hasListProperty"/>
     
 
 
-    <!-- https://cdm.ovh/rsm/list2#hasNext -->
+    <!-- https://cdm.ovh/rsm/list/list#hasNext -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/list2#hasNext">
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/list2#isFollowedBy"/>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/list/list#hasNext">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/list/list#isFollowedBy"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/list2#OWLList"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/list2#ListNode"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/list/list#OWLList"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/list/list#ListNode"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/list2#isFollowedBy -->
+    <!-- https://cdm.ovh/rsm/list/list#isFollowedBy -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/list2#isFollowedBy">
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/list2#hasListProperty"/>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/list/list#isFollowedBy">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/list/list#hasListProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/list2#OWLList"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/list2#ListNode"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/list/list#OWLList"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/list/list#ListNode"/>
     </owl:ObjectProperty>
     
 
@@ -158,25 +158,25 @@ The original terminology was kept.</rdfs:comment>
     
 
 
-    <!-- https://cdm.ovh/rsm/list2#EmptyList -->
+    <!-- https://cdm.ovh/rsm/list/list#EmptyList -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/list2#EmptyList">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/list2#ListNode"/>
-        <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/list2#OWLList"/>
+    <owl:Class rdf:about="https://cdm.ovh/rsm/list/list#EmptyList">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/list/list#ListNode"/>
+        <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/list/list#OWLList"/>
     </owl:Class>
     
 
 
-    <!-- https://cdm.ovh/rsm/list2#ListNode -->
+    <!-- https://cdm.ovh/rsm/list/list#ListNode -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/list2#ListNode"/>
+    <owl:Class rdf:about="https://cdm.ovh/rsm/list/list#ListNode"/>
     
 
 
-    <!-- https://cdm.ovh/rsm/list2#OWLList -->
+    <!-- https://cdm.ovh/rsm/list/list#OWLList -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/list2#OWLList">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/list2#ListNode"/>
+    <owl:Class rdf:about="https://cdm.ovh/rsm/list/list#OWLList">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/list/list#ListNode"/>
     </owl:Class>
     
 
@@ -192,10 +192,10 @@ The original terminology was kept.</rdfs:comment>
     
 
 
-    <!-- https://cdm.ovh/rsm/list2#emptyList -->
+    <!-- https://cdm.ovh/rsm/list/list#emptyList -->
 
-    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/list2#emptyList">
-        <rdf:type rdf:resource="https://cdm.ovh/rsm/list2#EmptyList"/>
+    <owl:NamedIndividual rdf:about="https://cdm.ovh/rsm/list/list#emptyList">
+        <rdf:type rdf:resource="https://cdm.ovh/rsm/list/list#EmptyList"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
