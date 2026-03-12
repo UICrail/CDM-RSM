@@ -481,26 +481,10 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topo#Navigability -->
-
-    <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#Navigability">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation"/>
-    </rdf:Description>
-    
-
-
     <!-- https://cdm.ovh/rsm/topology/topo#NetElement -->
 
     <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#NetElement">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"/>
-    </rdf:Description>
-    
-
-
-    <!-- https://cdm.ovh/rsm/topology/topo#NonNavigability -->
-
-    <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#NonNavigability">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation"/>
     </rdf:Description>
     
 
