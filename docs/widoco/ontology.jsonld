@@ -1,27 +1,97 @@
 [ {
-  "@id" : "_:genid1",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://cdm.ovh/rsm/topology/topo#toPort"
-  } ]
-}, {
-  "@id" : "_:genid12",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://cdm.ovh/rsm/topology/topo#fromPort"
-  } ]
-}, {
-  "@id" : "_:genid13",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://cdm.ovh/rsm/topology/topo#onElement"
-  } ]
-}, {
-  "@id" : "_:genid14",
+  "@id" : "_:genid10",
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#port0onElement"
   } ]
 }, {
-  "@id" : "_:genid15",
+  "@id" : "_:genid11",
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#port1onElement"
+  } ]
+}, {
+  "@id" : "_:genid12",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://qudt.org/vocab/quantitykind/Length"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://qudt.org/schema/qudt/quantityKind"
+  } ]
+}, {
+  "@id" : "_:genid13",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/list#OWLList"
+    }, {
+      "@id" : "_:genid15"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid15",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#complementOf" : [ {
+    "@id" : "_:genid16"
+  } ]
+}, {
+  "@id" : "_:genid16",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/list#hasContents"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ]
+}, {
+  "@id" : "_:genid18",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/list#OWLList"
+    }, {
+      "@id" : "_:genid20"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid20",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#complementOf" : [ {
+    "@id" : "_:genid21"
+  } ]
+}, {
+  "@id" : "_:genid21",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/list#isFollowedBy"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ]
+}, {
+  "@id" : "_:genid23",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/list#OWLList"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/list#isFollowedBy"
+  } ]
+}, {
+  "@id" : "_:genid24",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://cdm.ovh/rsm/localisation/loca#AreaLocation"
+    }, {
+      "@id" : "https://cdm.ovh/rsm/localisation/loca#LinearLocation"
+    }, {
+      "@id" : "https://cdm.ovh/rsm/localisation/loca#SpotLocation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid9",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/topology/topo#onElement"
   } ]
 }, {
   "@id" : "http://purl.org/dc/elements/1.1/abstract",
@@ -39,9 +109,6 @@
   "@id" : "http://purl.org/dc/elements/1.1/description",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://purl.org/dc/elements/1.1/source",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
   "@id" : "http://purl.org/dc/elements/1.1/title",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -51,273 +118,503 @@
   "@id" : "http://purl.org/dc/terms/license",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://www.opengis.net/ont/geosparql#Feature",
+  "@id" : "http://qudt.org/schema/qudt/QuantityValue",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "http://www.opengis.net/ont/geosparql#Geometry",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@id" : "http://qudt.org/schema/qudt/hasQuantityValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 }, {
-  "@id" : "http://www.opengis.net/ont/geosparql#SpatialObject",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@id" : "http://qudt.org/schema/qudt/quantityKind",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 }, {
-  "@id" : "http://www.opengis.net/ont/geosparql#hasDefaultGeometry",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#hasGeometry"
-  } ]
-}, {
-  "@id" : "http://www.opengis.net/ont/geosparql#hasGeometry",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "hasGeometry"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#Geometry"
-  } ]
-}, {
-  "@id" : "http://www.opengis.net/ont/geosparql#hasMetricLength",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#SpatialObject"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#double"
-  } ]
-}, {
-  "@id" : "http://www.w3.org/2001/XMLSchema#double",
+  "@id" : "http://www.w3.org/2001/XMLSchema#float",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
 }, {
   "@id" : "http://www.w3.org/2004/02/skos/core#definition",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
   "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Feature"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.opengis.net/ont/geosparql#Feature"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "A discrete spatial phenomenon in the CDM universe of discourse."
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://purl.org/dc/elements/1.1/source" : [ {
-    "@language" : "en",
-    "@value" : "OGC 18-010r11"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The reference system can be geographic, geodetic, cartesian (e.g. engineering coordinate system), and its definition may be part of the WKT or GML string. See OGC documentation."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Geometry"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.opengis.net/ont/geosparql#Geometry"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."
-  } ],
-  "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
-    "@language" : "en",
-    "@value" : "Geometry"
-  } ]
-}, {
-  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "\" Abstract\"  class, introduced solely for the purpose of defining the domain of hasMetricLength in an OWL2-RL compatible way."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Linear things"
-  } ]
-}, {
-  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "GeoSPARQL does not define this inverse property."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "geometry of"
-  } ],
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "inverse of hasGeometry"
-  } ]
-}, {
-  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has geometry"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#hasGeometry"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "A spatial representation for a given Feature. As in GeoSPARQL, a feature can be associated with more than one geometry (valid at different times, or provided by different surveys...)."
-  } ]
-}, {
-  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has metric length"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#double"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#hasMetricLength"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "Length (in meter) of a Linear Element."
-  } ]
-}, {
-  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has nominal geometry"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.opengis.net/ont/geosparql#hasDefaultGeometry"
-  }, {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry"
-  } ],
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@language" : "en",
-    "@value" : "The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry. Takes into account SOSA/SSN viewpoint, i.e. there can be more than one default geometry (e.g. valid at different times)."
-  } ]
-}, {
-  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://cdm.ovh/rsm/topology/topology#LinearElement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has nominal metric length"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#double"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#definition" : [ {
-    "@value" : "This length is assumed to be derived from the chosen Nominal Geometry.\n\nThe Nominal Metric Length is supposed to be used for conversions between linear referencing methods \"absolute\" (distance along, e.g. used in CCS/TMS data model) and \"interpolation\" (intrinsic coordinates, with values 0 to 1, used in RSM and others)."
-  } ]
-}, {
-  "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "nominal geometry of"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://cdm.ovh/rsm/localisation/localisation#BaseLocation",
+  "@id" : "https://cdm.ovh/rsm/localisation/loca",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/elements/1.1/abstract" : [ {
+    "@language" : "en",
+    "@value" : "This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.\n\nFor ordering things, this ontology uses the List ontology published by Pieter Pauwels and Walter Terkaj. The List ontology also underpins the ifcOWL ontology by the same authors.\n\nFor spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical."
+  } ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Airy Magnien"
+  } ],
+  "http://purl.org/dc/elements/1.1/date" : [ {
+    "@language" : "en",
+    "@value" : "12 February 2026"
+  } ],
+  "http://purl.org/dc/elements/1.1/title" : [ {
+    "@language" : "en",
+    "@value" : "Localisation"
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@language" : "en",
+    "@value" : "EUPL 1.2"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Added generic \"location\"  property. Corrected prefixes."
+  }, {
+    "@language" : "en",
+    "@value" : "Left for future work:\n1 - using intrinsic coordinates in a more explicit way (formal references to GeoSPARQL and to ISO 19148, possibly via IFC or DATEX classes). This would entail the replacement of data properties (atIntrinsicCoordinate, startAt, endAt) by object properties. Whether this is worthwhile is a matter for debate.\n2 - offsets were lateral in earlier versions (up to RSM 1.2), and are now generalized to tangential and vertical, effectively defining a 3-axis local coordinate system. Explicitly defining a local cartesian coordinate system would be a conceptual simplification and could make use of IFC classes."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Localisation"
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "https://cdm.ovh/rsm/topology/topo"
+  }, {
+    "@id" : "https://w3id.org/list"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/1.0rc3/loca"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "1.0rc3"
+  } ],
+  "https://vocab.org/vann/preferredNamespacePrefix" : [ {
+    "@value" : "loca"
+  } ],
+  "https://vocab.org/vann/preferredNamespaceURI" : [ {
+    "@value" : "https://cdm.ovh/rsm/localisation/loca"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#AreaLocation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Area location"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#BaseLocation"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The class of all locations that are neither spot, nor linear. Concrete examples: the location of a GSM coverage area (i.e. the parts of topology elements that are in this area); a set of discontinuous or branching linear locations. An area location refers to a set of topology elements, or element parts: no order, no repetition."
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#BaseLocation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Base location"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Class of all locations relative to a topology. Disjoint union of its three subclasses (spot-, linear-, area location)."
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#Bottom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#SideEnum"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Under"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Linear element associated with positions along the element (property atIntrinsicCoordinate) or start and end boundaries (properties startAt and endAt)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Bounded linear element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/topology/topology#LinearElement"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#Front",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#SideEnum"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Front"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#Left",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#SideEnum"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Left"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#LinearLocation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Linear location"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#BaseLocation"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Location extending over consecutive linear elements or parts thereof. The involved linear elements are in a sequence (ordered list, with repetitions allowed). Each linear element in the sequence is oriented from start to end. Start and end may coincide with extremities or some point in between."
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#ListedLinearElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement"
+  }, {
+    "@id" : "https://w3id.org/list#OWLList"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#ListedNetElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Listed Net Element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/topology/topology#NetElement"
+  }, {
+    "@id" : "https://w3id.org/list#OWLList"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Linked list of all net elements (or parts of linear elements) constituting a location. A subclass of OWL List: this is a class from a vocabulary also used by IfcOwl.\nIn the present case, the order of elements in the list is user-defined and has no universal semantics.\nRepetition is allowed, but should be avoided as it has no meaning in the case of non-linear locations.\nLinear elements are referred to as a whole. If only part of a linear element is included in the location, use a LinearElementList individual.\nOrientation of each linear element (or part thereof) is described by startsAt and endsAt properties."
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#LocatedNetElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Located net element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/topology/topology#NetElement"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Net element defined by its location on other net elements. Used for compositing, in lieu of the composite pattern in versions of topology before 1.0rc2."
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#OffsetValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Offset value"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
+  }, {
+    "@id" : "_:genid12"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#Rear",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#SideEnum"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Behind"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#Right",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#SideEnum"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Right"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#SideEnum",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Front, Rear, Left, and Right orientation are relative to the orientation of the linear element (from node 0 to node 1).\nOver and Under are relative to the geometric or geographic vertical."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Side"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#SpotLocation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Spot location"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#BaseLocation"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Class of all spot locations, i.e. locations that can be represented as a point on a map or schema. The spot location can relate to one or more net elements (concrete example: the location of a signal that addresses two converging tracks)."
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#Top",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#SideEnum"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Over"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#applicationDirection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://cdm.ovh/rsm/topology/topology#LinearElement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "application direction"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#SideEnum"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Allows to express the direction of travel for which the localized entity is relevant. Example: a signal generally applies to one travel direction; track occupancy detection systems may be oriented, etc.\nDirection of travel is expressed relative to the orientation of the linear element, from port 0 to port 1, or intrinsic coordinate 0 to 1. It is NOT expressed with respect to \"normal travel direction in operations\"."
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#associatedLinearElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#LinearLocation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "associated linear element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#ListedLinearElement"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#associatedNetElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#AreaLocation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "net element list"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#ListedNetElement"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Property pointing to all net elements (or parts thereof) that describe the area location.\nNote: the user may target ListedNetElement individuals (a subclass of BoundedNetElement) and define an order, for whatever purpose."
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "at intrinsic coordinate"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#elementLocation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Provides the location(s) of a located net element. Locations may be representation- and time-dependent, so the property is not a functional property (in the sense of RDF/OWL)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#LocatedNetElement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "element Location"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#BaseLocation"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#endAt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "cardinality \"exactly one value\" to be enforced via SHACL shape"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "end at"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Property defining the end point of a linear location on the linear element that is referred to.\nSee definition of startsAt for more explanations."
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#lateralOffset",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "lateral offset"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#offset"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "offset of location (usually: spot location) with respect to a perpendicular to the linear element, in the horizontal plane (not: track plane). Is positive when on the left and negative on the right (in order to respect the conventional orientation of cartesian reference systems, where X is the longitudinal axis, Y the transversal, and Z the vertical)."
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#location",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Generic property assigning some location to a Thing."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "location"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#BaseLocation"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#offset",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "definitely not functional, to cope with the fact that values may be multiple (specified, observed...).\ndefinitely inverse functional, because values characterize a location relative to exactly one linear element. \"Exactly\" however is left for SHACL shapes (not in RL profile)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://cdm.ovh/rsm/topology/topology#LinearElement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "offset"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#OffsetValue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://qudt.org/schema/qudt/hasQuantityValue"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#onLinearElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "provides the linear element(s) that define a spot location. There can be several linear elements involved: think of a signal adderessing two adjacent tracks."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#SpotLocation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "on linear element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#side",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "consistency with lateral offset sign to be verified by SHACL shapes."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://cdm.ovh/rsm/topology/topology#LinearElement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "side"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#SideEnum"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "side of the linear element on which the location (usually a spot location) is situated.\nThe orientation of the linear element is its own intrinsic orientation, from port 0 to port 1 (or intrinsic coordinate 0 to intrinsic coordinate 1)."
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#startAt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "cardinality \"exactly one value\" to be enforced via SHACL shape"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "start at"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Property defining the start position of a linear location on the linear element that is referred to.\nThe value is an intrinsic coordinate (float; permissible range = [0,1]). The intrinsic coordinate is defined by the default geometry of the associated linear element (see GeoSPARQL adapter), using linear referencing method \"interpolation\" according to ISO 19148."
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#tangentialOffset",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "tangential offset"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#offset"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/loca#verticalOffset",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "vertical offset"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://cdm.ovh/rsm/localisation/loca#offset"
+  } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/localisation/localisation#BaseLocation",
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/localisation/localisation#LinearLocation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"
   }, {
     "@id" : "https://cdm.ovh/rsm/localisation/localisation#BaseLocation"
-  } ]
-}, {
-  "@id" : "https://cdm.ovh/rsm/topology/topo",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
-  "http://purl.org/dc/elements/1.1/abstract" : [ {
-    "@language" : "en",
-    "@value" : "RSM topology provides fundamental railway network description, focused on connections and navigabilities between net elements. Net elements can be linear (embodied by lines or tracks) or non linear (embodied by stations, yards, or wider network areas). Geometry aspects are delegated to GeoSPARQL and are not essential to topology. Functional aspects (such as \"current switch setting\") also are not part of the topology."
-  } ],
-  "http://purl.org/dc/elements/1.1/contributor" : [ {
-    "@language" : "en",
-    "@value" : "Pierre Tane, UIC"
-  } ],
-  "http://purl.org/dc/elements/1.1/creator" : [ {
-    "@language" : "en",
-    "@value" : "Airy Magnien, UIC"
-  } ],
-  "http://purl.org/dc/elements/1.1/date" : [ {
-    "@language" : "en",
-    "@value" : "12 March 2026"
-  } ],
-  "http://purl.org/dc/elements/1.1/description" : [ {
-    "@language" : "en",
-    "@value" : "Full RSM topology. Connexities and Navigabilities as object properties . Additionally, navigability reification is included. Temporal aspects to be covered by annotations and/or named graphs and/or dul:Situations, or similar.\n\nSyntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.\n\nTemporality to be expressed using an upper ontology, such as DOLCE+DnS Ultralite that is used by other RSM ontologies."
-  } ],
-  "http://purl.org/dc/elements/1.1/title" : [ {
-    "@language" : "en",
-    "@value" : "RSM topology"
-  } ],
-  "http://purl.org/dc/elements/1.1/type" : [ {
-    "@language" : "en",
-    "@value" : "RDF/OWL ontology (using OWL2 RL profile)"
-  } ],
-  "http://purl.org/dc/terms/license" : [ {
-    "@language" : "en",
-    "@value" : "CC BY-SA 4.0"
-  } ],
-  "http://www.w3.org/2002/07/owl#imports" : [ {
-    "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad"
-  } ],
-  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://cdm.ovh/rsm/topology/1.0rc7/topo"
-  } ],
-  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@language" : "en",
-    "@value" : "Reification limited to navigableTo property. Added property oppositePort as a property chain, and related properties."
-  } ],
-  "https://vocab.org/vann/preferredNamespacePrefix" : [ {
-    "@value" : "topo"
-  } ],
-  "https://vocab.org/vann/preferredNamespaceURI" : [ {
-    "@language" : "en",
-    "@value" : "http://cdm.ovh/rsm/topology/topo#"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#BoundaryElement",
@@ -365,20 +662,6 @@
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "A port in an ordered list (with successors; no contents needed). Can be used to sort the ports of a non-linear net element (e.g. clockwise from northmost). See also OWLList ontology."
-  } ]
-}, {
-  "@id" : "https://cdm.ovh/rsm/topology/topo#Navigability",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Note: non-navigability and connexity reification are not proposed here, assuming that:\n1. the authority lies with the properties (navigableTo, nonNavigableTo, connectedWith), and\n2. navigabilities as individuals are useful for further modelling (switches...), while non-navigabilities and connexities as individuals do not appear to be equally useful."
-  }, {
-    "@language" : "en",
-    "@value" : "Reified navigability relation. It is oriented (from port - to port); see navigableTo property for details."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Navigability"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#NetElement",
@@ -456,33 +739,6 @@
     "@value" : "transitive closure of connectedWith."
   } ]
 }, {
-  "@id" : "https://cdm.ovh/rsm/topology/topo#destinationOfNavigability",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "destination of navigability"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "_:genid1"
-  } ]
-}, {
-  "@id" : "https://cdm.ovh/rsm/topology/topo#fromPort",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Port from which the navigability relation starts: conventionally, the \"exit port\" from which a running train leaves a net element."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://cdm.ovh/rsm/topology/topo#Navigability"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "from port"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cdm.ovh/rsm/topology/topo#Port"
-  } ]
-}, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#leadsTo",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
@@ -548,6 +804,9 @@
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#navigableTo"
   } ],
+  "http://www.w3.org/2002/07/owl#propertyDisjointWith" : [ {
+    "@id" : "https://cdm.ovh/rsm/topology/topo#nonNavigableFrom"
+  } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "inverse of navigable to"
@@ -580,12 +839,8 @@
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#navigableToTransitive"
   } ],
-  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
-    "@list" : [ {
-      "@id" : "https://cdm.ovh/rsm/topology/topo#originOfNavigability"
-    }, {
-      "@id" : "https://cdm.ovh/rsm/topology/topo#toPort"
-    } ]
+  "http://www.w3.org/2002/07/owl#propertyDisjointWith" : [ {
+    "@id" : "https://cdm.ovh/rsm/topology/topo#nonNavigableTo"
   } ]
 }, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#navigableToTransitive",
@@ -661,16 +916,6 @@
     } ]
   } ]
 }, {
-  "@id" : "https://cdm.ovh/rsm/topology/topo#originOfNavigability",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "origin of navigability"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "_:genid12"
-  } ]
-}, {
   "@id" : "https://cdm.ovh/rsm/topology/topo#port",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#InverseFunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -684,7 +929,7 @@
     "@id" : "https://cdm.ovh/rsm/topology/topo#Port"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "_:genid13"
+    "@id" : "_:genid9"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -700,7 +945,10 @@
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#port"
   }, {
-    "@id" : "_:genid14"
+    "@id" : "_:genid10"
+  } ],
+  "http://www.w3.org/2002/07/owl#propertyDisjointWith" : [ {
+    "@id" : "https://cdm.ovh/rsm/topology/topo#port1"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -725,7 +973,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://cdm.ovh/rsm/topology/topo#port"
   }, {
-    "@id" : "_:genid15"
+    "@id" : "_:genid11"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
@@ -739,28 +987,17 @@
     "@value" : "port1on element"
   } ]
 }, {
-  "@id" : "https://cdm.ovh/rsm/topology/topo#toPort",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Designates the exit port a running train can reach on a net element. Note: the entry port on that element is provided by a connectedTo property."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://cdm.ovh/rsm/topology/topo#Navigability"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "to port"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://cdm.ovh/rsm/topology/topo#Port"
-  } ]
-}, {
   "@id" : "https://cdm.ovh/rsm/topology/topology#LinearElement",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"
   } ]
+}, {
+  "@id" : "https://cdm.ovh/rsm/topology/topology#NetElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://qudt.org/vocab/quantitykind/Length",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "https://vocab.org/vann/preferredNamespacePrefix",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
@@ -768,6 +1005,53 @@
   "@id" : "https://vocab.org/vann/preferredNamespaceURI",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "https://w3id.org/list#EmptyList",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/list#OWLList"
+  } ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid13"
+  }, {
+    "@id" : "_:genid18"
+  } ]
+}, {
   "@id" : "https://w3id.org/list#OWLList",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "OWLList is used to represent linked lists. Instances of OWLList are list elements; they have at most one direct successor (the value of property hasNext)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  }, {
+    "@id" : "_:genid23"
+  } ]
+}, {
+  "@id" : "https://w3id.org/list#hasContents",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/list#hasListProperty"
+  } ]
+}, {
+  "@id" : "https://w3id.org/list#hasListProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/list#OWLList"
+  } ]
+}, {
+  "@id" : "https://w3id.org/list#hasNext",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/list#isFollowedBy"
+  } ]
+}, {
+  "@id" : "https://w3id.org/list#isFollowedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/list#OWLList"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/list#hasListProperty"
+  } ]
 } ]

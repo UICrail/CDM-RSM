@@ -2,160 +2,476 @@
   "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
   "header" : {
     "languages" : [ "en", "undefined" ],
-    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://cdm.ovh/rsm/localisation/localisation", "https://cdm.ovh/rsm/topology/topology", "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad", "http://www.w3.org/2000/01/rdf-schema", "https://cdm.ovh/rsm/topology/topo", "https://w3id.org/list", "http://www.w3.org/2001/XMLSchema", "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter", "http://www.opengis.net/ont/geosparql" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://qudt.org/vocab/quantitykind", "https://cdm.ovh/rsm/localisation/localisation", "http://qudt.org/schema/qudt", "https://cdm.ovh/rsm/localisation/loca", "http://www.w3.org/2001/XMLSchema", "https://cdm.ovh/rsm/topology/topology", "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad", "http://www.w3.org/2000/01/rdf-schema", "https://cdm.ovh/rsm/topology/topo", "https://w3id.org/list", "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter", "http://www.opengis.net/ont/geosparql" ],
     "title" : {
-      "en" : "RSM topology"
+      "en" : "Localisation"
     },
-    "iri" : "https://cdm.ovh/rsm/topology/topo",
-    "version" : "Reification limited to navigableTo property. Added property oppositePort as a property chain, and related properties.",
-    "author" : [ "Airy Magnien, UIC" ],
-    "description" : {
-      "en" : "Full RSM topology. Connexities and Navigabilities as object properties . Additionally, navigability reification is included. Temporal aspects to be covered by annotations and/or named graphs and/or dul:Situations, or similar.\n\nSyntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.\n\nTemporality to be expressed using an upper ontology, such as DOLCE+DnS Ultralite that is used by other RSM ontologies."
+    "iri" : "https://cdm.ovh/rsm/localisation/loca",
+    "version" : "1.0rc3",
+    "author" : [ "Airy Magnien" ],
+    "labels" : {
+      "en" : "Localisation"
+    },
+    "comments" : {
+      "en" : "Left for future work:\n1 - using intrinsic coordinates in a more explicit way (formal references to GeoSPARQL and to ISO 19148, possibly via IFC or DATEX classes). This would entail the replacement of data properties (atIntrinsicCoordinate, startAt, endAt) by object properties. Whether this is worthwhile is a matter for debate.\n2 - offsets were lateral in earlier versions (up to RSM 1.2), and are now generalized to tangential and vertical, effectively defining a 3-axis local coordinate system. Explicitly defining a local cartesian coordinate system would be a conceptual simplification and could make use of IFC classes."
     },
     "other" : {
       "date" : [ {
         "identifier" : "date",
         "language" : "en",
-        "value" : "12 March 2026",
+        "value" : "12 February 2026",
         "type" : "label"
       } ],
       "license" : [ {
         "identifier" : "license",
         "language" : "en",
-        "value" : "CC BY-SA 4.0",
+        "value" : "EUPL 1.2",
         "type" : "label"
       } ],
       "creator" : [ {
         "identifier" : "creator",
-        "language" : "en",
-        "value" : "Airy Magnien, UIC",
-        "type" : "label"
-      } ],
-      "contributor" : [ {
-        "identifier" : "contributor",
-        "language" : "en",
-        "value" : "Pierre Tane, UIC",
+        "language" : "undefined",
+        "value" : "Airy Magnien",
         "type" : "label"
       } ],
       "preferredNamespacePrefix" : [ {
         "identifier" : "preferredNamespacePrefix",
         "language" : "undefined",
-        "value" : "topo",
+        "value" : "loca",
         "type" : "label"
       } ],
       "abstract" : [ {
         "identifier" : "abstract",
         "language" : "en",
-        "value" : "RSM topology provides fundamental railway network description, focused on connections and navigabilities between net elements. Net elements can be linear (embodied by lines or tracks) or non linear (embodied by stations, yards, or wider network areas). Geometry aspects are delegated to GeoSPARQL and are not essential to topology. Functional aspects (such as \"current switch setting\") also are not part of the topology.",
+        "value" : "This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.\n\nFor ordering things, this ontology uses the List ontology published by Pieter Pauwels and Walter Terkaj. The List ontology also underpins the ifcOWL ontology by the same authors.\n\nFor spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical.",
         "type" : "label"
       } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
-        "language" : "en",
-        "value" : "Reification limited to navigableTo property. Added property oppositePort as a property chain, and related properties.",
+        "language" : "undefined",
+        "value" : "1.0rc3",
         "type" : "label"
       } ],
       "preferredNamespaceURI" : [ {
         "identifier" : "preferredNamespaceURI",
-        "language" : "en",
-        "value" : "http://cdm.ovh/rsm/topology/topo#",
-        "type" : "label"
-      } ],
-      "type" : [ {
-        "identifier" : "type",
-        "language" : "en",
-        "value" : "RDF/OWL ontology (using OWL2 RL profile)",
+        "language" : "undefined",
+        "value" : "https://cdm.ovh/rsm/localisation/loca",
         "type" : "label"
       } ],
       "title" : [ {
         "identifier" : "title",
         "language" : "en",
-        "value" : "RSM topology",
+        "value" : "Localisation",
         "type" : "label"
       } ]
     }
   },
   "namespace" : [ ],
   "class" : [ {
-    "id" : "4",
-    "type" : "owl:Class"
-  }, {
-    "id" : "7",
-    "type" : "owl:Class"
-  }, {
-    "id" : "10",
-    "type" : "owl:Class"
-  }, {
-    "id" : "17",
+    "id" : "3",
     "type" : "owl:Class"
   }, {
     "id" : "8",
     "type" : "owl:Class"
   }, {
-    "id" : "30",
+    "id" : "14",
     "type" : "owl:Class"
   }, {
-    "id" : "9",
+    "id" : "50",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "47",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "52",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "36",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "53",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "42",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "21",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "55",
     "type" : "owl:Class"
   }, {
-    "id" : "33",
+    "id" : "5",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "45",
+    "type" : "owl:Class"
+  }, {
+    "id" : "38",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "41",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
     "type" : "owl:Class"
   }, {
     "id" : "1",
     "type" : "owl:Class"
   }, {
+    "id" : "71",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
     "id" : "32",
     "type" : "owl:Class"
   }, {
-    "id" : "50",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "52",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "53",
-    "type" : "rdfs:Datatype"
-  }, {
     "id" : "12",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "21",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "35",
     "type" : "owl:Class"
   }, {
-    "id" : "40",
-    "type" : "owl:Class"
-  }, {
-    "id" : "5",
-    "type" : "owl:Class"
-  }, {
-    "id" : "6",
-    "type" : "owl:Class"
-  }, {
-    "id" : "39",
-    "type" : "owl:Class"
-  }, {
-    "id" : "20",
+    "id" : "43",
     "type" : "owl:Class"
   }, {
     "id" : "2",
     "type" : "owl:Class"
   }, {
-    "id" : "18",
+    "id" : "74",
+    "type" : "owl:Class"
+  }, {
+    "id" : "83",
+    "type" : "owl:Class"
+  }, {
+    "id" : "92",
+    "type" : "owl:Class"
+  }, {
+    "id" : "103",
+    "type" : "owl:Class"
+  }, {
+    "id" : "91",
+    "type" : "owl:Class"
+  }, {
+    "id" : "87",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "75",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "66",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "99",
+    "type" : "owl:Class"
+  }, {
+    "id" : "77",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "72",
+    "type" : "owl:Class"
+  }, {
+    "id" : "65",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
+    "iri" : "http://www.opengis.net/ont/geosparql#SpatialObject",
+    "baseIri" : "http://www.opengis.net/ont/geosparql",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SpatialObject"
+    },
+    "attributes" : [ "external" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#LocatedNetElement",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Net element defined by its location on other net elements. Used for compositing, in lieu of the composite pattern in versions of topology before 1.0rc2.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "LocatedNetElement",
+      "en" : "Located net element"
+    },
+    "id" : "8",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/localisation#BaseLocation",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/localisation",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BaseLocation"
+    },
+    "subClasses" : [ "43" ],
+    "attributes" : [ "external" ],
+    "id" : "14",
+    "superClasses" : [ "15" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "50",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "47",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "52",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "https://w3id.org/list#EmptyList",
+    "baseIri" : "https://w3id.org/list",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EmptyList"
+    },
+    "intersection" : [ "27" ],
+    "attributes" : [ "intersection", "external" ],
+    "id" : "36",
+    "superClasses" : [ "27" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "53",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "42",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "21",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#LinearLocation",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Location extending over consecutive linear elements or parts thereof. The involved linear elements are in a sequence (ordered list, with repetitions allowed). Each linear element in the sequence is oriented from start to end. Start and end may coincide with extremities or some point in between.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "LinearLocation",
+      "en" : "Linear location"
+    },
+    "id" : "55",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "5",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.opengis.net/ont/geosparql#Feature",
+    "baseIri" : "http://www.opengis.net/ont/geosparql",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Feature"
+    },
+    "subClasses" : [ "15" ],
+    "attributes" : [ "external" ],
+    "id" : "45"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#ListedLinearElement",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ListedLinearElement"
+    },
+    "id" : "38",
+    "superClasses" : [ "27", "41" ]
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#SpotLocation",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Class of all spot locations, i.e. locations that can be represented as a point on a map or schema. The spot location can relate to one or more net elements (concrete example: the location of a signal that addresses two converging tracks).",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "SpotLocation",
+      "en" : "Spot location"
+    },
+    "id" : "7",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BoundedLinearElement",
+      "en" : "Bounded linear element"
+    },
+    "subClasses" : [ "38" ],
+    "comment" : {
+      "en" : "Linear element associated with positions along the element (property atIntrinsicCoordinate) or start and end boundaries (properties startAt and endAt)."
+    },
+    "id" : "41",
+    "superClasses" : [ "65" ]
+  }, {
+    "iri" : "https://w3id.org/list#OWLList",
+    "baseIri" : "https://w3id.org/list",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "OWLList"
+    },
+    "subClasses" : [ "32", "17", "38", "36" ],
+    "comment" : {
+      "en" : "OWLList is used to represent linked lists. Instances of OWLList are list elements; they have at most one direct successor (the value of property hasNext)."
+    },
+    "attributes" : [ "external" ],
+    "id" : "27"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/topology/topo#Port",
+    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Any place, at the boundary of a net element, that can be an entry and/or exit point for rolling stock. In the case of linear elements, there are exactly two ports. In the case of a loop, the two ports of the loop ports coincide geographically (but for some tolerances) but remain distinct individuals, allowing to orient the loop if need be.",
+        "type" : "label"
+      }, {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Any place, at the boundary of a net element, that can be an entry and/or exit point for rolling stock. In the case of linear elements, there are exactly two ports. In the case of a loop, the two ports of the loop ports coincide geographically (but for some tolerances) but remain distinct individuals, allowing to orient the loop if need be.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Port",
+      "undefined" : "Port"
+    },
+    "subClasses" : [ "17" ],
+    "attributes" : [ "external" ],
+    "id" : "18",
+    "superClasses" : [ "12" ]
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#AreaLocation",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "The class of all locations that are neither spot, nor linear. Concrete examples: the location of a GSM coverage area (i.e. the parts of topology elements that are in this area); a set of discontinuous or branching linear locations. An area location refers to a set of topology elements, or element parts: no order, no repetition.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "AreaLocation",
+      "en" : "Area location"
+    },
+    "id" : "1",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#OffsetValue",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "OffsetValue",
+      "en" : "Offset value"
+    },
+    "id" : "71",
+    "superClasses" : [ "72" ]
+  }, {
+    "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature",
+    "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A discrete spatial phenomenon in the CDM universe of discourse.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Feature",
+      "en" : "Feature"
+    },
+    "subClasses" : [ "14" ],
+    "attributes" : [ "external" ],
+    "id" : "15",
+    "superClasses" : [ "45" ]
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#ListedNetElement",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Linked list of all net elements (or parts of linear elements) constituting a location. A subclass of OWL List: this is a class from a vocabulary also used by IfcOwl.\nIn the present case, the order of elements in the list is user-defined and has no universal semantics.\nRepetition is allowed, but should be avoided as it has no meaning in the case of non-linear locations.\nLinear elements are referred to as a whole. If only part of a linear element is included in the location, use a LinearElementList individual.\nOrientation of each linear element (or part thereof) is described by startsAt and endsAt properties.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ListedNetElement",
+      "en" : "Listed Net Element"
+    },
+    "id" : "32",
+    "superClasses" : [ "9", "27" ]
+  }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature",
     "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter",
     "instances" : 0,
     "label" : {
       "IRI-based" : "Feature"
     },
-    "subClasses" : [ "5", "6" ],
+    "subClasses" : [ "2", "18", "11" ],
     "attributes" : [ "external" ],
-    "id" : "4"
+    "id" : "12"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/localisation#LinearLocation",
     "baseIri" : "https://cdm.ovh/rsm/localisation/localisation",
@@ -164,29 +480,27 @@
       "IRI-based" : "LinearLocation"
     },
     "attributes" : [ "external" ],
-    "id" : "7",
-    "superClasses" : [ "8", "9" ]
+    "id" : "43",
+    "superClasses" : [ "74", "14" ]
   }, {
-    "iri" : "http://www.opengis.net/ont/geosparql#SpatialObject",
-    "baseIri" : "http://www.opengis.net/ont/geosparql",
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#BaseLocation",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
     "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Class of all locations relative to a topology. Disjoint union of its three subclasses (spot-, linear-, area location).",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "SpatialObject"
+      "IRI-based" : "BaseLocation",
+      "en" : "Base location"
     },
-    "attributes" : [ "external" ],
-    "id" : "10"
-  }, {
-    "iri" : "https://cdm.ovh/rsm/topology/topo#Navigability",
-    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Navigability",
-      "en" : "Navigability"
-    },
-    "comment" : {
-      "en" : "Note: non-navigability and connexity reification are not proposed here, assuming that:\n1. the authority lies with the properties (navigableTo, nonNavigableTo, connectedWith), and\n2. navigabilities as individuals are useful for further modelling (switches...), while non-navigabilities and connexities as individuals do not appear to be equally useful."
-    },
-    "id" : "17"
+    "subClasses" : [ "7", "1", "55" ],
+    "id" : "2",
+    "superClasses" : [ "12" ]
   }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings",
     "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad",
@@ -195,12 +509,12 @@
       "IRI-based" : "LinearThings",
       "en" : "Linear things"
     },
-    "subClasses" : [ "7", "18" ],
+    "subClasses" : [ "43", "65" ],
     "comment" : {
       "en" : "\" Abstract\"  class, introduced solely for the purpose of defining the domain of hasMetricLength in an OWL2-RL compatible way."
     },
     "attributes" : [ "external" ],
-    "id" : "8"
+    "id" : "74"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#NonlinearElement",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
@@ -211,25 +525,20 @@
         "language" : "en",
         "value" : "Net element with any number of ports except two. Used for expressing connexities and navigabilities from or to a complex network area (e.g. a yard or a station).",
         "type" : "label"
+      }, {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Net element with any number of ports except two. Used for expressing connexities and navigabilities from or to a complex network area (e.g. a yard or a station).",
+        "type" : "label"
       } ]
     },
     "label" : {
       "IRI-based" : "NonlinearElement",
       "en" : "Nonlinear element"
     },
-    "id" : "30",
-    "superClasses" : [ "6" ]
-  }, {
-    "iri" : "https://cdm.ovh/rsm/localisation/localisation#BaseLocation",
-    "baseIri" : "https://cdm.ovh/rsm/localisation/localisation",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "BaseLocation"
-    },
-    "subClasses" : [ "7" ],
     "attributes" : [ "external" ],
-    "id" : "9",
-    "superClasses" : [ "2" ]
+    "id" : "83",
+    "superClasses" : [ "11" ]
   }, {
     "iri" : "http://www.opengis.net/ont/geosparql#Geometry",
     "baseIri" : "http://www.opengis.net/ont/geosparql",
@@ -237,9 +546,18 @@
     "label" : {
       "IRI-based" : "Geometry"
     },
-    "subClasses" : [ "1" ],
+    "subClasses" : [ "91" ],
     "attributes" : [ "external" ],
-    "id" : "33"
+    "id" : "92"
+  }, {
+    "iri" : "https://qudt.org/vocab/quantitykind/Length",
+    "baseIri" : "https://qudt.org/vocab/quantitykind",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Length"
+    },
+    "attributes" : [ "external" ],
+    "id" : "103"
   }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry",
     "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad",
@@ -250,29 +568,14 @@
         "language" : "en",
         "value" : "Geometry",
         "type" : "label"
-      }, {
-        "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "Geometry",
-        "type" : "label"
       } ],
       "definition" : [ {
         "identifier" : "definition",
         "language" : "en",
         "value" : "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS).",
         "type" : "label"
-      }, {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS).",
-        "type" : "label"
       } ],
       "source" : [ {
-        "identifier" : "source",
-        "language" : "en",
-        "value" : "OGC 18-010r11",
-        "type" : "label"
-      }, {
         "identifier" : "source",
         "language" : "en",
         "value" : "OGC 18-010r11",
@@ -287,53 +590,84 @@
       "en" : "The reference system can be geographic, geodetic, cartesian (e.g. engineering coordinate system), and its definition may be part of the WKT or GML string. See OGC documentation."
     },
     "attributes" : [ "external" ],
-    "id" : "1",
-    "superClasses" : [ "33" ]
+    "id" : "91",
+    "superClasses" : [ "92" ]
   }, {
-    "iri" : "http://www.opengis.net/ont/geosparql#Feature",
-    "baseIri" : "http://www.opengis.net/ont/geosparql",
+    "iri" : "http://www.w3.org/2001/XMLSchema#double",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "87",
+    "label" : {
+      "IRI-based" : "double"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#double",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "75",
+    "label" : {
+      "IRI-based" : "double"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#double",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "66",
+    "label" : {
+      "IRI-based" : "double"
+    }
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#SideEnum",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "Feature"
+      "IRI-based" : "SideEnum",
+      "en" : "Side"
     },
-    "subClasses" : [ "2" ],
-    "attributes" : [ "external" ],
-    "id" : "32"
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#double",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "50",
-    "label" : {
-      "IRI-based" : "double"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#double",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "52",
-    "label" : {
-      "IRI-based" : "double"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#double",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "53",
-    "label" : {
-      "IRI-based" : "double"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "12",
-    "label" : {
-      "undefined" : "Thing"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "21",
-    "label" : {
-      "undefined" : "Thing"
-    }
+    "individuals" : [ {
+      "iri" : "https://cdm.ovh/rsm/localisation/loca#Rear",
+      "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+      "labels" : {
+        "IRI-based" : "Rear",
+        "en" : "Behind"
+      }
+    }, {
+      "iri" : "https://cdm.ovh/rsm/localisation/loca#Left",
+      "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+      "labels" : {
+        "IRI-based" : "Left",
+        "en" : "Left"
+      }
+    }, {
+      "iri" : "https://cdm.ovh/rsm/localisation/loca#Bottom",
+      "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+      "labels" : {
+        "IRI-based" : "Bottom",
+        "en" : "Under"
+      }
+    }, {
+      "iri" : "https://cdm.ovh/rsm/localisation/loca#Right",
+      "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+      "labels" : {
+        "IRI-based" : "Right",
+        "en" : "Right"
+      }
+    }, {
+      "iri" : "https://cdm.ovh/rsm/localisation/loca#Front",
+      "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+      "labels" : {
+        "IRI-based" : "Front",
+        "en" : "Front"
+      }
+    }, {
+      "iri" : "https://cdm.ovh/rsm/localisation/loca#Top",
+      "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+      "labels" : {
+        "IRI-based" : "Top",
+        "en" : "Over"
+      }
+    } ],
+    "comment" : {
+      "en" : "Front, Rear, Left, and Right orientation are relative to the orientation of the linear element (from node 0 to node 1).\nOver and Under are relative to the geometric or geographic vertical."
+    },
+    "id" : "99"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#BoundaryElement",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
@@ -344,43 +678,20 @@
         "language" : "en",
         "value" : "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability (without losing directional information or the possibility to restrict navigation to a single direction). To be used at the borders of networks managed by different entities.",
         "type" : "label"
+      }, {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability (without losing directional information or the possibility to restrict navigation to a single direction). To be used at the borders of networks managed by different entities.",
+        "type" : "label"
       } ]
     },
     "label" : {
       "IRI-based" : "BoundaryElement",
       "en" : "Boundary element"
     },
-    "id" : "35",
-    "superClasses" : [ "20" ]
-  }, {
-    "iri" : "https://w3id.org/list#OWLList",
-    "baseIri" : "https://w3id.org/list",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "OWLList"
-    },
-    "subClasses" : [ "39" ],
     "attributes" : [ "external" ],
-    "id" : "40"
-  }, {
-    "iri" : "https://cdm.ovh/rsm/topology/topo#Port",
-    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "instances" : 0,
-    "annotations" : {
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "Any place, at the boundary of a net element, that can be an entry and/or exit point for rolling stock. In the case of linear elements, there are exactly two ports. In the case of a loop, the two ports of the loop ports coincide geographically (but for some tolerances) but remain distinct individuals, allowing to orient the loop if need be.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Port",
-      "undefined" : "Port"
-    },
-    "subClasses" : [ "39" ],
-    "id" : "5",
-    "superClasses" : [ "4" ]
+    "id" : "77",
+    "superClasses" : [ "20" ]
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#NetElement",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
@@ -391,15 +702,31 @@
         "language" : "en",
         "value" : "Superclass for net elements (network elements)",
         "type" : "label"
+      }, {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Superclass for net elements (network elements)",
+        "type" : "label"
       } ]
     },
     "label" : {
       "IRI-based" : "NetElement",
       "en" : "Net element"
     },
-    "subClasses" : [ "30", "20" ],
-    "id" : "6",
-    "superClasses" : [ "4" ]
+    "subClasses" : [ "83", "20" ],
+    "attributes" : [ "external" ],
+    "id" : "11",
+    "superClasses" : [ "12" ]
+  }, {
+    "iri" : "https://cdm.ovh/rsm/topology/topology#NetElement",
+    "baseIri" : "https://cdm.ovh/rsm/topology/topology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NetElement"
+    },
+    "subClasses" : [ "32", "8" ],
+    "attributes" : [ "external" ],
+    "id" : "9"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#ListedPort",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
@@ -410,14 +737,20 @@
         "language" : "en",
         "value" : "A port in an ordered list (with successors; no contents needed). Can be used to sort the ports of a non-linear net element (e.g. clockwise from northmost). See also OWLList ontology.",
         "type" : "label"
+      }, {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A port in an ordered list (with successors; no contents needed). Can be used to sort the ports of a non-linear net element (e.g. clockwise from northmost). See also OWLList ontology.",
+        "type" : "label"
       } ]
     },
     "label" : {
       "IRI-based" : "ListedPort",
       "en" : "Listed port"
     },
-    "id" : "39",
-    "superClasses" : [ "40", "5" ]
+    "attributes" : [ "external" ],
+    "id" : "17",
+    "superClasses" : [ "27", "18" ]
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#LinearElement",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
@@ -426,37 +759,23 @@
       "IRI-based" : "LinearElement",
       "en" : "Linear element"
     },
-    "subClasses" : [ "35" ],
+    "subClasses" : [ "77" ],
     "comment" : {
       "en" : "Any topology element that has exactly two extremities or \" ports\"."
     },
-    "id" : "20",
-    "superClasses" : [ "6" ]
-  }, {
-    "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature",
-    "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad",
-    "instances" : 0,
-    "annotations" : {
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "A discrete spatial phenomenon in the CDM universe of discourse.",
-        "type" : "label"
-      }, {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "A discrete spatial phenomenon in the CDM universe of discourse.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Feature",
-      "en" : "Feature"
-    },
-    "subClasses" : [ "9" ],
     "attributes" : [ "external" ],
-    "id" : "2",
-    "superClasses" : [ "32" ]
+    "id" : "20",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://qudt.org/schema/qudt/QuantityValue",
+    "baseIri" : "http://qudt.org/schema/qudt",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "QuantityValue"
+    },
+    "subClasses" : [ "71" ],
+    "attributes" : [ "external" ],
+    "id" : "72"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topology#LinearElement",
     "baseIri" : "https://cdm.ovh/rsm/topology/topology",
@@ -464,94 +783,80 @@
     "label" : {
       "IRI-based" : "LinearElement"
     },
+    "subClasses" : [ "41" ],
     "attributes" : [ "external" ],
-    "id" : "18",
-    "superClasses" : [ "8" ]
+    "id" : "65",
+    "superClasses" : [ "74" ]
   } ],
   "property" : [ {
     "id" : "0",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "4",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "11",
-    "type" : "owl:objectProperty"
+    "id" : "6",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "10",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "13",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "15",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "3",
-    "type" : "owl:objectProperty"
+    "id" : "16",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "19",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "22",
-    "type" : "owl:objectProperty"
-  }, {
     "id" : "23",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "22",
     "type" : "owl:objectProperty"
   }, {
     "id" : "24",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "27",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "29",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "31",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "16",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "34",
+    "id" : "25",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "36",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "37",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "38",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "41",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "42",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "43",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "44",
+    "id" : "26",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "28",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "45",
+    "id" : "31",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "33",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "39",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "40",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "44",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "46",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "47",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "48",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "14",
-    "type" : "owl:objectProperty"
-  }, {
     "id" : "49",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "51",
     "type" : "owl:objectProperty"
@@ -559,162 +864,209 @@
     "id" : "54",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "55",
-    "type" : "rdfs:SubClassOf"
-  }, {
     "id" : "56",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "57",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "58",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "59",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "60",
     "type" : "owl:objectProperty"
   }, {
     "id" : "61",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "62",
     "type" : "owl:objectProperty"
   }, {
     "id" : "63",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "64",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "25",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "66",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "26",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "67",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "65",
+    "id" : "67",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "68",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "69",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "70",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "73",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "76",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "78",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "81",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "82",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "84",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "85",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "86",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "88",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "89",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "90",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "93",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "95",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "96",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "98",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "60",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "100",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "97",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "101",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "59",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "102",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "80",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "34",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "57",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "106",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "107",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "108",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "109",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "110",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "111",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "104",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "112",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "113",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "114",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "115",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "116",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "117",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "94",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "79",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "105",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
-    "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf",
-    "inverse" : "3",
-    "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad",
     "range" : "2",
-    "annotations" : {
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "inverse of hasGeometry",
-        "type" : "label"
-      }, {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "inverse of hasGeometry",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "geometryOf",
-      "en" : "geometry of"
-    },
     "domain" : "1",
-    "comment" : {
-      "en" : "GeoSPARQL does not define this inverse property."
-    },
-    "attributes" : [ "external", "object", "functional" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "0"
-  }, {
-    "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry",
-    "inverse" : "13",
-    "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad",
-    "range" : "12",
-    "annotations" : {
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry. Takes into account SOSA/SSN viewpoint, i.e. there can be more than one default geometry (e.g. valid at different times).",
-        "type" : "label"
-      }, {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry. Takes into account SOSA/SSN viewpoint, i.e. there can be more than one default geometry (e.g. valid at different times).",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasNominalGeometry",
-      "en" : "has nominal geometry"
-    },
-    "superproperty" : [ "3", "14" ],
-    "domain" : "12",
-    "attributes" : [ "inverse functional", "external", "object", "functional" ],
-    "id" : "11"
   }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf",
     "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad",
-    "range" : "12",
+    "range" : "5",
     "label" : {
       "IRI-based" : "nominalGeometryOf",
       "en" : "nominal geometry of"
     },
-    "domain" : "12",
-    "attributes" : [ "inverse functional", "external", "object", "functional" ],
+    "domain" : "5",
+    "attributes" : [ "object", "external", "inverse functional", "functional" ],
+    "id" : "4"
+  }, {
+    "range" : "2",
+    "domain" : "7",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "6"
+  }, {
+    "range" : "12",
+    "domain" : "11",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "10"
+  }, {
+    "range" : "15",
+    "domain" : "14",
+    "attributes" : [ "object", "anonymous" ],
     "id" : "13"
   }, {
-    "iri" : "https://cdm.ovh/rsm/topology/topo#oppositePort",
-    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "12",
-    "label" : {
-      "IRI-based" : "oppositePort",
-      "en" : "opposite port"
-    },
-    "domain" : "12",
-    "comment" : {
-      "en" : "Opposite port on a linear element; a symmetric property. Not meaningful if element is non-linear."
-    },
-    "attributes" : [ "symmetric", "object" ],
-    "id" : "15"
-  }, {
-    "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry",
-    "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad",
-    "range" : "1",
-    "annotations" : {
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "A spatial representation for a given Feature. As in GeoSPARQL, a feature can be associated with more than one geometry (valid at different times, or provided by different surveys...).",
-        "type" : "label"
-      }, {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "A spatial representation for a given Feature. As in GeoSPARQL, a feature can be associated with more than one geometry (valid at different times, or provided by different surveys...).",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasGeometry",
-      "en" : "has geometry"
-    },
-    "superproperty" : [ "16" ],
-    "domain" : "2",
-    "subproperty" : [ "11" ],
-    "attributes" : [ "inverse functional", "external", "object" ],
-    "id" : "3"
+    "range" : "18",
+    "domain" : "17",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "16"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#port1",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
     "range" : "21",
     "annotations" : {
       "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "the other port on a linear element.",
+        "type" : "label"
+      }, {
         "identifier" : "definition",
         "language" : "en",
         "value" : "the other port on a linear element.",
@@ -727,14 +1079,24 @@
     },
     "superproperty" : [ "22" ],
     "domain" : "20",
-    "attributes" : [ "inverse functional", "object", "functional" ],
+    "attributes" : [ "object", "external", "inverse functional", "functional" ],
     "id" : "19"
+  }, {
+    "range" : "12",
+    "domain" : "18",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "23"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#port",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "5",
+    "range" : "18",
     "annotations" : {
       "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Associated ports with net elements. This is an inverse functional property, meaning that a port can belong to at most one net element (if a port is found to belong to two net elements, the inference is that those two elements are the same).",
+        "type" : "label"
+      }, {
         "identifier" : "definition",
         "language" : "en",
         "value" : "Associated ports with net elements. This is an inverse functional property, meaning that a port can belong to at most one net element (if a port is found to belong to two net elements, the inference is that those two elements are the same).",
@@ -745,16 +1107,21 @@
       "IRI-based" : "port",
       "en" : "port"
     },
-    "domain" : "6",
-    "subproperty" : [ "19", "23" ],
-    "attributes" : [ "inverse functional", "object" ],
+    "domain" : "11",
+    "subproperty" : [ "19", "24" ],
+    "attributes" : [ "object", "external", "inverse functional" ],
     "id" : "22"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#port0",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "12",
+    "range" : "5",
     "annotations" : {
       "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "First port of some net element that has, by definition, two ports. Allows to orient linear elements in space, even though linear elements may be completely symmetrical from a functional point of view. Orientation is conventional. Can also be used on non-linear elements, with undefined semantics.",
+        "type" : "label"
+      }, {
         "identifier" : "definition",
         "language" : "en",
         "value" : "First port of some net element that has, by definition, two ports. Allows to orient linear elements in space, even though linear elements may be completely symmetrical from a functional point of view. Orientation is conventional. Can also be used on non-linear elements, with undefined semantics.",
@@ -766,16 +1133,31 @@
       "en" : "port 0"
     },
     "superproperty" : [ "22" ],
-    "domain" : "12",
-    "attributes" : [ "inverse functional", "object", "functional" ],
-    "id" : "23"
+    "domain" : "5",
+    "attributes" : [ "object", "external", "inverse functional", "functional" ],
+    "id" : "24"
+  }, {
+    "range" : "12",
+    "domain" : "2",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "25"
+  }, {
+    "range" : "27",
+    "domain" : "17",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "26"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#navigableFromTransitive",
-    "inverse" : "25",
+    "inverse" : "29",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "5",
+    "range" : "18",
     "annotations" : {
       "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "inverse of navigable to transitive",
+        "type" : "label"
+      }, {
         "identifier" : "definition",
         "language" : "en",
         "value" : "inverse of navigable to transitive",
@@ -786,16 +1168,26 @@
       "IRI-based" : "navigableFromTransitive",
       "en" : "navigable from transitive"
     },
-    "domain" : "5",
-    "subproperty" : [ "26" ],
-    "attributes" : [ "object" ],
-    "id" : "24"
+    "domain" : "18",
+    "subproperty" : [ "30" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "28"
+  }, {
+    "range" : "27",
+    "domain" : "32",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "31"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#leadsTo",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "12",
+    "range" : "5",
     "annotations" : {
       "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "relation between two adjacent net elements (i.e. having connected ports), where rolling stock can start moving from the first and arrive on the second without reversing travel direction. This property is not symmetric (think of sprung switches). A shortcut property for reasoning directly on net elements.",
+        "type" : "label"
+      }, {
         "identifier" : "definition",
         "language" : "en",
         "value" : "relation between two adjacent net elements (i.e. having connected ports), where rolling stock can start moving from the first and arrive on the second without reversing travel direction. This property is not symmetric (think of sprung switches). A shortcut property for reasoning directly on net elements.",
@@ -806,166 +1198,143 @@
       "IRI-based" : "leadsTo",
       "en" : "leads to"
     },
-    "superproperty" : [ "28" ],
-    "domain" : "12",
-    "attributes" : [ "object" ],
-    "id" : "27"
+    "superproperty" : [ "34" ],
+    "domain" : "5",
+    "attributes" : [ "object", "external" ],
+    "id" : "33"
+  }, {
+    "range" : "27",
+    "domain" : "36",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "35"
+  }, {
+    "range" : "27",
+    "domain" : "38",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "37"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#navigableTo",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "12",
+    "range" : "5",
     "label" : {
       "IRI-based" : "navigableTo",
       "en" : "navigable to"
     },
-    "superproperty" : [ "25" ],
-    "domain" : "12",
+    "superproperty" : [ "29" ],
+    "domain" : "5",
     "comment" : {
       "en" : "Expresses the possibility, for a train movement, to leave a net element via an exit port and to navigate to another net element until another exit port. Navigation excludes reversal of travel direction, even if the reversal is allowed by operational rules (e.g. shunting mode, ...)."
     },
-    "attributes" : [ "object" ],
-    "id" : "29"
+    "attributes" : [ "object", "external" ],
+    "id" : "39"
   }, {
-    "iri" : "https://cdm.ovh/rsm/topology/topo#fromPort",
-    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "5",
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "range" : "42",
     "label" : {
-      "IRI-based" : "fromPort",
-      "en" : "from port"
+      "IRI-based" : "atIntrinsicCoordinate",
+      "en" : "at intrinsic coordinate"
     },
-    "domain" : "17",
-    "comment" : {
-      "en" : "Port from which the navigability relation starts: conventionally, the \"exit port\" from which a running train leaves a net element."
-    },
-    "attributes" : [ "object", "functional" ],
-    "id" : "31"
+    "domain" : "41",
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "40"
   }, {
-    "iri" : "http://www.opengis.net/ont/geosparql#hasGeometry",
-    "baseIri" : "http://www.opengis.net/ont/geosparql",
-    "range" : "33",
-    "label" : {
-      "IRI-based" : "hasGeometry",
-      "en" : "hasGeometry"
-    },
-    "domain" : "32",
-    "subproperty" : [ "3", "14" ],
-    "attributes" : [ "external", "object" ],
-    "id" : "16"
-  }, {
-    "range" : "20",
-    "domain" : "35",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "34"
-  }, {
-    "range" : "6",
-    "domain" : "20",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "36"
-  }, {
-    "range" : "2",
-    "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "37"
-  }, {
-    "range" : "40",
-    "domain" : "39",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "38"
-  }, {
-    "range" : "32",
-    "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "41"
-  }, {
-    "range" : "6",
-    "domain" : "30",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "42"
-  }, {
-    "range" : "5",
-    "domain" : "39",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "43"
-  }, {
-    "range" : "8",
-    "domain" : "18",
+    "range" : "45",
+    "domain" : "15",
     "attributes" : [ "object", "anonymous" ],
     "id" : "44"
   }, {
-    "iri" : "https://cdm.ovh/rsm/topology/topo#leadsToTransitive",
-    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "6",
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#endAt",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "range" : "47",
     "annotations" : {
       "definition" : [ {
         "identifier" : "definition",
         "language" : "en",
-        "value" : "relation between net elements (adjacent or not), where rolling stock may leave the first (subject) and reach the second (object) without reversing travel direction.",
+        "value" : "Property defining the end point of a linear location on the linear element that is referred to.\nSee definition of startsAt for more explanations.",
         "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "leadsToTransitive",
-      "en" : "leads to transitive"
+      "IRI-based" : "endAt",
+      "en" : "end at"
     },
-    "domain" : "6",
-    "subproperty" : [ "27" ],
+    "domain" : "5",
     "comment" : {
-      "en" : "technical note: this may look like, but is *not* the transitive closure of leadsTo. The transitive closure of leadsTo would include train movements with reversal of travel direction, which is not desirable."
+      "en" : "cardinality \"exactly one value\" to be enforced via SHACL shape"
     },
-    "attributes" : [ "transitive", "object" ],
-    "id" : "28"
-  }, {
-    "range" : "33",
-    "domain" : "1",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "45"
-  }, {
-    "iri" : "https://cdm.ovh/rsm/topology/topo#destinationOfNavigability",
-    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "12",
-    "label" : {
-      "IRI-based" : "destinationOfNavigability"
-    },
-    "domain" : "12",
-    "comment" : {
-      "en" : "destination of navigability"
-    },
-    "attributes" : [ "inverse functional", "object" ],
+    "attributes" : [ "functional", "datatype" ],
     "id" : "46"
+  }, {
+    "range" : "14",
+    "domain" : "43",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "48"
+  }, {
+    "range" : "41",
+    "domain" : "38",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "49"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#onLinearElement",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "range" : "41",
+    "label" : {
+      "IRI-based" : "onLinearElement",
+      "undefined" : "on linear element"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "provides the linear element(s) that define a spot location. There can be several linear elements involved: think of a signal adderessing two adjacent tracks."
+    },
+    "attributes" : [ "object" ],
+    "id" : "51"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#port0onElement",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "12",
+    "range" : "5",
     "label" : {
       "IRI-based" : "port0onElement",
       "en" : "port0on element"
     },
-    "domain" : "12",
-    "attributes" : [ "inverse functional", "object", "functional" ],
-    "id" : "47"
+    "domain" : "5",
+    "attributes" : [ "object", "external", "inverse functional", "functional" ],
+    "id" : "54"
   }, {
-    "range" : "9",
-    "domain" : "7",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "48"
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#tangentialOffset",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "tangentialOffset",
+      "en" : "tangential offset"
+    },
+    "superproperty" : [ "57" ],
+    "domain" : "5",
+    "attributes" : [ "object", "inverse functional" ],
+    "id" : "56"
   }, {
     "iri" : "http://www.opengis.net/ont/geosparql#hasDefaultGeometry",
     "baseIri" : "http://www.opengis.net/ont/geosparql",
-    "range" : "12",
+    "range" : "5",
     "label" : {
       "IRI-based" : "hasDefaultGeometry"
     },
-    "superproperty" : [ "16" ],
-    "domain" : "12",
-    "subproperty" : [ "11" ],
-    "attributes" : [ "external", "object" ],
-    "id" : "14"
+    "superproperty" : [ "59" ],
+    "domain" : "5",
+    "subproperty" : [ "60" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "58"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#onElement",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "12",
+    "range" : "5",
     "annotations" : {
       "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "inverse of port, port0, port1",
+        "type" : "label"
+      }, {
         "identifier" : "definition",
         "language" : "en",
         "value" : "inverse of port, port0, port1",
@@ -976,15 +1345,34 @@
       "IRI-based" : "onElement",
       "en" : "on element"
     },
-    "domain" : "12",
-    "attributes" : [ "object", "functional" ],
-    "id" : "49"
+    "domain" : "5",
+    "attributes" : [ "object", "external", "functional" ],
+    "id" : "61"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#elementLocation",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "elementLocation",
+      "en" : "element Location"
+    },
+    "domain" : "8",
+    "comment" : {
+      "en" : "Provides the location(s) of a located net element. Locations may be representation- and time-dependent, so the property is not a functional property (in the sense of RDF/OWL)."
+    },
+    "attributes" : [ "object", "inverse functional" ],
+    "id" : "62"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#nonNavigableTo",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "5",
+    "range" : "18",
     "annotations" : {
       "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Expresses that there is no navigability link between the related ports. Given the OWA (open world assumption), a navigability not expressed does not mean \"non navigability\". Consequently, non-navigability should be explicitly stated, as it is fundamental knowledge about the network layout.",
+        "type" : "label"
+      }, {
         "identifier" : "definition",
         "language" : "en",
         "value" : "Expresses that there is no navigability link between the related ports. Given the OWA (open world assumption), a navigability not expressed does not mean \"non navigability\". Consequently, non-navigability should be explicitly stated, as it is fundamental knowledge about the network layout.",
@@ -995,46 +1383,15 @@
       "IRI-based" : "nonNavigableTo",
       "en" : "non navigable to"
     },
-    "domain" : "5",
-    "attributes" : [ "object" ],
-    "id" : "51"
-  }, {
-    "iri" : "https://cdm.ovh/rsm/topology/topo#originOfNavigability",
-    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "12",
-    "label" : {
-      "IRI-based" : "originOfNavigability",
-      "en" : "origin of navigability"
-    },
-    "domain" : "12",
-    "attributes" : [ "inverse functional", "object" ],
-    "id" : "54"
-  }, {
-    "range" : "4",
-    "domain" : "5",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "55"
-  }, {
-    "range" : "4",
-    "domain" : "6",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "56"
-  }, {
-    "range" : "8",
-    "domain" : "7",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "57"
+    "domain" : "18",
+    "attributes" : [ "object", "external" ],
+    "id" : "63"
   }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength",
     "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad",
-    "range" : "53",
+    "range" : "66",
     "annotations" : {
       "definition" : [ {
-        "identifier" : "definition",
-        "language" : "undefined",
-        "value" : "This length is assumed to be derived from the chosen Nominal Geometry.\n\nThe Nominal Metric Length is supposed to be used for conversions between linear referencing methods \"absolute\" (distance along, e.g. used in CCS/TMS data model) and \"interpolation\" (intrinsic coordinates, with values 0 to 1, used in RSM and others).",
-        "type" : "label"
-      }, {
         "identifier" : "definition",
         "language" : "undefined",
         "value" : "This length is assumed to be derived from the chosen Nominal Geometry.\n\nThe Nominal Metric Length is supposed to be used for conversions between linear referencing methods \"absolute\" (distance along, e.g. used in CCS/TMS data model) and \"interpolation\" (intrinsic coordinates, with values 0 to 1, used in RSM and others).",
@@ -1045,37 +1402,32 @@
       "IRI-based" : "hasNominalMetricLength",
       "en" : "has nominal metric length"
     },
-    "domain" : "18",
-    "attributes" : [ "datatype", "external", "functional" ],
-    "id" : "58"
+    "domain" : "65",
+    "attributes" : [ "external", "functional", "datatype" ],
+    "id" : "64"
   }, {
-    "range" : "30",
-    "domain" : "20",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "59"
-  }, {
-    "iri" : "https://cdm.ovh/rsm/topology/topo#port1onElement",
-    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "12",
-    "label" : {
-      "IRI-based" : "port1onElement",
-      "en" : "port1on element"
-    },
-    "domain" : "12",
-    "attributes" : [ "inverse functional", "object", "functional" ],
-    "id" : "60"
-  }, {
+    "iri" : "http://qudt.org/schema/qudt/hasQuantityValue",
+    "baseIri" : "http://qudt.org/schema/qudt",
     "range" : "5",
-    "domain" : "6",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "61"
+    "label" : {
+      "IRI-based" : "hasQuantityValue"
+    },
+    "domain" : "5",
+    "subproperty" : [ "57" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "67"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#nonNavigableFrom",
-    "inverse" : "51",
+    "inverse" : "63",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "5",
+    "range" : "18",
     "annotations" : {
       "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "inverse of non navigable to",
+        "type" : "label"
+      }, {
         "identifier" : "definition",
         "language" : "en",
         "value" : "inverse of non navigable to",
@@ -1086,20 +1438,25 @@
       "IRI-based" : "nonNavigableFrom",
       "en" : "non navigable from"
     },
-    "domain" : "5",
-    "attributes" : [ "object" ],
-    "id" : "62"
+    "domain" : "18",
+    "attributes" : [ "object", "external" ],
+    "id" : "68"
+  }, {
+    "range" : "65",
+    "domain" : "41",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "69"
+  }, {
+    "range" : "72",
+    "domain" : "71",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "70"
   }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength",
     "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad",
-    "range" : "52",
+    "range" : "75",
     "annotations" : {
       "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "Length (in meter) of a Linear Element.",
-        "type" : "label"
-      }, {
         "identifier" : "definition",
         "language" : "en",
         "value" : "Length (in meter) of a Linear Element.",
@@ -1110,62 +1467,33 @@
       "IRI-based" : "hasMetricLength",
       "en" : "has metric length"
     },
-    "domain" : "8",
-    "attributes" : [ "datatype", "external" ],
-    "id" : "63"
-  }, {
-    "iri" : "https://cdm.ovh/rsm/topology/topo#connectedWith",
-    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "12",
-    "annotations" : {
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "Relation between a port on a net element and the adjacent port on another net element. This is a symmetric relation. Geographic locations of related ports may not coincide, either because of constructive tolerances (abutted tracks...), or uncertainties, or rounding errors, or by construction (e.g. case of tracks joined via a turntable).",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "connectedWith",
-      "en" : "connected with"
-    },
-    "superproperty" : [ "65" ],
-    "domain" : "12",
-    "attributes" : [ "symmetric", "object" ],
-    "id" : "64"
+    "domain" : "74",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "73"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#navigableToTransitive",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "5",
+    "range" : "18",
     "label" : {
       "IRI-based" : "navigableToTransitive",
       "en" : "navigable to transitive"
     },
-    "domain" : "5",
-    "subproperty" : [ "29" ],
-    "attributes" : [ "transitive", "object" ],
-    "id" : "25"
-  }, {
-    "iri" : "https://cdm.ovh/rsm/topology/topo#toPort",
-    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "5",
-    "label" : {
-      "IRI-based" : "toPort",
-      "en" : "to port"
-    },
-    "domain" : "17",
-    "comment" : {
-      "en" : "Designates the exit port a running train can reach on a net element. Note: the entry port on that element is provided by a connectedTo property."
-    },
-    "attributes" : [ "object", "functional" ],
-    "id" : "66"
+    "domain" : "18",
+    "subproperty" : [ "39" ],
+    "attributes" : [ "transitive", "object", "external" ],
+    "id" : "29"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#navigableFrom",
-    "inverse" : "29",
+    "inverse" : "39",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "12",
+    "range" : "5",
     "annotations" : {
       "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "inverse of navigable to",
+        "type" : "label"
+      }, {
         "identifier" : "definition",
         "language" : "en",
         "value" : "inverse of navigable to",
@@ -1176,26 +1504,83 @@
       "IRI-based" : "navigableFrom",
       "en" : "navigable from"
     },
-    "superproperty" : [ "24" ],
-    "domain" : "12",
-    "attributes" : [ "object" ],
-    "id" : "26"
+    "superproperty" : [ "28" ],
+    "domain" : "5",
+    "attributes" : [ "object", "external" ],
+    "id" : "30"
+  }, {
+    "range" : "20",
+    "domain" : "77",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "76"
+  }, {
+    "iri" : "https://w3id.org/list#isFollowedBy",
+    "baseIri" : "https://w3id.org/list",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "isFollowedBy"
+    },
+    "superproperty" : [ "79" ],
+    "domain" : "52",
+    "subproperty" : [ "80" ],
+    "attributes" : [ "transitive", "object", "external" ],
+    "id" : "78"
+  }, {
+    "range" : "11",
+    "domain" : "20",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "81"
+  }, {
+    "range" : "11",
+    "domain" : "83",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "82"
+  }, {
+    "range" : "9",
+    "domain" : "8",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "84"
+  }, {
+    "range" : "9",
+    "domain" : "32",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "85"
   }, {
     "iri" : "http://www.opengis.net/ont/geosparql#hasMetricLength",
     "baseIri" : "http://www.opengis.net/ont/geosparql",
-    "range" : "50",
+    "range" : "87",
     "label" : {
       "IRI-based" : "hasMetricLength"
     },
-    "domain" : "10",
-    "attributes" : [ "datatype", "external" ],
-    "id" : "67"
+    "domain" : "3",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "86"
+  }, {
+    "range" : "74",
+    "domain" : "43",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "88"
+  }, {
+    "range" : "2",
+    "domain" : "55",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "89"
+  }, {
+    "range" : "92",
+    "domain" : "91",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "90"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#connectedWithTransitive",
     "baseIri" : "https://cdm.ovh/rsm/topology/topo",
-    "range" : "5",
+    "range" : "18",
     "annotations" : {
       "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "transitive closure of connectedWith.",
+        "type" : "label"
+      }, {
         "identifier" : "definition",
         "language" : "en",
         "value" : "transitive closure of connectedWith.",
@@ -1206,9 +1591,404 @@
       "IRI-based" : "connectedWithTransitive",
       "en" : "connected with transitive"
     },
+    "domain" : "18",
+    "subproperty" : [ "94" ],
+    "attributes" : [ "transitive", "object", "external" ],
+    "id" : "93"
+  }, {
+    "range" : "74",
+    "domain" : "65",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "95"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf",
+    "inverse" : "97",
+    "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad",
+    "range" : "15",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "inverse of hasGeometry",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "geometryOf",
+      "en" : "geometry of"
+    },
+    "domain" : "91",
+    "comment" : {
+      "en" : "GeoSPARQL does not define this inverse property."
+    },
+    "attributes" : [ "object", "external", "functional" ],
+    "id" : "96"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#side",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "range" : "99",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "side of the linear element on which the location (usually a spot location) is situated.\nThe orientation of the linear element is its own intrinsic orientation, from port 0 to port 1 (or intrinsic coordinate 0 to intrinsic coordinate 1).",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "side",
+      "en" : "side"
+    },
+    "domain" : "65",
+    "comment" : {
+      "en" : "consistency with lateral offset sign to be verified by SHACL shapes."
+    },
+    "attributes" : [ "object" ],
+    "id" : "98"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry",
+    "inverse" : "4",
+    "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad",
+    "range" : "5",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry. Takes into account SOSA/SSN viewpoint, i.e. there can be more than one default geometry (e.g. valid at different times).",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasNominalGeometry",
+      "en" : "has nominal geometry"
+    },
+    "superproperty" : [ "97", "58" ],
     "domain" : "5",
-    "subproperty" : [ "64" ],
-    "attributes" : [ "transitive", "object" ],
-    "id" : "65"
+    "attributes" : [ "object", "external", "inverse functional", "functional" ],
+    "id" : "60"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/topology/topo#oppositePort",
+    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "oppositePort",
+      "en" : "opposite port"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "Opposite port on a linear element; a symmetric property. Not meaningful if element is non-linear."
+    },
+    "attributes" : [ "symmetric", "object", "external" ],
+    "id" : "100"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry",
+    "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad",
+    "range" : "91",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A spatial representation for a given Feature. As in GeoSPARQL, a feature can be associated with more than one geometry (valid at different times, or provided by different surveys...).",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasGeometry",
+      "en" : "has geometry"
+    },
+    "superproperty" : [ "59" ],
+    "domain" : "15",
+    "subproperty" : [ "60" ],
+    "attributes" : [ "object", "external", "inverse functional" ],
+    "id" : "97"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#associatedLinearElement",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "associatedLinearElement",
+      "en" : "associated linear element"
+    },
+    "domain" : "55",
+    "attributes" : [ "object" ],
+    "id" : "101"
+  }, {
+    "iri" : "http://www.opengis.net/ont/geosparql#hasGeometry",
+    "baseIri" : "http://www.opengis.net/ont/geosparql",
+    "range" : "92",
+    "label" : {
+      "IRI-based" : "hasGeometry",
+      "en" : "hasGeometry"
+    },
+    "domain" : "45",
+    "subproperty" : [ "97", "58" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "59"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#applicationDirection",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "range" : "99",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Allows to express the direction of travel for which the localized entity is relevant. Example: a signal generally applies to one travel direction; track occupancy detection systems may be oriented, etc.\nDirection of travel is expressed relative to the orientation of the linear element, from port 0 to port 1, or intrinsic coordinate 0 to 1. It is NOT expressed with respect to \"normal travel direction in operations\".",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "applicationDirection",
+      "en" : "application direction"
+    },
+    "domain" : "65",
+    "attributes" : [ "object" ],
+    "id" : "102"
+  }, {
+    "iri" : "https://w3id.org/list#hasNext",
+    "baseIri" : "https://w3id.org/list",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "hasNext"
+    },
+    "superproperty" : [ "78" ],
+    "domain" : "5",
+    "attributes" : [ "object", "external", "functional" ],
+    "id" : "80"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/topology/topo#leadsToTransitive",
+    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
+    "range" : "11",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "relation between net elements (adjacent or not), where rolling stock may leave the first (subject) and reach the second (object) without reversing travel direction.",
+        "type" : "label"
+      }, {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "relation between net elements (adjacent or not), where rolling stock may leave the first (subject) and reach the second (object) without reversing travel direction.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "leadsToTransitive",
+      "en" : "leads to transitive"
+    },
+    "domain" : "11",
+    "subproperty" : [ "33" ],
+    "comment" : {
+      "en" : "technical note: this may look like, but is *not* the transitive closure of leadsTo. The transitive closure of leadsTo would include train movements with reversal of travel direction, which is not desirable."
+    },
+    "attributes" : [ "transitive", "object", "external" ],
+    "id" : "34"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#offset",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "range" : "71",
+    "label" : {
+      "IRI-based" : "offset",
+      "en" : "offset"
+    },
+    "superproperty" : [ "67" ],
+    "domain" : "65",
+    "subproperty" : [ "56", "104", "105" ],
+    "comment" : {
+      "en" : "definitely not functional, to cope with the fact that values may be multiple (specified, observed...).\ndefinitely inverse functional, because values characterize a location relative to exactly one linear element. \"Exactly\" however is left for SHACL shapes (not in RL profile)."
+    },
+    "attributes" : [ "object", "inverse functional" ],
+    "id" : "57"
+  }, {
+    "range" : "7",
+    "domain" : "55",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "106"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#location",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "location",
+      "en" : "location"
+    },
+    "domain" : "50",
+    "comment" : {
+      "en" : "Generic property assigning some location to a Thing."
+    },
+    "attributes" : [ "object", "inverse functional" ],
+    "id" : "107"
+  }, {
+    "iri" : "http://qudt.org/schema/qudt/quantityKind",
+    "baseIri" : "http://qudt.org/schema/qudt",
+    "range" : "103",
+    "label" : {
+      "IRI-based" : "quantityKind"
+    },
+    "domain" : "71",
+    "attributes" : [ "object", "external", "allValues" ],
+    "id" : "108"
+  }, {
+    "range" : "83",
+    "domain" : "20",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "109"
+  }, {
+    "range" : "18",
+    "domain" : "11",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "110"
+  }, {
+    "iri" : "https://w3id.org/list#isFollowedBy",
+    "baseIri" : "https://w3id.org/list",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "isFollowedBy"
+    },
+    "superproperty" : [ "79" ],
+    "domain" : "27",
+    "subproperty" : [ "80" ],
+    "attributes" : [ "transitive", "object", "external", "allValues" ],
+    "id" : "111"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#lateralOffset",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "range" : "5",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "offset of location (usually: spot location) with respect to a perpendicular to the linear element, in the horizontal plane (not: track plane). Is positive when on the left and negative on the right (in order to respect the conventional orientation of cartesian reference systems, where X is the longitudinal axis, Y the transversal, and Z the vertical).",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "lateralOffset",
+      "en" : "lateral offset"
+    },
+    "superproperty" : [ "57" ],
+    "domain" : "5",
+    "attributes" : [ "object", "inverse functional" ],
+    "id" : "104"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#startAt",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "range" : "53",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Property defining the start position of a linear location on the linear element that is referred to.\nThe value is an intrinsic coordinate (float; permissible range = [0,1]). The intrinsic coordinate is defined by the default geometry of the associated linear element (see GeoSPARQL adapter), using linear referencing method \"interpolation\" according to ISO 19148.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "startAt",
+      "en" : "start at"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "cardinality \"exactly one value\" to be enforced via SHACL shape"
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "112"
+  }, {
+    "range" : "55",
+    "domain" : "1",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "113"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/topology/topo#port1onElement",
+    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "port1onElement",
+      "en" : "port1on element"
+    },
+    "domain" : "5",
+    "attributes" : [ "object", "external", "inverse functional", "functional" ],
+    "id" : "114"
+  }, {
+    "range" : "7",
+    "domain" : "1",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "115"
+  }, {
+    "iri" : "https://w3id.org/list#hasContents",
+    "baseIri" : "https://w3id.org/list",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "hasContents"
+    },
+    "superproperty" : [ "79" ],
+    "domain" : "5",
+    "attributes" : [ "object", "external", "functional" ],
+    "id" : "116"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#associatedNetElement",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "range" : "32",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Property pointing to all net elements (or parts thereof) that describe the area location.\nNote: the user may target ListedNetElement individuals (a subclass of BoundedNetElement) and define an order, for whatever purpose.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "associatedNetElement",
+      "en" : "net element list"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "117"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/topology/topo#connectedWith",
+    "baseIri" : "https://cdm.ovh/rsm/topology/topo",
+    "range" : "5",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relation between a port on a net element and the adjacent port on another net element. This is a symmetric relation. Geographic locations of related ports may not coincide, either because of constructive tolerances (abutted tracks...), or uncertainties, or rounding errors, or by construction (e.g. case of tracks joined via a turntable).",
+        "type" : "label"
+      }, {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relation between a port on a net element and the adjacent port on another net element. This is a symmetric relation. Geographic locations of related ports may not coincide, either because of constructive tolerances (abutted tracks...), or uncertainties, or rounding errors, or by construction (e.g. case of tracks joined via a turntable).",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "connectedWith",
+      "en" : "connected with"
+    },
+    "superproperty" : [ "93" ],
+    "domain" : "5",
+    "attributes" : [ "symmetric", "object", "external" ],
+    "id" : "94"
+  }, {
+    "iri" : "https://w3id.org/list#hasListProperty",
+    "baseIri" : "https://w3id.org/list",
+    "range" : "52",
+    "label" : {
+      "IRI-based" : "hasListProperty"
+    },
+    "domain" : "27",
+    "subproperty" : [ "78", "116" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "79"
+  }, {
+    "iri" : "https://cdm.ovh/rsm/localisation/loca#verticalOffset",
+    "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "verticalOffset",
+      "en" : "vertical offset"
+    },
+    "superproperty" : [ "57" ],
+    "domain" : "5",
+    "attributes" : [ "object", "inverse functional" ],
+    "id" : "105"
   } ]
 }
