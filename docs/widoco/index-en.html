@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cdm.ovh/rsm/localisation/loca","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cdm.ovh/rsm/localisation/loca","name":"Localisation", "headline":"This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.For ordering things, this ontology uses the List ontology published by Pieter Pauwels and Walter Terkaj. The List ontology also underpins the ifcOWL ontology by the same authors.For spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical.", "dateReleased":"Wed Mar 11 15:28:42 UTC 2026", "version":"1.0rc1", "author":[{"@type":"Person","name":"Airy Magnien"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cdm.ovh/rsm/localisation/loca","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cdm.ovh/rsm/localisation/loca","name":"Localisation", "headline":"This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.For ordering things, this ontology uses the List ontology published by Pieter Pauwels and Walter Terkaj. The List ontology also underpins the ifcOWL ontology by the same authors.For spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical.", "dateReleased":"Thu Mar 12 12:56:14 UTC 2026", "version":"1.0rc1", "author":[{"@type":"Person","name":"Airy Magnien"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -125,9 +125,6 @@ This ontology has the following classes and properties.</span>
          title="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement">Bounded linear element</a>
    </li>
    <li>
-      <a href="#https://cdm.ovh/rsm/topology/topo#Connection" title="https://cdm.ovh/rsm/topology/topo#Connection">Connection</a>
-   </li>
-   <li>
       <a href="#https://w3id.org/list#EmptyList" title="https://w3id.org/list#EmptyList">
          <span>Empty List</span>
       </a>
@@ -163,18 +160,7 @@ This ontology has the following classes and properties.</span>
          title="https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement">Located net element</a>
    </li>
    <li>
-      <a href="#https://cdm.ovh/rsm/topology/topo#Navigability" title="https://cdm.ovh/rsm/topology/topo#Navigability">Navigability</a>
-   </li>
-   <li>
-      <a href="#https://cdm.ovh/rsm/topology/topo#NavigabilityRelation"
-         title="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation">Navigability relation</a>
-   </li>
-   <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#NetElement" title="https://cdm.ovh/rsm/topology/topo#NetElement">Net element</a>
-   </li>
-   <li>
-      <a href="#https://cdm.ovh/rsm/topology/topo#NonNavigability"
-         title="https://cdm.ovh/rsm/topology/topo#NonNavigability">Non navigability</a>
    </li>
    <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#NonlinearElement"
@@ -219,17 +205,8 @@ This ontology has the following classes and properties.</span>
          title="https://cdm.ovh/rsm/topology/topo#connectedWithTransitive">connected with transitive</a>
    </li>
    <li>
-      <a href="#https://cdm.ovh/rsm/topology/topo#connectsPort" title="https://cdm.ovh/rsm/topology/topo#connectsPort">connects port</a>
-   </li>
-   <li>
       <a href="#lisation#elementLocation"
          title="https://cdm.ovh/rsm/localisation/localisation#elementLocation">element Location</a>
-   </li>
-   <li>
-      <a href="#https://cdm.ovh/rsm/topology/topo#fromExitPort" title="https://cdm.ovh/rsm/topology/topo#fromExitPort">from exit port</a>
-   </li>
-   <li>
-      <a href="#https://cdm.ovh/rsm/topology/topo#hasConnection" title="https://cdm.ovh/rsm/topology/topo#hasConnection">has connection</a>
    </li>
    <li>
       <a href="#https://w3id.org/list#hasContents" title="https://w3id.org/list#hasContents">
@@ -261,14 +238,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#leadsToTransitive"
          title="https://cdm.ovh/rsm/topology/topo#leadsToTransitive">leads to transitive</a>
-   </li>
-   <li>
-      <a href="#https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom"
-         title="https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom">navigability relation from</a>
-   </li>
-   <li>
-      <a href="#https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo"
-         title="https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo">navigability relation to</a>
    </li>
    <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#navigableFrom" title="https://cdm.ovh/rsm/topology/topo#navigableFrom">navigable from</a>
@@ -307,13 +276,22 @@ This ontology has the following classes and properties.</span>
          title="https://cdm.ovh/rsm/localisation/localisation#onLinearElement">on linear element</a>
    </li>
    <li>
+      <a href="#https://cdm.ovh/rsm/topology/topo#oppositePort" title="https://cdm.ovh/rsm/topology/topo#oppositePort">opposite port</a>
+   </li>
+   <li>
       <a href="#https://cdm.ovh/rsm/topology/topo#port" title="https://cdm.ovh/rsm/topology/topo#port">port</a>
    </li>
    <li>
-      <a href="#https://cdm.ovh/rsm/topology/topo#port_0" title="https://cdm.ovh/rsm/topology/topo#port_0">port 0</a>
+      <a href="#https://cdm.ovh/rsm/topology/topo#port0" title="https://cdm.ovh/rsm/topology/topo#port0">port 0</a>
    </li>
    <li>
-      <a href="#https://cdm.ovh/rsm/topology/topo#port_1" title="https://cdm.ovh/rsm/topology/topo#port_1">port 1</a>
+      <a href="#https://cdm.ovh/rsm/topology/topo#port1" title="https://cdm.ovh/rsm/topology/topo#port1">port 1</a>
+   </li>
+   <li>
+      <a href="#https://cdm.ovh/rsm/topology/topo#port0onElement" title="https://cdm.ovh/rsm/topology/topo#port0onElement">port0on element</a>
+   </li>
+   <li>
+      <a href="#https://cdm.ovh/rsm/topology/topo#port1onElement" title="https://cdm.ovh/rsm/topology/topo#port1onElement">port1on element</a>
    </li>
    <li>
       <a href="#lisation#side"
@@ -322,9 +300,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#lisation#tangentialOffset"
          title="https://cdm.ovh/rsm/localisation/localisation#tangentialOffset">tangential offset</a>
-   </li>
-   <li>
-      <a href="#https://cdm.ovh/rsm/topology/topo#toExitPort" title="https://cdm.ovh/rsm/topology/topo#toExitPort">to exit port</a>
    </li>
    <li>
       <a href="#lisation#verticalOffset"
@@ -452,7 +427,6 @@ This section provides details for each class and property defined by Localisatio
   <li><a href="#lisation#BaseLocation" title="https://cdm.ovh/rsm/localisation/localisation#BaseLocation">Base location</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#BoundaryElement" title="https://cdm.ovh/rsm/topology/topo#BoundaryElement">Boundary element</a></li>
   <li><a href="#lisation#BoundedLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#BoundedLinearElement">Bounded linear element</a></li>
-  <li><a href="#https://cdm.ovh/rsm/topology/topo#Connection" title="https://cdm.ovh/rsm/topology/topo#Connection">Connection</a></li>
   <li><a href="#https://w3id.org/list#EmptyList" title="https://w3id.org/list#EmptyList"> <span>Empty List</span> </a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#LinearElement" title="https://cdm.ovh/rsm/topology/topo#LinearElement">Linear element</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topology#LinearElement" title="https://cdm.ovh/rsm/topology/topology#LinearElement"> <span>Linear Element</span> </a></li>
@@ -461,10 +435,7 @@ This section provides details for each class and property defined by Localisatio
   <li><a href="#lisation#ListedNetElement" title="https://cdm.ovh/rsm/localisation/localisation#ListedNetElement">Listed Net Element</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#ListedPort" title="https://cdm.ovh/rsm/topology/topo#ListedPort">Listed port</a></li>
   <li><a href="#lisation#LocatedNetElement" title="https://cdm.ovh/rsm/localisation/localisation#LocatedNetElement">Located net element</a></li>
-  <li><a href="#https://cdm.ovh/rsm/topology/topo#Navigability" title="https://cdm.ovh/rsm/topology/topo#Navigability">Navigability</a></li>
-  <li><a href="#https://cdm.ovh/rsm/topology/topo#NavigabilityRelation" title="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation">Navigability relation</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#NetElement" title="https://cdm.ovh/rsm/topology/topo#NetElement">Net element</a></li>
-  <li><a href="#https://cdm.ovh/rsm/topology/topo#NonNavigability" title="https://cdm.ovh/rsm/topology/topo#NonNavigability">Non navigability</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#NonlinearElement" title="https://cdm.ovh/rsm/topology/topo#NonlinearElement">Nonlinear element</a></li>
   <li><a href="#https://w3id.org/list#OWLList" title="https://w3id.org/list#OWLList"> <span>O W L List</span> </a></li>
   <li><a href="#lisation#OffsetValue" title="https://cdm.ovh/rsm/localisation/localisation#OffsetValue">Offset value</a></li>
@@ -530,7 +501,7 @@ This section provides details for each class and property defined by Localisatio
   <h3>Boundary element<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#BoundaryElement</p>
   <div class="comment">
-   <span class="markdown">Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities.</span>
+   <span class="markdown">Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability (without losing directional information or the possibility to restrict navigation to a single direction). To be used at the borders of networks managed by different entities.</span>
   </div>
   <dl class="description">
    <dt>
@@ -574,21 +545,6 @@ This section provides details for each class and property defined by Localisatio
    </dd>
   </dl>
  </div>
- <div class="entity" id="https://cdm.ovh/rsm/topology/topo#Connection">
-  <h3>Connection<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#Connection</p>
-  <div class="comment">
-   <span class="markdown">Relation between two distinct ports of one (loop case) or two (common case) net elements. This relation is understood as "adjacency", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    is in domain of
-   </dt>
-   <dd>
-    <a href="#https://cdm.ovh/rsm/topology/topo#connectsPort" title="https://cdm.ovh/rsm/topology/topo#connectsPort">connects port</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-  </dl>
- </div>
  <div class="entity" id="https://w3id.org/list#EmptyList">
   <h3>Empty List<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/list#EmptyList</p>
@@ -613,6 +569,9 @@ This section provides details for each class and property defined by Localisatio
  <div class="entity" id="https://cdm.ovh/rsm/topology/topo#LinearElement">
   <h3>Linear element<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#LinearElement</p>
+  <div class="comment">
+   <span class="markdown">Any topology element that has exactly two extremities or " ports".</span>
+  </div>
   <dl class="description">
    <dt>
     has super-classes
@@ -630,7 +589,7 @@ This section provides details for each class and property defined by Localisatio
     is in domain of
    </dt>
    <dd>
-    <a href="#https://cdm.ovh/rsm/topology/topo#port_1" title="https://cdm.ovh/rsm/topology/topo#port_1">port 1</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#https://cdm.ovh/rsm/topology/topo#port1" title="https://cdm.ovh/rsm/topology/topo#port1">port 1</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is disjoint with
@@ -734,7 +693,7 @@ This section provides details for each class and property defined by Localisatio
   <h3>Listed port<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#ListedPort</p>
   <div class="comment">
-   <span class="markdown">A port in an ordered list (with successors; no contents needed). Can be used to sort the ports of a net element. See also OWLList ontology.</span>
+   <span class="markdown">A port in an ordered list (with successors; no contents needed). Can be used to sort the ports of a non-linear net element (e.g. clockwise from northmost). See also OWLList ontology.</span>
   </div>
   <dl class="description">
    <dt>
@@ -763,45 +722,6 @@ This section provides details for each class and property defined by Localisatio
    </dt>
    <dd>
     <a href="#lisation#elementLocation" title="https://cdm.ovh/rsm/localisation/localisation#elementLocation">element Location</a> <sup class="type-op" title="object property">op</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="https://cdm.ovh/rsm/topology/topo#Navigability">
-  <h3>Navigability<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#Navigability</p>
-  <div class="comment">
-   <span class="markdown">a (reified) relation between two ports of two distinct net elements.</span>
-  </div>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="#https://cdm.ovh/rsm/topology/topo#NavigabilityRelation" title="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation">Navigability relation</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is disjoint with
-   </dt>
-   <dd>
-    <a href="#https://cdm.ovh/rsm/topology/topo#NonNavigability" title="https://cdm.ovh/rsm/topology/topo#NonNavigability">Non navigability</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-  </dl>
- </div>
- <div class="entity" id="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation">
-  <h3>Navigability relation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#NavigabilityRelation</p>
-  <dl class="description">
-   <dt>
-    has sub-classes
-   </dt>
-   <dd>
-    <a href="#https://cdm.ovh/rsm/topology/topo#Navigability" title="https://cdm.ovh/rsm/topology/topo#Navigability">Navigability</a> <sup class="type-c" title="class">c</sup>, <a href="#https://cdm.ovh/rsm/topology/topo#NonNavigability" title="https://cdm.ovh/rsm/topology/topo#NonNavigability">Non navigability</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is in domain of
-   </dt>
-   <dd>
-    <a href="#https://cdm.ovh/rsm/topology/topo#fromExitPort" title="https://cdm.ovh/rsm/topology/topo#fromExitPort">from exit port</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/topology/topo#toExitPort" title="https://cdm.ovh/rsm/topology/topo#toExitPort">to exit port</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -844,29 +764,11 @@ This section provides details for each class and property defined by Localisatio
    </dd>
   </dl>
  </div>
- <div class="entity" id="https://cdm.ovh/rsm/topology/topo#NonNavigability">
-  <h3>Non navigability<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#NonNavigability</p>
-  <dl class="description">
-   <dt>
-    has super-classes
-   </dt>
-   <dd>
-    <a href="#https://cdm.ovh/rsm/topology/topo#NavigabilityRelation" title="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation">Navigability relation</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-   <dt>
-    is disjoint with
-   </dt>
-   <dd>
-    <a href="#https://cdm.ovh/rsm/topology/topo#Navigability" title="https://cdm.ovh/rsm/topology/topo#Navigability">Navigability</a> <sup class="type-c" title="class">c</sup>
-   </dd>
-  </dl>
- </div>
  <div class="entity" id="https://cdm.ovh/rsm/topology/topo#NonlinearElement">
   <h3>Nonlinear element<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#NonlinearElement</p>
   <div class="comment">
-   <span class="markdown">Net element with any number of ports except two. Used for expressing connexities and navigabilities outside a complex network area (e.g. a yard or a station).</span>
+   <span class="markdown">Net element with any number of ports except two. Used for expressing connexities and navigabilities from or to a complex network area (e.g. a yard or a station).</span>
   </div>
   <dl class="description">
    <dt>
@@ -938,7 +840,7 @@ This section provides details for each class and property defined by Localisatio
   <h3>Port<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#Port</p>
   <div class="comment">
-   <span class="markdown">Any place, at the boundary of a net element, that can be an entry and/or exit point for rolling stock. In the case of linear elements, there are exactly two ports. These may coincide (loop case) or be distinct (general case).</span>
+   <span class="markdown">Any place, at the boundary of a net element, that can be an entry and/or exit point for rolling stock. In the case of linear elements, there are exactly two ports. In the case of a loop, the two ports of the loop ports coincide geographically (but for some tolerances) but remain distinct individuals, allowing to orient the loop if need be.</span>
   </div>
   <dl class="description">
    <dt>
@@ -963,7 +865,7 @@ This section provides details for each class and property defined by Localisatio
     is in range of
    </dt>
    <dd>
-    <a href="#https://cdm.ovh/rsm/topology/topo#connectedWithTransitive" title="https://cdm.ovh/rsm/topology/topo#connectedWithTransitive">connected with transitive</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/topology/topo#connectsPort" title="https://cdm.ovh/rsm/topology/topo#connectsPort">connects port</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/topology/topo#fromExitPort" title="https://cdm.ovh/rsm/topology/topo#fromExitPort">from exit port</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/topology/topo#navigableToTransitive" title="https://cdm.ovh/rsm/topology/topo#navigableToTransitive">navigable to transitive</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/topology/topo#nonNavigableTo" title="https://cdm.ovh/rsm/topology/topo#nonNavigableTo">non navigable to</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/topology/topo#port" title="https://cdm.ovh/rsm/topology/topo#port">port</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/topology/topo#toExitPort" title="https://cdm.ovh/rsm/topology/topo#toExitPort">to exit port</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#https://cdm.ovh/rsm/topology/topo#connectedWithTransitive" title="https://cdm.ovh/rsm/topology/topo#connectedWithTransitive">connected with transitive</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/topology/topo#navigableToTransitive" title="https://cdm.ovh/rsm/topology/topo#navigableToTransitive">navigable to transitive</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/topology/topo#nonNavigableTo" title="https://cdm.ovh/rsm/topology/topo#nonNavigableTo">non navigable to</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/topology/topo#port" title="https://cdm.ovh/rsm/topology/topo#port">port</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>
     is disjoint with
@@ -1028,10 +930,7 @@ This section provides details for each class and property defined by Localisatio
   <li><a href="#lisation#associatedLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#associatedLinearElement">associated linear element</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#connectedWith" title="https://cdm.ovh/rsm/topology/topo#connectedWith">connected with</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#connectedWithTransitive" title="https://cdm.ovh/rsm/topology/topo#connectedWithTransitive">connected with transitive</a></li>
-  <li><a href="#https://cdm.ovh/rsm/topology/topo#connectsPort" title="https://cdm.ovh/rsm/topology/topo#connectsPort">connects port</a></li>
   <li><a href="#lisation#elementLocation" title="https://cdm.ovh/rsm/localisation/localisation#elementLocation">element Location</a></li>
-  <li><a href="#https://cdm.ovh/rsm/topology/topo#fromExitPort" title="https://cdm.ovh/rsm/topology/topo#fromExitPort">from exit port</a></li>
-  <li><a href="#https://cdm.ovh/rsm/topology/topo#hasConnection" title="https://cdm.ovh/rsm/topology/topo#hasConnection">has connection</a></li>
   <li><a href="#https://w3id.org/list#hasContents" title="https://w3id.org/list#hasContents"> <span>has Contents</span> </a></li>
   <li><a href="#https://w3id.org/list#hasListProperty" title="https://w3id.org/list#hasListProperty"> <span>has List Property</span> </a></li>
   <li><a href="#https://w3id.org/list#hasNext" title="https://w3id.org/list#hasNext"> <span>has Next</span> </a></li>
@@ -1039,8 +938,6 @@ This section provides details for each class and property defined by Localisatio
   <li><a href="#lisation#lateralOffset" title="https://cdm.ovh/rsm/localisation/localisation#lateralOffset">lateral offset</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#leadsTo" title="https://cdm.ovh/rsm/topology/topo#leadsTo">leads to</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#leadsToTransitive" title="https://cdm.ovh/rsm/topology/topo#leadsToTransitive">leads to transitive</a></li>
-  <li><a href="#https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom" title="https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom">navigability relation from</a></li>
-  <li><a href="#https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo" title="https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo">navigability relation to</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#navigableFrom" title="https://cdm.ovh/rsm/topology/topo#navigableFrom">navigable from</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#navigableFromTransitive" title="https://cdm.ovh/rsm/topology/topo#navigableFromTransitive">navigable from transitive</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#navigableTo" title="https://cdm.ovh/rsm/topology/topo#navigableTo">navigable to</a></li>
@@ -1051,12 +948,14 @@ This section provides details for each class and property defined by Localisatio
   <li><a href="#lisation#offset" title="https://cdm.ovh/rsm/localisation/localisation#offset">offset</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#onElement" title="https://cdm.ovh/rsm/topology/topo#onElement">on element</a></li>
   <li><a href="#lisation#onLinearElement" title="https://cdm.ovh/rsm/localisation/localisation#onLinearElement">on linear element</a></li>
+  <li><a href="#https://cdm.ovh/rsm/topology/topo#oppositePort" title="https://cdm.ovh/rsm/topology/topo#oppositePort">opposite port</a></li>
   <li><a href="#https://cdm.ovh/rsm/topology/topo#port" title="https://cdm.ovh/rsm/topology/topo#port">port</a></li>
-  <li><a href="#https://cdm.ovh/rsm/topology/topo#port_0" title="https://cdm.ovh/rsm/topology/topo#port_0">port 0</a></li>
-  <li><a href="#https://cdm.ovh/rsm/topology/topo#port_1" title="https://cdm.ovh/rsm/topology/topo#port_1">port 1</a></li>
+  <li><a href="#https://cdm.ovh/rsm/topology/topo#port0" title="https://cdm.ovh/rsm/topology/topo#port0">port 0</a></li>
+  <li><a href="#https://cdm.ovh/rsm/topology/topo#port1" title="https://cdm.ovh/rsm/topology/topo#port1">port 1</a></li>
+  <li><a href="#https://cdm.ovh/rsm/topology/topo#port0onElement" title="https://cdm.ovh/rsm/topology/topo#port0onElement">port0on element</a></li>
+  <li><a href="#https://cdm.ovh/rsm/topology/topo#port1onElement" title="https://cdm.ovh/rsm/topology/topo#port1onElement">port1on element</a></li>
   <li><a href="#lisation#side" title="https://cdm.ovh/rsm/localisation/localisation#side">side</a></li>
   <li><a href="#lisation#tangentialOffset" title="https://cdm.ovh/rsm/localisation/localisation#tangentialOffset">tangential offset</a></li>
-  <li><a href="#https://cdm.ovh/rsm/topology/topo#toExitPort" title="https://cdm.ovh/rsm/topology/topo#toExitPort">to exit port</a></li>
   <li><a href="#lisation#verticalOffset" title="https://cdm.ovh/rsm/localisation/localisation#verticalOffset">vertical offset</a></li>
  </ul>
  <div class="entity" id="lisation#applicationDirection">
@@ -1106,7 +1005,7 @@ This section provides details for each class and property defined by Localisatio
   <h3>connected with<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#connectedWith</p>
   <div class="comment">
-   <span class="markdown">Relation between a port on a net element and the asjacent port on another net element. Geographic locations of related ports may not coincide, either because of uncertainties or rounding errors, or by construction (e.g. case of tracks joined via a turntable).</span>
+   <span class="markdown">Relation between a port on a net element and the adjacent port on another net element. This is a symmetric relation. Geographic locations of related ports may not coincide, either because of constructive tolerances (abutted tracks...), or uncertainties, or rounding errors, or by construction (e.g. case of tracks joined via a turntable).</span>
   </div>
   <div class="description">
    <p><strong>has characteristics: </strong> symmetric</p>
@@ -1150,36 +1049,6 @@ This section provides details for each class and property defined by Localisatio
    </dl>
   </div>
  </div>
- <div class="entity" id="https://cdm.ovh/rsm/topology/topo#connectsPort">
-  <h3>connects port<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#connectsPort</p>
-  <div class="comment">
-   <span class="markdown">This object property points to (at least two) ports that share a connection relationship. It is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version.</span>
-  </div>
-  <div class="description">
-   <p><strong>has characteristics: </strong> inverse functional</p>
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#https://cdm.ovh/rsm/topology/topo#Connection" title="https://cdm.ovh/rsm/topology/topo#Connection">Connection</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#https://cdm.ovh/rsm/topology/topo#Port" title="https://cdm.ovh/rsm/topology/topo#Port">Port</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     is inverse of
-    </dt>
-    <dd>
-     <a href="#https://cdm.ovh/rsm/topology/topo#hasConnection" title="https://cdm.ovh/rsm/topology/topo#hasConnection">has connection</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
  <div class="entity" id="lisation#elementLocation">
   <h3>element Location<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/localisation/localisation#elementLocation</p>
@@ -1200,51 +1069,6 @@ This section provides details for each class and property defined by Localisatio
     </dt>
     <dd>
      <a href="#lisation#BaseLocation" title="https://cdm.ovh/rsm/localisation/localisation#BaseLocation">Base location</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="https://cdm.ovh/rsm/topology/topo#fromExitPort">
-  <h3>from exit port<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#fromExitPort</p>
-  <div class="description">
-   <p><strong>has characteristics: </strong> functional</p>
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#https://cdm.ovh/rsm/topology/topo#NavigabilityRelation" title="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation">Navigability relation</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#https://cdm.ovh/rsm/topology/topo#Port" title="https://cdm.ovh/rsm/topology/topo#Port">Port</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     is inverse of
-    </dt>
-    <dd>
-     <a href="#https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom" title="https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom">navigability relation from</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="https://cdm.ovh/rsm/topology/topo#hasConnection">
-  <h3>has connection<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#hasConnection</p>
-  <div class="comment">
-   <span class="markdown">inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)</span>
-  </div>
-  <div class="description">
-   <p><strong>has characteristics: </strong> functional</p>
-   <dl>
-    <dt>
-     is inverse of
-    </dt>
-    <dd>
-     <a href="#https://cdm.ovh/rsm/topology/topo#connectsPort" title="https://cdm.ovh/rsm/topology/topo#connectsPort">connects port</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -1348,7 +1172,7 @@ This section provides details for each class and property defined by Localisatio
   <h3>leads to<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#leadsTo</p>
   <div class="comment">
-   <span class="markdown">relation between two adjacent net elements (i.e. having connected ports), where rolling stock can start moving from the first and arrive on the second without reversing travel direction. This property is not symmetric.</span>
+   <span class="markdown">relation between two adjacent net elements (i.e. having connected ports), where rolling stock can start moving from the first and arrive on the second without reversing travel direction. This property is not symmetric (think of sprung switches). A shortcut property for reasoning directly on net elements.</span>
   </div>
   <div class="description">
    <dl>
@@ -1371,7 +1195,10 @@ This section provides details for each class and property defined by Localisatio
   <h3>leads to transitive<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#leadsToTransitive</p>
   <div class="comment">
-   <span class="markdown">relation between net elements (adjacent or not), where rolling stock may leave the first and reach the second without reversing travel direction.</span>
+   <span class="markdown">technical note: this may look like, but is *not* the transitive closure of leadsTo. The transitive closure of leadsTo would include train movements with reversal of travel direction, which is not desirable.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">relation between net elements (adjacent or not), where rolling stock may leave the first (subject) and reach the second (object) without reversing travel direction.</span>
   </div>
   <div class="description">
    <p><strong>has characteristics: </strong> transitive</p>
@@ -1399,36 +1226,6 @@ This section provides details for each class and property defined by Localisatio
     </dt>
     <dd>
      <a href="#https://cdm.ovh/rsm/topology/topo#port" title="https://cdm.ovh/rsm/topology/topo#port">port</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#https://cdm.ovh/rsm/topology/topo#navigableToTransitive" title="https://cdm.ovh/rsm/topology/topo#navigableToTransitive">navigable to transitive</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#https://cdm.ovh/rsm/topology/topo#onElement" title="https://cdm.ovh/rsm/topology/topo#onElement">on element</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom">
-  <h3>navigability relation from<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom</p>
-  <div class="description">
-   <p><strong>has characteristics: </strong> inverse functional</p>
-   <dl>
-    <dt>
-     is inverse of
-    </dt>
-    <dd>
-     <a href="#https://cdm.ovh/rsm/topology/topo#fromExitPort" title="https://cdm.ovh/rsm/topology/topo#fromExitPort">from exit port</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo">
-  <h3>navigability relation to<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo</p>
-  <div class="description">
-   <p><strong>has characteristics: </strong> inverse functional</p>
-   <dl>
-    <dt>
-     is inverse of
-    </dt>
-    <dd>
-     <a href="#https://cdm.ovh/rsm/topology/topo#toExitPort" title="https://cdm.ovh/rsm/topology/topo#toExitPort">to exit port</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>
@@ -1482,6 +1279,9 @@ This section provides details for each class and property defined by Localisatio
  <div class="entity" id="https://cdm.ovh/rsm/topology/topo#navigableTo">
   <h3>navigable to<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#navigableTo</p>
+  <div class="comment">
+   <span class="markdown">Expresses the possibility, for a train movement, to leave a net element via an exit port and to navigate to another net element until another exit port. Navigation excludes reversal of travel direction, even if the reversal is allowed by operational rules (e.g. shunting mode, ...).</span>
+  </div>
   <div class="description">
    <dl>
     <dt>
@@ -1576,7 +1376,7 @@ This section provides details for each class and property defined by Localisatio
   <h3>non navigable to<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#nonNavigableTo</p>
   <div class="comment">
-   <span class="markdown">Expresses that there is no navigability link between the related ports. Given the OWA (open world assumption), a navigability not expressed does not mean "non navigability". Consequently, non-navigability should be explicitly stated, as it is important knowledge.</span>
+   <span class="markdown">Expresses that there is no navigability link between the related ports. Given the OWA (open world assumption), a navigability not expressed does not mean "non navigability". Consequently, non-navigability should be explicitly stated, as it is fundamental knowledge about the network layout.</span>
   </div>
   <div class="description">
    <dl>
@@ -1643,17 +1443,6 @@ This section provides details for each class and property defined by Localisatio
   <div class="comment">
    <span class="markdown">inverse of port, port0, port1</span>
   </div>
-  <div class="description">
-   <p><strong>has characteristics: </strong> functional</p>
-   <dl>
-    <dt>
-     is inverse of
-    </dt>
-    <dd>
-     <a href="#https://cdm.ovh/rsm/topology/topo#port" title="https://cdm.ovh/rsm/topology/topo#port">port</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-   </dl>
-  </div>
  </div>
  <div class="entity" id="lisation#onLinearElement">
   <h3>on linear element<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
@@ -1678,6 +1467,24 @@ This section provides details for each class and property defined by Localisatio
    </dl>
   </div>
  </div>
+ <div class="entity" id="https://cdm.ovh/rsm/topology/topo#oppositePort">
+  <h3>opposite port<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#oppositePort</p>
+  <div class="comment">
+   <span class="markdown">Opposite port on a linear element; a symmetric property. Not meaningful if element is non-linear.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> symmetric</p>
+   <dl>
+    <dt>
+     has sub-property chains
+    </dt>
+    <dd>
+     <a href="#https://cdm.ovh/rsm/topology/topo#port0onElement" title="https://cdm.ovh/rsm/topology/topo#port0onElement">port0on element</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#https://cdm.ovh/rsm/topology/topo#port1" title="https://cdm.ovh/rsm/topology/topo#port1">port 1</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="https://cdm.ovh/rsm/topology/topo#port">
   <h3>port<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#port</p>
@@ -1688,10 +1495,14 @@ This section provides details for each class and property defined by Localisatio
    <p><strong>has characteristics: </strong> inverse functional</p>
    <dl>
     <dt>
+     has super-properties
+    </dt>
+    <dd></dd>
+    <dt>
      has sub-properties
     </dt>
     <dd>
-     <a href="#https://cdm.ovh/rsm/topology/topo#port_0" title="https://cdm.ovh/rsm/topology/topo#port_0">port 0</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/topology/topo#port_1" title="https://cdm.ovh/rsm/topology/topo#port_1">port 1</a> <sup class="type-op" title="object property">op</sup>
+     <a href="#https://cdm.ovh/rsm/topology/topo#port0" title="https://cdm.ovh/rsm/topology/topo#port0">port 0</a> <sup class="type-op" title="object property">op</sup>, <a href="#https://cdm.ovh/rsm/topology/topo#port1" title="https://cdm.ovh/rsm/topology/topo#port1">port 1</a> <sup class="type-op" title="object property">op</sup>
     </dd>
     <dt>
      has domain
@@ -1705,20 +1516,14 @@ This section provides details for each class and property defined by Localisatio
     <dd>
      <a href="#https://cdm.ovh/rsm/topology/topo#Port" title="https://cdm.ovh/rsm/topology/topo#Port">Port</a> <sup class="type-c" title="class">c</sup>
     </dd>
-    <dt>
-     is inverse of
-    </dt>
-    <dd>
-     <a href="#https://cdm.ovh/rsm/topology/topo#onElement" title="https://cdm.ovh/rsm/topology/topo#onElement">on element</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
    </dl>
   </div>
  </div>
- <div class="entity" id="https://cdm.ovh/rsm/topology/topo#port_0">
+ <div class="entity" id="https://cdm.ovh/rsm/topology/topo#port0">
   <h3>port 0<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#port_0</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#port0</p>
   <div class="comment">
-   <span class="markdown">First (or start) port of some net element. Allows to orient linear elements. Can also be used on others, with undefined semantics.</span>
+   <span class="markdown">First port of some net element that has, by definition, two ports. Allows to orient linear elements in space, even though linear elements may be completely symmetrical from a functional point of view. Orientation is conventional. Can also be used on non-linear elements, with undefined semantics.</span>
   </div>
   <div class="description">
    <p><strong>has characteristics: </strong> functional, inverse functional</p>
@@ -1732,11 +1537,11 @@ This section provides details for each class and property defined by Localisatio
    </dl>
   </div>
  </div>
- <div class="entity" id="https://cdm.ovh/rsm/topology/topo#port_1">
+ <div class="entity" id="https://cdm.ovh/rsm/topology/topo#port1">
   <h3>port 1<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#port_1</p>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#port1</p>
   <div class="comment">
-   <span class="markdown">second (or end) port on a linear element.</span>
+   <span class="markdown">the other port on a linear element.</span>
   </div>
   <div class="description">
    <p><strong>has characteristics: </strong> functional, inverse functional</p>
@@ -1755,6 +1560,14 @@ This section provides details for each class and property defined by Localisatio
     </dd>
    </dl>
   </div>
+ </div>
+ <div class="entity" id="https://cdm.ovh/rsm/topology/topo#port0onElement">
+  <h3>port0on element<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#port0onElement</p>
+ </div>
+ <div class="entity" id="https://cdm.ovh/rsm/topology/topo#port1onElement">
+  <h3>port1on element<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#port1onElement</p>
  </div>
  <div class="entity" id="lisation#side">
   <h3>side<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
@@ -1793,33 +1606,6 @@ This section provides details for each class and property defined by Localisatio
     </dt>
     <dd>
      <a href="#lisation#offset" title="https://cdm.ovh/rsm/localisation/localisation#offset">offset</a> <sup class="type-op" title="object property">op</sup>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="https://cdm.ovh/rsm/topology/topo#toExitPort">
-  <h3>to exit port<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://cdm.ovh/rsm/topology/topo#toExitPort</p>
-  <div class="description">
-   <p><strong>has characteristics: </strong> functional</p>
-   <dl>
-    <dt>
-     has domain
-    </dt>
-    <dd>
-     <a href="#https://cdm.ovh/rsm/topology/topo#NavigabilityRelation" title="https://cdm.ovh/rsm/topology/topo#NavigabilityRelation">Navigability relation</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     has range
-    </dt>
-    <dd>
-     <a href="#https://cdm.ovh/rsm/topology/topo#Port" title="https://cdm.ovh/rsm/topology/topo#Port">Port</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>
-     is inverse of
-    </dt>
-    <dd>
-     <a href="#https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo" title="https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo">navigability relation to</a> <sup class="type-op" title="object property">op</sup>
     </dd>
    </dl>
   </div>

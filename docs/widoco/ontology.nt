@@ -157,7 +157,7 @@
 <https://cdm.ovh/rsm/topology/topo#connectedWith> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/topology/topo#connectedWithTransitive> .
 <https://cdm.ovh/rsm/topology/topo#connectedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
 <https://cdm.ovh/rsm/topology/topo#connectedWith> <http://www.w3.org/2000/01/rdf-schema#label> "connected with"@en .
-<https://cdm.ovh/rsm/topology/topo#connectedWith> <http://www.w3.org/2004/02/skos/core#definition> "Relation between a port on a net element and the asjacent port on another net element. Geographic locations of related ports may not coincide, either because of uncertainties or rounding errors, or by construction (e.g. case of tracks joined via a turntable)."@en .
+<https://cdm.ovh/rsm/topology/topo#connectedWith> <http://www.w3.org/2004/02/skos/core#definition> "Relation between a port on a net element and the adjacent port on another net element. This is a symmetric relation. Geographic locations of related ports may not coincide, either because of constructive tolerances (abutted tracks...), or uncertainties, or rounding errors, or by construction (e.g. case of tracks joined via a turntable)."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#connectedWithTransitive
 <https://cdm.ovh/rsm/topology/topo#connectedWithTransitive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -166,29 +166,6 @@
 <https://cdm.ovh/rsm/topology/topo#connectedWithTransitive> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/topology/topo#Port> .
 <https://cdm.ovh/rsm/topology/topo#connectedWithTransitive> <http://www.w3.org/2000/01/rdf-schema#label> "connected with transitive"@en .
 <https://cdm.ovh/rsm/topology/topo#connectedWithTransitive> <http://www.w3.org/2004/02/skos/core#definition> "transitive closure of connectedWith."@en .
-# 
-# https://cdm.ovh/rsm/topology/topo#connectsPort
-<https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/topology/topo#hasConnection> .
-<https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-<https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topo#Connection> .
-<https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/topology/topo#Port> .
-<https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#comment> "This object property points to (at least two) ports that share a connection relationship.\r\n\r\nIt is used for building the connectedWith properties. It can be a temporal object, although this is not (yet) the case in this version."@en .
-<https://cdm.ovh/rsm/topology/topo#connectsPort> <http://www.w3.org/2000/01/rdf-schema#label> "connects port"@en .
-# 
-# https://cdm.ovh/rsm/topology/topo#fromExitPort
-<https://cdm.ovh/rsm/topology/topo#fromExitPort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/topology/topo#fromExitPort> <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom> .
-<https://cdm.ovh/rsm/topology/topo#fromExitPort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://cdm.ovh/rsm/topology/topo#fromExitPort> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> .
-<https://cdm.ovh/rsm/topology/topo#fromExitPort> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/topology/topo#Port> .
-<https://cdm.ovh/rsm/topology/topo#fromExitPort> <http://www.w3.org/2000/01/rdf-schema#label> "from exit port"@en .
-# 
-# https://cdm.ovh/rsm/topology/topo#hasConnection
-<https://cdm.ovh/rsm/topology/topo#hasConnection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/topology/topo#hasConnection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://cdm.ovh/rsm/topology/topo#hasConnection> <http://www.w3.org/2000/01/rdf-schema#comment> "inverse property of 'connects port'. Instrumental in building the property chain resulting in 'connected with' (a relation between ports)"@en .
-<https://cdm.ovh/rsm/topology/topo#hasConnection> <http://www.w3.org/2000/01/rdf-schema#label> "has connection"@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#leadsTo
 <https://cdm.ovh/rsm/topology/topo#leadsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -204,7 +181,7 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/topology/topo#port> .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://cdm.ovh/rsm/topology/topo#leadsTo> <http://www.w3.org/2000/01/rdf-schema#label> "leads to"@en .
-<https://cdm.ovh/rsm/topology/topo#leadsTo> <http://www.w3.org/2004/02/skos/core#definition> "relation between two adjacent net elements (i.e. having connected ports), where rolling stock can start moving from the first and arrive on the second without reversing travel direction. This property is not symmetric."@en .
+<https://cdm.ovh/rsm/topology/topo#leadsTo> <http://www.w3.org/2004/02/skos/core#definition> "relation between two adjacent net elements (i.e. having connected ports), where rolling stock can start moving from the first and arrive on the second without reversing travel direction. This property is not symmetric (think of sprung switches). A shortcut property for reasoning directly on net elements."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#leadsToTransitive
 <https://cdm.ovh/rsm/topology/topo#leadsToTransitive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -221,19 +198,9 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm
 _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/topology/topo#port> .
 _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://cdm.ovh/rsm/topology/topo#leadsToTransitive> <http://www.w3.org/2000/01/rdf-schema#comment> "technical note: this may look like, but is *not* the transitive closure of leadsTo. The transitive closure of leadsTo would include train movements with reversal of travel direction, which is not desirable."@en .
 <https://cdm.ovh/rsm/topology/topo#leadsToTransitive> <http://www.w3.org/2000/01/rdf-schema#label> "leads to transitive"@en .
-<https://cdm.ovh/rsm/topology/topo#leadsToTransitive> <http://www.w3.org/2004/02/skos/core#definition> "relation between net elements (adjacent or not), where rolling stock may leave the first and reach the second without reversing travel direction."@en .
-# 
-# https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom
-<https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-<https://cdm.ovh/rsm/topology/topo#navigabilityRelationFrom> <http://www.w3.org/2000/01/rdf-schema#label> "navigability relation from"@en .
-# 
-# https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo
-<https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo> <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/topology/topo#toExitPort> .
-<https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-<https://cdm.ovh/rsm/topology/topo#navigabilityRelationTo> <http://www.w3.org/2000/01/rdf-schema#label> "navigability relation to"@en .
+<https://cdm.ovh/rsm/topology/topo#leadsToTransitive> <http://www.w3.org/2004/02/skos/core#definition> "relation between net elements (adjacent or not), where rolling stock may leave the first (subject) and reach the second (object) without reversing travel direction."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#navigableFrom
 <https://cdm.ovh/rsm/topology/topo#navigableFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -253,6 +220,7 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 <https://cdm.ovh/rsm/topology/topo#navigableTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://cdm.ovh/rsm/topology/topo#navigableTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/topology/topo#navigableToTransitive> .
 <https://cdm.ovh/rsm/topology/topo#navigableTo> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <https://cdm.ovh/rsm/topology/topo#nonNavigableTo> .
+<https://cdm.ovh/rsm/topology/topo#navigableTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Expresses the possibility, for a train movement, to leave a net element via an exit port and to navigate to another net element until another exit port. Navigation excludes reversal of travel direction, even if the reversal is allowed by operational rules (e.g. shunting mode, ...)."@en .
 <https://cdm.ovh/rsm/topology/topo#navigableTo> <http://www.w3.org/2000/01/rdf-schema#label> "navigable to"@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#navigableToTransitive
@@ -273,47 +241,70 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 <https://cdm.ovh/rsm/topology/topo#nonNavigableTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topo#Port> .
 <https://cdm.ovh/rsm/topology/topo#nonNavigableTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/topology/topo#Port> .
 <https://cdm.ovh/rsm/topology/topo#nonNavigableTo> <http://www.w3.org/2000/01/rdf-schema#label> "non navigable to"@en .
-<https://cdm.ovh/rsm/topology/topo#nonNavigableTo> <http://www.w3.org/2004/02/skos/core#definition> "Expresses that there is no navigability link between the related ports. Given the OWA (open world assumption), a navigability not expressed does not mean \"non navigability\". Consequently, non-navigability should be explicitly stated, as it is important knowledge."@en .
+<https://cdm.ovh/rsm/topology/topo#nonNavigableTo> <http://www.w3.org/2004/02/skos/core#definition> "Expresses that there is no navigability link between the related ports. Given the OWA (open world assumption), a navigability not expressed does not mean \"non navigability\". Consequently, non-navigability should be explicitly stated, as it is fundamental knowledge about the network layout."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#onElement
 <https://cdm.ovh/rsm/topology/topo#onElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/topology/topo#onElement> <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/topology/topo#port> .
 <https://cdm.ovh/rsm/topology/topo#onElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <https://cdm.ovh/rsm/topology/topo#onElement> <http://www.w3.org/2000/01/rdf-schema#label> "on element"@en .
 <https://cdm.ovh/rsm/topology/topo#onElement> <http://www.w3.org/2004/02/skos/core#definition> "inverse of port, port0, port1"@en .
 # 
+# https://cdm.ovh/rsm/topology/topo#oppositePort
+<https://cdm.ovh/rsm/topology/topo#oppositePort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/topology/topo#oppositePort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<https://cdm.ovh/rsm/topology/topo#oppositePort> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/topology/topo#port1> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/topology/topo#port0onElement> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://cdm.ovh/rsm/topology/topo#oppositePort> <http://www.w3.org/2000/01/rdf-schema#comment> "Opposite port on a linear element; a symmetric property. Not meaningful if element is non-linear."@en .
+<https://cdm.ovh/rsm/topology/topo#oppositePort> <http://www.w3.org/2000/01/rdf-schema#label> "opposite port"@en .
+# 
 # https://cdm.ovh/rsm/topology/topo#port
 <https://cdm.ovh/rsm/topology/topo#port> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/topology/topo#port> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/topology/topo#onElement> .
 <https://cdm.ovh/rsm/topology/topo#port> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
 <https://cdm.ovh/rsm/topology/topo#port> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topo#NetElement> .
 <https://cdm.ovh/rsm/topology/topo#port> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/topology/topo#Port> .
 <https://cdm.ovh/rsm/topology/topo#port> <http://www.w3.org/2000/01/rdf-schema#label> "port"@en .
 <https://cdm.ovh/rsm/topology/topo#port> <http://www.w3.org/2004/02/skos/core#definition> "Associated ports with net elements. This is an inverse functional property, meaning that a port can belong to at most one net element (if a port is found to belong to two net elements, the inference is that those two elements are the same)."@en .
 # 
-# https://cdm.ovh/rsm/topology/topo#port_0
-<https://cdm.ovh/rsm/topology/topo#port_0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/topology/topo#port_0> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/topology/topo#port> .
-<https://cdm.ovh/rsm/topology/topo#port_0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://cdm.ovh/rsm/topology/topo#port_0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-<https://cdm.ovh/rsm/topology/topo#port_0> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <https://cdm.ovh/rsm/topology/topo#port_1> .
-<https://cdm.ovh/rsm/topology/topo#port_0> <http://www.w3.org/2000/01/rdf-schema#label> "port 0"@en .
-<https://cdm.ovh/rsm/topology/topo#port_0> <http://www.w3.org/2004/02/skos/core#definition> "First (or start) port of some net element. Allows to orient linear elements. Can also be used on others, with undefined semantics."@en .
+# https://cdm.ovh/rsm/topology/topo#port0
+<https://cdm.ovh/rsm/topology/topo#port0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/topology/topo#port0> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/topology/topo#port> .
+<https://cdm.ovh/rsm/topology/topo#port0> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/topology/topo#port0onElement> .
+<https://cdm.ovh/rsm/topology/topo#port0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://cdm.ovh/rsm/topology/topo#port0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://cdm.ovh/rsm/topology/topo#port0> <http://www.w3.org/2002/07/owl#propertyDisjointWith> <https://cdm.ovh/rsm/topology/topo#port1> .
+<https://cdm.ovh/rsm/topology/topo#port0> <http://www.w3.org/2000/01/rdf-schema#label> "port 0"@en .
+<https://cdm.ovh/rsm/topology/topo#port0> <http://www.w3.org/2004/02/skos/core#definition> "First port of some net element that has, by definition, two ports. Allows to orient linear elements in space, even though linear elements may be completely symmetrical from a functional point of view. Orientation is conventional. Can also be used on non-linear elements, with undefined semantics."@en .
 # 
-# https://cdm.ovh/rsm/topology/topo#port_1
-<https://cdm.ovh/rsm/topology/topo#port_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/topology/topo#port_1> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/topology/topo#port> .
-<https://cdm.ovh/rsm/topology/topo#port_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://cdm.ovh/rsm/topology/topo#port_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
-<https://cdm.ovh/rsm/topology/topo#port_1> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topo#LinearElement> .
-<https://cdm.ovh/rsm/topology/topo#port_1> <http://www.w3.org/2000/01/rdf-schema#label> "port 1" .
-<https://cdm.ovh/rsm/topology/topo#port_1> <http://www.w3.org/2004/02/skos/core#definition> "second (or end) port on a linear element."@en .
+# https://cdm.ovh/rsm/topology/topo#port0onElement
+<https://cdm.ovh/rsm/topology/topo#port0onElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/topology/topo#port0onElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://cdm.ovh/rsm/topology/topo#port0onElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://cdm.ovh/rsm/topology/topo#port0onElement> <http://www.w3.org/2000/01/rdf-schema#label> "port0on element"@en .
 # 
-# https://cdm.ovh/rsm/topology/topo#toExitPort
-<https://cdm.ovh/rsm/topology/topo#toExitPort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://cdm.ovh/rsm/topology/topo#toExitPort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<https://cdm.ovh/rsm/topology/topo#toExitPort> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> .
-<https://cdm.ovh/rsm/topology/topo#toExitPort> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/topology/topo#Port> .
-<https://cdm.ovh/rsm/topology/topo#toExitPort> <http://www.w3.org/2000/01/rdf-schema#label> "to exit port"@en .
+# https://cdm.ovh/rsm/topology/topo#port1
+<https://cdm.ovh/rsm/topology/topo#port1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/topology/topo#port1> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/topology/topo#port> .
+<https://cdm.ovh/rsm/topology/topo#port1> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/topology/topo#port1onElement> .
+<https://cdm.ovh/rsm/topology/topo#port1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://cdm.ovh/rsm/topology/topo#port1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://cdm.ovh/rsm/topology/topo#port1> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/topology/topo#LinearElement> .
+<https://cdm.ovh/rsm/topology/topo#port1> <http://www.w3.org/2000/01/rdf-schema#label> "port 1" .
+<https://cdm.ovh/rsm/topology/topo#port1> <http://www.w3.org/2004/02/skos/core#definition> "the other port on a linear element."@en .
+# 
+# https://cdm.ovh/rsm/topology/topo#port1onElement
+<https://cdm.ovh/rsm/topology/topo#port1onElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/topology/topo#port1onElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://cdm.ovh/rsm/topology/topo#port1onElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<https://cdm.ovh/rsm/topology/topo#port1onElement> <http://www.w3.org/2000/01/rdf-schema#label> "port1on element"@en .
 # 
 # https://w3id.org/list#hasContents
 <https://w3id.org/list#hasContents> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -435,10 +426,10 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 # https://cdm.ovh/rsm/localisation/localisation#OffsetValue
 <https://cdm.ovh/rsm/localisation/localisation#OffsetValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/localisation/localisation#OffsetValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://qudt.org/schema/qudt/QuantityValue> .
-<https://cdm.ovh/rsm/localisation/localisation#OffsetValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
-_:genid7 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://qudt.org/vocab/quantitykind/Length> .
-_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/schema/qudt/quantityKind> .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://cdm.ovh/rsm/localisation/localisation#OffsetValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://qudt.org/vocab/quantitykind/Length> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/schema/qudt/quantityKind> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://cdm.ovh/rsm/localisation/localisation#OffsetValue> <http://www.w3.org/2000/01/rdf-schema#label> "Offset value"@en .
 # 
 # https://cdm.ovh/rsm/localisation/localisation#Side
@@ -456,17 +447,13 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/topology/topo#LinearElement> .
 <https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/2000/01/rdf-schema#label> "Boundary element"@en .
-<https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/2004/02/skos/core#definition> "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability. To be used at the borders of networks managed by different entities."@en .
-# 
-# https://cdm.ovh/rsm/topology/topo#Connection
-<https://cdm.ovh/rsm/topology/topo#Connection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/topology/topo#Connection> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between two distinct ports of one (loop case) or two (common case) net  elements. This relation is understood as \"adjacency\", i.e. the related ports are expected to be at the same coordinates or with a minimal gap. A rare exception would be the case of transfer bridges, turntables, or the like."@en .
-<https://cdm.ovh/rsm/topology/topo#Connection> <http://www.w3.org/2000/01/rdf-schema#label> "Connection"@en .
+<https://cdm.ovh/rsm/topology/topo#BoundaryElement> <http://www.w3.org/2004/02/skos/core#definition> "Linear element with length = 0. It still has two distinct port, allowing to express connectivity and navigability (without losing directional information or the possibility to restrict navigation to a single direction). To be used at the borders of networks managed by different entities."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#LinearElement
 <https://cdm.ovh/rsm/topology/topo#LinearElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/topology/topo#LinearElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/topology/topo#NetElement> .
 <https://cdm.ovh/rsm/topology/topo#LinearElement> <http://www.w3.org/2002/07/owl#disjointWith> <https://cdm.ovh/rsm/topology/topo#NonlinearElement> .
+<https://cdm.ovh/rsm/topology/topo#LinearElement> <http://www.w3.org/2000/01/rdf-schema#comment> "Any topology element that has exactly two extremities or \" ports\"."@en .
 <https://cdm.ovh/rsm/topology/topo#LinearElement> <http://www.w3.org/2000/01/rdf-schema#label> "Linear element"@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#ListedPort
@@ -474,18 +461,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://cdm.ovh/rsm/topology/topo#ListedPort> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/topology/topo#Port> .
 <https://cdm.ovh/rsm/topology/topo#ListedPort> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/list#OWLList> .
 <https://cdm.ovh/rsm/topology/topo#ListedPort> <http://www.w3.org/2000/01/rdf-schema#label> "Listed port"@en .
-<https://cdm.ovh/rsm/topology/topo#ListedPort> <http://www.w3.org/2004/02/skos/core#definition> "A port in an ordered list (with successors; no contents needed). Can be used to sort the ports of a net element. See also OWLList ontology."@en .
-# 
-# https://cdm.ovh/rsm/topology/topo#Navigability
-<https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> .
-<https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2002/07/owl#disjointWith> <https://cdm.ovh/rsm/topology/topo#NonNavigability> .
-<https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2000/01/rdf-schema#comment> "a (reified) relation between two ports of two distinct net elements."@en .
-<https://cdm.ovh/rsm/topology/topo#Navigability> <http://www.w3.org/2000/01/rdf-schema#label> "Navigability"@en .
-# 
-# https://cdm.ovh/rsm/topology/topo#NavigabilityRelation
-<https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> <http://www.w3.org/2000/01/rdf-schema#label> "Navigability relation"@en .
+<https://cdm.ovh/rsm/topology/topo#ListedPort> <http://www.w3.org/2004/02/skos/core#definition> "A port in an ordered list (with successors; no contents needed). Can be used to sort the ports of a non-linear net element (e.g. clockwise from northmost). See also OWLList ontology."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#NetElement
 <https://cdm.ovh/rsm/topology/topo#NetElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -494,22 +470,17 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://cdm.ovh/rsm/topology/topo#NetElement> <http://www.w3.org/2000/01/rdf-schema#label> "Net element"@en .
 <https://cdm.ovh/rsm/topology/topo#NetElement> <http://www.w3.org/2004/02/skos/core#definition> "Superclass for net elements (network elements)"@en .
 # 
-# https://cdm.ovh/rsm/topology/topo#NonNavigability
-<https://cdm.ovh/rsm/topology/topo#NonNavigability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://cdm.ovh/rsm/topology/topo#NonNavigability> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/topology/topo#NavigabilityRelation> .
-<https://cdm.ovh/rsm/topology/topo#NonNavigability> <http://www.w3.org/2000/01/rdf-schema#label> "Non navigability"@en .
-# 
 # https://cdm.ovh/rsm/topology/topo#NonlinearElement
 <https://cdm.ovh/rsm/topology/topo#NonlinearElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/topology/topo#NonlinearElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/topology/topo#NetElement> .
 <https://cdm.ovh/rsm/topology/topo#NonlinearElement> <http://www.w3.org/2000/01/rdf-schema#label> "Nonlinear element"@en .
-<https://cdm.ovh/rsm/topology/topo#NonlinearElement> <http://www.w3.org/2004/02/skos/core#definition> "Net element with any number of ports except two. Used for expressing connexities and navigabilities outside a complex network area (e.g. a yard or a station)."@en .
+<https://cdm.ovh/rsm/topology/topo#NonlinearElement> <http://www.w3.org/2004/02/skos/core#definition> "Net element with any number of ports except two. Used for expressing connexities and navigabilities from or to a complex network area (e.g. a yard or a station)."@en .
 # 
 # https://cdm.ovh/rsm/topology/topo#Port
 <https://cdm.ovh/rsm/topology/topo#Port> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cdm.ovh/rsm/topology/topo#Port> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> .
 <https://cdm.ovh/rsm/topology/topo#Port> <http://www.w3.org/2000/01/rdf-schema#label> "Port" .
-<https://cdm.ovh/rsm/topology/topo#Port> <http://www.w3.org/2004/02/skos/core#definition> "Any place, at the boundary of a net element, that can be an entry and/or exit point for rolling stock. In the case of linear elements, there are exactly two ports. These may coincide (loop case) or be distinct (general case)."@en .
+<https://cdm.ovh/rsm/topology/topo#Port> <http://www.w3.org/2004/02/skos/core#definition> "Any place, at the boundary of a net element, that can be an entry and/or exit point for rolling stock. In the case of linear elements, there are exactly two ports. In the case of a loop, the two ports of the loop ports coincide geographically (but for some tolerances) but remain distinct individuals, allowing to orient the loop if need be."@en .
 # 
 # https://cdm.ovh/rsm/topology/topology#LinearElement
 <https://cdm.ovh/rsm/topology/topology#LinearElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -523,20 +494,6 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://w3id.org/list#EmptyList
 <https://w3id.org/list#EmptyList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/list#EmptyList> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid8 .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid8 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid12 .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid10 .
-_:genid10 <http://www.w3.org/2002/07/owl#complementOf> _:genid11 .
-_:genid11 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
-_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/list#hasContents> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/list#OWLList> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://w3id.org/list#EmptyList> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid13 .
 _:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 _:genid13 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid17 .
@@ -545,21 +502,35 @@ _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid15 .
 _:genid15 <http://www.w3.org/2002/07/owl#complementOf> _:genid16 .
 _:genid16 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
-_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/list#isFollowedBy> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/list#hasContents> .
 _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/list#OWLList> .
 _:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/list#EmptyList> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid18 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#complementOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/list#isFollowedBy> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/list#OWLList> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://w3id.org/list#EmptyList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/list#OWLList> .
 # 
 # https://w3id.org/list#OWLList
 <https://w3id.org/list#OWLList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/list#OWLList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<https://w3id.org/list#OWLList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
-_:genid18 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/list#OWLList> .
-_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/list#isFollowedBy> .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/list#OWLList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/list#OWLList> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/list#isFollowedBy> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/list#OWLList> <http://www.w3.org/2000/01/rdf-schema#comment> "OWLList is used to represent linked lists. Instances of OWLList are list elements; they have at most one direct successor (the value of property hasNext)."@en .
 # 
 # 
@@ -610,16 +581,16 @@ _:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # #################################################################
 # 
 # 
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid19 <http://www.w3.org/2002/07/owl#members> _:genid22 .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#SpotLocation> .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#AreaLocation> .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid24 <http://www.w3.org/2002/07/owl#members> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#SpotLocation> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#LinearLocation> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/localisation#AreaLocation> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
