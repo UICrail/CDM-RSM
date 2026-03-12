@@ -1410,13 +1410,13 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DNS Ultralite
           <point y="-20" x="370"/>
           <point y="-20" x="280"/>
         </edge>
-        <edge target="n6" source="n0" type="equivalence" id="e14">
-          <point y="-80" x="180"/>
+        <edge target="n0" source="n6" type="inclusion" id="e16">
           <point y="-140" x="280"/>
-        </edge>
-        <edge target="n7" source="n0" type="equivalence" id="e15">
           <point y="-80" x="180"/>
+        </edge>
+        <edge target="n0" source="n7" type="inclusion" id="e17">
           <point y="-20" x="280"/>
+          <point y="-80" x="180"/>
         </edge>
         <edge target="n10" source="n8" type="inclusion" id="e3">
           <point y="-140" x="460"/>

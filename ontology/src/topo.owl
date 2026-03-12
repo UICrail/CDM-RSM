@@ -448,18 +448,6 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DnS Ultralite
     <!-- https://cdm.ovh/rsm/topology/topo#Navigability -->
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#Navigability">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/topology/topo#fromPort"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://cdm.ovh/rsm/topology/topo#toPort"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Note: non-navigability and connexity reification are not proposed here, assuming that:
 1. the authority lies with the properties (navigableTo, nonNavigableTo, connectedWith), and
 2. navigabilities as individuals are useful for further modelling (switches...), while non-navigabilities and connexities as individuals do not appear to be equally useful.</rdfs:comment>
