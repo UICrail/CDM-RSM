@@ -104,7 +104,7 @@ pages}\label{cdm-rsm-compiled-wiki-pages}}
 \hypertarget{version}{%
 \subsection{Version}\label{version}}
 
-This document was generated on 2026-03-13 15:41:06 UTC
+This document was generated on 2026-03-13 16:47:12 UTC
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -159,8 +159,11 @@ also for domain knowledge description is discouraged, since it may
 result in breaching the chosen OWL profile (e.g.~resulting in OWL2 Full
 instead of OWL2 DL, with undesirable consequences on processing time).
 
-\hypertarget{list-ontology}{%
-\subsubsection{List ontology}\label{list-ontology}}
+\hypertarget{list-ontologies}{%
+\subsubsection{List ontologies}\label{list-ontologies}}
+
+\hypertarget{by-pauwels-terkaj}{%
+\paragraph{By Pauwels \& Terkaj}\label{by-pauwels-terkaj}}
 
 A List ontology is published by Pieter Pauwels and Walter Terkaj under
 \href{https://pi.pauwel.be/evoc/list_W3ID/20151211/index.html}{this
@@ -168,11 +171,31 @@ link}. It is based on previous works by Drummond \& al., 2006.
 
 While also relying on the linked list paradigm, the List ontology does
 not represent a List as a container of linked items (unlike rdf:List,
-above). It reverses the perspective by giving direct access to list
-items, and attaching contents to the items.
+above). It reverses the perspective by giving direct access to the first
+item in the list, and attaching contents to the items.
 
 This ontology is used by IfcOwl and therefore has our preference, as
-long as there is no strong need for a ``container''.
+long as there is no strong need for a ``container''. However it is not
+DL-compliant (due to annotation properties being used but not
+re-declared). Also, an OWL restriction is outside RL.
+
+This led to our developing an alternative ontology, see below.
+
+\hypertarget{by-a.-magnien}{%
+\paragraph{By A. Magnien}\label{by-a.-magnien}}
+
+The modified List ontology is available at
+https://cdm.ovh/rsm/list/list.
+
+Is is closely derived from the List ontology above. User ontologies can
+keep the prefix (list:) unchanged, and class and property names have
+been kept, ensuring backward compatibility.
+
+This ontology is OWL2 DL and RL compliant. Tweaking the class hierarchy
+and property domains and ranges was enough to eliminate the RL-offending
+OWL restriction. In addition, an instance of EmptyList, aptly named
+emptyList, is available for users to close their lists explicitly using
+a single ``stop'' instance.
 
 \hypertarget{co-ontology.}{%
 \subsubsection{CO ontology.}\label{co-ontology.}}

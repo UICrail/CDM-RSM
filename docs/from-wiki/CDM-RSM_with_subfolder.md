@@ -5,7 +5,7 @@ _Self-contained version with local images_
 
 ## Version
 
-This document was generated on 2026-03-13 15:41:06 UTC
+This document was generated on 2026-03-13 16:47:12 UTC
 
 
 ---
@@ -41,13 +41,25 @@ RDF collections (using rdf:first, rdf:rest, and rdf:nil) rest on the linked list
 ```
 However, rdf:List is used in RDF serialisation of OWL. Using rdf:List also for domain knowledge description is discouraged, since it may result in breaching the chosen OWL profile (e.g. resulting in OWL2 Full instead of OWL2 DL, with undesirable consequences on processing time).
 
-### List ontology
+### List ontologies
+
+#### By Pauwels & Terkaj
 
 A List ontology is published by Pieter Pauwels and Walter Terkaj under [this link](https://pi.pauwel.be/evoc/list_W3ID/20151211/index.html). It is based on previous works by Drummond & al., 2006.
 
-While also relying on the linked list paradigm, the List ontology does not represent a List as a container of linked items (unlike rdf:List, above). It reverses the perspective by giving direct access to list items, and attaching contents to the items.
+While also relying on the linked list paradigm, the List ontology does not represent a List as a container of linked items (unlike rdf:List, above). It reverses the perspective by giving direct access to the first item in the list, and attaching contents to the items.
 
-This ontology is used by IfcOwl and therefore has our preference, as long as there is no strong need for a "container".
+This ontology is used by IfcOwl and therefore has our preference, as long as there is no strong need for a "container". However it is not DL-compliant (due to annotation properties being used but not re-declared). Also, an OWL restriction is outside RL.
+
+This led to our developing an alternative ontology, see below.
+
+#### By A. Magnien
+
+The modified List ontology is available at https://cdm.ovh/rsm/list/list.
+
+Is is closely derived from the List ontology above. User ontologies can keep the prefix (list:) unchanged, and class and property names have been kept, ensuring backward compatibility.
+
+This ontology is OWL2 DL and RL compliant. Tweaking the class hierarchy and property domains and ranges was enough to eliminate the RL-offending OWL restriction. In addition, an instance of EmptyList, aptly named emptyList, is available for users to close their lists explicitly using a single "stop" instance.
 
 ### CO ontology.
 
