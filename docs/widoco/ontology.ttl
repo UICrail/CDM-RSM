@@ -7,30 +7,34 @@
 @base <https://cdm.ovh/rsm/localisation/loca#> .
 
 <https://cdm.ovh/rsm/localisation/loca> rdf:type owl:Ontology ;
-                                         owl:versionIRI <https://cdm.ovh/rsm/localisation/1.0rc3/loca> ;
-                                         owl:imports <https://cdm.ovh/rsm/topology/topo> ,
-                                                     <https://w3id.org/list> ;
+                                         owl:versionIRI <https://cdm.ovh/rsm/localisation/1.0rc4/loca> ;
+                                         owl:imports <https://cdm.ovh/rsm/list/list> ,
+                                                     <https://cdm.ovh/rsm/topology/topo> ;
                                          <http://purl.org/dc/elements/1.1/abstract> """This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.
 
 For ordering things, this ontology uses the List ontology published by Pieter Pauwels and Walter Terkaj. The List ontology also underpins the ifcOWL ontology by the same authors.
 
 For spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical."""@en ;
                                          <http://purl.org/dc/elements/1.1/creator> "Airy Magnien" ;
-                                         <http://purl.org/dc/elements/1.1/date> "12 February 2026"@en ;
+                                         <http://purl.org/dc/elements/1.1/date> "13 March 2026"@en ;
                                          <http://purl.org/dc/elements/1.1/title> "Localisation"@en ;
-                                         <http://purl.org/dc/terms/license> "EUPL 1.2"@en ;
+                                         <http://purl.org/dc/terms/license> "C C BY SA 4.0"@en ;
                                          rdfs:comment "Added generic \"location\"  property. Corrected prefixes."@en ,
                                                       """Left for future work:
 1 - using intrinsic coordinates in a more explicit way (formal references to GeoSPARQL and to ISO 19148, possibly via IFC or DATEX classes). This would entail the replacement of data properties (atIntrinsicCoordinate, startAt, endAt) by object properties. Whether this is worthwhile is a matter for debate.
 2 - offsets were lateral in earlier versions (up to RSM 1.2), and are now generalized to tangential and vertical, effectively defining a 3-axis local coordinate system. Explicitly defining a local cartesian coordinate system would be a conceptual simplification and could make use of IFC classes."""@en ;
                                          rdfs:label "Localisation"@en ;
-                                         owl:versionInfo "1.0rc3" ;
+                                         owl:versionInfo "1.0rc4: changed license. Imports List (modified) ontology."@en ;
                                          <https://vocab.org/vann/preferredNamespacePrefix> "loca" ;
                                          <https://vocab.org/vann/preferredNamespaceURI> "https://cdm.ovh/rsm/localisation/loca" .
 
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://creativecommons.org/ns#license
+<http://creativecommons.org/ns#license> rdf:type owl:AnnotationProperty .
+
 
 ###  http://purl.org/dc/elements/1.1/abstract
 <http://purl.org/dc/elements/1.1/abstract> rdf:type owl:AnnotationProperty .
@@ -52,6 +56,10 @@ For spot locations (and, by extension, for linear locations) on linear elements,
 <http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/elements/1.1/language
+<http://purl.org/dc/elements/1.1/language> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/elements/1.1/title
 <http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
 
@@ -64,8 +72,20 @@ For spot locations (and, by extension, for linear locations) on linear elements,
 <http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#definition
 <http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#wasDerivedFrom
+<http://www.w3.org/ns/prov#wasDerivedFrom> rdf:type owl:AnnotationProperty .
 
 
 ###  https://vocab.org/vann/preferredNamespacePrefix
@@ -94,6 +114,33 @@ xsd:float rdf:type rdfs:Datatype .
 
 ###  http://qudt.org/schema/qudt/quantityKind
 <http://qudt.org/schema/qudt/quantityKind> rdf:type owl:ObjectProperty .
+
+
+###  https://cdm.ovh/rsm/list/list#hasContents
+<https://cdm.ovh/rsm/list/list#hasContents> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <https://cdm.ovh/rsm/list/list#hasListProperty> ;
+                                            rdf:type owl:FunctionalProperty ;
+                                            rdfs:domain <https://cdm.ovh/rsm/list/list#OWLList> .
+
+
+###  https://cdm.ovh/rsm/list/list#hasListProperty
+<https://cdm.ovh/rsm/list/list#hasListProperty> rdf:type owl:ObjectProperty .
+
+
+###  https://cdm.ovh/rsm/list/list#hasNext
+<https://cdm.ovh/rsm/list/list#hasNext> rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf <https://cdm.ovh/rsm/list/list#isFollowedBy> ;
+                                        rdf:type owl:FunctionalProperty ;
+                                        rdfs:domain <https://cdm.ovh/rsm/list/list#OWLList> ;
+                                        rdfs:range <https://cdm.ovh/rsm/list/list#ListNode> .
+
+
+###  https://cdm.ovh/rsm/list/list#isFollowedBy
+<https://cdm.ovh/rsm/list/list#isFollowedBy> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <https://cdm.ovh/rsm/list/list#hasListProperty> ;
+                                             rdf:type owl:TransitiveProperty ;
+                                             rdfs:domain <https://cdm.ovh/rsm/list/list#OWLList> ;
+                                             rdfs:range <https://cdm.ovh/rsm/list/list#ListNode> .
 
 
 ###  https://cdm.ovh/rsm/localisation/loca#applicationDirection
@@ -344,30 +391,6 @@ The orientation of the linear element is its own intrinsic orientation, from por
                                                    rdfs:label "port1on element"@en .
 
 
-###  https://w3id.org/list#hasContents
-<https://w3id.org/list#hasContents> rdf:type owl:ObjectProperty ;
-                                    rdfs:subPropertyOf <https://w3id.org/list#hasListProperty> ;
-                                    rdf:type owl:FunctionalProperty .
-
-
-###  https://w3id.org/list#hasListProperty
-<https://w3id.org/list#hasListProperty> rdf:type owl:ObjectProperty ;
-                                        rdfs:domain <https://w3id.org/list#OWLList> .
-
-
-###  https://w3id.org/list#hasNext
-<https://w3id.org/list#hasNext> rdf:type owl:ObjectProperty ;
-                                rdfs:subPropertyOf <https://w3id.org/list#isFollowedBy> ;
-                                rdf:type owl:FunctionalProperty .
-
-
-###  https://w3id.org/list#isFollowedBy
-<https://w3id.org/list#isFollowedBy> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <https://w3id.org/list#hasListProperty> ;
-                                     rdf:type owl:TransitiveProperty ;
-                                     rdfs:range <https://w3id.org/list#OWLList> .
-
-
 #################################################################
 #    Data properties
 #################################################################
@@ -418,6 +441,21 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
 
 ###  https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature
 <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/list/list#EmptyList
+<https://cdm.ovh/rsm/list/list#EmptyList> rdf:type owl:Class ;
+                                          rdfs:subClassOf <https://cdm.ovh/rsm/list/list#ListNode> ;
+                                          owl:disjointWith <https://cdm.ovh/rsm/list/list#OWLList> .
+
+
+###  https://cdm.ovh/rsm/list/list#ListNode
+<https://cdm.ovh/rsm/list/list#ListNode> rdf:type owl:Class .
+
+
+###  https://cdm.ovh/rsm/list/list#OWLList
+<https://cdm.ovh/rsm/list/list#OWLList> rdf:type owl:Class ;
+                                        rdfs:subClassOf <https://cdm.ovh/rsm/list/list#ListNode> .
 
 
 ###  https://cdm.ovh/rsm/localisation/loca#AreaLocation
@@ -564,44 +602,19 @@ Over and Under are relative to the geometric or geographic vertical."""@en ;
 <https://qudt.org/vocab/quantitykind/Length> rdf:type owl:Class .
 
 
-###  https://w3id.org/list#EmptyList
-<https://w3id.org/list#EmptyList> rdf:type owl:Class ;
-                                  owl:equivalentClass [ owl:intersectionOf ( <https://w3id.org/list#OWLList>
-                                                                             [ rdf:type owl:Class ;
-                                                                               owl:complementOf [ rdf:type owl:Restriction ;
-                                                                                                  owl:onProperty <https://w3id.org/list#hasContents> ;
-                                                                                                  owl:someValuesFrom owl:Thing
-                                                                                                ]
-                                                                             ]
-                                                                           ) ;
-                                                        rdf:type owl:Class
-                                                      ] ,
-                                                      [ owl:intersectionOf ( <https://w3id.org/list#OWLList>
-                                                                             [ rdf:type owl:Class ;
-                                                                               owl:complementOf [ rdf:type owl:Restriction ;
-                                                                                                  owl:onProperty <https://w3id.org/list#isFollowedBy> ;
-                                                                                                  owl:someValuesFrom owl:Thing
-                                                                                                ]
-                                                                             ]
-                                                                           ) ;
-                                                        rdf:type owl:Class
-                                                      ] ;
-                                  rdfs:subClassOf <https://w3id.org/list#OWLList> .
-
-
 ###  https://w3id.org/list#OWLList
 <https://w3id.org/list#OWLList> rdf:type owl:Class ;
-                                rdfs:subClassOf owl:Thing ,
-                                                [ rdf:type owl:Restriction ;
-                                                  owl:onProperty <https://w3id.org/list#isFollowedBy> ;
-                                                  owl:allValuesFrom <https://w3id.org/list#OWLList>
-                                                ] ;
                                 rdfs:comment "OWLList is used to represent linked lists. Instances of OWLList are list elements; they have at most one direct successor (the value of property hasNext)."@en .
 
 
 #################################################################
 #    Individuals
 #################################################################
+
+###  https://cdm.ovh/rsm/list/list#emptyList
+<https://cdm.ovh/rsm/list/list#emptyList> rdf:type owl:NamedIndividual ,
+                                                   <https://cdm.ovh/rsm/list/list#EmptyList> .
+
 
 ###  https://cdm.ovh/rsm/localisation/loca#Bottom
 :Bottom rdf:type owl:NamedIndividual ,

@@ -1,16 +1,16 @@
 <https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2002/07/owl#versionIRI> <https://cdm.ovh/rsm/localisation/1.0rc3/loca> .
+<https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2002/07/owl#versionIRI> <https://cdm.ovh/rsm/localisation/1.0rc4/loca> .
+<https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2002/07/owl#imports> <https://cdm.ovh/rsm/list/list> .
 <https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2002/07/owl#imports> <https://cdm.ovh/rsm/topology/topo> .
-<https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/list> .
 <https://cdm.ovh/rsm/localisation/loca> <http://purl.org/dc/elements/1.1/abstract> "This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.\n\nFor ordering things, this ontology uses the List ontology published by Pieter Pauwels and Walter Terkaj. The List ontology also underpins the ifcOWL ontology by the same authors.\n\nFor spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical."@en .
 <https://cdm.ovh/rsm/localisation/loca> <http://purl.org/dc/elements/1.1/creator> "Airy Magnien" .
-<https://cdm.ovh/rsm/localisation/loca> <http://purl.org/dc/elements/1.1/date> "12 February 2026"@en .
+<https://cdm.ovh/rsm/localisation/loca> <http://purl.org/dc/elements/1.1/date> "13 March 2026"@en .
 <https://cdm.ovh/rsm/localisation/loca> <http://purl.org/dc/elements/1.1/title> "Localisation"@en .
-<https://cdm.ovh/rsm/localisation/loca> <http://purl.org/dc/terms/license> "EUPL 1.2"@en .
+<https://cdm.ovh/rsm/localisation/loca> <http://purl.org/dc/terms/license> "C C BY SA 4.0"@en .
 <https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2000/01/rdf-schema#comment> "Added generic \"location\"  property. Corrected prefixes."@en .
 <https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2000/01/rdf-schema#comment> "Left for future work:\n1 - using intrinsic coordinates in a more explicit way (formal references to GeoSPARQL and to ISO 19148, possibly via IFC or DATEX classes). This would entail the replacement of data properties (atIntrinsicCoordinate, startAt, endAt) by object properties. Whether this is worthwhile is a matter for debate.\n2 - offsets were lateral in earlier versions (up to RSM 1.2), and are now generalized to tangential and vertical, effectively defining a 3-axis local coordinate system. Explicitly defining a local cartesian coordinate system would be a conceptual simplification and could make use of IFC classes."@en .
 <https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2000/01/rdf-schema#label> "Localisation"@en .
-<https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2002/07/owl#versionInfo> "1.0rc3" .
+<https://cdm.ovh/rsm/localisation/loca> <http://www.w3.org/2002/07/owl#versionInfo> "1.0rc4: changed license. Imports List (modified) ontology."@en .
 <https://cdm.ovh/rsm/localisation/loca> <https://vocab.org/vann/preferredNamespacePrefix> "loca" .
 <https://cdm.ovh/rsm/localisation/loca> <https://vocab.org/vann/preferredNamespaceURI> "https://cdm.ovh/rsm/localisation/loca" .
 # 
@@ -21,6 +21,9 @@
 # #
 # #################################################################
 # 
+# 
+# http://creativecommons.org/ns#license
+<http://creativecommons.org/ns#license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/dc/elements/1.1/abstract
 <http://purl.org/dc/elements/1.1/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -37,6 +40,9 @@
 # http://purl.org/dc/elements/1.1/description
 <http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
+# http://purl.org/dc/elements/1.1/language
+<http://purl.org/dc/elements/1.1/language> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
 # http://purl.org/dc/elements/1.1/title
 <http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
@@ -46,8 +52,17 @@
 # http://purl.org/dc/terms/license
 <http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
 # http://www.w3.org/2004/02/skos/core#definition
 <http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/prov#wasDerivedFrom
+<http://www.w3.org/ns/prov#wasDerivedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # https://vocab.org/vann/preferredNamespacePrefix
 <https://vocab.org/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -81,6 +96,29 @@
 # 
 # http://qudt.org/schema/qudt/quantityKind
 <http://qudt.org/schema/qudt/quantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://cdm.ovh/rsm/list/list#hasContents
+<https://cdm.ovh/rsm/list/list#hasContents> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/list/list#hasContents> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/list/list#hasListProperty> .
+<https://cdm.ovh/rsm/list/list#hasContents> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://cdm.ovh/rsm/list/list#hasContents> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/list/list#OWLList> .
+# 
+# https://cdm.ovh/rsm/list/list#hasListProperty
+<https://cdm.ovh/rsm/list/list#hasListProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://cdm.ovh/rsm/list/list#hasNext
+<https://cdm.ovh/rsm/list/list#hasNext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/list/list#hasNext> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/list/list#isFollowedBy> .
+<https://cdm.ovh/rsm/list/list#hasNext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://cdm.ovh/rsm/list/list#hasNext> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/list/list#OWLList> .
+<https://cdm.ovh/rsm/list/list#hasNext> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/list/list#ListNode> .
+# 
+# https://cdm.ovh/rsm/list/list#isFollowedBy
+<https://cdm.ovh/rsm/list/list#isFollowedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://cdm.ovh/rsm/list/list#isFollowedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://cdm.ovh/rsm/list/list#hasListProperty> .
+<https://cdm.ovh/rsm/list/list#isFollowedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<https://cdm.ovh/rsm/list/list#isFollowedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://cdm.ovh/rsm/list/list#OWLList> .
+<https://cdm.ovh/rsm/list/list#isFollowedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://cdm.ovh/rsm/list/list#ListNode> .
 # 
 # https://cdm.ovh/rsm/localisation/loca#applicationDirection
 <https://cdm.ovh/rsm/localisation/loca#applicationDirection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -314,26 +352,6 @@ _:genid11 <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/topolog
 <https://cdm.ovh/rsm/topology/topo#port1onElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
 <https://cdm.ovh/rsm/topology/topo#port1onElement> <http://www.w3.org/2000/01/rdf-schema#label> "port1on element"@en .
 # 
-# https://w3id.org/list#hasContents
-<https://w3id.org/list#hasContents> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/list#hasContents> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/list#hasListProperty> .
-<https://w3id.org/list#hasContents> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-# 
-# https://w3id.org/list#hasListProperty
-<https://w3id.org/list#hasListProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/list#hasListProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/list#OWLList> .
-# 
-# https://w3id.org/list#hasNext
-<https://w3id.org/list#hasNext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/list#hasNext> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/list#isFollowedBy> .
-<https://w3id.org/list#hasNext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-# 
-# https://w3id.org/list#isFollowedBy
-<https://w3id.org/list#isFollowedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/list#isFollowedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/list#hasListProperty> .
-<https://w3id.org/list#isFollowedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
-<https://w3id.org/list#isFollowedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/list#OWLList> .
-# 
 # 
 # 
 # #################################################################
@@ -386,6 +404,18 @@ _:genid11 <http://www.w3.org/2002/07/owl#inverseOf> <https://cdm.ovh/rsm/topolog
 # 
 # https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature
 <https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://cdm.ovh/rsm/list/list#EmptyList
+<https://cdm.ovh/rsm/list/list#EmptyList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/list/list#EmptyList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/list/list#ListNode> .
+<https://cdm.ovh/rsm/list/list#EmptyList> <http://www.w3.org/2002/07/owl#disjointWith> <https://cdm.ovh/rsm/list/list#OWLList> .
+# 
+# https://cdm.ovh/rsm/list/list#ListNode
+<https://cdm.ovh/rsm/list/list#ListNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://cdm.ovh/rsm/list/list#OWLList
+<https://cdm.ovh/rsm/list/list#OWLList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://cdm.ovh/rsm/list/list#OWLList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://cdm.ovh/rsm/list/list#ListNode> .
 # 
 # https://cdm.ovh/rsm/localisation/loca#AreaLocation
 <https://cdm.ovh/rsm/localisation/loca#AreaLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -505,45 +535,8 @@ _:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://qudt.org/vocab/quantitykind/Length
 <https://qudt.org/vocab/quantitykind/Length> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
-# https://w3id.org/list#EmptyList
-<https://w3id.org/list#EmptyList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/list#EmptyList> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid13 .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid13 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid17 .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid15 .
-_:genid15 <http://www.w3.org/2002/07/owl#complementOf> _:genid16 .
-_:genid16 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
-_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/list#hasContents> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/list#OWLList> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-<https://w3id.org/list#EmptyList> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid18 .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid18 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid22 .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid19 .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid20 .
-_:genid20 <http://www.w3.org/2002/07/owl#complementOf> _:genid21 .
-_:genid21 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing> .
-_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/list#isFollowedBy> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/list#OWLList> .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-<https://w3id.org/list#EmptyList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/list#OWLList> .
-# 
 # https://w3id.org/list#OWLList
 <https://w3id.org/list#OWLList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/list#OWLList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<https://w3id.org/list#OWLList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
-_:genid23 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/list#OWLList> .
-_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/list#isFollowedBy> .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/list#OWLList> <http://www.w3.org/2000/01/rdf-schema#comment> "OWLList is used to represent linked lists. Instances of OWLList are list elements; they have at most one direct successor (the value of property hasNext)."@en .
 # 
 # 
@@ -554,6 +547,10 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # #
 # #################################################################
 # 
+# 
+# https://cdm.ovh/rsm/list/list#emptyList
+<https://cdm.ovh/rsm/list/list#emptyList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://cdm.ovh/rsm/list/list#emptyList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://cdm.ovh/rsm/list/list#EmptyList> .
 # 
 # https://cdm.ovh/rsm/localisation/loca#Bottom
 <https://cdm.ovh/rsm/localisation/loca#Bottom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -594,16 +591,16 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # #################################################################
 # 
 # 
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid24 <http://www.w3.org/2002/07/owl#members> _:genid27 .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid26 .
-_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid25 .
-_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/loca#SpotLocation> .
-_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/loca#LinearLocation> .
-_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/loca#AreaLocation> .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid13 <http://www.w3.org/2002/07/owl#members> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/loca#SpotLocation> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/loca#LinearLocation> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://cdm.ovh/rsm/localisation/loca#AreaLocation> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
