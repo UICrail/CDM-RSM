@@ -8,8 +8,9 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:list="https://w3id.org/list#"
+     xmlns:list="https://cdm.ovh/rsm/list/list#"
      xmlns:loca="https://cdm.ovh/rsm/localisation/loca#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:qudt="http://qudt.org/schema/qudt/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
@@ -21,24 +22,24 @@
      xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
      xmlns:quantitykind="https://qudt.org/vocab/quantitykind/">
     <owl:Ontology rdf:about="https://cdm.ovh/rsm/localisation/loca">
-        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/localisation/1.0rc3/loca"/>
+        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/localisation/1.0rc4/loca"/>
+        <owl:imports rdf:resource="https://cdm.ovh/rsm/list/list"/>
         <owl:imports rdf:resource="https://cdm.ovh/rsm/topology/topo"/>
-        <owl:imports rdf:resource="https://w3id.org/list"/>
         <dc:abstract xml:lang="en">This ontology allows to place things on the topology. Things may have locations of type spot-, linear-, or area location.
 
 For ordering things, this ontology uses the List ontology published by Pieter Pauwels and Walter Terkaj. The List ontology also underpins the ifcOWL ontology by the same authors.
 
 For spot locations (and, by extension, for linear locations) on linear elements, it is possible to indicate offsets, quantitatively or qualitvely, in three directions: tangential (projected on the horizontal plane), transversal (orthogonal to tangential, same plane), and vertical.</dc:abstract>
         <dc:creator>Airy Magnien</dc:creator>
-        <dc:date xml:lang="en">12 February 2026</dc:date>
+        <dc:date xml:lang="en">13 March 2026</dc:date>
         <dc:title xml:lang="en">Localisation</dc:title>
-        <dcterms:license xml:lang="en">EUPL 1.2</dcterms:license>
+        <dcterms:license xml:lang="en">C C BY SA 4.0</dcterms:license>
         <rdfs:comment xml:lang="en">Added generic &quot;location&quot;  property. Corrected prefixes.</rdfs:comment>
         <rdfs:comment xml:lang="en">Left for future work:
 1 - using intrinsic coordinates in a more explicit way (formal references to GeoSPARQL and to ISO 19148, possibly via IFC or DATEX classes). This would entail the replacement of data properties (atIntrinsicCoordinate, startAt, endAt) by object properties. Whether this is worthwhile is a matter for debate.
 2 - offsets were lateral in earlier versions (up to RSM 1.2), and are now generalized to tangential and vertical, effectively defining a 3-axis local coordinate system. Explicitly defining a local cartesian coordinate system would be a conceptual simplification and could make use of IFC classes.</rdfs:comment>
         <rdfs:label xml:lang="en">Localisation</rdfs:label>
-        <owl:versionInfo>1.0rc3</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">1.0rc4: changed license. Imports List (modified) ontology.</owl:versionInfo>
         <vann:preferredNamespacePrefix>loca</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceURI>https://cdm.ovh/rsm/localisation/loca</vann:preferredNamespaceURI>
     </owl:Ontology>
@@ -357,6 +358,22 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
     
 
 
+    <!-- https://cdm.ovh/rsm/list/list#EmptyList -->
+
+    <rdf:Description rdf:about="https://cdm.ovh/rsm/list/list#EmptyList">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/list/list#ListNode"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://cdm.ovh/rsm/list/list#OWLList -->
+
+    <rdf:Description rdf:about="https://cdm.ovh/rsm/list/list#OWLList">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/list/list#ListNode"/>
+    </rdf:Description>
+    
+
+
     <!-- https://cdm.ovh/rsm/localisation/loca#AreaLocation -->
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/loca#AreaLocation">
@@ -549,14 +566,6 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     <!-- https://qudt.org/vocab/quantitykind/Length -->
 
     <owl:Class rdf:about="https://qudt.org/vocab/quantitykind/Length"/>
-    
-
-
-    <!-- https://w3id.org/list#EmptyList -->
-
-    <rdf:Description rdf:about="https://w3id.org/list#EmptyList">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/list#OWLList"/>
-    </rdf:Description>
     
 
 
