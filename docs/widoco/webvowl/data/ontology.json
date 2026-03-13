@@ -128,10 +128,10 @@
     "id" : "16",
     "type" : "owl:Class"
   }, {
-    "id" : "13",
+    "id" : "33",
     "type" : "owl:Class"
   }, {
-    "id" : "33",
+    "id" : "13",
     "type" : "owl:Class"
   }, {
     "id" : "43",
@@ -440,16 +440,6 @@
     "id" : "16",
     "superClasses" : [ "45" ]
   }, {
-    "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature",
-    "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Feature"
-    },
-    "subClasses" : [ "2", "23", "22" ],
-    "attributes" : [ "external" ],
-    "id" : "13"
-  }, {
     "iri" : "https://cdm.ovh/rsm/localisation/loca#ListedNetElement",
     "baseIri" : "https://cdm.ovh/rsm/localisation/loca",
     "instances" : 0,
@@ -467,6 +457,16 @@
     },
     "id" : "33",
     "superClasses" : [ "9", "28" ]
+  }, {
+    "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature",
+    "baseIri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Feature"
+    },
+    "subClasses" : [ "2", "23", "22" ],
+    "attributes" : [ "external" ],
+    "id" : "13"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/localisation#LinearLocation",
     "baseIri" : "https://cdm.ovh/rsm/localisation/localisation",
@@ -1058,7 +1058,7 @@
   "propertyAttribute" : [ {
     "range" : "2",
     "domain" : "1",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "0"
   }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf",
@@ -1069,27 +1069,27 @@
       "en" : "nominal geometry of"
     },
     "domain" : "5",
-    "attributes" : [ "object", "functional", "external", "inverse functional" ],
+    "attributes" : [ "functional", "external", "inverse functional", "object" ],
     "id" : "4"
   }, {
     "range" : "2",
     "domain" : "7",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "6"
   }, {
     "range" : "2",
     "domain" : "11",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "10"
   }, {
     "range" : "13",
     "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "12"
   }, {
     "range" : "16",
     "domain" : "15",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "14"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#port1",
@@ -1114,12 +1114,12 @@
     },
     "superproperty" : [ "20" ],
     "domain" : "18",
-    "attributes" : [ "object", "functional", "external", "inverse functional" ],
+    "attributes" : [ "functional", "external", "inverse functional", "object" ],
     "id" : "17"
   }, {
     "range" : "13",
     "domain" : "22",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "21"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#port",
@@ -1144,7 +1144,7 @@
     },
     "domain" : "22",
     "subproperty" : [ "17", "24" ],
-    "attributes" : [ "object", "external", "inverse functional" ],
+    "attributes" : [ "external", "inverse functional", "object" ],
     "id" : "20"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#port0",
@@ -1169,17 +1169,17 @@
     },
     "superproperty" : [ "20" ],
     "domain" : "5",
-    "attributes" : [ "object", "functional", "external", "inverse functional" ],
+    "attributes" : [ "functional", "external", "inverse functional", "object" ],
     "id" : "24"
   }, {
     "range" : "13",
     "domain" : "23",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "25"
   }, {
     "range" : "28",
     "domain" : "27",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "26"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#navigableFromTransitive",
@@ -1205,12 +1205,12 @@
     },
     "domain" : "23",
     "subproperty" : [ "31" ],
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "29"
   }, {
     "range" : "28",
     "domain" : "33",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "32"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#leadsTo",
@@ -1235,17 +1235,17 @@
     },
     "superproperty" : [ "35" ],
     "domain" : "5",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "34"
   }, {
     "range" : "23",
     "domain" : "27",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "36"
   }, {
     "range" : "28",
     "domain" : "38",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "37"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#navigableTo",
@@ -1260,7 +1260,7 @@
     "comment" : {
       "en" : "Expresses the possibility, for a train movement, to leave a net element via an exit port and to navigate to another net element until another exit port. Navigation excludes reversal of travel direction, even if the reversal is allowed by operational rules (e.g. shunting mode, ...)."
     },
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "39"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate",
@@ -1276,7 +1276,7 @@
   }, {
     "range" : "45",
     "domain" : "16",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "44"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/loca#endAt",
@@ -1303,12 +1303,12 @@
   }, {
     "range" : "15",
     "domain" : "43",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "48"
   }, {
     "range" : "41",
     "domain" : "38",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "49"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/loca#onLinearElement",
@@ -1333,7 +1333,7 @@
     },
     "superproperty" : [ "56" ],
     "domain" : "55",
-    "attributes" : [ "object", "functional", "external" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "54"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#port0onElement",
@@ -1344,7 +1344,7 @@
       "en" : "port0on element"
     },
     "domain" : "5",
-    "attributes" : [ "object", "functional", "external", "inverse functional" ],
+    "attributes" : [ "functional", "external", "inverse functional", "object" ],
     "id" : "57"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/loca#tangentialOffset",
@@ -1356,7 +1356,7 @@
     },
     "superproperty" : [ "59" ],
     "domain" : "5",
-    "attributes" : [ "object", "inverse functional" ],
+    "attributes" : [ "inverse functional", "object" ],
     "id" : "58"
   }, {
     "iri" : "http://www.opengis.net/ont/geosparql#hasDefaultGeometry",
@@ -1368,7 +1368,7 @@
     "superproperty" : [ "61" ],
     "domain" : "5",
     "subproperty" : [ "62" ],
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "60"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#onElement",
@@ -1392,7 +1392,7 @@
       "en" : "on element"
     },
     "domain" : "5",
-    "attributes" : [ "object", "functional", "external" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "63"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/loca#elementLocation",
@@ -1406,7 +1406,7 @@
     "comment" : {
       "en" : "Provides the location(s) of a located net element. Locations may be representation- and time-dependent, so the property is not a functional property (in the sense of RDF/OWL)."
     },
-    "attributes" : [ "object", "inverse functional" ],
+    "attributes" : [ "inverse functional", "object" ],
     "id" : "64"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#nonNavigableTo",
@@ -1430,7 +1430,7 @@
       "en" : "non navigable to"
     },
     "domain" : "23",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "65"
   }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength",
@@ -1460,7 +1460,7 @@
     },
     "domain" : "5",
     "subproperty" : [ "59" ],
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "69"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#nonNavigableFrom",
@@ -1485,22 +1485,22 @@
       "en" : "non navigable from"
     },
     "domain" : "23",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "70"
   }, {
     "range" : "67",
     "domain" : "41",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "71"
   }, {
     "range" : "74",
     "domain" : "73",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "72"
   }, {
     "range" : "18",
     "domain" : "76",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "75"
   }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength",
@@ -1531,7 +1531,7 @@
     },
     "domain" : "23",
     "subproperty" : [ "39" ],
-    "attributes" : [ "object", "external", "transitive" ],
+    "attributes" : [ "external", "object", "transitive" ],
     "id" : "30"
   }, {
     "iri" : "https://cdm.ovh/rsm/list/list#hasListProperty",
@@ -1542,7 +1542,7 @@
     },
     "domain" : "5",
     "subproperty" : [ "80", "54" ],
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "56"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#navigableFrom",
@@ -1568,32 +1568,32 @@
     },
     "superproperty" : [ "29" ],
     "domain" : "5",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "31"
   }, {
     "range" : "9",
     "domain" : "8",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "81"
   }, {
     "range" : "22",
     "domain" : "83",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "82"
   }, {
     "range" : "86",
     "domain" : "85",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "84"
   }, {
     "range" : "9",
     "domain" : "33",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "87"
   }, {
     "range" : "22",
     "domain" : "18",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "88"
   }, {
     "iri" : "http://www.opengis.net/ont/geosparql#hasMetricLength",
@@ -1608,17 +1608,17 @@
   }, {
     "range" : "78",
     "domain" : "67",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "91"
   }, {
     "range" : "78",
     "domain" : "43",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "92"
   }, {
     "range" : "94",
     "domain" : "55",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "93"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#connectedWithTransitive",
@@ -1643,12 +1643,12 @@
     },
     "domain" : "23",
     "subproperty" : [ "96" ],
-    "attributes" : [ "object", "external", "transitive" ],
+    "attributes" : [ "external", "object", "transitive" ],
     "id" : "95"
   }, {
     "range" : "94",
     "domain" : "98",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "97"
   }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf",
@@ -1671,7 +1671,7 @@
     "comment" : {
       "en" : "GeoSPARQL does not define this inverse property."
     },
-    "attributes" : [ "object", "functional", "external" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "99"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/loca#side",
@@ -1714,7 +1714,7 @@
     },
     "superproperty" : [ "100", "60" ],
     "domain" : "5",
-    "attributes" : [ "object", "functional", "external", "inverse functional" ],
+    "attributes" : [ "functional", "external", "inverse functional", "object" ],
     "id" : "62"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#oppositePort",
@@ -1728,7 +1728,7 @@
     "comment" : {
       "en" : "Opposite port on a linear element; a symmetric property. Not meaningful if element is non-linear."
     },
-    "attributes" : [ "object", "symmetric", "external" ],
+    "attributes" : [ "symmetric", "external", "object" ],
     "id" : "103"
   }, {
     "iri" : "https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry",
@@ -1749,7 +1749,7 @@
     "superproperty" : [ "61" ],
     "domain" : "16",
     "subproperty" : [ "62" ],
-    "attributes" : [ "object", "external", "inverse functional" ],
+    "attributes" : [ "external", "inverse functional", "object" ],
     "id" : "100"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/loca#associatedLinearElement",
@@ -1772,7 +1772,7 @@
     },
     "domain" : "45",
     "subproperty" : [ "100", "60" ],
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "61"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/loca#applicationDirection",
@@ -1819,7 +1819,7 @@
     "comment" : {
       "en" : "technical note: this may look like, but is *not* the transitive closure of leadsTo. The transitive closure of leadsTo would include train movements with reversal of travel direction, which is not desirable."
     },
-    "attributes" : [ "object", "external", "transitive" ],
+    "attributes" : [ "external", "object", "transitive" ],
     "id" : "35"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/loca#offset",
@@ -1835,12 +1835,12 @@
     "comment" : {
       "en" : "definitely not functional, to cope with the fact that values may be multiple (specified, observed...).\ndefinitely inverse functional, because values characterize a location relative to exactly one linear element. \"Exactly\" however is left for SHACL shapes (not in RL profile)."
     },
-    "attributes" : [ "object", "inverse functional" ],
+    "attributes" : [ "inverse functional", "object" ],
     "id" : "59"
   }, {
     "range" : "11",
     "domain" : "7",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "109"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/loca#location",
@@ -1854,12 +1854,12 @@
     "comment" : {
       "en" : "Generic property assigning some location to a Thing."
     },
-    "attributes" : [ "object", "inverse functional" ],
+    "attributes" : [ "inverse functional", "object" ],
     "id" : "110"
   }, {
     "range" : "11",
     "domain" : "1",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "111"
   }, {
     "iri" : "http://qudt.org/schema/qudt/quantityKind",
@@ -1869,17 +1869,17 @@
       "IRI-based" : "quantityKind"
     },
     "domain" : "73",
-    "attributes" : [ "object", "allValues", "external" ],
+    "attributes" : [ "allValues", "external", "object" ],
     "id" : "112"
   }, {
     "range" : "83",
     "domain" : "18",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "113"
   }, {
     "range" : "23",
     "domain" : "22",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "114"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/loca#lateralOffset",
@@ -1899,7 +1899,7 @@
     },
     "superproperty" : [ "59" ],
     "domain" : "5",
-    "attributes" : [ "object", "inverse functional" ],
+    "attributes" : [ "inverse functional", "object" ],
     "id" : "107"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/loca#startAt",
@@ -1933,12 +1933,12 @@
     "superproperty" : [ "56" ],
     "domain" : "55",
     "subproperty" : [ "116" ],
-    "attributes" : [ "object", "external", "transitive" ],
+    "attributes" : [ "external", "object", "transitive" ],
     "id" : "80"
   }, {
     "range" : "55",
     "domain" : "98",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "117"
   }, {
     "iri" : "https://cdm.ovh/rsm/topology/topo#port1onElement",
@@ -1949,12 +1949,12 @@
       "en" : "port1on element"
     },
     "domain" : "5",
-    "attributes" : [ "object", "functional", "external", "inverse functional" ],
+    "attributes" : [ "functional", "external", "inverse functional", "object" ],
     "id" : "118"
   }, {
     "range" : "1",
     "domain" : "7",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "119"
   }, {
     "iri" : "https://cdm.ovh/rsm/list/list#hasNext",
@@ -1965,7 +1965,7 @@
     },
     "superproperty" : [ "80" ],
     "domain" : "55",
-    "attributes" : [ "object", "functional", "external" ],
+    "attributes" : [ "functional", "external", "object" ],
     "id" : "116"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/loca#associatedNetElement",
@@ -2009,7 +2009,7 @@
     },
     "superproperty" : [ "95" ],
     "domain" : "5",
-    "attributes" : [ "object", "symmetric", "external" ],
+    "attributes" : [ "symmetric", "external", "object" ],
     "id" : "96"
   }, {
     "iri" : "https://cdm.ovh/rsm/localisation/loca#verticalOffset",
@@ -2021,7 +2021,7 @@
     },
     "superproperty" : [ "59" ],
     "domain" : "5",
-    "attributes" : [ "object", "inverse functional" ],
+    "attributes" : [ "inverse functional", "object" ],
     "id" : "108"
   } ]
 }
