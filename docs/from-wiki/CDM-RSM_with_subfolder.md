@@ -5,5 +5,1592 @@ _Self-contained version with local images_
 
 ## Version
 
-This document was generated on 2026-01-13 16:08:28 UTC
+This document was generated on 2026-03-13 15:41:06 UTC
+
+
+---
+# RDF OWL
+
+## Purpose
+This page illustrates some pitfalls in using OWL2. Some are due to subtle differences between more familiar UML Class Diagrams and the seemingly matching OWL2 concepts.
+
+## Representing enumerations
+
+See page: [Enumerations](https://github.com/UICrail/SemanticRSM/wiki/Enumerations).
+
+## Representing lists and sequences
+
+Sequence is understood as an ordered list.
+
+### rdf:Seq
+
+The historic rdf:Seq construct should be (and actually, is) avoided for several reasons:
+* the order is suggested by rdf:_1, rdf:_2, ... rather than enforced;
+* writing queries is tricky, as there are as many distinct properties rdf:_n as there are elements in the sequence;
+* sequences cannot be closed explicitly.
+
+### rdf:List
+
+RDF collections (using rdf:first, rdf:rest, and rdf:nil) rest on the linked list paradigm, which has none of the issues quoted above and is well-understood (see for instance LISP cons, car, cdr). Here is an example of a closed, 2-element list:
+
+```
+:myList a rdf:List ;
+        rdf:first :item1 ;
+        rdf:rest [ rdf:first :item2 ;
+                   rdf:rest rdf:nil ] .
+```
+However, rdf:List is used in RDF serialisation of OWL. Using rdf:List also for domain knowledge description is discouraged, since it may result in breaching the chosen OWL profile (e.g. resulting in OWL2 Full instead of OWL2 DL, with undesirable consequences on processing time).
+
+### List ontology
+
+A List ontology is published by Pieter Pauwels and Walter Terkaj under [this link](https://pi.pauwel.be/evoc/list_W3ID/20151211/index.html). It is based on previous works by Drummond & al., 2006.
+
+While also relying on the linked list paradigm, the List ontology does not represent a List as a container of linked items (unlike rdf:List, above). It reverses the perspective by giving direct access to list items, and attaching contents to the items.
+
+This ontology is used by IfcOwl and therefore has our preference, as long as there is no strong need for a "container".
+
+### CO ontology.
+
+(a more general list ontology, also based on Drummond's seminal works - to be completed)
+
+## Functional properties vs. restrictions
+
+A property (data-, or object-) is functional means that, for each individual X in its domain, it has at most one object (i.e. there can be at most one instance of the property with subject X).
+
+This characteristic is independent of context.
+
+It is equivalent to a 0..1 multiplicity restriction applying to the whole domain. Multiplicity restrictions can however be more specific (e.g. exactly one) or apply to only a part of the domain (e.g. a particular class or subclass in the domain).
+
+## Understanding subproperties and their characteristics
+### Misunderstanding "inheritance", and its dire consequences
+A common misunderstanding, especially for users with an object-oriented-programming or UML background, is that "sub-" (as in subclass or subproperty) means inheritance, i.e. any individual in a subclass (or subproperty) shares the same "features" that are common to the individuals of its superclass or -property.
+
+This is not true in RDF/OWL, "not" in the sense of "not always". In the following, we deal with property characteristics in the sense of OWL ("functional", "reverse functional", "reflexive", "irreflexive", "symmetric", "antisymmetric", "transitive"), and especially transitivity.
+
+### Subclasses and subproperties in OWL evoke "inheritance", but this is misleading.
+
+Fundamentally, RDF classes are sets types rather than types. If x is an individual of class B and B is a subclass of A, then x is an individual of class A. In UML, the situation would be different, since an instance of B is not an instance of its superclass A. This relates to the fact that classes are types, in most object-oriented languages, with rare exceptions (Oberon, and maybe Rust, to name a more recent language, although its object orientation is less clear).
+
+A case where "inheritance" is confirmed is "being in the domain of a property". If class A is the domain of property p (with range C), and B is a subclass of A, then B is a subset of the domain of p. If some_b is an individual of B，we can state <<:some_b :p :some_c>> and this is consistent with our ontology: this statement may hold true because some_b is also an individual of A which includes B. This is consistent with our intuitive understanding of "inheritance".
+
+The same observation can be continued with properties. The extension of property p is the set of pairs (x, y) that satisfy p(x, y) or <<:x :p :y>>, these being two equivalent notations. Property p' is a subproperty of p if and only if every pair (x,y) that satisfies p'(x,y) also satisfies p(x,y).
+
+### Property characteristics are not "inherited"
+
+This is what you may read in the RDF/OWL documentation, and here is the reason why.
+
+Assume a sequence of numbers 1, 2, 3, 4. Assume a property hasNext: hasNext(1,2), hasNext(2,3), hasNext(3,4). Property hasNext is not transitive, because although hasNext(1,2) and hasNext(2,3), it is not true that hasNext(1,3).
+
+For expressing the fact that 3 comes after 1, let us defined a property comesBefore. So comesBefore(1,3), etc. Whenever hasNext(x,y) holds, comesBefore(x,y) also holds. Consequently, hasNext is a subproperty of comesBefore.
+
+Property comesBefore is obvioulsy transitive. Subproperty hasNext is not. This is why "transitive" is called a "characteristic" of a property in OWL, not a "property of a property" (where one would expect some sort of "inheritance").
+
+### No contradiction
+
+The example above (a strictly ordered sequence of integers) is too simple, in the sense that if hasNext(a,b) and hasNext(b,c), hasNext(a,c) _never_ holds (assuming a, b, c to be distinct). A less simple, and more common, case would be a property P where there exists _at least one_ case where P(a,b) and P(b,c) and not P(a,c). P would be "not transitive". But property P can be generalized to a distinct property Q such that if P(a,b), then Q(a,b) (so P is indeed a subproperty of Q), while Q has additional property values such that if P(a,b) and P(b,c), then:
+* Q(a,b) and Q(b,c), a consequence of the subproperty relationship between P and Q, and
+* Q(a,c), a consequence of Q being defined as transitive.
+
+Q is said to be the transitive closure of P, i.e. its extension is the extension of P, plus all new facts Q(x,y) that can be inferred from its transitive characteristic.
+
+<sub>Original page: [About-RDF-OWL.md](https://github.com/UICrail/CDM-RSM/wiki/About-RDF-OWL)</sub>
+
+
+---
+# the toolsets
+
+## EDDY 3.6 ff.
+From February 2025, ontology edition was moved to the graphical environment EDDY 3.6 (current: 3.7). This actively maintained open source software allows an ontology to be designed using a graphical interface and made exported as RDF/OWL files. The underlying graphical language, GRAPHOL, is somewhat similar to the W3C standard UML profile for ontologies (ODM). GRAPHOL supports the complete OWL2 syntax.
+
+See [the EDDY GitHub](https://github.com/obdasystems/eddy).
+
+## Protégé
+### Version
+Protégé Desktop, version 5.5 was used.
+### Reasoner
+The reasoners are those included as Protégé plugins. Only Pellet seems to work fully satisfactorily.
+
+HermiT chokes on _some_ user-defined data types, such as floating point data type restrictions, despite it being an OWL2 DL reasoner, like Pellet.
+
+## PROLOG
+Currently using SWI PROLOG.
+VS Code + New VSC PROLOG plugin work satisfactorily.
+
+<sub>Original page: [About-the-toolsets.md](https://github.com/UICrail/CDM-RSM/wiki/About-the-toolsets)</sub>
+
+
+---
+# Adapters
+
+## Purpose of adapters
+
+Using "external" ontologies requires adapters, most of the time. Adapters are small vocabularies, usually consisting of a few classes and properties that allow to relate the classes and properties in the CDM with the external elements, with following added value:
+* **narrowing the meaning** of the external elements when used in the context of the Works, by means of subclass or subproperty relationships;
+* **organizing the dependencies:** for instance, if SOSA/SSN is used by several CDM vocabularies, there should be a single adapter shared by all vocabularies, so **external changes would require the revision of that single adapter**.
+
+## Current list of adapters
+
+| External vocabulary | Concerned CDM vocabularies | Link |
+| ------------------- | -------------------------- | ---- |
+| SOSA/SSN            | RSM Topology               | [SOSA SSN (observation, sampling, actuation)](#ssn-observation-sampling-actuation) |
+| GeoSPARQL           | RSM Topology, RSM Location | [GeoSPARQL and GeoSPARQL adapter](#and-geosparql-adapter) |
+| ISO 19148           | RSM Localisation           | most likely, IFC classes based on ISO 19148 shall be used |
+| IfcOwl              | RSM geometry           | [IFC adapter](#adapter) |
+
+<sub>Original page: [Adapters.md](https://github.com/UICrail/CDM-RSM/wiki/Adapters)</sub>
+
+
+---
+# Bibliography
+
+Buildings and Semantics: Data models and web technologies for the built environment, edited by Pieter Pauwels and Kris McGlinn, CRC Press/Balkema, 2023
+
+<sub>Original page: [Bibliography.md](https://github.com/UICrail/CDM-RSM/wiki/Bibliography)</sub>
+
+
+---
+# and Navigability
+
+## Foreword
+The content of this page is copied from a presentation, lacking time, and may need to be adjusted.
+
+For a thorough presentation of the RSM Topology in its RDF/OWL form, see the Topology page
+
+## Definitions
+
+**relationToPort** is the top OWL object property that related a port to another (distinct) port.
+
+This property is by itself meaningless, other than its two subproperties:
+* **connectedToPort**: expresses geometric coincidence of two ports, but for possible geometric tolerances. Symmetric, transitive. Used to express that rails are connected, or that lines are connected to yards.
+* **navigableToPort**: expresses that a vehicle may run (possibly under technical or operational conditions) form one port to another port without reversal (but possibly with external intervention, such as the rotation of a turntable). Not symmetric, transitive.
+
+The transitivity of navigableToPort is a major change, compared to RSM 1.2, where transitivity was only available to the MICRO level. Transitivity makes path search immediately accessible to reasoners at all representation levels: MICRO (track level) knowledge is not required. How this was achieved is detailed below.
+
+![Ports, connexity, navigability](images/Topology, basics.png)
+
+Please note that navigabilities are expressed in the direction of an assumed train movement, from exit port of a linear element to exit port on another linear element (the next one, or further ones by virtue of transitivity).
+
+## Connexity
+
+## Navigability
+### Expression
+A navigability is expressed from exit port to exit port, in the intended travel direction. It materializes as an object property, the domain and range of it being Port.
+![expressing navigability](https://github.com/UICrail/SemanticRSM/blob/main/illustrations/Slide10_expressing_navigability.png)
+
+Such representation allows to declare the navigability property as transitive (which was not possible in RSM 1.x).
+
+The following example uses a fictitious network; all integer numbers are port numbers:
+
+![using navigability: test case, in Protégé](images/Slide11_using_navigability.png)
+
+As shown, internal navigabilities "inside" non-linear element are _**not**_ described by pairing ports of the non-linear elements: this would not work in general. The reader is invited to sketch out a counterexample ;)
+
+### Expressing non-navigability?
+
+RSM 1.2 expressed directional (non-)navigability by using a 4-valued attribute (None, AB, BA, Both). In UML, "AB" implies "not BA" (and conversely, "BA" implies "not AB"), and "None" implies neither AB nor BA: this is a result of the role multiplicity (exactly 1).
+
+Here we use 0..2 property instances to express these four cases. The navigabilities might be undocumented, which does not mean negated (RDF open world assumption: what is not stated is possible).
+
+Whether this is a significant issue is open for debate (see issue #11). Topology version 0.4 did not express non-navigabilities. In subsequent versions of Topology, non-navigability is included. In any case, using an explicit non-navigability property or not is a matter of convention rather than modeling.
+
+<sub>Original page: [Connexity-and-Navigability.md](https://github.com/UICrail/CDM-RSM/wiki/Connexity-and-Navigability)</sub>
+
+
+---
+# to CDM
+
+## Introduction
+
+In order to generate datasets in the CDM format and/or to import from existing formats, a simple Flask front end application has been created.
+
+## Features
+
+The application allows import of a dataset from the following formats:
+* draw.io schematic in XML or SVG formats
+* [OpenStreetMap](https://www.openstreetmap.org/)
+
+draw.io schematics are intended for synthetic network generation or reproducing railway map schematics.
+OSM import allows to inherit track geometry created by OpenStreetMap contributors. Future versions may entail import of additional railway-related information elements present in OSM extracts.
+
+## Getting started
+
+1. Clone the repository
+1. Create a Python virtual environment and the required libraries (`requirements.txt`).
+1. Start the web interface by calling `python __init__.py`
+1. This will start a webserver on http://localhost:8000
+
+## Quick usage guide
+
+Two modes of operation:
+* [drawIO to RDF](http://localhost:8000/drawio_to_rdf)
+* [OSM to RDF](http://localhost:8000/osm_to_rdf)
+
+The interface in either case allows to upload a file, the processing will generate a file in the `output` folder.
+
+<sub>Original page: [Converter-to-CDM.md](https://github.com/UICrail/CDM-RSM/wiki/Converter-to-CDM)</sub>
+
+
+---
+# Enumerations
+
+## Representation of enumerations in RDF/OWL
+
+### Possible variants, from observed practice:
+
+1. define an enumeration as an ordinary class X, or as a subclass of schema:Enumeration.
+2. define members as individuals of type X, or of type owl:NamedIndividual
+3. label the members with, or without, prefixing the label by the class name (to avoid confusions in the eyes of human readers)
+4. URIs of members can be prefixed by the class identifier : <base_URI>/<enum class name>#<enum class member name> in order to avoid collisions
+5. leave the members of the enumeration as an unordered collection, or assign them an order and (possibly) a ranking number
+6. define the enumeration as an individual of class skos:Collection, and its items as individuals of class skos:Member
+
+### Discussion
+
+#### About 1., using schema.org
+
+We would encourage to use schema:Enumeration for the sake of clarity (no need to comment about the fact that it is an enumeration). On the other hand, the many enumeration subtypes proposed by schema.org are not relevant here.
+
+#### About 2., class instances or named individuals
+
+OWL allows to restrict the members of an enumeration in the following way:
+
+`:Color rdf:type owl:Class ;`
+
+`       owl:oneOf ( :Red :Green :Blue ) .`
+
+`:Red rdf:type owl:NamedIndividual .`
+
+`:Green rdf:type owl:NamedIndividual .`
+
+`:Blue rdf:type owl:NamedIndividual .`
+
+Such representation closes the member list, which may be desirable. Downside is, the use of nominals can impact reasoner performance negatively.
+
+If the enumeration members are strings or numbers, owl:equivalentDatatype may be used:
+
+`:ColorValue rdf:type rdfs:Datatype ;`
+
+`    owl:equivalentDatatype [ `
+
+`        rdf:type rdfs:Datatype ;`
+
+`        owl:oneOf ( "red"^^xsd:string "green"^^xsd:string "blue"^^xsd:string )`
+
+`    ] .`
+
+#### About 3., labels
+
+Prefixing the labels with the enum class name is heavy and should be avoided when the context provides enough clarity to the human reader.
+
+#### About 4., prefixes in URIs
+
+Avoiding the risk of naming collisions is desirable in any case.
+
+#### About 5., ordering or numbering of members
+
+Ordering or numbering of members, which is possible in UML but not strictly needed in our case, would require a more complex representation.
+
+#### About 6., using skos:Collection and skos:Member
+
+Example: StandardUnitsCollection in ISO 19103 Measure Types ontology.
+
+StandardUnitsCollection is a skos:Collection; StandardUnits is a skos:ConceptScheme; metre (for example) is a skos:Concept and an individual of StandardUnits with the annotation skos:inScheme :StandardUnits (suggesting that it could also be part of other schemes). Finally, StandardUnitsCollection has annotations such as skos:member skos:metre, thus establishing the link between the units collection and the units.
+
+Please note that skos:ConceptScheme and skos:Collection are disjoint. For more information, see (the original skos documentation)[https://www.w3.org/TR/skos-reference/#collections].
+
+<sub>Original page: [Enumerations.md](https://github.com/UICrail/CDM-RSM/wiki/Enumerations)</sub>
+
+
+---
+# and GeoSPARQL adapter
+
+## Reference
+* GeoSPARQL 1.1 OGC standard publication: [OGC publication](https://docs.ogc.org/is/22-047r1/22-047r1.html)
+* Ontology documentation: [OpenGeospatial GitHub pyLODE page](https://opengeospatial.github.io/ogc-geosparql/geosparql11/index.html)
+* Various explanations and comments: [Spatial Data on the Web Best Practices](https://w3c.github.io/sdw/bp/)
+
+## Link
+[GeoSPARQL adapter: RDF Turtle file](https://cdm.ovh/rsm/adapters/geosparql_apater/geosparql_adapter.ttl)
+
+## Usage
+GeoSPARQL is used by:
+* RSM Topology
+* RSM Location
+
+## Comments
+### geo:Feature
+Feature may be abstract (e.g. a radio coverage area) or concrete. Features are spatial things (geosparql:SpatialThing), and spatial things may move; quoted from the best practices document,
+> A [Spatial Thing](https://w3c.github.io/sdw/bp/#dfn-spatial-thing) may move. We must take care not to oversimplify our concept of [Spatial Thing](https://w3c.github.io/sdw/bp/#dfn-spatial-thing) by assuming that it is equivalent to definitions such as Location (from [[DCTERMS](https://w3c.github.io/sdw/bp/#bib-dcterms)]) or Place (from [[SCHEMA-ORG](https://w3c.github.io/sdw/bp/#bib-schema-org)]), which are respectively described as “A spatial region or named place” and "Entities that have a somewhat fixed, physical extension".
+
+In our context, geosparql:Feature is the superclass for topology objects, since the concepts match and all topology objects may be associated with some (0..*) geosparql:geometry.
+
+### geo:hasDefaultGeometry
+A sub-property of geosparql:hasGeometry which is:
+> A spatial representation for a given Feature.
+By definition, default geometry is:
+> The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry.
+
+The nominal geometry to evaluate linear coordinates _may_ well be something else that "the most detailed" one. More fundamentally, the geometry may be observed (using a survey) or stated (in a CAD tool), which we do not know a priori. We therefore introduce nominalGeometry as another subproperty of hasGeometry that is not disjoint with hasDefaultGeometry.
+
+## Adapter
+
+![GeoSPARQL - RSM Topology adapter](images/GeoSPARQL topology adapter.png)
+
+## See also
+
+[Geographic information in OWL (and UML)](https://github.com/UICrail/SemanticRSM/wiki/Geographic-information-in-OWL-(and-UML))
+
+<sub>Original page: [GeoSPARQL-and-GeoSPARQL-adapter.md](https://github.com/UICrail/CDM-RSM/wiki/GeoSPARQL-and-GeoSPARQL-adapter)</sub>
+
+
+---
+# information in OWL (and UML)
+
+## General
+
+The following uses the [ontologies published by TC211 on GitHub](https://github.com/ISO-TC211/ontologies). See detailed references at the bottom of this page.
+
+These ontologies do not seem to have official status. There are no explicit licensing conditions to be found in that particular repository.
+
+The [schemas in a parallel repository](https://github.com/ISO-TC211/schemas-isotc211.github.io) have an explicit official status, but no licensing conditions are mentioned there either. 
+
+## Representation of measure types, measures, units (following ISO 19103)
+
+
+
+## References
+
+* ISO 19103:2024 Geographic information - Conceptual schema language
+  * original UML 2.5.1
+  * [proposed ontology form of 2005 edition](https://lov.linkeddata.es/dataset/lov/vocabs/basic) - SUPERSEDED
+  * [set of ontologies, based on 2015 edition, on ISO TC/211 public GitHub](https://github.com/ISO-TC211/ontologies/tree/main/iso19103/2015)
+* ISO 19107:2019 Geographic information - Spatial schema
+  * [proposed ontology form of 2003 edition](https://lov.linkeddata.es/dataset/lov/vocabs/gm) - NOT CHECKED AGAINST OFFICIAL SOURCE BELOW
+  * [set of ontologies, based on 2003 edition, on ISO TC/211 public GitHub](https://github.com/ISO-TC211/ontologies/tree/main/iso19107/2003)
+* ISO 19148:2021 Geographic information - Linear referencing
+  * transposed (not 1:1) into Datex II ontologies (2 versions available); not used for the time being;
+  * transposed into the ISO 19148 adapter (integration of some Datex ontology, see above, is postponed)
+* [ISO TC/211 GitHub: Ontologies](https://github.com/ISO-TC211/ontologies)
+  * includes ISO 19103, 19107 (above), not 19148
+* [INSPIRE guidelines for the RDF encoding of spatial data](https://inspire-eu-rdf.github.io/inspire-rdf-guidelines/)
+* [Guidelines on methodologies for the creation of RDF vocabularies representing the INSPIRE data models and the transformation of INSPIRE data into RD](https://interoperable-europe.ec.europa.eu/sites/default/files/document/2016-02/are3na-rdf_vocabulary_guidelines_final.pdf)
+
+<sub>Original page: [Geographic-information-in-OWL-(and-UML).md](https://github.com/UICrail/CDM-RSM/wiki/Geographic-information-in-OWL-%28and-UML%29)</sub>
+
+
+---
+# adapter
+
+Currently limited to IFC Alignment.
+
+Follow [link to URI](https://cdm.ovh/rsm/adapters/ifcOwl_adapter)
+
+<sub>Original page: [IFC-adapter.md](https://github.com/UICrail/CDM-RSM/wiki/IFC-adapter)</sub>
+
+
+---
+# and Exports
+
+## Import data from external sources
+### OpenStreetMap
+OpenStreetMap provides high quality geometric data concerning railway networks. Tracks seem well located: transversal positions are accurate to the meter. However, the location of switches (reference point = blade tips) is more uncertain.
+
+The OSM import code in the present repository allows to import OSM data into sRSM. At present, only track geometry is exploited, which yields:
+* linear elements
+* their geometry (linestring, length)
+* their connections
+* navigabilities and non-navigabilities in the case of switches (distinguishing toe and heel side thanks to geometry)
+* some navigabilities and non-navigabilities in the case of crossings.
+Crossings are assumed to have at least the capabilities of diamond crossings, i.e. can be traversed straight ahead. However, nothing will be stated about possible deviations (slip switch function), neither positively (navigable) nor negatively (non-navigable). Optionally, the user may force all crossings to be considered double-slip crossings.
+
+### draw.io
+Track plans can be prepared using draw.io (a free application) and, with minimal conventions, yield a track plan with
+* linear elements
+* their geometry (linestring, length)
+* their connections
+* navigabilities and non-navigabilities in the case of switches and crossings. Single- or double-slip crossings can be indicated with a conventional symbol.
+
+### railML 3
+The attention of interested parties is drawn upon the licensing conditions that may be associated with railML data and their transformation. See railML.org for more information.
+
+### CCS-TMS data model
+The CCS-TMS data model (by the System Pillar) is work in progress. The model rests on a JSON schema. Test data have been provided.
+
+## Data import test application
+The test application is in the Flask folder. It can be executed on a local server.
+
+The application only provides user interfaces when import data are under explicit, suitable licensing conditions. To date (Nov. 2024), OpenStreetMap and of course your handmade sketches under draw.io may comply with this constraint.
+
+<sub>Original page: [Imports-and-Exports.md](https://github.com/UICrail/CDM-RSM/wiki/Imports-and-Exports)</sub>
+
+
+---
+# referencing
+
+## Purpose
+
+Linear referencing is understood in the sense of ISO 19148. Kilometric points are one flavour of linear referencing that is widely used by railways. Curvilinear abscissa is another one.
+
+In RSM, geographic referencing (on the surface of the earth), linear referencing (along railway tracks or lines, and possibly along other artefacts such as tunnels, platforms, overhead contact lines, footpaths), and geometric referencing (on drawing or screen coordinates, in engineering coordinate systems) are treated on equal footing, from a modelling point of view.
+
+This does not mean that _data_ based on any of these referencing systems have equal _value_ or relevance. Linear referencing is and shall remain important in a guided transport system where inaccuracies on the geographic coordinates may lead to picking the wrong track or the wring platform edge. Also, the remaining distance to the end of a movement authority or to a point to be protected is always expressed along some "Linear Element" in the sense of ISO 19148.
+
+_Note: as opposed to RSM LinearElement which is limited **by convention** to a stretch from a junction to the next, a Linear Element in the sense of ISO 19148 may intersect any number of other linear elements. Otherwise both are quite similar._
+
+## Definition
+**Linear referencing** is, according to ISO 19148:2021, section 3.10:
+> [the] specification of a location relative to a linear element as a measurement along (and optionally offset from) that element.
+
+_Note: the term "location" will be replaced by "position", in line with previous RTM/RSM terminology as well as ISO 19133 and section 2 of ISO 19148, Annex B. In RTM/RSM, "location" however means "location _of some net entity_ (such as a signal, a speed restriction zone, etc.)"_
+
+## Problem statement
+### General problem
+
+Linear referencing related problems are exposed in ISO 19148. We may mention two RSM capabilities that the ISO standard attempts to solve:
+1. capability to convert data from one linear referencing system to another and back (round tripping) without errors (other than rounding errors);
+2. capability to associate (spot) spatial positions (positions on earth surface) with linear positions (positions along a linear element, possibly with an offset) bidirectionally and, again, without errors other than those dependent on the precision of the referencing systems involved and on arithmetic processing.
+
+Both capabilities are obviously required by many use cases.
+
+### Particular problem
+
+In RSM, class Linear Element is the natural candidate for supporting linear referencing. Linear elements can be associated with very different things, either material or immaterial (tunnels, catenaries, block sections, station platform edges...). This make "abstract" linear elements valuable.
+
+RTM 1.0 (2016) transposed linear referencing concepts into the Positioning package. Its latest revision (RSM 1.2) referred to ISO 19148:2021. The development of the "semantic" version of RSM now provides an opportunity to revise the transposition, with even tighter adherence to the 2021 revision of ISO 19148, using the expressiveness of RDF/OWL (replacing UML) to seek further conceptual clarification and, where possible, simplification.
+
+## Available ontologies
+
+No ontology seems to implement ISO 19148 in full. [Linked Open Vocabularies](https://lov.linkeddata.es/dataset/lov) does not return any vocabulary when searching for "19148". However, some vocabularies include terms explicitly referring to ISO 19148. These are related to the DATEX model.
+
+### About DATEX
+
+[DATEX II](https://datex2.eu/) is a CEN/TS 16157 under CEN/TC 278 (road transport and traffic telematics).
+
+DATEX II is, quoting from that website:
+> [...] the reference data standard in Europe for road traffic and travel information. With Version 3, DATEX II is now at the heart of connectivity, supporting the digitalisation and exchange of road traffic and travel information.
+
+DATEX II is published as an XML Schema, first approved by the EC in 2014. An XML schema is not being an ontology, and cannot be expected to deliver an ontology by simple automated transformation. However it could deliver useful ontology elements (structures, terminology, and definitions).
+
+DATEX II is also published as a set of UML diagrams and JSON-LD files, but the situation and the status of these variants could be confusing, hence the explanations below.
+
+The easiest overview on DATEX II is available as an [Enterprise Architect-generated site](https://docs.datex2.eu/v3.4/_static/data/v3.4/umlmodel/html/index.htm).
+
+### Linked Datex II (datex) - deprecated
+
+[Linked Datex II](https://lov.linkeddata.es/dataset/lov/vocabs/datex) (we quote) "gives URIs to all terms used within Datex II". It provides 389 classes and 1336 properties. The link to the vocabulary is however broken. A [GitHub repository from the author](https://github.com/OpenTransport/linked-datex2/blob/master/vocabulary.ttl) (Pieter Colpaert) is available, but was last updated 7 years ago. The Repository indicated that this repository is deprecated, and mentions the Linked Data mapping "adopted by the Datex standardization group itself".
+
+### DATEX Official Linked Data mapping
+
+The vocabularies are provided in JsonLD format under https://datex2.eu/vocab/3/...
+
+These vocabularies are not listed on Linked Open Vocabularies.
+
+### SRTI DATEX II
+
+[SRTI Datex II](https://cef.uv.es/lodroadtran18/def/transporte/dtx_srti/#hasLinearElement) is (we quote) 
+> An RDF/OWL vocabulary to represent SRTI DATEX II profile (according the Commission Delegated Regulation (EU) No 886/2013) within the European LOD-RoadTran18 action "Supporting the cross-border use of Road Traffic Data with Linked Open Data based on DATEX II (LOD-RoadTran18)" (Agreement No: INEA/CEF/ICT/A2018/1803421, Action No: 2018-EU-IA-0088). The vocabulary is used for mapping between DATEX II vers. 3 and LOD formats.
+
+Last released in 2023 as version 1.1 under CC BY 4.0 (_although the ttl file bears version 1.0 dated 31/3/2022; the rdf/xml file bears the same date_).
+
+### ISO 19148:2021 vs. Datex II v.3 vs. SRTI Datex
+
+A direct comparison between Datex II v.3 vocabularies (abbreviated d2v3) and SRTI Datex (dtx_stri) is shown below:
+* for the scope of our intended usage (Linear Referencing), dtx_srti is a superset of d2v3.
+* dtx_srti however does not import d2v3 vocabularies, nor refer to d2v3 via prefixes.
+* matches are shown in the table below; the matches are often approximative:
+
+| ISO Class or property | d2v3            | dtx_srti peculiarities         |
+| ----------------- | --------------- | ------------------|
+| (packaging)       | d2v3 presents a flat list of classes with some subclasses | dtx_srti introduced some superclasses for packaging; for our case, "LinearReferencing" |
+| Linear Element    | same definition, reference to ISO 19148, and subclasses | no labels; adds multiplicities |
+| Position Expression | PointAlongLinearElement |   |
+| Distance along linear element | same definition, reference to ISO 19148, and subclasses | no labels; adds multiplicities |
+| Referent | ditto | ditto |
+| Location reference | same class tree, but... | dtx_srti drops LocationGroup (of limited relevance in our case: not previoulsy used, but could be) |
+
+### Missing modelling elements
+
+Following classes are available in ISO 19148, necessary for our case, but not found in the Datex ontologies:
+| Class or property | d2v3     | dtx_srti      |
+| :---------------- | :------: | :-----------: |
+| LinearReferencingMethod | not found | not found |
+
+**Explanation**: d2v3 does not use the class diagrams proposed in ISO 19148 "as is", but performs some simplifications. Concerning Linear Referencing Method, it is mentioned in a note (package PointAlongLinearElement) but the three different variants of LRM (absolute, relative, interpolative) are implemented via three concrete classes, namely DistanceFromLinearElementStart (for absolute), DistanceFromLinearElementReferent (for relative), PercentageDistanceAlongLinearElement (for interpolative). These classes also settle other possible choices, e.g. using metre as distance unit, not using scaling, etc. These classes are derived from the abstract DistanceAlongLinearElement class.
+
+Given the sometimes "baroque" linear referencing of legacy railway infrastructure, we cannot limit ourselves to those simplified classes.
+
+### Alignment with current or previous versions of RSM
+
+#### Linear Element
+
+LinearElement is modelled in RSM as a subclass of GeoSPARQL Feature. It is closest to LinearElementByString, defined in Datex as "A linear element defined by a line string (class GmlLineString)". However:
+* GeoSPARQL does not impose using GML, WKT being the alternative;
+* in GeoSPARQL, the linestring is a data property of a geosparql:geometry that is itself an object property of geosparql:Feature, a superclass of rsm_topo:LinearElement.
+
+#### Linear Referencing System
+
+ISO 19148 defines Linear Referencing System:
+1. as a package, i.e. a set of UML classes and types (and, consequently relations); see ISO 19148:2021 Fig. 14;
+2. quoting from the definition in section 3.12, "set of linear referencing methods and the policies, records and procedures for implementing them".
+
+dtx_srti has a superclass LinearReferencing acting as a package for classes such as PointAlongLinearElement that themselves can be considered subclasses of ISO 19148 PositionExpression, the "heart" of the Linear Referencing package (as it refers to a Linear Element, a distance expression, and a linear referencing method).
+
+d2v3 does not define Linear Referencing [System], as it has no "superclasses as packages" like dtx_stri.
+
+### Conclusion
+
+dtx_stri is better structured (packages...), better annotated (labels and comments), and more complete (multiplicities...).
+
+On the other hand, d2v3 is closer to being a de facto standard. Unfortunately, dtx_stri does not import it or reference it (expect for isDefinedBy _annotations_), and contains many identical elements, so its maintainability is compromised. This pleads for using s2v3.
+
+**Imperfect alignment between d2v3 and rsm suggest define RSM classes as subclasses of selected classes in d2v3, with multiplicities adapted to the RSM context. When subclassing is not possible, SKOS properties to formally express similarities will be used. SKOS properties cannot be exploited directly for data aggregation, but will provide hints for developers or data managers.**
+
+Moreover, some classes found in ISO 19148 but not in the available ontologies will have to be created.
+
+## Uncertainties in values
+
+DATEX II introduces a custom model for representing uncertainties in the positions of points. Roughly, uncertainties can be defined in two ways:
+* using a set of confidence intervals (with 3 standard confidence levels) for each dimension, in the case of 3D coordinates;
+* using an ellipse (in the horizontal plane; associated confidence interval to be checked) and a different convention for height.
+
+This crucial aspect is dealt with in wiki page <add internal link>.
+
+<sub>Original page: [Linear-referencing.md](https://github.com/UICrail/CDM-RSM/wiki/Linear-referencing)</sub>
+
+
+---
+# localisation
+
+## Purpose
+Localisation is the operation consisting in linking some location (the portion of space consumed by a network entity, or any other spatial entity) with topology, under consideration of geographic positioning and linear positioning. Localisation logically lends its name to the package.
+
+## Diagrams
+
+The localisation vocabulary can be represented in three diagrams.
+
+### Localisation core
+
+This diagram defines what a location is with respect to topology elements, and breaks locations down into three disjoint classes:
+* Spot locations, mapped to a point on or near topology elements;
+* Linear locations, mapped to a sequence of contiguous linear elements, or parts thereof;
+* Area locations, mapped to a "bag" (unordered set) of topology elements of any nature.
+
+As of localisation version 0.4:
+
+<img width="1577" alt="image" src="images/8394d645-a1bc-41f4-9991-733425d0a473" />
+
+_Note: the diagram uses the Graphol representation of OWL2, which is somewhat similar to the UML ODM profile. In particular,_
+* _object properties are represented by diamonds, and are linked to their domain via a white square and to their range via a black square._
+* _similarly, data properties are represented by small circles._
+* _double edges on properties means "functional property" (at most one value)._
+* _thick black edges on object properties means "inverse functional"._
+* _combined double edged and thick black edged diamond means "functional and inverse-functional"._
+* _The black, flattened hexagons usually signal disjoint unions. For instance, class BaseLocation is equivalent (double arrow) to the disjoint union of LinearLocation and NonlinearLocation._
+
+Locations are "places on earth" associated with spatial objects, also called "Features" in GeoSPARQL, hence the geo:Feature superclass.
+
+Locations can be expressed by coordinates or other means, such as a position along a track.
+
+Locations should not be confused with the coordinates used to express them: these can vary (think of a moving object), can use various reference systems, be subject to measuring errors, etc.
+
+We distinguish spot, linear, and area locations, excluding "volumes" (a subject better covered by BIM), in relation with the number of dimensions needed to describe them. Since dimensionality is different, spot, linear, and area location classes are disjoint. Class BaseLocation is defined as the disjoint union of spot-, linear-, and area location classes, so BaseLocation would be equivalent to an abstract superclass in UML (a class with no direct instances).
+
+Please note that the same domain object can have several locations, according to the level of detail: e.g. a station would have an area location on a track plan, but a mere spot location on a passenger information map.
+
+The Localisation vocabulary allows to express the location of spatial objects with respect to the network topology, _if relevant_.
+If the network topology is irrelevant (example: the location of a downtown ticket vendor), there is not need to refer to it, as GeoSPARQL will express the geographic positioning using some standard serialization (WKT, GML...). You may even envisage a postal address, using other ontologies such as foaf.
+
+In the simplest case, a location is expressed as a collection of topology elements (individuals of class NetElement). This could be expressed with an ordinary object property, with domain = BaseLocation and range = NetElement. We however chose to express this collection as a closed, ordered list, because:
+* the order of the included net elements may be relevant, especially in the case of linear locations (mapped to a sequence of linear elements);
+* being able to close the list (with a conventional "null" element) provides certainty about the data being complete.
+
+Concerning the representation of such lists in OWL, see [About RDF OWL](https://github.com/UICrail/SemanticRSM/wiki/About-RDF-OWL). In the present case, we chose to use the List ontology published by Pauwels and Terkaj as a component of IfcOwl. This is because we do not need to represent the list as a container (with a particular identity and properties...); it suffices to represent the sequence of net elements as a linked list: a chain of items (individuals of class ListedElement), with each item pointing to a net element as contents, and to the next item in the sequence.
+
+BaseLocation points at the first element in the list (using object property listedElement). A BaseLocation should however point to one list at most: having multiple lists (multiple first elements) would leave open the question "do we have all lists?", defeating the very purpose of having a closed list (see previous paragraph). Consequently, property listedElement should be declared a functional property, in the sense of OWL2.
+
+In the case of an area location, the order of net elements in the linked list is arbitrary: the user may adopt whatever convention he/she would find useful, or leave it to the data processing (it is however good practice to adopt a convention, so that comparisons can be performed efficiently). In the case of area locations, the added value of having a list is limited to it being closed by a last, "null" element.
+
+In the case of a linear location, all net elements involved are necessarily linear. The order in the list reflects the sequence of linear elements that would be traversed by a travelling vehicle (leaving navigability issues aside) from the first element to the last. This implies that all linear elements be connected, and also that each linear element be oriented. For that purpose, the class ListedLinearElement is used instead of ListedElement, and the data properties startsAt and endsAt set the orientation. Property values are intrinsic coordinates along the linear elements: value 0.0 at the first port, 1.0 at the second port.
+
+By using values other than 0.0 and 1.0 (denoting extremities of linear elements), it is also possible to include parts of linear elements to one or another end of the sequence.
+
+More generally, parts of linear elements can be referenced by any location (e.g. area location), replacing a ListedElement by a ListedLinearElement, thus giving access to the startsAt and endsAt properties. In practice, the lists will most likely be represented using blank nodes, so the presence of startsAt and endsAt property instances will actually determine the item type.
+
+Finally, spot locations typically refer to one linear element: it suffices to provide a value to the startsAt property. Other properties of ListedLinearElement (not shown here) allow to stipulate a side (to the left or right of the linear element, taken in its nominal orientation from the first to the second port), a lateral offset, and even an application direction (think of signals that do not work in both directions).
+
+As was the case in RTM/RS/1.2, a spot location can refer to more than one net element (think of a signal addressing converging tracks).
+
+### Offsets, sides, application directions
+
+As of version 0.4:
+
+<img width="1499" alt="image" src="images/bb921113-bf5a-4700-9765-ecec5486251a" />
+
+### Defining composite net elements
+
+From topology 1.0rc2 on, composition of net elements to create other net elements no longer uses an ad hoc composite pattern, but instead uses the composition mechanism provided by the Localisation package.
+
+As of version 0.4:
+
+<img width="1303" alt="image" src="images/da378193-7c30-4608-b377-279aa1151fe3" />
+
+### About the OWL List ontology
+
+This diagram is added for illustration only:
+
+<img width="920" alt="image" src="images/add7200f-06f9-422a-828d-56bc2c80fb75" />
+
+Shortly:
+* every instance of OWLList has one next OWLList (forming a chain) or EmptyList (terminating the chain).
+* An EmptyList instance is only there to signal that the end of the list is reached, and it has no next element and no contents.
+* By contrast, any OWLList individual can have a content of any type.
+* while hasNext points to the immediately following individual, isFollowedBy points to all downstream individuals (by transitivity).
+
+In practice, referring to a list (as a whole) consists in referring to its first element. This is why the properties elementList and linearElementList, pointing to at most one list, appear to be functional properties (represented by a double-edged diamond) in the first diagram above.
+
+
+## Next steps?
+
+1. using intrinsic coordinates in a more explicit way (formal references to GeoSPARQL and to ISO 19148, possibly via IFC or DATEX classes). This would entail the replacement of two data properties (startsAt, endsAt) by complex object properties. Whether this is worthwhile is debatable.
+
+2. Offsets were only lateral in earlier versions (up to RSM 1.2), and are now generalized to tangential and vertical, effectively defining a 3-axis local coordinate system. Explicitly defining a local cartesian coordinate system would be a conceptual simplification and could make use of IFC classes.
+
+3. OWL profiles relevance: compliance with OWL2-RL ensures tractability in polynomial time (≠OWL2-DL: exponential time). The downside is some limitations (e.g. cardinalities or data sub-types), many of which can be expressed as SHACL shapes.
+
+4. OWL profile compliance checks: EDDY and TopBraid Composer can check against OWL2-RL. Looking for a convenient tool for OWL2-DL.
+
+5. Blind spot? everything is being examined as projections on a horizontal plane, except of course vertical offsets. Are there any realistic use cases where the effect of profiles on odometry (“distance along”) would become relevant?
+
+<sub>Original page: [Location,-localisation.md](https://github.com/UICrail/CDM-RSM/wiki/Location%2C-localisation)</sub>
+
+
+---
+# guidelines and conventions
+
+## No rules! no rules?
+First thing: there are no modelling rules. To a large extent, modelling (i.e. representing reality using some formal language) is and remains an art. Art rests on techniques and, significantly, the greek word for "art" is "τέχνη". Using a formal language in a proper way is one technique in our case. Art also rests on conventions or traditions so as to remain accessible to some public, and of course on inspiration.
+
+Many tasks can be automated using models, e.g. data conversion or system simulation. But setting up a model is not easily automated; even IA does not go that far, as of today. Even if it went there, "elegance" is and remain important, so is "understandability". All these are human criteria that are hard to express formally.
+
+Of course, the syntax and semantics of the formal language must be observed. These however are language rules, not modelling rules.
+
+If you need to take a break after this sententious introduction, look up ["no guru, no teacher, no method"](https://www.youtube.com/watch?v=E8Cnh7uD0b4), Van Morrison's best studio album, maybe. At least you should enjoy the title.
+
+Less recreational is the [Tough modelling choices](#modelling-choices) page, illustrating some cases where personal choices have to be made.
+
+## Purpose of guidelines and conventions
+We can express some guidelines (for easier production) and conventions (for easier consumption).
+
+The conventions and guidelines below are expected to serve the development of the revised RSM vocabulary, also considering its other vocabularies, and including evolutions of the ERA (RINF) vocabulary. They cannot be considered final.
+* Primary goal is to define vocabularies following RDF/OWL conventions and best practice.
+* Secondary goal is to ease the illustration of the vocabulary elements using UML class diagrams.
+
+## Model structure (UML) / Vocabulary contents (RDF)
+### Abstract classes (UML) / Taxonomies (RDF)
+There are no abstract classes in RDF, as any individual of a subclass is also an individual of the "abstract" superclass.
+
+UML models use "abstract" classes to set up a taxonomy of concepts, contributing to maintainability. The equivalent construct, in RDF, would be abstract classes as union of disjoint subclasses.
+
+### Packaging (UML) / Linked vocabularies (RDF)
+Packaging is a commodity in UML, but not part of RDF primitives. The equivalent to packaging in RDF would be the use several, linked vocabularies. The purpose would be the same as in UML modelling: high coherence (a vocabulary should have a narrow purpose); low dependency on other vocabularies. As is the case with taxonomies, the aim is to ease the understanding and usage of the vocabularies, and to facilitate their maintenance (versioning, expansion...).
+
+Therefore the domain-relevant concepts will be split into several vocabularies for easy management and versioning. These bit and pieces will then be imported in "summary" vocabularies for ease of use. Same tactics as packages and super-parckages in UML.
+
+### Property sets
+Properties are often expressed together, e.g. "longitude and latitude (and possibly altitude)", or "length, width, height", or "empty mass and laden mass". Sometimes they would only become usable as a collection, such as "personal details" that include first and last name, date of birth, nationality, ...: using just first and last name does not allow reliable identification of a person.
+
+Property sets often evoke an unnamed feature; for instance, "mass" and "volume" belong together as they feature a "physical body". Or "owner" and "value" may feature an "asset", in the economic sense.
+
+Grouping properties into property sets is therefore an option. In UML models, property sets are commonly encoded as attributes in a class. The IFC (industry Foundation Classes) publish classes and property sets separately.
+
+In the context of RDF, properties are first class objects that should be defined _once_ and then used by many different classes, which is a plus. Grouping properties into property sets is less intuitive, but just as simple.
+
+See dedicated page: [Property sets](#sets)
+
+### Constraints (UML RDF/OWL/SHACL)
+In UML, the source models are in general unconstrained: multiplicity constraints are present, but others not or at least not formally, OCL seldom being used.
+
+On the RDF side, we expect SHACL to be used for any contingent constraint (if it exists, in the context of a particular project, context, or implementation). In particular, multiplicities should be expressed using OWL restrictions if semantically relevant, or on the SHACL side if not.
+
+## Class and association role (UML) / property (RDF) naming
+### Capitals
+Following RDF practice, class names (identifiers or labels) have an initial capital, while property names start with lower case.
+### Property naming
+#### Reflecting the association target (UML)/ range (RDF)
+For the sake of readability, property names should end with the range name whenever the range is a single class (not a union). This is consistent with the recommendation of defining superclasses whenever they are conceptually clear, rather than using union classes.
+#### Plurals
+Following RDF practice, but opposite current UML models of RSM, property names always use the singular even if the range multiplicity may exceeds 1.
+
+The same holds true for attributes (UML) expressed as data properties (RDF).
+
+<sub>Original page: [Modelling-guidelines-and-conventions.md](https://github.com/UICrail/CDM-RSM/wiki/Modelling-guidelines-and-conventions)</sub>
+
+
+---
+# topology, navigability: fundamentals
+
+## About topology and navigabilities
+
+### Topology definition
+
+"The motivating insight behind topology is that some geometric problems depend not on the exact shape of the objects involved, but rather on the way they are put together" (quoted from [Wikipedia](https://en.wikipedia.org/wiki/Topology). A railway network is such an object.
+
+Of course a railway network also has a geometry and many other characteristics. Describing all of these _together_ is not possible: at best, some synoptic views can be proposed for certain purposes, such as providing a routebook to drivers.
+
+Considering network topology independently from any other feature, and then mapping most other features to topology, is the basis of RailSystemModel (RSM) and of ARIANE, the network model by SNCF, from which RSM was originally derived.
+
+### Topology scope
+
+Our scope is the railway "iron" network topology. Topology is about the function "guiding the rolling stock", exclusively. This means that topology is not about other functions such as "protect rolling stock from collisions with other rolling stock" or "provide passenger services".
+
+Other functions, such as "conveying [electric traction] energy", may also give rise to distinct topologies: for instance, electrical networks can be represented as nodes (or junctions) and branches, and this formalism was theorised by Gustav Kirchhoff already in 1845.
+
+### Topology generalization
+
+While topology models could be generalized to other subsystems such as the "energy" subsystem (...electric tractive energy supply..., in full), we do not further investigate this path for the time being. This is because railways are a guided transport system, and nearly every subsystem can be put in relation with the "iron network" (tracks). Consequently, network topology is of special importance.
+
+One subsystem for which the "iron network" topology is largely irrelevant is PRM (People with Reduced Mobility). Accessible paths in and around stations have nothing to do with rails. However, other similar models have been proposed and standardized for that purpose: see for instance [IFOPT](https://en.wikipedia.org/wiki/Identification_of_Fixed_Objects_in_Public_Transport), now integral part of [TRANSMODEL](https://www.transmodel-cen.eu/).
+
+The topology model could certainly be extended to the energy subsystem. Energy network description models exist, and are at the basis of functional energy models that are out of our scope.
+
+### Topology presented as a graph
+
+#### Nodes: track sections
+
+As rolling stock in operations rests on tracks, and always has the possibility to mode along a track, it seems natural (from the point of view of graph theory) to defined track sections as graph nodes.
+
+This is also natural from a railway operations point of view: a driver starts his mission from, typically, some service track; passenger train 714 will originate at King's Cross station, track 9 3/4, etc.
+
+#### Edges: links between track sections
+
+Consequence of the above is, edges would describe available links between track sections. In fact, the nature of the links will also define the track sectioning. This is why definitions are essential.
+
+A link would be, for instance, two track sections, A and B, abutted to each other at one of their extremities. In such case, a vehicle could run from A to B (and conversely). However, it is generally not useful to have to track sections in such a simple case: the union of A and B still qualifies for being called a track section where the vehicle may run unhindered, and can be considered a single node. In graph theory, this merging would be called a contraction.
+
+The situation gets more interesting when three track sections converge: for instance, a switch with one incoming track and two outgoing tracks, one "through" and one "diverted". Since we are not interested in geometry or permitted speeds here, we can temporarily forget about the difference between through and diverted, but not "incoming".
+
+One fundamental difference is that the incoming track section may give access to the two others, but running from "through" to "diverted" (and conversely) is not possible without stopping and reversing on the incoming track. In operations, stopping and reversing may be allowed (stopping and reversing at the driver's initiative only happens on service tracks). But *functionally*, the rolling stock *cannot* be guided from "through" to "diverted", nor from "diverted" to "through"; in both cases, transiting through "incoming" is *necessary*.
+
+Note the expression "may give access": guiding the rolling stock from A to B is a function that may see many restrictions, including but not limited to the position of switch blades, the blade lock being established, maybe a signal being open, etc. Here, we do not consider any particular restriction, **not even the blade position, which is not a sufficient condition anyway**.
+
+Since the topology documents the function "guiding the rolling stock", track sections as graph nodes *must* (not: *may*) end at such places where three or more sections would converge.
+
+The graph edges, i.e. the links between nodes, are conventionally named "navigability", the links between tracksections.
+
+
+
+### Mapping real world entities to topology elements
+
+Graphs are mathematical abstractions of networks. Graph elements (nodes and edges) are supposed to match entities in the field, but the matching is a matter of conventions. A formal convention could be called a mapping. A mapping can be one-to-one.
+
+#### Track Section [entity] and Linear Element [topology]
+
+An isolated track section would be abstracted by its centreline (halfway between rails, at the height of the top of the rails) because this is usually the reference line when it comes to guiding the rolling stock. Please note that this centreline is a 3D curve, with multiple geometries (as drawn, as delivered), and evolving in time due to track deformation and wear & tear. The next level of abstraction consists in forgetting about the geometry of the centerline, only considering that is is linear (a fully ordered set of contiguous locations in space, with two ends). A linear element is nothing more.
+
+This is what makes topology useful as an abstraction: it varies less often, for instance when a branch line gets added to serve an industrial site, or when a station track plan is rationalised. Otherwise topology (a set of nodes and edges) remains stable, which is why it may be used as a reference for describing other system components. Wear & tear, geometry changes, length changes, all do not change a particular linear element. Not even changes in navigabilities would affect it directly , as navigabilities are only expressing relations with other linear elements.
+
+#### The case for switches
+
+The most controversial aspect of the graph representation is, switches need not be nodes, unlike track sections: switches are merely devices that will realise the guiding function. As a matter of fact, one could represent the are around a switch with any of the two following graphs:
+
+* three converging track sections with one "coinciding" point
+* three converging track sections ending up in three different points of a switch
+
+Both representations are equally valid, and can be represented using the topology graph described in the previous section.
+
+
+
+
+
+
+
+
+
+### Navigability, from different points of view
+
+#### The many faces of navigability
+
+The same notion of navigability can be described in different ways, according to the formal language used. It can be:
+
+* a relation (in first-order logics)
+* an directed edge (in graph theory)
+* an object property (in RDF parlance)
+
+#### Navigability is directed
+
+Navigabilities are **directed** edges (in the sense of graph theory), that we would represent as arrows between nodes (track sections). In general, the possibility moving from track section A to track section B entails the possibility of moving from B to A. So having a directed graph may seem superfluous. There are exceptions though: think of sprung switches (often used in stations along single track lines). If you think these are antiques, think otherwise: nowadays, springs sometimes get replaced by sensors and actuators. The implementation changes, the functionality is still asked for.
+
+Seen as a relation (or an object property, in ontology parlance), navigability is not a symmetric relation (A to B is navigable does not imply that B to A is navigable, as there are exceptions). Nor is it antisymmetric (it may be the case that A to B is navigable and B to A too, as this is most often the case).
+
+#### Navigability is transitive - is it?
+
+"If a vehicle can be guided from A to B and then from B to C, then it can be guided from A to C" is equivalent to "the 'guides rolling stock' relation is transitive". If stopping and reversing is possible, then navigability is transitive for sure: navigability merely expresses that track sections are somehow connected, regardless of the way of running. This is not the initial intent when expressing the function "guiding the rolling stock".
+
+* 
+
+
+
+
+
+
+
+###
+
+<sub>Original page: [Network,-topology,-navigability:-fundamentals.md](https://github.com/UICrail/CDM-RSM/wiki/Network%2C-topology%2C-navigability%3A-fundamentals)</sub>
+
+
+---
+# Network
+
+Note: using ports makes the MESO level derivation from MICRO straightforward, but MACRO becomes questionable: how to consider a double tracked line as a linear element, where it has four ports (two track ends at each line end) and navigabilities may depend on the presence of crossovers? beyond net element composition, we would need to consider port composition.
+
+<sub>Original page: [Network.md](https://github.com/UICrail/CDM-RSM/wiki/Network)</sub>
+
+
+---
+# Ports
+
+## Purpose
+
+The "ports" vocabulary provides a tiny abstraction expressing: "Elements have ports; ports are linked".
+
+Such abstraction is ubiquitous; for instance:
+* RSM topology is about (railway) net elements being linked by navigability relations at their ends (in the case of a linear element such as a track section) or ... "ports" (in the case of complex railway areas);
+* Rolling stock has an aspect best described with a similar "topology": vehicles are "elements", couplers are "ports", and the links convey traction and braking efforts, inter alia.
+* IFC (Industry Foundation Classes) has a class IfcPort. IfcPorts are contained in an IfcElement; the containment is expressed via class IfcRelConnectsPortToElement. Relations between ports are reified too, and transit via instances of IfcRelConnectsPorts. See [IfcPort in IFC 4.3 Add 2](https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcPort.htm)
+* the ARCADIA metamodel describes components having ports, with links establishing a 1-to-1 relationship between ports; this pattern is applied to behavioral components in parallel to physical components, and to functions too, in a slightly different style. See [the ARCADIA Metamodel reference](https://mbse-capella.org/resources/arcadia-reference/Arcadia%20Language%20-%20MetaModel.pdf).
+
+However, no (upper or general) ontology seems to deal with such basic pattern, maybe because they are too close to a basic knowledge graph: they replace simple vertices by complex ones, consisting in ports attached to the surface of each vertex.
+
+An attempt to provide a thorough "ports" ontology was [published in 2004 by Paredis and Liang.](https://www.researchgate.net/publication/250022694_A_Port_Ontology_for_Conceptual_Design_of_Systems#fullTextFileContent).
+
+The proposed ontology is based on the above. Whether it is really useful is a matter for discussion.
+
+<sub>Original page: [Ports.md](https://github.com/UICrail/CDM-RSM/wiki/Ports)</sub>
+
+
+---
+# and their values
+
+## Direct or indirect expression of properties and values
+
+_To be completed. About expressing properties and annotations on property values, such as unit, origin, uncertainty, version... in which case using simple datatype properties is no longer suitable._
+
+_Best overview can be found in the references below:_
+
+### References
+
+Buildings and Semantics: Data models and web technologies for the built environment, edited by Pieter Pauwels and Kris McGlinn, CRC Press/Balkema, 2023
+
+See Part I, chapter 2.
+
+## Representation of floating point values in RDF
+We follow the recommendations provided in [this open access paper by Jan Martin Keil and Merle Gänßinger, published in 2022](https://link.springer.com/chapter/10.1007/978-3-031-06981-9_10), by **using xsd:decimal for representing floating-point values**, rather than xsd:float or xsd:double.
+
+This orientation raises a consistency issue with geosparql that uses xsd:double as a range for such properties as hasMetricLength, from which we derived hasNominalMetricLength (see geosparql adapter).
+
+<sub>Original page: [Properties-and-their-values.md](https://github.com/UICrail/CDM-RSM/wiki/Properties-and-their-values)</sub>
+
+
+---
+# sets
+
+## Purpose
+Property sets are commonly used in IFC (Industry Foundation Classes, by buildingSMART International; see [IFC documentation](https://ifc43-docs.standards.buildingsmart.org/)). As the name suggests, a property set is a set of properties that are usually expressed together, and may apply to very different objects. Fictitious example (not in IFC): property set "spatial dimensions of box-like objects", that may comprize length, height, width, and volume as a derived property.
+
+Property sets can be represented, in UML, by attributes grouped into a class.
+
+In RDF, the "natural" representation of property sets may appear counter-intuitive, although it is a simple derivative of the representation of a single property.
+
+## Not to be confused: properties, and values of properties
+
+Property Set should not be confused with a set of _values_ (of the one or more properties), such as a "sample set". In loose speech, "value" is often omitted, e.g. "what is the length of that locomotive?" actually means "what is the value of the length of that locomotive?", and even "what is the value and the unit of the length over buffer of that locomotive?" which would be more explicit - see [Properties and their values](#and-their-values).
+
+At class level, "locomotives have a length" only means "class LOCOMOTIVE is in the domain of property LENGTH" and does not say a thing about values. Then, we can look up LENGTH and read that the range of LENGTH, i.e. the set of admissible values, is a non-negative real number.
+
+We may even hope that it will be possible to look up the unit in which the length is expressed, otherwise LENGTH is meaningless to an engineer. Depending on circumstances, we may even wish to get a confidence interval, because the common assumption that "all displayed digits must be significant" is an illusion fueled by decades of pocket calculators and double precision computation.
+
+## For legibility and understandability...
+In the text, we use all-caps for class names: LOCOMOTIVE is the class of all locomotives. Locomotive, or "a locomotive", or "a particular locomotive", in lower case, all mean the same, namely an individual (RDF term) or element (set theoretical term) or instance (OOP term) of class LOCOMOTIVE. In figures, we follow the usual conventions: Initial capital for classes, camel case for attributes or properties.
+
+Set theory, ontologies (and the RDF framework), and object-oriented programming use different terms for _nearly_ identical concepts, as you see above, but also identical terms (class...) for different concepts. The reader will be warned only when confusions can be misleading.
+
+## The most common situation: property sets characterizing an abstraction
+
+Let us define PHYSICAL_OBJECT, the class of all physical objects: anything tangible that exists in the real world, that can be manipulated as a whole, on which a force can be exerted, that you can dump into a pond wondering whether it's gonna float, etc. Any physical object has a mass and a volume. Mass and volume can be defined as properties applying to all physical objects.
+
+### ```mermaid
+
+### title: Physical object (UML)
+
+classDiagram
+    class Physical_object
+    Physical_object : +float mass
+    Physical_object : +float volume
+```
+
+In RDF/OWL formalism, mass and volume are datatype properties: they associate an individual with a value of the property, expressed as a number, or a string, or a boolean, etc. Each physical object x has a property "mass" that associates object x with the _value_ of its mass. "The" value may depend on time, on observers, may be fraught with uncertainties, etc. but that is another story: it is told under [Properties and their values](#and-their-values).
+
+For any property, the set of possible values is called "range", and the set of objects on which the property is defined is called "domain", in RDF parlance.
+
+## ```mermaid
+
+## title: Physical object (RDF/OWL)
+
+classDiagram
+    class Physical_object
+    class float
+    Physical_object --> float: mass
+    Physical_object --> float: volume
+```
+
+By defining the class PHYSICAL_OBJECT, you have implicitly defined a property set "properties of physical objects", namely the set of properties, the domain of which is PHYSICAL_OBJECT. Obviously, that property set, although clearly defined, cannot be known exhaustively. Different users may be interested in the temperature of a physical object, its color, its kinetic energy, etc., so agreeing on the property set extension (its contents) is a matter of convention.
+
+## Abstractions are useful
+
+Defining PHYSICAL_OBJECT as a superclass (superset) of, say, LOCOMOTIVE, AXLE, RAIL, DOOR, CONTAINER, ... may seem superfluous: these things have little in common. They are managed by different companies. They serve different purposes. However, what they have in common is their physical properties, all being physical objects. So it makes sense to define "mass" and "volume" once, applicable to physical objects. Any particular locomotive is a member of class LOCOMOTIVE (the set of all locomotives); if we assert that LOCOMOTIVE is a subclass of PHYSICAL_OBJECT, any particular locomotive becomes an element of superclass PHYSICAL_OBJECT too, and therefore has the properties "mass" and "volume".
+
+### ```mermaid
+
+### title: Physical object and subclasses (RDF/OWL)
+
+classDiagram
+    class Physical_object
+    class float
+    Physical_object --> float: mass
+    Physical_object --> float: volume
+    class Locomotive
+    class Axle
+    class Rail
+    class Door
+    class Container
+    Locomotive --|> Physical_object: subClass of
+    Axle --|> Physical_object: subClass of
+    Rail --|> Physical_object: subClass of
+    Door --|> Physical_object: subClass of
+    Container --|> Physical_object: subClass of
+```
+
+# Pedantic note to Object-Oriented Programmers
+Ontologies are based on set theory: a class is a set. So any particular locomotive is member of two classes at least, the subclass of all locomotives and the superclass of all physical objects.
+
+## ```mermaid
+
+## title: Locomotive instance (RDF/OWL)
+
+classDiagram
+    class Locomotive
+    class Physical_object
+    class BB 15022
+    Locomotive --|> Physical_object: subClass of
+    BB 15022 ..> Locomotive: instance of (asserted)
+    BB 15022 ..> Physical_object: instance of (inferred)
+
+```
+The diagram says, a particular locomotive, BB 15022 that the author once had the opportunity to drive, is an element of class (set) LOCOMOTIVE, and since LOCOMOTIVE is a subset of PHYSICAL_OBJECT, the same BB15022 is also an element of class (set) PHYSICAL_OBJECT.
+
+Besides, the BB15000 series was the [Alvis](https://thecritic.co.uk/issues/august-september-2023/a-car-for-the-connoisseur/) of locomotives: best loc of the world. One glitch per million train.km.
+
+In OOP, things are different: classes are types rather than sets, and objects are instances of exactly one type. A locomotive is an instance of the class LOCOMOTIVE, period. Locomotive however "inherits" the properties of the superclass "physical object", by virtue of the 2nd principle of object-oriented programming. In the context of ontologies (hence first-order logic, hence set theory!), a locomotive is also a PHYSICAL_OBJECT and _has_ (not: _inherits_) the same properties as any other physical object, such as trash can or cupcake.
+
+For reference, the UML representation of the above is optically very similar:
+### ```mermaid
+
+### title: Physical object and subclasses (UML)
+
+classDiagram
+    class Physical_object
+    Physical_object : +float mass
+    Physical_object : +float volume
+    class Locomotive
+    class Axle
+    class Rail
+    class Door
+    class Container
+    Locomotive --|> Physical_object
+    Axle --|> Physical_object
+    Rail --|> Physical_object
+    Door --|> Physical_object
+    Container --|> Physical_object
+```
+
+Sorry for the pedantic note, but the assimilation of OOP with ontologies is _sometimes_ harmful. So please forget "inheritance" that does not exist in RDF, and think of RDF classes as being "sets and subsets". As soon as you say "inheritance", an error is looming.
+
+# Classes do not necessarily embody concepts
+You may skip this boring section.
+
+Short version: classes, in RDF, are sets with no particular meaning, except for being building blocks of a framework. Users may give them a meaning. Long version: see below.
+
+Classes are often used to embody higher-level concepts (höhere Begriffe, as the German mathematician and logician Gottlob Frege wrote). "Felix is a cat" defines Felix as being an instance of a class of animals called CAT, while Kitty, another CAT, may look very different from Felix. This is a first, "natural" step towards abstraction.
+
+An ontologist will then pompously assert that CAT is a class, and Felix and Kitty are individuals (understand: elements) of class (understand: set) CAT. Zoologists will immediately object that the class is not a class but a species, and that the name of the species is felis catus, under class mammalia. Ontologists are poor zoologists for sure.
+
+Classes, in RDF, are sets. Sets can be composed arbitrarily, such as "the set of artifacts I collected yesterday on the beach", but such a set hardly qualifies as a concept and it will be difficult to find a short, expressive name for it: the elements in the set may be pebbles, oyster shells, empty plastic bottles and jellyfish, but these only have in common the fact that I personally gathered them yesterday.
+
+The set I gathered can however be seen as an instance of class "collection", defined by "set of homogeneous or heterogeneous stuff hoarded by a collector". Everybody understands what a collection is, even though collectors know best. So class "collection" is a set (of all possible collections) and also a concept (we know what it is even though we do not see it), while _my particular collection_ is an instance of class "collection", thus by definition a set (of stuff collected yesterday by myself), but hardly a concept (if not shown, and even if shown, you will hardly make sense of it).
+
+In RDF and more generally in logic, it is equally valid to define a class by its _extension_ or its _intension_ (spelled with a "s"). The extension of a class is the exhaustive list of its individual elements. The intension of a class is the list of necessary and sufficient criteria for being an element of the class. If these criteria are properties, these properties are sometimes called "rigid properties" as they defined the class, and therefore can be observed for each element of the class. See [wikipedia](https://en.wikipedia.org/wiki/Extensional_and_intensional_definitions) for more details.
+
+Properties that define the intension can also be called essential properties, while all others are accidental. For instance, color is an accidental property of locomotives. See also [this dedicated page](https://plato.stanford.edu/entries/essential-accidental/) for philosophical enlightenment.
+
+# Property sets as classes described by their inten***s***ion _(not a typo)_
+
+The "list of all track properties that are relevant to rolling stock compatibility" is not a higher-level concept, nor is it a "unit of thought": it is a patiently compiled, evolving list of heterogeneous properties related to gauge, clearance, power supply, axle loads, etc. that will be used to check vehicle / track compatibility. The things that these properties have in common are, they all apply to TRACK and are documented in RINF.
+
+Still, a class PSET_COMP can be defined as "track property set relative to rolling stock compatibility" that will be the domain of all evoked properties. More precisely, PSET_COMP will be defined as the intersection of the domains of each particular, listed property.
+
+If class TRACK is defined as a subclass of PSET_COMP, all properties applying to COMP will immediately apply to track. Of course, if there would be only one subclass TRACK, COMP would not appear very useful and both classes could be merged. In reality, PSET_COMP would also have LINE or NETWORK as subsets, because all rolling stock compatibility criteria applying to tracks can also be applied to lines or networks. Rather than stating, for each individual property, that its domain is the union of TRACK, LINE, and NETWORK, it is much more elegant to define those three classes as subclasses of PSET_COMP.
+
+## ```mermaid
+
+## title: Property set "track properties relevant to rolling stock compatibility" (RDF/OWL)
+
+classDiagram
+    class PSet_Comp
+    class float
+    PSet_Comp --> float: track gauge
+    PSet_Comp --> float: maximum axle load
+    class Track
+    class Line
+    class Network
+    Track --|> PSet_Comp: subClass of
+    Line  --|> PSet_Comp: subClass of
+    Network  --|> PSet_Comp: subClass of
+    Line --> Track: aggregates
+    Network --> Line: aggregates
+```
+
+Several property sets may apply to a track. As a track is a physical object, we can also state that TRACK is a subclass of PHYSICAL_OBJECT, which we can characterize with a mass and a volume (that does not sound very interesting, maybe I should choose a better example).
+
+_Note: the aggregation relation between NETWORK, LINE, TRACK is only provided for demo purpose. RSM handles these quite differently._
+
+## Looking back: Who is afraid of "multiple inheritance"?
+"Multiple inheritance", a taboo to many programmers, becomes perfectly natural from an RDF perspective.
+
+In OOP, Multiple Inheritance is the combination of different types. It is painful at times (see the [diamond problem](https://en.wikipedia.org/wiki/Multiple_inheritance)), is well supported in some languages and much less so in others, so platform-independent models usually shun it.
+
+In RDF, multiple inheritance translates to "intersection of sets" because RDF classes are sets. And intersections are "perfectly natural and occur all the time", to quote Riccardo Santoro. The class of red physical objects is the subclass of (=intersection of) the class of physical objects and the class of red objects, simply. What is wrong with that?
+
+## Property sets as superclasses: why not single properties?
+
+A property set may encompass (= be the domain of) a single property. In such case, all the above boils down to the classical definition of an RDF property, and all of a sudden becomes obvious. All a property set does is, *naming* (providing an identifier for) the set of all things that have all properties listed in the property set, rather than only referring to some "blank node" (the intersection of all property domains).
+
+<sub>Original page: [Property-sets.md](https://github.com/UICrail/CDM-RSM/wiki/Property-sets)</sub>
+
+
+---
+# and units
+
+## Problem statement
+About the **need** to explicitly deal with units in data exchange, see "Unclear units stymie science", by Hanisch et al., in Nature, vol. 605, 12 May 2022 (free downloads are available).
+
+Quantities and units used to be part of RSM Base package:
+* quantity classes (length, mass...)
+* a single unit class
+
+SimpleRSM, the unofficial Python version of RSM, defined _instances_ for common units.
+
+Surprizingly, there is no "universal standard" vocabulary for quantities and units. There are a few initiatives <to be added>.
+
+The background question is when to use datatype properties vs. object properties. In the case of datatype properties, UCUM seems the only candidate for encoding the value and the unit in a single string.
+
+Hints:
+* on the geosparql github, QUDT seems to gather some support
+* GeoSPARQL 1.1 however references UO (a.k.a. UOM)
+* ERA (European Railway Agency) leans towards the adoption of QUDT
+* When using Data[type] properties in the sense of OWL, we consider encoding the value as a string including the numeric part and the reference to the unit, using UCUM. Such representation is less prone to misuse, since it requires the consumer to parse the string in order to extract the numeric value and the unit.
+* check IFC, esp. property set representation
+
+<sub>Original page: [Quantities-and-units.md](https://github.com/UICrail/CDM-RSM/wiki/Quantities-and-units)</sub>
+
+
+---
+# Stock
+
+## Rationale
+The rolling stock ontologies intends to represent various __aspects__ of railway rolling stock, independently of each other:
+1. rolling stock **typology** : vehicles, vehicle rakes, trainsets... => defined under "rolling stock typology"
+2. trainset **consist** (= composition) : sequence and orientation of vehicles in a formation => "rolling stock consist" proposal, detailed below
+3. rolling stock **components** : axles, wheels, couplers, brake pads... => in preparation
+4. **payloads** : passengers, freight, containers... => referenced under "rolling stock typology", to be defined (as property sets) in another vocabulary
+5. **performance** settings : effort vs. speed curves (traction and braking), resistance to forward movement, mass and rotating mass inertia ... => in preparation
+6. **geometry** : "the left axle box of 2nd axle of wagon number 12345678 is 346m from the front of this running train and 45cm above top of rail", of interest for en route diagnosis => in preparation
+7. **adapters** for ERA-TV and EVR are needed. In the future, these may be replaced by an adapter for the ERA Ontology.
+
+The list of aspects can be expanded. Further analysis of use cases will show whether this is necessary.
+
+The above aspects are made available at various business __levels__:
+1. **operations planning** (functional level): "train IC94 is composed of three first-class, one dining, and seven second-class coaches, hauled by an electric locomotive"
+2. **manufacturing** (technical level): "to serve ICxx trains, these are manufacturer Y catalogue entries (rolling stock types, in the sense of EU law): ..."
+3. **fleet inventory** (physical level): reflecting actual vehicles or trainsets with a "chassis number" and/or an EVN.
+
+These "levels" and their relationships are illustrated in the "rolling stock level" vocabulary. They would deserve a generalization.
+
+## Design goals
+* each aspect and level shall be pairwise independent from others, as far as possible;
+* each level will be able to document relevant aspects; operation planning will be less detailed, manufacturing (type) level much more so, and fleet inventory level even more so; 
+* each level will document its compatibility with a higher level, e.g. fitness of a manufactured type with respect to operational requirements, or conformity of a delivered vehicle with its type specifications;
+* the ontology user will be able to freely combine, for each use case, the relevant set of aspects with the relevant set of levels;
+* the ontology shall be kept minimal and open to extensions, in order to serve use cases not listed;
+* the use cases contributing to the "core" of the ontology will be decided in the course of the MOTIONAL project.
+
+
+## Provided ontologies
+
+### Rolling stock typology
+
+Link: [https://cdm.ovh/rsm/rolling_stock/typology/](https://cdm.ovh/rsm/rolling_stock/typology/)
+
+By "typology", we refer to "types" in their traditional British meaning: locomotives, wagons, etc. are types (not to be confused with types as in "register of vehicle types", that refer to manufacturing types or series).
+
+The design of the typology rests on the fact that rolling stock types are identified according to several mutually independent **features**:
+* motored or not (2 choices, leaving power source aside)
+* nature of payload (2 types: passengers and freight, so 4 possible combinations)
+* vehicles vs. vehicle formations (2 choices)
+* etc.
+
+which leaves room for 16 combinations, some having a name reflecting a concept, some not. Then, there are the odd ones (On Track Machines)... Any attempt to set up a "classical" tree-like structure (a taxonomy) rests on the choices for ordering the features, e.g. first branching differentiating the vehicles from formations, second differentiating the motorization, third branching according to the payload.
+
+The proposed ontology (now v. 0.6) tries to reflect this way of thinking by separating rolling stock (vehicles and formations) from their features. The diagram below, while outdated (version 0.1), tells the general idea:
+
+![Diagram: rolling stock typology, v. 0.1](https://github.com/UICrail/SemanticRSM/blob/main/Documentation/Diagrams/Rolling_stock_typology_0.1.png)
+
+The proposal addresses composition on the left and features on the right. In the middle, you see the resulting classes embodying domain concepts and terminology such as "locomotive", "trainset", etc.
+
+The list of concrete types (the classes in the middle) was deliberately kept flat, for the sake of simplicity, and also to avoid semantic errors. For instance, it would be tempting to state that _a slave locomotive is a particular kind of locomotive_, as the wording suggests. In reality, a slave locomotive is a locomotive without driving desk, so the "Liskov substitution principle" may fail: one cannot use a slave locomotive in lieu of a (conventional) locomotive, but only in addition.
+
+Notes:
+1. the diagram is "straight from Protégé desktop", using the OntoGraf plugin.
+2. the arrows representing generalizations are reversed, compared to UML conventions. The general class is on the blunt side of the arrow, and the special class on the sharp side.
+3. the ontology file includes extensive definitions, quoting TSIs whenever possible.
+
+Substantial remarks:
+1. the identification of types is not quite complete; EMU/DMU distinction for instance would require the formal description of energy sources (TBD).
+2. heavy use is made of conjunctions (wrongly perceived as "multiple inheritance"): a wagon for instance is a vehicle AND is a thing designed for carrying freight. In other cases though, a restriction of a property value identifies the class (e.g. a trainset is a formation and has a fixed consist). Characterizing a concept by subclassing or by restricting a property value (with or without subclassing) is a matter of taste that is not easy to rationalize.
+3. code implementations may interpret the conjunctions as classes (vehicle, formation) implementing interfaces (features are in fact property sets, and may translate to interfaces in the sense of Delphi, Java, or C# programming).
+
+The diagram below reflects (hopefully) the current version:
+
+![Diagram: rolling stock typology, v. 0.2](images/Rolling Stock Typology.png)
+
+### Rolling Stock Levels
+
+![Diagram: rolling stock levels, v. 0.2](images/Rolling stock level.png)
+
+### Rolling stock consist ("topology")
+
+About order and orientation of vehicles and formations.
+
+The narrative is illustrated by the following picture:
+![Rolling stock consist, explained](images/250113_vehicle_and_formation.drawio.png)
+
+Notes:
+- this is an object model (a sample trainset); vehicle and formation names (A, B, C … T, X) are arbitrary and alphabetic order is irrelevant
+- Vehicle order and orientation are seen from a technical point of view. Running direction is another thing.
+
+The proposed ontology can be illustrated (and simplified) as follows:
+<img width="1055" alt="image" src="images/8db53b5c-018f-4165-86a5-3b137ee02548" />
+
+In short: any rolling stock has two distinct extremities. Rolling stock is partitioned into vehicles and formations (disjoint classes, it's either or). A formation is made of rolling stock (i.e. zero or more vehicles, and zero or more other formations). It has some rolling stock at its head, itself possibly followed by other rolling stock (a formation or a vehicle), etc. Each following, listed rolling stock is coupled with the preceding at a given extremity (not shown on this simplified diagram). 
+
+The complete diagram, using the GRAPHOL graphic language for OWL ontology representation, is as follows:
+<img width="989" alt="image" src="images/b84e1464-1ee9-429d-a4c5-8ccd2a8586ad" />
+
+The added value of the simple "composite pattern" (using the includesRollingStock property, on the left) is disputable. It allows to disregard the ordering and orientation of rolling stock, e.g. for asset management purpose or operation planning. Also, it does not enforce any unicity condition, unlike the pattern involving ListedRollingStock.
+
+IMPORTANT: you may wonder what happens with a given piece of rolling stock "X" in the inventory, once it becomes a member of a train composition. When "X" is included in the inventory, it gets a URI (unique resource identifier) and is known to be of class, say, coach. When "X" is then included in a train composition, it is likely to be the object of some hasNextRollingStock property and, if followed by another coach, it will also be the subject of another hasNextRollingStock property. Logically, it will then be identified as being of class ListedRollingStock (the domain and range of hasNextRollingStock), and more precisely ListedVehicle (the intersection of its original class, Vehicle, with hasNextRollingStock), in full coherence with all displayed properties. Meanwhile, the URI of "X" did not change. In object-oriented programming, where classes are generally types, moving an object from a type (Vehicle) to a subtype (Listed vehicle) may be more painful, involving a destructor call, a constructor call, and bespoke code to "transfer" the object with its accumulated properties. As in football, transfers come at a cost. With ontologies, we play softball instead.
+
+<sub>Original page: [Rolling-Stock.md](https://github.com/UICrail/CDM-RSM/wiki/Rolling-Stock)</sub>
+
+
+---
+# stock geometry
+
+## Purpose
+Providing some capability of representing rolling stock from a geometric aspect. "Some" sounds vague on purpose, as use cases are still being explored. Nevertheless, two fundamental representation capabilities are sought after, namely 1D (linear) and 3D.
+
+### Capability: Linear geometry representation
+A common question is, knowing the linear position of a front vehicle in a formation, where is its tail? does it clear some train detection zone?
+
+Purpose is to link the train formation geometry with the geometry of the network it rides on. As many operationally relevant network data are characterized with linear coordinates (in the sense of ISO19148), train formation geometry ought to be mappable to linear referencing systems.
+
+An interesting peculiarity is that train formations are not fixed-sized, solid objects: couplers and buffers have a significant elasticity and, especially in the case of long freight trains, the train length, from front buffer to end buffer, may vary by several meters according to traction of braking forces applied.
+
+Representing linear geometry is essential for FP3.
+
+### Capability: 3D geometry representation
+A common question is, given a wagon on a track with some load on it, does it encroach the clearance gauge (thresholds, limits)? or did the container move in the course of the train travel (suspicious behaviour while still inside limits)?
+
+Purpose is not to mimick all CAD functionality, for which suitable data exchange formats already exist. Specifically, we seek to be able to represent rolling stock (formations as well as vehicles) on a really existing track (not necessarily flat and straight, where track cant can significantly influence rolling stock geometry). The level of detail and accuracy of such representation depends on use cases, and is not postulated a priori.
+
+Representing 3D geometry is important for FP5.
+
+## Means
+IFC (Industry Foundation Classes) is, since the Shit2Rail LinX4Rail project (2020-2023), a part of the Conceptual Data Model, a federation of models intended for use in the railway domain. IFC was initially intended for building information modelling (civil works and construction), which is relevant to the majority of railway assets.
+
+The current version of IFC, as of April 2025, is IFC4X3_ADD2, not only includes 3D geometry capabilities but also track alignment representation (layout, profile, cant). IFC thus appears to be suitable for supporting both capabilities.
+
+## Precautions
+The use cases requiring linear geometry and those (also) requiring 3D geometry are very different, and the complexities of 3D geometry representation should not unduly contaminate the linear geometry representation.
+
+## Proposals
+### Linear Geometry
+(reserved)
+
+### 3D Geometry
+3D geometry of vehicles and formations can be represented using IFC. Level of detail is not limited by IFC, but should be agreed upon. Use cases should be grouped by classes sharing a common, conventional level of detail, in order to limit the modeling and the application development efforts.
+
+<sub>Original page: [Rolling-stock-geometry.md](https://github.com/UICrail/CDM-RSM/wiki/Rolling-stock-geometry)</sub>
+
+
+---
+# SSN (observation, sampling, actuation)
+
+## SOSA/SSN
+### Purpose
+The SOSA and SSN ontologies are an essential "foreign" component of the CDM. These ontologies are managed by W3C. They provide the conceptual basis for observations, sampling, and actuation in the context of using sensors and actuators.
+
+These ontologies will be used by many other parts of the CDM. Each part may need its own adapter. In the following, you will see:
+* the Topology adapter
+### Version
+We base our works on the current draft revision of SOSA/SSN (29/2/2024 at the time of writing) documented in [this W3C page](https://w3c.github.io/sdw/ssn/).
+## Adapters
+For general information about adapters, see [Adapters](#adapters).
+### RSM Topology adapter
+The diagram below shows how classes rsm:Feature and rsm:Geometry (both derived from the homonymous GeoSPARQL classes) are linked with the SOSA/SSN ontology. This coupling allows to express that geometries do not come out of nowhere, but result from an observation of existing infrastructure (or, possibly, the design of a new one).
+
+![Diagram: SOSA/SSN adapter](images/SOSA_SSN topology adapter.png)
+
+<sub>Original page: [SOSA-SSN-(observation,-sampling,-actuation).md](https://github.com/UICrail/CDM-RSM/wiki/SOSA-SSN-%28observation%2C-sampling%2C-actuation%29)</sub>
+
+
+---
+# data (Positioning in RSM 1.2)
+
+## Using OGC and W3C standards
+Since its publication in 2016, RSM has a "Positioning" package dealing with spatial data. The Positioning package handles:
+* Geographic reference systems;
+* Linear reference systems (in the sense of ISO 19148);
+* Coordinates expressed in the above reference systems.
+
+The UML package "Positioning" was, from the beginning, aligned on OGC works. Given the intense activity of OGC on [GeoSPARQL](https://www.ogc.org/standard/geosparql/), it seems advisable to reference the current state of the OGC works and benefit from evolutions fuelled by the geographer community.
+
+Overall guidelines for handling spatial data can be found in [Spatial Data on the Web](https://www.w3.org/TR/sdw-bp/), a W3C publication.
+
+## GeoSPARQL status
+Current version is 1.1. W3C offers a RDF data validator (SHACL file) matching that version.
+
+## Necessary adaptations?
+In the railway context, we particularly need:
+* slopes (hence: altitudes)
+* linear positioning
+
+GeoSPARQL might ultimately support 6 coordinates (X,Y,Z,M,T,L), as per [issues published in version 2 milestones repository](https://github.com/opengeospatial/ogc-geosparql/milestone/3). Z stands for altitude, M for [linear] measure, and L for detail level which might be welcome in our case (facilitating the representation of networks at different levels of detail).
+
+These general orientations should make us feel comfortable in embracing GeoSPARQL as the standard for spatial data representation in the context of the CDM. However, "quick fixes" or provisional choices from our side might be needed for:
+* representation of coordinate reference systems: in the OGC community, the debate goes on about integrating the CRS reference in the string representing the coordinate value, or referencing it explicitly (so it can be exploited by reasoners), etc.;
+* representation of linear coordinates matching kilometric points in the way they are currently used by railways, a subject covered by RSM Positioning package;
+* ...
+
+<sub>Original page: [Spatial-data-(Positioning-in-RSM-1.2).md](https://github.com/UICrail/CDM-RSM/wiki/Spatial-data-%28Positioning-in-RSM-1.2%29)</sub>
+
+
+---
+# (1.0rc1)
+
+Note: for the latest update, see the Topology 1.0rc2 page.
+
+## About this update
+
+The present page reflects version 1.0rc1 of the SemanticRSM topology vocabulary. It was first prepared for the purpose of documenting the proposed update (September 2024) of the ERA Vocabulary topology part (topology version 0.8 at the time), as a contribution to the RINF Topical Working Group on micro level organized by the European Agency for Railways: see [the corresponding ERA Ontology 3.1.0 GitHub repository](https://github.com/Interoperable-data/ERA-Ontology-3.1.0/pull/109).
+
+Version 0.8 was not fundamentally changed, but a few classes were added to allow handling changes in topology (by having connections and navigabilities as classes, opening the possibility to making them temporal objects). The former connexity and navigability properties are kept, leaving the choice to use them directly (as in versions 0.1-0.8) or to derive them from the new connection and navigability objects (using property chains, an OWL2 feature).
+
+## What is topology
+
+Topology is one aspect of the railway network, considering the function "supporting and guiding rolling stock". Similar to mathematical topology, it is about "what part of the network can be accessed by a piece of rolling stock, from any given starting point, irrespective of geometric details".
+
+As a piece of rolling stock at rest is on a piece of track, topology considers track sections as its fundamental element. Where track sections should start and end, and how they are related, is the "artful" part. Artful does not mean arbitrary, and the rationale is exposed below.
+
+## What topology can do for you
+
+Topology _alone_ allows to:
+
+* Search for possible train paths on a network (leaving technical compatibility aside);
+* Search for shortest paths: see the Prolog sample code in the Prolog folder of the repository.
+
+Topology provides the foundations for uniform and unambiguous localisation of assets: infrastructure assets, either material (tracks, tunnels, balises...) or immaterial (speed restriction zones, fouling points, radio coverage areas...), and moving assets (vehicles, train consists).
+
+## Disambiguation
+
+Topology, as understood in the context of RSM (and RINF), should not be confused with:
+
+* topology as defined in IFC (resting on the notions of distribution elements, ports, and connections), however not used by the IFC Rail extensions in IFC 4.3; see [the IFC online documentation](https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcDistributionElement.htm); note that the concepts are close and, in particular, the "distribution elements and ports" paradigm helped clarify the original RTM/RSM topology;
+* topology as defined in OGC GeoSPARQL requirements, 2012, which expresses interactions between geometry elements: see this [OGC publication](https://www.ogc.org/standard/geosparql/).
+* topology as defined in ISO 19107 and reflected in the [associated, informative (?) ontologies](https://github.com/ISO-TC211/ontologies/tree/main/iso19107/2003). Please refer to [this wiki page](https://github.com/UICrail/SemanticRSM/wiki/Geographic-information-in-OWL-(and-UML)) for more details about ontologies published by TC211.
+
+## Origins
+
+RSM Topology is meant to remain as close as possible to the topology originally published in RailTopoModel 1.0 (UIC IRS30100, 2016), itself based on pioneering works by SNCF (ARIANE model). The introduction of semantic technologies can be seen as a smooth evolution from conceptual models encoded in UML. However, the adoption of RDF/OWL, replacing UML, invites to re-engineer the original models, rather than translating then one-to-one, thus taking advantage of the higher expressiveness of RDF/OWL as well as its support for reasoning.
+
+## Evolution factors and notable contributions
+
+RTM 1.0, 1.1 and RSM extensions and implementation were discussed with INFRABEL experts late 2023.
+
+INFRABEL set up an elegant and sophisticated way to represent "internal navigabilities" inside non-linear elements (representing stations, yards, ...); this feature allows to represent the MESO or MACRO levels of the network without storing all MICRO level details, while preserving navigability information.
+
+INFRABEL extensions foot on RTM 1.0rc3 (ca. 2015), the latter containing a feature that was later dropped: the possibility to compose net elements from _parts of_ linear elements. This feature was re-introduced in SemanticRSM. This feature is not relevant to the ERA ontology and might not be useful to some other users: consequently, it is cleanly isolated from others features, although part of the same vocabulary.
+
+## Topology: foundations
+
+### Micro level and linear elements
+
+The topological representation of railway networks conveys the idea of how vehicles _can_ run on the railway network. The MICRO level looks at tracks and the way they are connected. This suggests to represent the network as a graph with edges connecting nodes. But what are edges and nodes? In graph theory, nodes and edges can be associated with about anything, they are a structure without meaning. For instance, nodes could be airports with edges being airline flights; nodes can have any spatial extension (despite being _represented_ by points on schematic figures), edges need not be linear (e.g. couplers between wagons can be considered "edges"), and neither nodes nor edges need not denote anything material.
+
+## Nodes
+
+The fundamental choice of the "ARIANE (SNCF) / RailTopoModel / RailSystemModel / RTM (INFRABEL) family of models" is to consider all "really existing" network elements as nodes. An isolated track section is a single node (as it is not connected to anything else). In a complex network, track sections are joined at switches or crossings, therefore switches and crossings define where track sections (nodes of the network) start and end, while the functionality of switches and crossings define how vehicles can move from one track section to the next.
+
+![Micro level nodes](images/241208 Topology illustrations - Micro nodes.png)
+
+Similar to the "airports and flights" graph, network nodes have a spatial extension (a continuous stretch of track) - while edges are not material: the ability to travel from an incoming track, on the toe side of a switch, to either the through or the diverted track on heel side is expressed by an "edge" representing the _capability_ of a switch - or maybe a turntable, a crossing, etc.
+
+The constructive details of track-changing device do not matter here. For instance, a switch permitting a speed of 30 km/h on the diverted branch may be replaced by another one, allowing 60 km/h: material construction will be affected, geometry too, but this does not change the topology.
+
+Therefore, the switch itself is not represented by any node at topology level; only its "switching capability" is represented by graph edges.
+
+## More nodes
+
+Track sections are connected to other track sections at one of their extremities, and this is where a significant evolution took place w.r.t. earlier RTM/RSM models (to be precise, from RTM 1.0 until and including RSM 1.2).
+
+In RTM/RSM, track sections (= linear elements at micro level) have two extremities that are not identified a priori, and the track sections are not oriented a priori. Imagine building a H0 scale model network: you would take track sections out of the box, and their extremities cannot be distinguished before the network gets assembled. RTM/RSM works exactly the same way: extremities of a track section (identified by "0" and "1") are designated as such by "positioned relations" pointing at ordered pairs of extremities (e.g. "extremity 0 of element X and extremity 1 of element Y), and further characterized by navigability ("a vehicle can, or cannot, travel from the first extremity in the pair to the second one").
+
+When moving to semantic technologies, it is tempting to express the concept of "extremity" separately from the concept of "track section", and express their relationship via semantic properties, i.e. something we can express in plain language ("a linear element has exactly two extremities"; "an extremity belongs to a linear element"). We express the same realities as before (in RTM/RSM UML diagrams), but in a more familiar way.
+
+Concerning the labels: we chose to use "port" instead of "extremity". While track edges and, generally, linear elements have two extremities, we also keep in mind nonlinear elements with more "ports". Non-linear elements could be viewed as polygons, and polygons have vertices which nobody would call "extremities". On the other hand, the term "port" more familiar than "vertex" and will convey the proper meaning to most ears. IFC also uses the term "port" for a similar concept, hence the choice.
+
+Track sections will be further designated "linear elements", as the topology model is abstract and does not care about linear elements being tracks (MICRO level) or lines or corridors (MACRO level), etc. as long as two "extremities" or "ports" can be identified.
+
+## Edges
+
+Following the conceptual clarification where linear elements have two extremities, the links between track sections are actually established between their extremities. This what the RTM/RSM PositionedRelation class responsibility.
+
+In the context of SemanticRSM, we chose to represent this link by an owl:ObjectProperty labelled "connectedWith". It is a symmetric property, again matching original RTM/RSM semantics.
+
+One would expect the original association class in RSM, PositionedRelation to be matched by a reified property in SemanticRSM, i.e. an OWL class bearing the same name. That reified property could then bear the same attributes as the original (navigability, orientation). This was not our choice, essentially because our goal was direct reasoning on navigabilities, hence path finding only based on topology classes, properties, and standard reasoners.
+
+
+## Non-linear elements
+
+### Ports on non-linear elements
+
+Nonlinear elements in RSM used to have a single "port" (the position on the nonlinear element could only be 0).
+
+In the present proposal:
+* nonlinear elements do not exist at MICRO level. Legacy implementations should replace nonlinear elements by zero-length linear elements. This provision ensures that navigabilities, and inferences about navigabilities, will always remain correct. 
+* nonlinear elements have an outer structure (a list of __at least three__ ports), but
+* nonlinear elements _do not have any inner structure_ (no internal relations between the ports).
+
+As was previously the case, moving the network representation from MICRO to MESO or MACRO entails a data loss: all the internal details not needed at MESO level are discarded, which is the very purpose of having MESO. But there is no information loss on navigabilities, as explained below.
+
+### Navigabilities involving nonlinear elements
+
+The "inner structure" of nonlinear elements is _revealed_ by navigability relations between the ports of the non-linear element and other, connected elements. These navigabilities are of primary interest. Navigabilities can be computed directly from the "MICRO" level representation (individual track level). Since the MICRO level is of mandatory use for many applications, it is assumed to be permanently available, at least to the infrastructure manager. Consequently, there is no need to formally represent an intermediate computation stage such as "nonlinear element inner structure", in the form of a n X n matrix (assuming the nonlinear element has n ports). Encoding information in matrices should be avoided anyway, in the context of RDF, as RDF is based on the expression of binary relations in the form of triples (subject-predicate-object) and does not support matrices "out of the box".
+
+Use cases other than navigabilities may make such inner structure desirable, in which case it could be introduced as an extension of the present topology representation without disturbing the basic proposal below.
+
+## Diagram (SemanticRSM 1.0rc1 version)
+
+### Approximating RDF/OWL with UML diagrams
+
+We approximate the ontology by using UML class diagrams. No usage was made of more rigorous and "standard", but less familiar, representations of RDF in UML, using UML profiles such as OntoUML or ODM profiles. This is because we do not seek automated transformation from UML to OWL, such transformations not being supported satifactorily by software vendors. Please note that generalization links between associations (in UML parlance), reflecting super- and subproperties (in OWL parlance) are valid UML and is supported, inter alia, by Visual Paradigm.
+
+Class rsm:Feature is an adapter class, subclass of geo:Feature, and gives access to geometric representations if so desired. See [GeoSPARQL-and-GeoSPARQL-adapter](#and-geosparql-adapter).
+
+Property connectedWith is irreflexive, i.e. a Port MUST NOT be connected to itself. The irreflexive characteristic of this property is documented in the diagram for reference, but not in the ontology as it may lead to difficulties with most reasoners that do not support OWL2 Full.
+
+![Topology diagram, 1.0rc1](images/Topology-10rc1.png)
+
+## Element parts
+### Purpose
+The composition mechanism in RSM 1.x allows to assemble net elements into higher-level net elements, such as station tracks (all linear elements) into a single (nonlinear) net element abstracting the station. In this diagram, type "float" stands for xsd:double.
+
+Using element parts allows to compose net elements in a way that may better match railway practice:
+
+![schematic representation of a station, at various detail levels](https://github.com/UICrail/SemanticRSM/blob/main/illustrations/230112%20RINF%20analysis-Levels.png)
+
+### Implementation
+This feature, restored from RTM 1.0 RC3, only applies to linear elements, where the parts are defined by bounds. The bounds are defined using intrinsic coordinates.
+
+## Expressing connexity and navigability
+As in RSM 1.2 and its evolution, connexity and navigability are distinct concepts. However, both are expressed in a new way.
+
+**Connexity**
+* in RSM 1.2, connexity was expressed by positioned relations between net elements;
+* here, connexity is expressed by relation between "adjacent" net element ports.
+
+**Navigability**
+* in RSM 1.2, navigability was expressed by an attribute of the positioned relation. It was oriented (not symmetric), but not transitive at MESO or MACRO levels;
+* here, navigability is again expressed by a relation between ports (an object property), and by convention: **from exit port on a net element to exit port on the connected net element**. Again, navigability is oriented (not symmetric), but is **transitive**: standard reasoners (Pellet, HermiT...) can now perform path finding; custom algorithms are more easily written.
+
+See [Connexity and Navigability](#and-navigability) for full explanations.
+
+## Link with geometry
+Most classes are subclasses of era:Feature, itself subclass of geo:Feature, and can therefore be associated with geo:Geometry instances. Geometries can be expressed in various reference systems.
+
+Handling geometry data as observable properties, RSM 1.2-style, will require additional work, possibly using geo:GeometryCollection, or (preferably) SOSA/SSN-style extensions that would be applicable to any other property.
+
+## Possible topology simplification
+For reference, "possible" does not mean "useful", let alone "recommended": this is for the reader to assess.
+
+### Element parts
+Station areas can be defined in multiple ways, e.g. related to signalling (RBC area?) or operations (station master responsibility area?). In a strict topological sense, station areas or similar can be defined as compositions of entire net elements, which is a loss of expressiveness. Whether this loss would be acceptable or not is a matter for debate.
+
+In any case, the **class LinearElementPart would remain**, as it is needed for defining linear locations (it could move to the location package). The composite pattern involving NetElement and TopologyElement would no longer involve LinearElementPart: this is hardly a "simplification"...
+
+### Intrinsic coordinates
+
+In RSM 1.2, intrinsic coordinates are objects essentially expressing an **order relation** along a linear element. There is no mandated link with any kind of metrics.
+
+Assuming that intrinsic coordinates are "normalized distance along" (this is one possible interpretation) and considering that the coordinate values are immutable, we could give up the reification of intrinsic coordinates and replace them by a data property. This would result in a minor simplification of the topology terminology, but a significant shrinking of assertions.
+
+## To do
+* proposed types (for intrinsic coordinate values or possibly port numbering) are very much provisional and might be dispensed of: maybe SHACL constraints on numeric values would do the job, as they do not carry any essential meaning.
+[[category:package]]
+
+<sub>Original page: [Topology-(1.0rc1).md](https://github.com/UICrail/CDM-RSM/wiki/Topology-%281.0rc1%29)</sub>
+
+
+---
+# (1.0rc2)
+
+## Rationale for this version
+This version results from the drafting of the localisation package, and amends 1.0rc1 accordingly. Main changes:
+* The composite pattern, allowing to build topology elements by aggregating other topology elements or part of linear elements, is suppressed. It is replaced by references to locations on other elements or parts of elements, using the notions of linear or area location in the localisation package.
+* The "hasPort" property, renamed "port", now has two subproperties "port 0", "port 1" to allow a distinction of ports that is not dependent on lexical conventions: such conventions can of course be kept, but they are not accessible to reasoners.
+  * port0 and port1 are used on linear element and allow to orient them; orientation is needed for localisation ("where on the linear element...").
+  * port0 can also be used on any non-linear element as a reference from which users can number the other ports, using any convention (e.g. clockwise, etc.).
+
+In addition, there is one enhancement:
+* Listed port, a subclass of Port and OWLList, allows to list ports in any suitable way (on nonlinear elements), if needed.
+
+... and one simplification:
+* The reified versions of connexities and navigabilities were removed. Reason is, while connexities and navigabilities can be seen as temporal objects (they may change with time, as network topology changes), their time bounds can be expressed using e.g. annotation properties, allowing filtering of connexities and navigabilities, detection of conflicts such as a navigability and a non-navigability applying at the same time to the same ports, etc.
+  * The simplification is huge (no need to use property chains in order to link reified navigabilities with ordinary navigability properties);
+  * The loss of expressiveness is negligible, as temporal reasoning is not expected to go beyond filtering.
+  * Interoperability with the ERA ontology is maintained. As a matter of fact, ERA uses reified navigabilities, and a property chain in the ERA ontology adapter, similar to those removed from the present version of topology, will establish the link. Please keep in mind that the expressiveness of the present topology ontology is higher: ERA navigability data can be imported, but navigabilities in the present topology are transitive at MICRO level and all other levels as well, without the need to go back to MICRO. To our knowledge, no other topology implementation allows that.
+
+## Topology: main diagram
+
+The diagram uses the Graphol language as implemented in the EDDY ontology editor (see under tooling). Foreign classes or properties are in light brown. Most used classes and properties are in green.
+
+<img width="1363" alt="image" src="images/91e0d3f1-fd61-47c3-93d0-50c0f6142661" />
+
+As previously, net elements have ports for communicating with other net elements. The properties linking ports are immaterial, in the sense that they do not generally correspond to artefacts such as "a stretch of track". Such links are:
+* connexity: expresses that two net elements are adjacent, abutted to each other (e.g. two track segments), or similar. In some cases, adjacency is not required: think of a turntable or a transfer table. We assume connexity to be symmetric (until somebody comes up with a counter-example).
+* navigability: expresses the ability for any rolling stock using the network to travel from port A to port B without reversing direction. Navigabilities are not symmetric (think of sprung switches and their modern avatars using sensors and actuators).
+* connexity and navigability are always transitive (if PortA with PortB and PortB with PortC, then portA with PortC). Two important precautions are:
+  * for connexity as well as navigability, we distinguish elementary properties (what needs to be input) from their transitive closure (what a reasoner, such as HermiT or Pellet, would infer). This is a common precaution when using transitive properties (see also SKOS vocabulary for instance).
+  * for navigabilities to be transitive (regardless of the network representation level), it **must** be expressed **"from exit to exit"**. This is how the direction of travel is taken into account.
+
+Simplest example: suppose we have the following track layout, consisting of two linear elements A and B such as track segments:
+
+**portA0------Linear Element A------portA1** [abutted to] **portB0------ Linear Element B------portB1**
+
+Here the connexity property :portA1 :connectedWith :portB0 suffices (as it is symmetric, you will infer that B0 is also connected with A1).
+
+Concerning navigabilities, you should express the following:
+* left to right: :portA1 :navigableTo :portB1 (not B0), and
+* right to left: :portB0 :navigableTo :portA0 (not A1)
+So a vehicle moving from left to right will leave element A through port A1, reach element B wia the connected port B0, and navigability tells that it can travel on B until B1.
+
+Imagine that we replace linear element B by non-linear element B': similarly, entering B via B0 could be following by travelling internally until we reach another port B'1, B'2... if there is a corresponding navigability.
+
+## Why such precautions?
+
+The caution around the modelling of navigabilities may seem excessive. The criticism _"navigabilities are an external constraint that you wrongly import into infrastructure description"_ is however unfounded. The author heard it only once in ten years, but let us take time to refute it because it might reveal some fundamental misunderstanding:
+* infrastructure and the topology describing one aspect of infrastructure is, in general, not directional. Tracks can be run in both directions (although there may be a "normal" direction in revenue service, on double-track lines); signalling and train detection systems can be reversed although that is not, again, the general case.
+* rolling stock can generally reverse direction (in the case of freight train consists, that would often imply moving the locomotive to the other end).
+* operating tracks, rolling stock, signalling in one direction or the other sometimes requires special precautions (operating rules and procedures), sometimes not.
+* **network topology does not import any of these partial constraints**. Such constraints will have to be expressed elsewhere, when relevant (e.g. in _rolling stock_ topology modelling).
+* train operations however avoids travel direction reversal like the plague, fundamentally because of travel time hit and, above all, of huge capacity loss. This is a railway **system-wide requirement**. A parallel with highways comes to mind (highways and trucks have no "natural orientation", but no normal trip can include a reversal of direction).
+
+## Inverse properties
+
+Inverse properties are defined on another diagram, for clarity sake.
+
+<img width="476" alt="image" src="images/4c02ba07-a9b9-47cc-ac17-2002382f4d99" />
+
+Note: in some cases, inverse properties are superfluous. For instance, properties port, port0, port1 share the same inverse property, namely onElement.
+
+## Property chains
+
+Property leadsTo is "syntactic sugar", allowing to determine whether there is a navigable path from a net element to another one, not bothering about the direction to take and not mentioning ports at all.
+
+Note: leadsTo (transitive) is not the transitive closure of leadsTo. If it were, reversing travel direction could not be excluded.
+
+<img width="942" alt="image" src="images/7678bae4-caaa-462f-98c8-8c88370fc665" />
+
+<sub>Original page: [Topology-(1.0rc2).md](https://github.com/UICrail/CDM-RSM/wiki/Topology-%281.0rc2%29)</sub>
+
+
+---
+# modelling choices
+
+Here, we collect some common modelling choices to which there is no definite answer, just hints, pre-guidelines, so to say.
+
+## Properties vs. Subclasses
+There are railway vehicles, all of class VEHICLE. Vehicles:
+* may carry passengers, freight, other payloads, or no payload at all: 2^3 = 8 possible combinations;
+* may be powered or not: 2 options that are independent of the above.
+
+Bottom line, you are faced with 2^4 = 16 combinations of properties.
+
+Traditionally, some combinations are associated with a name, for instance:
+* no payload + powered = locomotive (EN, FR) or Lokomotive (DE);
+* passengers + powered = railcar (EN), autorail (FR) and sometimes Schienenbus (DE) if it runs on two axles, all compound terms using a name borrowed from a road vehicle and implying a single carbody, assigned to circulation on rails;
+* passengers + no power = coach, or passenger carriage, or sometimes trailer (EN), voiture or sometimes remorque (FR), Personenwagen (DE);
+* freight + no power = wagon (EN, FR), but Güterwagen (DE) and carro merci (IT), the latter two actually being compound names (vehicle + type of load).
+
+When such combinations have a name, this suggests that people (professionals, users, trainspotters) would also think in these categories. Defining classes that reflect such known combinations helps reading and using the model. This is the mechanism dubbed "**attributes make new subclasses**" as found in [Andreas Thalhammer's publication, 2021](https://www.linkedin.com/pulse/meta-way-upper-ontologies-data-meshes-andreas-thalhammer/). Recently, the term [folksonomy](https://en.wikipedia.org/wiki/Folksonomy) has been coined for designating taxonomies built under an informal tagging process.
+
+A mechanism is not a magic recipe. Some polishing of the vocabulary (such as the preferred label for each class) will always be needed, as the example shows.
+
+Given the number of possible combinations, creating and naming each resulting class may add many pages to the dictionary and confuse users. Please consider that we did not even mention vehicle combinations: "multiple units", what a strange term by the way. And we also did not mention the power supply variants. For instance, SNCF went creative by calling multiple units that are both electric and diesel "amphibious", a tribute to endangered salamanders.
+
+So yes, an option would be to define subclasses of VEHICLE when there are common terms to name them, because that's how professionals talk and, ultimately, think. This means that vehicles sporting other combinations of properties might be represented by plain instances of VEHICLE, plus the properties of interest. Another possibility is using and instance of a subclass and add the property, such as "a coach that has a driving desk" that may or may not be important enough for being identified as a subclass. For SNCF, coaches with driving desks were important enough, apparently, to get their own designation "remorque de réversibilité".
+
+From a modelling perspective, there is a lack of homogeneity - so what? models have no "rules". The model maintainability is not affected (you can still add as many properties you want at VEHICLE or at subclass level without risking an oversight). Machines will be able to exploit its instances: it is easy to assert, once and for all, that "X is a coach entails that X can carry passengers", and "X is a vehicle with passengers and no power entails that X is a coach"; SHACL shapes may enforce the latter rule at data provision level, so data homogeneity is maintained.
+
+Whether such lack of homogeneity would affect, positively or negatively, execution time or memory footprint is a premature question - we are at platform-independent level here. And in this particular case, the answer will heavily depend on use cases, so why bother?
+
+<sub>Original page: [Tough-modelling-choices.md](https://github.com/UICrail/CDM-RSM/wiki/Tough-modelling-choices)</sub>
+
+
+---
+# semanticRSM Sidebar
+
+[[Home]]
+
+### Modelling methodology and toolsets
+[Modelling guidelines and conventions](#guidelines-and-conventions)
+
+[Enumerations](#enumerations)
+
+### General engineering aspects
+[Geographic information in OWL (and UML)](#information-in-owl-and-uml)
+
+[Linear referencing](#referencing)
+
+### Railway Infrastructure
+
+#### Railway Topology
+[Connexity and Navigability](#and-navigability)
+
+[Location, localisation](#localisation)
+
+#### Railway track alignment
+[IFC adapter](#adapter)
+
+<sub>Original page: [semanticRSM_Sidebar.md](https://github.com/UICrail/CDM-RSM/wiki/semanticRSM_Sidebar)</sub>
 
