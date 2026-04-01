@@ -104,7 +104,7 @@ pages}\label{cdm-rsm-compiled-wiki-pages}}
 \hypertarget{version}{%
 \subsection{Version}\label{version}}
 
-This document was generated on 2026-03-13 16:47:12 UTC
+This document was generated on 2026-04-01 19:19:54 UTC
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -227,10 +227,10 @@ characteristics}\label{understanding-subproperties-and-their-characteristics}}
 consequences}\label{misunderstanding-inheritance-and-its-dire-consequences}}
 
 A common misunderstanding, especially for users with an
-object-oriented-programming or UML background, is that ``sub-'' (as in
-subclass or subproperty) means inheritance, i.e.~any individual in a
-subclass (or subproperty) shares the same ``features'' that are common
-to the individuals of its superclass or -property.
+object-oriented-programming (OOP) or UML background, is that ``sub-''
+(as in subclass or subproperty) means inheritance, i.e.~any individual
+in a subclass (or subproperty) shares the same ``features'' that are
+common to the individuals of its superclass or -property.
 
 This is not true in RDF/OWL, ``not'' in the sense of ``not always''. In
 the following, we deal with property characteristics in the sense of OWL
@@ -243,11 +243,11 @@ transitivity.
 ``inheritance'', but this is
 misleading.}\label{subclasses-and-subproperties-in-owl-evoke-inheritance-but-this-is-misleading.}}
 
-Fundamentally, RDF classes are sets types rather than types. If x is an
+Fundamentally, RDF classes are sets rather than types. If x is an
 individual of class B and B is a subclass of A, then x is an individual
 of class A. In UML, the situation would be different, since an instance
 of B is not an instance of its superclass A. This relates to the fact
-that classes are types, in most object-oriented languages, with rare
+that OOP classes are types, in most object-oriented languages, with rare
 exceptions (Oberon, and maybe Rust, to name a more recent language,
 although its object orientation is less clear).
 
@@ -286,7 +286,9 @@ comesBefore.
 Property comesBefore is obvioulsy transitive. Subproperty hasNext is
 not. This is why ``transitive'' is called a ``characteristic'' of a
 property in OWL, not a ``property of a property'' (where one would
-expect some sort of ``inheritance'').
+expect some sort of ``inheritance''). Said differently: OWL here mimics
+second order logics (characteristic of a property =? property of a
+property), but is not based on second order logics.
 
 \hypertarget{no-contradiction}{%
 \subsubsection{No contradiction}\label{no-contradiction}}

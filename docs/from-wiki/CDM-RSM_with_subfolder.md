@@ -5,7 +5,7 @@ _Self-contained version with local images_
 
 ## Version
 
-This document was generated on 2026-03-13 16:47:12 UTC
+This document was generated on 2026-04-01 19:19:54 UTC
 
 
 ---
@@ -75,13 +75,13 @@ It is equivalent to a 0..1 multiplicity restriction applying to the whole domain
 
 ## Understanding subproperties and their characteristics
 ### Misunderstanding "inheritance", and its dire consequences
-A common misunderstanding, especially for users with an object-oriented-programming or UML background, is that "sub-" (as in subclass or subproperty) means inheritance, i.e. any individual in a subclass (or subproperty) shares the same "features" that are common to the individuals of its superclass or -property.
+A common misunderstanding, especially for users with an object-oriented-programming (OOP) or UML background, is that "sub-" (as in subclass or subproperty) means inheritance, i.e. any individual in a subclass (or subproperty) shares the same "features" that are common to the individuals of its superclass or -property.
 
 This is not true in RDF/OWL, "not" in the sense of "not always". In the following, we deal with property characteristics in the sense of OWL ("functional", "reverse functional", "reflexive", "irreflexive", "symmetric", "antisymmetric", "transitive"), and especially transitivity.
 
 ### Subclasses and subproperties in OWL evoke "inheritance", but this is misleading.
 
-Fundamentally, RDF classes are sets types rather than types. If x is an individual of class B and B is a subclass of A, then x is an individual of class A. In UML, the situation would be different, since an instance of B is not an instance of its superclass A. This relates to the fact that classes are types, in most object-oriented languages, with rare exceptions (Oberon, and maybe Rust, to name a more recent language, although its object orientation is less clear).
+Fundamentally, RDF classes are sets rather than types. If x is an individual of class B and B is a subclass of A, then x is an individual of class A. In UML, the situation would be different, since an instance of B is not an instance of its superclass A. This relates to the fact that OOP classes are types, in most object-oriented languages, with rare exceptions (Oberon, and maybe Rust, to name a more recent language, although its object orientation is less clear).
 
 A case where "inheritance" is confirmed is "being in the domain of a property". If class A is the domain of property p (with range C), and B is a subclass of A, then B is a subset of the domain of p. If some_b is an individual of B，we can state <<:some_b :p :some_c>> and this is consistent with our ontology: this statement may hold true because some_b is also an individual of A which includes B. This is consistent with our intuitive understanding of "inheritance".
 
@@ -95,7 +95,7 @@ Assume a sequence of numbers 1, 2, 3, 4. Assume a property hasNext: hasNext(1,2)
 
 For expressing the fact that 3 comes after 1, let us defined a property comesBefore. So comesBefore(1,3), etc. Whenever hasNext(x,y) holds, comesBefore(x,y) also holds. Consequently, hasNext is a subproperty of comesBefore.
 
-Property comesBefore is obvioulsy transitive. Subproperty hasNext is not. This is why "transitive" is called a "characteristic" of a property in OWL, not a "property of a property" (where one would expect some sort of "inheritance").
+Property comesBefore is obvioulsy transitive. Subproperty hasNext is not. This is why "transitive" is called a "characteristic" of a property in OWL, not a "property of a property" (where one would expect some sort of "inheritance"). Said differently: OWL here mimics second order logics (characteristic of a property =? property of a property), but is not based on second order logics.
 
 ### No contradiction
 
