@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <graphol version="3">
-  <project name="sRSM" version="https://cdm.ovh/rsm/localisation/1.0rc5/loca">
+  <project name="sRSM" version="https://cdm.ovh/rsm/localisation/1.0rc6/loca">
     <ontology addLabelFromSimpleName="0" lang="en" addLabelFromUserInput="1" iri="https://cdm.ovh/rsm/localisation/loca">
       <imports>
-        <import location="https://cdm.ovh/rsm/list/list" isLocal="0" iri="https://cdm.ovh/rsm/list/list" version="https://cdm.ovh/rsm/list/list"/>
+        <import location="https://cdm.ovh/rsm/list2/list2" isLocal="0" iri="https://cdm.ovh/rsm/list2/list2" version="https://cdm.ovh/rsm/list2/0.1/"/>
         <import location="https://cdm.ovh/rsm/topology/topo" isLocal="0" iri="https://cdm.ovh/rsm/topology/topo" version="https://cdm.ovh/rsm/topology/topo"/>
       </imports>
       <prefixes>
@@ -33,7 +33,7 @@
         </prefix>
         <prefix>
           <value>list</value>
-          <namespace>https://cdm.ovh/rsm/list/list#</namespace>
+          <namespace>https://cdm.ovh/rsm/list2/list2#</namespace>
         </prefix>
         <prefix>
           <value>loca</value>
@@ -121,6 +121,7 @@
         <datatype>http://www.w3.org/2002/07/owl#real</datatype>
       </datatypes>
       <languages>
+        <language>an</language>
         <language>de</language>
         <language>en</language>
         <language>es</language>
@@ -378,6 +379,9 @@
           <value>http://www.w3.org/2002/07/owl#versionInfo</value>
         </iri>
         <iri>
+          <value>http://www.w3.org/2004/02/skos/core#Concept</value>
+        </iri>
+        <iri>
           <value>http://www.w3.org/2004/02/skos/core#definition</value>
         </iri>
         <iri>
@@ -409,6 +413,30 @@
         </iri>
         <iri>
           <value>https://cdm.ovh/rsm/list/list#isFollowedBy</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/list2/list2#EmptyList</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/list2/list2#ListNode</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/list2/list2#OWLList</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/list2/list2#emptyList</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/list2/list2#hasContents</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/list2/list2#hasListProperty</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/list2/list2#hasNext</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/list2/list2#isFollowedBy</value>
         </iri>
         <iri>
           <value>https://cdm.ovh/rsm/localisation/loca</value>
@@ -448,7 +476,7 @@ For spot locations (and, by extension, for linear locations) on linear elements,
               <subject>https://cdm.ovh/rsm/localisation/localisation</subject>
               <property>http://purl.org/dc/elements/1.1/date</property>
               <object>
-                <lexicalForm>26 March 2026</lexicalForm>
+                <lexicalForm>2 April 2026</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -527,6 +555,15 @@ For spot locations (and, by extension, for linear locations) on linear elements,
                 <language>en</language>
               </object>
             </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/loca</subject>
+              <property>http://www.w3.org/2002/07/owl#versionInfo</property>
+              <object>
+                <lexicalForm>1.0 rc6: Uses list2 ontology and side SKOS concepts in lieu of enumeration</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
           </annotations>
         </iri>
         <iri>
@@ -576,20 +613,6 @@ For spot locations (and, by extension, for linear locations) on linear elements,
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/localisation/loca#Bottom</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/loca#Bottom</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Under</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
           <value>https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement</value>
           <annotations>
             <annotation>
@@ -629,34 +652,6 @@ For spot locations (and, by extension, for linear locations) on linear elements,
               <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
               <object>
                 <lexicalForm>Area location, all elements of which are connected with another element.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/loca#Front</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/loca#Front</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Front</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/loca#Left</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/loca#Left</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Left</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -754,58 +749,6 @@ Orientation of each linear element (or part thereof) is described by startsAt an
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/localisation/loca#Rear</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/loca#Rear</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Behind</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/loca#Right</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/loca#Right</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Right</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/loca#SideEnum</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/loca#SideEnum</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Side</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/loca#SideEnum</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>Front, Rear, Left, and Right orientation are relative to the orientation of the linear element (from node 0 to node 1).
-Over and Under are relative to the geometric or geographic vertical.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
           <value>https://cdm.ovh/rsm/localisation/loca#SpotLocation</value>
           <annotations>
             <annotation>
@@ -852,20 +795,6 @@ Over and Under are relative to the geometric or geographic vertical.</lexicalFor
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/localisation/loca#Top</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/loca#Top</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>Over</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
           <value>https://cdm.ovh/rsm/localisation/loca#applicationDirection</value>
           <annotations>
             <annotation>
@@ -885,6 +814,15 @@ Over and Under are relative to the geometric or geographic vertical.</lexicalFor
 Direction of travel is expressed relative to the orientation of the linear element, from port 0 to port 1, or intrinsic coordinate 0 to 1. It is NOT expressed with respect to "normal travel direction in operations".</lexicalForm>
                 <datatype/>
                 <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/loca#applicationDirection</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>application direction value from side concept scheme in https://cdm.ovh/rsm/list2/list2</lexicalForm>
+                <datatype/>
+                <language>an</language>
               </object>
             </annotation>
           </annotations>
@@ -989,6 +927,48 @@ Note: the user may target ListedNetElement individuals (a subclass of BoundedNet
               <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
               <object>
                 <lexicalForm>Provides the location(s) of a located net element. Locations may be representation- and time-dependent, so the property is not a functional property (in the sense of RDF/OWL).</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#elementSide</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/loca#elementSide</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>element side</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/loca#elementSide</subject>
+              <property>http://www.w3.org/2004/02/skos/core#definition</property>
+              <object>
+                <lexicalForm>side of the linear element on which the location (usually a spot location) is situated.
+The orientation of the linear element is its own intrinsic orientation, from port 0 to port 1 (or intrinsic coordinate 0 to intrinsic coordinate 1).</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/loca#elementSide</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>consistency with lateral offset sign to be verified by SHACL shapes.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/loca#elementSide</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>side concept scheme from https://cdm.ovh/rsm/list2/list2</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -1147,39 +1127,6 @@ definitely inverse functional, because values characterize a location relative t
               <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
               <object>
                 <lexicalForm>provides the linear element(s) that define a spot location. There can be several linear elements involved: think of a signal adderessing two adjacent tracks.</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-          </annotations>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/localisation/loca#side</value>
-          <annotations>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/loca#side</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>side</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/loca#side</subject>
-              <property>http://www.w3.org/2004/02/skos/core#definition</property>
-              <object>
-                <lexicalForm>side of the linear element on which the location (usually a spot location) is situated.
-The orientation of the linear element is its own intrinsic orientation, from port 0 to port 1 (or intrinsic coordinate 0 to intrinsic coordinate 1).</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/loca#side</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
-              <object>
-                <lexicalForm>consistency with lateral offset sign to be verified by SHACL shapes.</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -16028,21 +15975,6 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
         </edge>
       </diagram>
       <diagram height="5000" width="5000" name="Localisation_details">
-        <node id="n1" color="#fcfcfc" type="concept">
-          <geometry x="200" height="50" width="110" y="60"/>
-          <iri>https://cdm.ovh/rsm/localisation/loca#SideEnum</iri>
-          <label size="12" customSize="0" x="200" height="23" width="110" y="60"/>
-        </node>
-        <node id="n10" color="#fcfcfc" type="individual">
-          <geometry x="310" height="60" width="60" y="240"/>
-          <iri>https://cdm.ovh/rsm/localisation/loca#Front</iri>
-          <label size="12" customSize="0" x="310" height="23" width="60" y="240"/>
-        </node>
-        <node id="n11" color="#fcfcfc" type="individual">
-          <geometry x="380" height="60" width="60" y="240"/>
-          <iri>https://cdm.ovh/rsm/localisation/loca#Rear</iri>
-          <label size="12" customSize="0" x="380" height="23" width="60" y="240"/>
-        </node>
         <node id="n12" color="#fcfcfc" type="role">
           <geometry x="-120" height="50" width="70" y="-140"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#offset</iri>
@@ -16076,8 +16008,8 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
         </node>
         <node id="n2" color="#fcfcfc" type="role">
           <geometry x="-120" height="50" width="70" y="60"/>
-          <iri>https://cdm.ovh/rsm/localisation/loca#side</iri>
-          <label size="12" customSize="0" x="-120" height="23" width="30" y="30"/>
+          <iri>https://cdm.ovh/rsm/localisation/loca#elementSide</iri>
+          <label size="12" customSize="0" x="-120" height="23" width="74" y="30"/>
         </node>
         <node id="n25" color="#c2b078" type="role">
           <geometry x="-120" height="50" width="70" y="-240"/>
@@ -16127,34 +16059,15 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
           <iri>https://cdm.ovh/rsm/topology/topology#LinearElement</iri>
           <label size="12" customSize="0" x="-400" height="23" width="110" y="60"/>
         </node>
+        <node id="n37" color="#646b63" type="concept">
+          <geometry x="110" height="50" width="110" y="100"/>
+          <iri>http://www.w3.org/2004/02/skos/core#Concept</iri>
+          <label size="12" customSize="0" x="110" height="23" width="110" y="100"/>
+        </node>
         <node id="n4" color="#000000" type="range-restriction">
           <geometry x="-10" height="20" width="20" y="60"/>
           <label size="12" customSize="0" x="-10" height="23" width="39" y="38">exists</label>
         </node>
-        <node id="n6" color="#fcfcfc" type="individual">
-          <geometry x="30" height="60" width="60" y="240"/>
-          <iri>https://cdm.ovh/rsm/localisation/loca#Left</iri>
-          <label size="12" customSize="0" x="30" height="23" width="60" y="240"/>
-        </node>
-        <node id="n7" color="#fcfcfc" type="individual">
-          <geometry x="100" height="60" width="60" y="240"/>
-          <iri>https://cdm.ovh/rsm/localisation/loca#Right</iri>
-          <label size="12" customSize="0" x="100" height="23" width="60" y="240"/>
-        </node>
-        <node id="n8" color="#fcfcfc" type="individual">
-          <geometry x="170" height="60" width="60" y="240"/>
-          <iri>https://cdm.ovh/rsm/localisation/loca#Top</iri>
-          <label size="12" customSize="0" x="170" height="23" width="60" y="240"/>
-        </node>
-        <node id="n9" color="#fcfcfc" type="individual">
-          <geometry x="240" height="60" width="60" y="240"/>
-          <iri>https://cdm.ovh/rsm/localisation/loca#Bottom</iri>
-          <label size="12" customSize="0" x="240" height="23" width="60" y="240"/>
-        </node>
-        <edge id="e1" type="inclusion" target="n1" source="n4">
-          <point x="-10" y="60"/>
-          <point x="200" y="60"/>
-        </edge>
         <edge id="e11" type="inclusion" target="n13" source="n15">
           <point x="-10" y="-140"/>
           <point x="100" y="-140"/>
@@ -16166,11 +16079,6 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
         <edge id="e14" type="input" target="n14" source="n12">
           <point x="-120" y="-140"/>
           <point x="-230" y="-140"/>
-        </edge>
-        <edge id="e16" type="inclusion" target="n1" source="n18">
-          <point x="-10" y="150"/>
-          <point x="90" y="150"/>
-          <point x="145" y="70"/>
         </edge>
         <edge id="e17" type="input" target="n18" source="n16">
           <point x="-120" y="150"/>
@@ -16234,29 +16142,13 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
           <point x="-350" y="150"/>
           <point x="-400" y="60"/>
         </edge>
-        <edge id="e72" type="membership" target="n1" source="n6">
-          <point x="30" y="240"/>
-          <point x="200" y="60"/>
+        <edge id="e78" type="inclusion" target="n37" source="n4">
+          <point x="-10" y="60"/>
+          <point x="110" y="100"/>
         </edge>
-        <edge id="e73" type="membership" target="n1" source="n7">
-          <point x="100" y="240"/>
-          <point x="200" y="60"/>
-        </edge>
-        <edge id="e74" type="membership" target="n1" source="n8">
-          <point x="170" y="240"/>
-          <point x="200" y="60"/>
-        </edge>
-        <edge id="e75" type="membership" target="n1" source="n9">
-          <point x="240" y="240"/>
-          <point x="200" y="60"/>
-        </edge>
-        <edge id="e76" type="membership" target="n1" source="n10">
-          <point x="310" y="240"/>
-          <point x="200" y="60"/>
-        </edge>
-        <edge id="e77" type="membership" target="n1" source="n11">
-          <point x="380" y="240"/>
-          <point x="200" y="60"/>
+        <edge id="e79" type="inclusion" target="n37" source="n18">
+          <point x="-10" y="150"/>
+          <point x="110" y="100"/>
         </edge>
       </diagram>
       <diagram height="5000" width="5000" name="Located net element">
@@ -16277,11 +16169,6 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
           <geometry x="240" height="20" width="20" y="230"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#endAt</iri>
           <label size="12" customSize="0" x="240" height="23" width="39" y="208"/>
-        </node>
-        <node id="n15" color="#c2b078" type="concept">
-          <geometry x="-200" height="50" width="110" y="190"/>
-          <iri>https://w3id.org/list#OWLList</iri>
-          <label size="12" customSize="0" x="-200" height="23" width="110" y="190"/>
         </node>
         <node id="n16" color="#fcfcfc" type="attribute">
           <geometry x="180" height="20" width="20" y="230"/>
@@ -16318,15 +16205,20 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
           <iri>https://cdm.ovh/rsm/topology/topology#NetElement</iri>
           <label size="12" customSize="0" x="-30" height="23" width="160" y="-130"/>
         </node>
-        <node id="n23" color="#c2b078" type="concept">
-          <geometry x="-200" height="50" width="110" y="-100"/>
-          <iri>https://w3id.org/list#OWLList</iri>
-          <label size="12" customSize="0" x="-200" height="23" width="110" y="-100"/>
-        </node>
         <node id="n24" color="#fcfcfc" type="concept">
           <geometry x="-30" height="50" width="160" y="-40"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#ListedNetElement</iri>
           <label size="12" customSize="0" x="-30" height="23" width="160" y="-40"/>
+        </node>
+        <node id="n25" color="#c2b078" type="concept">
+          <geometry x="-200" height="50" width="110" y="-80"/>
+          <iri>https://cdm.ovh/rsm/list2/list2#OWLList</iri>
+          <label size="12" customSize="0" x="-200" height="23" width="110" y="-80"/>
+        </node>
+        <node id="n26" color="#c2b078" type="concept">
+          <geometry x="-190" height="50" width="110" y="180"/>
+          <iri>https://cdm.ovh/rsm/list2/list2#OWLList</iri>
+          <label size="12" customSize="0" x="-190" height="23" width="110" y="180"/>
         </node>
         <node id="n3" color="#000000" type="range-restriction">
           <geometry x="310" height="20" width="20" y="560"/>
@@ -16387,21 +16279,21 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
           <point x="240" y="230"/>
           <point x="210" y="160"/>
         </edge>
-        <edge id="e26" type="inclusion" target="n15" source="n11">
-          <point x="-30" y="240"/>
-          <point x="-200" y="190"/>
-        </edge>
-        <edge id="e27" type="inclusion" target="n23" source="n24">
-          <point x="-30" y="-40"/>
-          <point x="-200" y="-100"/>
-        </edge>
         <edge id="e28" type="inclusion" target="n22" source="n24">
           <point x="-30" y="-40"/>
           <point x="-30" y="-130"/>
         </edge>
+        <edge id="e29" type="inclusion" target="n25" source="n24">
+          <point x="-30" y="-40"/>
+          <point x="-200" y="-80"/>
+        </edge>
         <edge id="e3" type="input" target="n3" source="n2">
           <point x="210" y="560"/>
           <point x="310" y="560"/>
+        </edge>
+        <edge id="e30" type="inclusion" target="n26" source="n11">
+          <point x="-30" y="240"/>
+          <point x="-190" y="180"/>
         </edge>
         <edge id="e5" type="inclusion" target="n5" source="n4">
           <point x="100" y="560"/>
