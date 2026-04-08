@@ -331,6 +331,12 @@ definitely inverse functional, because values characterize a location relative t
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">This property has several usages:
+
+1 - allow orient a linear element participating in a Linear Location. By convention, the extremity  at port 0 has intrinsic coordinate value 0; the other extremity has coordinate 1. Note: the orientation is, in must cases (excepting loops) entirely determined by navigabilities between the ports of linear elements participating in the linear location, but keeping this property found in earlier RSM versions is still of interest.
+
+2 - allow to define a linear location using contiguous parts of linear elements. For that purpose, we need linear referencing along the linear element, which will deliver intermediate values in ]0,1[.</rdfs:comment>
+        <rdfs:comment xml:lang="en">in upcoming versions, this functional, datatype property will be replaced by a non-functional object property referencing a linear coordinate, complete with its definition (a linear referencing system). See RSM_LRS repo when available. Foundation is ISO19148.</rdfs:comment>
         <rdfs:label xml:lang="en">at intrinsic coordinate</rdfs:label>
     </owl:DatatypeProperty>
     

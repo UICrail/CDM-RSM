@@ -232,6 +232,12 @@ loca:atIntrinsicCoordinate rdf:type owl:DatatypeProperty ,
                                     owl:FunctionalProperty ;
                            rdfs:domain loca:BoundedLinearElement ;
                            rdfs:range xsd:float ;
+                           rdfs:comment """This property has several usages:
+
+1 - allow orient a linear element participating in a Linear Location. By convention, the extremity  at port 0 has intrinsic coordinate value 0; the other extremity has coordinate 1. Note: the orientation is, in must cases (excepting loops) entirely determined by navigabilities between the ports of linear elements participating in the linear location, but keeping this property found in earlier RSM versions is still of interest.
+
+2 - allow to define a linear location using contiguous parts of linear elements. For that purpose, we need linear referencing along the linear element, which will deliver intermediate values in ]0,1[."""@en ,
+                                        "in upcoming versions, this functional, datatype property will be replaced by a non-functional object property referencing a linear coordinate, complete with its definition (a linear referencing system). See RSM_LRS repo when available. Foundation is ISO19148."@en ;
                            rdfs:label "at intrinsic coordinate"@en .
 
 

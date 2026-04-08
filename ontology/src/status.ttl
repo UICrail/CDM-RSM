@@ -1,0 +1,158 @@
+@prefix : <https://cdm.ovh/rsm/schemes/status#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <https://cdm.ovh/rsm/schemes/status#> .
+
+<https://cdm.ovh/rsm/schemes/status> rdf:type owl:Ontology ;
+                                      dc:description "terminology for the status of most entities" ;
+                                      dc:license <https://creativecommons.org/licenses/by-sa/4.0/> ;
+                                      dc:title "Status concept scheme" ;
+                                      rdfs:label "Status concept scheme"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/license
+dc:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#hasTopConcept
+skos:hasTopConcept rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+skos:inScheme rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#relatedMatch
+skos:relatedMatch rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#topConceptOf
+skos:topConceptOf rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+skos:ConceptScheme rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://cdm.ovh/rsm/schemes/status#archived
+:archived rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          rdfs:comment ""@en ;
+          rdfs:label "archived"@en ;
+          skos:inScheme :status_scheme ;
+          skos:prefLabel "archived"@en ;
+          skos:topConceptOf :status_scheme .
+
+
+###  https://cdm.ovh/rsm/schemes/status#corrected
+:corrected rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           rdfs:comment ""@en ;
+           rdfs:label "corrected"@en ;
+           skos:inScheme :status_scheme ;
+           skos:prefLabel "corrected"@en ;
+           skos:relatedMatch prov:wasDerivedFrom ;
+           skos:topConceptOf :status_scheme .
+
+
+###  https://cdm.ovh/rsm/schemes/status#current
+:current rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         rdfs:comment ""@en ;
+         rdfs:label "current"@en ;
+         skos:inScheme :status_scheme ;
+         skos:prefLabel "current"@en .
+
+
+###  https://cdm.ovh/rsm/schemes/status#estimated
+:estimated rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           rdfs:comment ""@en ;
+           rdfs:label "estimated"@en ;
+           skos:inScheme :status_scheme ;
+           skos:prefLabel "estimated"@en ;
+           skos:relatedMatch prov:wasDerivedFrom ;
+           skos:topConceptOf :status_scheme .
+
+
+###  https://cdm.ovh/rsm/schemes/status#forecast
+:forecast rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          rdfs:comment ""@en ;
+          rdfs:label "forecast"@en ;
+          skos:inScheme :status_scheme ;
+          skos:prefLabel "forecast"@en ;
+          skos:relatedMatch prov:wasDerivedFrom ;
+          skos:topConceptOf :status_scheme .
+
+
+###  https://cdm.ovh/rsm/schemes/status#observed
+:observed rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          rdfs:comment ""@en ;
+          rdfs:label "observed"@en ;
+          skos:inScheme :status_scheme ;
+          skos:prefLabel "observed"@en ;
+          skos:topConceptOf :status_scheme .
+
+
+###  https://cdm.ovh/rsm/schemes/status#planned
+:planned rdf:type owl:NamedIndividual ,
+                  skos:Concept ;
+         rdfs:comment ""@en ;
+         rdfs:label "planned"@en ;
+         skos:inScheme :status_scheme ;
+         skos:prefLabel "planned"@en ;
+         skos:relatedMatch prov:Plan ;
+         skos:topConceptOf :status_scheme .
+
+
+###  https://cdm.ovh/rsm/schemes/status#status_scheme
+:status_scheme rdf:type owl:NamedIndividual ,
+                        skos:ConceptScheme ;
+               rdfs:comment "Scheme covers planned, observed, estimated, forecast, corrected, archived"@en ;
+               rdfs:label "status_scheme"@en ;
+               skos:hasTopConcept :archived ,
+                                  :corrected ,
+                                  :current ,
+                                  :estimated ,
+                                  :forecast ,
+                                  :observed ,
+                                  :planned ;
+               skos:prefLabel "status_scheme"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

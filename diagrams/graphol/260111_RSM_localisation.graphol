@@ -3,7 +3,7 @@
   <project name="sRSM" version="https://cdm.ovh/rsm/localisation/1.0rc6/loca">
     <ontology addLabelFromSimpleName="0" lang="en" addLabelFromUserInput="1" iri="https://cdm.ovh/rsm/localisation/loca">
       <imports>
-        <import location="https://cdm.ovh/rsm/list2/list2" isLocal="0" iri="https://cdm.ovh/rsm/list2/list2" version="https://cdm.ovh/rsm/list2/0.1/"/>
+        <import location="https://cdm.ovh/rsm/list2/list2" isLocal="0" iri="https://cdm.ovh/rsm/list2/list2" version="https://cdm.ovh/rsm/list2/list2"/>
         <import location="https://cdm.ovh/rsm/topology/topo" isLocal="0" iri="https://cdm.ovh/rsm/topology/topo" version="https://cdm.ovh/rsm/topology/topo"/>
       </imports>
       <prefixes>
@@ -643,7 +643,7 @@ For spot locations (and, by extension, for linear locations) on linear elements,
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Connected area location</lexicalForm>
-                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <datatype/>
                 <language>en</language>
               </object>
             </annotation>
@@ -651,7 +651,7 @@ For spot locations (and, by extension, for linear locations) on linear elements,
               <subject>https://cdm.ovh/rsm/localisation/loca#ConnectedAreaLocation</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
               <object>
-                <lexicalForm>Area location, all elements of which are connected with another element.</lexicalForm>
+                <lexicalForm>Area location, all elements of which are connected with all other elements, directly or indirectly.</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -889,6 +889,28 @@ Note: the user may target ListedNetElement individuals (a subclass of BoundedNet
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>at intrinsic coordinate</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>This property has several usages:
+
+1 - allow orient a linear element participating in a Linear Location. By convention, the extremity  at port 0 has intrinsic coordinate value 0; the other extremity has coordinate 1. Note: the orientation is, in must cases (excepting loops) entirely determined by navigabilities between the ports of linear elements participating in the linear location, but keeping this property found in earlier RSM versions is still of interest.
+
+2 - allow to define a linear location using contiguous parts of linear elements. For that purpose, we need linear referencing along the linear element, which will deliver intermediate values in ]0,1[.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>in upcoming versions, this functional, datatype property will be replaced by a non-functional object property referencing a linear coordinate, complete with its definition (a linear referencing system). See RSM_LRS repo when available. Foundation is ISO19148.</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
