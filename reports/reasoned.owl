@@ -336,25 +336,25 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
     
 
 
-    <!-- https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature -->
+    <!-- https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature -->
 
-    <rdf:Description rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature">
+    <owl:Class rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"/>
+    
+
+
+    <!-- https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature -->
+
+    <rdf:Description rdf:about="https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature">
         <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
     </rdf:Description>
     
 
 
-    <!-- https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry -->
+    <!-- https://cdm.ovh/rsm/geosparql_adapter/rgeo#Geometry -->
 
-    <rdf:Description rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry">
+    <rdf:Description rdf:about="https://cdm.ovh/rsm/geosparql_adapter/rgeo#Geometry">
         <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     </rdf:Description>
-    
-
-
-    <!-- https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature -->
-
-    <owl:Class rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"/>
     
 
 
@@ -388,6 +388,7 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/loca#BaseLocation">
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature"/>
         <rdfs:label xml:lang="en">Base location</rdfs:label>
         <skos:definition xml:lang="en">Class of all locations relative to a topology. Disjoint union of its three subclasses (spot-, linear-, area location).</skos:definition>
     </owl:Class>
@@ -407,6 +408,7 @@ The value is an intrinsic coordinate (float; permissible range = [0,1]). The int
     <!-- https://cdm.ovh/rsm/localisation/loca#LinearLocation -->
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/loca#LinearLocation">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#LinearThing"/>
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/loca#BaseLocation"/>
         <rdfs:label xml:lang="en">Linear location</rdfs:label>
         <skos:definition xml:lang="en">Location extending over consecutive linear elements or parts thereof. The involved linear elements are in a sequence (ordered list, with repetitions allowed). Each linear element in the sequence is oriented from start to end. Start and end may coincide with extremities or some point in between.</skos:definition>
@@ -483,23 +485,6 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#BaseLocation -->
-
-    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#BaseLocation">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"/>
-    </rdf:Description>
-    
-
-
-    <!-- https://cdm.ovh/rsm/localisation/localisation#LinearLocation -->
-
-    <rdf:Description rdf:about="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BaseLocation"/>
-    </rdf:Description>
-    
-
-
     <!-- https://cdm.ovh/rsm/topology/topo#BoundaryElement -->
 
     <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#BoundaryElement">
@@ -511,6 +496,7 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     <!-- https://cdm.ovh/rsm/topology/topo#LinearElement -->
 
     <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#LinearElement">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#LinearThing"/>
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#NetElement"/>
     </rdf:Description>
     
@@ -519,8 +505,8 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     <!-- https://cdm.ovh/rsm/topology/topo#ListedPort -->
 
     <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#ListedPort">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/list2/list2#OWLList"/>
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/list#OWLList"/>
     </rdf:Description>
     
 
@@ -528,7 +514,7 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     <!-- https://cdm.ovh/rsm/topology/topo#NetElement -->
 
     <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#NetElement">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature"/>
     </rdf:Description>
     
 
@@ -544,16 +530,14 @@ Over and Under are relative to the geometric or geographic vertical.</rdfs:comme
     <!-- https://cdm.ovh/rsm/topology/topo#Port -->
 
     <rdf:Description rdf:about="https://cdm.ovh/rsm/topology/topo#Port">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature"/>
     </rdf:Description>
     
 
 
     <!-- https://cdm.ovh/rsm/topology/topology#LinearElement -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topology#LinearElement">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"/>
-    </owl:Class>
+    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
     
 
 
