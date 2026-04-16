@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <graphol version="3">
-  <project name="geosparql_adapter" version="https://cdm.ovh/rsm/adapters/geosparql_adapter/0.7/geo_ad">
-    <ontology addLabelFromUserInput="0" lang="en" addLabelFromSimpleName="0" iri="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad">
+  <project name="geosparql_adapter" version="https://cdm.ovh/rsm/geosparql_adapter/0.7/rgeo">
+    <ontology lang="en" addLabelFromUserInput="0" iri="https://cdm.ovh/rsm/geosparql_adapter/rgeo" addLabelFromSimpleName="0">
       <imports/>
       <prefixes>
         <prefix>
@@ -9,12 +9,8 @@
           <namespace>http://www.opengis.net/ont/geosparql#</namespace>
         </prefix>
         <prefix>
-          <value>geo_ad</value>
-          <namespace>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#</namespace>
-        </prefix>
-        <prefix>
           <value>loca</value>
-          <namespace>https://cdm.ovh/rsm/localisation/localisation#</namespace>
+          <namespace>https://cdm.ovh/rsm/localisation/loca#</namespace>
         </prefix>
         <prefix>
           <value>owl</value>
@@ -29,12 +25,16 @@
           <namespace>http://www.w3.org/2000/01/rdf-schema#</namespace>
         </prefix>
         <prefix>
+          <value>rgeo</value>
+          <namespace>https://cdm.ovh/rsm/geosparql_adapter/rgeo#</namespace>
+        </prefix>
+        <prefix>
           <value>skos</value>
           <namespace>https://www.w3.org/2004/02/skos/core#</namespace>
         </prefix>
         <prefix>
           <value>topo</value>
-          <namespace>https://cdm.ovh/rsm/topology/topology#</namespace>
+          <namespace>https://cdm.ovh/rsm/topology/topo#</namespace>
         </prefix>
         <prefix>
           <value>xml</value>
@@ -357,13 +357,10 @@
           <value>http://www.w3.org/2004/02/skos/core#prefLabel</value>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter</value>
-        </iri>
-        <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad</value>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo</value>
           <annotations>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
               <property>http://purl.org/dc/elements/1.1/creator</property>
               <object>
                 <lexicalForm>Airy Magnien, UIC</lexicalForm>
@@ -372,7 +369,7 @@
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
               <property>http://purl.org/dc/elements/1.1/abstract</property>
               <object>
                 <lexicalForm>Adapter vocabulary for connecting various parts of RSM with GeoSPARQL 1.1.</lexicalForm>
@@ -381,46 +378,53 @@
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>GeoSPARQL adapter for CDM/RSM</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
               <property>http://purl.org/dc/terms/license</property>
               <object>
-                <lexicalForm>EUPL 1.2</lexicalForm>
-                <datatype/>
-                <language/>
+                <iri>https://creativecommons.org/licenses/by-sa/4.0/</iri>
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
               <property>http://www.w3.org/2002/07/owl#versionInfo</property>
               <object>
-                <lexicalForm>Edited annotation properties that caused profile violations</lexicalForm>
+                <lexicalForm>0.7 : Edited annotation properties that caused profile violations. Replaced xsd:double by xsd:decimal. Renamed LinearThings to LinearThing.</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
               <property>https://vocab.org/vann/preferredNamespacePrefix</property>
               <object>
-                <lexicalForm>geo_ad</lexicalForm>
+                <lexicalForm>rgeo</lexicalForm>
                 <datatype/>
                 <language/>
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
+              <property>http://purl.org/dc/elements/1.1/date</property>
+              <object>
+                <lexicalForm>8 April 2026</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
+              <property>http://purl.org/dc/elements/1.1/title</property>
+              <object>
+                <lexicalForm>GeoSPARQL adapter for semantic RSM</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
               <property>https://vocab.org/vann/preferredNamespaceURI</property>
               <object>
-                <lexicalForm>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad</lexicalForm>
+                <lexicalForm>https://cdm.ovh/rsm/geosparql_adapter/rgeo</lexicalForm>
                 <datatype/>
                 <language/>
               </object>
@@ -428,10 +432,10 @@
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature</value>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature</value>
           <annotations>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Feature</lexicalForm>
@@ -440,7 +444,7 @@
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature</subject>
               <property>http://www.w3.org/2004/02/skos/core#definition</property>
               <object>
                 <lexicalForm>A discrete spatial phenomenon in the CDM universe of discourse.</lexicalForm>
@@ -451,10 +455,10 @@
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</value>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#Geometry</value>
           <annotations>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#Geometry</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>Geometry</lexicalForm>
@@ -463,7 +467,7 @@
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#Geometry</subject>
               <property>http://www.w3.org/2004/02/skos/core#definition</property>
               <object>
                 <lexicalForm>A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS).</lexicalForm>
@@ -472,7 +476,7 @@
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#Geometry</subject>
               <property>http://purl.org/dc/elements/1.1/source</property>
               <object>
                 <lexicalForm>OGC 18-010r11</lexicalForm>
@@ -481,7 +485,7 @@
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#Geometry</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
               <object>
                 <lexicalForm>The reference system can be geographic, geodetic, cartesian (e.g. engineering coordinate system), and its definition may be part of the WKT or GML string. See OGC documentation.</lexicalForm>
@@ -490,7 +494,7 @@
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#Geometry</subject>
               <property>http://www.w3.org/2004/02/skos/core#prefLabel</property>
               <object>
                 <lexicalForm>Geometry</lexicalForm>
@@ -501,19 +505,19 @@
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings</value>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#LinearThing</value>
           <annotations>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#LinearThing</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
-                <lexicalForm>Linear things</lexicalForm>
+                <lexicalForm>Linear thing</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#LinearThing</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
               <object>
                 <lexicalForm>" Abstract"  class, introduced solely for the purpose of defining the domain of hasMetricLength in an OWL2-RL compatible way.</lexicalForm>
@@ -524,11 +528,11 @@
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf</value>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#geometryOf</value>
           <functional/>
           <annotations>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#geometryOf</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>geometry of</lexicalForm>
@@ -537,7 +541,7 @@
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#geometryOf</subject>
               <property>http://www.w3.org/2004/02/skos/core#definition</property>
               <object>
                 <lexicalForm>inverse of hasGeometry</lexicalForm>
@@ -546,7 +550,7 @@
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#geometryOf</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
               <object>
                 <lexicalForm>GeoSPARQL does not define this inverse property.</lexicalForm>
@@ -557,11 +561,11 @@
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry</value>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasGeometry</value>
           <inverseFunctional/>
           <annotations>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasGeometry</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>has geometry</lexicalForm>
@@ -570,7 +574,7 @@
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasGeometry</subject>
               <property>http://www.w3.org/2004/02/skos/core#definition</property>
               <object>
                 <lexicalForm>A spatial representation for a given Feature. As in GeoSPARQL, a feature can be associated with more than one geometry (valid at different times, or provided by different surveys...).</lexicalForm>
@@ -581,10 +585,10 @@
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength</value>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasMetricLength</value>
           <annotations>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasMetricLength</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>has metric length</lexicalForm>
@@ -593,7 +597,7 @@
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasMetricLength</subject>
               <property>http://www.w3.org/2004/02/skos/core#definition</property>
               <object>
                 <lexicalForm>Length (in meter) of a Linear Element.</lexicalForm>
@@ -604,12 +608,12 @@
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry</value>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasNominalGeometry</value>
           <functional/>
           <inverseFunctional/>
           <annotations>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasNominalGeometry</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>has nominal geometry</lexicalForm>
@@ -618,7 +622,7 @@
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasNominalGeometry</subject>
               <property>http://www.w3.org/2004/02/skos/core#definition</property>
               <object>
                 <lexicalForm>The default Geometry to be used in spatial calculations. It is usually the most detailed Geometry. Takes into account SOSA/SSN viewpoint, i.e. there can be more than one default geometry (e.g. valid at different times).</lexicalForm>
@@ -629,11 +633,11 @@
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength</value>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasNominalMetricLength</value>
           <functional/>
           <annotations>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasNominalMetricLength</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>has nominal metric length</lexicalForm>
@@ -642,7 +646,7 @@
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasNominalMetricLength</subject>
               <property>http://www.w3.org/2004/02/skos/core#definition</property>
               <object>
                 <lexicalForm>This length is assumed to be derived from the chosen Nominal Geometry.
@@ -655,12 +659,12 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf</value>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#nominalGeometryOf</value>
           <functional/>
           <inverseFunctional/>
           <annotations>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo#nominalGeometryOf</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
                 <lexicalForm>nominal geometry of</lexicalForm>
@@ -671,10 +675,10 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter</value>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo/rgeo</value>
           <annotations>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
               <property>http://purl.org/dc/elements/1.1/creator</property>
               <object>
                 <lexicalForm>Airy Magnien, UIC</lexicalForm>
@@ -683,7 +687,7 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
               <property>http://purl.org/dc/elements/1.1/abstract</property>
               <object>
                 <lexicalForm>Adapter vocabulary for connecting various parts of RSM with GeoSPARQL 1.1.</lexicalForm>
@@ -692,60 +696,70 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
-              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
-              <object>
-                <lexicalForm>GeoSPARQL adapter for CDM/RSM</lexicalForm>
-                <datatype/>
-                <language>en</language>
-              </object>
-            </annotation>
-            <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
               <property>http://purl.org/dc/terms/license</property>
               <object>
-                <lexicalForm>EUPL 1.2</lexicalForm>
-                <datatype/>
-                <language/>
+                <iri>https://creativecommons.org/licenses/by-sa/4.0/</iri>
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
               <property>http://www.w3.org/2002/07/owl#versionInfo</property>
               <object>
-                <lexicalForm>Edited annotation properties that caused profile violations</lexicalForm>
+                <lexicalForm>Edited annotation properties that caused profile violations. Replaced xsd:double by xsd:decimal. Renamed LinearThings to LinearThing.</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
               <property>https://vocab.org/vann/preferredNamespacePrefix</property>
               <object>
-                <lexicalForm>geo_ad</lexicalForm>
+                <lexicalForm>rgeo</lexicalForm>
                 <datatype/>
                 <language/>
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/adapters/geosparql_adapter</subject>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
               <property>https://vocab.org/vann/preferredNamespaceURI</property>
               <object>
-                <lexicalForm>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad</lexicalForm>
+                <lexicalForm>https://cdm.ovh/rsm/geosparql_adapter/rgeo</lexicalForm>
                 <datatype/>
                 <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
+              <property>http://purl.org/dc/elements/1.1/date</property>
+              <object>
+                <lexicalForm>8 April 2026</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/geosparql_adapter/rgeo</subject>
+              <property>http://purl.org/dc/elements/1.1/title</property>
+              <object>
+                <lexicalForm>GeoSPARQL adapter for semantic RSM</lexicalForm>
+                <datatype/>
+                <language>en</language>
               </object>
             </annotation>
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#BaseLocation</value>
+          <value>https://cdm.ovh/rsm/localisation/loca#BaseLocation</value>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/localisation/localisation#LinearLocation</value>
+          <value>https://cdm.ovh/rsm/localisation/loca#LinearLocation</value>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/topology/topology#LinearElement</value>
+          <value>https://cdm.ovh/rsm/topology/topo#LinearElement</value>
+        </iri>
+        <iri>
+          <value>https://creativecommons.org/licenses/by-sa/4.0/</value>
         </iri>
         <iri>
           <value>https://vocab.org/vann/preferredNamespacePrefix</value>
@@ -759,305 +773,305 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
       </iris>
     </ontology>
     <diagrams>
-      <diagram height="6000" name="geosparql_adapter" width="6000">
-        <node color="#fcfcfc" id="n0" type="concept">
-          <geometry height="50" y="-50" width="110" x="190"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</iri>
-          <label customSize="0" height="23" y="-50" size="12" width="110" x="190"/>
+      <diagram name="geosparql_adapter" width="6000" height="6000">
+        <node color="#fcfcfc" type="concept" id="n0">
+          <geometry x="190" y="-50" width="110" height="50"/>
+          <iri>https://cdm.ovh/rsm/geosparql_adapter/rgeo#Geometry</iri>
+          <label x="190" customSize="0" size="12" y="-50" width="110" height="23"/>
         </node>
-        <node color="#c2b078" id="n1" type="concept">
-          <geometry height="50" y="-290" width="110" x="190"/>
+        <node color="#c2b078" type="concept" id="n1">
+          <geometry x="190" y="-290" width="110" height="50"/>
           <iri>http://www.opengis.net/ont/geosparql#Geometry</iri>
-          <label customSize="0" height="23" y="-290" size="12" width="110" x="190"/>
+          <label x="190" customSize="0" size="12" y="-290" width="110" height="23"/>
         </node>
-        <node color="#fcfcfc" id="n10" type="role">
-          <geometry height="50" y="-50" width="70" x="-90"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry</iri>
-          <label customSize="0" height="23" y="-80" size="12" width="79" x="-90"/>
+        <node color="#fcfcfc" type="role" id="n10">
+          <geometry x="-90" y="-50" width="70" height="50"/>
+          <iri>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasGeometry</iri>
+          <label x="-90" customSize="0" size="12" y="-80" width="79" height="23"/>
         </node>
-        <node color="#fcfcfc" id="n11" type="domain-restriction">
-          <geometry height="20" y="-290" width="20" x="-180"/>
-          <label customSize="0" height="23" y="-312" size="12" width="39" x="-180">exists</label>
+        <node color="#fcfcfc" type="domain-restriction" id="n11">
+          <geometry x="-180" y="-290" width="20" height="20"/>
+          <label x="-180" customSize="0" size="12" y="-312" width="39" height="23">exists</label>
         </node>
-        <node color="#000000" id="n12" type="range-restriction">
-          <geometry height="20" y="-290" width="20" x="80"/>
-          <label customSize="0" height="23" y="-312" size="12" width="39" x="80">exists</label>
+        <node color="#000000" type="range-restriction" id="n12">
+          <geometry x="80" y="-290" width="20" height="20"/>
+          <label x="80" customSize="0" size="12" y="-312" width="39" height="23">exists</label>
         </node>
-        <node color="#fcfcfc" id="n13" type="domain-restriction">
-          <geometry height="20" y="-50" width="20" x="-190"/>
-          <label customSize="0" height="23" y="-72" size="12" width="39" x="-190">exists</label>
+        <node color="#fcfcfc" type="domain-restriction" id="n13">
+          <geometry x="-190" y="-50" width="20" height="20"/>
+          <label x="-190" customSize="0" size="12" y="-72" width="39" height="23">exists</label>
         </node>
-        <node color="#000000" id="n14" type="range-restriction">
-          <geometry height="20" y="-50" width="20" x="80"/>
-          <label customSize="0" height="23" y="-72" size="12" width="39" x="80">exists</label>
+        <node color="#000000" type="range-restriction" id="n14">
+          <geometry x="80" y="-50" width="20" height="20"/>
+          <label x="80" customSize="0" size="12" y="-72" width="39" height="23">exists</label>
         </node>
-        <node color="#fcfcfc" id="n17" type="attribute">
-          <geometry height="20" y="270" width="20" x="50"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength</iri>
-          <label customSize="0" height="23" y="248" size="12" width="97" x="50"/>
+        <node color="#fcfcfc" type="attribute" id="n17">
+          <geometry x="50" y="270" width="20" height="20"/>
+          <iri>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasMetricLength</iri>
+          <label x="50" customSize="0" size="12" y="248" width="97" height="23"/>
         </node>
-        <node color="#fcfcfc" id="n18" type="attribute">
-          <geometry height="20" y="350" width="20" x="50"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength</iri>
-          <label customSize="0" height="23" y="328" size="12" width="142" x="50"/>
+        <node color="#fcfcfc" type="attribute" id="n18">
+          <geometry x="50" y="350" width="20" height="20"/>
+          <iri>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasNominalMetricLength</iri>
+          <label x="50" customSize="0" size="12" y="328" width="142" height="23"/>
         </node>
-        <node color="#c2b078" id="n19" type="attribute">
-          <geometry height="20" y="140" width="20" x="50"/>
+        <node color="#c2b078" type="attribute" id="n19">
+          <geometry x="50" y="140" width="20" height="20"/>
           <iri>http://www.opengis.net/ont/geosparql#hasMetricLength</iri>
-          <label customSize="0" height="23" y="118" size="12" width="97" x="50"/>
+          <label x="50" customSize="0" size="12" y="118" width="97" height="23"/>
         </node>
-        <node color="#fcfcfc" id="n20" type="domain-restriction">
-          <geometry height="20" y="270" width="20" x="-40"/>
-          <label customSize="0" height="23" y="248" size="12" width="39" x="-40">exists</label>
+        <node color="#fcfcfc" type="domain-restriction" id="n20">
+          <geometry x="-40" y="270" width="20" height="20"/>
+          <label x="-40" customSize="0" size="12" y="248" width="39" height="23">exists</label>
         </node>
-        <node color="#000000" id="n21" type="range-restriction">
-          <geometry height="20" y="270" width="20" x="160"/>
-          <label customSize="0" height="23" y="248" size="12" width="39" x="160">exists</label>
+        <node color="#000000" type="range-restriction" id="n21">
+          <geometry x="160" y="270" width="20" height="20"/>
+          <label x="160" customSize="0" size="12" y="248" width="39" height="23">exists</label>
         </node>
-        <node color="#fcfcfc" id="n23" type="value-domain">
-          <geometry height="40" y="270" width="90" x="260"/>
-          <iri>http://www.w3.org/2001/XMLSchema#double</iri>
-          <label customSize="0" height="23" y="270" size="12" width="90" x="260"/>
+        <node color="#000000" type="range-restriction" id="n24">
+          <geometry x="160" y="140" width="20" height="20"/>
+          <label x="160" customSize="0" size="12" y="118" width="39" height="23">exists</label>
         </node>
-        <node color="#000000" id="n24" type="range-restriction">
-          <geometry height="20" y="140" width="20" x="160"/>
-          <label customSize="0" height="23" y="118" size="12" width="39" x="160">exists</label>
-        </node>
-        <node color="#c2b078" id="n25" type="concept">
-          <geometry height="50" y="140" width="110" x="-150"/>
+        <node color="#c2b078" type="concept" id="n25">
+          <geometry x="-150" y="140" width="110" height="50"/>
           <iri>http://www.opengis.net/ont/geosparql#SpatialObject</iri>
-          <label customSize="0" height="23" y="140" size="12" width="110" x="-150"/>
+          <label x="-150" customSize="0" size="12" y="140" width="110" height="23"/>
         </node>
-        <node color="#fcfcfc" id="n26" type="domain-restriction">
-          <geometry height="20" y="140" width="20" x="-50"/>
-          <label customSize="0" height="23" y="118" size="12" width="39" x="-50">exists</label>
+        <node color="#fcfcfc" type="domain-restriction" id="n26">
+          <geometry x="-50" y="140" width="20" height="20"/>
+          <label x="-50" customSize="0" size="12" y="118" width="39" height="23">exists</label>
         </node>
-        <node color="#fcfcfc" id="n27" type="domain-restriction">
-          <geometry height="20" y="350" width="20" x="-50"/>
-          <label customSize="0" height="23" y="328" size="12" width="39" x="-50">exists</label>
+        <node color="#fcfcfc" type="domain-restriction" id="n27">
+          <geometry x="-50" y="350" width="20" height="20"/>
+          <label x="-50" customSize="0" size="12" y="328" width="39" height="23">exists</label>
         </node>
-        <node color="#000000" id="n28" type="range-restriction">
-          <geometry height="20" y="350" width="20" x="160"/>
-          <label customSize="0" height="23" y="328" size="12" width="39" x="160">exists</label>
+        <node color="#000000" type="range-restriction" id="n28">
+          <geometry x="160" y="350" width="20" height="20"/>
+          <label x="160" customSize="0" size="12" y="328" width="39" height="23">exists</label>
         </node>
-        <node color="#c2b078" id="n29" type="concept">
-          <geometry height="50" y="200" width="140" x="-370"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#LinearLocation</iri>
-          <label customSize="0" height="23" y="200" size="12" width="140" x="-370"/>
+        <node color="#c2b078" type="concept" id="n29">
+          <geometry x="-370" y="200" width="140" height="50"/>
+          <iri>https://cdm.ovh/rsm/localisation/loca#LinearLocation</iri>
+          <label x="-370" customSize="0" size="12" y="200" width="140" height="23"/>
         </node>
-        <node color="#c2b078" id="n3" type="concept">
-          <geometry height="50" y="-290" width="110" x="-370"/>
+        <node color="#c2b078" type="concept" id="n3">
+          <geometry x="-370" y="-290" width="110" height="50"/>
           <iri>http://www.opengis.net/ont/geosparql#Feature</iri>
-          <label customSize="0" height="23" y="-290" size="12" width="110" x="-370"/>
+          <label x="-370" customSize="0" size="12" y="-290" width="110" height="23"/>
         </node>
-        <node color="#c2b078" id="n32" type="concept">
-          <geometry height="50" y="350" width="140" x="-370"/>
-          <iri>https://cdm.ovh/rsm/topology/topology#LinearElement</iri>
-          <label customSize="0" height="23" y="350" size="12" width="140" x="-370"/>
+        <node color="#c2b078" type="concept" id="n32">
+          <geometry x="-370" y="350" width="140" height="50"/>
+          <iri>https://cdm.ovh/rsm/topology/topo#LinearElement</iri>
+          <label x="-370" customSize="0" size="12" y="350" width="140" height="23"/>
         </node>
-        <node color="#fcfcfc" id="n38" type="concept">
-          <geometry height="50" y="270" width="110" x="-150"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings</iri>
-          <label customSize="0" height="23" y="270" size="12" width="110" x="-150"/>
+        <node color="#fcfcfc" type="concept" id="n38">
+          <geometry x="-150" y="270" width="110" height="50"/>
+          <iri>https://cdm.ovh/rsm/geosparql_adapter/rgeo#LinearThing</iri>
+          <label x="-150" customSize="0" size="12" y="270" width="110" height="23"/>
         </node>
-        <node color="#c2b078" id="n39" type="concept">
-          <geometry height="50" y="80" width="110" x="-370"/>
-          <iri>https://cdm.ovh/rsm/localisation/localisation#BaseLocation</iri>
-          <label customSize="0" height="23" y="80" size="12" width="110" x="-370"/>
+        <node color="#c2b078" type="concept" id="n39">
+          <geometry x="-370" y="80" width="110" height="50"/>
+          <iri>https://cdm.ovh/rsm/localisation/loca#BaseLocation</iri>
+          <label x="-370" customSize="0" size="12" y="80" width="110" height="23"/>
         </node>
-        <node color="#fcfcfc" id="n6" type="concept">
-          <geometry height="50" y="-50" width="110" x="-370"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature</iri>
-          <label customSize="0" height="23" y="-50" size="12" width="110" x="-370"/>
+        <node color="#fcfcfc" type="value-domain" id="n40">
+          <geometry x="270" y="270" width="90" height="40"/>
+          <iri>http://www.w3.org/2001/XMLSchema#decimal</iri>
+          <label x="270" customSize="0" size="12" y="270" width="90" height="23"/>
         </node>
-        <node color="#c2b078" id="n7" type="role">
-          <geometry height="50" y="-290" width="70" x="-90"/>
+        <node color="#fcfcfc" type="concept" id="n6">
+          <geometry x="-370" y="-50" width="110" height="50"/>
+          <iri>https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature</iri>
+          <label x="-370" customSize="0" size="12" y="-50" width="110" height="23"/>
+        </node>
+        <node color="#c2b078" type="role" id="n7">
+          <geometry x="-90" y="-290" width="70" height="50"/>
           <iri>http://www.opengis.net/ont/geosparql#hasGeometry</iri>
-          <label customSize="0" height="23" y="-320" size="12" width="79" x="-90"/>
+          <label x="-90" customSize="0" size="12" y="-320" width="79" height="23"/>
         </node>
-        <node color="#c2b078" id="n8" type="role">
-          <geometry height="50" y="-220" width="70" x="10"/>
+        <node color="#c2b078" type="role" id="n8">
+          <geometry x="10" y="-220" width="70" height="50"/>
           <iri>http://www.opengis.net/ont/geosparql#hasDefaultGeometry</iri>
-          <label customSize="0" height="23" y="-250" size="12" width="117" x="10"/>
+          <label x="10" customSize="0" size="12" y="-250" width="117" height="23"/>
         </node>
-        <node color="#fcfcfc" id="n9" type="role">
-          <geometry height="50" y="20" width="70" x="10"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry</iri>
-          <label customSize="0" height="23" y="-10" size="12" width="124" x="10"/>
+        <node color="#fcfcfc" type="role" id="n9">
+          <geometry x="10" y="20" width="70" height="50"/>
+          <iri>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasNominalGeometry</iri>
+          <label x="10" customSize="0" size="12" y="-10" width="124" height="23"/>
         </node>
-        <edge source="n0" id="e0" type="inclusion" target="n1">
-          <point y="-50" x="190"/>
-          <point y="-290" x="190"/>
+        <edge type="inclusion" source="n0" id="e0" target="n1">
+          <point x="190" y="-50"/>
+          <point x="190" y="-290"/>
         </edge>
-        <edge source="n7" id="e10" type="input" target="n11">
-          <point y="-290" x="-90"/>
-          <point y="-290" x="-180"/>
+        <edge type="input" source="n7" id="e10" target="n11">
+          <point x="-90" y="-290"/>
+          <point x="-180" y="-290"/>
         </edge>
-        <edge source="n7" id="e11" type="input" target="n12">
-          <point y="-290" x="-90"/>
-          <point y="-290" x="80"/>
+        <edge type="input" source="n7" id="e11" target="n12">
+          <point x="-90" y="-290"/>
+          <point x="80" y="-290"/>
         </edge>
-        <edge source="n10" id="e14" type="input" target="n13">
-          <point y="-50" x="-90"/>
-          <point y="-50" x="-190"/>
+        <edge type="input" source="n10" id="e14" target="n13">
+          <point x="-90" y="-50"/>
+          <point x="-190" y="-50"/>
         </edge>
-        <edge source="n10" id="e15" type="input" target="n14">
-          <point y="-50" x="-90"/>
-          <point y="-50" x="80"/>
+        <edge type="input" source="n10" id="e15" target="n14">
+          <point x="-90" y="-50"/>
+          <point x="80" y="-50"/>
         </edge>
-        <edge source="n6" id="e2" type="inclusion" target="n3">
-          <point y="-50" x="-370"/>
-          <point y="-290" x="-370"/>
+        <edge type="inclusion" source="n6" id="e2" target="n3">
+          <point x="-370" y="-50"/>
+          <point x="-370" y="-290"/>
         </edge>
-        <edge source="n18" id="e24" type="inclusion" target="n17">
-          <point y="350" x="50"/>
-          <point y="270" x="50"/>
+        <edge type="inclusion" source="n18" id="e24" target="n17">
+          <point x="50" y="350"/>
+          <point x="50" y="270"/>
         </edge>
-        <edge source="n17" id="e25" type="inclusion" target="n19">
-          <point y="270" x="50"/>
-          <point y="140" x="50"/>
+        <edge type="inclusion" source="n17" id="e25" target="n19">
+          <point x="50" y="270"/>
+          <point x="50" y="140"/>
         </edge>
-        <edge source="n17" id="e27" type="input" target="n21">
-          <point y="270" x="50"/>
-          <point y="270" x="160"/>
+        <edge type="input" source="n17" id="e27" target="n21">
+          <point x="50" y="270"/>
+          <point x="160" y="270"/>
         </edge>
-        <edge source="n21" id="e28" type="inclusion" target="n23">
-          <point y="270" x="160"/>
-          <point y="270" x="260"/>
+        <edge type="inclusion" source="n8" id="e3" target="n7">
+          <point x="10" y="-220"/>
+          <point x="-90" y="-290"/>
         </edge>
-        <edge source="n24" id="e29" type="inclusion" target="n23">
-          <point y="140" x="160"/>
-          <point y="270" x="260"/>
+        <edge type="input" source="n19" id="e30" target="n24">
+          <point x="50" y="140"/>
+          <point x="160" y="140"/>
         </edge>
-        <edge source="n8" id="e3" type="inclusion" target="n7">
-          <point y="-220" x="10"/>
-          <point y="-290" x="-90"/>
+        <edge type="inclusion" source="n11" id="e31" target="n3">
+          <point x="-180" y="-290"/>
+          <point x="-370" y="-290"/>
         </edge>
-        <edge source="n19" id="e30" type="input" target="n24">
-          <point y="140" x="50"/>
-          <point y="140" x="160"/>
+        <edge type="inclusion" source="n13" id="e32" target="n6">
+          <point x="-190" y="-50"/>
+          <point x="-370" y="-50"/>
         </edge>
-        <edge source="n11" id="e31" type="inclusion" target="n3">
-          <point y="-290" x="-180"/>
-          <point y="-290" x="-370"/>
+        <edge type="inclusion" source="n12" id="e33" target="n1">
+          <point x="80" y="-290"/>
+          <point x="190" y="-290"/>
         </edge>
-        <edge source="n13" id="e32" type="inclusion" target="n6">
-          <point y="-50" x="-190"/>
-          <point y="-50" x="-370"/>
+        <edge type="inclusion" source="n14" id="e34" target="n0">
+          <point x="80" y="-50"/>
+          <point x="190" y="-50"/>
         </edge>
-        <edge source="n12" id="e33" type="inclusion" target="n1">
-          <point y="-290" x="80"/>
-          <point y="-290" x="190"/>
+        <edge type="inclusion" source="n26" id="e36" target="n25">
+          <point x="-50" y="140"/>
+          <point x="-150" y="140"/>
         </edge>
-        <edge source="n14" id="e34" type="inclusion" target="n0">
-          <point y="-50" x="80"/>
-          <point y="-50" x="190"/>
+        <edge type="input" source="n19" id="e37" target="n26">
+          <point x="50" y="140"/>
+          <point x="-50" y="140"/>
         </edge>
-        <edge source="n26" id="e36" type="inclusion" target="n25">
-          <point y="140" x="-50"/>
-          <point y="140" x="-150"/>
+        <edge type="input" source="n17" id="e38" target="n20">
+          <point x="50" y="270"/>
+          <point x="-40" y="270"/>
         </edge>
-        <edge source="n19" id="e37" type="input" target="n26">
-          <point y="140" x="50"/>
-          <point y="140" x="-50"/>
+        <edge type="inclusion" source="n9" id="e4" target="n8">
+          <point x="10" y="20"/>
+          <point x="10" y="-220"/>
         </edge>
-        <edge source="n17" id="e38" type="input" target="n20">
-          <point y="270" x="50"/>
-          <point y="270" x="-40"/>
+        <edge type="input" source="n18" id="e40" target="n28">
+          <point x="50" y="350"/>
+          <point x="160" y="350"/>
         </edge>
-        <edge source="n28" id="e39" type="inclusion" target="n23">
-          <point y="350" x="160"/>
-          <point y="270" x="260"/>
+        <edge type="input" source="n18" id="e41" target="n27">
+          <point x="50" y="350"/>
+          <point x="-50" y="350"/>
         </edge>
-        <edge source="n9" id="e4" type="inclusion" target="n8">
-          <point y="20" x="10"/>
-          <point y="-220" x="10"/>
+        <edge type="inclusion" source="n27" id="e49" target="n32">
+          <point x="-50" y="350"/>
+          <point x="-370" y="350"/>
         </edge>
-        <edge source="n18" id="e40" type="input" target="n28">
-          <point y="350" x="50"/>
-          <point y="350" x="160"/>
+        <edge type="inclusion" source="n10" id="e5" target="n7">
+          <point x="-90" y="-50"/>
+          <point x="-90" y="-290"/>
         </edge>
-        <edge source="n18" id="e41" type="input" target="n27">
-          <point y="350" x="50"/>
-          <point y="350" x="-50"/>
+        <edge type="inclusion" source="n9" id="e6" target="n10">
+          <point x="10" y="20"/>
+          <point x="-90" y="-50"/>
         </edge>
-        <edge source="n27" id="e49" type="inclusion" target="n32">
-          <point y="350" x="-50"/>
-          <point y="350" x="-370"/>
+        <edge type="inclusion" source="n20" id="e60" target="n38">
+          <point x="-40" y="270"/>
+          <point x="-150" y="270"/>
         </edge>
-        <edge source="n10" id="e5" type="inclusion" target="n7">
-          <point y="-50" x="-90"/>
-          <point y="-290" x="-90"/>
+        <edge type="inclusion" source="n29" id="e65" target="n38">
+          <point x="-370" y="200"/>
+          <point x="-150" y="270"/>
         </edge>
-        <edge source="n9" id="e6" type="inclusion" target="n10">
-          <point y="20" x="10"/>
-          <point y="-50" x="-90"/>
+        <edge type="inclusion" source="n32" id="e66" target="n38">
+          <point x="-370" y="350"/>
+          <point x="-150" y="270"/>
         </edge>
-        <edge source="n20" id="e60" type="inclusion" target="n38">
-          <point y="270" x="-40"/>
-          <point y="270" x="-150"/>
+        <edge type="inclusion" source="n29" id="e67" target="n39">
+          <point x="-370" y="200"/>
+          <point x="-370" y="80"/>
         </edge>
-        <edge source="n29" id="e65" type="inclusion" target="n38">
-          <point y="200" x="-370"/>
-          <point y="270" x="-150"/>
+        <edge type="inclusion" source="n39" id="e68" target="n6">
+          <point x="-370" y="80"/>
+          <point x="-370" y="-50"/>
         </edge>
-        <edge source="n32" id="e66" type="inclusion" target="n38">
-          <point y="350" x="-370"/>
-          <point y="270" x="-150"/>
+        <edge type="inclusion" source="n24" id="e69" target="n40">
+          <point x="160" y="140"/>
+          <point x="270" y="270"/>
         </edge>
-        <edge source="n29" id="e67" type="inclusion" target="n39">
-          <point y="200" x="-370"/>
-          <point y="80" x="-370"/>
+        <edge type="inclusion" source="n21" id="e70" target="n40">
+          <point x="160" y="270"/>
+          <point x="270" y="270"/>
         </edge>
-        <edge source="n39" id="e68" type="inclusion" target="n6">
-          <point y="80" x="-370"/>
-          <point y="-50" x="-370"/>
+        <edge type="inclusion" source="n28" id="e71" target="n40">
+          <point x="160" y="350"/>
+          <point x="270" y="270"/>
         </edge>
       </diagram>
-      <diagram height="5000" name="inverse properties" width="5000">
-        <node color="#fcfcfc" id="n0" type="role">
-          <geometry height="50" y="20" width="70" x="50"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry</iri>
-          <label customSize="0" height="23" y="-10" size="12" width="79" x="50"/>
+      <diagram name="inverse properties" width="5000" height="5000">
+        <node color="#fcfcfc" type="role" id="n0">
+          <geometry x="50" y="20" width="70" height="50"/>
+          <iri>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasGeometry</iri>
+          <label x="50" customSize="0" size="12" y="-10" width="79" height="23"/>
         </node>
-        <node color="#fcfcfc" id="n2" type="role">
-          <geometry height="50" y="20" width="70" x="280"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf</iri>
-          <label customSize="0" height="23" y="-10" size="12" width="70" x="280"/>
+        <node color="#fcfcfc" type="role" id="n2">
+          <geometry x="280" y="20" width="70" height="50"/>
+          <iri>https://cdm.ovh/rsm/geosparql_adapter/rgeo#geometryOf</iri>
+          <label x="280" customSize="0" size="12" y="-10" width="70" height="23"/>
         </node>
-        <node color="#fcfcfc" id="n3" type="role-inverse">
-          <geometry height="30" y="20" width="50" x="160"/>
-          <label customSize="0" height="23" y="20" size="12" width="23" x="160"/>
+        <node color="#fcfcfc" type="role-inverse" id="n3">
+          <geometry x="160" y="20" width="50" height="30"/>
+          <label x="160" customSize="0" size="12" y="20" width="23" height="23"/>
         </node>
-        <node color="#fcfcfc" id="n4" type="role">
-          <geometry height="50" y="120" width="70" x="50"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry</iri>
-          <label customSize="0" height="23" y="90" size="12" width="124" x="50"/>
+        <node color="#fcfcfc" type="role" id="n4">
+          <geometry x="50" y="120" width="70" height="50"/>
+          <iri>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasNominalGeometry</iri>
+          <label x="50" customSize="0" size="12" y="90" width="124" height="23"/>
         </node>
-        <node color="#fcfcfc" id="n5" type="role">
-          <geometry height="50" y="120" width="70" x="280"/>
-          <iri>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf</iri>
-          <label customSize="0" height="23" y="90" size="12" width="115" x="280"/>
+        <node color="#fcfcfc" type="role" id="n5">
+          <geometry x="280" y="120" width="70" height="50"/>
+          <iri>https://cdm.ovh/rsm/geosparql_adapter/rgeo#nominalGeometryOf</iri>
+          <label x="280" customSize="0" size="12" y="90" width="115" height="23"/>
         </node>
-        <node color="#fcfcfc" id="n6" type="role-inverse">
-          <geometry height="30" y="120" width="50" x="160"/>
-          <label customSize="0" height="23" y="120" size="12" width="23" x="160"/>
+        <node color="#fcfcfc" type="role-inverse" id="n6">
+          <geometry x="160" y="120" width="50" height="30"/>
+          <label x="160" customSize="0" size="12" y="120" width="23" height="23"/>
         </node>
-        <edge source="n0" id="e0" type="input" target="n3">
-          <point y="20" x="50"/>
-          <point y="20" x="160"/>
+        <edge type="input" source="n0" id="e0" target="n3">
+          <point x="50" y="20"/>
+          <point x="160" y="20"/>
         </edge>
-        <edge source="n3" id="e1" type="equivalence" target="n2">
-          <point y="20" x="160"/>
-          <point y="20" x="280"/>
+        <edge type="equivalence" source="n3" id="e1" target="n2">
+          <point x="160" y="20"/>
+          <point x="280" y="20"/>
         </edge>
-        <edge source="n6" id="e2" type="equivalence" target="n5">
-          <point y="120" x="160"/>
-          <point y="120" x="280"/>
+        <edge type="equivalence" source="n6" id="e2" target="n5">
+          <point x="160" y="120"/>
+          <point x="280" y="120"/>
         </edge>
-        <edge source="n4" id="e3" type="input" target="n6">
-          <point y="120" x="50"/>
-          <point y="120" x="160"/>
+        <edge type="input" source="n4" id="e3" target="n6">
+          <point x="50" y="120"/>
+          <point x="160" y="120"/>
         </edge>
       </diagram>
     </diagrams>

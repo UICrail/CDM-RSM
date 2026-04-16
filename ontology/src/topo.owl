@@ -3,33 +3,31 @@
      xml:base="https://cdm.ovh/rsm/topology/topo"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:dul="http://www.ontologydesignpatterns.org/ont/dul/DUL#"
+     xmlns:geo="http://www.opengis.net/ont/geosparql#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:list="https://w3id.org/list#"
+     xmlns:list="https://cdm.ovh/rsm/list2/list2#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rgeo="https://cdm.ovh/rsm/geosparql_adapter/rgeo#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:topo="https://cdm.ovh/rsm/topology/topo#"
      xmlns:vann="https://vocab.org/vann/"
-     xmlns:geo_ad="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#"
-     xmlns:dcterms="http://purl.org/dc/terms/"
-     xmlns:geosparql="http://www.opengis.net/ont/geosparql#">
+     xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://cdm.ovh/rsm/topology/topo">
         <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/topology/1.0rc7/topo"/>
-        <owl:imports rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad"/>
+        <owl:imports rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo"/>
         <dc:abstract xml:lang="en">RSM topology provides fundamental railway network description, focused on connections and navigabilities between net elements. Net elements can be linear (embodied by lines or tracks) or non linear (embodied by stations, yards, or wider network areas). Geometry aspects are delegated to GeoSPARQL and are not essential to topology. Functional aspects (such as &quot;current switch setting&quot;) also are not part of the topology.</dc:abstract>
         <dc:contributor xml:lang="en">Pierre Tane, UIC</dc:contributor>
         <dc:creator xml:lang="en">Airy Magnien, UIC</dc:creator>
-        <dc:date xml:lang="en">12 March 2026</dc:date>
+        <dc:date xml:lang="en">8 April 2026</dc:date>
         <dc:description xml:lang="en">Full RSM topology. Connexities and Navigabilities as object properties . Additionally, navigability reification is included. Temporal aspects to be covered by annotations and/or named graphs and/or dul:Situations, or similar.
 
-Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.
-
-Temporality to be expressed using an upper ontology, such as DOLCE+DnS Ultralite that is used by other RSM ontologies.</dc:description>
+Syntactic sugar: some properties that are most likely to be used are chained properties, equivalent to derived associations in UML.</dc:description>
         <dc:title xml:lang="en">RSM topology</dc:title>
         <dc:type xml:lang="en">RDF/OWL ontology (using OWL2 RL profile)</dc:type>
-        <dcterms:license xml:lang="en">CC BY-SA 4.0</dcterms:license>
+        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
         <owl:versionInfo xml:lang="en">Reification limited to navigableTo property. Added property oppositePort as a property chain, and related properties.</owl:versionInfo>
         <vann:preferredNamespacePrefix>topo</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceURI xml:lang="en">http://cdm.ovh/rsm/topology/topo#</vann:preferredNamespaceURI>
@@ -407,9 +405,15 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DnS Ultralite
     
 
 
-    <!-- https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature -->
+    <!-- https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"/>
+    <owl:Class rdf:about="https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature"/>
+    
+
+
+    <!-- https://cdm.ovh/rsm/list2/list2#OWLList -->
+
+    <owl:Class rdf:about="https://cdm.ovh/rsm/list2/list2#OWLList"/>
     
 
 
@@ -437,8 +441,8 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DnS Ultralite
     <!-- https://cdm.ovh/rsm/topology/topo#ListedPort -->
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#ListedPort">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/list2/list2#OWLList"/>
         <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/list#OWLList"/>
         <rdfs:label xml:lang="en">Listed port</rdfs:label>
         <skos:definition xml:lang="en">A port in an ordered list (with successors; no contents needed). Can be used to sort the ports of a non-linear net element (e.g. clockwise from northmost). See also OWLList ontology.</skos:definition>
     </owl:Class>
@@ -460,7 +464,7 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DnS Ultralite
     <!-- https://cdm.ovh/rsm/topology/topo#NetElement -->
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#NetElement">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature"/>
         <owl:disjointWith rdf:resource="https://cdm.ovh/rsm/topology/topo#Port"/>
         <rdfs:label xml:lang="en">Net element</rdfs:label>
         <skos:definition xml:lang="en">Superclass for net elements (network elements)</skos:definition>
@@ -481,16 +485,10 @@ Temporality to be expressed using an upper ontology, such as DOLCE+DnS Ultralite
     <!-- https://cdm.ovh/rsm/topology/topo#Port -->
 
     <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#Port">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature"/>
         <rdfs:label>Port</rdfs:label>
         <skos:definition xml:lang="en">Any place, at the boundary of a net element, that can be an entry and/or exit point for rolling stock. In the case of linear elements, there are exactly two ports. In the case of a loop, the two ports of the loop ports coincide geographically (but for some tolerances) but remain distinct individuals, allowing to orient the loop if need be.</skos:definition>
     </owl:Class>
-    
-
-
-    <!-- https://w3id.org/list#OWLList -->
-
-    <owl:Class rdf:about="https://w3id.org/list#OWLList"/>
 </rdf:RDF>
 
 

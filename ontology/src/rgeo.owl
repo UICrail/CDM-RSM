@@ -1,28 +1,29 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#"
-     xml:base="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad"
+<rdf:RDF xmlns="https://cdm.ovh/rsm/geosparql_adapter/rgeo#"
+     xml:base="https://cdm.ovh/rsm/geosparql_adapter/rgeo"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:geo="http://www.opengis.net/ont/geosparql#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:loca="https://cdm.ovh/rsm/localisation/localisation#"
+     xmlns:loca="https://cdm.ovh/rsm/localisation/loca#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rgeo="https://cdm.ovh/rsm/geosparql_adapter/rgeo#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:topo="https://cdm.ovh/rsm/topology/topology#"
+     xmlns:topo="https://cdm.ovh/rsm/topology/topo#"
      xmlns:vann="https://vocab.org/vann/"
-     xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:geo_ad="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#">
-    <owl:Ontology rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad">
-        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/0.7/geo_ad"/>
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://cdm.ovh/rsm/geosparql_adapter/rgeo">
+        <owl:versionIRI rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/0.7/rgeo"/>
         <dc:abstract xml:lang="en">Adapter vocabulary for connecting various parts of RSM with GeoSPARQL 1.1.</dc:abstract>
         <dc:creator>Airy Magnien, UIC</dc:creator>
-        <terms:license>EUPL 1.2</terms:license>
-        <rdfs:label xml:lang="en">GeoSPARQL adapter for CDM/RSM</rdfs:label>
-        <owl:versionInfo xml:lang="en">Edited annotation properties that caused profile violations</owl:versionInfo>
-        <vann:preferredNamespacePrefix>geo_ad</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceURI>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad</vann:preferredNamespaceURI>
+        <dc:date xml:lang="en">8 April 2026</dc:date>
+        <dc:title xml:lang="en">GeoSPARQL adapter for semantic RSM</dc:title>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
+        <owl:versionInfo xml:lang="en">0.7 : Edited annotation properties that caused profile violations. Replaced xsd:double by xsd:decimal. Renamed LinearThings to LinearThing.</owl:versionInfo>
+        <vann:preferredNamespacePrefix>rgeo</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceURI>https://cdm.ovh/rsm/geosparql_adapter/rgeo</vann:preferredNamespaceURI>
     </owl:Ontology>
     
 
@@ -50,9 +51,21 @@
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
     <!-- http://purl.org/dc/elements/1.1/source -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/source"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
     
 
 
@@ -97,9 +110,9 @@
     
 
 
-    <!-- http://www.w3.org/2001/XMLSchema#double -->
+    <!-- http://www.w3.org/2001/XMLSchema#decimal -->
 
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#decimal"/>
     
 
 
@@ -132,10 +145,10 @@
     
 
 
-    <!-- https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf -->
+    <!-- https://cdm.ovh/rsm/geosparql_adapter/rgeo#geometryOf -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf">
-        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry"/>
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/geosparql_adapter/rgeo#geometryOf">
+        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasGeometry"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:comment xml:lang="en">GeoSPARQL does not define this inverse property.</rdfs:comment>
         <rdfs:label xml:lang="en">geometry of</rdfs:label>
@@ -144,25 +157,25 @@
     
 
 
-    <!-- https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry -->
+    <!-- https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasGeometry -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasGeometry">
         <rdfs:subPropertyOf rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"/>
-        <rdfs:range rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature"/>
+        <rdfs:range rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#Geometry"/>
         <rdfs:label xml:lang="en">has geometry</rdfs:label>
         <skos:definition xml:lang="en">A spatial representation for a given Feature. As in GeoSPARQL, a feature can be associated with more than one geometry (valid at different times, or provided by different surveys...).</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry -->
+    <!-- https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasNominalGeometry -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasNominalGeometry">
         <rdfs:subPropertyOf rdf:resource="http://www.opengis.net/ont/geosparql#hasDefaultGeometry"/>
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry"/>
-        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf"/>
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasGeometry"/>
+        <owl:inverseOf rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#nominalGeometryOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:label xml:lang="en">has nominal geometry</rdfs:label>
@@ -171,9 +184,9 @@
     
 
 
-    <!-- https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf -->
+    <!-- https://cdm.ovh/rsm/geosparql_adapter/rgeo#nominalGeometryOf -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/geosparql_adapter/rgeo#nominalGeometryOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:label xml:lang="en">nominal geometry of</rdfs:label>
@@ -196,30 +209,30 @@
 
     <owl:DatatypeProperty rdf:about="http://www.opengis.net/ont/geosparql#hasMetricLength">
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength -->
+    <!-- https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasMetricLength -->
 
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength">
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasMetricLength">
         <rdfs:subPropertyOf rdf:resource="http://www.opengis.net/ont/geosparql#hasMetricLength"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#LinearThing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:label xml:lang="en">has metric length</rdfs:label>
         <skos:definition xml:lang="en">Length (in meter) of a Linear Element.</skos:definition>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength -->
+    <!-- https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasNominalMetricLength -->
 
-    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength">
-        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength"/>
+    <owl:DatatypeProperty rdf:about="https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasNominalMetricLength">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasMetricLength"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topology#LinearElement"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:domain rdf:resource="https://cdm.ovh/rsm/topology/topo#LinearElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:label xml:lang="en">has nominal metric length</rdfs:label>
         <skos:definition>This length is assumed to be derived from the chosen Nominal Geometry.
 
@@ -257,9 +270,9 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
     
 
 
-    <!-- https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature -->
+    <!-- https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature">
+    <owl:Class rdf:about="https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature">
         <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="en">Feature</rdfs:label>
         <skos:definition xml:lang="en">A discrete spatial phenomenon in the CDM universe of discourse.</skos:definition>
@@ -267,9 +280,9 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
     
 
 
-    <!-- https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry -->
+    <!-- https://cdm.ovh/rsm/geosparql_adapter/rgeo#Geometry -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry">
+    <owl:Class rdf:about="https://cdm.ovh/rsm/geosparql_adapter/rgeo#Geometry">
         <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
         <dc:source xml:lang="en">OGC 18-010r11</dc:source>
         <rdfs:comment xml:lang="en">The reference system can be geographic, geodetic, cartesian (e.g. engineering coordinate system), and its definition may be part of the WKT or GML string. See OGC documentation.</rdfs:comment>
@@ -280,36 +293,36 @@ The Nominal Metric Length is supposed to be used for conversions between linear 
     
 
 
-    <!-- https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings -->
+    <!-- https://cdm.ovh/rsm/geosparql_adapter/rgeo#LinearThing -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings">
+    <owl:Class rdf:about="https://cdm.ovh/rsm/geosparql_adapter/rgeo#LinearThing">
         <rdfs:comment xml:lang="en">&quot; Abstract&quot;  class, introduced solely for the purpose of defining the domain of hasMetricLength in an OWL2-RL compatible way.</rdfs:comment>
-        <rdfs:label xml:lang="en">Linear things</rdfs:label>
+        <rdfs:label xml:lang="en">Linear thing</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#BaseLocation -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#BaseLocation -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#BaseLocation">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature"/>
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/loca#BaseLocation">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature"/>
     </owl:Class>
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/localisation#LinearLocation -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#LinearLocation -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/localisation#LinearLocation">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"/>
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/localisation#BaseLocation"/>
+    <owl:Class rdf:about="https://cdm.ovh/rsm/localisation/loca#LinearLocation">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#LinearThing"/>
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/localisation/loca#BaseLocation"/>
     </owl:Class>
     
 
 
-    <!-- https://cdm.ovh/rsm/topology/topology#LinearElement -->
+    <!-- https://cdm.ovh/rsm/topology/topo#LinearElement -->
 
-    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topology#LinearElement">
-        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThings"/>
+    <owl:Class rdf:about="https://cdm.ovh/rsm/topology/topo#LinearElement">
+        <rdfs:subClassOf rdf:resource="https://cdm.ovh/rsm/geosparql_adapter/rgeo#LinearThing"/>
     </owl:Class>
 </rdf:RDF>
 

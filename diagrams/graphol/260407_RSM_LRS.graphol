@@ -1,0 +1,3086 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphol version="3">
+  <project name="RSM_LRS" version="https://cdm.ovh/rsm/linearReferencing/rlrs/0.1/rlrs">
+    <ontology prefix="rlrs" lang="en" addLabelFromUserInput="0" iri="https://cdm.ovh/rsm/linearReferencing/rlrs" addLabelFromSimpleName="0">
+      <imports>
+        <import location="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" version="" isLocal="0" iri="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+        <import location="https://cdm.ovh/rsm/geosparql_adapter/rgeo" version="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad" isLocal="0" iri="https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad"/>
+      </imports>
+      <prefixes>
+        <prefix>
+          <value>cc</value>
+          <namespace>http://creativecommons.org/ns#</namespace>
+        </prefix>
+        <prefix>
+          <value>dc</value>
+          <namespace>http://purl.org/dc/elements/1.1/</namespace>
+        </prefix>
+        <prefix>
+          <value>dcterms</value>
+          <namespace>http://purl.org/dc/terms/</namespace>
+        </prefix>
+        <prefix>
+          <value>geo</value>
+          <namespace>http://www.opengis.net/ont/geosparql#</namespace>
+        </prefix>
+        <prefix>
+          <value>loca</value>
+          <namespace>https://cdm.ovh/rsm/localisation/loca#</namespace>
+        </prefix>
+        <prefix>
+          <value>owl</value>
+          <namespace>http://www.w3.org/2002/07/owl#</namespace>
+        </prefix>
+        <prefix>
+          <value>qudt</value>
+          <namespace>http://qudt.org/schema/qudt/</namespace>
+        </prefix>
+        <prefix>
+          <value>rdf</value>
+          <namespace>http://www.w3.org/1999/02/22-rdf-syntax-ns#</namespace>
+        </prefix>
+        <prefix>
+          <value>rdfs</value>
+          <namespace>http://www.w3.org/2000/01/rdf-schema#</namespace>
+        </prefix>
+        <prefix>
+          <value>rgeo</value>
+          <namespace>https://cdm.ovh/rsm/geosparql_adapter/rgeo#</namespace>
+        </prefix>
+        <prefix>
+          <value>rlrs</value>
+          <namespace>https://cdm.ovh/rsm/linearReferencing/rlrs#</namespace>
+        </prefix>
+        <prefix>
+          <value>rtim</value>
+          <namespace>https://cdm.ovh/rsm/time/time#</namespace>
+        </prefix>
+        <prefix>
+          <value>skos</value>
+          <namespace>http://www.w3.org/2004/02/skos/core#</namespace>
+        </prefix>
+        <prefix>
+          <value>topo</value>
+          <namespace>https://cdm.ovh/rsm/topology/topo#</namespace>
+        </prefix>
+        <prefix>
+          <value>vann</value>
+          <namespace>http://purl.org/vocab/vann/</namespace>
+        </prefix>
+        <prefix>
+          <value>xml</value>
+          <namespace>http://www.w3.org/XML/1998/namespace</namespace>
+        </prefix>
+        <prefix>
+          <value>xsd</value>
+          <namespace>http://www.w3.org/2001/XMLSchema#</namespace>
+        </prefix>
+      </prefixes>
+      <datatypes>
+        <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+        <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral</datatype>
+        <datatype>http://www.w3.org/2000/01/rdf-schema#Literal</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#NCName</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#NMTOKEN</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#Name</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#anyURI</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#base64Binary</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#boolean</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#byte</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#dateTime</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#dateTimeStamp</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#decimal</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#double</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#float</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#hexBinary</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#int</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#integer</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#language</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#long</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#negativeInteger</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#nonPositiveInteger</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#normalizedString</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#positiveInteger</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#short</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#string</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#token</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#unsignedByte</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#unsignedInt</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#unsignedLong</datatype>
+        <datatype>http://www.w3.org/2001/XMLSchema#unsignedShort</datatype>
+        <datatype>http://www.w3.org/2002/07/owl#rational</datatype>
+        <datatype>http://www.w3.org/2002/07/owl#real</datatype>
+      </datatypes>
+      <languages>
+        <language>de</language>
+        <language>en</language>
+        <language>es</language>
+        <language>fr</language>
+        <language>it</language>
+      </languages>
+      <facets>
+        <facet>http://www.w3.org/2001/XMLSchema#langRange</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#length</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#maxExclusive</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#maxInclusive</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#maxLength</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#minExclusive</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#minInclusive</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#minLength</facet>
+        <facet>http://www.w3.org/2001/XMLSchema#pattern</facet>
+      </facets>
+      <annotationProperties>
+        <annotationProperty>http://purl.org/dc/elements/1.1/creator</annotationProperty>
+        <annotationProperty>http://purl.org/dc/elements/1.1/description</annotationProperty>
+        <annotationProperty>http://purl.org/dc/elements/1.1/title</annotationProperty>
+        <annotationProperty>http://purl.org/dc/terms/created</annotationProperty>
+        <annotationProperty>http://purl.org/dc/terms/license</annotationProperty>
+        <annotationProperty>http://purl.org/vocab/vann/preferredNamespacePrefix</annotationProperty>
+        <annotationProperty>http://purl.org/vocab/vann/preferredNamespaceUri</annotationProperty>
+        <annotationProperty>http://www.w3.org/2000/01/rdf-schema#backwardCompatibleWith</annotationProperty>
+        <annotationProperty>http://www.w3.org/2000/01/rdf-schema#comment</annotationProperty>
+        <annotationProperty>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</annotationProperty>
+        <annotationProperty>http://www.w3.org/2000/01/rdf-schema#label</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#backwardCompatibleWith</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#deprecated</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#fetchedFrom</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#incompatibleWith</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#priorVersion</annotationProperty>
+        <annotationProperty>http://www.w3.org/2002/07/owl#versionInfo</annotationProperty>
+        <annotationProperty>http://www.w3.org/2004/02/skos/core#closeMatch</annotationProperty>
+      </annotationProperties>
+      <iris>
+        <iri>
+          <value>http://purl.org/dc/elements/1.1/creator</value>
+        </iri>
+        <iri>
+          <value>http://purl.org/dc/elements/1.1/description</value>
+        </iri>
+        <iri>
+          <value>http://purl.org/dc/elements/1.1/title</value>
+        </iri>
+        <iri>
+          <value>http://purl.org/dc/terms/created</value>
+        </iri>
+        <iri>
+          <value>http://purl.org/dc/terms/license</value>
+        </iri>
+        <iri>
+          <value>http://purl.org/vocab/vann/preferredNamespacePrefix</value>
+        </iri>
+        <iri>
+          <value>http://purl.org/vocab/vann/preferredNamespaceUri</value>
+        </iri>
+        <iri>
+          <value>http://qudt.org/schema/qudt/QuantityValue</value>
+        </iri>
+        <iri>
+          <value>http://qudt.org/schema/qudt/Unit</value>
+        </iri>
+        <iri>
+          <value>http://qudt.org/schema/qudt/hasQuantityValue</value>
+        </iri>
+        <iri>
+          <value>http://qudt.org/schema/qudt/quantityKind</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL#Entity</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL#Situation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Abstract</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Amount</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#ChemicalObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Classification</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collection</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Collective</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#CollectiveAgent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Community</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Configuration</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Contract</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Design</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedSubstance</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Diagnosis</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#FormalEntity</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#FunctionalSubstance</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationRealization</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#LocalConcept</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Narrative</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Norm</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#ObjectAggregate</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organism</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parameter</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parthood</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Pattern</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Personification</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAgent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAttribute</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalBody</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalPlace</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PlanExecution</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Project</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Relation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Right</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Set</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialAgent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObjectAttribute</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialPerson</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialRelation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpaceRegion</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpatioTemporalRegion</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Substance</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeIndexedRelation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Transition</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TypeCollection</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#UnitOfMeasure</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#WorkflowExecution</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#actsFor</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#actsThrough</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#characterizes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#conceptualizes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#concretelyExpresses</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#coparticipatesWith</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#covers</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#defines</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#definesRole</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#definesTask</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#describes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#directlyFollows</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#directlyPrecedes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#executesTask</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expands</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expresses</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expressesConcept</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#farFrom</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#follows</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasCommonBoundary</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasComponent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstituent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstraint</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasEventDate</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasInScope</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasIntervalDate</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasMember</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParameter</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParameterDataValue</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPostcondition</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPrecondition</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasProperPart</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegion</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegionDataValue</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTask</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesAction</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesAgent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesEvent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesObject</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesPart</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesTime</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#includesWhole</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#introduces</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#involvesAgent</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAbout</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isActionIncludedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAgentIncludedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isAgentInvolvedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isCharacterizedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isComponentOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConceptExpressedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConceptUsedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConceptualizedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConcretelyExpressedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConstituentOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConstraintFor</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isCoveredBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isDefinedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isDescribedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isEventIncludedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExecutedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpandedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExpressedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isIntroducedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isMemberOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isObjectIncludedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isObservableAt</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParameterFor</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParametrizedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPartOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isParticipantIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPostconditionOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPreconditionOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPropertPartOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isQualityOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRealizedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isReferenceOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isReferenceOfInformationRealizedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRegionFor</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRelatedToConcept</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRelatedToDescription</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRoleDefinedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRoleOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSatisfiedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSpecializedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSubordinatedTo</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSuperordinatedTo</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskDefinedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTimeIncludedIn</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTimeIntervalOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTimeOfObservationOf</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isUnifiedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#nearTo</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#overlaps</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#parametrizes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#precedes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizesInformationAbout</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#realizesSelfInformation</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#sameSettingAs</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#specializes</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#unifies</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#usesConcept</value>
+        </iri>
+        <iri>
+          <value>http://www.opengis.net/ont/geosparql#Feature</value>
+        </iri>
+        <iri>
+          <value>http://www.opengis.net/ont/geosparql#Geometry</value>
+        </iri>
+        <iri>
+          <value>http://www.opengis.net/ont/geosparql#SpatialObject</value>
+        </iri>
+        <iri>
+          <value>http://www.opengis.net/ont/geosparql#hasDefaultGeometry</value>
+        </iri>
+        <iri>
+          <value>http://www.opengis.net/ont/geosparql#hasGeometry</value>
+        </iri>
+        <iri>
+          <value>http://www.opengis.net/ont/geosparql#hasMetricLength</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2000/01/rdf-schema#Literal</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2000/01/rdf-schema#backwardCompatibleWith</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2000/01/rdf-schema#comment</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2000/01/rdf-schema#label</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#NCName</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#NMTOKEN</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#Name</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#anyURI</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#base64Binary</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#boolean</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#byte</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#dateTime</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#dateTimeStamp</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#decimal</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#double</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#float</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#hexBinary</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#int</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#integer</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#langRange</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#language</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#length</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#long</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#maxExclusive</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#maxInclusive</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#maxLength</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#minExclusive</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#minInclusive</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#minLength</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#negativeInteger</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#nonNegativeInteger</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#nonPositiveInteger</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#normalizedString</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#pattern</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#positiveInteger</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#short</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#string</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#token</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#unsignedByte</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#unsignedInt</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#unsignedLong</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2001/XMLSchema#unsignedShort</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#Nothing</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#Thing</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#backwardCompatibleWith</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#bottomDataProperty</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#bottomObjectProperty</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#deprecated</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#fetchedFrom</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#incompatibleWith</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#priorVersion</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#rational</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#real</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#topDataProperty</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#topObjectProperty</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2002/07/owl#versionInfo</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2004/02/skos/core#Concept</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2004/02/skos/core#closeMatch</value>
+        </iri>
+        <iri>
+          <value>http://www.w3.org/2006/time#Interval</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Feature</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#Geometry</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#LinearThing</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#geometryOf</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasGeometry</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasMetricLength</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalGeometry</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#hasNominalMetricLength</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geo_ad#nominalGeometryOf</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/adapters/geosparql_adapter/geosparql_adapter#Feature</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#Geometry</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#LinearThing</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#geometryOf</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasGeometry</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasMetricLength</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasNominalGeometry</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#hasNominalMetricLength</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/geosparql_adapter/rgeo#nominalGeometryOf</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/lrs</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs</subject>
+              <property>http://www.w3.org/2002/07/owl#versionInfo</property>
+              <object>
+                <lexicalForm>0.1 creation</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs</subject>
+              <property>http://purl.org/vocab/vann/preferredNamespacePrefix</property>
+              <object>
+                <lexicalForm>rlrs</lexicalForm>
+                <datatype/>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs</subject>
+              <property>http://purl.org/vocab/vann/preferredNamespaceUri</property>
+              <object>
+                <iri>https://cdm.ovh/rsm/linearReferencing/rlrs</iri>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs</subject>
+              <property>http://purl.org/dc/elements/1.1/creator</property>
+              <object>
+                <lexicalForm>Airy Magnien, UIC</lexicalForm>
+                <datatype/>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs</subject>
+              <property>http://purl.org/dc/elements/1.1/title</property>
+              <object>
+                <lexicalForm>Linear Referencing ontology</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs</subject>
+              <property>http://purl.org/dc/elements/1.1/description</property>
+              <object>
+                <lexicalForm>Linear referencing ontology based on ISO 19148:2021. Adds the notion of intrinsic coordinate used by the RSM localisation ontology.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs</subject>
+              <property>http://purl.org/dc/terms/created</property>
+              <object>
+                <lexicalForm>12 April 2026</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs</subject>
+              <property>http://purl.org/dc/terms/license</property>
+              <object>
+                <iri>https://creativecommons.org/licenses/by-sa/4.0/</iri>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs</subject>
+              <property>http://www.w3.org/2002/07/owl#versionInfo</property>
+              <object>
+                <lexicalForm>0.2 added: vertical and lateral offsets (ISO 19148), as well as longitudinal offset (not in ISO)</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#Absolute</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#Absolute</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Absolute</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#DistanceExpression</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#DistanceExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Distance expression</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#DistanceExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>as per ISO 19148</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#FullLinearPosition</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#FullLinearPosition</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Full linear position</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#FullLinearPosition</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Positioning using an explicit linear coordinate individual</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#InstrinsicPosition</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#InstrinsicPosition</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Instrinsic position</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#Interpolative</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#Interpolative</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Interpolation</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#IntrinsicPositionExpression</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#IntrinsicPositionExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Intrinsic position expression</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#IntrinsicPositionExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Intrinsic positions can only use a topo:LinearElement as Linear Element in the sense of ISO 19148, hence the property restriction.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#LRMWithOffset</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#LRMWithOffset</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>LRM with offset</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#LRMWithOffset</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>As defined in ISO19148:2021, section 6.4.2</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#LateralOffsetExpression</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#LateralOffsetExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Lateral offset expression</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearElementForLinearReferencing</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearElementForLinearReferencing</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Linear element for linear referencing</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearElementForLinearReferencing</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>as defined in ISO 19148:2021. It can be of type "curve", "edge", or " feature", according to the same source.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearPosition</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearPosition</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Linear position</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearPosition</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Situation describing the position of an entity along a linear referent using a linear referencing method.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearPositionExpression</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearPositionExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Linear position expression</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearPositionExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Generalisation of ISO 19148 PositionExpression</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearReferencingMethod</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearReferencingMethod</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>LinearRefererncingMethod</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearReferencingMethod</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Linear referencing method, as defined in ISO 19148:2021</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#LongitudinalOffsetExpression</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#LongitudinalOffsetExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Longitudinal offset expression</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#LongitudinalOffsetExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>not in ISO 19148:2021</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#OffsetDistanceExpression</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#OffsetDistanceExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Offset distance expression</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#OffsetDistanceExpression</subject>
+              <property>http://www.w3.org/2004/02/skos/core#closeMatch</property>
+              <object>
+                <lexicalForm>ISO 19148:2021 LateralOffsetDistanceExpression (section 6.4.1)</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#Opposite</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#Opposite</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Opposite</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#PositionExpression</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#PositionExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Position expression</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#PositionExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Following ISO 19148</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#QuantityValue</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#Referent</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#Referent</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Referent</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#Referent</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>See ISO 19128 " Referent"</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#Relative</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#Relative</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Relative</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#Same</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#Same</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Same</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#VerticalOffsetExpression</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#VerticalOffsetExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Vertical offset expression</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#distanceExpression</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#distanceExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>Distance expression, as per ISO 19148. Requires exactly one distance expression, here referring to a qudt:QuantityValue</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#fromReferent</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#fromReferent</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>from referent</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#fromReferent</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>A location from which the linear distance expression shall be restarted, with a restart value</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#hasLRM</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#hasLRM</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has LRM</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#hasPositionExpression</value>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#hasPositionExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>has position expression</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#icValue</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#icValue</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>intrinsic coordinate value</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#icValue</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Intrinsic coordinate ranges from 0 (at port 0) to 1 (at port 1), unitless. Reference is the nominal geometry of the linear element that must be available to define the intermediate values. Linear referencing method is interpolating.
+
+Intrinsic positions can also be defined as full linear positions, using full ISO 19148. The representation provided here is a shorthand for direct use by the topology ontology.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#lateralOffset</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#lateralOffset</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>lateral offset</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#lateralOffset</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>unit: meter; positive on right side w.r.t. linear element orientation (port 0 to port 1)</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#lateralOffsetExpression</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#lateralOffsetExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>lateral offset expression</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#linearElement</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#linearElement</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>linear element</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#linearReferencingMethodType</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#linearReferencingMethodType</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>linear referencing method type</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language/>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#longitudinalOffset</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#longitudinalOffset</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>longitudinal offset</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#longitudinalOffsetExpression</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#longitudinalOffsetExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>longitudinal offset expression</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#offsetUnit</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#offsetUnit</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>offset unit</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#positionsObject</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#positionsObject</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>positions object</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#positiveDistanceAlongDirection</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#positiveDistanceAlongDirection</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>positive distance along direction</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#positiveLateralOffsetDirection</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#positiveLateralOffsetDirection</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>positive lateral offset direction</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#positiveLongitudinalOffsetDirection</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#positiveLongitudinalOffsetDirection</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>positive longitudinal offset direction</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#positiveLongitudinalOffsetDirection</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Not available in ISO19148:2021.
+The combination of oriented longitudinal, lateral and vertical offsets allows to interface with local cartesian referencing systems as provided e.g. by IFC.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#positiveVerticalOffsetDirection</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#positiveVerticalOffsetDirection</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>positive vertical offset direction</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#restartValue</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#restartValue</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>restart value</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#unitOfMeasure</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#unitOfMeasure</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>unit of measure</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#unitOfMeasure</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>See ISO 19148. Used in the singular here.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#verticalOffset</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#verticalOffset</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>vertical offset</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/linearReferencing/rlrs#verticalOffsetExpression</value>
+          <functional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/linearReferencing/rlrs#verticalOffsetExpression</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>vertical offset expression</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/list2/list2#OWLList</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#AreaLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#BaseLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#BoundedLinearElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#ConnectedAreaLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#LinearLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#ListedLinearElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#ListedNetElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#LocatedNetElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#OffsetValue</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#SpotLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#TimedLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#applicationDirection</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#associatedLinearElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#associatedNetElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#atInterval</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#atIntrinsicCoordinate</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#atLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#elementLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#elementSide</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#endAt</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#forEntity</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#hasTimedLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#lateralOffset</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#location</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#offset</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#onLinearElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#startAt</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#tangentialOffset</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#verticalOffset</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/localisation#BaseLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/localisation#LinearLocation</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/time/time#hasTimeInterval</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#BoundaryElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#LinearElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#ListedPort</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#NetElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#NonlinearElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#Port</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#connectedWith</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#connectedWithTransitive</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#leadsTo</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#leadsToTransitive</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#navigableFrom</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#navigableFromTransitive</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#navigableTo</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#navigableToTransitive</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#nonNavigableFrom</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#nonNavigableTo</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#onElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#oppositePort</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#port</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#port0</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#port0onElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#port1</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topo#port1onElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topology#LinearElement</value>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/topology/topology#NetElement</value>
+        </iri>
+        <iri>
+          <value>https://creativecommons.org/licenses/by-sa/4.0/</value>
+        </iri>
+        <iri>
+          <value>https://qudt.org/vocab/quantitykind/Length</value>
+        </iri>
+        <iri>
+          <value>https://w3id.org/list#OWLList</value>
+        </iri>
+        <iri>
+          <value>urn:x-graphol:origin</value>
+        </iri>
+      </iris>
+    </ontology>
+    <diagrams>
+      <diagram name="00 - Linear Position" width="5000" height="5000">
+        <node id="n0" type="concept" color="#c2b078">
+          <geometry width="110" height="50" x="0" y="40"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation</iri>
+          <label width="110" height="23" x="0" customSize="0" y="40" size="12"/>
+        </node>
+        <node id="n1" type="concept" color="#fcfcfc">
+          <geometry width="110" height="225" x="0" y="217"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearPosition</iri>
+          <label width="110" height="23" x="0" customSize="0" y="217" size="12"/>
+        </node>
+        <node id="n2" type="disjoint-union" color="#000000">
+          <geometry width="50" height="30" x="0" y="380"/>
+        </node>
+        <node id="n23" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="220" y="190"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#hasPositionExpression</iri>
+          <label width="129" height="23" x="220" customSize="0" y="160" size="12"/>
+        </node>
+        <node id="n24" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="120" y="190"/>
+          <label width="39" height="23" x="120" customSize="0" y="168" size="12">exists</label>
+        </node>
+        <node id="n25" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="300" y="190"/>
+          <label width="39" height="23" x="300" customSize="0" y="168" size="12">exists</label>
+        </node>
+        <node id="n26" type="concept" color="#fcfcfc">
+          <geometry width="165" height="50" x="450" y="190"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearPositionExpression</iri>
+          <label width="165" height="23" x="450" customSize="0" y="182" size="12"/>
+        </node>
+        <node id="n27" type="disjoint-union" color="#000000">
+          <geometry width="50" height="30" x="450" y="250"/>
+        </node>
+        <node id="n28" type="concept" color="#fcfcfc">
+          <geometry width="135" height="50" x="360" y="320"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#PositionExpression</iri>
+          <label width="135" height="23" x="360" customSize="0" y="320" size="12"/>
+        </node>
+        <node id="n29" type="concept" color="#fcfcfc">
+          <geometry width="165" height="50" x="530" y="320"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#IntrinsicPositionExpression</iri>
+          <label width="165" height="23" x="530" customSize="0" y="320" size="12"/>
+        </node>
+        <node id="n3" type="concept" color="#fcfcfc">
+          <geometry width="135" height="50" x="-80" y="460"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#FullLinearPosition</iri>
+          <label width="135" height="23" x="-80" customSize="0" y="460" size="12"/>
+        </node>
+        <node id="n31" type="concept" color="#fcfcfc">
+          <geometry width="225" height="50" x="920" y="190"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearElementForLinearReferencing</iri>
+          <label width="225" height="23" x="920" customSize="0" y="190" size="12"/>
+        </node>
+        <node id="n32" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="680" y="190"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#linearElement</iri>
+          <label width="80" height="23" x="680" customSize="0" y="160" size="12"/>
+        </node>
+        <node id="n33" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="600" y="190"/>
+          <label width="39" height="23" x="600" customSize="0" y="168" size="12">exists</label>
+        </node>
+        <node id="n34" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="760" y="190"/>
+          <label width="39" height="23" x="760" customSize="0" y="168" size="12">exists</label>
+        </node>
+        <node id="n35" type="concept" color="#f29210">
+          <geometry width="110" height="50" x="920" y="270"/>
+          <iri>https://cdm.ovh/rsm/geosparql_adapter/rgeo#LinearThing</iri>
+          <label width="110" height="23" x="920" customSize="0" y="270" size="12"/>
+        </node>
+        <node id="n36" type="concept" color="#c2b078">
+          <geometry width="110" height="50" x="450" y="110"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject</iri>
+          <label width="110" height="23" x="450" customSize="0" y="110" size="12"/>
+        </node>
+        <node id="n37" type="role" color="#ff0090">
+          <geometry width="70" height="50" x="180" y="280"/>
+          <iri>https://cdm.ovh/rsm/time/time#hasTimeInterval</iri>
+          <label width="93" height="23" x="180" customSize="0" y="250" size="12"/>
+        </node>
+        <node id="n38" type="concept" color="#c2b078">
+          <geometry width="110" height="50" x="180" y="340"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval</iri>
+          <label width="110" height="23" x="180" customSize="0" y="340" size="12"/>
+        </node>
+        <node id="n39" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="90" y="320"/>
+          <label width="39" height="23" x="90" customSize="0" y="298" size="12">forall</label>
+        </node>
+        <node id="n4" type="concept" color="#fcfcfc">
+          <geometry width="135" height="50" x="70" y="460"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#InstrinsicPosition</iri>
+          <label width="135" height="23" x="70" customSize="0" y="460" size="12"/>
+        </node>
+        <node id="n5" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="210" y="30"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#positionsObject</iri>
+          <label width="91" height="23" x="210" customSize="0" y="0" size="12"/>
+        </node>
+        <node id="n6" type="role" color="#c2b078">
+          <geometry width="70" height="50" x="210" y="-60"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant</iri>
+          <label width="85" height="23" x="210" customSize="0" y="-90" size="12"/>
+        </node>
+        <node id="n7" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="290" y="30"/>
+          <label width="39" height="23" x="290" customSize="0" y="8" size="12">exists</label>
+        </node>
+        <node id="n8" type="concept" color="#c2b078">
+          <geometry width="110" height="50" x="410" y="30"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object</iri>
+          <label width="110" height="23" x="410" customSize="0" y="30" size="12"/>
+        </node>
+        <node id="n9" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="120" y="30"/>
+          <label width="39" height="23" x="120" customSize="0" y="8" size="12">exists</label>
+        </node>
+        <edge id="e0" source="n1" type="inclusion" target="n0">
+          <point x="0" y="217"/>
+          <point x="0" y="40"/>
+        </edge>
+        <edge id="e1" source="n2" type="inclusion" target="n1">
+          <point x="0" y="380"/>
+          <point x="0" y="217"/>
+        </edge>
+        <edge id="e2" source="n3" type="input" target="n2">
+          <point x="-80" y="460"/>
+          <point x="0" y="380"/>
+        </edge>
+        <edge id="e23" source="n24" type="inclusion" target="n1">
+          <point x="120" y="190"/>
+          <point x="54" y="190"/>
+        </edge>
+        <edge id="e24" source="n25" type="inclusion" target="n26">
+          <point x="300" y="190"/>
+          <point x="450" y="190"/>
+        </edge>
+        <edge id="e25" source="n23" type="input" target="n25">
+          <point x="220" y="190"/>
+          <point x="300" y="190"/>
+        </edge>
+        <edge id="e26" source="n23" type="input" target="n24">
+          <point x="220" y="190"/>
+          <point x="120" y="190"/>
+        </edge>
+        <edge id="e27" source="n27" type="inclusion" target="n26">
+          <point x="450" y="250"/>
+          <point x="450" y="190"/>
+        </edge>
+        <edge id="e28" source="n28" type="input" target="n27">
+          <point x="360" y="320"/>
+          <point x="450" y="250"/>
+        </edge>
+        <edge id="e29" source="n29" type="input" target="n27">
+          <point x="530" y="320"/>
+          <point x="450" y="250"/>
+        </edge>
+        <edge id="e3" source="n4" type="input" target="n2">
+          <point x="70" y="460"/>
+          <point x="0" y="380"/>
+        </edge>
+        <edge id="e31" source="n34" type="inclusion" target="n31">
+          <point x="760" y="190"/>
+          <point x="920" y="190"/>
+        </edge>
+        <edge id="e32" source="n32" type="input" target="n34">
+          <point x="680" y="190"/>
+          <point x="760" y="190"/>
+        </edge>
+        <edge id="e33" source="n32" type="input" target="n33">
+          <point x="680" y="190"/>
+          <point x="600" y="190"/>
+        </edge>
+        <edge id="e36" source="n35" type="inclusion" target="n31">
+          <point x="920" y="270"/>
+          <point x="920" y="190"/>
+        </edge>
+        <edge id="e38" source="n26" type="equivalence" target="n33">
+          <point x="450" y="190"/>
+          <point x="600" y="190"/>
+        </edge>
+        <edge id="e39" source="n23" type="inclusion" target="n6">
+          <point x="220" y="190"/>
+          <point x="260" y="90"/>
+          <point x="260" y="-30"/>
+          <point x="210" y="-60"/>
+        </edge>
+        <edge id="e4" source="n5" type="input" target="n9">
+          <point x="210" y="30"/>
+          <point x="120" y="30"/>
+        </edge>
+        <edge id="e40" source="n26" type="inclusion" target="n36">
+          <point x="450" y="190"/>
+          <point x="450" y="110"/>
+        </edge>
+        <edge id="e41" source="n1" type="inclusion" target="n39">
+          <point x="0" y="217"/>
+          <point x="90" y="320"/>
+        </edge>
+        <edge id="e42" source="n37" type="input" target="n39">
+          <point x="180" y="280"/>
+          <point x="90" y="320"/>
+        </edge>
+        <edge id="e43" source="n38" type="input" target="n39">
+          <point x="180" y="340"/>
+          <point x="90" y="320"/>
+        </edge>
+        <edge id="e5" source="n5" type="inclusion" target="n6">
+          <point x="210" y="30"/>
+          <point x="210" y="-60"/>
+        </edge>
+        <edge id="e6" source="n5" type="input" target="n7">
+          <point x="210" y="30"/>
+          <point x="290" y="30"/>
+        </edge>
+        <edge id="e7" source="n7" type="inclusion" target="n8">
+          <point x="290" y="30"/>
+          <point x="410" y="30"/>
+        </edge>
+        <edge id="e8" source="n9" type="inclusion" target="n1">
+          <point x="120" y="30"/>
+          <point x="0" y="217"/>
+        </edge>
+      </diagram>
+      <diagram name="01 - Full linear position" width="5000" height="5000">
+        <node id="n10" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="2" y="260"/>
+          <label width="39" height="23" x="2" customSize="0" y="238" size="12">exists</label>
+        </node>
+        <node id="n11" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="142" y="260"/>
+          <label width="39" height="23" x="142" customSize="0" y="238" size="12">exists</label>
+        </node>
+        <node id="n12" type="concept" color="#fcfcfc">
+          <geometry width="125" height="50" x="250" y="260"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#DistanceExpression</iri>
+          <label width="125" height="23" x="250" customSize="0" y="252" size="12"/>
+        </node>
+        <node id="n16" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="-57" y="540"/>
+          <label width="39" height="23" x="-57" customSize="0" y="518" size="12">exists</label>
+        </node>
+        <node id="n17" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="82" y="540"/>
+          <label width="39" height="23" x="82" customSize="0" y="518" size="12">exists</label>
+        </node>
+        <node id="n20" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="12" y="540"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#fromReferent</iri>
+          <label width="78" height="23" x="12" customSize="0" y="510" size="12"/>
+        </node>
+        <node id="n21" type="concept" color="#fcfcfc">
+          <geometry width="125" height="50" x="190" y="540"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#Referent</iri>
+          <label width="125" height="23" x="190" customSize="0" y="540" size="12"/>
+        </node>
+        <node id="n23" type="concept" color="#16ccef">
+          <geometry width="110" height="50" x="250" y="140"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#QuantityValue</iri>
+          <label width="110" height="23" x="250" customSize="0" y="140" size="12"/>
+        </node>
+        <node id="n24" type="concept" color="#f0e50c">
+          <geometry width="110" height="50" x="190" y="610"/>
+          <iri>https://cdm.ovh/rsm/localisation/loca#SpotLocation</iri>
+          <label width="110" height="23" x="190" customSize="0" y="610" size="12"/>
+        </node>
+        <node id="n25" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="370" y="540"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#restartValue</iri>
+          <label width="72" height="23" x="370" customSize="0" y="510" size="12"/>
+        </node>
+        <node id="n26" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="290" y="540"/>
+          <label width="39" height="23" x="290" customSize="0" y="518" size="12">exists</label>
+        </node>
+        <node id="n27" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="450" y="540"/>
+          <label width="39" height="23" x="450" customSize="0" y="518" size="12">exists</label>
+        </node>
+        <node id="n33" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="-70" y="690"/>
+          <label width="39" height="23" x="-70" customSize="0" y="668" size="12">exists</label>
+        </node>
+        <node id="n34" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="90" y="690"/>
+          <label width="39" height="23" x="90" customSize="0" y="668" size="12">exists</label>
+        </node>
+        <node id="n35" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="10" y="690"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#hasLRM</iri>
+          <label width="51" height="23" x="10" customSize="0" y="660" size="12"/>
+        </node>
+        <node id="n36" type="concept" color="#fcfcfc">
+          <geometry width="165" height="50" x="230" y="690"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearReferencingMethod</iri>
+          <label width="165" height="23" x="230" customSize="0" y="690" size="12"/>
+        </node>
+        <node id="n37" type="concept" color="#fcfcfc">
+          <geometry width="125" height="50" x="-200" y="260"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#PositionExpression</iri>
+          <label width="125" height="23" x="-200" customSize="0" y="260" size="12"/>
+        </node>
+        <node id="n38" type="concept" color="#fcfcfc">
+          <geometry width="110" height="50" x="-420" y="260"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#FullLinearPosition</iri>
+          <label width="110" height="23" x="-420" customSize="0" y="260" size="12"/>
+        </node>
+        <node id="n39" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="-310" y="260"/>
+          <label width="39" height="23" x="-310" customSize="0" y="238" size="12">forall</label>
+        </node>
+        <node id="n40" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="-310" y="180"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#hasPositionExpression</iri>
+          <label width="129" height="23" x="-310" customSize="0" y="150" size="12"/>
+        </node>
+        <node id="n41" type="concept" color="#16ccef">
+          <geometry width="110" height="50" x="540" y="540"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#QuantityValue</iri>
+          <label width="110" height="23" x="540" customSize="0" y="540" size="12"/>
+        </node>
+        <node id="n9" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="72" y="260"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#distanceExpression</iri>
+          <label width="112" height="23" x="72" customSize="0" y="230" size="12"/>
+        </node>
+        <edge id="e13" source="n9" type="input" target="n11">
+          <point x="72" y="260"/>
+          <point x="142" y="260"/>
+        </edge>
+        <edge id="e14" source="n9" type="input" target="n10">
+          <point x="72" y="260"/>
+          <point x="2" y="260"/>
+        </edge>
+        <edge id="e15" source="n11" type="inclusion" target="n12">
+          <point x="142" y="260"/>
+          <point x="250" y="260"/>
+        </edge>
+        <edge id="e18" source="n20" type="input" target="n16">
+          <point x="12" y="540"/>
+          <point x="-57" y="540"/>
+        </edge>
+        <edge id="e19" source="n20" type="input" target="n17">
+          <point x="12" y="540"/>
+          <point x="82" y="540"/>
+        </edge>
+        <edge id="e20" source="n17" type="inclusion" target="n21">
+          <point x="82" y="540"/>
+          <point x="190" y="540"/>
+        </edge>
+        <edge id="e22" source="n12" type="inclusion" target="n23">
+          <point x="250" y="260"/>
+          <point x="250" y="140"/>
+        </edge>
+        <edge id="e24" source="n26" type="inclusion" target="n21">
+          <point x="290" y="540"/>
+          <point x="190" y="540"/>
+        </edge>
+        <edge id="e26" source="n25" type="input" target="n26">
+          <point x="370" y="540"/>
+          <point x="290" y="540"/>
+        </edge>
+        <edge id="e27" source="n25" type="input" target="n27">
+          <point x="370" y="540"/>
+          <point x="450" y="540"/>
+        </edge>
+        <edge id="e28" source="n16" type="inclusion" target="n12">
+          <point x="-57" y="540"/>
+          <point x="-100" y="540"/>
+          <point x="-100" y="370"/>
+          <point x="350" y="370"/>
+          <point x="350" y="260"/>
+          <point x="250" y="260"/>
+        </edge>
+        <edge id="e37" source="n35" type="input" target="n33">
+          <point x="10" y="690"/>
+          <point x="-70" y="690"/>
+        </edge>
+        <edge id="e40" source="n35" type="input" target="n34">
+          <point x="10" y="690"/>
+          <point x="90" y="690"/>
+        </edge>
+        <edge id="e41" source="n34" type="inclusion" target="n36">
+          <point x="90" y="690"/>
+          <point x="230" y="690"/>
+        </edge>
+        <edge id="e43" source="n37" type="equivalence" target="n10">
+          <point x="-200" y="260"/>
+          <point x="2" y="260"/>
+        </edge>
+        <edge id="e44" source="n37" type="equivalence" target="n33">
+          <point x="-200" y="260"/>
+          <point x="-200" y="690"/>
+          <point x="-70" y="690"/>
+        </edge>
+        <edge id="e45" source="n38" type="inclusion" target="n39">
+          <point x="-420" y="260"/>
+          <point x="-310" y="260"/>
+        </edge>
+        <edge id="e46" source="n37" type="input" target="n39">
+          <point x="-200" y="260"/>
+          <point x="-310" y="260"/>
+        </edge>
+        <edge id="e47" source="n40" type="input" target="n39">
+          <point x="-310" y="180"/>
+          <point x="-310" y="260"/>
+        </edge>
+        <edge id="e48" source="n27" type="inclusion" target="n41">
+          <point x="450" y="540"/>
+          <point x="540" y="540"/>
+        </edge>
+        <edge id="e49" source="n24" type="inclusion" target="n21">
+          <point x="190" y="610"/>
+          <point x="190" y="540"/>
+        </edge>
+      </diagram>
+      <diagram name="02 - Linear Referencing Method" width="5000" height="5000">
+        <node id="n11" type="concept" color="#c2b078">
+          <geometry width="110" height="55" x="360" y="10"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method</iri>
+          <label width="110" height="23" x="360" customSize="0" y="10" size="12"/>
+        </node>
+        <node id="n2" type="concept" color="#fcfcfc">
+          <geometry width="110" height="375" x="360" y="272"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearReferencingMethod</iri>
+          <label width="110" height="38" x="360" customSize="0" y="272" size="12"/>
+        </node>
+        <node id="n35" type="enumeration" color="#fcfcfc">
+          <geometry width="50" height="30" x="890" y="110"/>
+          <label width="40" height="23" x="890" customSize="0" y="110" size="12"/>
+        </node>
+        <node id="n37" type="individual" color="#fcfcfc">
+          <geometry width="60" height="60" x="820" y="210"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#Absolute</iri>
+          <label width="60" height="23" x="820" customSize="0" y="210" size="12"/>
+        </node>
+        <node id="n38" type="individual" color="#fcfcfc">
+          <geometry width="60" height="60" x="890" y="210"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#Relative</iri>
+          <label width="60" height="23" x="890" customSize="0" y="210" size="12"/>
+        </node>
+        <node id="n39" type="individual" color="#fcfcfc">
+          <geometry width="80" height="60" x="970" y="210"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#Interpolative</iri>
+          <label width="80" height="23" x="970" customSize="0" y="202" size="12"/>
+        </node>
+        <node id="n44" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="490" y="110"/>
+          <label width="39" height="23" x="490" customSize="0" y="88" size="12">exists</label>
+        </node>
+        <node id="n45" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="720" y="110"/>
+          <label width="39" height="23" x="720" customSize="0" y="88" size="12">exists</label>
+        </node>
+        <node id="n46" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="600" y="110"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#linearReferencingMethodType</iri>
+          <label width="167" height="23" x="600" customSize="0" y="80" size="12"/>
+        </node>
+        <node id="n47" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="600" y="310"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#positiveDistanceAlongDirection</iri>
+          <label width="174" height="23" x="600" customSize="0" y="280" size="12"/>
+        </node>
+        <node id="n49" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="490" y="310"/>
+          <label width="39" height="23" x="490" customSize="0" y="288" size="12">exists</label>
+        </node>
+        <node id="n50" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="720" y="310"/>
+          <label width="39" height="23" x="720" customSize="0" y="288" size="12">exists</label>
+        </node>
+        <node id="n51" type="individual" color="#fcfcfc">
+          <geometry width="60" height="60" x="850" y="380"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#Same</iri>
+          <label width="60" height="23" x="850" customSize="0" y="380" size="12"/>
+        </node>
+        <node id="n52" type="individual" color="#fcfcfc">
+          <geometry width="70" height="60" x="930" y="380"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#Opposite</iri>
+          <label width="70" height="23" x="930" customSize="0" y="380" size="12"/>
+        </node>
+        <node id="n53" type="enumeration" color="#fcfcfc">
+          <geometry width="50" height="30" x="890" y="310"/>
+          <label width="40" height="23" x="890" customSize="0" y="310" size="12"/>
+        </node>
+        <node id="n54" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="490" y="440"/>
+          <label width="39" height="23" x="490" customSize="0" y="418" size="12">exists</label>
+        </node>
+        <node id="n55" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="650" y="440"/>
+          <label width="39" height="23" x="650" customSize="0" y="418" size="12">exists</label>
+        </node>
+        <node id="n56" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="570" y="440"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#unitOfMeasure</iri>
+          <label width="86" height="23" x="570" customSize="0" y="410" size="12"/>
+        </node>
+        <node id="n57" type="concept" color="#16ccef">
+          <geometry width="110" height="50" x="740" y="440"/>
+          <iri>http://qudt.org/schema/qudt/Unit</iri>
+          <label width="110" height="23" x="740" customSize="0" y="440" size="12"/>
+        </node>
+        <node id="n58" type="concept" color="#fcfcfc">
+          <geometry width="110" height="270" x="360" y="625"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#LRMWithOffset</iri>
+          <label width="110" height="23" x="360" customSize="0" y="625" size="12"/>
+        </node>
+        <node id="n59" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="570" y="540"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#offsetUnit</iri>
+          <label width="60" height="23" x="570" customSize="0" y="510" size="12"/>
+        </node>
+        <node id="n60" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="490" y="540"/>
+          <label width="39" height="23" x="490" customSize="0" y="518" size="12">exists</label>
+        </node>
+        <node id="n61" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="650" y="540"/>
+          <label width="39" height="23" x="650" customSize="0" y="518" size="12">exists</label>
+        </node>
+        <node id="n62" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="490" y="670"/>
+          <label width="39" height="23" x="490" customSize="0" y="648" size="12">exists</label>
+        </node>
+        <node id="n63" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="600" y="670"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#positiveLateralOffsetDirection</iri>
+          <label width="166" height="23" x="600" customSize="0" y="640" size="12"/>
+        </node>
+        <node id="n64" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="700" y="670"/>
+          <label width="39" height="23" x="700" customSize="0" y="648" size="12">exists</label>
+        </node>
+        <node id="n66" type="concept" color="#646b63">
+          <geometry width="110" height="50" x="800" y="670"/>
+          <iri>http://www.w3.org/2004/02/skos/core#Concept</iri>
+          <label width="110" height="23" x="800" customSize="0" y="670" size="12"/>
+        </node>
+        <node id="n67" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="600" y="740"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#positiveVerticalOffsetDirection</iri>
+          <label width="170" height="23" x="600" customSize="0" y="710" size="12"/>
+        </node>
+        <node id="n68" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="490" y="740"/>
+          <label width="39" height="23" x="490" customSize="0" y="718" size="12">exists</label>
+        </node>
+        <node id="n69" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="700" y="740"/>
+          <label width="39" height="23" x="700" customSize="0" y="718" size="12">exists</label>
+        </node>
+        <node id="n70" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="600" y="810"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#positiveLongitudinalOffsetDirection</iri>
+          <label width="195" height="23" x="600" customSize="0" y="780" size="12"/>
+        </node>
+        <node id="n71" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="490" y="810"/>
+          <label width="39" height="23" x="490" customSize="0" y="788" size="12">exists</label>
+        </node>
+        <node id="n72" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="700" y="810"/>
+          <label width="39" height="23" x="700" customSize="0" y="788" size="12">exists</label>
+        </node>
+        <edge id="e4" source="n2" type="inclusion" target="n11">
+          <point x="360" y="272"/>
+          <point x="360" y="10"/>
+        </edge>
+        <edge id="e41" source="n37" type="input" target="n35">
+          <point x="820" y="210"/>
+          <point x="890" y="110"/>
+        </edge>
+        <edge id="e42" source="n38" type="input" target="n35">
+          <point x="890" y="210"/>
+          <point x="890" y="110"/>
+        </edge>
+        <edge id="e43" source="n39" type="input" target="n35">
+          <point x="970" y="210"/>
+          <point x="890" y="110"/>
+        </edge>
+        <edge id="e50" source="n46" type="input" target="n44">
+          <point x="600" y="110"/>
+          <point x="490" y="110"/>
+        </edge>
+        <edge id="e51" source="n46" type="input" target="n45">
+          <point x="600" y="110"/>
+          <point x="720" y="110"/>
+        </edge>
+        <edge id="e55" source="n47" type="input" target="n50">
+          <point x="600" y="310"/>
+          <point x="720" y="310"/>
+        </edge>
+        <edge id="e56" source="n47" type="input" target="n49">
+          <point x="600" y="310"/>
+          <point x="490" y="310"/>
+        </edge>
+        <edge id="e57" source="n51" type="input" target="n53">
+          <point x="850" y="380"/>
+          <point x="890" y="310"/>
+        </edge>
+        <edge id="e58" source="n52" type="input" target="n53">
+          <point x="930" y="380"/>
+          <point x="890" y="310"/>
+        </edge>
+        <edge id="e60" source="n56" type="input" target="n54">
+          <point x="570" y="440"/>
+          <point x="490" y="440"/>
+        </edge>
+        <edge id="e61" source="n56" type="input" target="n55">
+          <point x="570" y="440"/>
+          <point x="650" y="440"/>
+        </edge>
+        <edge id="e63" source="n55" type="inclusion" target="n57">
+          <point x="650" y="440"/>
+          <point x="740" y="440"/>
+        </edge>
+        <edge id="e67" source="n45" type="inclusion" target="n35">
+          <point x="720" y="110"/>
+          <point x="890" y="110"/>
+        </edge>
+        <edge id="e68" source="n50" type="inclusion" target="n53">
+          <point x="720" y="310"/>
+          <point x="890" y="310"/>
+        </edge>
+        <edge id="e69" source="n58" type="inclusion" target="n2">
+          <point x="360" y="625"/>
+          <point x="360" y="272"/>
+        </edge>
+        <edge id="e70" source="n59" type="input" target="n60">
+          <point x="570" y="540"/>
+          <point x="490" y="540"/>
+        </edge>
+        <edge id="e72" source="n60" type="equivalence" target="n58">
+          <point x="490" y="540"/>
+          <point x="414" y="540"/>
+        </edge>
+        <edge id="e73" source="n59" type="input" target="n61">
+          <point x="570" y="540"/>
+          <point x="650" y="540"/>
+        </edge>
+        <edge id="e74" source="n61" type="inclusion" target="n57">
+          <point x="650" y="540"/>
+          <point x="740" y="540"/>
+          <point x="740" y="440"/>
+        </edge>
+        <edge id="e75" source="n62" type="inclusion" target="n58">
+          <point x="490" y="670"/>
+          <point x="414" y="670"/>
+        </edge>
+        <edge id="e76" source="n63" type="input" target="n62">
+          <point x="600" y="670"/>
+          <point x="490" y="670"/>
+        </edge>
+        <edge id="e77" source="n63" type="input" target="n64">
+          <point x="600" y="670"/>
+          <point x="700" y="670"/>
+        </edge>
+        <edge id="e78" source="n64" type="inclusion" target="n66">
+          <point x="700" y="670"/>
+          <point x="800" y="670"/>
+        </edge>
+        <edge id="e79" source="n69" type="inclusion" target="n66">
+          <point x="700" y="740"/>
+          <point x="800" y="740"/>
+          <point x="800" y="670"/>
+        </edge>
+        <edge id="e80" source="n68" type="inclusion" target="n58">
+          <point x="490" y="740"/>
+          <point x="414" y="739"/>
+        </edge>
+        <edge id="e81" source="n67" type="input" target="n69">
+          <point x="600" y="740"/>
+          <point x="700" y="740"/>
+        </edge>
+        <edge id="e82" source="n67" type="input" target="n68">
+          <point x="600" y="740"/>
+          <point x="490" y="740"/>
+        </edge>
+        <edge id="e83" source="n71" type="inclusion" target="n58">
+          <point x="490" y="810"/>
+          <point x="360" y="810"/>
+          <point x="360" y="625"/>
+        </edge>
+        <edge id="e84" source="n70" type="input" target="n71">
+          <point x="600" y="810"/>
+          <point x="490" y="810"/>
+        </edge>
+        <edge id="e85" source="n70" type="input" target="n72">
+          <point x="600" y="810"/>
+          <point x="700" y="810"/>
+        </edge>
+        <edge id="e86" source="n72" type="inclusion" target="n66">
+          <point x="700" y="810"/>
+          <point x="800" y="810"/>
+          <point x="800" y="670"/>
+        </edge>
+        <edge id="e87" source="n44" type="inclusion" target="n2">
+          <point x="490" y="110"/>
+          <point x="360" y="272"/>
+        </edge>
+        <edge id="e88" source="n49" type="inclusion" target="n2">
+          <point x="490" y="310"/>
+          <point x="360" y="272"/>
+        </edge>
+        <edge id="e89" source="n54" type="inclusion" target="n2">
+          <point x="490" y="440"/>
+          <point x="360" y="272"/>
+        </edge>
+      </diagram>
+      <diagram name="02a - Offset distance expression" width="5000" height="5000">
+        <node id="n0" type="concept" color="#fcfcfc">
+          <geometry width="175" height="50" x="-30" y="-90"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#DistanceExpression</iri>
+          <label width="175" height="23" x="-30" customSize="0" y="-90" size="12"/>
+        </node>
+        <node id="n1" type="concept" color="#fcfcfc">
+          <geometry width="180" height="255" x="-30" y="112"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#OffsetDistanceExpression</iri>
+          <label width="180" height="23" x="-30" customSize="0" y="112" size="12"/>
+        </node>
+        <node id="n10" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="300" y="210"/>
+          <label width="39" height="23" x="300" customSize="0" y="188" size="12">exists</label>
+        </node>
+        <node id="n11" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="200" y="30"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#lateralOffsetExpression</iri>
+          <label width="132" height="23" x="200" customSize="0" y="0" size="12"/>
+        </node>
+        <node id="n12" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="200" y="120"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#verticalOffsetExpression</iri>
+          <label width="138" height="23" x="200" customSize="0" y="90" size="12"/>
+        </node>
+        <node id="n13" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="200" y="210"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#longitudinalOffsetExpression</iri>
+          <label width="161" height="23" x="200" customSize="0" y="180" size="12"/>
+        </node>
+        <node id="n2" type="concept" color="#fcfcfc">
+          <geometry width="175" height="50" x="437" y="30"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#LateralOffsetExpression</iri>
+          <label width="175" height="23" x="437" customSize="0" y="30" size="12"/>
+        </node>
+        <node id="n3" type="concept" color="#fcfcfc">
+          <geometry width="170" height="50" x="440" y="120"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#VerticalOffsetExpression</iri>
+          <label width="170" height="23" x="440" customSize="0" y="120" size="12"/>
+        </node>
+        <node id="n4" type="concept" color="#fcfcfc">
+          <geometry width="170" height="50" x="440" y="210"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#LongitudinalOffsetExpression</iri>
+          <label width="170" height="23" x="440" customSize="0" y="210" size="12"/>
+        </node>
+        <node id="n5" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="90" y="30"/>
+          <label width="39" height="23" x="90" customSize="0" y="8" size="12">exists</label>
+        </node>
+        <node id="n6" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="100" y="120"/>
+          <label width="39" height="23" x="100" customSize="0" y="98" size="12">exists</label>
+        </node>
+        <node id="n7" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="100" y="210"/>
+          <label width="39" height="23" x="100" customSize="0" y="188" size="12">exists</label>
+        </node>
+        <node id="n8" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="300" y="30"/>
+          <label width="39" height="23" x="300" customSize="0" y="8" size="12">exists</label>
+        </node>
+        <node id="n9" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="300" y="120"/>
+          <label width="39" height="23" x="300" customSize="0" y="98" size="12">exists</label>
+        </node>
+        <edge id="e0" source="n1" type="inclusion" target="n0">
+          <point x="-30" y="112"/>
+          <point x="-30" y="-90"/>
+        </edge>
+        <edge id="e1" source="n5" type="inclusion" target="n1">
+          <point x="90" y="30"/>
+          <point x="-30" y="112"/>
+        </edge>
+        <edge id="e10" source="n11" type="input" target="n5">
+          <point x="200" y="30"/>
+          <point x="90" y="30"/>
+        </edge>
+        <edge id="e11" source="n11" type="input" target="n8">
+          <point x="200" y="30"/>
+          <point x="300" y="30"/>
+        </edge>
+        <edge id="e12" source="n12" type="input" target="n9">
+          <point x="200" y="120"/>
+          <point x="300" y="120"/>
+        </edge>
+        <edge id="e2" source="n6" type="inclusion" target="n1">
+          <point x="100" y="120"/>
+          <point x="-30" y="112"/>
+        </edge>
+        <edge id="e3" source="n7" type="inclusion" target="n1">
+          <point x="100" y="210"/>
+          <point x="-30" y="112"/>
+        </edge>
+        <edge id="e4" source="n8" type="inclusion" target="n2">
+          <point x="300" y="30"/>
+          <point x="437" y="30"/>
+        </edge>
+        <edge id="e5" source="n9" type="inclusion" target="n3">
+          <point x="300" y="120"/>
+          <point x="440" y="120"/>
+        </edge>
+        <edge id="e6" source="n10" type="inclusion" target="n4">
+          <point x="300" y="210"/>
+          <point x="440" y="210"/>
+        </edge>
+        <edge id="e7" source="n13" type="input" target="n10">
+          <point x="200" y="210"/>
+          <point x="300" y="210"/>
+        </edge>
+        <edge id="e8" source="n13" type="input" target="n7">
+          <point x="200" y="210"/>
+          <point x="100" y="210"/>
+        </edge>
+        <edge id="e9" source="n12" type="input" target="n6">
+          <point x="200" y="120"/>
+          <point x="100" y="120"/>
+        </edge>
+      </diagram>
+      <diagram name="03 - Intrinsic Position" width="5000" height="5000">
+        <node id="n0" type="concept" color="#fcfcfc">
+          <geometry width="110" height="50" x="-250" y="10"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#InstrinsicPosition</iri>
+          <label width="110" height="23" x="-250" customSize="0" y="10" size="12"/>
+        </node>
+        <node id="n1" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="310" y="200"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#linearElement</iri>
+          <label width="80" height="23" x="310" customSize="0" y="170" size="12"/>
+        </node>
+        <node id="n10" type="concept" color="#86f42e">
+          <geometry width="110" height="50" x="310" y="270"/>
+          <iri>https://cdm.ovh/rsm/topology/topo#LinearElement</iri>
+          <label width="110" height="23" x="310" customSize="0" y="270" size="12"/>
+        </node>
+        <node id="n11" type="attribute" color="#fcfcfc">
+          <geometry width="20" height="20" x="240" y="-70"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#icValue</iri>
+          <label width="46" height="23" x="240" customSize="0" y="-92" size="12"/>
+        </node>
+        <node id="n12" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="160" y="-70"/>
+          <label width="39" height="23" x="160" customSize="0" y="-92" size="12">exists</label>
+        </node>
+        <node id="n13" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="320" y="-70"/>
+          <label width="39" height="23" x="320" customSize="0" y="-92" size="12">exists</label>
+        </node>
+        <node id="n14" type="value-domain" color="#fcfcfc">
+          <geometry width="90" height="40" x="410" y="-70"/>
+          <iri>http://www.w3.org/2001/XMLSchema#decimal</iri>
+          <label width="90" height="23" x="410" customSize="0" y="-70" size="12"/>
+        </node>
+        <node id="n15" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="160" y="-10"/>
+          <label width="39" height="23" x="160" customSize="0" y="-32" size="12">exists</label>
+        </node>
+        <node id="n16" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="320" y="-10"/>
+          <label width="39" height="23" x="320" customSize="0" y="-32" size="12">exists</label>
+        </node>
+        <node id="n17" type="attribute" color="#fcfcfc">
+          <geometry width="20" height="20" x="240" y="-10"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#lateralOffset</iri>
+          <label width="73" height="23" x="240" customSize="0" y="-32" size="12"/>
+        </node>
+        <node id="n18" type="attribute" color="#fcfcfc">
+          <geometry width="20" height="20" x="240" y="50"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#verticalOffset</iri>
+          <label width="79" height="23" x="240" customSize="0" y="28" size="12"/>
+        </node>
+        <node id="n19" type="attribute" color="#fcfcfc">
+          <geometry width="20" height="20" x="240" y="110"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#longitudinalOffset</iri>
+          <label width="103" height="23" x="240" customSize="0" y="88" size="12"/>
+        </node>
+        <node id="n2" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="190" y="270"/>
+          <label width="39" height="23" x="190" customSize="0" y="248" size="12">forall</label>
+        </node>
+        <node id="n20" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="160" y="50"/>
+          <label width="39" height="23" x="160" customSize="0" y="28" size="12">exists</label>
+        </node>
+        <node id="n21" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="320" y="50"/>
+          <label width="39" height="23" x="320" customSize="0" y="28" size="12">exists</label>
+        </node>
+        <node id="n22" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="160" y="110"/>
+          <label width="39" height="23" x="160" customSize="0" y="88" size="12">exists</label>
+        </node>
+        <node id="n23" type="range-restriction" color="#000000">
+          <geometry width="20" height="20" x="320" y="110"/>
+          <label width="39" height="23" x="320" customSize="0" y="88" size="12">exists</label>
+        </node>
+        <node id="n4" type="concept" color="#fcfcfc">
+          <geometry width="165" height="245" x="20" y="7"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#IntrinsicPositionExpression</iri>
+          <label width="165" height="23" x="20" customSize="0" y="7" size="12"/>
+        </node>
+        <node id="n5" type="role" color="#fcfcfc">
+          <geometry width="70" height="50" x="-140" y="-80"/>
+          <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#hasPositionExpression</iri>
+          <label width="129" height="23" x="-140" customSize="0" y="-110" size="12"/>
+        </node>
+        <node id="n7" type="domain-restriction" color="#fcfcfc">
+          <geometry width="20" height="20" x="-140" y="10"/>
+          <label width="39" height="23" x="-140" customSize="0" y="-12" size="12">forall</label>
+        </node>
+        <edge id="e0" source="n1" type="input" target="n2">
+          <point x="310" y="200"/>
+          <point x="190" y="270"/>
+        </edge>
+        <edge id="e10" source="n10" type="input" target="n2">
+          <point x="310" y="270"/>
+          <point x="190" y="270"/>
+        </edge>
+        <edge id="e11" source="n0" type="inclusion" target="n7">
+          <point x="-250" y="10"/>
+          <point x="-140" y="10"/>
+        </edge>
+        <edge id="e12" source="n5" type="input" target="n7">
+          <point x="-140" y="-80"/>
+          <point x="-140" y="10"/>
+        </edge>
+        <edge id="e13" source="n4" type="input" target="n7">
+          <point x="20" y="7"/>
+          <point x="-140" y="10"/>
+        </edge>
+        <edge id="e14" source="n13" type="inclusion" target="n14">
+          <point x="320" y="-70"/>
+          <point x="410" y="-70"/>
+        </edge>
+        <edge id="e16" source="n4" type="equivalence" target="n12">
+          <point x="101" y="-70"/>
+          <point x="160" y="-70"/>
+        </edge>
+        <edge id="e17" source="n11" type="input" target="n12">
+          <point x="240" y="-70"/>
+          <point x="160" y="-70"/>
+        </edge>
+        <edge id="e18" source="n11" type="input" target="n13">
+          <point x="240" y="-70"/>
+          <point x="320" y="-70"/>
+        </edge>
+        <edge id="e19" source="n15" type="inclusion" target="n4">
+          <point x="160" y="-10"/>
+          <point x="20" y="7"/>
+        </edge>
+        <edge id="e20" source="n17" type="input" target="n16">
+          <point x="240" y="-10"/>
+          <point x="320" y="-10"/>
+        </edge>
+        <edge id="e21" source="n17" type="input" target="n15">
+          <point x="240" y="-10"/>
+          <point x="160" y="-10"/>
+        </edge>
+        <edge id="e22" source="n16" type="inclusion" target="n14">
+          <point x="320" y="-10"/>
+          <point x="410" y="-10"/>
+          <point x="410" y="-70"/>
+        </edge>
+        <edge id="e23" source="n20" type="inclusion" target="n4">
+          <point x="160" y="50"/>
+          <point x="20" y="7"/>
+        </edge>
+        <edge id="e24" source="n22" type="inclusion" target="n4">
+          <point x="160" y="110"/>
+          <point x="20" y="7"/>
+        </edge>
+        <edge id="e25" source="n21" type="inclusion" target="n14">
+          <point x="320" y="50"/>
+          <point x="410" y="50"/>
+          <point x="410" y="-70"/>
+        </edge>
+        <edge id="e26" source="n23" type="inclusion" target="n14">
+          <point x="320" y="110"/>
+          <point x="410" y="110"/>
+          <point x="410" y="-70"/>
+        </edge>
+        <edge id="e27" source="n18" type="input" target="n20">
+          <point x="240" y="50"/>
+          <point x="160" y="50"/>
+        </edge>
+        <edge id="e28" source="n18" type="input" target="n21">
+          <point x="240" y="50"/>
+          <point x="320" y="50"/>
+        </edge>
+        <edge id="e29" source="n19" type="input" target="n22">
+          <point x="240" y="110"/>
+          <point x="160" y="110"/>
+        </edge>
+        <edge id="e3" source="n4" type="inclusion" target="n2">
+          <point x="101" y="100"/>
+          <point x="190" y="270"/>
+        </edge>
+        <edge id="e30" source="n19" type="input" target="n23">
+          <point x="240" y="110"/>
+          <point x="320" y="110"/>
+        </edge>
+      </diagram>
+    </diagrams>
+  </project>
+</graphol>
