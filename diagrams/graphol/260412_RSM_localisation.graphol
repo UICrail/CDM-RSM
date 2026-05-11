@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <graphol version="3">
-  <project name="sRSM" version="https://cdm.ovh/rsm/localisation/2.0/loca">
-    <ontology addLabelFromSimpleName="0" addLabelFromUserInput="1" iri="https://cdm.ovh/rsm/localisation/loca" lang="en">
+  <project version="https://cdm.ovh/rsm/localisation/2.0/loca" name="sRSM">
+    <ontology addLabelFromUserInput="1" iri="https://cdm.ovh/rsm/localisation/loca" lang="en" addLabelFromSimpleName="0">
       <imports>
-        <import location="https://cdm.ovh/rsm/linearReferencing/rlrs" version="https://cdm.ovh/rsm/linearReferencing/rlrs" iri="https://cdm.ovh/rsm/linearReferencing/rlrs" isLocal="0"/>
-        <import location="https://cdm.ovh/rsm/list2/list2" version="https://cdm.ovh/rsm/list2/list2" iri="https://cdm.ovh/rsm/list2/list2" isLocal="0"/>
-        <import location="https://cdm.ovh/rsm/topology/topo" version="https://cdm.ovh/rsm/topology/topo" iri="https://cdm.ovh/rsm/topology/topo" isLocal="0"/>
+        <import isLocal="0" iri="https://cdm.ovh/rsm/linearReferencing/rlrs" location="https://cdm.ovh/rsm/linearReferencing/rlrs" version="https://cdm.ovh/rsm/linearReferencing/rlrs"/>
+        <import isLocal="0" iri="https://cdm.ovh/rsm/list2/list2" location="https://cdm.ovh/rsm/list2/list2" version="https://cdm.ovh/rsm/list2/list2"/>
+        <import isLocal="0" iri="https://cdm.ovh/rsm/topology/topo" location="https://cdm.ovh/rsm/topology/topo" version="https://cdm.ovh/rsm/topology/topo"/>
       </imports>
       <prefixes>
         <prefix>
@@ -198,6 +198,20 @@
         </iri>
         <iri>
           <value>http://www.ontologydesignpatterns.org/ont/dul/DUL#Object</value>
+        </iri>
+        <iri>
+          <value>http://www.ontologydesignpatterns.org/ont/dul/DUL#PhysicalObject</value>
+          <annotations>
+            <annotation>
+              <subject>http://www.ontologydesignpatterns.org/ont/dul/DUL#PhysicalObject</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>PhysicalObject</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
         </iri>
         <iri>
           <value>http://www.ontologydesignpatterns.org/ont/dul/DUL#Situation</value>
@@ -938,23 +952,51 @@ For spot locations (and, by extension, for linear locations) on linear elements,
           </annotations>
         </iri>
         <iri>
-          <value>https://cdm.ovh/rsm/localisation/loca#location</value>
+          <value>https://cdm.ovh/rsm/localisation/loca#isLocatedAt</value>
           <inverseFunctional/>
           <annotations>
             <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/loca#location</subject>
+              <subject>https://cdm.ovh/rsm/localisation/loca#isLocatedAt</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#label</property>
               <object>
-                <lexicalForm>location</lexicalForm>
+                <lexicalForm>is located at</lexicalForm>
+                <datatype>http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral</datatype>
+                <language>en</language>
+              </object>
+            </annotation>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/loca#isLocatedAt</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
+              <object>
+                <lexicalForm>Location, on nework topology, that is occupied by the Thing in subject position. A property of physical objects (massive bodies, artefacts...).
+Note 1: physical objects that are immaterial (such as a standing wave, an electromagnetic field...) are not categorized as dul:PhysicalObject. See DOLCE or DUL documentation. Avoid using "isLocatedAt" in suche case, lest the standing wave becoming material by inference.
+Note 2: non-physical objects such as 'speed restriction' have a functional relationship with space ('applicable to') and that relationship is not ' occupancy'.</lexicalForm>
+                <datatype/>
+                <language>en</language>
+              </object>
+            </annotation>
+          </annotations>
+        </iri>
+        <iri>
+          <value>https://cdm.ovh/rsm/localisation/loca#relatedLocation</value>
+          <inverseFunctional/>
+          <annotations>
+            <annotation>
+              <subject>https://cdm.ovh/rsm/localisation/loca#relatedLocation</subject>
+              <property>http://www.w3.org/2000/01/rdf-schema#label</property>
+              <object>
+                <lexicalForm>relatedLocation</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
             </annotation>
             <annotation>
-              <subject>https://cdm.ovh/rsm/localisation/loca#location</subject>
+              <subject>https://cdm.ovh/rsm/localisation/loca#relatedLocation</subject>
               <property>http://www.w3.org/2000/01/rdf-schema#comment</property>
               <object>
-                <lexicalForm>Generic property assigning some location to a Thing.</lexicalForm>
+                <lexicalForm>Generic property assigning some location to a Thing.
+Semantics areintentionally vague, and may include: "occupies space", "can reach", "observes", "controls", etc.
+The meaning of the 'location" should be disambiguated using subproperties or Situation patterns (n-ary relations).</lexicalForm>
                 <datatype/>
                 <language>en</language>
               </object>
@@ -15567,293 +15609,319 @@ For spot locations (and, by extension, for linear locations) on linear elements,
     <diagrams>
       <diagram width="5000" name="01 - Localisation" height="5000">
         <node type="concept" color="#fcfcfc" id="n5">
-          <geometry width="110" height="50" x="-400" y="-180"/>
+          <geometry width="110" y="-180" x="-400" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#BaseLocation</iri>
-          <label customSize="0" width="110" size="12" height="23" x="-400" y="-180"/>
+          <label width="110" y="-180" x="-400" customSize="0" height="23" size="12"/>
         </node>
         <node type="concept" color="#fcfcfc" id="n6">
-          <geometry width="122" height="50" x="-400" y="50"/>
+          <geometry width="122" y="50" x="-400" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#LinearLocation</iri>
-          <label customSize="0" width="122" size="12" height="23" x="-400" y="50"/>
+          <label width="122" y="50" x="-400" customSize="0" height="23" size="12"/>
         </node>
         <node type="concept" color="#fcfcfc" id="n7">
-          <geometry width="120" height="50" x="-400" y="130"/>
+          <geometry width="120" y="130" x="-400" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#AreaLocation</iri>
-          <label customSize="0" width="120" size="12" height="23" x="-400" y="130"/>
+          <label width="120" y="130" x="-400" customSize="0" height="23" size="12"/>
         </node>
         <node type="concept" color="#c2b078" id="n70">
-          <geometry width="110" height="50" x="-400" y="-270"/>
+          <geometry width="110" y="-270" x="-400" height="50"/>
           <iri>https://cdm.ovh/rsm/geosparql_adapter/rgeo#Feature</iri>
-          <label customSize="0" width="110" size="12" height="23" x="-400" y="-270"/>
+          <label width="110" y="-270" x="-400" customSize="0" height="23" size="12"/>
         </node>
         <node type="concept" color="#fcfcfc" id="n8">
-          <geometry width="120" height="50" x="-400" y="-30"/>
+          <geometry width="120" y="-30" x="-400" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#SpotLocation</iri>
-          <label customSize="0" width="120" size="12" height="23" x="-400" y="-30"/>
+          <label width="120" y="-30" x="-400" customSize="0" height="23" size="12"/>
         </node>
         <node type="role" color="#fcfcfc" id="n88">
-          <geometry width="70" height="50" x="-590" y="-180"/>
-          <iri>https://cdm.ovh/rsm/localisation/loca#location</iri>
-          <label customSize="0" width="50" size="12" height="23" x="-590" y="-210"/>
+          <geometry width="70" y="-180" x="-620" height="50"/>
+          <iri>https://cdm.ovh/rsm/localisation/loca#relatedLocation</iri>
+          <label width="91" y="-210" x="-620" customSize="0" height="23" size="12"/>
         </node>
         <node type="range-restriction" color="#000000" id="n89">
-          <geometry width="20" height="20" x="-510" y="-180"/>
-          <label customSize="0" width="39" size="12" height="23" x="-510" y="-202">exists</label>
+          <geometry width="20" y="-180" x="-510" height="20"/>
+          <label width="39" y="-202" x="-510" customSize="0" height="23" size="12">exists</label>
         </node>
         <node type="disjoint-union" color="#000000" id="n9">
-          <geometry width="50" height="30" x="-400" y="-110"/>
+          <geometry width="50" y="-110" x="-400" height="30"/>
         </node>
         <node type="concept" color="#fcfcfc" id="n90">
-          <geometry width="155" height="50" x="-400" y="210"/>
+          <geometry width="155" y="210" x="-400" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#ConnectedAreaLocation</iri>
-          <label customSize="0" width="155" size="12" height="23" x="-400" y="210"/>
+          <label width="155" y="210" x="-400" customSize="0" height="23" size="12"/>
         </node>
-        <edge type="inclusion" source="n5" target="n70" id="e116">
-          <point x="-400" y="-180"/>
-          <point x="-400" y="-270"/>
+        <node type="role" color="#fcfcfc" id="n91">
+          <geometry width="70" y="-90" x="-620" height="50"/>
+          <iri>https://cdm.ovh/rsm/localisation/loca#isLocatedAt</iri>
+          <label width="71" y="-120" x="-620" customSize="0" height="23" size="12"/>
+        </node>
+        <node type="concept" color="#c2b078" id="n92">
+          <geometry width="110" y="-90" x="-800" height="50"/>
+          <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL#PhysicalObject</iri>
+          <label width="110" y="-90" x="-800" customSize="0" height="23" size="12"/>
+        </node>
+        <node type="domain-restriction" color="#fcfcfc" id="n93">
+          <geometry width="20" y="-90" x="-700" height="20"/>
+          <label width="39" y="-112" x="-700" customSize="0" height="23" size="12">exists</label>
+        </node>
+        <edge type="inclusion" id="e116" target="n70" source="n5">
+          <point y="-180" x="-400"/>
+          <point y="-270" x="-400"/>
         </edge>
-        <edge type="input" source="n7" target="n9" id="e152">
-          <point x="-400" y="130"/>
-          <point x="-530" y="130"/>
-          <point x="-530" y="-110"/>
-          <point x="-400" y="-110"/>
+        <edge type="input" id="e152" target="n9" source="n7">
+          <point y="130" x="-400"/>
+          <point y="130" x="-530"/>
+          <point y="-110" x="-530"/>
+          <point y="-110" x="-400"/>
         </edge>
-        <edge type="input" source="n8" target="n9" id="e154">
-          <point x="-400" y="-30"/>
-          <point x="-400" y="-110"/>
+        <edge type="input" id="e154" target="n9" source="n8">
+          <point y="-30" x="-400"/>
+          <point y="-110" x="-400"/>
         </edge>
-        <edge type="input" source="n6" target="n9" id="e155">
-          <point x="-400" y="50"/>
-          <point x="-490" y="50"/>
-          <point x="-490" y="-90"/>
-          <point x="-400" y="-110"/>
+        <edge type="input" id="e155" target="n9" source="n6">
+          <point y="50" x="-400"/>
+          <point y="50" x="-490"/>
+          <point y="-90" x="-490"/>
+          <point y="-110" x="-400"/>
         </edge>
-        <edge type="inclusion" source="n9" target="n5" id="e164">
-          <point x="-400" y="-110"/>
-          <point x="-400" y="-180"/>
+        <edge type="inclusion" id="e164" target="n5" source="n9">
+          <point y="-110" x="-400"/>
+          <point y="-180" x="-400"/>
         </edge>
-        <edge type="inclusion" source="n89" target="n5" id="e165">
-          <point x="-510" y="-180"/>
-          <point x="-400" y="-180"/>
+        <edge type="inclusion" id="e165" target="n5" source="n89">
+          <point y="-180" x="-510"/>
+          <point y="-180" x="-400"/>
         </edge>
-        <edge type="input" source="n88" target="n89" id="e166">
-          <point x="-590" y="-180"/>
-          <point x="-510" y="-180"/>
+        <edge type="input" id="e166" target="n89" source="n88">
+          <point y="-180" x="-620"/>
+          <point y="-180" x="-510"/>
         </edge>
-        <edge type="inclusion" source="n90" target="n7" id="e167">
-          <point x="-400" y="210"/>
-          <point x="-400" y="130"/>
+        <edge type="inclusion" id="e167" target="n7" source="n90">
+          <point y="210" x="-400"/>
+          <point y="130" x="-400"/>
+        </edge>
+        <edge type="inclusion" id="e168" target="n88" source="n91">
+          <point y="-90" x="-620"/>
+          <point y="-180" x="-620"/>
+        </edge>
+        <edge type="inclusion" id="e169" target="n92" source="n93">
+          <point y="-90" x="-700"/>
+          <point y="-90" x="-800"/>
+        </edge>
+        <edge type="input" id="e170" target="n93" source="n91">
+          <point y="-90" x="-620"/>
+          <point y="-90" x="-700"/>
         </edge>
       </diagram>
       <diagram width="5000" name="02 - Linear positioning" height="5000">
         <node type="concept" color="#ff0090" id="n51">
-          <geometry width="110" height="50" x="-130" y="40"/>
+          <geometry width="110" y="40" x="-130" height="50"/>
           <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#LinearPosition</iri>
-          <label customSize="0" width="110" size="12" height="23" x="-130" y="40"/>
+          <label width="110" y="40" x="-130" customSize="0" height="23" size="12"/>
         </node>
         <node type="concept" color="#f0e50c" id="n52">
-          <geometry width="110" height="50" x="-130" y="-60"/>
+          <geometry width="110" y="-60" x="-130" height="50"/>
           <iri>https://cdm.ovh/rsm/list2/list2#OWLList</iri>
-          <label customSize="0" width="110" size="12" height="23" x="-130" y="-60"/>
+          <label width="110" y="-60" x="-130" customSize="0" height="23" size="12"/>
         </node>
         <node type="role" color="#ff0090" id="n54">
-          <geometry width="70" height="50" x="-320" y="40"/>
+          <geometry width="70" y="40" x="-320" height="50"/>
           <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#positionedBy</iri>
-          <label customSize="0" width="77" size="12" height="23" x="-320" y="10"/>
+          <label width="77" y="10" x="-320" customSize="0" height="23" size="12"/>
         </node>
         <node type="domain-restriction" color="#fcfcfc" id="n55">
-          <geometry width="20" height="20" x="-400" y="40"/>
-          <label customSize="0" width="39" size="12" height="23" x="-400" y="18">exists</label>
+          <geometry width="20" y="40" x="-400" height="20"/>
+          <label width="39" y="18" x="-400" customSize="0" height="23" size="12">exists</label>
         </node>
         <node type="range-restriction" color="#000000" id="n56">
-          <geometry width="20" height="20" x="-240" y="40"/>
-          <label customSize="0" width="39" size="12" height="23" x="-240" y="18">exists</label>
+          <geometry width="20" y="40" x="-240" height="20"/>
+          <label width="39" y="18" x="-240" customSize="0" height="23" size="12">exists</label>
         </node>
         <node type="role-inverse" color="#fcfcfc" id="n57">
-          <geometry width="50" height="30" x="-320" y="-30"/>
-          <label customSize="0" width="23" size="12" height="23" x="-320" y="-30"/>
+          <geometry width="50" y="-30" x="-320" height="30"/>
+          <label width="23" y="-30" x="-320" customSize="0" height="23" size="12"/>
         </node>
         <node type="role" color="#ff0090" id="n58">
-          <geometry width="70" height="50" x="-320" y="-110"/>
+          <geometry width="70" y="-110" x="-320" height="50"/>
           <iri>https://cdm.ovh/rsm/linearReferencing/rlrs#positionsObject</iri>
-          <label customSize="0" width="91" size="12" height="23" x="-320" y="-140"/>
+          <label width="91" y="-140" x="-320" customSize="0" height="23" size="12"/>
         </node>
         <node type="concept" color="#fcfcfc" id="n59">
-          <geometry width="110" height="50" x="-530" y="140"/>
+          <geometry width="110" y="140" x="-530" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#BaseLocation</iri>
-          <label customSize="0" width="110" size="12" height="23" x="-530" y="140"/>
+          <label width="110" y="140" x="-530" customSize="0" height="23" size="12"/>
         </node>
         <node type="concept" color="#c2b078" id="n60">
-          <geometry width="110" height="50" x="-530" y="40"/>
+          <geometry width="110" y="40" x="-530" height="50"/>
           <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL#Object</iri>
-          <label customSize="0" width="110" size="12" height="23" x="-530" y="40"/>
+          <label width="110" y="40" x="-530" customSize="0" height="23" size="12"/>
         </node>
-        <edge type="inclusion" source="n51" target="n52" id="e116">
-          <point x="-130" y="40"/>
-          <point x="-130" y="-60"/>
+        <edge type="inclusion" id="e116" target="n52" source="n51">
+          <point y="40" x="-130"/>
+          <point y="-60" x="-130"/>
         </edge>
-        <edge type="inclusion" source="n56" target="n51" id="e117">
-          <point x="-240" y="40"/>
-          <point x="-130" y="40"/>
+        <edge type="inclusion" id="e117" target="n51" source="n56">
+          <point y="40" x="-240"/>
+          <point y="40" x="-130"/>
         </edge>
-        <edge type="input" source="n54" target="n56" id="e119">
-          <point x="-320" y="40"/>
-          <point x="-240" y="40"/>
+        <edge type="input" id="e119" target="n56" source="n54">
+          <point y="40" x="-320"/>
+          <point y="40" x="-240"/>
         </edge>
-        <edge type="input" source="n54" target="n55" id="e120">
-          <point x="-320" y="40"/>
-          <point x="-400" y="40"/>
+        <edge type="input" id="e120" target="n55" source="n54">
+          <point y="40" x="-320"/>
+          <point y="40" x="-400"/>
         </edge>
-        <edge type="inclusion" source="n54" target="n57" id="e121">
-          <point x="-320" y="40"/>
-          <point x="-320" y="-30"/>
+        <edge type="inclusion" id="e121" target="n57" source="n54">
+          <point y="40" x="-320"/>
+          <point y="-30" x="-320"/>
         </edge>
-        <edge type="input" source="n58" target="n57" id="e122">
-          <point x="-320" y="-110"/>
-          <point x="-320" y="-30"/>
+        <edge type="input" id="e122" target="n57" source="n58">
+          <point y="-110" x="-320"/>
+          <point y="-30" x="-320"/>
         </edge>
-        <edge type="inclusion" source="n59" target="n60" id="e124">
-          <point x="-530" y="140"/>
-          <point x="-530" y="40"/>
+        <edge type="inclusion" id="e124" target="n60" source="n59">
+          <point y="140" x="-530"/>
+          <point y="40" x="-530"/>
         </edge>
-        <edge type="inclusion" source="n55" target="n60" id="e125">
-          <point x="-400" y="40"/>
-          <point x="-530" y="40"/>
+        <edge type="inclusion" id="e125" target="n60" source="n55">
+          <point y="40" x="-400"/>
+          <point y="40" x="-530"/>
         </edge>
       </diagram>
       <diagram width="5000" name="03 - Timed_location" height="5000">
         <node type="concept" color="#c2b078" id="n1">
-          <geometry width="110" height="50" x="140" y="-100"/>
+          <geometry width="110" y="-100" x="140" height="50"/>
           <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL#Situation</iri>
-          <label customSize="0" width="110" size="12" height="23" x="140" y="-100"/>
+          <label width="110" y="-100" x="140" customSize="0" height="23" size="12"/>
         </node>
         <node type="role" color="#fcfcfc" id="n11">
-          <geometry width="70" height="50" x="340" y="140"/>
+          <geometry width="70" y="140" x="340" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#forEntity</iri>
-          <label customSize="0" width="52" size="12" height="23" x="340" y="110"/>
+          <label width="52" y="110" x="340" customSize="0" height="23" size="12"/>
         </node>
         <node type="domain-restriction" color="#fcfcfc" id="n12">
-          <geometry width="20" height="20" x="250" y="140"/>
-          <label customSize="0" width="39" size="12" height="23" x="250" y="118">exists</label>
+          <geometry width="20" y="140" x="250" height="20"/>
+          <label width="39" y="118" x="250" customSize="0" height="23" size="12">exists</label>
         </node>
         <node type="range-restriction" color="#000000" id="n13">
-          <geometry width="20" height="20" x="420" y="140"/>
-          <label customSize="0" width="39" size="12" height="23" x="420" y="118">exists</label>
+          <geometry width="20" y="140" x="420" height="20"/>
+          <label width="39" y="118" x="420" customSize="0" height="23" size="12">exists</label>
         </node>
         <node type="role-inverse" color="#fcfcfc" id="n14">
-          <geometry width="50" height="30" x="340" y="220"/>
-          <label customSize="0" width="23" size="12" height="23" x="340" y="220"/>
+          <geometry width="50" y="220" x="340" height="30"/>
+          <label width="23" y="220" x="340" customSize="0" height="23" size="12"/>
         </node>
         <node type="role" color="#fcfcfc" id="n15">
-          <geometry width="70" height="50" x="340" y="60"/>
+          <geometry width="70" y="60" x="340" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#atInterval</iri>
-          <label customSize="0" width="57" size="12" height="23" x="340" y="30"/>
+          <label width="57" y="30" x="340" customSize="0" height="23" size="12"/>
         </node>
         <node type="domain-restriction" color="#fcfcfc" id="n16">
-          <geometry width="20" height="20" x="250" y="60"/>
-          <label customSize="0" width="39" size="12" height="23" x="250" y="38">exists</label>
+          <geometry width="20" y="60" x="250" height="20"/>
+          <label width="39" y="38" x="250" customSize="0" height="23" size="12">exists</label>
         </node>
         <node type="range-restriction" color="#000000" id="n17">
-          <geometry width="20" height="20" x="420" y="60"/>
-          <label customSize="0" width="39" size="12" height="23" x="420" y="38">exists</label>
+          <geometry width="20" y="60" x="420" height="20"/>
+          <label width="39" y="38" x="420" customSize="0" height="23" size="12">exists</label>
         </node>
         <node type="concept" color="#16ccef" id="n18">
-          <geometry width="110" height="50" x="540" y="60"/>
+          <geometry width="110" y="60" x="540" height="50"/>
           <iri>http://www.w3.org/2006/time#Interval</iri>
-          <label customSize="0" width="110" size="12" height="23" x="540" y="60"/>
+          <label width="110" y="60" x="540" customSize="0" height="23" size="12"/>
         </node>
         <node type="concept" color="#fcfcfc" id="n2">
-          <geometry width="110" height="50" x="140" y="60"/>
+          <geometry width="110" y="60" x="140" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#TimedLocation</iri>
-          <label customSize="0" width="110" size="12" height="23" x="140" y="60"/>
+          <label width="110" y="60" x="140" customSize="0" height="23" size="12"/>
         </node>
         <node type="role" color="#fcfcfc" id="n3">
-          <geometry width="70" height="50" x="340" y="310"/>
+          <geometry width="70" y="310" x="340" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#hasTimedLocation</iri>
-          <label customSize="0" width="107" size="12" height="23" x="340" y="280"/>
+          <label width="107" y="280" x="340" customSize="0" height="23" size="12"/>
         </node>
         <node type="role" color="#fcfcfc" id="n5">
-          <geometry width="70" height="50" x="340" y="-10"/>
+          <geometry width="70" y="-10" x="340" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#atLocation</iri>
-          <label customSize="0" width="64" size="12" height="23" x="340" y="-40"/>
+          <label width="64" y="-40" x="340" customSize="0" height="23" size="12"/>
         </node>
         <node type="domain-restriction" color="#fcfcfc" id="n6">
-          <geometry width="20" height="20" x="250" y="-10"/>
-          <label customSize="0" width="39" size="12" height="23" x="250" y="-32">exists</label>
+          <geometry width="20" y="-10" x="250" height="20"/>
+          <label width="39" y="-32" x="250" customSize="0" height="23" size="12">exists</label>
         </node>
         <node type="range-restriction" color="#000000" id="n7">
-          <geometry width="20" height="20" x="420" y="-10"/>
-          <label customSize="0" width="39" size="12" height="23" x="420" y="-32">exists</label>
+          <geometry width="20" y="-10" x="420" height="20"/>
+          <label width="39" y="-32" x="420" customSize="0" height="23" size="12">exists</label>
         </node>
         <node type="concept" color="#fcfcfc" id="n8">
-          <geometry width="110" height="50" x="540" y="-10"/>
+          <geometry width="110" y="-10" x="540" height="50"/>
           <iri>https://cdm.ovh/rsm/localisation/loca#BaseLocation</iri>
-          <label customSize="0" width="110" size="12" height="23" x="540" y="-10"/>
+          <label width="110" y="-10" x="540" customSize="0" height="23" size="12"/>
         </node>
         <node type="concept" color="#c2b078" id="n9">
-          <geometry width="110" height="50" x="540" y="140"/>
+          <geometry width="110" y="140" x="540" height="50"/>
           <iri>http://www.ontologydesignpatterns.org/ont/dul/DUL#Entity</iri>
-          <label customSize="0" width="110" size="12" height="23" x="540" y="140"/>
+          <label width="110" y="140" x="540" customSize="0" height="23" size="12"/>
         </node>
-        <edge type="inclusion" source="n2" target="n1" id="e0">
-          <point x="140" y="60"/>
-          <point x="140" y="-100"/>
+        <edge type="inclusion" id="e0" target="n1" source="n2">
+          <point y="60" x="140"/>
+          <point y="-100" x="140"/>
         </edge>
-        <edge type="inclusion" source="n12" target="n2" id="e11">
-          <point x="250" y="140"/>
-          <point x="140" y="60"/>
+        <edge type="inclusion" id="e11" target="n2" source="n12">
+          <point y="140" x="250"/>
+          <point y="60" x="140"/>
         </edge>
-        <edge type="inclusion" source="n13" target="n9" id="e12">
-          <point x="420" y="140"/>
-          <point x="540" y="140"/>
+        <edge type="inclusion" id="e12" target="n9" source="n13">
+          <point y="140" x="420"/>
+          <point y="140" x="540"/>
         </edge>
-        <edge type="input" source="n11" target="n13" id="e13">
-          <point x="340" y="140"/>
-          <point x="420" y="140"/>
+        <edge type="input" id="e13" target="n13" source="n11">
+          <point y="140" x="340"/>
+          <point y="140" x="420"/>
         </edge>
-        <edge type="input" source="n11" target="n12" id="e14">
-          <point x="340" y="140"/>
-          <point x="250" y="140"/>
+        <edge type="input" id="e14" target="n12" source="n11">
+          <point y="140" x="340"/>
+          <point y="140" x="250"/>
         </edge>
-        <edge type="input" source="n11" target="n14" id="e16">
-          <point x="340" y="140"/>
-          <point x="340" y="220"/>
+        <edge type="input" id="e16" target="n14" source="n11">
+          <point y="140" x="340"/>
+          <point y="220" x="340"/>
         </edge>
-        <edge type="equivalence" source="n3" target="n14" id="e17">
-          <point x="340" y="310"/>
-          <point x="340" y="220"/>
+        <edge type="equivalence" id="e17" target="n14" source="n3">
+          <point y="310" x="340"/>
+          <point y="220" x="340"/>
         </edge>
-        <edge type="inclusion" source="n17" target="n18" id="e18">
-          <point x="420" y="60"/>
-          <point x="540" y="60"/>
+        <edge type="inclusion" id="e18" target="n18" source="n17">
+          <point y="60" x="420"/>
+          <point y="60" x="540"/>
         </edge>
-        <edge type="inclusion" source="n16" target="n2" id="e19">
-          <point x="250" y="60"/>
-          <point x="140" y="60"/>
+        <edge type="inclusion" id="e19" target="n2" source="n16">
+          <point y="60" x="250"/>
+          <point y="60" x="140"/>
         </edge>
-        <edge type="input" source="n15" target="n17" id="e20">
-          <point x="340" y="60"/>
-          <point x="420" y="60"/>
+        <edge type="input" id="e20" target="n17" source="n15">
+          <point y="60" x="340"/>
+          <point y="60" x="420"/>
         </edge>
-        <edge type="input" source="n15" target="n16" id="e21">
-          <point x="340" y="60"/>
-          <point x="250" y="60"/>
+        <edge type="input" id="e21" target="n16" source="n15">
+          <point y="60" x="340"/>
+          <point y="60" x="250"/>
         </edge>
-        <edge type="inclusion" source="n6" target="n2" id="e4">
-          <point x="250" y="-10"/>
-          <point x="140" y="60"/>
+        <edge type="inclusion" id="e4" target="n2" source="n6">
+          <point y="-10" x="250"/>
+          <point y="60" x="140"/>
         </edge>
-        <edge type="input" source="n5" target="n6" id="e5">
-          <point x="340" y="-10"/>
-          <point x="250" y="-10"/>
+        <edge type="input" id="e5" target="n6" source="n5">
+          <point y="-10" x="340"/>
+          <point y="-10" x="250"/>
         </edge>
-        <edge type="input" source="n5" target="n7" id="e6">
-          <point x="340" y="-10"/>
-          <point x="420" y="-10"/>
+        <edge type="input" id="e6" target="n7" source="n5">
+          <point y="-10" x="340"/>
+          <point y="-10" x="420"/>
         </edge>
-        <edge type="inclusion" source="n7" target="n8" id="e7">
-          <point x="420" y="-10"/>
-          <point x="540" y="-10"/>
+        <edge type="inclusion" id="e7" target="n8" source="n7">
+          <point y="-10" x="420"/>
+          <point y="-10" x="540"/>
         </edge>
       </diagram>
     </diagrams>

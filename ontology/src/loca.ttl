@@ -119,12 +119,25 @@ loca:hasTimedLocation rdf:type owl:ObjectProperty ;
                       rdfs:label "has timed location"@en .
 
 
-###  https://cdm.ovh/rsm/localisation/loca#location
-loca:location rdf:type owl:ObjectProperty ,
-                       owl:InverseFunctionalProperty ;
-              rdfs:range loca:BaseLocation ;
-              rdfs:comment "Generic property assigning some location to a Thing."@en ;
-              rdfs:label "location"@en .
+###  https://cdm.ovh/rsm/localisation/loca#isLocatedAt
+loca:isLocatedAt rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf loca:relatedLocation ;
+                 rdf:type owl:InverseFunctionalProperty ;
+                 rdfs:domain dul:PhysicalObject ;
+                 rdfs:comment """Location, on nework topology, that is occupied by the Thing in subject position. A property of physical objects (massive bodies, artefacts...).
+Note 1: physical objects that are immaterial (such as a standing wave, an electromagnetic field...) are not categorized as dul:PhysicalObject. See DOLCE or DUL documentation. Avoid using \"isLocatedAt\" in suche case, lest the standing wave becoming material by inference.
+Note 2: non-physical objects such as 'speed restriction' have a functional relationship with space ('applicable to') and that relationship is not ' occupancy'."""@en ;
+                 rdfs:label "is located at"@en .
+
+
+###  https://cdm.ovh/rsm/localisation/loca#relatedLocation
+loca:relatedLocation rdf:type owl:ObjectProperty ,
+                              owl:InverseFunctionalProperty ;
+                     rdfs:range loca:BaseLocation ;
+                     rdfs:comment """Generic property assigning some location to a Thing.
+Semantics areintentionally vague, and may include: \"occupies space\", \"can reach\", \"observes\", \"controls\", etc.
+The meaning of the 'location\" should be disambiguated using subproperties or Situation patterns (n-ary relations)."""@en ;
+                     rdfs:label "relatedLocation"@en .
 
 
 #################################################################
@@ -137,6 +150,11 @@ dul:Entity rdf:type owl:Class .
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL#Object
 dul:Object rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dul/DUL#PhysicalObject
+dul:PhysicalObject rdf:type owl:Class ;
+                   rdfs:label "PhysicalObject"@en .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dul/DUL#Situation

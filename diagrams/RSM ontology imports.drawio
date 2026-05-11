@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36">
   <diagram name="Page-1" id="kaNj1CVWsfXhPuwxq6nt">
-    <mxGraphModel dx="774" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1118" dy="868" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -49,19 +49,32 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="h8s6wc6OMsW0oHRsNa-q-21" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;rtim&lt;/h1&gt;&lt;p&gt;time interval, validity interval&lt;/p&gt;" vertex="1">
-          <mxGeometry height="90" width="180" x="600" y="160" as="geometry" />
+          <mxGeometry height="90" width="180" x="1010" y="160" as="geometry" />
         </mxCell>
         <mxCell id="h8s6wc6OMsW0oHRsNa-q-35" edge="1" parent="1" source="h8s6wc6OMsW0oHRsNa-q-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="h8s6wc6OMsW0oHRsNa-q-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="S7K-fbsKnvt3Rn9l_40L-5" edge="1" parent="1" source="h8s6wc6OMsW0oHRsNa-q-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="h8s6wc6OMsW0oHRsNa-q-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="895" y="835" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="h8s6wc6OMsW0oHRsNa-q-24" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;cons&lt;/h1&gt;&lt;p&gt;train consists: vehicles and formations&lt;/p&gt;" vertex="1">
           <mxGeometry height="90" width="180" x="500" y="790" as="geometry" />
         </mxCell>
+        <mxCell id="S7K-fbsKnvt3Rn9l_40L-3" edge="1" parent="1" source="h8s6wc6OMsW0oHRsNa-q-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="S7K-fbsKnvt3Rn9l_40L-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="h8s6wc6OMsW0oHRsNa-q-25" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;netw&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 12px; font-weight: 400;&quot;&gt;railway networks&lt;/span&gt;&lt;/h1&gt;" vertex="1">
-          <mxGeometry height="90" width="180" x="890" y="580" as="geometry" />
+          <mxGeometry height="90" width="180" x="1010" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="S7K-fbsKnvt3Rn9l_40L-6" edge="1" parent="1" source="h8s6wc6OMsW0oHRsNa-q-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" target="h8s6wc6OMsW0oHRsNa-q-24">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="h8s6wc6OMsW0oHRsNa-q-26" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;typo&lt;/h1&gt;&lt;p&gt;rolling stock typology: locs and wagons&lt;/p&gt;" vertex="1">
-          <mxGeometry height="90" width="180" x="180" y="800" as="geometry" />
+          <mxGeometry height="90" width="175" x="225" y="840" as="geometry" />
         </mxCell>
         <mxCell id="h8s6wc6OMsW0oHRsNa-q-36" edge="1" parent="1" source="h8s6wc6OMsW0oHRsNa-q-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="h8s6wc6OMsW0oHRsNa-q-11">
           <mxGeometry relative="1" as="geometry">
@@ -106,6 +119,15 @@
         </mxCell>
         <mxCell id="h8s6wc6OMsW0oHRsNa-q-39" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;status&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 12px; font-weight: normal;&quot;&gt;panned, current...&lt;/span&gt;&lt;/h1&gt;" vertex="1">
           <mxGeometry height="100" width="100" x="1355" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="S7K-fbsKnvt3Rn9l_40L-2" edge="1" parent="1" source="S7K-fbsKnvt3Rn9l_40L-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="h8s6wc6OMsW0oHRsNa-q-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="S7K-fbsKnvt3Rn9l_40L-1" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;pavo&lt;/h1&gt;&lt;p&gt;parts and views&lt;/p&gt;" vertex="1">
+          <mxGeometry height="90" width="180" x="1010" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="S7K-fbsKnvt3Rn9l_40L-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="called rsmt in netw" vertex="1">
+          <mxGeometry height="30" width="90" x="910" y="170" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

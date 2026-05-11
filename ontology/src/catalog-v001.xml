@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public">
+        <uri id="Automatically generated entry, Timestamp=1778488696595" name="https://cdm.ovh/rsm/adapters/rsm_ifc_adapter/rsm_ifc_adap" uri="rsm_ifc_adap.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1778488696595" name="https://cdm.ovh/rsm/geosparql_adapter/rgeo" uri="rgeo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1778488696595" name="https://cdm.ovh/rsm/list/list" uri="list.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1778488696595" name="duplicate:https://cdm.ovh/rsm/localisation/loca" uri="loca.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1778488696595" name="duplicate:https://cdm.ovh/rsm/localisation/loca" uri="core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1778488696595" name="https://cdm.ovh/rsm/topology/topo" uri="topo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1778488696595" name="https://cdm.ovh/rsm/track/trfn" uri="trfn.owl"/>
+    </group>
+</catalog>

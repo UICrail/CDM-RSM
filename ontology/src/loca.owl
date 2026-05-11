@@ -172,13 +172,29 @@ For spot locations (and, by extension, for linear locations) on linear elements,
     
 
 
-    <!-- https://cdm.ovh/rsm/localisation/loca#location -->
+    <!-- https://cdm.ovh/rsm/localisation/loca#isLocatedAt -->
 
-    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#location">
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#isLocatedAt">
+        <rdfs:subPropertyOf rdf:resource="https://cdm.ovh/rsm/localisation/loca#relatedLocation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL#PhysicalObject"/>
+        <rdfs:comment xml:lang="en">Location, on nework topology, that is occupied by the Thing in subject position. A property of physical objects (massive bodies, artefacts...).
+Note 1: physical objects that are immaterial (such as a standing wave, an electromagnetic field...) are not categorized as dul:PhysicalObject. See DOLCE or DUL documentation. Avoid using &quot;isLocatedAt&quot; in suche case, lest the standing wave becoming material by inference.
+Note 2: non-physical objects such as &apos;speed restriction&apos; have a functional relationship with space (&apos;applicable to&apos;) and that relationship is not &apos; occupancy&apos;.</rdfs:comment>
+        <rdfs:label xml:lang="en">is located at</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cdm.ovh/rsm/localisation/loca#relatedLocation -->
+
+    <owl:ObjectProperty rdf:about="https://cdm.ovh/rsm/localisation/loca#relatedLocation">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:range rdf:resource="https://cdm.ovh/rsm/localisation/loca#BaseLocation"/>
-        <rdfs:comment xml:lang="en">Generic property assigning some location to a Thing.</rdfs:comment>
-        <rdfs:label xml:lang="en">location</rdfs:label>
+        <rdfs:comment xml:lang="en">Generic property assigning some location to a Thing.
+Semantics areintentionally vague, and may include: &quot;occupies space&quot;, &quot;can reach&quot;, &quot;observes&quot;, &quot;controls&quot;, etc.
+The meaning of the &apos;location&quot; should be disambiguated using subproperties or Situation patterns (n-ary relations).</rdfs:comment>
+        <rdfs:label xml:lang="en">relatedLocation</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -203,6 +219,14 @@ For spot locations (and, by extension, for linear locations) on linear elements,
     <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL#Object -->
 
     <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL#Object"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL#PhysicalObject -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL#PhysicalObject">
+        <rdfs:label xml:lang="en">PhysicalObject</rdfs:label>
+    </owl:Class>
     
 
 
